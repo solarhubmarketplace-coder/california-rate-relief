@@ -1140,117 +1140,219 @@
   {
     "slug": "sgip-battery-rebate-california",
     "cluster": "battery",
-    "metaTitle": "SGIP Battery Rebate California: September 2026 Status",
-    "metaDescription": "Check SGIP budget status by program administrator, separate a waitlist from an approved reservation, and compare your battery quote without an assumed rebate.",
-    "h1": "SGIP battery rebates in California: check the budget first",
-    "intro": "Do not put an SGIP rebate into the purchase price until the project has the right approval. A program name on a quote is not a reservation.\n\nThe official tracker distinguishes several budgets under the Self-Generation Incentive Program. This September 10, 2026 snapshot keeps their names and administrator columns separate. Recheck the live table before making a purchase decision; the status can change.",
+    "metaTitle": "SGIP California: Solar Battery Rebate Status (Sept 2026)",
+    "metaDescription": "What SGIP pays for a home battery, who qualifies for the equity budget, which budgets were open or waitlisted on Sept. 23, 2026, and SCE's own rules.",
+    "h1": "SGIP in California: battery rebate status, who qualifies and what it pays",
+    "intro": "SGIP, the Self-Generation Incentive Program, is the CPUC's rebate for batteries and other equipment installed on the customer's side of the meter. As of September 23, 2026, the general-market home battery budget is closed everywhere. The only residential money left is the income-qualified Residential Solar and Storage Equity budget, which pays $1.10 per watt-hour of storage and $3.10 per watt of new solar.\n\nThat budget is open only for customers of publicly owned utilities assigned to PG&E or SCE. For PG&E, SCE, SDG&E, SoCalGas and LADWP customers it is waitlisted. The 2026 SGIP Handbook sets June 30, 2028 as the last day for new and waitlist applications. The official tracker updates nightly, so recheck it before you sign anything.",
     "keyStats": [
       {
         "label": "Status checked",
-        "value": "September 10",
-        "note": "2026 snapshot of the official program metrics, not a funding commitment."
+        "value": "Sept. 23, 2026",
+        "note": "Official SGIP tracker, updated nightly. A snapshot, not a funding commitment."
       },
       {
-        "label": "Budget and administrator",
-        "value": "Both matter",
-        "note": "Get the exact category and responsible administrator for the service address."
+        "label": "Equity storage incentive",
+        "value": "$1.10 per Wh",
+        "note": "Plus $3.10 per W of new solar. CPUC and SGIP tracker."
       },
       {
-        "label": "Base quote",
-        "value": "Before incentives",
-        "note": "Show the amount payable if an incentive is delayed or denied."
+        "label": "General-market home storage",
+        "value": "Closed",
+        "note": "Its last step paid $0.15 per Wh. Ratepayer budgets took their last applications Dec. 30, 2025."
+      },
+      {
+        "label": "Equity application deadline",
+        "value": "June 30, 2028",
+        "note": "Last day for new and waitlist applications. 2026 SGIP Handbook."
       }
     ],
     "sections": [
       {
-        "heading": "Read the category and administrator together",
-        "body": "RSSE stands for Residential Solar and Storage Equity. POU identifies the publicly owned utility category; Non-POU is listed separately. The tracker has administrator columns for CSE, SCE, SCG, PG&E and LADWP. An administrator column does not by itself identify the electric utility serving your home.\n\nThe table below records the displayed status. A blank cell is not evidence that a budget is open. Use the CPUC administrator list and ask which category applies to the service address."
+        "heading": "What SGIP is and who runs it",
+        "body": "The CPUC describes SGIP as incentives for distributed energy resources on the customer's side of the meter, including solar paired with storage. The state does not mail you a check. Five program administrators run it: PG&E, SCE, SoCalGas, the Center for Sustainable Energy for SDG&E's territory, and LADWP.\n\nThere were two pots of money. Ratepayer-funded budgets came from utility bills. The 2026 SGIP Handbook says administrators issued reservations from those budgets only through December 31, 2025, that December 30, 2025 was the last day to apply, and that every ratepayer-funded waitlist closed that day. The second pot is Assembly Bill 209 money: $280 million from the state's Greenhouse Gas Reduction Fund, which CPUC Decision 24-03-071 assigned to the Residential Solar and Storage Equity budget. That is the part still taking applications."
       },
       {
-        "heading": "Ask for the application path in writing",
-        "body": "Before signing, have the developer identify the proposed budget, applicant and program administrator. Ask who prepares the paperwork, who checks eligibility and who receives the incentive. Keep a copy of what is submitted and the administrator’s response.\n\nRequest a list of the household, utility, equipment and project-cost documents needed for this specific application. If the provider says income, a particular electricity program, location or medical circumstances establish eligibility, ask it to identify the current requirement and the document that satisfies it. An assumption in a sales proposal is not an eligibility determination."
+        "heading": "What each residential budget pays",
+        "body": "Residential budgets pay per watt-hour of battery capacity. Small Residential Storage, the general-market budget for homes, stepped down to its seventh and final step at $0.15 per Wh. Equity Resiliency paid a flat $1.00 per Wh. San Joaquin Valley Residential and the Residential Solar and Storage Equity budget pay $1.10 per Wh, and the equity budget also pays $3.10 per watt for a new solar system. Only the equity budget still has money for homes.\n\nThe handbook's worked example shows the ceiling. A 13.2 kWh battery at $1.10 per Wh comes to $14,520, and 5 kW of solar at $3.10 per W comes to $15,500, for a maximum of $30,020. The actual award can be lower. A project that reports a total eligible cost above 90 percent of that maximum must send receipts for equipment and labor before it is paid, and electrical and critical-loads panel upgrades count toward eligible cost only up to $3,500 per project."
       },
       {
-        "heading": "A waitlist is not money reserved for your project",
-        "body": "Treat a waitlisted request as conditional in your budget. Ask for the application reference and current status, and have the provider explain what must happen before an incentive can be reserved. Do not use an expected award to cover a payment you cannot otherwise make.\n\nFor an existing reservation, work from its own notice and the administrator’s current instructions. Ask about the project milestones, remaining documents and any deadline before changing equipment, scope or contractor. A general article cannot determine what happens to an individual application."
+        "heading": "Who qualifies for the equity budget",
+        "body": "The handbook's single-family test has two paths. Your household income is at or below 80 percent of the area median income, shown with your most recent federal tax documents. Or your income was already verified because you are enrolled in CARE, FERA, the Energy Savings Assistance program, SASH or DAC-SASH. If you qualify through CARE, FERA or ESA and are dropped from that program before the incentive is paid, the application is cancelled.\n\nApartment buildings use a different test: five or more deed-restricted low-income units in a disadvantaged community, or a building where at least 80 percent of households earn 60 percent of area median income or less. Those projects must pass at least 51 percent of the solar output to tenants as virtual net metering credits.\n\nThree other rules catch people. AB 209 money is open to any California residential customer, including customers of city utilities and rural cooperatives. The solar incentive covers only a new system, not panels added to an existing array. And a renter needs a letter showing the owner approved the installation."
       },
       {
-        "heading": "Compare the same battery with and without the incentive",
-        "body": "Get an itemized cash quote showing solar equipment, battery, backup hardware, electrical work, permits and other charges. Put the requested incentive on a separate line. Then ask for the amount you owe if it is approved, if payment arrives later than expected, and if the application is denied.\n\nFor a loan, lease or PPA, request the complete payment schedule and an explanation of how any approved incentive affects the amount charged to you. Verify who owns the equipment. The person applying for a benefit and the person making the monthly payments may have different roles."
+        "heading": "Which administrator handles your application",
+        "body": "If a city utility or electric co-op serves your home, your AB 209 administrator is assigned, not chosen. The official assignment table sends customers of SMUD, the Modesto and Turlock irrigation districts, Roseville, Palo Alto, Alameda, Silicon Valley Power, Redding and Lodi to PG&E. It sends customers of Imperial Irrigation District, Riverside, Anaheim, Pasadena, Glendale, Burbank, Azusa, Colton and Banning to SoCalGas. LADWP handles its own customers, and Valley Electric Association customers go to SCE.\n\nThe assignment decides which pot you draw from. PG&E's $99 million AB 209 share reserves $31 million for customers of publicly owned utilities, and SCE's $87.3 million reserves $1 million. Those reserved sub-budgets, labeled POU on the tracker, are the only equity money shown as open. A SMUD customer applying through PG&E draws on an open budget. A Riverside customer applying through SoCalGas joins a waitlist."
       },
       {
-        "heading": "Decide what the battery needs to power",
-        "body": "List the loads that matter during an outage. Ask the design to show the usable energy capacity, continuous power, reserve settings and backed-up circuits. A refrigerator, a well pump and central air conditioning create different design questions. The site assessment needs to answer them.\n\nFor bill savings, ask for the remaining utility bill with solar alone and with solar plus storage using the same usage history. Compare grid imports, export credits and fixed charges. Do not assume that more battery capacity pays for itself, or that a rebate replaces the need for a sound design."
+        "heading": "SCE customers: what Edison requires",
+        "body": "SCE says its ratepayer-funded SGIP budgets are closed to new applicants and that its state-funded equity budget has been exhausted and is on a waitlist. The tracker agrees: SCE's non-POU equity budget, the one that serves Edison's own customers, shows a waitlist.\n\nSCE adds conditions of its own. It says every new customer must be interconnected with Permission to Operate on the Solar Billing Plan before an SGIP incentive is paid. It requires an SGIP-approved rate and lists TOU-D-PRIME, TOU-D-5-8PM and TOU-EV-1, which is closed to new customers. It says most new projects must enroll in a qualified demand response program, although the handbook exempts low-income equity applicants from that rule. SCE points customers to vendors on its Battery Marketplace and takes program questions at SGIPGroup@sce.com."
+      },
+      {
+        "heading": "PG&E, SDG&E, SoCalGas and LADWP customers",
+        "body": "PG&E's SGIP page says the equity rebate can cover up to 100 percent of cost for customers who meet the income test or are enrolled in CARE, FERA or ESA. It also says the rebate is closed and that waitlist applications go through your contractor. On the tracker, PG&E's budget for its own customers is waitlisted while its city-utility sub-budget is open.\n\nIn SDG&E's territory the Center for Sustainable Energy administers SGIP. Its AB 209 budget shows a waitlist, as do the SoCalGas and LADWP budgets. None of the three had open equity money on September 23, 2026."
+      },
+      {
+        "heading": "What a waitlist means for your quote",
+        "body": "A waitlist position is not a reservation. Waitlisted projects move up only if reserved projects drop out or money is shifted. The handbook says that after June 30, 2028, administrators transfer unallocated AB 209 funds to administrators that still have waitlists. Nobody can promise when, or whether, your turn comes.\n\nSo price the battery as if the incentive never arrives. Ask for an itemized quote with the incentive on its own line, then the amount you would owe if it is approved, if it is paid late, and if it is denied. If the project only works with the incentive, keep your place in line and hold off on signing. Get the application reference number and check its status with the administrator yourself."
+      },
+      {
+        "heading": "How an application is filed",
+        "body": "Homeowners rarely file alone. The CPUC and the utilities point customers to an installer or developer, who prepares the application and requests the reservation. The handbook makes the host customer, the utility customer of record at the site, the holder of the reservation, and lets the host customer name or replace the applicant, system owner and developer at any time.\n\nAsk the developer in writing which budget and administrator it is applying to, which documents it needs from you, and who will receive the payment. Keep copies of everything submitted. If a salesperson says you qualify, ask which of the handbook's eligibility paths they relied on and what document proves it."
+      },
+      {
+        "heading": "Other California battery rebates to check",
+        "body": "SGIP is not the only program. PG&E's Permanent Battery Storage Rebate pays $7,500 to first-time battery owners with five or more Wildfire Safety outages since January 1, 2024. PG&E showed 179 rebates left as of September 18, 2026, with a December 31, 2026 deadline. PG&E's Residential Storage Initiative installs a battery at no charge for some income-qualified or medically vulnerable customers on circuits with repeated EPSS outages, and PG&E says its 2026 supply is almost gone. SCE's Critical Care Backup Battery program provides a portable battery to eligible Medical Baseline customers in high fire risk areas.\n\nThe federal credit is out of the picture for a battery you buy now. The IRS says the residential clean energy credit is not allowed for expenditures made after December 31, 2025."
       }
     ],
     "dataTable": {
-      "caption": "Official budget status snapshot: September 10, 2026",
+      "caption": "SGIP residential budget status by administrator, September 23, 2026",
       "columns": [
-        "Budget category",
-        "Administrator columns",
-        "Displayed status"
+        "Budget",
+        "Pays",
+        "PG&E",
+        "SCE",
+        "SoCalGas",
+        "CSE (SDG&E area)",
+        "LADWP"
       ],
       "rows": [
         [
-          "Small Residential Storage; RSSE Ratepayer; Equity Resiliency",
-          "CSE, SCE, SCG, PG&E",
-          "Closed"
+          "Small Residential Storage (general market)",
+          "$0.15/Wh",
+          "Closed",
+          "Closed",
+          "Closed",
+          "Closed",
+          "Not offered"
         ],
         [
-          "RSSE — AB 209",
-          "CSE, SCG, LADWP",
+          "Solar and Storage Equity, ratepayer-funded",
+          "$1.10/Wh",
+          "Closed",
+          "Closed",
+          "Closed",
+          "Closed",
+          "Not offered"
+        ],
+        [
+          "Solar and Storage Equity, AB 209 (own customers)",
+          "$1.10/Wh storage, $3.10/W solar",
+          "Waitlist",
+          "Waitlist",
+          "Waitlist",
+          "Waitlist",
           "Waitlist"
         ],
         [
-          "RSSE — AB 209 POU",
-          "SCE, PG&E",
-          "Open"
+          "Solar and Storage Equity, AB 209 city-utility (POU) share",
+          "$1.10/Wh storage, $3.10/W solar",
+          "Open",
+          "Open",
+          "Not offered",
+          "Not offered",
+          "Not offered"
         ],
         [
-          "RSSE — AB 209 Non-POU",
-          "SCE, PG&E",
-          "Waitlist"
+          "Equity Resiliency",
+          "$1.00/Wh",
+          "Closed",
+          "Closed",
+          "Closed",
+          "Closed",
+          "Not offered"
+        ],
+        [
+          "San Joaquin Valley Residential",
+          "$1.10/Wh",
+          "Closed",
+          "Closed",
+          "Not offered",
+          "Not offered",
+          "Not offered"
         ]
       ]
     },
-    "whenThisIsWrong": "Pause if the purchase only works financially with an unapproved rebate, the provider cannot name the budget, or the contract requires payment before you understand the funding risk. Ask for a revised proposal. If the main purpose is reliable backup, have the actual loads and outage design reviewed before comparing the incentive amount.",
+    "whenThisIsWrong": "Do not wait on SGIP if you need backup power before the next fire season: a waitlisted incentive cannot be counted on in time. Pause as well if the purchase only works with an incentive that has not been reserved, if the provider cannot name the budget and administrator, or if the contract asks for payment before you know whether funding is set aside for your project.",
     "faqs": [
       {
-        "question": "Is SGIP open to every California homeowner?",
-        "answer": "No statewide open status establishes household eligibility. Identify the applicable budget and administrator, check the live status and get the project requirements confirmed. The snapshot above includes open, waitlisted and closed categories."
+        "question": "What is SGIP in California?",
+        "answer": "The Self-Generation Incentive Program pays incentives for batteries and other equipment on the customer's side of the meter. The CPUC oversees it and PG&E, SCE, SoCalGas, the Center for Sustainable Energy and LADWP administer it. For homes today it means the income-qualified equity budget; the general-market budget is closed."
+      },
+      {
+        "question": "Who qualifies for California SGIP?",
+        "answer": "For the equity budget on a single-family home: income at or below 80 percent of area median income, or income verified through CARE, FERA, ESA, SASH or DAC-SASH. Any California residential customer can apply, including city-utility customers. Renters need the owner's written approval."
+      },
+      {
+        "question": "Is SGIP still available in 2026?",
+        "answer": "Only in part. On September 23, 2026 the tracker showed equity money open for city-utility customers assigned to PG&E or SCE, and waitlists for everyone else. Ratepayer-funded budgets stopped taking applications on December 30, 2025."
+      },
+      {
+        "question": "How much is the SGIP battery rebate?",
+        "answer": "The equity budget pays $1.10 per watt-hour of storage plus $3.10 per watt for new solar. The handbook's example of a 13.2 kWh battery and 5 kW of solar reaches $30,020. The general-market budget's last step paid $0.15 per watt-hour, and it is closed."
+      },
+      {
+        "question": "Does SCE offer a battery rebate?",
+        "answer": "SCE administers SGIP in its territory. It says its ratepayer budgets are closed and its equity budget is waitlisted, and it requires Permission to Operate on the Solar Billing Plan and an SGIP-approved rate before it pays an incentive."
       },
       {
         "question": "Can CRR approve an SGIP application?",
-        "answer": "No. California Rate Relief is a private solar referral service. The optional inquiry below collects project information for a referral. Submit an incentive application through the applicable program process."
-      },
-      {
-        "question": "How much should I deduct from a battery quote?",
-        "answer": "Keep the full price in the base comparison. List a requested incentive separately until its amount, recipient, conditions and payment timing have been confirmed for the project. This page does not estimate an award."
-      },
-      {
-        "question": "What should I bring to a provider conversation?",
-        "answer": "Bring the utility bill, service address, proposed equipment and itemized price, plus any application or reservation reference already issued. Ask for the current document checklist before sending household eligibility records."
+        "answer": "No. California Rate Relief is a private solar referral service. The optional inquiry below collects project information for a referral. Incentive applications go to the program administrator, usually through your installer."
       }
     ],
-    "bottomLine": "Get the right budget identified, confirm the application status and compare the purchase without an assumed incentive. Then decide whether the equipment and payment obligations fit the home.",
+    "bottomLine": "SGIP still exists for homes, but only as an income-qualified budget that is mostly waitlisted. Confirm your eligibility path and your administrator, check the live tracker, and price the battery without the incentive before you sign.",
     "sources": [
       {
-        "name": "SelfGenCA official program metrics",
+        "name": "SGIP program metrics (selfgenca.com)",
         "url": "https://www.selfgenca.com/home/program_metrics/",
-        "supports": "Named budget categories and administrator status columns dated September 10, 2026."
+        "supports": "Budget status, incentive steps and rates for each administrator, as of September 23, 2026."
       },
       {
-        "name": "CPUC Self-Generation Incentive Program",
-        "url": "https://www.cpuc.ca.gov/sgip",
-        "supports": "Program overview, administrator contacts, current handbook and application resources. Checked September 10, 2026."
+        "name": "SGIP: AB 209 program administrator assignments",
+        "url": "https://www.selfgenca.com/home/resources/ab209_pa_assignments/",
+        "supports": "Which administrator handles customers of each publicly owned utility and co-op. Checked September 23, 2026."
       },
       {
-        "name": "CPUC solar consumer guide",
-        "url": "https://www.cpuc.ca.gov/solarguide/",
-        "supports": "Contract and financing comparison questions. Checked September 10, 2026."
+        "name": "SGIP 2026 Handbook, Version 3 (ZIP)",
+        "url": "https://www.selfgenca.com/documents/handbook/2026",
+        "supports": "Ratepayer-budget close dates, AB 209 allocations and POU shares, June 30, 2028 deadline, equity eligibility, $30,020 example, cost verification and $3,500 panel-upgrade cap."
+      },
+      {
+        "name": "CPUC: Self-Generation Incentive Program",
+        "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
+        "supports": "Program description, administrators, $280 million equity budget and incentive rates. Checked September 23, 2026."
+      },
+      {
+        "name": "SCE: Self-Generation Incentive Program",
+        "url": "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/self-generation-incentive",
+        "supports": "SCE budget status, Solar Billing Plan PTO requirement, SGIP-approved rates, demand response rule and contact. Checked September 23, 2026."
+      },
+      {
+        "name": "PG&E: Self-Generation Incentive Program",
+        "url": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/self-generation-incentive-program.html",
+        "supports": "PG&E equity eligibility, up-to-100-percent coverage and closed status. Checked September 23, 2026."
+      },
+      {
+        "name": "PG&E: Permanent Battery Storage Rebate",
+        "url": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "supports": "$7,500 rebate, eligibility, 179 rebates remaining as of September 18, 2026, and deadline."
+      },
+      {
+        "name": "PG&E: Residential Storage Initiative",
+        "url": "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html",
+        "supports": "No-charge battery eligibility and 2026 supply status. Checked September 23, 2026."
+      },
+      {
+        "name": "SCE: Critical Care Backup Battery Program",
+        "url": "https://www.sce.com/outages-safety/outage-preparedness/critical-care-backup-battery-program",
+        "supports": "Portable battery eligibility. Checked September 23, 2026."
+      },
+      {
+        "name": "IRS: FAQs on OBBB changes to residential energy credits",
+        "url": "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+        "supports": "Section 25D credit not allowed for expenditures made after December 31, 2025."
       }
     ],
-    "reviewedAt": "2026-09-10"
+    "reviewedAt": "2026-09-23"
   },
   {
     "slug": "tesla-powerwall-3-cost-california",

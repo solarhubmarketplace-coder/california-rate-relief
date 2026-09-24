@@ -124,9 +124,13 @@ export const BATTERY_TOPIC_LINKS: Record<string, BatteryTopicLinks> = {
   },
   'sgip-battery-rebate-california': {
     heading: 'Other incentives to check',
+    intro: 'SGIP is one piece of the decision. These pages cover the rest of the battery math.',
     links: [
       { href: '/battery/pge-permanent-battery-storage-rebate', label: 'PG&E’s separate $7,500 outage rebate' },
       { href: '/battery/pge-solar-battery-rebate', label: 'All PG&E battery programs in one table' },
+      { href: '/blog/solar-battery-backup-california', label: 'What a backup battery runs, costs and saves' },
+      { href: '/blog/sce-solar-billing-plan', label: 'The SCE Solar Billing Plan that SGIP requires' },
+      { href: '/battery/home-battery-cost-california', label: 'What a home battery costs before any incentive' },
       { href: '/blog/california-solar-tax-credit-2026', label: 'Statewide solar incentive overview' },
       { href: '/battery/solar-battery-company', label: 'Checking an SGIP developer before you sign' },
     ],
