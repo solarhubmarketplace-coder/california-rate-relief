@@ -336,7 +336,7 @@ const FEES: Record<string, FeeEntry> = {
   },
   'thousand-oaks': { status: 'not-published', evidence: "does not state the City's permit fee" },
   tulare: { status: 'not-published', evidence: 'has no separate solar line' },
-  ventura: { status: 'not-published', evidence: 'no dollar fee amounts are published on this page' },
+  ventura: { status: 'not-published', evidence: 'states no dollar amount for it or for the City' },
   'walnut-creek': {
     status: 'published',
     components: [{
@@ -396,8 +396,8 @@ const FEES: Record<string, FeeEntry> = {
     ],
     extra: 'Each kW above 15 kW adds $54.28; the City adds a $38 permit issuance fee.',
   },
-  windsor: { status: 'not-published', evidence: 'The page does not give a dollar figure' },
-  'yuba-city': { status: 'not-published', evidence: 'does not specify the dollar amount' },
+  windsor: { status: 'not-published', evidence: "states neither that fee nor the Town's own permit fee" },
+  'yuba-city': { status: 'not-published', evidence: 'without stating either amount' },
   'san-mateo': {
     status: 'published',
     components: [{ label: 'combination permit, solar on a single-family dwelling', usd: 450, quote: '$450 for each combination permit' }],
@@ -543,6 +543,21 @@ const FEES: Record<string, FeeEntry> = {
   },
   vacaville: { status: 'not-retrievable', evidence: 'could not be read in a form that ties an amount to it' },
   saratoga: { status: 'not-published', evidence: 'did not state a solar permit fee' },
+  gilroy: {
+    status: 'published',
+    components: [{ label: 'solar PV permit, residential, 15 kW or less', usd: 450, quote: 'at $450.00 for a residential system of 15 kW or less' }],
+    extra: 'Energy storage: $103.27 permit plus $146.77 inspection.',
+  },
+  'san-ramon': {
+    status: 'published',
+    components: [{ label: 'SolarAPP+ permit design (each)', usd: 450, quote: 'SolarAPP+ permit designs at $450 each' }],
+    extra: 'City-reviewed residential PV: $566 up to 10 kW; first battery $396; $89 issuance fee; 4.60% technology surcharge.',
+  },
+  redding: {
+    status: 'published',
+    components: [{ label: 'residential PV, 7 to 15 kW', usd: 450, quote: 'a residential photovoltaic system of 7 to 15 kW at $450.00' }],
+    extra: 'Above 15 kW: $450.00 plus $15.00 per kW; battery (alternative power source) $187.50.',
+  },
 };
 
 // -----------------------------------------------------------------------------
@@ -633,7 +648,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   stockton: { platform: 'solarapp', evidence: 'SolarAPP+ named' },
   'thousand-oaks': { platform: 'solarapp', evidence: 'can use SolarAPP+' },
   tulare: { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
-  ventura: { platform: 'symbium', evidence: 'Symbium (not SolarAPP+)' },
+  ventura: { platform: 'symbium', evidence: 'through Symbium in real time' },
   'walnut-creek': { platform: 'none-named', evidence: 'does not say whether solar permits go through SolarAPP+' },
   watsonville: { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
   winchester: { platform: 'solarapp', evidence: 'SolarAPP+ named' },
@@ -661,8 +676,8 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     note: 'Applications by email or online submittal; the CEC SB 379 data (self-reported) lists a custom platform.',
   },
   vallejo: { platform: 'symbium', evidence: "lists Vallejo's platform as Symbium" },
-  windsor: { platform: 'symbium', evidence: 'Windsor uses Symbium' },
-  'yuba-city': { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
+  windsor: { platform: 'symbium', evidence: "The Town's Symbium platform" },
+  'yuba-city': { platform: 'solarapp', evidence: 'After SolarAPP+ approval' },
   'san-mateo': { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
   irvine: { platform: 'symbium', evidence: 'powered by Symbium' },
   fremont: { platform: 'solarapp', evidence: 'Contractors registered with SolarAPP+' },
@@ -722,6 +737,13 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     platform: 'symbium',
     evidence: "lists Saratoga's platform as Symbium",
     note: 'Per the CEC SB 379 data (self-reported); the City pages reached do not describe a solar route.',
+  },
+  gilroy: { platform: 'solarapp', evidence: 'go through SolarAPP+ for instant permitting' },
+  'san-ramon': { platform: 'solarapp', evidence: 'Electrical Photovoltaic (SolarAPP) permit' },
+  redding: {
+    platform: 'solarapp',
+    evidence: "lists Redding's platform as SolarAPP+",
+    note: 'Per the CEC SB 379 data (self-reported); REU paperwork and a Generator Number come before the City permit.',
   },
 };
 
@@ -896,7 +918,7 @@ const CCAS: CcaEntry[] = [
   {
     name: 'MCE',
     match: 'MCE',
-    members: ['napa', 'walnut-creek', 'danville', 'vallejo', 'concord', 'richmond'],
+    members: ['napa', 'walnut-creek', 'danville', 'vallejo', 'concord', 'richmond', 'san-ramon'],
     source: {
       label: 'MCE, Service Area',
       url: 'https://www.mcecleanenergy.org/service-area/',
@@ -906,7 +928,7 @@ const CCAS: CcaEntry[] = [
   {
     name: 'Silicon Valley Clean Energy',
     match: 'Silicon Valley Clean Energy',
-    members: ['sunnyvale', 'mountain-view', 'saratoga'],
+    members: ['sunnyvale', 'mountain-view', 'saratoga', 'gilroy'],
     source: {
       label: 'Silicon Valley Clean Energy, About (communities served)',
       url: 'https://svcleanenergy.org/about/',

@@ -292,15 +292,14 @@ test('Tier 2 wave (citycos): its companies pages render and are not redirected',
 
 // 2026-09-23, Tier 3 city-cost wave (citycost agent): new /solar-cost pages
 // for cities whose /solar-companies page is live on this branch and stays
-// live (Decision 15). The city keeps one page per intent. The parallel Tier 3
-// citycos lane is creating companies pages for other cities this wave adds a
-// cost page for (clovis, elk-grove, mission-viejo); those are registered by
-// that lane, and the full list of new cost slugs is in the manifest
-// (_ta_manifest/t3-citycost.json) for integration. No row is added to the
-// redirect table, so the table's row count does not change.
+// live (Decision 15). The city keeps one page per intent. New cost pages for
+// cities with no companies page on this branch are registered in the next
+// section. No row is added to the redirect table, so the table's row count
+// does not change.
 const T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN = new Set([
   'concord', 'richmond', 'berkeley', 'santa-clara', 'san-clemente',
   'lakewood', 'victorville', 'glendale', 'santa-barbara', 'vacaville',
+  'san-ramon', 'redding',
 ]);
 for (const slug of T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN) REINSTATED_COMPANIES_SLUGS.add(slug);
 
@@ -313,6 +312,29 @@ test('Tier 3 city-cost wave: each new cost page renders and its companies twin s
     assert.equal(canonicalRedirectFor(`/solar-companies/${slug}`), null, slug);
     assert.equal(companiesCityHref(slug), `/solar-companies/${slug}`);
     assert.equal(hasCompaniesCityPage(slug), true);
+  }
+});
+
+// 2026-09-24, Tier 3 city-cost wave (citycost agent): new /solar-cost pages
+// for cities with no /solar-companies page on this branch. The parallel Tier 3
+// citycos lane is building companies pages for some of them (clovis,
+// elk-grove, mission-viejo), and any of the others could get one later.
+// Each is registered here so that, when a companies twin lands at
+// integration, it stays live (Decision 15) instead of tripping the twin
+// redirect check below. The full list is in _ta_manifest/t3-citycost.json.
+// No row is added to the redirect table.
+const T3_COST_PAGES_PENDING_COMPANIES_TWIN = new Set([
+  'clovis', 'elk-grove', 'mission-viejo', 'saratoga', 'gilroy',
+]);
+for (const slug of T3_COST_PAGES_PENDING_COMPANIES_TWIN) REINSTATED_COMPANIES_SLUGS.add(slug);
+
+test('Tier 3 city-cost wave: each new cost page without a companies twin renders, and its companies URL is not redirected', () => {
+  const cost = new Set(getPublishableCityCostSlugs());
+  for (const slug of T3_COST_PAGES_PENDING_COMPANIES_TWIN) {
+    assert.ok(cost.has(slug), `${slug} must pass the city-cost-data gate`);
+    assert.equal(isRedirectedPath(`/solar-cost/${slug}`), false, `/solar-cost/${slug} must not redirect`);
+    assert.equal(canonicalRedirectFor(`/solar-companies/${slug}`), null, slug);
+    assert.ok(!T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN.has(slug), `${slug} is registered twice`);
   }
 });
 

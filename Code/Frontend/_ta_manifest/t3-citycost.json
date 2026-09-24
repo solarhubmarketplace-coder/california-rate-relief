@@ -437,6 +437,116 @@
    ],
    "status": "done",
    "note": "Upgraded: fee now quoted from the FY 2026-27 schedule ($347 up to 15 kW; battery backup and panel upgrade $174 each); Symbium two-step process; Pioneer sourced to its own list; new guidance entry."
+  },
+  {
+   "path": "/solar-cost/gilroy",
+   "action": "CREATE",
+   "title": "Solar Panels in Gilroy, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    690
+   ],
+   "sources": [
+    "https://www.cityofgilroy.org/975/SolarApp-for-Residential-Solar-Installer",
+    "https://svcleanenergy.org/about/",
+    "https://www.svcleanenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + Silicon Valley Clean Energy. Gilroy's SolarAPP+ page publishes every fee: $450.00 up to 15 kW, $500.00 + $15.00/kW above; ESS permit $103.27 + $146.77 inspection; $260.00 Fire inspection for ESS over 50 kWh; $137.03 revision. No separate planning/fire review up to 38.4 kW; inspections 72 hours out. No companies page on this branch: registered in the pending-twin set.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/ventura",
+   "action": "UPGRADE",
+   "title": "Solar Panel Cost in Ventura, CA: What Sets the Price (2026)",
+   "clusters": [
+    702
+   ],
+   "sources": [
+    "https://www.cityofventura.ca.gov/2554/Contractor-Solar-Permits-SB-379",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation",
+    "https://cleanpoweralliance.org/solar/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded the 2026-09-18 row: re-read; Symbium real-time permits for A/B/C-10/C-46 contractors with a Ventura business license up to 38.4 kW AC; Symbium fee non-refundable, no City fee published; inspection timing; CPA sourced to SCE's list; new guidance entry.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/windsor",
+   "action": "UPGRADE",
+   "title": "Solar Panels in Windsor, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    693
+   ],
+   "sources": [
+    "https://www.townofwindsor.ca.gov/1570/Residential-Solar-Applications",
+    "https://sonomacleanpower.org/who-we-are",
+    "https://sonomacleanpower.org/solar-billing-plan",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded the 2026-09-18 row: re-read; Symbium instant permits, then eTRAKiT; email/in-person route with 1-3 business days of plan review; Town business license required; no fee published; Sonoma Clean Power sourced; new guidance entry. The 'how much does solar cost in windsor ca' sub-question is the template's first FAQ.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/san-ramon",
+   "action": "CREATE",
+   "title": "San Ramon Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    694
+   ],
+   "sources": [
+    "https://www.sanramon.ca.gov/our_city/departments_and_divisions/community_development/building_and_safety_services/solar_a_p_p_/",
+    "https://www.sanramon.ca.gov/our_city/permit_center/fee_resolution",
+    "https://www.mcecleanenergy.org/about-us/",
+    "https://mcecleanenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + MCE. FY2026-27 Master Fee Schedule: SolarAPP+ permit designs $450; City-reviewed residential PV $566 up to 10 kW + $17/kW; first battery $396, each additional $35; $89 permit issuance fee; 4.60% technology surcharge. Contractors must be on the City's SolarAPP+ eligibility list. Companies twin (growthCities) registered.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/yuba-city",
+   "action": "UPGRADE",
+   "title": "Yuba City Solar Panels: Cost & Installer Checks (2026)",
+   "clusters": [
+    696
+   ],
+   "sources": [
+    "https://www.yubacity.net/departments/development_services/solar_app.php",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded the 2026-09-18 row: re-read; City invoices permit fees after review (no amount published); Accela Citizen Portal; inspection request rules; PG&E with no CCA per PG&E's list; new guidance entry. Citycos is building /solar-companies/yuba-city (CREATE_DEDICATED); that lane registers it.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/redding",
+   "action": "CREATE",
+   "title": "Solar Panel Cost in Redding, CA: What Sets the Price (2026)",
+   "clusters": [
+    728
+   ],
+   "sources": [
+    "https://www.cityofredding.gov/government/departments/redding_electric_utility/going_green/solar_photovoltaic_(pv)_program.php",
+    "https://www.cityofredding.gov/government/departments/utilities/customer_service/rates___fees.php",
+    "https://www.cityofredding.gov/Document%20Center/Departments/Finance/Accounting/Adopted%20FY%202025-26%20Master%20Fee%20Schedule.pdf",
+    "https://www.cityofredding.gov/Document%20Center/Departments/Finance/Accounting/Adopted%20FY%202026-27%20Master%20Fee%20Schedule.pdf",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row on tracker utility 'reu' (Redding Electric Utility). Master Fee Schedule FY 2025-26 (and FY 2026-27, building fees effective 2026-10-19): residential PV 7-15 kW $450.00, 16 kW+ $450.00 + $15.00/kW; battery (alternative power source) $187.50 -> $193.00. REU's Zero Net Energy Service, the 1 kW DC per 1,752 kWh size cap, the Generator Number the City requires before a permit application, and REU's E1 rate ($40.00/meter + $0.1492/kWh since 2025-01-01) - extra FAQ. Companies twin registered.",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
   }
  ],
  "new_cost_slugs": [
@@ -453,7 +563,10 @@
   "glendale",
   "santa-barbara",
   "vacaville",
-  "saratoga"
+  "saratoga",
+  "gilroy",
+  "san-ramon",
+  "redding"
  ],
  "new_cost_slugs_with_live_companies_twin_registered": [
   "concord",
@@ -465,7 +578,9 @@
   "victorville",
   "glendale",
   "santa-barbara",
-  "vacaville"
+  "vacaville",
+  "san-ramon",
+  "redding"
  ],
  "new_cost_slugs_for_citycos_to_reconcile": [
   "clovis",
@@ -545,6 +660,21 @@
    "hub": "city_cost",
    "href": "/solar-cost/saratoga",
    "label": "Solar panel cost in Saratoga"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/gilroy",
+   "label": "Solar panel cost in Gilroy"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/san-ramon",
+   "label": "Solar panel cost in San Ramon"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/redding",
+   "label": "Solar panel cost in Redding"
   }
  ],
  "link_requests": [],
