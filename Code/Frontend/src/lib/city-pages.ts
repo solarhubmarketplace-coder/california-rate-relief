@@ -434,6 +434,7 @@ const GROWTH_UTILITY_LABEL: Record<string, string> = {
   pwp: 'Pasadena Water and Power',
   gwp: 'Glendale Water & Power',
   redding: 'Redding Electric Utility',
+  cpau: 'City of Palo Alto Utilities',
 };
 
 /**
@@ -593,6 +594,42 @@ export const SAVINGS_BILLS_SEO: Readonly<Record<string, CitySeo & { modified: st
     description:
       'San Mateo bills: PG&E delivery plus WestLight Energy (formerly Peninsula Clean Energy) generation, the $24 Base Services Charge, CARE/FERA and solar.',
     h1: 'San Mateo Electric Bills and Rates: PG&E, WestLight Energy and Solar',
+    modified: '2026-09-23',
+  },
+  // 2026-09-23 (Tier 3, citysav)
+  lancaster: {
+    title: 'Lancaster Electricity Rates: SCE & Lancaster Energy',
+    description:
+      'Lancaster electricity: SCE delivery plus Lancaster Energy generation, what a typical month costs on each, the $24 charge and how solar is credited.',
+    h1: 'Electricity Rates in Lancaster: Lancaster Energy, SCE and What a Bill Costs',
+    modified: '2026-09-23',
+  },
+  irvine: {
+    title: 'Irvine Electricity Provider: OCPA & SCE Rates (2026)',
+    description:
+      'Irvine electricity: Orange County Power Authority generation and SCE delivery on one bill, what a typical month costs on each and how solar is credited.',
+    h1: "Irvine's Electricity Providers: Orange County Power Authority and SCE",
+    modified: '2026-09-23',
+  },
+  'newport-beach': {
+    title: 'Newport Beach Electricity Provider: SCE Rates (2026)',
+    description:
+      "Newport Beach electricity comes from SCE alone, with no community choice program: SCE's 2026 plan prices, the $24 charge, typical coastal bills and solar.",
+    h1: "Newport Beach's Electricity Provider Is SCE: Rates, Bills and Solar",
+    modified: '2026-09-23',
+  },
+  oakland: {
+    title: 'Oakland Electricity Provider: Ava & PG&E Rates (2026)',
+    description:
+      'Oakland electricity: Ava Community Energy generation and PG&E delivery on one bill, typical monthly costs on each plan, the $24 charge and solar true-ups.',
+    h1: "Oakland's Electricity Providers: Ava Community Energy and PG&E",
+    modified: '2026-09-23',
+  },
+  'palo-alto': {
+    title: 'Palo Alto Electricity Provider: CPAU Rates (2026)',
+    description:
+      "Palo Alto electricity comes from City of Palo Alto Utilities, not PG&E: CPAU's 2026 tiered rates, customer charge, bill assistance and solar export rate.",
+    h1: "Palo Alto's Electricity Provider Is City of Palo Alto Utilities: Rates and Bills",
     modified: '2026-09-23',
   },
 };
