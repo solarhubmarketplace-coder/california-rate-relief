@@ -61,7 +61,11 @@
       },
       {
         "heading": "What the Base Services Charge costs right now",
-        "body": "The minimum-bill figure above depends on rate schedule, but as of this writing all three investor-owned utilities also collect a flat daily charge called the Base Services Charge, and PG&E and SDG&E both state it isn't offset by solar generation credits. PG&E charges about $24.00 a month (billed per day, so the exact total shifts slightly with billing-cycle length), about $6.00 a month for CARE customers and about $12.00 a month for FERA customers, effective March 2026 — this replaced PG&E's prior Minimum Electric Charge and doesn't apply to EV-B, EM or EM-TOU rate plans. SCE charges $0.79 a day (about $24 a month), the same figure across all three residential TOU plans including TOU-D-Prime; SCE's own rate page doesn't break out a separate CARE or FERA daily rate. SDG&E charges $0.793 a day (about $24 a month, ranging $22.22 to $26.18 depending on billing-cycle length) standard, $0.197 a day (about $6 a month) for CARE, and $0.396 a day (about $12 a month) for FERA, effective October 2025.\n\nPG&E does not offset the Base Services Charge with solar generation credits — its solar billing page states credits \"are not applied to non-bypassable charges and demand charges,\" and SDG&E explicitly lists the Base Services Charge among its \"Non-Nettable Charges\" for the same reason. In practice, a solar account that exports more than it imports over a full year still owes roughly $24 a month, every month, before any other charge applies. Households enrolled in CARE or FERA pay the reduced charge above regardless of whether they also have solar.\n\nA smaller, older figure sometimes cited for the \"minimum bill\" — $5 a month for CARE customers, $10 a month for others, from the NEM 2.0-era Decision 15-07-001 — predates this restructuring and no longer reflects what PG&E or SDG&E currently charge. Use the Base Services Charge figures above instead."
+        "body": "The minimum-bill figure above depends on rate schedule, but as of this writing all three investor-owned utilities also collect a flat daily charge called the Base Services Charge, and PG&E and SDG&E both state it isn't offset by solar generation credits. PG&E charges about $24.00 a month (billed per day, so the exact total shifts slightly with billing-cycle length), about $6.00 a month for CARE customers and about $12.00 a month for FERA customers, effective March 2026 — this replaced PG&E's prior Minimum Electric Charge and doesn't apply to EV-B, EM or EM-TOU rate plans. SCE charges $24.15 a month for most customers (about $0.80 a day), $12.08 for FERA customers and qualifying deed-restricted affordable housing, and $6.00 for CARE customers, the same on every residential plan including TOU-D-PRIME. SCE says it is payable every month even for NEM and Solar Billing Plan customers and cannot be offset by the electricity you generate, though a remaining Net Surplus Compensation or Energy Export Bonus Credit balance can pay it. SDG&E charges $0.793 a day (about $24 a month, ranging $22.22 to $26.18 depending on billing-cycle length) standard, $0.197 a day (about $6 a month) for CARE, and $0.396 a day (about $12 a month) for FERA, effective October 2025.\n\nPG&E does not offset the Base Services Charge with solar generation credits — its solar billing page states credits \"are not applied to non-bypassable charges and demand charges,\" and SDG&E explicitly lists the Base Services Charge among its \"Non-Nettable Charges\" for the same reason. In practice, a solar account that exports more than it imports over a full year still owes roughly $24 a month, every month, before any other charge applies. Households enrolled in CARE or FERA pay the reduced charge above regardless of whether they also have solar.\n\nA smaller, older figure sometimes cited for the \"minimum bill\" — $5 a month for CARE customers, $10 a month for others, from the NEM 2.0-era Decision 15-07-001 — predates this restructuring and no longer reflects what PG&E or SDG&E currently charge. Use the Base Services Charge figures above instead."
+      },
+      {
+        "heading": "What a real California solar bill looks like in 2026",
+        "body": "For scale, start with a bill without solar. The U.S. Energy Information Administration puts the average California residential electric bill at $160.86 a month in 2024, for 503 kWh at an average 31.97 cents per kWh; the U.S. average was $142.26. Solar changes the energy part of that bill. It does not remove the Base Services Charge of roughly $24 a month at PG&E, SCE and SDG&E, and in 2026 the California Climate Credit arrives only on the August and September bills: $36.18 each at PG&E, $36.00 at SCE and $49.36 at SDG&E, per the CPUC.\n\nHere is our own illustration for an SDG&E household on the Solar Billing Plan, which puts residential customers on the EV-TOU-5 rate. Prices are SDG&E's EV-TOU-5 rates effective August 1, 2026; export values are from SDG&E's 2026 hourly export file, using the weekday-noon value for every exported kWh, which is roughly when rooftop panels export most.\n\nDecember, 31 days: the home imports 300 kWh (60 on-peak at 52.383 cents, 120 off-peak at 46.566 cents, 120 super off-peak at 12.332 cents), which costs about $102.11. It exports 200 kWh at about 5.72 cents, a credit of about $11.43. The Base Services Charge adds about $24.60. The bill comes to roughly $115.27.\n\nAugust, 31 days: the home imports 250 kWh (50 on-peak at 80.205 cents, 100 off-peak at 49.627 cents, 100 super off-peak at 13.090 cents), about $102.82. It exports 500 kWh at about 6.07 cents, a credit of about $30.36. Add the $24.60 Base Services Charge and subtract the $49.36 Climate Credit, and the bill is roughly $47.70.\n\nTwo lessons carry over to PG&E and SCE. First, the midday export credit is small next to what an evening import costs, so the bill depends far more on how much you still buy between 4 and 9 p.m. than on how much you send back at noon. Second, a real post-solar bill almost never reaches zero, because the fixed charge stays and credits can only offset the matching import charge. SDG&E splits export credits into generation and delivery parts that each offset only their own import charge; this illustration treats them as fully used. Your own bill will differ with usage, system size and battery settings."
       },
       {
         "heading": "What a normal post-solar bill should actually contain",
@@ -138,6 +142,12 @@
           "D.22-12-056, Table 5, p. 118"
         ],
         [
+          "Base Services Charge (about $24/month; lower for CARE/FERA)",
+          "No — non-nettable",
+          "PG&E, SCE, SDG&E",
+          "PG&E Solar Bill page; SCE Base Services Charge FAQ; SDG&E Solar Billing Plan bill guide (2026)"
+        ],
+        [
           "Minimum bill / fixed charge (rate-schedule dependent)",
           "Depends on rate schedule",
           "All three IOUs",
@@ -156,6 +166,14 @@
       {
         "question": "So solar doesn't eliminate my utility bill at all?",
         "answer": "It reduces it, and it can reduce it substantially, but under the Net Billing Tariff now governing new California installations, it does not eliminate the monthly bill itself. You'll see real dollar charges in months when your banked credits run out, most commonly fall and winter. Only very large systems paired with significant battery storage get close to a genuine $0 recurring bill, and even those still see the four non-bypassable charges on any month with grid draw."
+      },
+      {
+        "question": "What does a real California utility bill look like after solar?",
+        "answer": "Smaller, but not zero. The Base Services Charge of about $24 a month stays at PG&E, SCE and SDG&E, and export credits only offset the matching import charges. In our illustration for an SDG&E Solar Billing Plan home at 2026 prices, a December bill comes to roughly $115 and an August bill roughly $48 after the $49.36 Climate Credit."
+      },
+      {
+        "question": "What is the average utility bill in California?",
+        "answer": "For electricity, the U.S. Energy Information Administration puts the 2024 California residential average at $160.86 a month for 503 kWh, against $142.26 nationally. California households use less electricity than the U.S. average but pay about 32 cents per kWh on average, nearly twice the national 16.5 cents. Gas, water and other utilities come on top."
       },
       {
         "question": "What's the difference between the monthly bill and the annual true-up?",
@@ -256,9 +274,34 @@
         "name": "MCE (Marin Clean Energy) — Net Energy Metering",
         "url": "https://www.mcecleanenergy.org/net-energy-metering/",
         "supports": "Illustrative example of how a Community Choice Aggregator splits billing with its host utility for generation vs. delivery, Base Services Charge, non-bypassable charges and gas — verified 2026-09-22"
+      },
+      {
+        "name": "U.S. EIA, 2024 Average Monthly Bill, Residential (Table 5A)",
+        "url": "https://www.eia.gov/electricity/sales_revenue_price/xls/table_5A.xlsx",
+        "supports": "California 2024 average residential bill ($160.86), consumption (503 kWh) and price (31.97 cents), and the U.S. average ($142.26); fetched 2026-09-23"
+      },
+      {
+        "name": "SCE — Base Services Charge FAQ",
+        "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+        "supports": "SCE Base Services Charge amounts ($24.15, $12.08, $6.00), monthly payment by NEM and Solar Billing Plan customers, and credits that can pay it; fetched 2026-09-23"
+      },
+      {
+        "name": "CPUC — California Climate Credit (2026)",
+        "url": "https://www.cpuc.ca.gov/climatecredit",
+        "supports": "2026 electric Climate Credit amounts and August/September timing for PG&E, SCE and SDG&E; fetched 2026-09-23"
+      },
+      {
+        "name": "SDG&E — Schedule EV-TOU-5 total rates, effective August 1, 2026",
+        "url": "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20EV-TOU-5%20Total%20Rates%20Table.pdf",
+        "supports": "EV-TOU-5 import prices and Base Services Charge used in the worked bill illustration; fetched 2026-09-23"
+      },
+      {
+        "name": "SDG&E — Solar Billing Plan export pricing (2026 hourly files)",
+        "url": "https://www.sdge.com/solar/solar-billing-plan/export-pricing",
+        "supports": "Weekday-noon export credit values for December and August 2026 used in the illustration; fetched 2026-09-23"
       }
     ],
-    "reviewedAt": "2026-09-22"
+    "reviewedAt": "2026-09-23"
   },
   {
     "slug": "does-solar-mean-free-electricity-california",
