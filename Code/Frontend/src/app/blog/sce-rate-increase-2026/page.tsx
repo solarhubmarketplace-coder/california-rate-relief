@@ -1,426 +1,323 @@
-import { SolarInquiry } from '@/components/growth/SolarInquiry';
-import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
-import { TrustedSources } from '@/components/shared/TrustedSources';
-import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { TrustedSources } from '@/components/shared/TrustedSources';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { SourceList } from '@/components/growth/DecisionPage';
+import { KeyFacts } from '@/components/trust/KeyFacts';
+import { FaqBlock } from '@/components/trust/FaqBlock';
+import { DataTable, GuideHeader, guideLink } from '@/components/growth/RateGuideParts';
+import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+
+const path = '/blog/sce-rate-increase-2026';
+const url = `https://ratereliefca.com${path}`;
+const title = 'SCE Rate Increase 2025–2026: History and Rate Chart';
+const h1 = 'SCE Rate Increases, 2024 to 2026: The History, a Rate Chart and What Comes Next';
+const description =
+  'Southern California Edison rate history since 2024: the 13.1% jump on October 1, 2025, the small 2026 cuts, a rate chart and who approves increases.';
+const published = '2026-04-14';
+const updated = '2026-09-23';
+
+const sources = rateSources(
+  'paoQ2_2026',
+  'paoQ4_2025',
+  'paoQ3_2025',
+  'paoQ2_2025',
+  'paoQ1_2025',
+  'paoQ4_2024',
+  'paoQ3_2024',
+  'paoQ2_2024',
+  'sceBsc',
+  'sceTou',
+  'sceTiered',
+  'cpucGrc',
+  'cpucGrcProcess',
+  'cpucCareFera',
+);
+
+/** Residential average rate, cents per kWh, as each CPUC Public Advocates Office report states it. */
+const chart: { label: string; cents: number; note: string; projected?: boolean }[] = [
+  { label: 'July 2024', cents: 33.2, note: 'Q2 2024 report' },
+  { label: 'Oct 1, 2024', cents: 32.5, note: 'Q3 2024 report' },
+  { label: 'Feb 2025', cents: 31.6, note: 'Q4 2024 report' },
+  { label: 'Apr 2025', cents: 31.4, note: 'Q1 2025 report' },
+  { label: 'Jun 1, 2025', cents: 31.2, note: 'Q2 2025 report' },
+  { label: 'Oct 1, 2025', cents: 35.3, note: 'Q3 2025 report' },
+  { label: 'Jan 1, 2026', cents: 34.5, note: 'Q4 2025 report' },
+  { label: 'Jun 1, 2026', cents: 34.4, note: 'Q2 2026 report' },
+  { label: 'Dec 31, 2026', cents: 33.5, note: 'Q2 2026 report, projected', projected: true },
+];
+
+const faqs = [
+  {
+    question: 'Did SCE raise rates in 2025?',
+    answer:
+      "Yes. On October 1, 2025, SCE's residential average rate rose about 13.1% when the CPUC's decision in SCE's 2025 general rate case went into rates, according to the CPUC Public Advocates Office. The average went from 31.2 cents per kWh in June 2025 to 35.3 cents. Earlier 2025 changes, on January 1, March 1 and June 1, were small decreases.",
+  },
+  {
+    question: 'Did SCE rates go up or down in 2026?',
+    answer:
+      "Down slightly. SCE's January 1, 2026 change lowered the residential average rate about 2.3%, and the June 1, 2026 change lowered it about 0.1%, leaving it at 34.4 cents per kWh. The Public Advocates Office notes that SCE's total revenue requirement still rose $444.2 million on January 1, 2026; the rate fell because the costs were spread differently.",
+  },
+  {
+    question: 'How much have SCE rates gone up over time?',
+    answer:
+      "The CPUC Public Advocates Office reports SCE's residential average rate up 4% over three years (June 2023 to June 2026), 56% over five years (January 2021 to June 2026) and 101% over ten years (January 2016 to June 2026), the largest ten-year increase of the three big investor-owned utilities.",
+  },
+  {
+    question: 'Who approves SCE rate increases?',
+    answer:
+      'The California Public Utilities Commission. It sets how much revenue SCE may collect in a general rate case, filed every four years, and in separate proceedings for fuel and power costs, wildfire costs and other accounts. SCE then files advice letters that turn those decisions into the prices on your bill. The same process applies to PG&E and SDG&E.',
+  },
+  {
+    question: 'Will SCE rates go up again?',
+    answer:
+      "The Public Advocates Office's July 2026 report projects SCE's residential average at about 33.5 cents per kWh by December 31, 2026, below today's 34.4 cents. It cautions that the projection counts only known requests and is likely to rise as SCE files new ones. This page does not project 2027.",
+  },
+  {
+    question: 'What is the SCE Base Services Charge?',
+    answer:
+      'A flat daily charge that replaced the old Basic Charge in November 2025, under Assembly Bill 205 and CPUC Decision 24-05-028. SCE lists it at about $24 a month for most customers, $12 for FERA customers and qualifying deed-restricted affordable housing, and $6 for CARE customers. SCE says the change lowered the price per kWh by about 10%.',
+  },
+];
 
 export const metadata: Metadata = {
-  title: "SCE Rates Decreased in 2026, But Remain High in Edison",
-  description: "Why Southern California Edison bills remain elevated despite minor 2026 rate adjustments: peak 4-9 PM windows, fixed charges, and solar alternatives.",
-  alternates: {
-    canonical: '/blog/sce-rate-increase-2026',
-  },
-  openGraph: {
-    title:
-      'SCE Rates Decreased in January 2026, But Remain Extremely High',
-    description:
-      'SCE\'s residential average fell about 2.3% on January 1, 2026, per the CPUC Public Advocates Office. Why bills stay high and what to do about it.',
-    type: 'article',
-    publishedTime: '2026-04-14T00:00:00Z',
-  },
+  title,
+  description,
+  alternates: { canonical: path },
+  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z` },
 };
 
-export default function SCERateIncrease2026() {
+export default function SceRateIncreasePage() {
   return (
-    <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"SCE Rates Decreased in January 2026, But Remain Extremely High"} url="https://ratereliefca.com/blog/sce-rate-increase-2026" datePublished="2026-04-14" dateModified="2026-04-24" description={"SCE rates actually decreased 2-3% as of January 1, 2026, but remain among the highest in the country at 34.5¢/kWh. Learn why rates are still crushing bills, what you can do, and whether solar makes sense."} />
+    <PublicLayout breadcrumbLabel="SCE rate increases" breadcrumbParent={{ label: 'California utility rate tracker', href: '/california-utility-rate-tracker' }}>
+      <ArticleJsonLd variant="Article" domain="crr" headline={title} url={url} datePublished={published} dateModified={updated} description={description} />
       <Header />
-      <main className='py-16 bg-background'>
-        <div className='container mx-auto px-4'>
-          <article className='max-w-3xl mx-auto'>
-            {/* Breadcrumb */}
-            <nav className='mb-8'>
-              <Link
-                href='/blog'
-                className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'
-              >
-                <ArrowLeft className='h-4 w-4' />
-                Back to Blog
-              </Link>
-            </nav>
+      <main className="bg-background py-16">
+        <div className="container mx-auto px-4">
+          <article className="mx-auto max-w-3xl">
+            <GuideHeader
+              parent={{ label: 'California utility rate tracker', href: '/california-utility-rate-tracker' }}
+              current="SCE rate increases"
+              kicker="SCE · Utility rates"
+              title={h1}
+              updated={updated}
+              sourceCount={sources.length}
+            />
 
-            {/* Article Header */}
-            <header className='mb-10'>
-              <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>
-                Utility Rates
-              </span>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                SCE Rates Decreased in January 2026, But Remain Extremely High
-              </h1>
-              <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'>
-                  <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-04-14'>April 14, 2026</time>
-                </div>
-                <div className='flex items-center gap-1'>
-                  <Clock className='h-4 w-4' />
-                  <span>7 min read</span>
-                </div>
-              </div>
-            </header>
-
-            {/* Article Body */}
-            <div className='prose prose-slate max-w-none'>
-              <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Southern California Edison&apos;s residential average rate fell about 2.3% on January 1, 2026, to 34.5 cents per kilowatt-hour, and stood at 34.4 cents as of June 1, 2026 (CPUC Public Advocates Office, Q1 and Q2 2026 Electric Rates Reports). California&apos;s average residential price was 34.74 cents in June 2026, second only to Hawaii among the states and nearly double the U.S. average of 18.34 cents (EIA, Electric Power Monthly, Table 5.6.A). If you&apos;re an SCE customer, this article breaks down what&apos;s really happening, why rates are still crushing, and what you can actually do about it.
+            <div className="prose prose-slate max-w-none">
+              <p className="text-lg leading-relaxed text-foreground/85">
+                SCE&apos;s last big rate increase took effect October 1, 2025, when its residential average rate rose about
+                13.1% to 35.3 cents per kWh as the CPUC&apos;s 2025 rate case decision went into rates. Two small cuts in 2026
+                brought it to 34.4 cents on June 1, 2026. That is still about 10% above June 2025 and roughly double 2016.
+              </p>
+              <p>
+                Every average on this page is the CPUC Public Advocates Office&apos;s residential average rate: all SCE
+                residential revenue divided by residential kWh, excluding the California Climate Credit. It is the same basis
+                our{' '}
+                <Link href="/california-utility-rate-tracker" className={guideLink}>
+                  rate tracker for PG&amp;E, SCE, SDG&amp;E and SMUD
+                </Link>{' '}
+                uses, so the two pages agree. The price on your own bill depends on your plan and when you use power.
               </p>
 
+              <div className="not-prose">
+                <KeyFacts
+                  heading="SCE rates at a glance"
+                  facts={[
+                    { label: 'Residential average, June 1, 2026', value: '34.4¢/kWh', source: { publisher: 'CPUC Public Advocates Office', date: RATE_SOURCES_CHECKED, url: SRC.paoQ2_2026.url } },
+                    { label: 'October 1, 2025 change', value: '+13.1%', note: '2025 general rate case', source: { publisher: 'CPUC Public Advocates Office', date: RATE_SOURCES_CHECKED, url: SRC.paoQ3_2025.url } },
+                    { label: 'Ten-year change, Jan 2016 to Jun 2026', value: '+101%', source: { publisher: 'CPUC Public Advocates Office', date: RATE_SOURCES_CHECKED, url: SRC.paoQ2_2026.url } },
+                    { label: 'Projected, Dec 31, 2026', value: '33.5¢/kWh', note: 'Known requests only; likely to rise', source: { publisher: 'CPUC Public Advocates Office', date: RATE_SOURCES_CHECKED, url: SRC.paoQ2_2026.url } },
+                  ]}
+                />
+              </div>
+
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
-              <div className='not-prose my-8'>
+              <div className="not-prose my-8">
                 <HeroQuickCheck topic="SCE rate increase and solar comparison" utility="sce" />
               </div>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                What&apos;s Actually Changing
-              </h2>
+              <h2>SCE rate chart, 2024 to 2026</h2>
+              <p>
+                The chart plots SCE&apos;s residential average rate at each point the Public Advocates Office reported it. The
+                bars start at zero, so the October 2025 step looks as large as it really is: about four cents per kWh in one
+                day.
+              </p>
+            </div>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                SCE&apos;s residential average was 34.4 cents per kilowatt-hour (kWh)
-                as of June 1, 2026 (CPUC Public Advocates Office). For context, the
-                U.S. average residential price was 18.34 cents per kWh in June 2026
-                (EIA). What matters more for your bill is the price during the hours
-                you use power: on a time-of-use plan, the evening peak costs the
-                most, and your plan&apos;s tariff sheet lists the exact prices.
+            <figure className="my-6" aria-labelledby="sce-chart-caption">
+              <figcaption id="sce-chart-caption" className="mb-3 text-sm font-semibold text-foreground">
+                SCE residential average rate, cents per kWh (excludes the California Climate Credit)
+              </figcaption>
+              <ul className="space-y-2">
+                {chart.map((p) => (
+                  <li key={p.label} className="grid grid-cols-[6.5rem_1fr_3.5rem] items-center gap-3 text-sm">
+                    <span className="text-muted-foreground">{p.label}</span>
+                    <span className="h-4 rounded bg-muted" aria-hidden="true">
+                      <span
+                        className={`block h-4 rounded ${p.projected ? 'bg-primary/40' : 'bg-primary'}`}
+                        style={{ width: `${(p.cents / 40) * 100}%` }}
+                      />
+                    </span>
+                    <span className="text-right font-semibold tabular-nums">{p.cents.toFixed(1)}¢</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 text-xs text-muted-foreground">
+                Source: CPUC Public Advocates Office quarterly Electric Rates Reports, Q2 2024 through Q2 2026, checked
+                September 23, 2026. The lighter bar is the office&apos;s projection, which counts only requests already filed.
+              </p>
+            </figure>
+
+            <div className="prose prose-slate max-w-none">
+              <h2>Every SCE rate change since mid-2024</h2>
+              <p>
+                From 2024 through 2026, SCE changed rates on January 1, March 1, June 1 or October 1. Each change is an advice
+                letter that puts a CPUC decision into prices. The table lists each one the Public Advocates Office
+                reported, with the change in the residential average rate and the main reason.
+              </p>
+              <DataTable
+                caption="SCE residential rate changes, June 2024 to June 2026"
+                columns={['Effective', 'Advice letter', 'Change in average rate', 'Main driver']}
+                rows={[
+                  ['June 1, 2024', '5307-E', 'About −1.6%', 'Lower 2023 fuel-cost trigger and wildfire-expense balances, partly offset by 2021 wildfire mitigation costs'],
+                  ['October 1, 2024', '5379-E', 'About −2.2%', 'A $742 million refund of over-collected generation costs; interim recovery of $210 million in 2022 wildfire costs'],
+                  ['January 1, 2025', '5449-E', 'About −2.6%', '2025 fuel and power forecast $616.3 million lower; cost-of-capital update'],
+                  ['March 1, 2025', '5484-E', 'About −0.8%', 'Older rate-case and uncollectible balances finished recovering'],
+                  ['June 1, 2025', '5555-E', 'About −0.6%', '$379.0 million of 2021 wildfire mitigation costs rolled off'],
+                  ['October 1, 2025', '5643-E', 'About +13.1%', '2025 general rate case: $1.18 billion more base revenue, plus $902 million owed for January–September 2025'],
+                  ['January 1, 2026', '5725-E', 'About −2.3% (vs. Nov. 15, 2025)', 'Rate case base revenue set at $10.187 billion; 2026 fuel and power forecast'],
+                  ['June 1, 2026', '5829-E', 'About −0.1%', 'Wildfire self-insurance up to $650 million, offset by a smaller energy-efficiency budget'],
+                ]}
+                note={<>Source: CPUC Public Advocates Office Electric Rates Reports for Q2 2024, Q3 2024, Q4 2024, Q1 2025, Q2 2025, Q3 2025, Q4 2025 and Q2 2026, checked September 23, 2026. Percentages compare with the rates in effect just before each change.</>}
+              />
+
+              <h2>Why SCE rates jumped in October 2025</h2>
+              <p>
+                Utilities in California cannot raise base rates on their own. Every four years the CPUC sets how much SCE may
+                spend running and rebuilding its system in a general rate case. SCE&apos;s 2025 case (application A.23-05-010)
+                was decided in Decision 25-09-030, late in the year it was meant to cover. SCE&apos;s October 1, 2025 advice
+                letter added $1.18 billion a year in authorized base revenue and began collecting $902 million, spread over 24
+                months, that the decision allowed for January through September 2025. In total, the Public Advocates Office
+                counted a $1.69 billion increase from SCE&apos;s June 1, 2025 revenue requirement.
+              </p>
+              <p>
+                That is why the 2025 increase landed all at once: revenue approved for the whole year, including months already
+                past, arrived in a single step. The same filing set up SCE&apos;s income-graduated Base Services Charge, which
+                SCE says appeared on bills in November 2025; the office notes it had no effect on the class average.
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                On top of the per-kWh price, SCE began applying a monthly fixed
-                charge of $24.15 for customers not on CARE or FERA in late 2025,
-                under CPUC Decision 24-05-028. This flat fee
-                appears on every residential bill regardless of how much electricity
-                you use. (We have a{' '}
-                <Link
-                  href='/blog/california-24-dollar-fixed-charge-explained'
-                  className='text-primary hover:underline'
-                >
-                  separate deep dive on the fixed charge here
+              <h2>What changed on SCE bills in 2026</h2>
+              <p>
+                <strong>November 2025: the Base Services Charge.</strong> SCE replaced its old Basic Charge with a flat Base
+                Services Charge and cut the price of each kWh by about 10%, part of the bill restructuring Assembly Bill 205
+                required. SCE lists the
+                charge at $0.79 a day on its time-of-use and tiered plans, about $24 a month for most homes, $12 for FERA
+                customers and $6 for CARE customers. Low-use homes can see higher bills; high-use homes can see lower ones.
+              </p>
+              <p>
+                <strong>January 1, 2026: about −2.3%.</strong> The rate case decision set SCE&apos;s base revenue at $10.187
+                billion, and SCE&apos;s 2026 fuel and purchased-power revenue requirement was set at about $4.7 billion. Total revenue still
+                rose $444.2 million, but the residential average fell to 34.5 cents.
+              </p>
+              <p>
+                <strong>June 1, 2026: about −0.1%.</strong> SCE&apos;s wildfire self-insurance budget rose to $650 million, up
+                $380.7 million, while its 2026 energy-efficiency budget was cut by $240.3 million and a 2023 fuel-cost review
+                returned $73.4 million. The net result was a residential average of 34.4 cents.
+              </p>
+              <p>
+                For the prices on individual plans, see{' '}
+                <Link href="/blog/sce-time-of-use-rates-2026" className={guideLink}>
+                  SCE&apos;s time-of-use plans and peak hours
+                </Link>{' '}
+                and the full list of{' '}
+                <Link href="/blog/sce-rate-schedules" className={guideLink}>
+                  SCE residential rate schedules
                 </Link>
-                .)
+                . SCE&apos;s tiered plan listed Tier 1 at 30 cents and Tier 2 at 40 cents per kWh as of June 1, 2026.
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                A household with central air in the Inland Empire or San Fernando
-                Valley uses far more in summer than in winter, so look at your own
-                twelve months of bills rather than a typical-home estimate.
+              <h2>SCE rate increase history over the longer run</h2>
+              <p>
+                Short-term cuts hide the long trend. The Public Advocates Office puts SCE&apos;s residential average up 4% over
+                the three years to June 2026, 56% since January 2021 and 101% since January 2016. SCE&apos;s ten-year rise is
+                the largest of California&apos;s three big investor-owned utilities; PG&amp;E rose 69% and SDG&amp;E 97% over
+                the same span. The office names wildfire mitigation and liability, transmission and distribution spending,
+                and rooftop solar incentives as the main statewide drivers, citing the CPUC&apos;s 2025 SB 695 report.
+              </p>
+              <p>
+                Wildfire costs are a large piece for SCE. The office counts $2.69 billion of SCE&apos;s 2026 revenue
+                requirement as wildfire-related, about 14% of the total, up from 9% in January 2023.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Why SCE Rates Keep Going Up
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Understanding the &quot;why&quot; matters because it tells you
-                whether this is a one-time adjustment or an ongoing trend. The
-                short answer: it&apos;s ongoing. Here are the main cost drivers.
+              <h2>Who approves SCE rate increases?</h2>
+              <p>
+                The California Public Utilities Commission. In a general rate case, the CPUC first decides the total revenue
+                a utility may collect, then how to split it among residential, business and other customers. Consumer
+                advocates, cities and other parties can challenge the utility&apos;s forecasts, and the CPUC holds public
+                participation hearings in the service area. Separate proceedings handle fuel and power costs, wildfire costs
+                and one-time balances, which is why SCE rates move several times a year. PG&amp;E and SDG&amp;E rate
+                increases go through the same process.
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Wildfire mitigation.</strong> SCE is spending billions to
-                underground power lines, harden the grid, and deploy monitoring
-                systems in high-fire-risk zones. After the devastating wildfires
-                in recent years and the associated liability, this spending isn&apos;t
-                discretionary — it&apos;s mandated. These capital costs are passed
-                through to ratepayers over decades.
+              <h2>Will SCE rates go up again?</h2>
+              <p>
+                The Public Advocates Office&apos;s July 2026 report projects SCE&apos;s residential average at about 33.5 cents
+                by December 31, 2026. It warns that the forecast includes only requests already filed and will likely rise as
+                SCE files more. The{' '}
+                <Link href="/california-utility-rate-tracker" className={guideLink}>
+                  dated rate tracker
+                </Link>{' '}
+                is updated when each new Public Advocates Office report comes out.
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Grid modernization.</strong> California&apos;s push toward
-                100% clean energy and electric vehicle adoption requires massive
-                grid upgrades — new transmission lines, substation expansions, and
-                smart grid technology. Every ratepayer shares these costs regardless
-                of whether they drive an EV.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Multi-year rate cases.</strong> Utility revenue is set in
-                multi-year general rate cases before the CPUC, so rate changes
-                arrive in steps over several years. You can review SCE&apos;s
-                rate case filings on the{' '}
-                <a
-                  href='https://www.cpuc.ca.gov/industries-and-topics/electrical-energy'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  CPUC website
-                </a>
+              <h2>What an SCE customer can do about it</h2>
+              <p>
+                Start with the plan. SCE&apos;s rate comparison in My Account prices your last year of usage on each plan you
+                qualify for. If your income is under the CPUC&apos;s limits, CARE takes 30% to 35% off the electric bill and
+                FERA takes 18%, and both lower the Base Services Charge. For a bill that already looks wrong, work through{' '}
+                <Link href="/blog/why-is-my-sce-bill-so-high" className={guideLink}>
+                  why an Edison bill runs high
+                </Link>
                 .
               </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Step 1: Check if You&apos;re on the Right Rate Plan
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Before doing anything else, check whether you&apos;re on the most
-                cost-effective SCE rate plan for your usage pattern. SCE&apos;s
-                online rate comparison uses your actual usage history to show
-                what you would pay on each plan.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>How to do it:</strong> Log into your{' '}
-                <a
-                  href='https://www.sce.com/mysce/myaccount'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  SCE My Account
-                </a>{' '}
-                portal. Navigate to &quot;My Rate Plan&quot; or &quot;Rate Plan
-                Comparison.&quot; SCE will show you what you&apos;d pay on each
-                available plan based on your last 12 months of actual usage. If a
-                different plan saves you money, you can switch online in minutes
-                with no fees.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                The main plans to compare are TOU-D-4-9PM (peak hours 4-9 PM),
-                TOU-D-5-8PM (peak hours 5-8 PM), and TOU-D-PRIME (for EV
-                owners). If you can run your dishwasher, laundry, and EV charger
-                outside peak hours, the right TOU plan may cost you less than your
-                current one; the rate comparison shows the difference for your
-                own usage.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Step 2: Reduce Your Peak-Hour Usage
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                SCE&apos;s time-of-use prices are highest in the evening peak and
-                lower at other times; your plan&apos;s tariff sheet lists the exact
-                prices. Shifting
-                heavy electricity use away from 4-9 PM makes a real difference.
-                Practical moves include setting your thermostat to pre-cool the
-                house by 3:30 PM, running the dishwasher and laundry before 4 PM
-                or after 9 PM, and charging your EV overnight.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                A smart thermostat (Nest, Ecobee, etc.) can automate this, and
-                SCE sometimes offers rebates on them through their{' '}
-                <a
-                  href='https://www.sce.com/residential/rebates-savings'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  rebates and savings page
-                </a>
-                . Check there for current offers before buying one at full price.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Step 3: Check for Discount Programs You Might Qualify For
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                SCE offers two income-based discount programs that many qualifying
-                households don&apos;t know about or haven&apos;t applied for.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>CARE (California Alternate Rates for Energy)</strong>{' '}
-                provides a 30-35% discount on the electric bill if your household
-                income falls below its limits, according to the CPUC. The limits
-                change each June; check the current table on{' '}
-                <a
-                  href='https://www.sce.com/residential/assistance/care-fera'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  SCE&apos;s CARE/FERA page
-                </a>
-                ). If you qualify, this is the single biggest bill reduction
-                available to you.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>FERA (Family Electric Rate Assistance)</strong> offers an
-                18% discount on the electric bill for households of any size with
-                income between the CARE limit and 250% of the federal poverty
-                guidelines, according to the CPUC. It&apos;s worth checking even if you think
-                you might not qualify.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Medical Baseline:</strong> If anyone in your household
-                relies on medical equipment that uses electricity (CPAP machines,
-                home dialysis, electric wheelchairs, etc.), you may qualify for
-                Medical Baseline, which gives you extra electricity at the lowest
-                tier rate.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Step 4: Evaluate Longer-Term Options
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                If the steps above aren&apos;t enough — or you want to protect
-                yourself against future rate changes — there are bigger moves
-                worth evaluating.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Home energy efficiency upgrades.</strong> Attic insulation,
-                air sealing, and window upgrades reduce your cooling load, which
-                is the single biggest electricity driver for most SCE households.
-                California offers energy efficiency financing through programs like{' '}
-                <a
-                  href='https://gogreenfinancing.com'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  GoGreen Financing
-                </a>{' '}
-                with loans for qualifying upgrades. If your home is poorly
-                insulated, this can reduce your cooling usage.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Solar (purchased system).</strong> Buying a solar system
-                outright or through a loan gives you full ownership. There is no
-                federal residential credit on a system installed in 2026: IRC
-                &sect; 25D does not apply to expenditures made after December 31,
-                2025. How long a purchase takes to pay back depends on the price,
-                how much of the output you use yourself and your rate plan, so ask
-                each bidder to show its assumptions. This makes more sense if you
-                plan to stay in your home and have the capital or financing. Get
-                at least three written quotes for the same system to compare
-                installers.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Solar PPA (Power Purchase Agreement).</strong> If you
-                don&apos;t want to buy a system or take out a loan, a PPA puts
-                solar on your roof that the provider owns, often with no down
-                payment. You pay a set price per kWh for the energy the panels
-                produce, usually with an annual escalator, and you still pay SCE
-                for grid power and its fixed charge. The trade-off is you
-                don&apos;t own the system and can&apos;t claim a tax credit. Add
-                up every payment in the contract before comparing it with your
-                SCE bills.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Community solar.</strong> If your roof isn&apos;t suitable
-                for panels (too much shade, wrong orientation, HOA restrictions),
-                community solar programs let you subscribe to a share of a local
-                solar farm and receive bill credits. Availability varies by area —
-                check{' '}
-                <a
-                  href='https://www.communitysolaraccess.org'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  Community Solar Access
-                </a>{' '}
-                for options near you.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                When Solar Doesn&apos;t Make Sense
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Solar isn&apos;t the right move for everyone, even with rates this
-                high. It generally doesn&apos;t make financial sense if your
-                monthly bill is already low, if you&apos;re planning to sell your home within the
-                next 2-3 years (though a PPA can be transferred to the buyer), if
-                your roof has heavy shading from trees or neighboring buildings
-                that can&apos;t be mitigated, or if your roof needs replacement
-                in the next few years (do the roof first, then solar).
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                If you&apos;re not sure about your roof&apos;s solar potential,
-                Google&apos;s{' '}
-                <a
-                  href='https://sunroof.withgoogle.com'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary hover:underline'
-                >
-                  Project Sunroof tool
-                </a>{' '}
-                can give you a rough estimate of your home&apos;s solar potential
-                using satellite imagery.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                The Bottom Line
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                SCE&apos;s average residential rate was 34.4 cents per kWh as of June
-                1, 2026, per the CPUC Public Advocates Office&apos;s Q2 2026 Electric
-                Rates Report. The first step costs nothing but time: log into your
-                SCE account and make sure you&apos;re on the plan that fits your
-                usage. After that, check if you qualify for CARE or FERA
-                discounts. For longer-term protection, evaluate whether solar (purchased
-                or PPA), energy efficiency upgrades, or community solar makes sense for
-                your specific situation. The right answer depends on your home,
-                your bill, and how long you plan to stay.
+              <p>
+                If you are weighing solar against these rates, the useful question is how SCE credits exports under the net
+                billing tariff, not the average rate alone. Our{' '}
+                <Link href="/blog/net-billing-vs-net-metering-california" className={guideLink}>
+                  net billing vs. net metering explainer
+                </Link>{' '}
+                and{' '}
+                <Link href="/battery/battery-payback-nem-3-california" className={guideLink}>
+                  battery payback under NEM 3.0
+                </Link>{' '}
+                cover that next step.
               </p>
             </div>
 
-            {/* CTA — soft, one option among many */}
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>
-                Curious What a Fixed Solar Rate Would Look Like?
-              </h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                If you are exploring a PPA and want a provider to review your
-                project, you can send your details through the form on this
-                page. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
+            <div className="not-prose">
+              <FaqBlock items={faqs} />
+              <SourceList sources={sources} sourceCheckedDate={RATE_SOURCES_CHECKED} />
+              <p className="mt-4 text-sm text-muted-foreground">
+                California Rate Relief is a referral service. We are not a licensed contractor.
               </p>
-              <Link
-                href='#solar-inquiry'
-                className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-              >
-                Request a solar review
-                <ArrowRight className='h-4 w-4' />
-              </Link>
+              <HubSpokeLinks hub="utility_rates" currentPath={path} />
             </div>
 
-            <div className='mt-8'>
-              <SolarInquiry utility="sce" topic="SCE rate increase and solar comparison" />
-            </div>
-
-            {/* Navigation */}
-            <div className='mt-10 pt-8 border-t border-border flex justify-between items-center'>
-              <Link
-                href='/blog'
-                className='text-primary hover:underline font-medium inline-flex items-center gap-2'
-              >
-                <ArrowLeft className='h-4 w-4' />
-                All Articles
-              </Link>
-              <Link
-                href='/blog/california-24-dollar-fixed-charge-explained'
-                className='text-primary hover:underline font-medium inline-flex items-center gap-2'
-              >
-                Next Article
-                <ArrowRight className='h-4 w-4' />
-              </Link>
-            </div>
+            <SolarInquiry utility="sce" topic="SCE rate increase and solar comparison" heading="Compare a Solar Plan With Your SCE Bill" />
           </article>
         </div>
       </main>
       <Footer />
-    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
-    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="general" /></div>
+      <div className="container mx-auto max-w-3xl px-4">
+        <TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
+      </div>
     </PublicLayout>
   );
 }
