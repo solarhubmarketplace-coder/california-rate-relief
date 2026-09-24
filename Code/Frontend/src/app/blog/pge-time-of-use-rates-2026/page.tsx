@@ -26,6 +26,10 @@ const hub = { label: 'California utility rate tracker', href: '/california-utili
 
 const sources = rateSources(
   'pgeResRatesCurrent',
+  'pgeEtoucTariff',
+  'pgeEelecTariff',
+  'pgeEv2Tariff',
+  'pgeSolarBill',
   'pgeResRatesJan2026',
   'pgeResRatesSep2025',
   'pgeResRatesMar2025',
@@ -48,6 +52,21 @@ const faqs = [
     question: 'What are PG&E peak hours?',
     answer:
       "4 p.m. to 9 p.m. every day, including weekends and holidays, on E-TOU-C, EV2-A and E-ELEC. On E-TOU-D, peak is 5 p.m. to 8 p.m. on non-holiday weekdays only. EV2-A and E-ELEC also have a partial-peak price from 3 to 4 p.m. and 9 p.m. to midnight. The separately metered EV-B plan uses different hours.",
+  },
+  {
+    question: 'Is PG&E E-TOU-C peak 4 to 9 p.m. every day?',
+    answer:
+      "Yes. PG&E's Schedule E-TOU-C is titled Residential Time-of-Use (Peak Pricing 4 - 9 p.m. Every Day), and the tariff applies the 4-to-9 window on all days in both summer and winter, weekends and holidays included. From March 1, 2026 the peak price is 52.240 cents per kWh in summer and 39.757 cents in winter, before the 8.140-cent baseline credit.",
+  },
+  {
+    question: 'What is the best PG&E rate plan for solar?',
+    answer:
+      "For new solar on PG&E's Solar Billing Plan, E-ELEC, which the CPUC requires. For existing NEM 2.0 customers, whichever time-of-use plan fits your hourly usage and exports: E-TOU-C, E-TOU-D, or EV2-A or E-ELEC if you have an EV, battery or heat pump. PG&E's rate comparison with your interval data is the deciding test.",
+  },
+  {
+    question: 'What time of day are PG&E rates the lowest?',
+    answer:
+      'On EV2-A and E-ELEC, midnight to 3 p.m. every day; EV2-A charges 22.558 cents then. On E-TOU-C, any hour outside 4 to 9 p.m. On E-TOU-D, any hour outside 5 to 8 p.m. on weekdays, plus all weekend.',
   },
   {
     question: 'What are PG&E off-peak hours?',
@@ -179,6 +198,13 @@ export default function PGETimeOfUseRates2026() {
                 the peak and off-peak price.
               </p>
               <p>
+                PG&amp;E&apos;s own tariff title spells out the rule: Residential Time-of-Use (Peak Pricing 4 - 9 p.m. Every Day).
+                The tariff lists the same 4-to-9 window for summer and winter, on all days, so there is no weekend or holiday
+                break. One more tariff detail: PG&amp;E&apos;s first-year bill protection, which refunds the difference if E-TOU-C
+                cost more than the tiered E-1 plan, does not apply to customers who asked to enroll after May 4, 2022 or who
+                moved to E-TOU-C from another time-of-use plan.
+              </p>
+              <p>
                 <strong>It may fit when</strong> household use stays near baseline, evening use is light all week, and big
                 loads can run before 4 p.m. or after 9 p.m. <strong>It may be a poor fit when</strong> cooking, cooling,
                 laundry, a pool pump or EV charging regularly land between 4 and 9, especially on weekends. PG&amp;E&apos;s
@@ -204,22 +230,15 @@ export default function PGETimeOfUseRates2026() {
                 high summer peak, 53.809 cents, and a partial-peak price of 42.760 cents from 3 to 4 p.m. and 9 p.m. to
                 midnight. If the car charges after midnight and the house avoids 4 to 9, the plan rewards it.
               </p>
-              <DataTable
-                caption="PG&E EV2-A off-peak price per kWh over time"
-                columns={['Effective', 'Off-peak price', 'Fixed daily charge']}
-                rows={[
-                  ['Jan 1, 2024', '34.462¢', 'Minimum bill only'],
-                  ['Apr 1, 2024', '35.210¢', 'Minimum bill only'],
-                  ['Jul 1, 2024', '30.924¢', 'Minimum bill only'],
-                  ['Oct 1, 2024', '32.454¢', 'Minimum bill only'],
-                  ['Jan 1, 2025', '30.339¢', 'Minimum bill only'],
-                  ['Mar 1, 2025', '31.026¢ (summer), 31.027¢ (winter)', 'Minimum bill only'],
-                  ['Sep 1, 2025', '30.036¢', 'Minimum bill only'],
-                  ['Jan 1, 2026', '28.474¢', 'Minimum bill only'],
-                  ['Mar 1, 2026', '22.558¢', 'Base Services Charge, $0.79343/day (standard)'],
-                ]}
-                note={<>Source: PG&amp;E residential rate tables for each period (Electric Vehicle and Technology tab), from PG&amp;E&apos;s electric rates archive, checked September 23, 2026.</>}
-              />
+              <p>
+                EV2-A&apos;s off-peak price fell from 34.462 cents in January 2024 to 22.558 cents in March 2026, the last step
+                coming with the Base Services Charge. The full price history, eligibility rules and charging-cost comparisons are
+                in{' '}
+                <Link href="/blog/pge-ev-rates" className={guideLink}>
+                  PG&amp;E EV rate plans: EV2-A, EV-B and E-ELEC
+                </Link>
+                .
+              </p>
               <p>
                 PG&amp;E also offers EV-B, which puts the car on its own second meter. EV-B has its own seasons, May through
                 October for summer, and its own hours: peak 2 to 9 p.m. on weekdays and 3 to 7 p.m. on weekends and
@@ -285,6 +304,47 @@ export default function PGETimeOfUseRates2026() {
                 total would count generation twice.
               </p>
 
+              <h2>What time of day are PG&amp;E rates lowest?</h2>
+              <p>
+                On EV2-A and E-ELEC, midnight to 3 p.m. every day, when EV2-A charges 22.558 cents. On E-TOU-C, every hour
+                outside 4 to 9 p.m. costs the same off-peak price, 39.940 cents in summer and 36.757 cents in winter before the
+                baseline credit. On E-TOU-D, every hour outside 5 to 8 p.m. on weekdays, and all weekend. So the cheapest PG&amp;E
+                hours depend on the plan: overnight and midday on the EV and electric-home plans, and anything but the early
+                evening on the others. For how PG&amp;E&apos;s hours compare with other utilities, see{' '}
+                <Link href="/blog/electricity-peak-hours-california" className={guideLink}>
+                  California electricity peak hours by utility
+                </Link>
+                .
+              </p>
+
+              <h2>The best PG&amp;E rate plan for solar</h2>
+              <p>
+                <strong>New solar: E-ELEC, with no choice.</strong> The CPUC requires PG&amp;E customers on the net billing
+                tariff, which PG&amp;E calls the Solar Billing Plan, to take service on E-ELEC, and PG&amp;E&apos;s E-ELEC tariff
+                says those customers do not need an EV, battery or heat pump to qualify. That makes E-ELEC&apos;s shape the one to
+                design around: 55.214 cents on summer evenings, 28.468 to 33.358 cents off-peak. A battery that carries midday
+                solar into 4 to 9 p.m. is what the plan rewards.
+              </p>
+              <p>
+                <strong>Existing NEM solar: a time-of-use plan you choose.</strong> The CPUC requires NEM 2.0 customers to be on a
+                time-of-use rate but does not tie them to E-ELEC. E-ELEC is open to NEM and NEM 2.0 customers only if they have an
+                eligible EV, battery or heat pump; EV2-A requires an EV, or a battery or heat pump under its pilot rules. Under
+                NEM, exports are credited at the retail price of the hour they happen, so the plan changes both what you pay and
+                what you earn. Run PG&amp;E&apos;s rate comparison on a full year of interval data before switching.
+              </p>
+              <p>
+                Either way, PG&amp;E says the Base Services Charge, about $24 a month for most customers, cannot be offset by
+                generation credits. How to read the monthly solar statement is in{' '}
+                <Link href="/blog/how-to-read-pge-bill" className={guideLink}>
+                  how to read a PG&amp;E bill
+                </Link>
+                , and how solar rate plans compare across utilities is in{' '}
+                <Link href="/blog/solar-rate" className={guideLink}>
+                  solar rates in California
+                </Link>
+                .
+              </p>
+
               <h2>How to pick a plan without guessing</h2>
               <ol>
                 <li>Download at least 12 months of hourly or interval usage from your PG&amp;E account.</li>
@@ -295,11 +355,9 @@ export default function PGETimeOfUseRates2026() {
                 <li>After switching, compare the next full billing cycles on kWh per day, not dollars alone.</li>
               </ol>
 
-              <h2>Does solar or a battery change the best plan?</h2>
+              <h2>Before you change plans or add equipment</h2>
               <p>
-                It can, and for new solar it is decided for you: the CPUC&apos;s net billing tariff puts PG&amp;E solar
-                customers on E-ELEC, and export credits are usually lower than retail prices except on some late summer
-                evenings. A battery that stores midday solar for the 4-to-9 window is the main lever. Start with the{' '}
+                If the bill itself is the worry, start with the{' '}
                 <Link href="/blog/why-is-my-pge-bill-so-high" className={guideLink}>
                   PG&amp;E high-bill checklist
                 </Link>
@@ -311,7 +369,11 @@ export default function PGETimeOfUseRates2026() {
                 <Link href="/battery/battery-payback-nem-3-california" className={guideLink}>
                   battery payback under NEM 3.0
                 </Link>{' '}
-                before signing anything.
+                before signing anything. Practical steps to cut the bill on your current plan are in{' '}
+                <Link href="/blog/how-to-lower-pge-bill" className={guideLink}>
+                  how to lower a PG&amp;E bill
+                </Link>
+                .
               </p>
             </div>
 

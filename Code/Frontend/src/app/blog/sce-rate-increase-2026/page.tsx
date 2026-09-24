@@ -228,7 +228,7 @@ export default function SceRateIncreasePage() {
                 customers and $6 for CARE customers. Low-use homes can see higher bills; high-use homes can see lower ones.
               </p>
               <p>
-                SCE&apos;s own FAQ spells out what else moved on the bill. The charge appears as &ldquo;Base Services
+                SCE&apos;s own questions-and-answers page on the charge spells out what else moved on the bill. The charge appears as &ldquo;Base Services
                 Charge&rdquo; under Delivery Charges, and the exact amount depends on the days in your billing cycle: $24.15 a
                 month for most customers, $12.08 for FERA customers and qualifying deed-restricted affordable housing, and $6.00
                 for CARE customers. The old minimum charge no longer applies; a month with zero usage now bills the Base Services
