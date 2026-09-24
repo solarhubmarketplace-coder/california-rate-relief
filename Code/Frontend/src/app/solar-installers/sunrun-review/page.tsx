@@ -1,9 +1,10 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import type { Metadata } from 'next';
 import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
-import { RelatedGuides } from "@/components/shared/RelatedGuides";
+import { RelatedGuides } from '@/components/shared/RelatedGuides';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
@@ -11,20 +12,27 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { KeyFacts } from '@/components/trust/KeyFacts';
+import { FaqBlock } from '@/components/trust/FaqBlock';
+import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
+import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
 
-const metaTitle = "Sunrun Reviews (2026): Is Sunrun Going Out of Business?";
+const path = '/solar-installers/sunrun-review';
+const checked = '2026-09-23';
+
+const metaTitle = 'Sunrun Reviews (2026): Is Sunrun Going Out of Business?';
 const metaDescription =
-  "What Sunrun's investor site showed on Sept. 18, 2026 about bankruptcy or a wind-down, plus PPA vs. lease terms, the Sunrun Guarantee and Vivint contracts.";
+  "Sunrun's own filings and BBB record as of Sept. 23, 2026: business status, what it costs, the Sunrun Guarantee, roof work, Tesla ties and Vivint contracts.";
 
 export const metadata: Metadata = {
   title: metaTitle,
   description: metaDescription,
-  alternates: { canonical: '/solar-installers/sunrun-review' },
+  alternates: { canonical: path },
   openGraph: {
     title: metaTitle,
     description: metaDescription,
     type: 'article',
-    url: 'https://ratereliefca.com/solar-installers/sunrun-review',
+    url: `https://ratereliefca.com${path}`,
     publishedTime: '2026-04-22T00:00:00Z',
     images: [CRR_SOCIAL_CARD],
   },
@@ -34,11 +42,10 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Sunrun Reviews (2026): Business Status, Contracts and Vivint Solar',
-  description:
-    'An honest 2026 review of Sunrun for California homeowners, including what the Vivint Solar acquisition means for legacy customers.',
+  headline: 'Sunrun Reviews (2026): Business Status, Complaints, Contracts and Vivint Solar',
+  description: metaDescription,
   datePublished: '2026-04-22',
-  dateModified: '2026-09-22',
+  dateModified: checked,
   author: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',
@@ -48,812 +55,398 @@ const articleSchema = {
     '@type': 'Organization',
     name: 'California Rate Relief Program',
     url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
+    logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
   },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/solar-installers/sunrun-review',
-  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://ratereliefca.com${path}` },
+};
+// No Review/Rating JSON-LD: this page publishes no user ratings (see the
+// review-snippet note on the other installer reviews).
+
+const SRC = {
+  ir: 'https://investors.sunrun.com/',
+  q2: 'https://investors.sunrun.com/news-events/press-releases/detail/378/sunrun-reports-second-quarter-2026-financial-results',
+  dispatch:
+    'https://investors.sunrun.com/news-events/press-releases/detail/381/sunrun-and-tesla-dispatch-580-megawatts-to-californias',
+  vivint:
+    'https://investors.sunrun.com/news-events/press-releases/detail/216/sunrun-completes-acquisition-of-vivint-solar-to-accelerate',
+  bbb: 'https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-equipment-dealers/sunrun-inc-1116-312886/complaints',
+  guarantee: 'https://www.sunrun.com/why-sunrun/your-guarantee',
+  roofing: 'https://www.sunrun.com/roofing',
+  panels: 'https://www.sunrun.com/solar-panels',
+  licenses: 'https://www.sunrun.com/state-contractor-license-information',
+  lighthouse: 'https://www.sunrun.com/lighthouse',
+  move: 'https://www.sunrun.com/go-solar-center/solar-faq/what-happens-if-i-move',
+  transfer: 'https://www.sunrun.com/go-solar-center/solar-articles/service-transfer-buying-a-sunrun-solar-home',
+  irs: 'https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb',
 };
 
+const sources: ReviewSource[] = [
+  { name: 'Sunrun investor relations — press releases', url: SRC.ir, supports: 'No bankruptcy, restructuring or wind-down release; Nasdaq: RUN; latest releases dated September 2026', checked },
+  { name: 'Sunrun — Second Quarter 2026 Financial Results (August 5, 2026)', url: SRC.q2, supports: '1,034,738 subscribers at June 30, 2026; 74% storage attachment; $1.2 billion Aggregate Subscriber Value; $23 million Cash Generation; $(186) million operating cash flow; $267 million securitization; revised 2026 guidance', checked },
+  { name: 'Sunrun — Sunrun and Tesla dispatch 580 MW to California’s grid (September 21, 2026)', url: SRC.dispatch, supports: 'Coordinated dispatch with Tesla; about 55% of the 110,000 participating Powerwalls owned by Sunrun', checked },
+  { name: 'Sunrun — Completion of the Vivint Solar acquisition (October 8, 2020)', url: SRC.vivint, supports: 'All-stock deal at 0.55 Sunrun shares per Vivint Solar share; Vivint Solar to be integrated into Sunrun', checked },
+  { name: 'Better Business Bureau — Sunrun, Inc. complaints', url: SRC.bbb, supports: 'A+ rating, accredited; 4,017 complaints in three years; 1,366 closed in 12 months; complaint types', checked },
+  { name: 'Sunrun — The Sunrun Guarantee', url: SRC.guarantee, supports: 'Plans covered, 90% production guarantee, 25-year repair promise, watertight warranty, battery guarantee, not available in Florida', checked },
+  { name: 'Sunrun — Roofing (with Remi)', url: SRC.roofing, supports: 'Bundled removal, roof work and reinstall; 5-year roofing workmanship warranty; financing not available in NY or NV', checked },
+  { name: 'Sunrun — Solar panels page', url: SRC.panels, supports: 'Names Tesla Powerwall; names no panel or inverter manufacturer', checked },
+  { name: 'Sunrun — State contractor license information', url: SRC.licenses, supports: 'States with listed contractor licenses, including California', checked },
+  { name: 'Sunrun — Lighthouse', url: SRC.lighthouse, supports: 'Service platform for owners who lost access to their original installer', checked },
+  { name: 'Sunrun — What happens if I move?', url: SRC.move, supports: 'Seller-side transfer steps; temporary removal of NOIEPC/UCC filings during transfer; prepay option', checked },
+  { name: 'Sunrun — Buying a home with Sunrun solar', url: SRC.transfer, supports: 'Buyer-side transfer steps; soft credit inquiry that does not affect the buyer’s score', checked },
+  { name: 'IRS — FAQs on Public Law 119-21 changes to 25D', url: SRC.irs, supports: 'No residential credit for expenditures made after December 31, 2025', checked },
+];
+
+const faqs = [
+  {
+    question: 'Is Sunrun going out of business or bankrupt?',
+    answer:
+      'Not on the evidence of its own disclosures. Checked on September 23, 2026, Sunrun’s investor site showed no bankruptcy, Chapter 11, restructuring or wind-down announcement, and the company reported second-quarter 2026 results on August 5, 2026. It also reported cash used in operations of $186 million for the quarter and cut its 2026 guidance, so read the full release if the company’s finances matter to your decision.',
+  },
+  {
+    question: 'Is Sunrun owned by Tesla?',
+    answer:
+      'No. Sunrun is its own public company, listed on Nasdaq as RUN. The two companies work together: Sunrun installs Tesla Powerwall batteries and, in September 2026, the two coordinated a battery dispatch to California’s grid. Sunrun said about 55% of the 110,000 Powerwalls in that event were Sunrun-owned.',
+  },
+  {
+    question: 'How much does Sunrun solar cost in California?',
+    answer:
+      'Sunrun does not publish a price. Most of its customers pay monthly under a lease or power purchase agreement, so the number to compare is the first-year payment, the annual escalator and the total over the term. If you are offered a cash purchase, divide the price by the system size in watts and compare it with other written quotes.',
+  },
+  {
+    question: 'Will Sunrun replace my roof?',
+    answer:
+      'Sunrun works with Remi Roofing to bundle panel removal, roof work and reinstallation at a set price, and says that in some cases it may cover those costs. Roof jobs carry a 5-year workmanship warranty from that program. Separately, the Sunrun Guarantee includes a watertight warranty against leaks caused by the solar installation. Get the scope and who pays in writing.',
+  },
+  {
+    question: 'Who makes Sunrun’s solar panels?',
+    answer:
+      'Sunrun does not manufacture panels. Its solar panels page names Tesla Powerwall as a battery option but no panel or inverter brand, so the brand depends on the proposal. Ask for the module and inverter model numbers in the contract.',
+  },
+  {
+    question: 'Is Sunrun still honoring Vivint Solar contracts?',
+    answer:
+      'Sunrun completed its all-stock acquisition of Vivint Solar on October 8, 2020, and said Vivint Solar would be integrated into Sunrun. Legacy customers should confirm in writing which Sunrun entity now holds their agreement and where to send service and warranty claims.',
+  },
+  {
+    question: 'Does the Sunrun Guarantee cover a system I bought for cash?',
+    answer:
+      'Sunrun says the guarantee comes with its Subscription and Protection Plus plans and is not available in Florida. On a cash purchase or third-party loan, ask whether Protection Plus is included; otherwise the manufacturers’ equipment warranties are what you have.',
+  },
+];
+
+const h2 = 'text-2xl font-bold text-foreground mt-10 mb-4';
+const p = 'text-foreground/80 leading-relaxed mb-6';
+const a = 'text-primary underline';
 
 export default function SunrunReview() {
   return (
     <PublicLayout>
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
-            {/* Breadcrumb */}
             <nav className='mb-8 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
-              <Link href='/' className='hover:text-primary transition-colors'>
-                Home
-              </Link>
+              <Link href='/' className='hover:text-primary transition-colors'>Home</Link>
               <span>/</span>
-              <Link
-                href='/best-solar-companies-california'
-                className='hover:text-primary transition-colors'
-              >
-                California Installer Reviews
-              </Link>
+              <Link href='/solar-installers' className='hover:text-primary transition-colors'>Solar company reviews</Link>
               <span>/</span>
               <span className='text-foreground font-medium'>Sunrun Review</span>
             </nav>
 
-            {/* Header */}
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>
                 Solar Installer Review
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Sunrun Reviews (2026): Business Status, Contracts and Vivint Solar
+                Sunrun Reviews (2026): Business Status, Complaints, Contracts and Vivint Solar
               </h1>
-              
-              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
-<div className='flex items-center gap-4 text-sm text-muted-foreground'>
+              <LastReviewedStamp date={checked} variant='reviewed' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-09-22'>Updated September 22, 2026</time>
+                  <time dateTime={checked}>Updated September 23, 2026</time>
                 </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />
-                  <span>11 min read</span>
+                  <span>12 min read</span>
                 </div>
               </div>
             </header>
 
-            {/* Score */}
-            {/* Body */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Sunrun (NYSE: RUN) is the largest residential solar and
-                storage company in the United States with more than one
-                million customers, roughly $3 billion in 2025 revenue, and
-                operations in 22 states plus DC and Puerto Rico. For
-                California homeowners, that scale is both Sunrun&apos;s
-                biggest selling point and the thing that drives most of
-                the complaints on its record. This review covers what
-                Sunrun actually installs, how it prices, what the service
-                experience looks like, and what happened to Vivint Solar
-                customers after Sunrun absorbed the brand.
+                Sunrun is still in business. Its investor site showed no bankruptcy filing when we checked
+                on September 23, 2026, and its second-quarter 2026 report counted 1,034,738 subscribers.
+                Sunrun sells mostly leases and power purchase agreements, it absorbed Vivint Solar in 2020,
+                and its BBB profile listed 4,017 complaints over three years, most about service and repairs.
+              </p>
+              <p className={p}>
+                This review is for a California homeowner deciding whether to sign with Sunrun, or trying
+                to understand an agreement already signed. It uses Sunrun’s own disclosures, its published
+                guarantee and roofing terms, and the Better Business Bureau’s complaint record. It does not
+                rank Sunrun against other installers.
               </p>
 
-              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
-              <div className='not-prose my-8'>
-                <HeroQuickCheck topic="Sunrun review and quote comparison" />
+              <div className='not-prose'>
+                <KeyFacts
+                  sourcesHref='#sources'
+                  facts={[
+                    { label: 'Subscribers (June 30, 2026)', value: '1,034,738', source: { url: SRC.q2, date: checked } },
+                    { label: 'Storage attachment, Q2 2026', value: '74%', note: 'Share of new installs with a battery', source: { url: SRC.q2, date: checked } },
+                    { label: 'BBB complaints, last 3 years', value: '4,017', note: 'A+ rated, accredited', source: { url: SRC.bbb, date: checked } },
+                    { label: 'Vivint Solar acquisition closed', value: 'Oct. 8, 2020', source: { url: SRC.vivint, date: checked } },
+                  ]}
+                />
               </div>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Is Sunrun Going Out of Business in 2026?
-              </h2>
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic='Sunrun review and quote comparison' />
+              </div>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                On the evidence published at Sunrun&apos;s own investor-relations
-                site, checked on <strong>September 18, 2026</strong>: no. There was
-                no bankruptcy filing, Chapter 11 petition, restructuring
-                announcement or wind-down notice posted there. The most recent item
-                was a press release dated September 17, 2026, and the most recent
-                results release was the company&apos;s second-quarter 2026 report
-                dated August 5, 2026, which stated Aggregate Subscriber Value of
-                $1.2 billion and Cash Generation of $23 million for the quarter.
-                Source:{' '}
-                <a
-                  href='https://investors.sunrun.com/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary underline'
-                >
-                  Sunrun investor relations
-                </a>
-                , verified September 18, 2026.
+              <h2 className={h2}>Is Sunrun going out of business in 2026?</h2>
+              <p className={p}>
+                On the company’s own record, no. Sunrun trades on Nasdaq as RUN, and a public company has
+                to announce a bankruptcy filing. When we checked its investor site on September 23, 2026,
+                the newest releases were dated September 2026 and none mentioned bankruptcy, Chapter 11,
+                restructuring or a wind-down.<Cite href={SRC.ir} date={checked} />
+              </p>
+              <p className={p}>
+                The August 5, 2026 results give a fuller picture than a yes or no. Sunrun added 19,793
+                subscribers in the quarter, 31% fewer than a year earlier, and reported Aggregate Subscriber
+                Value of $1.2 billion, down 24%. It reported Cash Generation of $23 million and $186 million
+                of net cash used in operating activities, lowered its full-year guidance, and said it placed a
+                $267 million securitization in August.<Cite href={SRC.q2} date={checked} /> Those are the
+                company’s figures, not a forecast from us. They show a large business still raising money
+                and still growing its subscriber base, with slower sales than in 2025.
+              </p>
+              <p className={p}>
+                For you, the practical question is what happens to the system and contract if that ever
+                changes. Under a lease or PPA the agreement is an asset that can be sold or assigned. Before
+                signing, ask who will hold the agreement, which entity must perform service and warranty
+                work, and what your rights are if service stops. Get the answers from the documents, not the
+                sales call. Our guide to{' '}
+                <Link href='/solar-installers/solar-installer-bankruptcy-california' className={a}>
+                  what survives when a solar company goes bankrupt
+                </Link>{' '}
+                walks through each type of contract.
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Two limits on that answer, stated plainly. It is a point-in-time
-                check of what the company itself had published as of that date, not
-                a forecast and not an assessment of financial health. And the absence
-                of a filing at that source is not proof that none exists anywhere; it
-                is the absence of one where a public company would be required to
-                announce it.
+              <h2 className={h2}>Is Sunrun owned by Tesla?</h2>
+              <p className={p}>
+                No. Sunrun is a separate public company. The confusion is understandable, because the two
+                work together. Sunrun installs Tesla Powerwall batteries, and on September 21, 2026 the
+                companies announced that they had dispatched 580 MW from more than 140,000 home batteries
+                during a California heat wave. Sunrun said about 55% of the 110,000 Powerwalls in that event
+                were owned by Sunrun.<Cite href={SRC.dispatch} date={checked} /> If you are comparing the
+                two as installers, see{' '}
+                <Link href='/solar-installers/sunrun-vs-tesla-solar' className={a}>Sunrun vs. Tesla Solar</Link>.
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                The question behind this search is usually not about the share price.
-                It is: if this company fails, what happens to the system on my roof
-                and the contract I signed? That is a contract question, and it is
-                worth answering before signing rather than after. Under a lease or
-                power-purchase agreement the system is owned by Sunrun or a financing
-                entity, and the agreement &mdash; including your payment obligation
-                and the transfer terms on a home sale &mdash; is an asset that can be
-                sold or assigned to another party. Ask specifically who holds the
-                agreement today, which entity is obliged to perform service and
-                warranty work, what happens to those obligations on an assignment,
-                and what your rights are if service stops. Take the answers from the
-                signed documents rather than a sales conversation.
+              <h2 className={h2}>How much does Sunrun solar cost?</h2>
+              <p className={p}>
+                Sunrun does not publish a price per watt or a monthly rate, and no primary source gives one,
+                so this page does not state one. Most Sunrun customers do not buy the system. They pay
+                monthly under a lease or a power purchase agreement, and Sunrun, as the owner, is the party
+                that may claim any federal credit. A homeowner who buys gets none on a 2026 installation,
+                because the IRS says Section 25D does not apply to expenditures made after December 31,
+                2025.<Cite href={SRC.irs} date={checked} />
+              </p>
+              <p className={p}>
+                So compare a Sunrun offer on the terms that decide its cost over 20 or 25 years: the
+                first-year payment or per-kWh rate, the annual escalator, the term, the buyout price and what
+                happens at the end. Our{' '}
+                <Link href='/solar-installers/sunrun-ppa-explained' className={a}>explanation of the Sunrun PPA</Link>{' '}
+                and the page on{' '}
+                <Link href='/solar-installers/sunrun-buyout-cost' className={a}>how a Sunrun buyout is priced</Link>{' '}
+                cover those terms. For what drives any lease payment, see{' '}
+                <Link href='/blog/how-much-does-it-cost-to-lease-solar-panels-california' className={a}>
+                  how much it costs to lease solar in California
+                </Link>
+                .
+              </p>
+              <p className={p}>
+                <strong>Does the Sunrun PPA beat other offers?</strong> Only your numbers can answer that.
+                Put the PPA rate and escalator next to your utility’s rate for the same hours, then next to a
+                cash or loan quote for the same system. If the PPA’s rate in year 10 is above what you expect
+                to pay the utility, the offer is weaker than it looks in year one. The{' '}
+                <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className={a}>
+                  side-by-side comparison of cash, loan, lease and PPA
+                </Link>{' '}
+                lays out the seven terms to line up.
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                If you are reading this well after the verification date above, check
-                the source yourself. A business-status claim has a short shelf life,
-                which is why this page dates it.
+              <h2 className={h2}>Sunrun reviews in California: what the complaint record shows</h2>
+              <p className={p}>
+                We looked at the Better Business Bureau profile for Sunrun, Inc. in San Francisco on
+                September 23, 2026. It showed an A+ rating and accreditation, 4,017 complaints in the last
+                three years and 1,366 closed in the last 12 months. By type, 2,386 were service or repair
+                issues, 722 order issues, 269 sales and advertising issues, 228 billing issues and 224 product
+                issues.<Cite href={SRC.bbb} date={checked} />
+              </p>
+              <p className={p}>
+                The recent complaints we read repeat a few themes: long waits for a technician after a
+                system stopped working, customers still being billed on a lease while the system was down,
+                disputes over who pays to repair roof damage, and trouble reaching someone who can act.
+                Complaint counts are not adjusted for size, and Sunrun has more than a million subscribers,
+                so the count alone does not tell you the odds of a problem. The themes are what to ask about.
+                Ask how a production shortfall is credited, how long a repair visit takes in your area, and
+                whether lease payments pause while the system is down.
+              </p>
+              <p className={p}>
+                Star ratings on review sites move every week, so this page does not quote them. Check them
+                yourself and note the date. For lawsuits, search the company name in the federal court
+                record at CourtListener; a filed complaint is an allegation, not a finding.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Who Sunrun Is, In One Paragraph
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunrun is a publicly traded residential solar and
-                storage provider. Unlike Tesla or Qcells, Sunrun does
-                not manufacture its own panels — it buys panels from
-                third parties (recently Maxeon and REC), inverters from
-                Enphase and SolarEdge, and batteries from Tesla (Powerwall),
-                Lunar, and FranklinWH. What Sunrun does own is its
-                financing: most of the company&apos;s installs are sold
-                as a lease or a Power Purchase Agreement (PPA) where
-                Sunrun retains ownership of the system and sells the
-                electricity back to the homeowner at a fixed monthly
-                payment.
+              <h2 className={h2}>Who manufactures Sunrun’s solar panels?</h2>
+              <p className={p}>
+                Sunrun does not make panels. Its solar panels page names Tesla Powerwall as a battery option
+                and does not name a panel or inverter manufacturer.<Cite href={SRC.panels} date={checked} />{' '}
+                The equipment depends on the proposal, so ask for the module make and model, the inverter
+                make and model and the battery make and model in the contract. You can then read the
+                manufacturer’s warranty for each. Our{' '}
+                <Link href='/panel-reviews' className={a}>solar panel brand reviews</Link> cover several
+                brands installers offer in California.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Pricing and Contract Structure (California)
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                This page states no Sunrun price per watt. No primary,
-                dated source publishing Sunrun&apos;s California cash pricing
-                was obtained when this page was checked on September 18,
-                2026, so no figure is asserted here. Ask for the cash price
-                and the DC system size in writing and divide them yourself.
-                Most homeowners do not buy
-                outright in any case; Sunrun is known primarily for its
-                Subscription (PPA) and lease products, which roll panels,
-                batteries, and warranties into a single monthly payment
-                with no upfront cost. The trade-off with a Subscription:
-                you don&apos;t own the system, and the contract typically
-                includes an annual escalator (often 2.9 to 3.9%). The
-                federal credit is no longer a point of difference — a
-                homeowner who buys gets none either, because IRC § 25D
-                does not apply to expenditures made after December 31,
-                2025. Sunrun, as the owner, is the party that may claim
-                the § 48E commercial credit if its project qualifies.
+              <h2 className={h2}>Will Sunrun replace my roof?</h2>
+              <p className={p}>
+                Sunrun offers roof work through a partner, Remi Roofing. Its roofing page says the program
+                can bundle system removal, roof work and reinstallation into one job at a set price, that
+                every roof job comes with a 5-year workmanship warranty, and that Remi’s third-party financing
+                is not available in New York or Nevada. It also says that in some cases Sunrun may be able to
+                cover the roof costs.<Cite href={SRC.roofing} date={checked} /> That is not a promise of a
+                new roof. If a roof replacement is part of the pitch, get the scope, the price and who pays
+                written into the agreement. For what these offers usually involve, read{' '}
+                <Link href='/blog/free-roof-replacement-with-solar-panels-california' className={a}>
+                  whether roof replacement with solar is ever really included
+                </Link>{' '}
+                and the{' '}
+                <Link href='/blog/solar-panel-removal-reinstall-cost' className={a}>
+                  removal and reinstall checklist
+                </Link>
+                .
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Storage attachment in Q4 2025 was 71% of new installs —
-                unusually high, and consistent with NEM 3.0&apos;s push
-                toward battery-integrated systems. If you&apos;re shopping
-                Sunrun in 2026, expect the proposal to include a battery
-                (Tesla Powerwall, Lunar, or FranklinWH depending on your
-                market).
+              <h2 className={h2}>What the Sunrun Guarantee covers</h2>
+              <p className={p}>
+                Sunrun’s guarantee page says the coverage comes with its Subscription and Protection Plus
+                plans and is not available in Florida.<Cite href={SRC.guarantee} date={checked} /> It lists:
               </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Install Timeline and Who Actually Shows Up
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunrun uses a hybrid model — direct W-2 installation
-                crews in some markets, a large subcontractor network in
-                others. California timelines from contract to PTO
-                typically run 2 to 6 months, sometimes longer depending on
-                your utility&apos;s interconnection queue. The crew that
-                shows up at your house may be a Sunrun-badged team or it
-                may be a subcontractor who works for several installers.
-                This is the single biggest source of service-quality
-                variability in the Sunrun experience.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Reputation, Complaints, and Lawsuits
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                This page states no complaint count and no review-platform
-                rating for Sunrun. The BBB, Trustpilot and review-aggregator
-                figures previously shown here could not be re-verified at
-                their own sources when this page was checked on September 18,
-                2026, so they have been removed rather than carried forward
-                with a stale date. Complaint counts and star ratings move
-                continuously, and a figure without a verification date is not
-                information.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Check them yourself, and note the date you looked. Sunrun&apos;s
-                BBB profile carries its own accreditation status and a rolling
-                three-year complaint count; Trustpilot, Google and the solar
-                review aggregators each publish a current rating and review
-                volume. Read the recent one-star reviews rather than the
-                headline number: complaint <em>themes</em> are more durable and
-                more useful than a score, and the themes are what you can ask
-                about before signing.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                For litigation and regulatory history, search the company name
-                directly in the public court record rather than relying on a
-                summary. Federal dockets and opinions are searchable at{' '}
-                <a
-                  href='https://www.courtlistener.com/'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary underline'
-                >
-                  CourtListener
-                </a>
-                ; state consumer-protection actions are published by the
-                relevant state Attorney General&apos;s office. A settlement, a
-                dismissal and a pending claim are materially different things,
-                and a docket shows which is which. Any claim this page makes
-                about a legal matter carries its own citation and date; where
-                none appears, the page makes no claim.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                The recurring themes across complaints are consistent:
-                systems under-producing versus modeled output, billing
-                surprises, subcontractor quality variability, and slow
-                post-install repairs. That does not mean every Sunrun
-                install goes poorly — a million-plus customers is a
-                million-plus data points, and plenty of them are happy —
-                but the complaint rate is high enough that any California
-                buyer considering Sunrun should go in with eyes open
-                about the service experience.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                What Happened to Vivint Solar Customers?
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunrun acquired Vivint Solar in 2020 for approximately
-                $3.2 billion. By 2026, Vivint Solar is fully absorbed into
-                Sunrun — the brand is effectively retired for new
-                installs, and approximately 100,000 to 150,000 legacy
-                Vivint Solar systems are now serviced under the Sunrun
-                umbrella. If you&apos;re a legacy Vivint Solar customer,
-                that means Sunrun is now the counterparty on your
-                20-year PPA, your workmanship warranty, and your
-                production guarantee. Your original contract terms don&apos;t
-                change, but all service tickets, billing questions, and
-                warranty claims now go through Sunrun.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Some legacy Vivint Solar complaints — deceptive sales
-                practices, especially around PPA escalators — carried
-                forward into the Sunrun entity as class-action exposure,
-                and Sunrun has been managing those cases as part of its
-                normal legal operations. If you bought from Vivint Solar
-                and have a service issue, Sunrun&apos;s customer
-                service is the right channel. If the service response is
-                slow, state consumer-protection offices are generally
-                receptive to written complaints.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Warranty and the Sunrun Guarantee
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunrun&apos;s flagship warranty on Subscription and lease
-                products is a 25-year performance guarantee — if the
-                system produces less than 90% of modeled output over its
-                life, Sunrun makes up the difference. Workmanship warranty
-                is also 25 years on those products. Panel, inverter, and
-                battery warranties are from the underlying manufacturers
-                (Maxeon, REC, Enphase, SolarEdge, Tesla, etc.) and are
-                unaffected by Sunrun-specific issues.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunrun brands this coverage the &quot;Sunrun Guarantee,&quot;
-                and its scope is narrower than &quot;25-year warranty&quot;
-                suggests: it applies to Sunrun&apos;s Subscription (lease)
-                and Protection Plus plans, not automatically to a cash
-                purchase or third-party loan, per{' '}
-                <a
-                  href='https://www.sunrun.com/why-sunrun/your-guarantee'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary underline'
-                >
-                  Sunrun&apos;s own guarantee page
-                </a>
-                , accessed September 22, 2026. What it covers:
-              </p>
-
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>
-                  <strong>Production guarantee:</strong> at least 90% of
-                  estimated lifetime output; if the system falls short,
-                  Sunrun pays the difference.
-                </li>
-                <li>
-                  <strong>Free repairs and maintenance:</strong> replacement
-                  parts and the labor to fix the system are covered for 25
-                  years, with no separate parts or service-call invoice.
-                </li>
-                <li>
-                  <strong>Roof (watertight) warranty:</strong> covers roof
-                  leaks or holes tied to the installation.
-                </li>
-                <li>
-                  <strong>Battery guarantee:</strong> on covered battery
-                  installs, Sunrun guarantees the battery keeps your system
-                  powered during a grid outage.
-                </li>
-                <li>
-                  <strong>24/7 monitoring:</strong> the system is monitored
-                  continuously, so a production drop is meant to reach
-                  Sunrun before you&apos;d notice it yourself.
-                </li>
+                <li>a guarantee that the system produces at least 90% of estimated production over its life;</li>
+                <li>a 25-year promise to cover replacement parts and labor for repairs;</li>
+                <li>a watertight warranty against roof leaks or holes from the installation;</li>
+                <li>a battery guarantee that the battery keeps your lights on during an outage;</li>
+                <li>24/7 monitoring, with production data checked daily against the contract estimate.</li>
               </ul>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Panel, inverter, and battery hardware still carry their own
-                manufacturer warranties underneath this, unaffected by
-                Sunrun&apos;s guarantee. If you purchase in cash or finance
-                with a third-party loan, confirm in writing whether
-                Protection Plus (or an equivalent) is included — otherwise
-                you&apos;re relying on manufacturer coverage alone, not the
-                Sunrun Guarantee.
+              <p className={p}>
+                If you buy for cash or with a third-party loan, confirm in writing whether Protection Plus is
+                included. Without it, you are relying on the manufacturers’ equipment warranties.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                How a Service Request Actually Works
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunrun&apos;s monitoring is built to catch problems before
-                you do: the system reports production in near real time,
-                and Sunrun says it can often detect and start resolving an
-                underperformance issue before a customer notices anything,
-                per{' '}
-                <a
-                  href='https://www.sunrun.com/go-solar-center/solar-faq/how-much-maintenance-is-required-for-solar-panels'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary underline'
-                >
-                  Sunrun&apos;s own maintenance FAQ
-                </a>
-                , accessed September 22, 2026. You can also check system
-                health yourself in the Sunrun app. For Subscription and
-                Protection Plus customers, a confirmed problem — faulty
-                wiring, an inverter fault, panel damage — is repaired at no
-                charge under the guarantee above; Sunrun does not publish a
-                response-time commitment for how fast that repair happens.
-                If your system was originally installed by Vivint Solar or
-                another company Sunrun has since absorbed and you&apos;re
-                unsure who services it now, Sunrun&apos;s{' '}
-                <a
-                  href='https://www.sunrun.com/lighthouse'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary underline'
-                >
-                  Lighthouse program
-                </a>{' '}
-                is built specifically for homeowners who&apos;ve lost
-                access to their original installer.
+              <h2 className={h2}>What happened to Vivint Solar customers?</h2>
+              <p className={p}>
+                Sunrun completed its all-stock acquisition of Vivint Solar on October 8, 2020, at 0.55 Sunrun
+                shares for each Vivint Solar share, and said Vivint Solar would be integrated into Sunrun over
+                the following quarters.<Cite href={SRC.vivint} date={checked} /> If you hold a Vivint Solar
+                agreement, Sunrun is the company to contact for service, billing and a home-sale transfer.
+                Ask for written confirmation of which entity holds your agreement and whether your original
+                terms carry over unchanged. Our{' '}
+                <Link href='/solar-installers/vivint-review' className={a}>Vivint Solar review</Link> covers
+                the California court record and what legacy customers can do.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Verify Sunrun&apos;s CSLB License Yourself
-              </h2>
+              <h2 className={h2}>Sunrun in California: PG&amp;E programs and grid payments</h2>
+              <p className={p}>
+                Sunrun lists California among the states where it holds contractor licenses.
+                <Cite href={SRC.licenses} date={checked} /> In PG&amp;E territory it has run battery programs
+                with the utility that paid enrolled customers to share stored solar in the evening. See{' '}
+                <Link href='/solar-installers/pge-and-sunrun' className={a}>PG&amp;E and Sunrun programs</Link>{' '}
+                for what each season paid and who could join.
+              </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunrun&apos;s own{' '}
-                <a
-                  href='https://www.sunrun.com/state-contractor-license-information'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary underline'
-                >
+              <h2 className={h2}>Sunrun PPA vs. lease, and selling your home</h2>
+              <p className={p}>
+                Under a PPA you pay for each kilowatt-hour the system produces. Under a lease you pay a fixed
+                amount for the equipment. Either way Sunrun or a financing entity owns the system. Decide on
+                the escalator, the term, the end-of-term options and the transfer terms, not the label; the{' '}
+                <Link href='/solar-installers/sunrun-lease-vs-ppa' className={a}>Sunrun lease vs. PPA</Link>{' '}
+                page compares the two.
+              </p>
+              <p className={p}>
+                When you sell, the agreement has to be transferred to the buyer or paid off. Sunrun describes a
+                transfer portal, a transfer agreement signed by all parties through DocuSign and a soft credit
+                check for the buyer that it says does not affect the buyer’s credit score. It says it
+                temporarily removes any NOIEPC or UCC filing on title during the transfer at no cost, and that a
+                seller whose buyer declines the agreement can prepay the remaining service instead.
+                <Cite href={SRC.move} date={checked} />
+                <Cite href={SRC.transfer} date={checked} /> Ask for written proof of how any filing on title is
+                handled before closing; our{' '}
+                <Link href='/solar-problems/ucc-1-lien-solar-california' className={a}>UCC-1 solar lien explainer</Link>{' '}
+                and the guide to{' '}
+                <Link href='/blog/what-happens-to-solar-lease-when-i-sell-california' className={a}>
+                  selling a home with a solar lease
+                </Link>{' '}
+                cover the steps.
+              </p>
+              <p className={p}>
+                If your system was installed by a company that no longer supports it, Sunrun’s Lighthouse
+                program says it serves owners who have lost access to their original installer.
+                <Cite href={SRC.lighthouse} date={checked} />
+              </p>
+
+              <h2 className={h2}>Verify Sunrun’s CSLB license yourself</h2>
+              <p className={p}>
+                Sunrun’s own{' '}
+                <a href={SRC.licenses} target='_blank' rel='noopener noreferrer' className={a}>
                   state-by-state contractor-license page
                 </a>{' '}
-                lists two California numbers — CSLB #750184 and CSLB
-                #969975 — accessed September 22, 2026 and corroborated by
-                Sunrun&apos;s own contractor-licenses PDF linked from that
-                page. Those are not the #925340 shown in the
-                installer-verification box on this page, which does not
-                appear on Sunrun&apos;s published license page. We could
-                not independently confirm current status, classification,
-                or bond for any of the three numbers this session:
-                CSLB&apos;s online lookup returned only its blank search
-                form, with no rendered license record. Don&apos;t treat
-                &quot;licensed&quot; as settled from this page — verify each
-                number yourself at CSLB&apos;s Check License tool before
-                signing anything. For what else to check beyond the license
-                number itself — workers&apos;-comp status,
-                PACE/financing-company verification, the CPUC disclosure
-                document — see our{' '}
-                <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>
+                lists two California numbers — CSLB #750184 and CSLB #969975 — accessed September 22, 2026
+                and corroborated by Sunrun’s own contractor-licenses PDF linked from that page. Those are not
+                the #925340 shown in the installer-verification box on this page, which does not appear on
+                Sunrun’s published license page. We could not independently confirm current status,
+                classification, or bond for any of the three numbers: CSLB’s online lookup returned only its
+                blank search form, with no rendered license record. Don’t treat “licensed” as settled from
+                this page — verify each number yourself at CSLB’s Check License tool before signing anything.
+                For what else to check, see our{' '}
+                <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className={a}>
                   full contractor-verification walkthrough
                 </Link>
                 .
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                When Sunrun Makes Sense
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunrun makes the most sense for California homeowners who
-                want a predictable fixed monthly payment without any
-                upfront capital outlay, and who value participating in
-                virtual power plant (VPP) programs — where you earn
-                credits for letting Sunrun dispatch battery capacity back
-                to the grid during peak hours. Sunrun&apos;s VPP footprint
-                is among the larger residential fleets, though this page
-                states no networked-capacity figure: none was re-verified at
-                a primary source on September 18, 2026. Ask for the specific
-                VPP program name, the credit calculation and how often the
-                battery can be dispatched, in writing.
+              <h2 className={h2}>When Sunrun fits, and when it doesn’t</h2>
+              <p className={p}>
+                Sunrun fits a homeowner who wants a fixed monthly payment with little or nothing upfront, wants
+                a battery included (74% of its new installs in the second quarter of 2026 had one), and is
+                comfortable with a 20- to 25-year agreement with a company whose finances are public. It fits
+                less well if you want to own the system, if fast post-install service is your deciding factor,
+                or if you plan to sell the home soon and do not want a buyer to take on the agreement. This page
+                does not recommend or rank installers. Compare at least two written quotes, and see other{' '}
+                <Link href='/solar-installers' className={a}>California solar company reviews</Link>.
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunrun fits less well if you want to own the system outright,
-                if post-install service responsiveness is your deciding factor,
-                or if you want a single known install crew rather than whichever
-                direct or subcontracted team covers your market. This page does
-                not recommend or rank installers; it sets out what to verify.
-              </p>
+              <div className='not-prose'>
+                <FaqJsonLd items={faqs} />
+                <FaqBlock items={faqs} schema={false} />
+              </div>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Sunrun PPA vs. Lease: Which Should You Choose?
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Both leave the system owned by Sunrun or a financing entity, and
-                both mean you are buying an energy service rather than an asset.
-                The difference is what the payment is calculated on:
-              </p>
-
-              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>
-                  <strong>Under a power-purchase agreement</strong> you pay a rate
-                  per kilowatt-hour the system actually produces. A weak production
-                  year lowers the bill; a strong one raises it.
-                </li>
-                <li>
-                  <strong>Under a lease</strong> you pay a fixed amount for the
-                  equipment regardless of what it produces. The payment is
-                  predictable, and production risk sits with you unless a separate
-                  performance guarantee covers it.
-                </li>
-              </ul>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Neither is inherently better, and the choice is usually decided by
-                four contract terms rather than the label: the escalator (whether the
-                rate rises annually and by how much), the term length, the
-                end-of-term options (renew, purchase, or removal and at whose cost),
-                and the transfer provisions if you sell the home. Ask for those four
-                in writing for both structures and compare them side by side. Since
-                you are not buying the system, the federal residential credit is not
-                available to you under either structure &mdash; the owner claims any
-                credit. Work through{' '}
-                <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>
-                  cash, loan, lease and PPA obligations side by side
-                </Link>{' '}
-                before choosing.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                What Happens to Your Sunrun Lease or PPA When You Sell Your Home
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                A Sunrun lease or PPA doesn&apos;t automatically follow you
-                when you move, and it doesn&apos;t automatically disappear
-                either — it has to be formally transferred. Sunrun
-                describes a four-step process on its own site, per{' '}
-                <a
-                  href='https://www.sunrun.com/go-solar-center/solar-faq/what-happens-if-i-move'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary underline'
-                >
-                  Sunrun&apos;s move/transfer FAQ
-                </a>{' '}
-                and{' '}
-                <a
-                  href='https://www.sunrun.com/go-solar-center/solar-articles/service-transfer-buying-a-sunrun-solar-home'
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='text-primary underline'
-                >
-                  its buyer-facing transfer guide
-                </a>
-                , both accessed September 22, 2026:
-              </p>
-
-              <ol className='list-decimal pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>
-                  You and the buyer submit contact information and escrow
-                  details through Sunrun&apos;s transfer portal.
-                </li>
-                <li>Both sides confirm the details and submit the closing date.</li>
-                <li>
-                  Both sides e-sign the transfer agreement; the buyer
-                  completes a soft credit check that Sunrun says
-                  doesn&apos;t affect their credit score.
-                </li>
-                <li>
-                  Once escrow closes, the transfer finalizes and the seller
-                  receives a final invoice for energy produced up to that
-                  date.
-                </li>
-              </ol>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                If a lien was filed against the home for the system (a
-                NOIEPC or UCC-1 filing), Sunrun says it removes that filing
-                during the transfer at no cost. For what that kind of
-                filing means more generally, see our{' '}
-                <Link href='/solar-problems/ucc-1-lien-solar-california' className='text-primary underline'>
-                  UCC-1 solar lien explainer
-                </Link>
-                .
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                If the buyer doesn&apos;t want to assume the agreement, the
-                seller can instead prepay the remaining balance and roll it
-                into the sale price — the buyer then gets the solar benefit
-                for whatever term is left, and Sunrun removes the system at
-                no extra charge once the agreement ends. A system you
-                purchased outright, rather than leased, is yours to sell
-                with the house like any other home improvement — there&apos;s
-                no Sunrun contract to transfer.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-2'>
-                <strong>Questions to ask before you rely on any of this:</strong>
-              </p>
-
-              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>
-                  What&apos;s the remaining term and current monthly
-                  payment — escalator already applied — and is that
-                  disclosed to the buyer in writing before they sign?
-                </li>
-                <li>
-                  Is there a NOIEPC/UCC-1 filing on the property for this
-                  system, and has it actually been released (not just
-                  &quot;in process&quot;) before closing?
-                </li>
-                <li>
-                  What does the prepay/buyout option cost if the buyer
-                  won&apos;t assume the agreement, and is that already
-                  reflected in the asking price?
-                </li>
-                <li>
-                  Does the buyer&apos;s soft credit check happen early
-                  enough in escrow that a decline doesn&apos;t put closing
-                  at risk?
-                </li>
-                <li>
-                  If the system was originally installed by Vivint Solar,
-                  does the transferred agreement carry the original Vivint
-                  contract terms or a new Sunrun one?
-                </li>
-              </ul>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                This isn&apos;t a substitute for reading your own contract
-                or talking to your escrow officer — it&apos;s the sequence
-                Sunrun itself describes; get the specifics of your
-                agreement in writing. For the general mechanics that apply
-                to any California solar lease, not just Sunrun&apos;s,
-                see{' '}
-                <Link href='/blog/what-happens-to-solar-lease-when-i-sell-california' className='text-primary underline'>
-                  what happens to a solar lease when you sell your home
-                </Link>
-                .
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Does Sunrun Offer the Tesla Powerwall?
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunrun does not manufacture batteries; it installs third-party
-                units, and Tesla Powerwall has been among the battery products
-                named on this page alongside Lunar and FranklinWH. Availability is
-                the part that matters and the part that changes: which battery you
-                can actually get depends on your market, current supply and what the
-                proposal specifies on the day it is written.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                So treat this as a question for the proposal, not for a review page.
-                Ask for the battery make and model, the usable kWh capacity, the
-                continuous and peak power output, which circuits it is wired to back
-                up, and whose warranty covers it &mdash; the battery manufacturer&apos;s
-                or the installer&apos;s. If the proposal names a battery generically,
-                that is a scope gap to close before signing. This page states no
-                current Powerwall availability claim for Sunrun: none was verified at
-                a primary source on September 18, 2026.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Frequently Asked Questions
-              </h2>
-
-              <div className='space-y-6 mb-6'>
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    Is Sunrun going out of business in 2026?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    Not on the evidence published at its own investor-relations
-                    site, checked September 18, 2026: no bankruptcy filing,
-                    Chapter 11 petition, restructuring announcement or wind-down
-                    notice appeared there, and the company posted second-quarter
-                    2026 results on August 5, 2026. That is a point-in-time check
-                    of the company&apos;s own disclosures, not a forecast.{' '}
-                    <a href='https://investors.sunrun.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>
-                      Source
-                    </a>
-                    .
-                  </p>
-                </div>
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    Is Sunrun still in business?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    Yes, as of September 18, 2026, on the basis of the
-                    investor-relations disclosures above. Because a business-status
-                    answer goes stale quickly, check that source directly and note
-                    the date you looked.
-                  </p>
-                </div>
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    Did Sunrun file for bankruptcy?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    No bankruptcy or Chapter 11 filing was announced at Sunrun&apos;s
-                    investor-relations site when it was checked on September 18,
-                    2026. A public company is required to disclose such a filing, so
-                    its absence there is meaningful &mdash; but it is the absence of a
-                    disclosure at one source on one date, not a permanent finding.
-                    Federal bankruptcy dockets are searchable at{' '}
-                    <a href='https://www.courtlistener.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>
-                      CourtListener
-                    </a>{' '}
-                    if you want to check the court record yourself.
-                  </p>
-                </div>
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    Should I choose a Sunrun PPA or lease?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    A PPA charges for the kilowatt-hours produced; a lease charges a
-                    fixed amount for the equipment. Under both, the system is owned by
-                    Sunrun or a financing entity and any tax credit belongs to the
-                    owner, not you. Decide on the escalator, term length, end-of-term
-                    options and home-sale transfer terms rather than the label.
-                  </p>
-                </div>
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    Does Sunrun offer the Tesla Powerwall?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    Sunrun installs third-party batteries and Tesla Powerwall has
-                    been among the products named on this page, but availability
-                    varies by market and supply, and this page asserts no current
-                    availability: none was verified at a primary source on
-                    September 18, 2026. Ask the proposal to name the make, model,
-                    usable capacity, backed-up circuits and warranty holder.
-                  </p>
-                </div>
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    How does Sunrun compare with other residential solar providers?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    The structural difference is ownership: Sunrun sells mostly
-                    third-party-owned lease and PPA arrangements, where many
-                    California regional contractors sell systems you buy. That single
-                    choice drives the tax treatment, the transfer process at sale and
-                    who is responsible for service for 20 to 25 years. Direct
-                    comparisons:{' '}
-                    <Link href='/solar-installers/sunrun-vs-tesla-solar' className='text-primary underline'>
-                      Sunrun vs. Tesla Solar
-                    </Link>
-                    ,{' '}
-                    <Link href='/solar-installers/sunrun-vs-sunpower' className='text-primary underline'>
-                      Sunrun vs. SunPower
-                    </Link>{' '}
-                    and the{' '}
-                    <Link href='/solar-installers/palmetto-solar-review' className='text-primary underline'>
-                      Palmetto Solar profile
-                    </Link>
-                    , which uses a comparable third-party-ownership model.
-                  </p>
-                </div>
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    Is Sunrun still honoring Vivint Solar contracts?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    Legacy Vivint Solar agreements are serviced under the Sunrun
-                    umbrella on their original terms. If you hold one, confirm in
-                    writing which entity is the current counterparty on your
-                    agreement and where service and warranty claims should be sent.
-                  </p>
-                </div>
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    Does Sunrun install its own panels or use subcontractors?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    Both, depending on the market: Sunrun uses direct crews in some
-                    areas and a subcontractor network in others, and it does not
-                    manufacture panels. Ask during the proposal whether your install
-                    crew will be Sunrun-direct or subcontracted, and get the
-                    contracting entity&apos;s California licence number so you can
-                    check it in the CSLB lookup below.
-                  </p>
-                </div>
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    Does the Sunrun Guarantee cover a system I bought in cash?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    Only if Protection Plus is added. The standard Sunrun
-                    Guarantee (production, free repairs, roof warranty)
-                    applies to Subscription and Protection Plus plans, not
-                    automatically to a cash purchase or third-party loan. A
-                    cash-purchased system still carries its own manufacturer
-                    warranties on the panels, inverter, and battery.
-                  </p>
-                </div>
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    What CSLB license number does Sunrun use in California?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    Sunrun&apos;s own site lists two: #750184 and #969975.
-                    This page previously cited a third number, #925340,
-                    which doesn&apos;t appear on Sunrun&apos;s published
-                    list — that discrepancy hasn&apos;t been resolved, so
-                    verify whichever number you&apos;re given directly at
-                    CSLB before signing.
-                  </p>
-                </div>
+              <div className='not-prose'>
+                <SourceList sources={sources} />
               </div>
             </div>
 
-            {/* CTA */}
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>
-                Considering Sunrun? Compare With Two Other Installers
-                First.
+                Considering Sunrun? Compare With Two Other Installers First.
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>
-                California Rate Relief is a private referral service. Submit
-                one short form and it may forward your inquiry to independent
-                California providers, subject to availability, so you can
-                compare pricing, equipment and warranty terms side by side
-                before you commit. No installer is named as a partner and no
-                provider is endorsed.
+                California Rate Relief is a private referral service. Submit one short form and it may forward
+                your inquiry to independent California providers, subject to availability, so you can compare
+                pricing, equipment and warranty terms side by side before you commit. No installer is named as a
+                partner and no provider is endorsed.
               </p>
               <div className='flex justify-center'>
                 <Link
@@ -870,91 +463,36 @@ export default function SunrunReview() {
             </div>
 
             <div className='mt-8'>
-              <SolarInquiry topic="Sunrun review and quote comparison" />
+              <SolarInquiry topic='Sunrun review and quote comparison' />
             </div>
 
-            {/* Related */}
-            <div className='mt-10 pt-8 border-t border-border'>
-              <h3 className='text-lg font-bold text-foreground mb-4'>
-                More California Installer Reviews
-              </h3>
-              <div className='grid sm:grid-cols-2 gap-3'>
-                <Link
-                  href='/solar-installers/freedom-forever-review'
-                  className='p-4 border border-border rounded-lg hover:border-primary transition-colors'
-                >
-                  <div className='flex items-center justify-between'>
-                    <span className='font-medium text-foreground'>
-                      Freedom Forever Review
-                    </span>
-                    <ArrowRight className='h-4 w-4 text-muted-foreground' />
-                  </div>
-                </Link>
-                <Link
-                  href='/solar-installers/tesla-solar-review'
-                  className='p-4 border border-border rounded-lg hover:border-primary transition-colors'
-                >
-                  <div className='flex items-center justify-between'>
-                    <span className='font-medium text-foreground'>
-                      Tesla Solar Review
-                    </span>
-                    <ArrowRight className='h-4 w-4 text-muted-foreground' />
-                  </div>
-                </Link>
-                <Link
-                  href='/solar-installers/sunpower-review'
-                  className='p-4 border border-border rounded-lg hover:border-primary transition-colors'
-                >
-                  <div className='flex items-center justify-between'>
-                    <span className='font-medium text-foreground'>
-                      SunPower Review
-                    </span>
-                    <ArrowRight className='h-4 w-4 text-muted-foreground' />
-                  </div>
-                </Link>
-                <Link
-                  href='/solar-installers/solar-optimum-review'
-                  className='p-4 border border-border rounded-lg hover:border-primary transition-colors'
-                >
-                  <div className='flex items-center justify-between'>
-                    <span className='font-medium text-foreground'>
-                      Solar Optimum Review
-                    </span>
-                    <ArrowRight className='h-4 w-4 text-muted-foreground' />
-                  </div>
-                </Link>
-              </div>
-            </div>
+            <HubSpokeLinks hub='installer_reviews' currentPath={path} />
 
             <div className='mt-10'>
-              <Link
-                href='/best-solar-companies-california'
-                className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'
-              >
+              <Link href='/solar-installers' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'>
                 <ArrowLeft className='h-4 w-4' />
-                Back to California installer reviews
+                Back to California solar company reviews
               </Link>
             </div>
             <RelatedGuides
-              heading="What the agreement does over its full term"
+              heading='What the agreement does over its full term'
               links={[
-                { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
-                { href: "/blog/what-happens-to-solar-lease-when-i-sell-california", label: "What happens to the contract if the home is sold" },
-                { href: "/blog/what-happens-if-stop-paying-solar-lease-california", label: "What default does to the agreement" },
-                { href: "/solar-problems/solar-escalator-clause-explained", label: "What an annual escalator does to the later years" },
+                { href: '/blog/solar-ppa-vs-lease-california', label: 'How a PPA differs from a lease' },
+                { href: '/blog/what-happens-if-stop-paying-solar-lease-california', label: 'What default does to the agreement' },
+                { href: '/solar-problems/solar-escalator-clause-explained', label: 'What an annual escalator does to the later years' },
+                { href: '/battery/tesla-powerwall-3-cost-california', label: 'What a Powerwall 3 costs installed' },
               ]}
             />
           </article>
         </div>
       </main>
       <Footer />
-      <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Sunrun" cslbLicenseNumber="925340" bbbProfileUrl="https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-contractors/sunrun-inc-1116-22011110" />
+      <div className='container mx-auto px-4 max-w-3xl'>
+        <VerifyInstallerBox installerName='Sunrun' cslbLicenseNumber='925340' bbbProfileUrl='https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-equipment-dealers/sunrun-inc-1116-312886' />
       </div>
-      <div className="container mx-auto px-4 max-w-3xl">
-        <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
+      <div className='container mx-auto px-4 max-w-3xl'>
+        <AuthorBio domain='crr' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
       </div>
-
     </PublicLayout>
   );
 }
