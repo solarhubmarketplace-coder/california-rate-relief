@@ -1,0 +1,788 @@
+{
+ "agent": "rates",
+ "pages": [
+  {
+   "path": "/blog/ladwp-rates",
+   "action": "CREATE",
+   "hub": "utility_rates",
+   "file": "src/app/blog/ladwp-rates/page.tsx",
+   "title": "LADWP Rates 2026: Tier Prices, Peak Hours and Cost per kWh",
+   "clusters": [
+    102
+   ],
+   "sources": [
+    "https://www.ladwp.com/account/customer-service/electric-rates/residential-rates",
+    "https://www.ladwp.com/account/customer-service/electric-rates/residential-adjustment-billing-factors",
+    "https://www.ladwp.com/account/understanding-your-rates/residential-electric-rates",
+    "https://www.ladwp.com/account/customer-service/bill-payment/billingaccount-issues-frequently-asked-questions",
+    "https://www.ladwp.com/account/customer-service/electric-rates/ev-nem-reo-rates",
+    "https://www.ladwp.com/residential-services/programs-and-rebates-residential/electric-vehicles",
+    "https://www.smud.org/Rate-Information/Residential-rates"
+   ],
+   "status": "done",
+   "note": "2026 R-1A/R-1B totals by quarter, tier sizes by zone and cycle, 2025->2026 changes, Oct 1, 2026 factor step, EZ-SAVE/Lifeline, EV discount, NEM. LADWP pages fetched with curl (WebFetch returned 403)."
+  },
+  {
+   "path": "/blog/sce-rate-increase-2026",
+   "action": "UPGRADE",
+   "hub": "utility_rates",
+   "file": "src/app/blog/sce-rate-increase-2026/page.tsx",
+   "title": "SCE Rate Increase 2025–2026: History and Rate Chart",
+   "clusters": [
+    175,
+    399,
+    484
+   ],
+   "sources": [
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260210-public-advocates-office-q4-2025-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/251106-public-advocates-office-q3-2025-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/250827-public-advocates-office-q2-2025-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/242005-public-advocates-office-q1-2025-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/250218-public-advocates-office-q4-2024-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/241205-public-advocates-office-q3-2024-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/240722-public-advocates-office-q2-2024-electric-rates-report.pdf",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan",
+    "https://www.cpuc.ca.gov/generalratecase",
+    "https://www.cpuc.ca.gov/news-and-updates/all-news/understanding-how-the-cpuc-processes-a-general-rate-case",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program"
+   ],
+   "status": "done",
+   "note": "Full rewrite: RAR chart and advice-letter timeline 2024-2026 (PAO), Oct 1, 2025 GRC +13.1%, Base Services Charge, 2026 projection."
+  },
+  {
+   "path": "/blog/solar-electric-co-california",
+   "action": "CREATE",
+   "hub": "electric_bills",
+   "file": "src/app/blog/solar-electric-co-california/page.tsx",
+   "title": "",
+   "clusters": [
+    331
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Navigational brand query for a small Grass Valley installer; skipped per 'skip review pages for small/obscure installer names' default."
+  },
+  {
+   "path": "/blog/average-utility-bill-california",
+   "action": "CREATE",
+   "hub": "electric_bills",
+   "file": "src/app/blog/average-utility-bill-california/page.tsx",
+   "title": "Average Utility Bill in California: Electric, Gas and More",
+   "clusters": [
+    157
+   ],
+   "sources": [
+    "https://www.eia.gov/electricity/sales_revenue_price/xls/table_5A.xlsx",
+    "https://www.eia.gov/electricity/sales_revenue_price/",
+    "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a",
+    "https://www.eia.gov/dnav/ng/ng_pri_sum_dcu_SCA_a.htm",
+    "https://www.eia.gov/dnav/ng/ng_cons_num_dcu_SCA_a.htm",
+    "https://www.eia.gov/dnav/ng/ng_cons_sum_dcu_SCA_a.htm",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.smud.org/Rate-Information/Residential-rates",
+    "https://www.ladwp.com/account/customer-service/bill-payment/billingaccount-issues-frequently-asked-questions",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program"
+   ],
+   "status": "done",
+   "note": "EIA 2024 averages, utility RAR arithmetic, SMUD 750 kWh comparison, gas estimate, arrears."
+  },
+  {
+   "path": "/blog/why-is-my-california-electric-bill-so-high",
+   "action": "UPGRADE",
+   "hub": "electric_bills",
+   "file": "src/app/blog/why-is-my-california-electric-bill-so-high/page.tsx",
+   "title": "Why Is California Electricity So Expensive? Check Your Bill",
+   "clusters": [
+    114,
+    442
+   ],
+   "sources": [
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a",
+    "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_b",
+    "https://www.eia.gov/electricity/sales_revenue_price/xls/table_5A.xlsx",
+    "https://www.cpuc.ca.gov/RateComparison",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
+    "https://www.cpuc.ca.gov/climatecredit",
+    "https://www.cpuc.ca.gov/consumer-support/late-bill-assistance/my-bill",
+    "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+    "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
+    "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+    "https://www.sdge.com/whenmatters",
+    "https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/medical-baseline"
+   ],
+   "status": "done",
+   "note": "Hub upgraded to a hand-written page (no longer renders CaliforniaBillDecisionPage 'high'); lists every electric_bills spoke; removed dead /programs/care-california link."
+  },
+  {
+   "path": "/blog/average-kwh-per-day-california",
+   "action": "CREATE",
+   "hub": "utility_rates",
+   "file": "src/app/blog/average-kwh-per-day-california/page.tsx",
+   "title": "Average kWh per Day in California: 16.5 kWh (2024 Data)",
+   "clusters": [
+    273
+   ],
+   "sources": [
+    "https://www.eia.gov/electricity/sales_revenue_price/xls/table_5A.xlsx",
+    "https://www.eia.gov/consumption/residential/data/2020/c&e/xls/ce2.5.xlsx",
+    "https://www.pge.com/assets/rates/tariffs/ResElecBaselineCurrent.xlsx",
+    "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+    "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill.html",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan",
+    "https://www.sce.com/sites/default/files/custom-files/Summary%20of%20Available%20Residential%20and%20Nonresidential%20Rate%20Options.pdf",
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation",
+    "https://www.ladwp.com/account/customer-service/bill-payment/billingaccount-issues-frequently-asked-questions"
+   ],
+   "status": "done",
+   "note": "EIA RECS/2024 usage, PG&E and SCE baseline tables, CEC daily load."
+  },
+  {
+   "path": "/blog/pge-tier-rates",
+   "action": "CREATE",
+   "hub": "utility_rates",
+   "file": "src/app/blog/pge-tier-rates/page.tsx",
+   "title": "PG&E Tier Rates 2026: Tier 1 vs Tier 2 Prices on E-1",
+   "clusters": [
+    323
+   ],
+   "sources": [
+    "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+    "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_260101-260228.xlsx",
+    "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_250901-251231.xlsx",
+    "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_250301-250831.xlsx",
+    "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_240101-240229.xlsx",
+    "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_230101-230228.xlsx",
+    "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+    "https://www.pge.com/assets/rates/tariffs/ResElecBaselineCurrent.xlsx",
+    "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill.html",
+    "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+   ],
+   "status": "done",
+   "note": "E-1 tier history Jan 2023-Mar 2026 from PG&E rate tables, sample bill, BSC tiers."
+  },
+  {
+   "path": "/blog/where-does-california-get-its-electricity",
+   "action": "CREATE",
+   "hub": "electric_bills",
+   "file": "src/app/blog/where-does-california-get-its-electricity/page.tsx",
+   "title": "Where Does California Get Its Electricity? 2024 Power Mix",
+   "clusters": [
+    370
+   ],
+   "sources": [
+    "https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation",
+    "https://www.eia.gov/electricity/sales_revenue_price/xls/table_5A.xlsx",
+    "https://www.pge.com/assets/pge/transcripts/bill-explainer.pdf",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html",
+    "https://www.cpuc.ca.gov/RateComparison",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+   ],
+   "status": "done",
+   "note": "CEC 2024 power mix."
+  },
+  {
+   "path": "/blog/sdge-rate-increase-2026",
+   "action": "UPGRADE",
+   "hub": "utility_rates",
+   "file": "src/app/blog/sdge-rate-increase-2026/page.tsx",
+   "title": "SDG&E Rate Increase 2026: History, Chart and What Changed",
+   "clusters": [
+    352
+   ],
+   "sources": [
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260430-public-advocates-office-q1-2026-electric-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260210-public-advocates-office-q4-2025-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/251106-public-advocates-office-q3-2025-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/250827-public-advocates-office-q2-2025-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/250218-public-advocates-office-q4-2024-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/241205-public-advocates-office-q3-2024-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/240722-public-advocates-office-q2-2024-electric-rates-report.pdf",
+    "https://www.sdge.com/total-electric-rates",
+    "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
+    "https://www.sdge.com/sites/default/files/regulatory/6-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
+    "https://www.sdge.com/sites/default/files/regulatory/1-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
+    "https://www.sdge.com/sites/default/files/regulatory/10-1-25%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
+    "https://www.sdge.com/sites/default/files/regulatory/6-1-25%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
+    "https://www.sdge.com/sites/default/files/regulatory/1-1-24%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
+    "https://www.sdge.com/sites/default/files/regulatory/1-1-23%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
+    "https://www.sdge.com/whenmatters",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program"
+   ],
+   "status": "done",
+   "note": "Rewrite: RAR chart, change table through Aug 1, 2026, TOU-DR1 price history."
+  },
+  {
+   "path": "/blog/average-pge-bill-for-1-bedroom-apartment",
+   "action": "CREATE",
+   "hub": "electric_bills",
+   "file": "src/app/blog/average-pge-bill-for-1-bedroom-apartment/page.tsx",
+   "title": "Average PG&E Bill for a 1-Bedroom Apartment (2026)",
+   "clusters": [
+    423
+   ],
+   "sources": [
+    "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+    "https://www.pge.com/assets/rates/tariffs/ResElecBaselineCurrent.xlsx",
+    "https://www.pge.com/assets/pge/transcripts/bill-explainer.pdf",
+    "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill.html",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html",
+    "https://www.eia.gov/consumption/residential/data/2020/c&e/xls/ce2.5.xlsx",
+    "https://www.eia.gov/electricity/sales_revenue_price/xls/table_5A.xlsx",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
+    "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/fera-program.html"
+   ],
+   "status": "done",
+   "note": "No official average exists; page prices 250-450 kWh on Mar 1, 2026 E-1 by territory and labels it arithmetic."
+  },
+  {
+   "path": "/blog/pge-time-of-use-rates-2026",
+   "action": "UPGRADE",
+   "hub": "utility_rates",
+   "file": "src/app/blog/pge-time-of-use-rates-2026/page.tsx",
+   "title": "PG&E Peak Hours and Time-of-Use Rates 2026: All Plans",
+   "clusters": [
+    2129,
+    1853
+   ],
+   "sources": [
+    "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+    "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_260101-260228.xlsx",
+    "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_250901-251231.xlsx",
+    "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_250301-250831.xlsx",
+    "https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_240101-240229.xlsx",
+    "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+    "https://www.pge.com/en/account/rate-plans/time-of-use-rate-plans.html",
+    "https://www.pge.com/en/account/rate-plans/electric-vehicles.html",
+    "https://www.pge.com/en/account/rate-plans/electric-home.html",
+    "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+    "https://www.pge.com/assets/pge/transcripts/bill-explainer.pdf",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260210-public-advocates-office-q4-2025-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260305-public-advocates-office-pge-revenue-requests-fact-sheet.pdf",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+   ],
+   "status": "done",
+   "note": "Rewrite covering all PG&E residential TOU plans with 2026 prices and EV plan history."
+  },
+  {
+   "path": "/blog/electricity-rates-highest-in-us-california",
+   "action": "CREATE",
+   "hub": "utility_rates",
+   "file": "src/app/blog/electricity-rates-highest-in-us-california/page.tsx",
+   "title": "California Electricity Rates: 2nd Highest in the U.S. (2026)",
+   "clusters": [
+    1932
+   ],
+   "sources": [
+    "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_a",
+    "https://www.eia.gov/electricity/monthly/epm_table_grapher.php?t=epmt_5_6_b",
+    "https://www.eia.gov/electricity/sales_revenue_price/xls/table_5A.xlsx",
+    "https://www.eia.gov/electricity/sales_revenue_price/",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.smud.org/Rate-Information/Residential-rates",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+   ],
+   "status": "done",
+   "note": "EIA Electric Power Monthly June 2026 state ranking (CA 2nd)."
+  },
+  {
+   "path": "/blog/why-is-my-sce-bill-so-high",
+   "action": "UPGRADE",
+   "hub": "electric_bills",
+   "file": "src/app/blog/why-is-my-sce-bill-so-high/page.tsx",
+   "title": "Why Is My Edison Bill So High? SCE Bill Checklist (2026)",
+   "clusters": [
+    448
+   ],
+   "sources": [
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+    "https://www.sce.com/customer-service-center/help-center/solar/net-energy-metering/understanding-nem-bill",
+    "https://www.sce.com/sites/default/files/custom-files/Summary%20of%20Available%20Residential%20and%20Nonresidential%20Rate%20Options.pdf",
+    "https://www.sce.com/save-money/rates-financing/rate-plan-comparison",
+    "https://desertcommunityenergy.org/your-options/solar-customers/",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/251106-public-advocates-office-q3-2025-rates-report.pdf",
+    "https://www.cpuc.ca.gov/climatecredit",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+    "https://www.smud.org/Rate-Information/Residential-rates"
+   ],
+   "status": "done",
+   "note": "Upgrade: SCE plan prices, tiers/baseline, BSC, Oct 2025 increase, Climate Credit, PAO bill estimates, NEM settlement; kept BillComparison, DCE and local links."
+  },
+  {
+   "path": "/blog/how-often-does-ladwp-bill",
+   "action": "CREATE",
+   "hub": "electric_bills",
+   "file": "src/app/blog/how-often-does-ladwp-bill/page.tsx",
+   "title": "How Often Does LADWP Bill? Every Two Months, Explained",
+   "clusters": [
+    481
+   ],
+   "sources": [
+    "https://www.ladwp.com/account/customer-service/bill-payment/billingaccount-issues-frequently-asked-questions",
+    "https://www.ladwp.com/account/understanding-your-rates/residential-electric-rates",
+    "https://www.ladwp.com/account/customer-service/electric-rates/residential-rates",
+    "https://www.ladwp.com/account/understanding-your-rates/residential-water-rates",
+    "https://www.ladwp.com/account/customer-service/water-rates/schedule-residential",
+    "https://www.pge.com/en/save-energy-and-money/energy-saving-programs/smartmeter/meter-reading-schedule.html",
+    "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill.html"
+   ],
+   "status": "done",
+   "note": "Bimonthly billing, tier sizing per cycle, estimated/delayed bills, 2026 Schedule A water prices (supporting kw), PG&E read schedule (sub-question)."
+  },
+  {
+   "path": "/blog/income-qualified-bill-discount-pge",
+   "action": "CREATE",
+   "hub": "electric_bills",
+   "file": "src/app/blog/income-qualified-bill-discount-pge/page.tsx",
+   "title": "PG&E Income-Qualified Bill Discount: CARE and FERA (2026)",
+   "clusters": [
+    494
+   ],
+   "sources": [
+    "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/california-alternate-rates-for-energy-program.html",
+    "https://www.pge.com/en/account/billing-and-assistance/financial-assistance/fera-program.html",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
+    "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+    "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+    "https://www.pge.com/en/account/billing-and-assistance/financial-assistance.html",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.cpuc.ca.gov/RateComparison",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://apps.puc.state.or.us/edockets/docket.asp?DocketID=23171"
+   ],
+   "status": "done",
+   "note": "CARE/FERA, Income Tier BSC, CPUC limits Jun 2026-May 2027, arrears programs. NOTE: the exact phrase is Portland General Electric's Oregon program (OPUC Advice 22-01); page says so up front. Much of the query volume may be Oregon intent."
+  },
+  {
+   "path": "/blog/direct-access-electricity-california",
+   "action": "CREATE",
+   "hub": "electric_bills",
+   "file": "src/app/blog/direct-access-electricity-california/page.tsx",
+   "title": "California Direct Access Electricity: Lottery, Cap and Rules",
+   "clusters": [
+    545
+   ],
+   "sources": [
+    "https://www.cpuc.ca.gov/consumer-support/consumer-programs-and-services/electrical-energy-and-energy-efficiency/community-choice-aggregation-and-direct-access-/direct-access",
+    "https://www.cpuc.ca.gov/consumer-support/consumer-programs-and-services/electrical-energy-and-energy-efficiency/community-choice-aggregation-and-direct-access-/direct-access/learn-more-about-costs-and-rates",
+    "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/direct-access-implementation-activity-reports/2025/2025-da-lottery-report.pdf",
+    "https://www.sce.com/partners/partnerships/direct-access",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html",
+    "https://www.cpuc.ca.gov/RateComparison"
+   ],
+   "status": "done",
+   "note": "Cap history, June lottery, CPUC June 2026 lottery report by utility, CCA alternative for households."
+  },
+  {
+   "path": "/blog/why-is-my-smud-bill-so-high",
+   "action": "CREATE",
+   "hub": "electric_bills",
+   "file": "src/app/blog/why-is-my-smud-bill-so-high/page.tsx",
+   "title": "Why Is My SMUD Bill So High? 2026 Rates and Summer Peaks",
+   "clusters": [
+    395
+   ],
+   "sources": [
+    "https://www.smud.org/Rate-Information/Residential-rates",
+    "https://www.smud.org/Rate-Information/Residential-rates/Time-of-Day-5-8pm-Rate/Rate-details",
+    "https://www.smud.org/Rate-Information/Rate-archive",
+    "https://www.smud.org/Rate-Information/Low-income-and-nonprofits",
+    "https://www.cpuc.ca.gov/consumer-support/late-bill-assistance/my-bill"
+   ],
+   "status": "done",
+   "note": "SMUD 2026 TOD prices, $27 SIFC, 2026/2027 increases, EAPR limits, SSR export rate."
+  },
+  {
+   "path": "/blog/what-is-3rd-party-electric-on-pge-bill",
+   "action": "CREATE",
+   "hub": "electric_bills",
+   "file": "src/app/blog/what-is-3rd-party-electric-on-pge-bill/page.tsx",
+   "title": "What Is 3rd Party Electric on a PG&E Bill? CCA Charges",
+   "clusters": [
+    479
+   ],
+   "sources": [
+    "https://www.pge.com/assets/pge/transcripts/bill-explainer.pdf",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html",
+    "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill.html",
+    "https://www.pge.com/assets/pge/docs/account/alternate-energy-providers/WestLightEnergy_JointRateComparisons.pdf",
+    "https://www.cpuc.ca.gov/RateComparison",
+    "https://www.cpuc.ca.gov/consumer-support/consumer-programs-and-services/electrical-energy-and-energy-efficiency/community-choice-aggregation-and-direct-access-/direct-access"
+   ],
+   "status": "done",
+   "note": "CCA generation vs PG&E delivery, PCIA vintages, PG&E-WestLight joint rate comparison (July 2026), 3rd-party gas (CTA)."
+  },
+  {
+   "path": "/blog/sce-rate-schedules",
+   "action": "CREATE",
+   "hub": "utility_rates",
+   "file": "src/app/blog/sce-rate-schedules/page.tsx",
+   "title": "SCE Rate Schedules 2026: Every Residential Plan Explained",
+   "clusters": [
+    485
+   ],
+   "sources": [
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+    "https://www.sce.com/sites/default/files/custom-files/Summary%20of%20Available%20Residential%20and%20Nonresidential%20Rate%20Options.pdf",
+    "https://www.sce.com/regulatory/tariff-books/rates-pricing-choices",
+    "https://www.sce.com/regulatory/tariff-books/historical-rates",
+    "https://www.sce.com/customer-service-center/help-center/solar/net-energy-metering/understanding-nem-bill",
+    "https://www.sce.com/save-money/rates-financing/rate-plan-comparison",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+   ],
+   "status": "done",
+   "note": "All SCE residential schedules (open, closed, discount, multifamily, solar) with SCE's June 2026 prices."
+  },
+  {
+   "path": "/blog/did-pge-rates-go-up",
+   "action": "CREATE",
+   "hub": "utility_rates",
+   "file": "src/app/blog/did-pge-rates-go-up/page.tsx",
+   "title": "Did PG&E Rates Go Up? Every Rate Change, 2023 to 2026",
+   "clusters": [
+    477
+   ],
+   "sources": [
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260430-public-advocates-office-q1-2026-electric-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260210-public-advocates-office-q4-2025-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/251106-public-advocates-office-q3-2025-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/242005-public-advocates-office-q1-2025-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/250218-public-advocates-office-q4-2024-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/241205-public-advocates-office-q3-2024-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/240722-public-advocates-office-q2-2024-electric-rates-report.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260305-public-advocates-office-pge-revenue-requests-fact-sheet.pdf",
+    "https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-prioritizes-safety-reliability-and-affordability-in-pge-rate-case-2023",
+    "https://www.pge.com/tariffs/en/rate-information/electric-rates.html",
+    "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+    "https://www.pge.com/assets/pge/transcripts/bill-explainer.pdf",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
+   ],
+   "status": "done",
+   "note": "Every PG&E change Jul 2024-Mar 2026 with advice letter, size and cause (PAO); E-1 2023-2026; 2027 GRC outlook (PAO June 2026)."
+  },
+  {
+   "path": "/blog/sce-settlement-bill",
+   "action": "CREATE",
+   "hub": "electric_bills",
+   "file": "src/app/blog/sce-settlement-bill/page.tsx",
+   "title": "SCE Annual Settlement Bill: How to Read Your Solar True-Up",
+   "clusters": [
+    482
+   ],
+   "sources": [
+    "https://www.sce.com/customer-service-center/help-center/solar/net-energy-metering/understanding-nem-bill",
+    "https://www.sce.com/regulatory/regulatory-information/ferc-Standards-conduct/tariff-books/rates-pricing-choices/net-surplus-compensation",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+    "https://desertcommunityenergy.org/your-options/solar-customers/",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
+   ],
+   "status": "done",
+   "note": "NEM Annual Settlement Statement, ABO vs MBO, SCE NSC rates by cycle month, CCA and Solar Billing Plan differences."
+  },
+  {
+   "path": "/blog/selling-electricity-back-to-the-grid-price-per-kwh",
+   "action": "CREATE",
+   "hub": "utility_rates",
+   "file": "src/app/blog/selling-electricity-back-to-the-grid-price-per-kwh/page.tsx",
+   "title": "Selling Electricity Back to the Grid: Price per kWh (2026)",
+   "clusters": [
+    555
+   ],
+   "sources": [
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+    "https://www.pge.com/assets/pge/docs/vanities/PGE-EEC-Price-Sheets.zip",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://www.sce.com/regulatory/regulatory-information/ferc-Standards-conduct/tariff-books/rates-pricing-choices/net-surplus-compensation",
+    "https://www.sce.com/customer-service-center/help-center/solar/net-energy-metering/understanding-nem-bill",
+    "https://www.smud.org/Rate-Information/Residential-rates",
+    "https://www.ladwp.com/account/customer-service/electric-rates/ev-nem-reo-rates",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+   ],
+   "status": "done",
+   "note": "PG&E 2026 EEC values by month/hour, NEM retail credit + SCE NSC, SMUD SSR 9.6c, LADWP NEM terms."
+  },
+  {
+   "path": "/blog/chargepoint-cost-per-kwh-california",
+   "action": "CREATE",
+   "hub": "utility_rates",
+   "file": "src/app/blog/chargepoint-cost-per-kwh-california/page.tsx",
+   "title": "ChargePoint Cost per kWh in California: Prices and Fees",
+   "clusters": [
+    570
+   ],
+   "sources": [
+    "https://www.chargepoint.com/drivers/support/faqs/what-are-pricing-policies-and-fees-i-should-be-aware",
+    "https://www.chargepoint.com/drivers/support/faqs/what-service-fee",
+    "https://www.cdfa.ca.gov/dms/pdfs/EVFS_FAQ.pdf",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+    "https://www.smud.org/Rate-Information/Residential-rates",
+    "https://www.smud.org/Rate-Information/Residential-rates/Time-of-Day-5-8pm-Rate/Rate-details",
+    "https://www.ladwp.com/account/customer-service/electric-rates/residential-rates",
+    "https://www.ladwp.com/residential-services/programs-and-rebates-residential/electric-vehicles"
+   ],
+   "status": "done",
+   "note": "Owner-set pricing and ChargePoint service fee cite ChargePoint's own support FAQs (updated Jun 16, 2026), the only primary source for its fees; California display rules from CDFA; home EV rates from utilities."
+  },
+  {
+   "path": "/blog/ladwp-ev-charging-rates",
+   "action": "CREATE",
+   "hub": "utility_rates",
+   "file": "src/app/blog/ladwp-ev-charging-rates/page.tsx",
+   "title": "LADWP EV Charging Rates 2026: Discount, Meter and Rebates",
+   "clusters": [
+    562
+   ],
+   "sources": [
+    "https://www.ladwp.com/residential-services/programs-and-rebates-residential/electric-vehicles",
+    "https://www.ladwp.com/account/customer-service/electric-rates/ev-nem-reo-rates",
+    "https://www.ladwp.com/account/customer-service/electric-rates/residential-rates",
+    "https://www.ladwp.com/account/understanding-your-rates/residential-electric-rates",
+    "https://www.ladwp.com/account/customer-service/bill-payment/billingaccount-issues-frequently-asked-questions",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans"
+   ],
+   "status": "done",
+   "note": "EV meter discount, 2026 R-1B prices with discount, meter vs R-1A tier trade-off, LADWP rebates."
+  }
+ ],
+ "sitemap_add": [
+  "/blog/ladwp-rates",
+  "/blog/average-utility-bill-california",
+  "/blog/average-kwh-per-day-california",
+  "/blog/pge-tier-rates",
+  "/blog/where-does-california-get-its-electricity",
+  "/blog/average-pge-bill-for-1-bedroom-apartment",
+  "/blog/electricity-rates-highest-in-us-california",
+  "/blog/how-often-does-ladwp-bill",
+  "/blog/income-qualified-bill-discount-pge",
+  "/blog/direct-access-electricity-california",
+  "/blog/why-is-my-smud-bill-so-high",
+  "/blog/what-is-3rd-party-electric-on-pge-bill",
+  "/blog/sce-rate-schedules",
+  "/blog/did-pge-rates-go-up",
+  "/blog/sce-settlement-bill",
+  "/blog/selling-electricity-back-to-the-grid-price-per-kwh",
+  "/blog/chargepoint-cost-per-kwh-california",
+  "/blog/ladwp-ev-charging-rates"
+ ],
+ "blog_index_add": [
+  {
+   "slug": "ladwp-rates",
+   "title": "LADWP Rates 2026: Tier Prices, Peak Hours and Cost per kWh",
+   "hub": "utility_rates"
+  },
+  {
+   "slug": "average-utility-bill-california",
+   "title": "Average Utility Bill in California: Electric, Gas and More",
+   "hub": "electric_bills"
+  },
+  {
+   "slug": "average-kwh-per-day-california",
+   "title": "Average kWh per Day in California: 16.5 kWh (2024 Data)",
+   "hub": "utility_rates"
+  },
+  {
+   "slug": "pge-tier-rates",
+   "title": "PG&E Tier Rates 2026: Tier 1 vs Tier 2 Prices on E-1",
+   "hub": "utility_rates"
+  },
+  {
+   "slug": "where-does-california-get-its-electricity",
+   "title": "Where Does California Get Its Electricity? 2024 Power Mix",
+   "hub": "electric_bills"
+  },
+  {
+   "slug": "average-pge-bill-for-1-bedroom-apartment",
+   "title": "Average PG&E Bill for a 1-Bedroom Apartment (2026)",
+   "hub": "electric_bills"
+  },
+  {
+   "slug": "electricity-rates-highest-in-us-california",
+   "title": "California Electricity Rates: 2nd Highest in the U.S. (2026)",
+   "hub": "utility_rates"
+  },
+  {
+   "slug": "how-often-does-ladwp-bill",
+   "title": "How Often Does LADWP Bill? Every Two Months, Explained",
+   "hub": "electric_bills"
+  },
+  {
+   "slug": "income-qualified-bill-discount-pge",
+   "title": "PG&E Income-Qualified Bill Discount: CARE and FERA (2026)",
+   "hub": "electric_bills"
+  },
+  {
+   "slug": "direct-access-electricity-california",
+   "title": "California Direct Access Electricity: Lottery, Cap and Rules",
+   "hub": "electric_bills"
+  },
+  {
+   "slug": "why-is-my-smud-bill-so-high",
+   "title": "Why Is My SMUD Bill So High? 2026 Rates and Summer Peaks",
+   "hub": "electric_bills"
+  },
+  {
+   "slug": "what-is-3rd-party-electric-on-pge-bill",
+   "title": "What Is 3rd Party Electric on a PG&E Bill? CCA Charges",
+   "hub": "electric_bills"
+  },
+  {
+   "slug": "sce-rate-schedules",
+   "title": "SCE Rate Schedules 2026: Every Residential Plan Explained",
+   "hub": "utility_rates"
+  },
+  {
+   "slug": "did-pge-rates-go-up",
+   "title": "Did PG&E Rates Go Up? Every Rate Change, 2023 to 2026",
+   "hub": "utility_rates"
+  },
+  {
+   "slug": "sce-settlement-bill",
+   "title": "SCE Annual Settlement Bill: How to Read Your Solar True-Up",
+   "hub": "electric_bills"
+  },
+  {
+   "slug": "selling-electricity-back-to-the-grid-price-per-kwh",
+   "title": "Selling Electricity Back to the Grid: Price per kWh (2026)",
+   "hub": "utility_rates"
+  },
+  {
+   "slug": "chargepoint-cost-per-kwh-california",
+   "title": "ChargePoint Cost per kWh in California: Prices and Fees",
+   "hub": "utility_rates"
+  },
+  {
+   "slug": "ladwp-ev-charging-rates",
+   "title": "LADWP EV Charging Rates 2026: Discount, Meter and Rebates",
+   "hub": "utility_rates"
+  }
+ ],
+ "redirect_requests": [],
+ "hub_links": [
+  {
+   "hub": "utility_rates",
+   "href": "/blog/ladwp-rates",
+   "label": "LADWP rates and peak hours"
+  },
+  {
+   "hub": "electric_bills",
+   "href": "/blog/average-utility-bill-california",
+   "label": "Average California utility bill"
+  },
+  {
+   "hub": "utility_rates",
+   "href": "/blog/average-kwh-per-day-california",
+   "label": "Average kWh per day in California"
+  },
+  {
+   "hub": "utility_rates",
+   "href": "/blog/pge-tier-rates",
+   "label": "PG&E tier rates on E-1"
+  },
+  {
+   "hub": "electric_bills",
+   "href": "/blog/where-does-california-get-its-electricity",
+   "label": "Where California's electricity comes from"
+  },
+  {
+   "hub": "electric_bills",
+   "href": "/blog/average-pge-bill-for-1-bedroom-apartment",
+   "label": "PG&E bill for a one-bedroom apartment"
+  },
+  {
+   "hub": "utility_rates",
+   "href": "/blog/electricity-rates-highest-in-us-california",
+   "label": "How California electricity rates rank"
+  },
+  {
+   "hub": "electric_bills",
+   "href": "/blog/how-often-does-ladwp-bill",
+   "label": "How often LADWP bills"
+  },
+  {
+   "hub": "electric_bills",
+   "href": "/blog/income-qualified-bill-discount-pge",
+   "label": "PG&E CARE and FERA discounts"
+  },
+  {
+   "hub": "electric_bills",
+   "href": "/blog/direct-access-electricity-california",
+   "label": "Direct Access electricity in California"
+  },
+  {
+   "hub": "electric_bills",
+   "href": "/blog/why-is-my-smud-bill-so-high",
+   "label": "Why a SMUD bill runs high"
+  },
+  {
+   "hub": "electric_bills",
+   "href": "/blog/what-is-3rd-party-electric-on-pge-bill",
+   "label": "Third-party electric charges on a PG&E bill"
+  },
+  {
+   "hub": "utility_rates",
+   "href": "/blog/sce-rate-schedules",
+   "label": "SCE residential rate schedules"
+  },
+  {
+   "hub": "utility_rates",
+   "href": "/blog/did-pge-rates-go-up",
+   "label": "Did PG&E rates go up?"
+  },
+  {
+   "hub": "electric_bills",
+   "href": "/blog/sce-settlement-bill",
+   "label": "SCE annual settlement bill"
+  },
+  {
+   "hub": "utility_rates",
+   "href": "/blog/selling-electricity-back-to-the-grid-price-per-kwh",
+   "label": "What solar exports earn per kWh"
+  },
+  {
+   "hub": "utility_rates",
+   "href": "/blog/chargepoint-cost-per-kwh-california",
+   "label": "ChargePoint cost per kWh in California"
+  },
+  {
+   "hub": "utility_rates",
+   "href": "/blog/ladwp-ev-charging-rates",
+   "label": "LADWP EV charging rates"
+  }
+ ],
+ "skipped": [
+  {
+   "url": "/blog/solar-electric-co-california",
+   "why": "Navigational brand query for a small Grass Valley installer; skipped per 'skip review pages for small/obscure installer names' default."
+  }
+ ],
+ "notes_for_integration": [
+  "Tracker (/california-utility-rate-tracker) was not in assign_rates.csv, so it was not edited. Per Decision 20, suggested dated sections for it: SDG&E Aug 1, 2026 rate change; LADWP Oct 1, 2026 adjustment-factor step (R-1A Tier 1 26.408 -> 27.292 c/kWh); SMUD +3% Jan 1, 2027 (approved); PAO June 24, 2026 PG&E 2027 outlook (+16% bills in 2027 if all requests approved).",
+  "Shared data added: src/data/rate-sources.ts (source registry, imports the Q*_URL constants from utility-rate-tracker.ts; tracker data unchanged) and src/components/growth/RateGuideParts.tsx.",
+  "why-is-my-california-electric-bill-so-high no longer uses CaliforniaBillDecisionPage; that component's 'high' variant content is now unused (the 'lower' page still uses the component).",
+  "src/data/topic-hubs.ts labels contain HTML entities (e.g. 'PG&amp;E') that render literally in HubSpokeLinks; not edited per brief.",
+  "Possible future overlap: incentives plan's /blog/pge-care-program vs /blog/income-qualified-bill-discount-pge (CARE/FERA content).",
+  "Some sources were fetched with curl rather than WebFetch (LADWP returned 403 to WebFetch); all were fetched 2026-09-23."
+ ]
+}
