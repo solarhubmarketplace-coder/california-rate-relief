@@ -362,7 +362,7 @@ export default function TenKwSolarCostPage() {
           </ul>
           <p className="mt-3">
             How much a 10 kW array produces depends on your roof&rsquo;s direction, tilt, shading and
-            location. Run your address through NREL&rsquo;s free{' '}
+            location. Run your address through NREL&rsquo;s{' '}
             <a className={link} href={S.pvwatts}>
               PVWatts calculator
             </a>{' '}
