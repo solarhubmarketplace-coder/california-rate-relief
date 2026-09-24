@@ -213,7 +213,11 @@ const FEES: Record<string, FeeEntry> = {
     extra: 'Above 15 kW: $15 per kW.',
   },
   livermore: { status: 'not-published', evidence: 'does not state a dollar figure' },
-  manteca: { status: 'not-published', evidence: 'Page does not give a dollar amount' },
+  manteca: {
+    status: 'published',
+    components: [{ label: 'residential rooftop solar PV permit', usd: 378, quote: 'permit at $378 per application' }],
+    extra: 'An energy storage system is $304 and a residential electrical panel $119; a 5% technology fee applies.',
+  },
   marina: {
     status: 'published',
     components: [{
@@ -236,7 +240,7 @@ const FEES: Record<string, FeeEntry> = {
     components: [{
       label: 'residential solar/PV installation permit, under 10 kW',
       usd: 450,
-      quote: 'Residential Solar/PV Installation Permit (under 10kW) $450.00',
+      quote: 'permit under 10 kW at $450',
     }],
   },
   napa: { status: 'not-published', evidence: 'No dollar amount given on this page' },
@@ -409,6 +413,24 @@ const FEES: Record<string, FeeEntry> = {
     extra: 'SolarAPP+ collects a one-time $35.00 fee.',
     evidence: 'The City\'s solar pages do not state that amount',
   },
+  sacramento: {
+    status: 'published',
+    components: [{ label: 'streamlined residential PV permit, up to 15 kW', usd: 450, quote: '$450 for a system up to 15 kW' }],
+    extra: 'Above 15 kW: $15 per kW.',
+  },
+  sunnyvale: {
+    status: 'published',
+    components: [
+      { label: 'photovoltaic/solar permit, single-family or duplex', usd: 389, quote: 'at $389.00' },
+      { label: 'permit issuance', usd: 42.5, quote: '$42.50 permit issuance fee' },
+    ],
+    extra: 'A 5% technology surcharge applies; SolarAPP+ adds $25.',
+  },
+  visalia: {
+    status: 'not-published',
+    extra: 'Fees are paid online by card before the permit auto-issues.',
+    evidence: 'it does not state the amounts',
+  },
   oakland: {
     status: 'published',
     components: [
@@ -483,14 +505,14 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   hollister: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned' },
   lincoln: { platform: 'symbium', evidence: 'online filing via the Symbium portal' },
   livermore: { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
-  manteca: { platform: 'symbium', evidence: 'online instant permitting via Symbium' },
+  manteca: { platform: 'symbium', evidence: 'issued instantly online through Symbium' },
   marina: { platform: 'none-named', evidence: 'the page does not mention SolarAPP+ specifically' },
   modesto: {
     platform: 'unconfirmed',
     evidence: 'was not independently reconfirmed on a live page',
     note: 'An older City document suggests SolarAPP+ was used; the link now fails.',
   },
-  monterey: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned on this page' },
+  monterey: { platform: 'solarapp', evidence: "lists Monterey's platform as SolarAPP+" },
   napa: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned' },
   oceanside: { platform: 'solarapp', evidence: 'registered with SolarAPP+ apply' },
   'pacific-grove': {
@@ -547,6 +569,9 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     note: 'Express permit under IB-023; the CEC SB 379 data (self-reported) lists a custom platform.',
   },
   'santa-ana': { platform: 'solarapp', evidence: 'only after SolarAPP+ approval' },
+  sacramento: { platform: 'solarapp', evidence: 'connected SolarAPP+ to its Accela Citizen Access portal' },
+  sunnyvale: { platform: 'solarapp', evidence: 'Licensed contractors get SolarAPP+ pre-approval' },
+  visalia: { platform: 'solarapp', evidence: 'take the design through SolarAPP+' },
   oakland: { platform: 'solarapp', evidence: 'eligible rooftop systems on a permitted main dwelling through SolarAPP+' },
 };
 
@@ -718,6 +743,16 @@ const CCAS: CcaEntry[] = [
     source: {
       label: 'MCE, Service Area',
       url: 'https://www.mcecleanenergy.org/service-area/',
+      verifiedAt: '2026-09-23',
+    },
+  },
+  {
+    name: 'Silicon Valley Clean Energy',
+    match: 'Silicon Valley Clean Energy',
+    members: ['sunnyvale'],
+    source: {
+      label: 'Silicon Valley Clean Energy, About (communities served)',
+      url: 'https://svcleanenergy.org/about/',
       verifiedAt: '2026-09-23',
     },
   },

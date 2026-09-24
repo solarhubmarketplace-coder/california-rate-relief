@@ -594,12 +594,21 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "San Joaquin County",
     utilityKey: "pge",
     permitUrl: "https://www.manteca.gov/230/Instant-Residential-Solar-Energy-Storage",
+    // 2026-09-23: fee now read from the building fee table in the City's
+    // municipal code (Title FS).
     permitFeeNote:
-      "Page does not give a dollar amount; states only \"Pay your permit fees and obtain your permit instantly!\" via the online Symbium portal. No separate solar fee schedule PDF was located",
-    permitFeeSource: "City of Manteca Instant Residential Solar & Energy Storage System Permits page",
+      "The building permit fees in Manteca's municipal code list a residential rooftop solar photovoltaic permit at $378 per application, an energy storage system at $304 and a residential electrical panel at $119, plus a plan retention and technology fee of 5 percent of the permit fee. The City's instant permit page says fees are paid online before the permit issues but does not state them.",
+    permitFeeSource: "City of Manteca, Instant Residential Solar & Energy Storage System Permits",
+    permitSources: [
+      {
+        label: "Manteca Municipal Code, Title FS: Fee Schedules (building permit fees: Residential)",
+        url: "https://ecode360.com/44093610",
+        verifiedAt: "2026-09-23",
+      },
+    ],
     permitOnline:
-      "yes \u2014 online instant permitting via Symbium (enter property address, answer questions, automated code-compliance check, real-time permit issuance); page does NOT name SolarAPP+",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Rooftop solar and battery storage permits are issued instantly online through Symbium, which checks code compliance automatically, and inspections are scheduled through the City's Citizen Access portal.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "marina",
@@ -649,13 +658,39 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "Monterey County",
     utilityKey: "pge",
     cca: "Central Coast Community Energy (3CE)",
+    ccaSource: CCE_MEMBERS,
     permitUrl: "http://monterey.gov/your_city_hall/departments/community_development/building_and_safety_services/",
     permitFeeNote:
-      "Page states solar PV permit fees are \"automatically calculated\" through the new online portal (mymontereyportal.org, effective Jan 7, 2026) once project questions are answered; no dollar figure is given on the page itself. The city's Master Fee Schedule (FY2026/2027) separately lists: \"Residential Solar/PV Installation Permit (under 10kW) $450.00\" with a note that \"Residential solar permit fees are set by the State of California for 10kW and under.\"",
-    permitFeeSource: "City of Monterey Building and Safety Services page; City of Monterey Master Fee Schedule FY2026/2027 (files.monterey.gov)",
+      "Monterey's Master Fee Schedule for fiscal year 2026/2027, effective July 1, 2026, lists a residential solar/PV installation permit under 10 kW at $450, noting that the State sets residential solar permit fees for 10 kW and under. It also exempts solar arrays from architectural review, historic preservation, use permit and variance fees, and adds a 2.9 percent merchant service fee to card payments. The City's permit portal calculates the fee as the application is completed.",
+    permitFeeSource: "City of Monterey, Building and Safety Services",
+    permitSources: [
+      {
+        label: "City of Monterey, Master Fee Schedule, fiscal year 2026/2027, effective July 1, 2026 (Residential Solar/PV Installation Permit)",
+        url: "https://monterey.gov/Document-Center/Departments/Finance/Schedule-of-Fees-Fines/Master-Fee-Schedule.pdf",
+        verifiedAt: "2026-09-23",
+      },
+      {
+        label: "City of Monterey, Solar Photovoltaic (PV) Systems Expedited Submittal Checklist (rev. 12/30/2024)",
+        url: "https://monterey.gov/Document-Center/Departments/Community-Development/Building-Safety/Building-Forms/Solar-Checklist.pdf?t=202509301228390",
+        verifiedAt: "2026-09-23",
+      },
+      {
+        label: "County of Monterey, SolarApp+ for Solar Installers",
+        url: "https://www.countyofmonterey.gov/government/departments-a-h/housing-community-development/permit-center/online-permit-information/solarapp-for-solar-installers",
+        verifiedAt: "2026-09-23",
+      },
+      CEC_SB379_DATA,
+    ],
     permitOnline:
-      "Yes, Solar PV systems are included in the new online permit portal (mymontereyportal.org) effective January 7, 2026. SolarAPP+ is not mentioned on this page.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Since January 7, 2026, solar PV permits can be filed through the City's online portal (mymontereyportal.org), which identifies the reviews and calculates the fees from the applicant's answers. The City's page does not name SolarAPP+, though the California Energy Commission's SB 379 data lists Monterey's platform as SolarAPP+.",
+    sourcesFetchedAt: "2026-09-23",
+    extraFaqs: [
+      {
+        question: "How much does solar panel installation cost in Monterey County?",
+        answer:
+          "No public source prices an installation for the county. What varies by address is who permits the work and what they charge. Inside the City of Monterey the residential solar permit under 10 kW is $450 in the 2026/2027 fee schedule, with solar arrays exempt from the City's architectural and historic review fees. The County of Monterey permits the homes under its jurisdiction and runs its own SolarAPP+ route through its Citizen Access portal. Central Coast Community Energy counts the City and the County of Monterey among its members, with PG&E delivering the power and sending the bill.",
+      },
+    ],
   },
   {
     slug: "napa",
@@ -1481,6 +1516,61 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     ],
     permitOnline:
       'Yes. Since June 1, 2026, Santa Ana issues residential solar permits only after SolarAPP+ approval, and projects without it are not processed.',
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'sacramento',
+    city: 'Sacramento',
+    county: 'Sacramento County',
+    utilityKey: 'smud',
+    permitUrl: 'https://www.cityofsacramento.gov/content/dam/portal/it/digitalstrategy/Residential%20SolarApp.pdf',
+    permitFeeNote:
+      "Sacramento's streamlined permit for residential solar is $450 for a system up to 15 kW, plus $15 per kW above 15 kW, effective July 19, 2025 under Resolution 2024-0153. The City offers it as an alternative to its standard value-based building permit and plan review fees, and says it covers building plan review, inspection and application intake.",
+    permitFeeSource: 'City of Sacramento, Residential SolarApp+ in support of SB-379 (Information Technology, completed fiscal year 2023/2024)',
+    permitSources: [
+      {
+        label: 'City of Sacramento, Fees and Charges (open data): Streamlined Permit for Residential & Commercial Solar PV and Solar Water Heater Systems, fee table effective July 19, 2025',
+        url: 'https://services5.arcgis.com/54falWtcpty3V47Z/arcgis/rest/services/Fees_And_Charges/FeatureServer/1/11/attachments/10',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. The City connected SolarAPP+ to its Accela Citizen Access portal in fiscal year 2023/24, so a qualifying residential system can be applied for, paid for and permitted online, and automatically when both SolarAPP+ and City conditions are met.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'sunnyvale',
+    city: 'Sunnyvale',
+    county: 'Santa Clara County',
+    utilityKey: 'pge',
+    cca: 'Silicon Valley Clean Energy',
+    ccaSource: SVCE_ABOUT,
+    permitUrl: 'https://www.sunnyvale.ca.gov/business-and-development/planning-and-building/solarapp-for-solar-installers',
+    permitFeeNote:
+      "Sunnyvale's Building Permit Fees for fiscal year 2026/27, effective August 18, 2026, list a photovoltaic/solar system permit for a single-family home or duplex at $389.00, plus a $42.50 permit issuance fee and a technology surcharge of 5 percent of the permit fee on each project. SolarAPP+ charges its own $25 processing fee, which covers three revisions.",
+    permitFeeSource: 'City of Sunnyvale, SolarApp+ for Solar Installers',
+    permitSources: [
+      {
+        label: 'City of Sunnyvale, Building Permit Fees, fiscal year 26/27, effective August 18, 2026',
+        url: 'https://www.sunnyvale.ca.gov/home/showpublisheddocument/1626/639228338481470000',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Licensed contractors get SolarAPP+ pre-approval, then apply for a Photovoltaic (SolarAPP+) permit in the City's E-OneStop online services, upload the approved plans and pay; inspections are requested in the same account. A Sunnyvale business license is required.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'visalia',
+    city: 'Visalia',
+    county: 'Tulare County',
+    utilityKey: 'sce',
+    permitUrl: 'https://www.visalia.gov/269/SolarApp',
+    permitFeeNote:
+      "Visalia's SolarApp page says SolarAPP+ charges its own fee and that City permit fees are paid online, by Visa or MasterCard only, before the permit auto-issues; it does not state the amounts. The City's development fee book could not be read when checked.",
+    permitFeeSource: 'City of Visalia, SolarApp',
+    permitOnline:
+      "Yes. Licensed contractors take the design through SolarAPP+, then file a Residential Solar Permit with SolarApp in the City's Citizen Access portal, where the permit is auto-issued within seconds of payment. At inspection the contractor has to provide the project's single-line diagram and load calculations.",
     sourcesFetchedAt: '2026-09-23',
   },
 ];

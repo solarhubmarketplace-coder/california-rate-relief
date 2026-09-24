@@ -526,6 +526,95 @@
    ],
    "status": "done",
    "note": "County and CCA fields cleaned (they rendered whole sentences into a badge and the CCA sentence); County Symbium page (new URL) with exclusions and 1-3 day processing; Pioneer source and export terms. County fee ordinance is a draft with blank number, so no fee figure."
+  },
+  {
+   "path": "/solar-cost/sacramento",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Sacramento, CA: What Sets the Price (2026)",
+   "clusters": [
+    205
+   ],
+   "sources": [
+    "https://www.cityofsacramento.gov/content/dam/portal/it/digitalstrategy/Residential%20SolarApp.pdf",
+    "https://services5.arcgis.com/54falWtcpty3V47Z/arcgis/rest/services/Fees_And_Charges/FeatureServer/1/11/attachments/10",
+    "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate",
+    "https://www.smud.org/Corporate/About-us/News-and-Media/2026/2026/SMUD-boosts-Solar-and-Storage-Compensation-rate-for-rooftop-solar-customers"
+   ],
+   "status": "done",
+   "note": "New row (CREATE): SMUD; streamlined permit $450 up to 15 kW (City open-data fee record, eff. 2025-07-19); SolarAPP+ in Accela (City IT project page); SMUD Solar and Storage Rate 9.6 c/kWh from 2026-06-01. The City's residential solar web page renders by script and could not be read, so the permit link is the City's SolarApp+ project document. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/manteca",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Manteca, CA: What Sets the Price (2026)",
+   "clusters": [
+    680
+   ],
+   "sources": [
+    "https://www.manteca.gov/230/Instant-Residential-Solar-Energy-Storage",
+    "https://ecode360.com/44093610",
+    "https://www.mid.org/about-us/who-we-are/",
+    "https://avaenergy.org/community/who-we-serve/"
+   ],
+   "status": "done",
+   "note": "Fee now published from the municipal code fee table ($378 PV, $304 ESS, $119 panel, 5% tech fee); Symbium instant permits; CEC map shows a small MID area in the SE corner (MID's own list omits Manteca) - noted as a check, not a split. Impressions sit on /solar-panels-california (link request)."
+  },
+  {
+   "path": "/solar-cost/monterey",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Monterey, CA: What Sets the Price (2026)",
+   "clusters": [
+    689
+   ],
+   "sources": [
+    "http://monterey.gov/your_city_hall/departments/community_development/building_and_safety_services/",
+    "https://monterey.gov/Document-Center/Departments/Finance/Schedule-of-Fees-Fines/Master-Fee-Schedule.pdf",
+    "https://monterey.gov/Document-Center/Departments/Community-Development/Building-Safety/Building-Forms/Solar-Checklist.pdf?t=202509301228390",
+    "https://www.countyofmonterey.gov/government/departments-a-h/housing-community-development/permit-center/online-permit-information/solarapp-for-solar-installers",
+    "https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf"
+   ],
+   "status": "done",
+   "note": "Re-verified FY2026/27 fee ($450 under 10 kW), solar exempt from architectural/historic review fees, card fee; portal since 2026-01-07; checklist (framing, detector affidavit, garage bollards); CEC SB 379 lists SolarAPP+; Monterey County FAQ answering the GSC county queries. Held item G02 (Monterey/Salinas merge) untouched."
+  },
+  {
+   "path": "/solar-cost/sunnyvale",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Sunnyvale, CA: What Sets the Price (2026)",
+   "clusters": [
+    698
+   ],
+   "sources": [
+    "https://www.sunnyvale.ca.gov/business-and-development/planning-and-building/solarapp-for-solar-installers",
+    "https://www.sunnyvale.ca.gov/home/showpublisheddocument/1626/639228338481470000",
+    "https://svcleanenergy.org/about/",
+    "https://www.svcleanenergy.org/solar-billing-plan/"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + SVCE; FY26/27 fees ($389 + $42.50 issuance + 5% tech); SolarAPP+ via E-OneStop with business license; SVCE monthly settlement and cashout rules. Sunnyvale is a cities-data (legacy) companies page; registered as a live twin."
+  },
+  {
+   "path": "/solar-cost/visalia",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Visalia, CA: What Sets the Price (2026)",
+   "clusters": [
+    701
+   ],
+   "sources": [
+    "https://www.visalia.gov/269/SolarApp",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "New row: SCE, no CCA; SolarAPP+ via ACA, card-only payment, auto-issue in seconds; single-line diagram and load calcs at inspection. Development fee book blocked by Cloudflare, so no fee figure. Companies twin registered."
   }
  ],
  "sitemap_add": [],
@@ -586,6 +675,21 @@
    "hub": "city_cost",
    "href": "/solar-cost/santa-ana",
    "label": "Solar panel cost in Santa Ana"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/sacramento",
+   "label": "Solar panel cost in Sacramento"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/sunnyvale",
+   "label": "Solar panel cost in Sunnyvale"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/visalia",
+   "label": "Solar panel cost in Visalia"
   }
  ],
  "link_requests": [

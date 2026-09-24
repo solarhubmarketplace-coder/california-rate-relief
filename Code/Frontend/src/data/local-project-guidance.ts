@@ -717,6 +717,111 @@ const pioneerSolar: LocalGuidanceSource = {
   scope: 'Pays $0.005 per kWh more than PG&E for over-production; monthly billing with credits rolling to the annual true-up; net surplus cashed out in the March/April billing cycle; check at $50 or more, bill credit below.',
 };
 
+
+const sacramentoSolarApp: LocalGuidanceSource = {
+  label: 'City of Sacramento — Residential SolarApp+ in support of SB-379',
+  url: 'https://www.cityofsacramento.gov/content/dam/portal/it/digitalstrategy/Residential%20SolarApp.pdf',
+  verifiedAt: verified20260923,
+  scope: 'Completed fiscal year 2023/2024: SolarAPP+ integrated with the City’s Accela Citizen Access portal; automated and immediate permitting when SolarAPP+ and City conditions are met.',
+};
+
+const sacramentoSolarFee: LocalGuidanceSource = {
+  label: 'City of Sacramento — Fees and Charges: Streamlined Permit for Residential & Commercial Solar PV (effective July 19, 2025)',
+  url: 'https://services5.arcgis.com/54falWtcpty3V47Z/arcgis/rest/services/Fees_And_Charges/FeatureServer/1/11/attachments/10',
+  verifiedAt: verified20260923,
+  scope:
+    'Residential PV up to 15 kW $450, plus $15 per kW above 15 kW (Resolution 2024-0153); an alternative to value-based permit and plan review fees covering building plan review, inspection and intake.',
+};
+
+const smudSsr: LocalGuidanceSource = {
+  label: 'SMUD — Solar and Storage Rate',
+  url: 'https://www.smud.org/Rate-Information/Solar-and-Storage-Rate',
+  verifiedAt: verified20260923,
+  scope:
+    'For customers approved to install solar or storage on or after March 1, 2022; exports bought at 9.6 cents per kWh regardless of time or season, effective June 1, 2026; credits carry over to later bills; a one-time fee to connect new solar systems (amount not stated there).',
+};
+
+const smudSsrNews: LocalGuidanceSource = {
+  label: 'SMUD — SMUD boosts Solar and Storage Compensation rate (April 27, 2026)',
+  url: 'https://www.smud.org/Corporate/About-us/News-and-Media/2026/2026/SMUD-boosts-Solar-and-Storage-Compensation-rate-for-rooftop-solar-customers',
+  verifiedAt: verified20260923,
+  scope: 'Compensation rate raised from 7.4 to 9.6 cents per kWh, effective June 1, 2026.',
+};
+
+const mantecaInstant: LocalGuidanceSource = {
+  label: 'City of Manteca — Instant Residential Solar & Energy Storage System Permits',
+  url: 'https://www.manteca.gov/230/Instant-Residential-Solar-Energy-Storage',
+  verifiedAt: verified20260923,
+  scope: 'Symbium checks code compliance and issues rooftop solar and battery permits in real time; fees paid online (not stated); inspections through Citizen Access.',
+};
+
+const mantecaFees: LocalGuidanceSource = {
+  label: 'Manteca Municipal Code — Title FS: Fee Schedules',
+  url: 'https://ecode360.com/44093610',
+  verifiedAt: verified20260923,
+  scope: 'Residential building permits: solar PV rooftop $378; energy storage system $304; electrical panels $119; plan retention/technology fee 5% of permit fee.',
+};
+
+const midServiceArea: LocalGuidanceSource = {
+  label: 'Modesto Irrigation District — Who We Are',
+  url: 'https://www.mid.org/about-us/who-we-are/',
+  verifiedAt: verified20260923,
+  scope: 'MID’s electric service area: greater Modesto north of the Tuolumne River, Waterford, Salida, Mountain House and parts of Ripon, Escalon, Oakdale and Riverbank. Manteca is not named.',
+};
+
+const montereyBuilding: LocalGuidanceSource = {
+  label: 'City of Monterey — Building and Safety Services',
+  url: 'http://monterey.gov/your_city_hall/departments/community_development/building_and_safety_services/',
+  verifiedAt: verified20260923,
+  scope: 'From January 7, 2026 permits including solar PV can be filed at mymontereyportal.org, which identifies required reviews and calculates fees; a Solar Checklist is required.',
+};
+
+const montereyFees2627: LocalGuidanceSource = {
+  label: 'City of Monterey — Master Fee Schedule FY 2026/2027 (effective July 1, 2026)',
+  url: 'https://monterey.gov/Document-Center/Departments/Finance/Schedule-of-Fees-Fines/Master-Fee-Schedule.pdf',
+  verifiedAt: verified20260923,
+  scope:
+    'Residential Solar/PV Installation Permit (under 10 kW) $450, fee set by the State; solar arrays exempt from architectural review, historic preservation, use permit and variance fees; 2.9% merchant service fee on card payments.',
+};
+
+const montereyChecklist: LocalGuidanceSource = {
+  label: 'City of Monterey — Solar PV Expedited Submittal Checklist (rev. 12/30/2024)',
+  url: 'https://monterey.gov/Document-Center/Departments/Community-Development/Building-Safety/Building-Forms/Solar-Checklist.pdf?t=202509301228390',
+  verifiedAt: verified20260923,
+  scope:
+    'For residential PV under 10 kW; smoke and carbon monoxide detector affidavit; statement or engineering that roof framing carries the load (ballasted systems need full engineering); equipment inside a garage may need protective bollards; separate checklist for ESS.',
+};
+
+const svceSolarBilling: LocalGuidanceSource = {
+  label: 'Silicon Valley Clean Energy — Solar Billing Plan',
+  url: 'https://www.svcleanenergy.org/solar-billing-plan/',
+  verifiedAt: verified20260923,
+  scope:
+    'Export credits reflect the grid value at the time of export; GreenPrime customers get an extra $0.017 per kWh on monthly excess; SVCE generation settled monthly, PG&E delivery at PG&E’s annual true-up; cashout of $100 or more by check up to $5,000, smaller as bill credit; SVCE pays PG&E’s NSC rate on cumulative kWh.',
+};
+
+const sunnyvaleSolarApp: LocalGuidanceSource = {
+  label: 'City of Sunnyvale — SolarApp+ for Solar Installers',
+  url: 'https://www.sunnyvale.ca.gov/business-and-development/planning-and-building/solarapp-for-solar-installers',
+  verifiedAt: verified20260923,
+  scope: 'SolarAPP+ $25 processing fee with three free revisions; Sunnyvale business license required; Photovoltaic (SolarAPP+) permit through E-OneStop; permit card printed for inspections.',
+};
+
+const sunnyvaleFees2627: LocalGuidanceSource = {
+  label: 'City of Sunnyvale — Building Permit Fees FY 26/27 (effective August 18, 2026)',
+  url: 'https://www.sunnyvale.ca.gov/home/showpublisheddocument/1626/639228338481470000',
+  verifiedAt: verified20260923,
+  scope: 'Photovoltaic/solar systems, single-family homes or duplexes: $389.00; permit issuance $42.50; technology surcharge 5% of permit fee.',
+};
+
+const visaliaSolarApp: LocalGuidanceSource = {
+  label: 'City of Visalia — SolarApp',
+  url: 'https://www.visalia.gov/269/SolarApp',
+  verifiedAt: verified20260923,
+  scope:
+    'Licensed contractors use SolarAPP+, then a Residential Solar Permit with SolarApp in the City’s ACA portal; fees paid online by Visa or MasterCard only; permit auto-issued within seconds; single-line diagram and load calculations required at inspection.',
+};
+
 export const LOCAL_PROJECT_GUIDANCE = {
   temecula: {
     city: 'Temecula',
@@ -1758,6 +1863,168 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
     ],
     sources: [edcSolar, pioneerAbout, pioneerSolar, cecCcaLayer],
+  },
+  sacramento: {
+    city: 'Sacramento',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Sacramento is SMUD territory, and SMUD sets its own price for the solar power you export. That rate, not a PG&E tariff, is what a Sacramento savings estimate should use.",
+    quoteQuestions: [
+      "Is the system 15 kW or smaller? The City's streamlined solar permit is $450 up to that size, plus $15 per kW above it.",
+      "Does the savings estimate use SMUD's Solar and Storage Rate, which has paid 9.6 cents per kWh for exported energy since June 1, 2026?",
+      "Does the quote account for SMUD's one-time fee to connect a new solar system?",
+    ],
+    localChecks: [
+      {
+        title: 'A flat streamlined permit',
+        body: "Sacramento's streamlined solar permit, effective July 19, 2025, is $450 up to 15 kW and covers building plan review, inspection and intake, as an alternative to the City's value-based permit fees.",
+      },
+      {
+        title: 'SolarAPP+ inside the City portal',
+        body: 'The City connected SolarAPP+ to its Accela Citizen Access portal in fiscal year 2023/24, so a qualifying application can be submitted, paid and issued online.',
+      },
+      {
+        title: "SMUD's flat export rate",
+        body: "SMUD's Solar and Storage Rate, for customers approved on or after March 1, 2022, buys exported energy at 9.6 cents per kWh whatever the time or season; SMUD raised it from 7.4 cents on June 1, 2026. Credits carry over to later bills.",
+      },
+    ],
+    related: [
+      { href: '/blog/smud-peak-hours', label: 'Check SMUD peak hours' },
+      { href: '/blog/why-is-my-smud-bill-so-high', label: 'Why a SMUD bill runs high' },
+      { href: '/solar-savings/central-valley', label: 'Central Valley bill and project guide' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [sacramentoSolarApp, sacramentoSolarFee, smudSsr, smudSsrNews],
+  },
+  manteca: {
+    city: 'Manteca',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Manteca issues rooftop solar and battery permits instantly online, and its municipal code lists a separate fee for each. Check that a quote's permit lines match the scope.",
+    quoteQuestions: [
+      "Does the design qualify for Manteca's instant Symbium permit for rooftop solar, and is any battery on its own permit?",
+      'Is a main panel change part of the job? Manteca lists a separate residential electrical panel permit.',
+      'Which utility bills the address? Most of Manteca is PG&E, but check your bill before any savings estimate.',
+    ],
+    localChecks: [
+      {
+        title: 'Three separate permit fees',
+        body: "Manteca's municipal code fee table lists $378 for a residential rooftop solar permit, $304 for an energy storage system and $119 for a residential electrical panel, plus a 5 percent plan retention and technology fee on the permit fee.",
+      },
+      {
+        title: 'Instant permits, inspections in Citizen Access',
+        body: 'Symbium checks the design for code compliance and issues the permit in real time; inspections are then scheduled through the City’s Citizen Access portal.',
+      },
+      {
+        title: 'A corner of the map is MID',
+        body: "The California Energy Commission's service-territory map puts a small area in Manteca's southeast corner inside the Modesto Irrigation District's territory, though MID's own description of its service area does not name Manteca. PG&E's CCA list and Ava's list of the communities it serves do not include Manteca either.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/central-valley', label: 'Central Valley bill and project guide' },
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [mantecaInstant, mantecaFees, cecTerritory0923, midServiceArea, pgeCcaList, avaCommunities],
+  },
+  monterey: {
+    city: 'Monterey',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Monterey charges the state-set $450 for a home system under 10 kW and waives its architectural and historic review fees for solar arrays, so a historic-district address does not add City review fees.",
+    quoteQuestions: [
+      "Is the system under 10 kW, the size Monterey's expedited checklist and $450 fee are written for?",
+      "Does the plan set include the roof-framing statement, and the smoke and carbon monoxide detector affidavit, that the City's checklist requires?",
+      'If equipment goes inside a garage, does the quote include any protective bollards the City may require?',
+    ],
+    localChecks: [
+      {
+        title: 'Solar skips the review fees',
+        body: "Monterey's 2026/2027 fee schedule exempts solar arrays from architectural review, historic preservation, use permit and variance fees, and adds a 2.9 percent merchant fee if you pay by card.",
+      },
+      {
+        title: 'A new portal since January 2026',
+        body: "Since January 7, 2026, solar PV permits can be filed through mymontereyportal.org, which works out the required reviews and fees from the application's answers. The City's page does not name SolarAPP+; the CEC's SB 379 data lists Monterey's platform as SolarAPP+.",
+      },
+      {
+        title: "What the City's checklist asks for",
+        body: 'For a system under 10 kW the City wants a roof-framing statement (full engineering for ballasted systems), a smoke and carbon monoxide detector affidavit, and a separate checklist for battery storage. Equipment inside a garage may need protective bollards.',
+      },
+      {
+        title: "3CE's December true-up",
+        body: 'Central Coast Community Energy, which counts the City of Monterey among its members, trues up generation every December; residential customers owed $200 or more can ask for a check within 45 days of the statement.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/central-valley', label: 'Central Coast and Valley bill guide' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+      { href: '/blog/solar-panels-tile-roof-california', label: 'Solar on tile and older roofs' },
+    ],
+    sources: [montereyBuilding, montereyFees2627, montereyChecklist, cceMembers, cceSolarBilling, cecSb379],
+  },
+  sunnyvale: {
+    city: 'Sunnyvale',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Sunnyvale publishes a flat solar permit fee for houses and issues SolarAPP+ permits online in one account. Silicon Valley Clean Energy, the generation provider, settles exports every month rather than once a year.",
+    quoteQuestions: [
+      'Does the contractor hold a Sunnyvale business license, which the City requires before it will issue the permit?',
+      "Does the permit line include the City's $389 solar permit, the $42.50 issuance fee and the 5 percent technology surcharge?",
+      "Does the savings estimate follow SVCE's monthly settlement and its payout rules, rather than a single annual true-up for everything?",
+    ],
+    localChecks: [
+      {
+        title: 'The City fee, itemized',
+        body: "Sunnyvale's fiscal year 2026/27 schedule charges $389.00 for a solar permit on a single-family home or duplex, plus a $42.50 permit issuance fee and a 5 percent technology surcharge. SolarAPP+ adds its own $25 fee, which includes three revisions.",
+      },
+      {
+        title: 'One account from permit to inspection',
+        body: "After SolarAPP+ pre-approval, the contractor applies for the Photovoltaic (SolarAPP+) permit in the City's E-OneStop online services, pays there, and requests the final inspection from the same account.",
+      },
+      {
+        title: 'How SVCE settles exports',
+        body: 'Silicon Valley Clean Energy values exports at the grid price when they are sent, settles its generation charges on each monthly bill, and pays a cashout of $100 or more by check, up to $5,000. GreenPrime customers get $0.017 per kWh more for monthly excess; PG&E settles delivery at its own annual true-up.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [sunnyvaleSolarApp, sunnyvaleFees2627, svceSolarBilling],
+  },
+  visalia: {
+    city: 'Visalia',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Visalia auto-issues SolarAPP+ permits within seconds of payment, but the City wants the load calculations at inspection, and those show whether the main panel can carry the new circuit.",
+    quoteQuestions: [
+      "Will the design pass SolarAPP+, and who files the Residential Solar Permit with SolarApp in the City's portal?",
+      'Has the installer done the load calculations and single-line diagram the City wants at inspection, and do they show whether the main panel needs work?',
+      "Does the savings estimate use SCE's generation and delivery rates from your own bill?",
+    ],
+    localChecks: [
+      {
+        title: 'Card-only, instant issue',
+        body: 'Visalia takes permit fees online by Visa or MasterCard only, and the permit is auto-issued within a few seconds of payment. The City does not state the amount on its SolarApp page.',
+      },
+      {
+        title: 'Paperwork at inspection',
+        body: "The City requires the project's single-line diagram and load calculations at the time of inspection. Ask for them with the quote, since they show whether the existing panel can take the new circuit.",
+      },
+      {
+        title: 'SCE on both lines',
+        body: "SCE's list of community choice aggregators does not include Visalia, so a Visalia bill normally shows SCE for generation and delivery.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/central-valley', label: 'Central Valley bill and project guide' },
+      { href: '/blog/sce-time-of-use-rates-2026', label: 'Check SCE time-of-use periods' },
+      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+    ],
+    sources: [visaliaSolarApp, sceCcaList],
   },
 } as const satisfies Record<string, LocalProjectGuidanceEntry>;
 
