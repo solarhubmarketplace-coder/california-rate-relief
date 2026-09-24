@@ -82,6 +82,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   redlands: [34.0511294, -117.1711567], // Redlands city, GEOID 0659962
   richmond: [37.9517605, -122.3602500], // Richmond city, GEOID 0660620
   'santa-clara': [37.3646205, -121.9679735], // Santa Clara city, GEOID 0669084 (queried 2026-09-23)
+  saratoga: [37.2683275, -122.0262235], // Saratoga city, GEOID 0670280 (queried 2026-09-23)
   vacaville: [38.3586717, -121.9673440], // Vacaville city, GEOID 0681554 (queried 2026-09-23)
   riverside: [33.9381301, -117.3949083], // Riverside city, GEOID 0662000
   rocklin: [38.8074883, -121.2487164], // Rocklin city, GEOID 0662364

@@ -171,7 +171,12 @@ const FEES: Record<string, FeeEntry> = {
     extra: 'No separate solar line: the general building-permit fee structure applies.',
     evidence: 'has no standalone PV/solar line item',
   },
-  camarillo: { status: 'not-retrievable', evidence: 'did not return the file when checked' },
+  // 2026-09-23 (Tier 3): the 2026 Master Fee Schedule is now readable.
+  camarillo: {
+    status: 'published',
+    components: [{ label: 'photovoltaic, residential up to 15 kW', usd: 450, quote: 'at $450 up to 15 kW' }],
+    extra: 'Energy storage: $206, or $121 with a solar install; 11.34% technology surcharge on top.',
+  },
   carlsbad: {
     status: 'not-published',
     extra: 'The City states a $25 SolarAPP+ administration fee on top of its regular permit fees.',
@@ -266,8 +271,8 @@ const FEES: Record<string, FeeEntry> = {
   },
   petaluma: {
     status: 'not-published',
-    extra: 'The City states a $25 SolarAPP+ processing fee; its own permit fees are not itemized on the page.',
-    evidence: 'Separate city permit fees apply but are not itemized on this page',
+    extra: 'The City states a $25 SolarAPP+ processing fee; its own application fee is not stated.',
+    evidence: 'without stating that amount',
   },
   'rancho-cordova': { status: 'not-published', evidence: 'No dollar amount found' },
   'rancho-cucamonga': {
@@ -351,7 +356,12 @@ const FEES: Record<string, FeeEntry> = {
     evidence: 'whose exact amount is not stated on this page',
   },
   yucaipa: { status: 'not-published', evidence: 'Yucaipa publishes no solar permit fee' },
-  auburn: { status: 'not-published', evidence: 'neither that document nor the Symbium Permits page gives an actual dollar amount' },
+  // 2026-09-23 (Tier 3): quoted from the FY 2026-27 fee schedule.
+  auburn: {
+    status: 'published',
+    components: [{ label: 'residential solar PV permit, 15 kW or less', usd: 347, quote: 'at $347 for 15 kW or less' }],
+    extra: 'Battery backup storage and service panel upgrade: $174 each.',
+  },
   beaumont: { status: 'not-published', evidence: 'does not give a dollar figure' },
   danville: { status: 'not-published', evidence: 'does not specify a dollar amount' },
   // 2026-09-23 (Tier 3): re-keyed to the rewritten note.
@@ -527,6 +537,12 @@ const FEES: Record<string, FeeEntry> = {
     components: [{ label: 'photovoltaic system, residential up to 15 kW', usd: 372, quote: 'at $372.00' }],
   },
   glendale: { status: 'not-published', evidence: 'Glendale does not publish its solar permit fee' },
+  'santa-barbara': {
+    status: 'published',
+    components: [{ label: 'photovoltaic system, residential, 15 kW or less', usd: 450, quote: 'of 15 kW or less at $450' }],
+  },
+  vacaville: { status: 'not-retrievable', evidence: 'could not be read in a form that ties an amount to it' },
+  saratoga: { status: 'not-published', evidence: 'did not state a solar permit fee' },
 };
 
 // -----------------------------------------------------------------------------
@@ -600,7 +616,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     evidence: 'SolarAPP+ is not in service for Pacific Grove at this time',
     note: 'The City says SolarAPP+ is not in service there.',
   },
-  petaluma: { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
+  petaluma: { platform: 'solarapp', evidence: 'registered with SolarAPP+' },
   'rancho-cordova': { platform: 'solarapp', evidence: 'SolarAPP+ explicitly named' },
   'rancho-cucamonga': { platform: 'solarapp', evidence: 'SolarAPP+ named and available' },
   roseville: { platform: 'solarapp', evidence: 'The design goes through SolarAPP+' },
@@ -626,7 +642,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     evidence: "lists Yucaipa's platform as SolarAPP+",
     note: 'Per the CEC SB 379 data (self-reported); the City pages checked do not describe a solar route.',
   },
-  auburn: { platform: 'symbium', evidence: 'Auburn uses Symbium instead' },
+  auburn: { platform: 'symbium', evidence: 'Auburn uses Symbium, not SolarAPP+' },
   beaumont: { platform: 'symbium', evidence: 'Beaumont uses Symbium instead' },
   danville: { platform: 'solarapp', evidence: 'SolarApp+ Submittals' },
   encinitas: {
@@ -695,6 +711,17 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     platform: 'unconfirmed',
     evidence: "lists Glendale's platform as a custom one",
     note: 'The CEC SB 379 data (self-reported) lists a custom platform, but the City describes GWP review in PowerClerk followed by staff plan review, not an instant permit.',
+  },
+  'santa-barbara': {
+    platform: 'unconfirmed',
+    evidence: "lists Santa Barbara's platform as a custom one",
+    note: 'The CEC SB 379 data (self-reported) lists a custom platform; the City pages checked describe an AB 2188 expedited review, not an instant permit.',
+  },
+  vacaville: { platform: 'symbium', evidence: "The City's Symbium portal" },
+  saratoga: {
+    platform: 'symbium',
+    evidence: "lists Saratoga's platform as Symbium",
+    note: 'Per the CEC SB 379 data (self-reported); the City pages reached do not describe a solar route.',
   },
 };
 
@@ -879,7 +906,7 @@ const CCAS: CcaEntry[] = [
   {
     name: 'Silicon Valley Clean Energy',
     match: 'Silicon Valley Clean Energy',
-    members: ['sunnyvale', 'mountain-view'],
+    members: ['sunnyvale', 'mountain-view', 'saratoga'],
     source: {
       label: 'Silicon Valley Clean Energy, About (communities served)',
       url: 'https://svcleanenergy.org/about/',
@@ -937,6 +964,17 @@ const CCAS: CcaEntry[] = [
     source: {
       label: 'City of Arcata, Community Choice Energy Program (joined Redwood Coast Energy Authority, May 2017)',
       url: 'https://www.cityofarcata.org/739/Community-Choice-Energy-Program',
+      verifiedAt: '2026-09-23',
+    },
+  },
+  // 2026-09-23 (Tier 3 city-cost wave).
+  {
+    name: 'Santa Barbara Clean Energy',
+    match: 'Santa Barbara Clean Energy',
+    members: ['santa-barbara'],
+    source: {
+      label: 'Santa Barbara Clean Energy, home page (the City-run electricity provider for the City of Santa Barbara)',
+      url: 'https://www.sbcleanenergy.com/',
       verifiedAt: '2026-09-23',
     },
   },

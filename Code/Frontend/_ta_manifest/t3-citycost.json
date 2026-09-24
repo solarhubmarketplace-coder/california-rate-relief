@@ -327,6 +327,116 @@
    ],
    "status": "done",
    "note": "Upgraded: the fee schedule the City links (FY 2021/22) is quoted as dated ($373.00 residential solar; index status 'dated'); Express Permit in Accela; Pioneer since 2024."
+  },
+  {
+   "path": "/solar-cost/santa-barbara",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Santa Barbara Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    713
+   ],
+   "sources": [
+    "https://santabarbaraca.gov/services/construction-land-development/fee-information",
+    "https://santabarbaraca.gov/sites/default/files/2026-08/FY27%20B%26S%20Fee%20Schedule%20-%20Print%20Ready%20FINAL_AOD.pdf",
+    "https://santabarbaraca.gov/sites/default/files/documents/Community%20Development/Electrical/City%20PV1%20System%20Requirements%20for%20AB2188%20Expedited%20Review.pdf",
+    "https://santabarbaraca.gov/apply-permit",
+    "https://www.sbcleanenergy.com/",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "New row: SCE + Santa Barbara Clean Energy (City-run CCA; new CCA entry in the index); FY27 fee schedule (eff. 2026-09-01) $450 up to 15 kW + $15/kW; AB 2188 expedited review limits (10 kW AC, no battery); Accela Citizen Access. Index platform 'Could not confirm' (CEC says custom). Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/petaluma",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Petaluma, CA: What Sets the Price (2026)",
+   "clusters": [
+    716
+   ],
+   "sources": [
+    "https://cityofpetaluma.org/solar-permit/",
+    "https://cityofpetaluma.org/solarapp-solar-permit-faqs/",
+    "https://sonomacleanpower.org/who-we-are",
+    "https://sonomacleanpower.org/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "Upgraded: re-read with the City's SolarAPP+ FAQ (City fee same as a regular solar permit, not stated; panel modification adds the Electrical Service, Meter Replacement fee; flood-zone parcels excluded); SCP sourced to its own page; new guidance entry. The City's permit-fee page now redirects to its self-service portal, so no figure."
+  },
+  {
+   "path": "/solar-cost/vacaville",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Vacaville Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    717
+   ],
+   "sources": [
+    "https://www.cityofvacaville.gov/government/community-development/building/building-permits/apply-for-residential-solar-permits",
+    "https://www.cityofvacaville.gov/home/showpublisheddocument/27043/639222220803330000",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E with no CCA (MCE's service-area list excludes Vacaville); Symbium instant review, any-size rooftop solar online, panel change-out included in the solar permit, no refunds on online PV permits. The FY 2026-27 fee schedule has a solar line but its posted copy could not be read reliably (layout scrambled), so no figure - index 'not-retrievable'. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/camarillo",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Camarillo Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    691
+   ],
+   "sources": [
+    "https://www.cityofcamarillo.org/departments/building___safety/index.php",
+    "https://www.cityofcamarillo.org/Master%20Fee%20Schedule%202026%20-%20Updated%202.26.26%20FOR%20WEBSITE.pdf",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation",
+    "https://cleanpoweralliance.org/solar/"
+   ],
+   "status": "done",
+   "note": "Upgraded: the Master Fee Schedule 2026 is now readable ($450 up to 15 kW; storage $121 with solar; 11.34% technology surcharge); SolarAPP+ excludes panel upgrades and batteries; CPA sourced to SCE's list; CPA April true-up. Note: the CEC SB 379 data lists Camarillo 'Without Platform', which the City's own page contradicts; the page follows the City."
+  },
+  {
+   "path": "/solar-cost/saratoga",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panels in Saratoga, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    709
+   ],
+   "sources": [
+    "https://www.saratoga.ca.us/building",
+    "https://svcleanenergy.org/about/",
+    "https://www.svcleanenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + SVCE. Saratoga's site exposes no solar page or fee to this environment (search is JS-only, Building Division page has no solar links), so the permit fields rest on the City's Path to Permits guide and the CEC SB 379 data (Symbium). Thinnest row of the wave; worth a manual look at the Building Division if the City publishes a solar handout. No companies page exists."
+  },
+  {
+   "path": "/solar-cost/auburn",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Auburn, CA: What Sets the Price (2026)",
+   "clusters": [
+    687
+   ],
+   "sources": [
+    "https://www.auburn.ca.gov/700/Symbium-Permits",
+    "https://www.auburn.ca.gov/DocumentCenter/View/4398/Auburn---Adopted-Fee-Schedule---FY-2627",
+    "https://pioneercommunityenergy.org/about-us/",
+    "https://pioneercommunityenergy.org/going-solar-with-pioneer/"
+   ],
+   "status": "done",
+   "note": "Upgraded: fee now quoted from the FY 2026-27 schedule ($347 up to 15 kW; battery backup and panel upgrade $174 each); Symbium two-step process; Pioneer sourced to its own list; new guidance entry."
   }
  ],
  "new_cost_slugs": [
@@ -340,7 +450,10 @@
   "elk-grove",
   "mission-viejo",
   "victorville",
-  "glendale"
+  "glendale",
+  "santa-barbara",
+  "vacaville",
+  "saratoga"
  ],
  "new_cost_slugs_with_live_companies_twin_registered": [
   "concord",
@@ -350,7 +463,9 @@
   "san-clemente",
   "lakewood",
   "victorville",
-  "glendale"
+  "glendale",
+  "santa-barbara",
+  "vacaville"
  ],
  "new_cost_slugs_for_citycos_to_reconcile": [
   "clovis",
@@ -415,6 +530,21 @@
    "hub": "city_cost",
    "href": "/solar-cost/glendale",
    "label": "Solar panel cost in Glendale"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/santa-barbara",
+   "label": "Solar panel cost in Santa Barbara"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/vacaville",
+   "label": "Solar panel cost in Vacaville"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/saratoga",
+   "label": "Solar panel cost in Saratoga"
   }
  ],
  "link_requests": [],

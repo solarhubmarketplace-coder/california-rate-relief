@@ -241,6 +241,11 @@ export const PIONEER_ABOUT: CityCostRowSource = {
   url: 'https://pioneercommunityenergy.org/about-us/',
   verifiedAt: CCA_VERIFIED_0923,
 };
+export const SCP_WHO: CityCostRowSource = {
+  label: 'Sonoma Clean Power, Who We Are (governed by the Counties of Sonoma and Mendocino and cities including Petaluma, Santa Rosa and Windsor)',
+  url: 'https://sonomacleanpower.org/who-we-are',
+  verifiedAt: CCA_VERIFIED_0923,
+};
 export const OCPA_HOME: CityCostRowSource = {
   label: 'Orange County Power Authority, member communities (Buena Park, Fullerton, Irvine, Fountain Valley)',
   url: 'https://www.ocpower.org/',
@@ -415,14 +420,23 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Camarillo",
     county: "Ventura County",
     utilityKey: "sce",
+    // 2026-09-23 (Tier 3): the Master Fee Schedule 2026 is now readable.
     cca: "Clean Power Alliance",
-    permitUrl: "https://www.cityofcamarillo.org/departments/building___safety/building___safety_handouts.php",
+    ccaSource: SCE_CCA_LIST,
+    permitUrl: "https://www.cityofcamarillo.org/departments/building___safety/index.php",
     permitFeeNote:
-      "The City publishes dedicated photovoltaic handouts \u2014 a Photovoltaic Solar Systems sheet, a Solar Eligibility Checklist and Solar Structure Criteria \u2014 but states no dollar figure for the solar permit on that page, and its Master User Fee Schedule is served through a document centre that did not return the file when checked. Ask Building & Safety for the current amount before accepting a quote that folds the permit in.",
-    permitFeeSource: "City of Camarillo Building & Safety handouts page; Master User Fee Schedule not retrievable when checked",
+      "Camarillo's Master Fee Schedule 2026 (updated February 26, 2026) sets a residential photovoltaic permit at $450 up to 15 kW, plus $15 for each kW above, citing Government Code section 66015. An energy storage system is $206 for the first unit, or $121 when it is included as part of a solar install. Since July 1, 2025 the City adds an 11.34 percent technology surcharge to these fees.",
+    permitFeeSource: "City of Camarillo, Building & Safety",
+    permitSources: [
+      {
+        label: 'City of Camarillo, Master Fee Schedule 2026 (updated February 26, 2026), Community Development Exhibit A: 5 Energy Storage Systems; 16 Photovoltaic (Solar)',
+        url: 'https://www.cityofcamarillo.org/Master%20Fee%20Schedule%202026%20-%20Updated%202.26.26%20FOR%20WEBSITE.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
     permitOnline:
-      "Yes - Camarillo is listed as a live jurisdiction on SolarAPP+'s own directory (gosolarapp.org/where-is-solarapp-available) supporting PV, PV+storage, and storage-only permits.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Eligible new residential rooftop systems are permitted automatically through SolarAPP+. Systems that include a main panel upgrade or battery storage are not currently eligible for that route and go through the City's regular permit process.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "carlsbad",
@@ -781,14 +795,24 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Petaluma",
     county: "Sonoma County",
     utilityKey: "pge",
+    // 2026-09-23 (Tier 3): re-read with the City's SolarAPP+ FAQ; CCA sourced
+    // to Sonoma Clean Power's own page.
     cca: "Sonoma Clean Power",
+    ccaSource: SCP_WHO,
     permitUrl: "https://cityofpetaluma.org/solar-permit/",
     permitFeeNote:
-      "Names a specific dollar amount: \"A $25 processing fee will be charged by the SolarAPP+ website.\" Separate city permit fees apply but are not itemized on this page (linked elsewhere as \"full list of requirements\").",
-    permitFeeSource: "City of Petaluma SolarApp+ Solar Permit page",
+      "Petaluma's SolarAPP+ page says SolarAPP+ charges a one-time $25.00 processing fee, which covers up to three revisions, and that the City's application fee is separate and the same as for a regular solar permit, without stating that amount. If the main panel is modified, the City also charges its Electrical Service, Meter Replacement fee.",
+    permitFeeSource: "City of Petaluma, SolarApp+ Solar Permit",
+    permitSources: [
+      {
+        label: 'City of Petaluma, SolarAPP+ Solar Permit FAQs (fees, panel upgrades, revisions)',
+        url: 'https://cityofpetaluma.org/solarapp-solar-permit-faqs/',
+        verifiedAt: '2026-09-23',
+      },
+    ],
     permitOnline:
-      "Yes, online. SolarAPP+ is explicitly named ('Submit your design here'); after SolarAPP+ approval, apply for the city permit online with the approval ID and supporting documents.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Licensed contractors registered with SolarAPP+ can permit a rooftop system on a permitted main dwelling the same day, then apply in the City's online permit portal with the SolarAPP+ approval ID, plans and contractor disclosure form. Ballasted systems, homes in a City flood zone and permit runners cannot use SolarAPP+.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "rancho-cordova",
@@ -1145,14 +1169,23 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Auburn",
     county: "Placer County",
     utilityKey: "pge",
+    // 2026-09-23 (Tier 3): fee now quoted from the FY 2026-27 schedule.
     cca: "Pioneer Community Energy",
+    ccaSource: PIONEER_ABOUT,
     permitUrl: "https://www.auburn.ca.gov/700/Symbium-Permits",
     permitFeeNote:
-      "The Solar Photovoltaic Submittal Guidelines state Auburn \"encourages the installation of solar photovoltaic systems through low permit fees\" but neither that document nor the Symbium Permits page gives an actual dollar amount.",
-    permitFeeSource: "City of Auburn Symbium Permits page / Solar Photovoltaic Submittal Guidelines",
+      "Auburn's Adopted Fee Schedule for fiscal year 2026-27, dated July 1, 2026, lists a residential solar photovoltaic permit, ground or roof mounted, at $347 for 15 kW or less and at $450 plus $15 per kW above 15 kW for a larger system, with inspection and plan review included and permit processing fees added. A residential battery backup storage permit and a residential service panel upgrade are $174 each.",
+    permitFeeSource: "City of Auburn, Symbium Permits",
+    permitSources: [
+      {
+        label: 'City of Auburn, Adopted Fee Schedule FY 2026-27 (Building Fees A.7 Battery Backup Storage; A.10 Residential Solar Photovoltaic System)',
+        url: 'https://www.auburn.ca.gov/DocumentCenter/View/4398/Auburn---Adopted-Fee-Schedule---FY-2627',
+        verifiedAt: '2026-09-23',
+      },
+    ],
     permitOnline:
-      "Yes: the Symbium Permits page describes a two-step process \u2014 apply and pay fees through the Symbium portal for instantaneous plan review, then apply for the permit type \"Online Residential Solar Permit (Symbium)\" through the city's Civic Access system. SolarAPP+ is not named \u2014 Auburn uses Symbium instead.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Auburn uses Symbium, not SolarAPP+: the applicant files and pays in Symbium for instantaneous plan review, then applies in the City's Civic Access portal for an Online Residential Solar Permit (Symbium), uploading the Symbium approval, inspection checklist and plans, and the permit issues once paid.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "beaumont",
@@ -2075,6 +2108,70 @@ export const CITY_COST_ROWS: CityCostRow[] = [
           "Yes. GWP says it continues to make net energy metering available and credits excess generation to the account, although it no longer offers solar incentives. Since November 1, 2023, a system up to 10 kW CEC-AC is exempt from GWP's cap of 110 percent of the past 12 months' usage and may be paired with up to 30 kWh of storage. GWP's published NEM compensation rate for 2025 was $0.05639 per kWh. PG&E's and SCE's Solar Billing Plans do not apply to a GWP account.",
       },
     ],
+  },
+  {
+    slug: 'santa-barbara',
+    city: 'Santa Barbara',
+    county: 'Santa Barbara County',
+    utilityKey: 'sce',
+    cca: 'Santa Barbara Clean Energy',
+    ccaSource: SCE_CCA_LIST,
+    permitUrl: 'https://santabarbaraca.gov/services/construction-land-development/fee-information',
+    permitFeeNote:
+      "Santa Barbara's Building and Safety fee schedule for September 1, 2026 through August 31, 2027 lists a residential photovoltaic system of 15 kW or less at $450, plus $15 for each kW above 15 kW.",
+    permitFeeSource: 'City of Santa Barbara, Fee Information (Building & Safety)',
+    permitSources: [
+      {
+        label: 'City of Santa Barbara, Building and Safety Fees, effective September 1, 2026 through August 31, 2027 (Photovoltaic (PV) System, Residential)',
+        url: 'https://santabarbaraca.gov/sites/default/files/2026-08/FY27%20B%26S%20Fee%20Schedule%20-%20Print%20Ready%20FINAL_AOD.pdf',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'City of Santa Barbara, Photovoltaic System Requirements for AB 2188 Expedited Review (updated November 20, 2019)',
+        url: 'https://santabarbaraca.gov/sites/default/files/documents/Community%20Development/Electrical/City%20PV1%20System%20Requirements%20for%20AB2188%20Expedited%20Review.pdf',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes. Applications, resubmittals and fees go through the City's Accela Citizen Access portal. A roof-mounted system of 10 kW AC or less on a one- or two-family home, no more than 10 inches above the roof and without battery storage, qualifies for the City's AB 2188 expedited review; anything else goes through standard review. The California Energy Commission's SB 379 data lists Santa Barbara's platform as a custom one.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'vacaville',
+    city: 'Vacaville',
+    county: 'Solano County',
+    utilityKey: 'pge',
+    permitUrl: 'https://www.cityofvacaville.gov/government/community-development/building/building-permits/apply-for-residential-solar-permits',
+    permitFeeNote:
+      "Vacaville's solar page does not state the permit fee. The City's fiscal year 2026-27 fee schedule includes a solar panels line, but the posted copy could not be read in a form that ties an amount to it, so no figure is quoted here. The City says refunds are generally not available for photovoltaic permits issued online.",
+    permitFeeSource: 'City of Vacaville, Apply for Residential Solar Permits',
+    permitSources: [
+      {
+        label: 'City of Vacaville, Service & Facility Fees FY 2026-27 (Building Plan Check & Inspection Fees)',
+        url: 'https://www.cityofvacaville.gov/home/showpublisheddocument/27043/639222220803330000',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Residential rooftop solar permits of any size are available online, and a solar permit includes a main panel change-out if one is wanted. The City's Symbium portal gives instantaneous plan review for qualifying solar and storage; other residential solar and battery applications go through eTRAKiT with plan review, which the City estimates at 1-3 business days.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'saratoga',
+    city: 'Saratoga',
+    county: 'Santa Clara County',
+    utilityKey: 'pge',
+    cca: 'Silicon Valley Clean Energy',
+    ccaSource: SVCE_ABOUT,
+    permitUrl: 'https://www.saratoga.ca.us/building',
+    permitFeeNote:
+      "Saratoga's Path to Permits guide lists fee assessment as a step after an application is filed in eTRAKiT, but the City's building pages reached did not state a solar permit fee. Ask the Building Division or the installer for the City's figure.",
+    permitFeeSource: "City of Saratoga, Path to Permits (Community Development)",
+    permitSources: [CEC_SB379_DATA],
+    permitOnline:
+      "Yes. Saratoga's Path to Permits guide sends building applications through the City's eTRAKiT portal. The City's pages reached do not describe a solar route; the California Energy Commission's SB 379 data, which each city reports itself, lists Saratoga's platform as Symbium.",
+    sourcesFetchedAt: '2026-09-23',
   },
 ];
 
