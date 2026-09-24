@@ -25,6 +25,11 @@ const CSLB_COMPLAINT = 'https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/';
 const CSLB_SMALL_CLAIMS = 'https://www.cslb.ca.gov/Consumers/Legal_Issues_For_Consumers/Small_Claims_Court.aspx';
 const DOE_ROOF = 'https://www.energy.gov/eere/solar/articles/replacing-your-roof-its-great-time-add-solar';
 const LADWP_SRP = 'https://www.ladwp.com/residential-services/solar-programs/solar-rooftops';
+const LADWP_GUIDE = 'https://www.ladwp.com/sites/default/files/2026-01/Revised%20SRP%20Guidelines%20(BES%2011-3-25%20v.2).pdf';
+const CSLB_FIND = 'https://www2.cslb.ca.gov/Newsletter/2018-summer/Find_My_Licensed_Contractor.asp';
+const CSLB_ZIP = 'https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/ZipCodeSearch.aspx';
+const PRC = (n: string) => `https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=PRC&sectionNum=${n}`;
+const CCR_UW = 'https://www.law.cornell.edu/regulations/california/22-CCR-66261.9';
 
 const sources: Source[] = [
   { label: 'CPUC: California Solar Consumer Protection Guide (Version 4) and questions to ask', url: CPUC_GUIDE },
@@ -37,6 +42,13 @@ const sources: Source[] = [
   { label: 'CSLB: Small claims court', url: CSLB_SMALL_CLAIMS },
   { label: 'U.S. Department of Energy: Replacing your roof? It’s a great time to add solar', url: DOE_ROOF },
   { label: 'LADWP: Solar Rooftops program', url: LADWP_SRP },
+  { label: 'LADWP: Solar Rooftops Program Guidelines, safety and maintenance rules (revised, posted January 2026)', url: LADWP_GUIDE },
+  { label: 'CSLB: Find My Licensed Contractor, search by classification and city or ZIP (Summer 2018 newsletter)', url: CSLB_FIND },
+  { label: 'Public Resources Code § 25982 (Solar Shade Control Act: trees planted after a solar collector)', url: PRC('25982') },
+  { label: 'Public Resources Code § 25983 (shading tree as a private nuisance after written notice)', url: PRC('25983') },
+  { label: 'Public Resources Code § 25984 (trees the Act does not cover)', url: PRC('25984') },
+  { label: 'Public Resources Code § 25985 (city and county opt-outs and local ordinances)', url: PRC('25985') },
+  { label: 'Cal. Code of Regs., tit. 22, § 66261.9 (photovoltaic modules as universal waste, operative Jan. 1, 2021)', url: CCR_UW },
 ];
 
 const keyFacts: KeyFact[] = [
@@ -91,6 +103,16 @@ const faqs = [
     question: 'Does a solar lease or PPA include maintenance?',
     answer:
       'Usually the company that owns the equipment keeps responsibility for it, but only the contract can tell you what is included, such as whether cleaning is your job. Read the service, warranty and roof-work sections before you call anyone else to touch the system.',
+  },
+  {
+    question: 'Can I do solar panel maintenance myself?',
+    answer:
+      'The watching part, yes: check the monitoring app, look at the array from the ground, rinse dust from the ground if your panel manual allows it, and keep your own trees trimmed. Anything on the roof, on the panels or on the wiring is solar work for a licensed contractor. Solar equipment can carry dangerous voltage whenever the sun is up, so don’t open inverter or combiner cabinets.',
+  },
+  {
+    question: 'Can my neighbor’s tree block my solar panels?',
+    answer:
+      'California’s Solar Shade Control Act limits trees and shrubs placed on a neighbor’s property after your system went in: they may not shade more than 10 percent of the collector area at any one time between 10 a.m. and 2 p.m. It does not cover trees that were there first, and cities and counties can opt out or apply their own ordinance, so check yours before sending the written notice the law requires.',
   },
   {
     question: 'Is a solar maintenance plan worth paying for?',
@@ -180,6 +202,84 @@ export default function SolarPanelMaintenanceCalifornia() {
         </section>
 
         <section>
+          <h2>What you can do yourself, and what needs a licensed contractor</h2>
+          <p>
+            Most solar upkeep is looking, not touching. The line to hold is the roof edge and the equipment
+            cabinets: anything on the array, the wiring or the inverter is solar work under California license
+            law. CSLB describes C-46 solar contractors as the class that may “install, modify, maintain, and
+            repair” solar energy systems. <Cite publisher="CSLB" href={CSLB_SOLAR} date={UPDATED} /> LADWP’s
+            rules for the systems it owns on customers’ roofs put the safety reason plainly: owners must not
+            open system cabinets or touch exposed wiring, because “hazardous voltages can be present throughout
+            the entire system at any time.” <Cite publisher="LADWP" href={LADWP_GUIDE} date={UPDATED} />
+          </p>
+          <div className="overflow-x-auto rounded-xl border">
+            <table className="w-full text-sm">
+              <caption className="sr-only">Solar maintenance tasks an owner can do and tasks for a licensed contractor</caption>
+              <thead className="bg-muted">
+                <tr>
+                  <th className={th}>Task</th>
+                  <th className={th}>Who</th>
+                  <th className={th}>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t">
+                  <th scope="row" className={th}>Check the monitoring app</th>
+                  <td className={td}>You</td>
+                  <td className={td}>Compare each month with the same month last year.</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className={th}>Look over the array after a storm or ash fall</th>
+                  <td className={td}>You, from the ground</td>
+                  <td className={td}>Binoculars or a phone zoom are enough to spot debris, cracked glass or hanging wires.</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className={th}>Rinse dust off panels</th>
+                  <td className={td}>You, if reachable from the ground and the manual allows it</td>
+                  <td className={td}>Normal hose pressure, cool glass; see the <Link href="/blog/solar-panel-cleaning-california">cleaning guide</Link>.</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className={th}>Trim your own trees</th>
+                  <td className={td}>You or a tree service</td>
+                  <td className={td}>Keep branches and ladders clear of the array and the service wires.</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className={th}>Anything on the roof or panels</th>
+                  <td className={td}>Licensed contractor</td>
+                  <td className={td}>Walking on panels or mounts can crack cells and break roof seals.</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className={th}>Inverter faults, wiring, breakers beyond a manual reset</th>
+                  <td className={td}>Licensed C-46 or C-10 contractor</td>
+                  <td className={td}>Follow only the reset steps in your inverter manual; call for anything else.</td>
+                </tr>
+                <tr className="border-t">
+                  <th scope="row" className={th}>Any work on a leased or PPA system</th>
+                  <td className={td}>The system owner</td>
+                  <td className={td}>The contract says who may touch it.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>A year of solar upkeep in California</h2>
+          <p>
+            California’s long dry season and its winter rains set a natural rhythm. None of these steps needs a
+            ladder.
+          </p>
+          <ul>
+            <li><strong>Late summer and early fall, before the rains:</strong> compare output with last year. This is when dust has built up longest, so it is the one time a cleaning might pay.</li>
+            <li><strong>After the first real storm:</strong> check that output recovered. UC San Diego’s study used more than 0.1 inch of rain as the point that cleaned panels. <Cite publisher="UC San Diego" href={UCSD} date={UPDATED} /></li>
+            <li><strong>Winter:</strong> expect lower numbers from shorter days; look for storm damage and debris instead.</li>
+            <li><strong>Spring:</strong> trim trees before the growing season adds shade, and look for birds nesting under the array.</li>
+            <li><strong>Fire season:</strong> after nearby fires, look for ash on the glass and damage to exposed wiring.</li>
+            <li><strong>At your annual true-up:</strong> read the bill against a year of production, and confirm your warranty papers and monitoring login still work.</li>
+          </ul>
+        </section>
+
+        <section>
           <h2>Cleaning: in most of California, rain does most of it</h2>
           <p>
             The best California evidence on dirty panels is a UC San Diego study of 186 home and business
@@ -233,6 +333,35 @@ export default function SolarPanelMaintenanceCalifornia() {
         </section>
 
         <section>
+          <h2>Trees, shade and California’s Solar Shade Control Act</h2>
+          <p>
+            A tree that grows into the sun path cuts output every day, which makes shade the one maintenance
+            issue that gets worse on its own. Trimming your own trees is ordinary upkeep. A neighbor’s trees are
+            covered by a state law with a narrow reach.
+          </p>
+          <p>
+            Under the Solar Shade Control Act, once a solar collector is installed, a person who owns or controls
+            another property may not let a tree or shrub be placed or grow there so that it shades more than 10
+            percent of the collector area at any one time between 10 a.m. and 2 p.m., local standard time.{' '}
+            <Cite publisher="Public Resources Code § 25982" href={PRC('25982')} date={UPDATED} /> Such a tree
+            becomes a private nuisance only if the owner fails to remove or alter it after receiving a written
+            notice from the solar owner. <Cite publisher="PRC § 25983" href={PRC('25983')} date={UPDATED} />
+          </p>
+          <p>The limits matter as much as the rule:</p>
+          <ul>
+            <li>It does not apply to a tree or shrub planted before the solar collector was installed. <Cite publisher="PRC § 25984" href={PRC('25984')} date={UPDATED} /></li>
+            <li>It does not apply to trees on timberland or commercial farmland, or to trees covered by a city or county ordinance.</li>
+            <li>A city, or a county for unincorporated areas, may adopt an ordinance exempting itself, and a local tree-preservation or solar-shade ordinance governs where one exists. <Cite publisher="PRC § 25985" href={PRC('25985')} date={UPDATED} /></li>
+          </ul>
+          <p>
+            Keep the permit or installation date, and photos of the neighboring trees at that time; they are what
+            the law turns on. If production has fallen and you suspect shade, confirm it in your monitoring data
+            first, following{' '}
+            <Link href="/solar-problems/solar-panels-not-producing-enough">the checks for panels that under-produce</Link>.
+          </p>
+        </section>
+
+        <section>
           <h2>Inspections: when a professional look is worth it</h2>
           <p>
             A system that produces what it did last year rarely needs a paid inspection. Four moments justify
@@ -247,6 +376,36 @@ export default function SolarPanelMaintenanceCalifornia() {
             repair” solar energy systems; C-10 electrical contractors are also on its list. Its advice is
             blunt: “Do not use a contractor who is not licensed to perform solar work.”{' '}
             <Cite publisher="CSLB" href={CSLB_SOLAR} date={UPDATED} />
+          </p>
+        </section>
+
+        <section>
+          <h2>Finding a company for solar maintenance or repair</h2>
+          <p>
+            Call in this order: the company that owns the system if you lease it, then the original installer if
+            it is still in business (its workmanship warranty may cover the fix), then the equipment maker for a
+            failed panel or inverter under warranty. Only after those should you hire someone new.
+          </p>
+          <p>
+            To find a licensed company near you, CSLB’s{' '}
+            <a href={CSLB_ZIP} target="_blank" rel="noopener noreferrer">Find My Licensed Contractor</a> search
+            lists contractors “by classification within a specific geographic area using either a city or zip
+            code,” with a link to each license record. <Cite publisher="CSLB" href={CSLB_FIND} date={UPDATED} />{' '}
+            Search the C-46 solar class, and C-10 electrical for inverter and wiring work. Our page on{' '}
+            <Link href="/solar-installers/licensed-solar-installer">finding licensed solar installers by county</Link>{' '}
+            walks through the same lookup.
+          </p>
+          <p>Before you book, ask:</p>
+          <ul>
+            <li>Do you service systems you did not install, and this inverter and panel brand?</li>
+            <li>Is the first visit a flat diagnostic fee, and does it apply to the repair?</li>
+            <li>Will you file the warranty claim with the manufacturer, and who pays labor if the part is covered?</li>
+            <li>What warranty do you give on your own work and on any new roof penetrations?</li>
+          </ul>
+          <p>
+            If the original installer has closed, the steps in{' '}
+            <Link href="/solar-installers/solar-installer-bankruptcy-california">what to do when a solar installer goes bankrupt</Link>{' '}
+            apply to your warranties too.
           </p>
         </section>
 
@@ -439,7 +598,11 @@ export default function SolarPanelMaintenanceCalifornia() {
             cost. When panels near the end of their service life, output keeps falling slowly rather than
             stopping; see <Link href="/blog/how-long-do-solar-panels-last">how long solar panels last</Link> and{' '}
             <Link href="/blog/what-happens-to-solar-panels-after-25-years">what happens after 25 years</Link>.
-            Ask whoever removes old panels, in writing, how they will be handled.
+            Old panels can’t simply go in the trash bin: California’s hazardous waste rules list photovoltaic
+            modules as a universal waste, a category operative since January 1, 2021.{' '}
+            <Cite publisher="22 CCR § 66261.9" href={CCR_UW} date={UPDATED} /> Ask whoever removes old panels,
+            in writing, where they will go; <Link href="/blog/solar-panel-removal-reinstall-cost">the removal guide</Link>{' '}
+            covers taking a system off for good.
           </p>
         </section>
 
@@ -468,6 +631,7 @@ export default function SolarPanelMaintenanceCalifornia() {
           <ul>
             <li><Link href="/blog/roof-leak-after-solar-panel-install">Roof leak after solar install</Link>: first steps and who is responsible.</li>
             <li><Link href="/blog/free-roof-replacement-with-solar-panels-california">Roof replacement offers bundled with solar</Link>: what to verify.</li>
+            <li><Link href="/blog/solar-panels-tile-roof-california">Tile roofs</Link> and <Link href="/blog/flat-roof-solar-panels">flat roofs</Link>: mounts, breakage, ballast and the extra upkeep low-tilt panels need.</li>
             <li><Link href="/solar-problems/solar-homeowners-insurance">Homeowners insurance and solar</Link>: what a policy covers.</li>
           </ul>
         </section>

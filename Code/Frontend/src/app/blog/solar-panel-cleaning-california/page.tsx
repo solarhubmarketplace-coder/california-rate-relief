@@ -80,6 +80,11 @@ const faqs = [
       'Don’t, unless your panel maker’s manual says it is allowed. High-pressure water and hard scrubbing can damage seals and coatings, and a warranty claim is judged against the manufacturer’s own care instructions. Ask any cleaning company what pressure and tools it uses before it starts.',
   },
   {
+    question: 'Is a solar panel cleaning subscription worth it?',
+    answer:
+      'For most California homes, a fixed schedule pays for cleanings the rain would have done for free. The UC San Diego researchers found a mid-summer wash of a typical 5 kW system recovered about $20 of electricity. A subscription makes more sense for the exceptions: frequent bird droppings, panels tilted under five degrees, or heavy dust from a road, factory or farm. A cleaning plan is also not a maintenance plan; it rarely covers repairs, inverters or roof leaks.',
+  },
+  {
     question: 'Does my solar warranty cover cleaning?',
     answer:
       'No. Cleaning is maintenance. The CPUC’s consumer guide says owners are responsible for maintenance and repairs unless they buy a maintenance plan or the system comes with one. If you lease the system, the contract says whether cleaning is your job or the owner’s.',
@@ -126,9 +131,9 @@ export default function SolarPanelCleaningCA() {
         faqs={faqs}
         hub="maintenance"
         path={PATH}
-        quickCheckTopic="California solar maintenance"
+        quickCheckTopic="Solar panel cleaning in California"
         leadCount={2}
-        inquiry={<SolarInquiry topic="California solar maintenance" />}
+        inquiry={<SolarInquiry topic="Solar panel cleaning in California" />}
       >
         <p>
           Usually not on a schedule. In most of California, rain cleans panels well enough, and a UC San Diego
@@ -203,7 +208,7 @@ export default function SolarPanelCleaningCA() {
         </section>
 
         <section>
-          <h2>How to clean panels yourself without damaging them</h2>
+          <h2>What you need to clean solar panels yourself, and how</h2>
           <p>If your panels are reachable from the ground and your manual allows it, this is what you need:</p>
           <ul>
             <li>A garden hose at normal pressure, or a soft brush or sponge on an extension pole.</li>
@@ -268,6 +273,20 @@ export default function SolarPanelCleaningCA() {
           <p>
             Planning a new roof? Cleaning is a poor reason to get on the roof, but a reroof is a good time to
             deal with everything at once; see <Link href="/blog/is-my-roof-good-for-solar-california">our roof suitability guide</Link>.
+            Panels laid nearly flat on a low-slope roof are the ones that hold dirt longest; the trade-offs are in{' '}
+            <Link href="/blog/flat-roof-solar-panels">solar panels on a flat roof</Link>.
+          </p>
+        </section>
+
+        <section>
+          <h2>Cleaning is one part of solar panel maintenance</h2>
+          <p>
+            Washing the glass is the most visible upkeep, but it is rarely the job that protects your
+            production. Monitoring, shade from growing trees, inverter faults, wiring damaged by animals and roof
+            penetrations matter more over a system’s life, and a cleaning company is not licensed to deal with
+            most of them. The full owner’s checklist, who may do each task, the Solar Shade Control Act and a
+            who-to-call table are in{' '}
+            <Link href="/solar-panel-maintenance-california">solar panel maintenance in California</Link>.
           </p>
         </section>
       </GuideShell>
