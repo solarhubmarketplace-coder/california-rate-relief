@@ -1,33 +1,36 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import {
-  ArrowLeft,
-  ArrowRight,
-  Info,
-  Clock,
-  Calendar,
-} from 'lucide-react';
+import { ArrowLeft, ArrowRight, Info, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { KeyFacts } from '@/components/trust/KeyFacts';
+import { FaqBlock } from '@/components/trust/FaqBlock';
+import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
+import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+
+const path = '/solar-installers/trinity-solar-review';
+const checked = '2026-09-23';
+
+const metaTitle = 'Trinity Solar Reviews (2026): Northeast Installer, Not CA';
+const metaDescription =
+  'Trinity Solar (founded 1994) lists nine eastern states and not California. Its BBB file, court dockets and warranty terms, checked Sept. 23, 2026.';
 
 export const metadata: Metadata = {
-  title: "Trinity Solar Reviews (2026): Northeast Installer, Not CA",
-  description: "Trinity Solar, founded in 1994, serves NJ, NY, CT, MA, PA and MD. It has no meaningful California operations, so compare installers that serve your address.",
-  alternates: {
-    canonical: '/solar-installers/trinity-solar-review',
-  },
+  title: metaTitle,
+  description: metaDescription,
+  alternates: { canonical: path },
   openGraph: {
-    title:
-      'Trinity Solar Reviews (2026): Northeast-Only Installer',
-    description:
-      'Trinity Solar serves the Northeast, not California. What the company offers, its reputation, and what California homeowners should do instead.',
+    title: metaTitle,
+    description: metaDescription,
     type: 'article',
+    url: `https://ratereliefca.com${path}`,
     publishedTime: '2026-04-23T00:00:00Z',
   },
 };
@@ -35,65 +38,93 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline:
-    'Trinity Solar Review 2026: Northeast Installer, Not a California Option',
-  description:
-    'A 2026 review of Trinity Solar, a Northeast-focused residential solar installer, and what California homeowners should know about it.',
+  headline: 'Trinity Solar Reviews (2026): Northeast Installer, Not a California Option',
+  description: metaDescription,
   datePublished: '2026-04-23',
-  dateModified: '2026-09-22',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
+  dateModified: checked,
+  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
   publisher: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',
     url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
+    logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
   },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/solar-installers/trinity-solar-review',
-  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://ratereliefca.com${path}` },
 };
-
 // No Review/Rating JSON-LD here: Google's review-snippet rules require
 // ratings for a local business or organization to come directly from users,
 // not from editors, and this site does not collect user ratings
 // (developers.google.com/search/docs/appearance/structured-data/review-snippet,
 // fetched 2026-09-23).
 
+const SRC = {
+  home: 'https://www.trinitysolar.com/',
+  about: 'https://www.trinitysolar.com/about-us/',
+  bbb: 'https://www.bbb.org/us/nj/wall-township/profile/solar-energy-design/trinity-solar-0221-16001220',
+  bbbComplaints: 'https://www.bbb.org/us/nj/wall-township/profile/solar-energy-design/trinity-solar-0221-16001220/complaints',
+  cl: 'https://www.courtlistener.com/?type=r&party_name=%22Trinity%20Solar%22',
+  charman: 'https://www.courtlistener.com/docket/60120033/charman-v-trinity-solar-inc/',
+  hanson: 'https://www.courtlistener.com/docket/68411986/hanson-v-trinity-solar-llc/',
+  beason: 'https://www.courtlistener.com/docket/69314397/beason-v-trinity-solar-llc/',
+};
+
+const sources: ReviewSource[] = [
+  { name: 'Trinity Solar — homepage', url: SRC.home, supports: 'Service states (CT, DE, MD, MA, NJ, NY, PA, RI, OH); “up to 25-year parts & labor guarantee”; no equipment brand named', checked },
+  { name: 'Trinity Solar — About us', url: SRC.about, supports: 'Founded in 1994 by Bill, Arty and Tom Pollock; more than 2,500 employees across nine states; 125,000 installations (2025)', checked },
+  { name: 'Better Business Bureau — Trinity Solar (Wall Township, NJ) profile', url: SRC.bbb, supports: 'A+ rating; accredited since December 6, 2001; business started February 18, 1994; Wall Township address', checked },
+  { name: 'Better Business Bureau — Trinity Solar complaints', url: SRC.bbbComplaints, supports: '230 complaints in three years; 104 closed in 12 months; complaint types', checked },
+  { name: 'CourtListener — federal dockets, party name “Trinity Solar”', url: SRC.cl, supports: 'Party-name results, including unrelated matters', checked },
+  { name: 'CourtListener — Charman v. Trinity Solar Inc., S.D. Cal. No. 3:21-cv-01423', url: SRC.charman, supports: 'Filed August 9, 2021; terminated May 26, 2022', checked },
+  { name: 'CourtListener — Hanson v. Trinity Solar, LLC, D.R.I. No. 1:24-cv-00132', url: SRC.hanson, supports: 'Filed April 5, 2024; terminated December 27, 2024', checked },
+  { name: 'CourtListener — Beason v. Trinity Solar LLC, D. Conn. No. 3:24-cv-01712', url: SRC.beason, supports: 'Filed October 25, 2024', checked },
+];
+
+const faqs = [
+  {
+    question: 'Does Trinity Solar serve California?',
+    answer:
+      'No. Its homepage, checked September 23, 2026, lists Connecticut, Delaware, Maryland, Massachusetts, New Jersey, New York, Pennsylvania, Rhode Island and Ohio. California is not on the list, and its About page describes the company as working across nine states. If someone offers you a Trinity Solar contract for a California home, confirm the legal entity and its California license before going further.',
+  },
+  {
+    question: 'Is Trinity Solar legit?',
+    answer:
+      'Yes, it is an established company. The BBB lists Trinity Solar in Wall Township, New Jersey, as accredited since 2001 with an A+ rating and a business start date of February 18, 1994, and the company says it has made 125,000 installations. It also has 230 BBB complaints in the last three years, mostly about service and repairs.',
+  },
+  {
+    question: 'What is Trinity Solar?',
+    answer:
+      'A residential solar installer founded in New Jersey in 1994 by three brothers, Bill, Arty and Tom Pollock, according to the company. It says it has more than 2,500 employees across nine states and also offers roofing, battery storage and EV chargers.',
+  },
+  {
+    question: 'What is Trinity Solar’s BBB rating?',
+    answer:
+      'A+, with accreditation since December 6, 2001, on the Wall Township, New Jersey profile we checked on September 23, 2026. The same profile listed 230 complaints in three years and 104 closed in the last 12 months.',
+  },
+  {
+    question: 'Does Trinity Solar make its own panels?',
+    answer:
+      'Nothing on its homepage says so, and the page names no panel, inverter or battery brand. Trinity is an installer. The equipment is whatever the proposal specifies, so ask for model numbers in writing.',
+  },
+];
+
+const h2 = 'text-2xl font-bold text-foreground mt-10 mb-4';
+const p = 'text-foreground/80 leading-relaxed mb-6';
+const a = 'text-primary underline';
+
 export default function TrinitySolarReview() {
   return (
     <PublicLayout>
       <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
-            {/* Breadcrumb */}
             <nav className='mb-8 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
-              <Link href='/' className='hover:text-primary transition-colors'>
-                Home
-              </Link>
+              <Link href='/' className='hover:text-primary transition-colors'>Home</Link>
               <span>/</span>
-              <Link
-                href='/best-solar-companies-california'
-                className='hover:text-primary transition-colors'
-              >
-                Best Solar Companies in California
-              </Link>
+              <Link href='/solar-installers' className='hover:text-primary transition-colors'>Solar company reviews</Link>
               <span>/</span>
-              <span className='text-foreground font-medium'>
-                Trinity Solar Review
-              </span>
+              <span className='text-foreground font-medium'>Trinity Solar Review</span>
             </nav>
 
             {/* California context banner */}
@@ -101,47 +132,35 @@ export default function TrinitySolarReview() {
               <div className='flex items-start gap-3'>
                 <Info className='h-6 w-6 text-blue-400 flex-shrink-0 mt-0.5' />
                 <div>
-                  <p className='text-xs font-bold uppercase tracking-widest text-blue-300 mb-1'>
-                    California note
-                  </p>
+                  <p className='text-xs font-bold uppercase tracking-widest text-blue-300 mb-1'>California note</p>
                   <p className='text-foreground font-semibold leading-relaxed'>
-                    Trinity Solar is a Northeast-focused installer and does
-                    not have meaningful California operations. If you&apos;re
-                    a California homeowner shopping solar in 2026, Trinity
-                    is almost certainly not going to be one of your actual
-                    options — see our{' '}
-                    <Link
-                      href='/best-solar-companies-california'
-                      className='text-blue-200 underline hover:text-blue-100'
-                    >
-                      Best Solar Companies in California
-                    </Link>
-                    {' '}guide for installers who actually serve your
-                    address.
+                    Trinity Solar’s own site lists nine service states, none of them California (checked
+                    September 23, 2026). If you are shopping for a California home, compare{' '}
+                    <Link href='/solar-installers' className='text-blue-200 underline hover:text-blue-100'>
+                      solar companies that list California
+                    </Link>{' '}
+                    instead.
                   </p>
                 </div>
               </div>
             </div>
 
-            {/* Header */}
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>
                 Solar Installer Review
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Trinity Solar Reviews (2026): Northeast Installer, Not a
-                California Option
+                Trinity Solar Reviews (2026): Northeast Installer, Not a California Option
               </h1>
-              
-              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
-<div className='flex items-center gap-4 text-sm text-muted-foreground'>
+              <LastReviewedStamp date={checked} variant='reviewed' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-09-22'>Updated September 22, 2026</time>
+                  <time dateTime={checked}>Updated September 23, 2026</time>
                 </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />
-                  <span>9 min read</span>
+                  <span>8 min read</span>
                 </div>
               </div>
             </header>
@@ -176,321 +195,154 @@ export default function TrinitySolarReview() {
               </div>
             </div>
 
-            {/* Body */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Trinity Solar is a large, privately held, family-owned
-                residential solar installer founded in 1994 and headquartered
-                in Wall Township, New Jersey. With approximately 2,000 to
-                3,000 employees, Trinity is one of the most established
-                players in Northeast residential solar — operating primarily
-                in New Jersey, New York, Connecticut, Massachusetts,
-                Pennsylvania, and Maryland. Because our audience is
-                California-focused, we&apos;ll keep this review brief on the
-                company profile and spend more time on where it fits (and
-                doesn&apos;t fit) in the national installer comparison.
+                Trinity Solar is a legitimate, long-established installer, but it does not work in California.
+                Founded in New Jersey in 1994, it lists nine service states on its own site, from Maryland to
+                Massachusetts plus Ohio, and none are in the West. Its BBB profile shows an A+ rating and 230
+                complaints in three years, most of them about service and repairs.
+              </p>
+              <p className={p}>
+                People reach this page from two directions. Some are in the Northeast and want Trinity Solar
+                reviews; the BBB and court sections below apply to them. Others are in California and have seen
+                the name in an ad or a comparison. For them the answer is short: Trinity will not be one of your
+                quotes, so spend the time on companies that list your state.
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Trinity Solar&apos;s own site lists its service area as
-                Connecticut, Delaware, Maryland, Massachusetts, New Jersey,
-                New York, Ohio, Pennsylvania, and Rhode Island &mdash; all
-                Northeast and Mid-Atlantic states (trinitysolar.com, accessed
-                September 22, 2026). California does not appear anywhere in
-                that list, in the site&apos;s footer service-area links, or
-                in its coverage-map navigation. Note for anyone citing the
-                company by its older domain: <strong>trinity-solar.com</strong>{' '}
-                now redirects to <strong>trinitysolar.com</strong>; both
-                point to the same company.
-              </p>
-
-              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
-              <div className='not-prose my-8'>
-                <HeroQuickCheck topic="Trinity Solar review and quote comparison" />
+              <div className='not-prose'>
+                <KeyFacts
+                  sourcesHref='#sources'
+                  facts={[
+                    { label: 'Founded', value: '1994', note: 'New Jersey; family-founded', source: { url: SRC.about, date: checked } },
+                    { label: 'Service states on its site', value: '9', note: 'None in California', source: { url: SRC.home, date: checked } },
+                    { label: 'BBB complaints, last 3 years', value: '230', note: '104 closed in the last 12 months', source: { url: SRC.bbbComplaints, date: checked } },
+                    { label: 'Installations (company figure)', value: '125,000', note: 'As of 2025', source: { url: SRC.about, date: checked } },
+                  ]}
+                />
               </div>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                The Company
-              </h2>
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic='Trinity Solar review and quote comparison' />
+              </div>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Trinity Solar is a second-generation family-run business that
-                started as a solar water-heating contractor in 1994 and
-                pivoted to photovoltaic installation as the residential
-                market took off. It remains private and family-owned with
-                revenue estimates in the mid-hundred-millions to low-billions
-                range depending on source. The company focuses exclusively
-                on the Northeast corridor and has not expanded meaningfully
-                into the West Coast or Sun Belt markets.
+              <h2 className={h2}>What is Trinity Solar?</h2>
+              <p className={p}>
+                Trinity Solar says three New Jersey brothers, Bill, Arty and Tom Pollock, started the business
+                in 1994. The company describes itself as family-founded, with more than 2,500 employees across
+                nine states and 125,000 installations as of 2025.<Cite href={SRC.about} date={checked} /> Its BBB
+                profile lists a headquarters on Allenwood Road in Wall Township, New Jersey, and services that
+                include solar, roofing, battery storage and EV chargers.<Cite href={SRC.bbb} date={checked} />
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Equipment and Installation
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Trinity does not manufacture its own panels, inverters, or
-                batteries. Panel sourcing is Tier-1 mix (varies by project
-                and availability). Inverters are typically Enphase
-                microinverters or SolarEdge string inverters. Batteries are
-                third-party options when included. Installation is a blend
-                of direct Trinity crews and partner crews depending on the
-                project and market. Trinity is NABCEP certified and holds
-                manufacturer-certified installer status for its primary
-                equipment partners.
+              <h2 className={h2}>Is Trinity Solar legit?</h2>
+              <p className={p}>
+                On the public record, yes. The BBB profile we checked on September 23, 2026 shows an A+ rating,
+                accreditation since December 6, 2001, and a business start date of February 18, 1994.
+                <Cite href={SRC.bbb} date={checked} /> Thirty-two years of operation and a large installed base are
+                real evidence that the company exists and stays in business. They are not evidence about the
+                experience you would have, which is what the complaint file speaks to.
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Typical install-to-PTO timelines in Trinity&apos;s Northeast
-                markets run roughly 1 to 3 months, which is competitive for
-                the region.
+              <h2 className={h2}>Does Trinity Solar serve California?</h2>
+              <p className={p}>
+                No. Trinity’s homepage lists Connecticut, Delaware, Maryland, Massachusetts, New Jersey, New
+                York, Pennsylvania, Rhode Island and Ohio.<Cite href={SRC.home} date={checked} /> We found one
+                federal case naming the company that was filed in California, <em>Charman v. Trinity Solar
+                Inc.</em> in the Southern District (No. 3:21-cv-01423, filed August 9, 2021, closed May 26,
+                2022).<Cite href={SRC.charman} date={checked} /> A case filed here does not mean the company
+                installs here, and nothing on its site suggests it does.
               </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Financing
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Trinity does not own its own financing product. Lease and
-                PPA options are offered through third-party partners —
-                including, historically, a financing partnership with{' '}
-                <Link
-                  href='/solar-installers/sunnova-review'
-                  className='text-primary hover:underline font-medium'
-                >
-                  Sunnova
+              <p className={p}>
+                Searches such as “Trinity Solar Fresno” turn up here for that reason. If a salesperson in
+                California uses the Trinity name, ask for the legal name of the company that will sign the
+                contract and check its license with the Contractors State License Board before you share
+                anything else. Our{' '}
+                <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className={a}>
+                  contractor-verification walkthrough
                 </Link>{' '}
-                before Sunnova&apos;s 2025 bankruptcy moved those legacy
-                contracts to SunStrong Management. Loan financing is through
-                standard third-party solar lenders. Cash purchase is always
-                available. For what that bankruptcy actually involved and
-                what it means if you&apos;re evaluating Sunnova directly, see{' '}
-                <Link
-                  href='/solar-installers/sunnova-review'
-                  className='text-primary hover:underline font-medium'
-                >
-                  our Sunnova review
-                </Link>
-                .
+                shows how.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Reputation
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Trinity holds a BBB A+ rating. The BBB profile lists
-                approximately 214 complaints closed in the prior three
-                years, which is a moderate volume for a company of this
-                size. The recurring themes across complaints
-                are: communication gaps during longer-than-expected
-                permitting or utility interconnection delays, slow
-                post-install service response, and occasional billing
-                disputes. Positive reviews generally praise the install day
-                experience and the crews&apos; professionalism.
+              <h2 className={h2}>Trinity Solar reviews and complaints</h2>
+              <p className={p}>
+                The BBB listed 230 complaints about Trinity Solar in the last three years and 104 closed in the
+                last 12 months. By type: 155 service or repair issues, 40 order issues, 14 product issues, 9 sales
+                and advertising issues, 7 customer service issues, 3 delivery issues and 2 billing issues.
+                <Cite href={SRC.bbbComplaints} date={checked} />
+              </p>
+              <p className={p}>
+                The recent complaints we read describe installs that took months longer than promised, systems
+                waiting on activation, repeated failed inspections, roof problems customers linked to the
+                installation, and difficulty getting updates. Some mention delays in incentive payments and in
+                coordination with the utility. Complaint counts are not scaled to the number of installations,
+                so read the themes, not the total, and ask how each one is handled in your contract.
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                There are no major active class-action lawsuits against
-                Trinity as of 2026. Individual consumer complaints appear in
-                normal volumes for a regional installer of this scale.
+              <h2 className={h2}>What the federal court record shows</h2>
+              <p className={p}>
+                A party-name search for “Trinity Solar” on CourtListener returns a mix of cases, several of them
+                unrelated retirement-fund litigation in which the name appears among many parties.
+                <Cite href={SRC.cl} date={checked} /> Among the dockets that name the company directly are{' '}
+                <em>Hanson v. Trinity Solar, LLC</em> (D.R.I., filed April 5, 2024, closed December 27, 2024),{' '}
+                <em>Beason v. Trinity Solar LLC</em> (D. Conn., filed October 25, 2024), an employment case in
+                western Pennsylvania closed in February 2025, and a 2025 case in which Trinity is the plaintiff.
+                <Cite href={SRC.hanson} date={checked} />
+                <Cite href={SRC.beason} date={checked} /> A filed case is an allegation, and a closed docket does
+                not say who prevailed.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Warranty
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Trinity offers 25-year equipment and workmanship warranties,
-                consistent with industry standard. As a private company
-                founded in 1994 with 30+ years of operating history, the
-                balance-sheet confidence for long-duration warranties is
-                reasonable — not as transparent as a publicly traded
-                installer with quarterly disclosures, but meaningfully
-                stronger than a newer or smaller regional player.
+              <h2 className={h2}>Warranty, equipment and financing</h2>
+              <p className={p}>
+                Trinity’s homepage offers an “up to 25-year parts &amp; labor guarantee” and says it will honor
+                the warranty for the lifetime of the roof or solar system.<Cite href={SRC.home} date={checked} />{' '}
+                “Up to” is the phrase to pin down: ask which parts, which labor and which years your contract
+                covers. The homepage mentions solar and roofing payment options but gives no terms, and it names
+                no panel, inverter or battery brand. Get all of it in the written proposal.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Why Trinity Probably Isn&apos;t in Your California Quote Set
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Trinity focuses on the Northeast. The company doesn&apos;t
-                have California operations in any meaningful volume, so if
-                you&apos;re shopping solar in Los Angeles, San Diego,
-                Sacramento, or anywhere else in California, Trinity is
-                almost certainly not going to show up in your quote set —
-                and if you did get a sales call from someone pitching
-                Trinity Solar in California, that&apos;s worth double-
-                checking, because the entity structure or licensing may not
-                be standard.
+              <h2 className={h2}>Trinity Solar compared with Sunrun, Momentum and Tesla</h2>
+              <p className={p}>
+                Comparison searches pair Trinity with national names. For a California home, the difference
+                that matters is simple: Sunrun lists California on its own contractor-license page, and neither
+                Momentum nor Trinity lists California as a service state. See{' '}
+                <Link href='/solar-installers/sunrun-vs-trinity-solar' className={a}>Sunrun vs. Trinity Solar</Link>,{' '}
+                <Link href='/solar-installers/momentum-solar-vs-trinity-solar' className={a}>Momentum Solar vs. Trinity Solar</Link>{' '}
+                and the{' '}
+                <Link href='/solar-installers/tesla-solar-review' className={a}>Tesla Solar review</Link>. For
+                SunPower, which filed for bankruptcy in 2024, see the{' '}
+                <Link href='/solar-installers/sunpower-review' className={a}>SunPower review</Link>.
               </p>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                For California residents evaluating installers in 2026, the
-                right comparison set is companies that actually have
-                California crews, California utility-interconnection
-                relationships, and California post-install service
-                infrastructure. See our{' '}
-                <Link
-                  href='/best-solar-companies-california'
-                  className='text-primary hover:underline font-medium'
-                >
-                  Best Solar Companies in California
-                </Link>{' '}
-                guide for the current shortlist —{' '}
-                <Link
-                  href='/solar-installers/sunrun-review'
-                  className='text-primary hover:underline font-medium'
-                >
-                  Sunrun
-                </Link>
-                ,{' '}
-                <Link
-                  href='/solar-installers/tesla-solar-review'
-                  className='text-primary hover:underline font-medium'
-                >
-                  Tesla Solar
-                </Link>
-                ,{' '}
-                <Link
-                  href='/solar-installers/solar-optimum-review'
-                  className='text-primary hover:underline font-medium'
-                >
-                  Solar Optimum
-                </Link>
-                , and{' '}
-                <Link
-                  href='/solar-installers/semper-solaris-review'
-                  className='text-primary hover:underline font-medium'
-                >
-                  Semper Solaris
-                </Link>{' '}
-                are solid starting points.
+              <h2 className={h2}>What a California homeowner should do instead</h2>
+              <p className={p}>
+                Start with companies whose own sites list California, and compare at least two written quotes on
+                the same system size and equipment. The{' '}
+                <Link href='/solar-installers' className={a}>California solar company reviews</Link> list those
+                companies, and the{' '}
+                <Link href='/best-solar-companies-california' className={a}>comparison of solar companies in California</Link>{' '}
+                covers how to choose. Before you sign, read the{' '}
+                <Link href='/solar-problems/solar-contract-red-flags-california' className={a}>contract red flags</Link>{' '}
+                page.
+              </p>
+              <p className={p}>
+                If you found this page from New Jersey or another state Trinity serves, the BBB file and court
+                dockets above are yours to use, but the rest of this site is written for California rules, rates
+                and incentives.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Comparing Installers in California
-              </h2>
+              <div className='not-prose'>
+                <FaqJsonLd items={faqs} />
+                <FaqBlock items={faqs} schema={false} />
+              </div>
 
-              <p className='text-foreground/80 leading-relaxed mb-4'>
-                Since Trinity Solar isn&apos;t an option here, the useful
-                next step is a California-specific list rather than more
-                research on a company that won&apos;t take your project:
-              </p>
-              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>
-                  <Link
-                    href='/solar-installers'
-                    className='text-primary hover:underline font-medium'
-                  >
-                    California solar company reviews and comparisons
-                  </Link>{' '}
-                  &mdash; CRR&apos;s full installer hub, including how to
-                  check a company&apos;s CSLB license before you sign.
-                </li>
-                <li>
-                  <Link
-                    href='/best-solar-companies-california'
-                    className='text-primary hover:underline font-medium'
-                  >
-                    Best solar companies in California
-                  </Link>{' '}
-                  &mdash; a shorter, vetted starting list.
-                </li>
-              </ul>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                If you found this page searching for Trinity Solar reviews
-                from New Jersey, Connecticut, Massachusetts, New York,
-                Pennsylvania, Maryland, Delaware, Rhode Island, or Ohio
-                &mdash; the states Trinity actually serves &mdash; this site
-                is California-only and can&apos;t help with that comparison.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Frequently Asked Questions
-              </h2>
-
-              <div className='space-y-6 mb-6'>
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    Does Trinity Solar serve California?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    No. Trinity&apos;s own site lists nine service states
-                    &mdash; Connecticut, Delaware, Maryland, Massachusetts,
-                    New Jersey, New York, Ohio, Pennsylvania, and Rhode
-                    Island &mdash; and California isn&apos;t one of them
-                    (trinitysolar.com, accessed September 22, 2026).
-                    California homeowners should compare installers that
-                    actually operate here; see our{' '}
-                    <Link
-                      href='/solar-installers'
-                      className='text-primary hover:underline font-medium'
-                    >
-                      installer hub
-                    </Link>
-                    .
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    Is Trinity Solar a good installer if I&apos;m in New
-                    Jersey?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    In its Northeast footprint, Trinity is a reasonable
-                    mid-market choice. Family-owned, 30+ year operating
-                    history, BBB A+, competitive pricing. The most common
-                    criticism in reviews is post-install service response
-                    time. Get two or three competing quotes regardless of
-                    which installer looks best on paper.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    What about the old Trinity-Sunnova financing
-                    partnership?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    Trinity historically used Sunnova as a lease/PPA
-                    financing partner on some projects. Since Sunnova&apos;s
-                    2025 bankruptcy, those legacy contracts transferred to
-                    SunStrong Management along with the rest of Sunnova&apos;s
-                    portfolio. New Trinity projects use other financing
-                    partners. See our{' '}
-                    <Link
-                      href='/solar-installers/sunnova-review'
-                      className='text-primary hover:underline'
-                    >
-                      Sunnova review
-                    </Link>{' '}
-                    for context on that bankruptcy.
-                  </p>
-                </div>
-
-                <div>
-                  <h3 className='text-lg font-bold text-foreground mb-2'>
-                    Does Trinity Solar manufacture its own panels?
-                  </h3>
-                  <p className='text-foreground/80 leading-relaxed'>
-                    No. Trinity sources Tier-1 panels from multiple
-                    manufacturers depending on project and availability. In
-                    our California comparison, only Tesla and Qcells (the
-                    manufacturer behind Axia Solar) actually own their panel
-                    factories.
-                  </p>
-                </div>
+              <div className='not-prose'>
+                <SourceList sources={sources} />
               </div>
             </div>
 
-            {/* CA-focused CTA */}
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
               <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>
-                California Shopper? Compare Installers That Confirm They
-                Serve Your Address.
+                California Shopper? Compare Installers That Confirm They Serve Your Address.
               </h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>
                 Trinity doesn&apos;t serve California. California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.
@@ -510,82 +362,27 @@ export default function TrinitySolarReview() {
             </div>
 
             <div className='mt-8'>
-              <SolarInquiry topic="Trinity Solar review and quote comparison" />
+              <SolarInquiry topic='Trinity Solar review and quote comparison' />
             </div>
 
-            {/* Related */}
-            <div className='mt-10 pt-8 border-t border-border'>
-              <h3 className='text-lg font-bold text-foreground mb-4'>
-                More Installer Reviews
-              </h3>
-              <div className='grid sm:grid-cols-2 gap-3'>
-                <Link
-                  href='/solar-installers/sunnova-review'
-                  className='p-4 border border-border rounded-lg hover:border-primary transition-colors'
-                >
-                  <div className='flex items-center justify-between'>
-                    <span className='font-medium text-foreground'>
-                      Sunnova Review
-                    </span>
-                    <ArrowRight className='h-4 w-4 text-muted-foreground' />
-                  </div>
-                </Link>
-                <Link
-                  href='/solar-installers/sunrun-review'
-                  className='p-4 border border-border rounded-lg hover:border-primary transition-colors'
-                >
-                  <div className='flex items-center justify-between'>
-                    <span className='font-medium text-foreground'>
-                      Sunrun Review
-                    </span>
-                    <ArrowRight className='h-4 w-4 text-muted-foreground' />
-                  </div>
-                </Link>
-                <Link
-                  href='/solar-installers/tesla-solar-review'
-                  className='p-4 border border-border rounded-lg hover:border-primary transition-colors'
-                >
-                  <div className='flex items-center justify-between'>
-                    <span className='font-medium text-foreground'>
-                      Tesla Solar Review
-                    </span>
-                    <ArrowRight className='h-4 w-4 text-muted-foreground' />
-                  </div>
-                </Link>
-                <Link
-                  href='/solar-installers/solar-optimum-review'
-                  className='p-4 border border-border rounded-lg hover:border-primary transition-colors'
-                >
-                  <div className='flex items-center justify-between'>
-                    <span className='font-medium text-foreground'>
-                      Solar Optimum Review
-                    </span>
-                    <ArrowRight className='h-4 w-4 text-muted-foreground' />
-                  </div>
-                </Link>
-              </div>
-            </div>
+            <HubSpokeLinks hub='installer_reviews' currentPath={path} />
 
             <div className='mt-10'>
-              <Link
-                href='/best-solar-companies-california'
-                className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'
-              >
+              <Link href='/solar-installers' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'>
                 <ArrowLeft className='h-4 w-4' />
-                Back to Best Solar Companies in California
+                Back to California solar company reviews
               </Link>
             </div>
           </article>
         </div>
       </main>
       <Footer />
-      <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Trinity" />
+      <div className='container mx-auto px-4 max-w-3xl'>
+        <VerifyInstallerBox installerName='Trinity' bbbProfileUrl='https://www.bbb.org/us/nj/wall-township/profile/solar-energy-design/trinity-solar-0221-16001220' />
       </div>
-      <div className="container mx-auto px-4 max-w-3xl">
-        <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
+      <div className='container mx-auto px-4 max-w-3xl'>
+        <AuthorBio domain='crr' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
       </div>
-
     </PublicLayout>
   );
 }
