@@ -562,6 +562,20 @@ export const growthCities: Record<string, GrowthCity> = {
         url: "https://webprod.ladwp.com/account/customer-service/electric-rates/ev-nem-reo-rates",
       },
     ],
+    projectLinks: [
+      {
+        href: "/solar-installers/licensed-solar-installer",
+        label: "How to find a licensed solar installer and confirm the one on your contract",
+      },
+      {
+        href: "/battery/solar-battery-company",
+        label: "How to vet a solar battery company before adding storage",
+      },
+      {
+        href: "/blog/solar-broker",
+        label: "What a solar broker can and cannot do for you",
+      },
+    ],
     faq: [
       [
         "Are solar panels worth it in Los Angeles?",

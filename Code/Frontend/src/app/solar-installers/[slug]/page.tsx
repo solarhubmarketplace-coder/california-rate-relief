@@ -4,6 +4,7 @@ import {
   articleMetadata,
   articleStaticParams,
 } from '@/components/shared/ArticleRoute';
+import { JsonArticleLinks } from '@/components/growth/JsonArticleLinks';
 
 // Static sibling routes (e.g. /solar-installers/sunrun-review) take precedence
 // over this dynamic segment in Next's router, so those hand-built pages are
@@ -33,6 +34,7 @@ export default async function Page({
       slug={slug}
       backHref="/best-solar-companies-california"
       backLabel="All California solar companies"
+      after={<JsonArticleLinks path={`/solar-installers/${slug}`} fallbackHub="installer_reviews" />}
     />
   );
 }

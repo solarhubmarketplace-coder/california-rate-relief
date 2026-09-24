@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
 import { DecisionPage, QuoteChecklist, type Source } from "./DecisionPage";
 
 const path = "/blog/is-my-roof-good-for-solar-california";
@@ -204,6 +205,8 @@ export function RoofSuitabilityGuide() {
           penetrations, waterproofing responsibility, workmanship coverage,
           exclusions and the process for a future roof repair in writing. For a
           tile roof, use the <Link className="underline" href="/blog/solar-panels-tile-roof-california">tile-roof checklist</Link> before comparing proposals.
+          If a leak shows up after the system goes in, the steps are in{" "}
+          <Link className="underline" href="/blog/roof-leak-after-solar-panel-install">what to do about a roof leak after a solar install</Link>.
         </p>
       </section>
 
@@ -410,6 +413,15 @@ export function RoofSuitabilityGuide() {
             solar mounting itself.
           </li>
           <li>
+            <strong>Can I let the utility use my roof instead?</strong> In
+            LADWP territory, yes: the{" "}
+            <Link className="underline" href="/blog/ladwp-solar-rooftops-program">
+              LADWP Solar Rooftops program
+            </Link>{" "}
+            pays eligible owners to host a utility-owned system. It does not
+            lower your own bill the way your own system would.
+          </li>
+          <li>
             <strong>Do home warranties cover solar panels?</strong> That
             depends on your specific homeowners policy and the system&apos;s
             own workmanship warranty, not on solar panels generally &mdash;
@@ -421,6 +433,7 @@ export function RoofSuitabilityGuide() {
           </li>
         </ul>
       </section>
+      <HubSpokeLinks hub="roof_structures" currentPath={path} />
     </DecisionPage>
   );
 }

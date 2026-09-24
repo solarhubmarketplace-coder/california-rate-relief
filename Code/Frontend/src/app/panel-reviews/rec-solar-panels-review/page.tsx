@@ -164,7 +164,8 @@ export default function RecSolarReview() {
               <p className={p}>
                 If you were looking for a local installer or a commercial solar developer with REC in its name, this page
                 is not about that: it covers REC Group’s panels. When a quote lists REC panels, check that the model number
-                matches an REC Group datasheet.
+                matches an REC Group datasheet. For a business property, see{' '}
+                <Link href='/commercial-solar/rec-commercial-solar-panels' className={a}>REC panel lines for commercial projects</Link>.
               </p>
 
               <h2 className={h2}>Where are REC panels made?</h2>

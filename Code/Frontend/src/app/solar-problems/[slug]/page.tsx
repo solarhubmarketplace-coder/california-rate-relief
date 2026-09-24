@@ -4,6 +4,7 @@ import {
   articleMetadata,
   articleStaticParams,
 } from '@/components/shared/ArticleRoute';
+import { JsonArticleLinks } from '@/components/growth/JsonArticleLinks';
 
 export function generateStaticParams() {
   return articleStaticParams('problems');
@@ -30,6 +31,7 @@ export default async function Page({
       slug={slug}
       backHref="/solar-problems"
       backLabel="All solar problem guides"
+      after={<JsonArticleLinks path={`/solar-problems/${slug}`} fallbackHub="rules_permits" />}
     />
   );
 }

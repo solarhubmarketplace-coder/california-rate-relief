@@ -34,6 +34,351 @@ interface BlogPost {
 }
 
 const blogPosts: BlogPost[] = [
+  // claude/ta-release-20260923 — topical-authority wave
+  {
+    slug: 'sce-nem-2',
+    title: 'SCE NEM 2.0 vs Solar Billing Plan: Net Metering Rules',
+    excerpt:
+      'SCE NEM 2.0 lasts 20 years from your PTO date on TOU-D-4-9PM. How it differs from SCE’s Solar Billing Plan (NEM 3.0), what ends it early, and export rates.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'why-are-my-nem-charges-so-high',
+    title: 'Why Are My NEM Charges So High? 7 Causes on a Solar Bill',
+    excerpt:
+      'High NEM charges usually mean more usage, less solar output, or imports at pricier hours than your exports. How to read the year-to-date figure and fix it.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'nem-3-lawsuit',
+    title: 'NEM 3.0 Lawsuit: What the Courts Decided (2026 Update)',
+    excerpt:
+      'California’s appeals court upheld NEM 3.0 on remand in March 2026, after a 2025 Supreme Court ruling. The case timeline, and what could still change.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'nem-3-export-rates-california',
+    title: 'NEM 3.0 Export Rates in California: 2026 Values by Hour',
+    excerpt:
+      'Under NEM 3.0, PG&E pays under 1¢/kWh for an April noon export but about $1.15 at 7 p.m. in August. 2026 export values by hour for PG&E, SCE and SDG&E.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'what-is-nem-true-up',
+    title: 'What Is a NEM True-Up? How the Annual Solar Bill Works',
+    excerpt:
+      'A NEM true-up is the yearly bill that settles a solar account’s charges and credits. How it works on NEM 2.0 and NEM 3.0, and what happens to extra credit.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'when-does-nem-2-expire',
+    title: 'When Does NEM 2.0 Expire? The 20-Year Clock Explained',
+    excerpt:
+      'NEM 2.0 expires 20 years after interconnection, so the first accounts end in the mid-2030s. What starts the clock, what ends it early and what comes next.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'nem-pge',
+    title: 'What Does NEM Mean on a PG&E Bill? NEM Charges Explained',
+    excerpt:
+      'NEM on a PG&E bill means Net Energy Metering, the solar billing program. What NEM charges are, why you get two statements, and how the True-Up works.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'prepaid-lease-solar',
+    title: 'Prepaid Solar Lease in California: What You Pay and Own',
+    excerpt:
+      'A prepaid solar lease swaps monthly payments for one upfront payment. The provider still owns the panels. Costs, sale, buyout and end-of-term checks.',
+    date: '2026-09-23',
+    category: 'Solar Financing',
+  },
+  {
+    slug: 'no-upfront-cost-solar-panels',
+    title: 'No Upfront Cost Solar Panels in California: Who Pays',
+    excerpt:
+      'No-upfront-cost solar is paid later: a loan, a lease or a per-kWh PPA. How the company gets paid, the pros and cons, and the total-cost test to run first.',
+    date: '2026-09-23',
+    category: 'Solar Savings',
+  },
+  {
+    slug: 'solar-payback-period-california',
+    title: 'Solar Payback Period in California (2026): Work Out Yours',
+    excerpt:
+      'How to work out solar payback in California in 2026: price per watt, self-use versus export credits, fixed charges, the ended tax credit and batteries.',
+    date: '2026-09-23',
+    category: 'Solar Savings',
+  },
+  {
+    slug: 'pge-solar-calculator',
+    title: 'PG&E Solar Calculator: How to Use It and Check a Quote',
+    excerpt:
+      'PG&E’s solar calculator sits in its Clean Energy Calculator and uses 12 months of your usage. What it estimates, what it can’t, and how to check a quote.',
+    date: '2026-09-23',
+    category: 'Solar Savings',
+  },
+  {
+    slug: 'solar-for-renters',
+    title: 'Solar for Renters in California: What You Can Actually Do',
+    excerpt:
+      'Renters can’t sign a rooftop solar deal, but they can use CPUC 20% bill-discount programs, utility community solar, SOMAH and CARE or FERA. What fits whom.',
+    date: '2026-09-23',
+    category: 'Solar Financing',
+  },
+  {
+    slug: 'replacement-solar-inverter-cost',
+    title: 'Replacement Solar Inverter Cost in California: What Sets It',
+    excerpt:
+      'A replacement solar inverter’s cost depends on type, warranty, labor, permits and whether you add a battery. What to check first and how to read a quote.',
+    date: '2026-09-23',
+    category: 'Solar Savings',
+  },
+  {
+    slug: 'solar-panel-repair-cost',
+    title: 'Solar Panel Repair Cost in California: What Drives It',
+    excerpt:
+      'What sets the cost of a solar repair in California: the part that failed, whether a warranty pays for labor, roof access and panel removal. Checklist inside.',
+    date: '2026-09-23',
+    category: 'Solar Longevity',
+  },
+  {
+    slug: 'solar-panel-removal-reinstall-cost',
+    title: 'Solar Panel Removal and Reinstall Cost in California',
+    excerpt:
+      'What sets the cost to remove and reinstall solar panels for a new roof in California, who may do the work, how leases handle it, and a quote checklist.',
+    date: '2026-09-23',
+    category: 'Solar Longevity',
+  },
+  {
+    slug: 'ladwp-solar-rooftops-program',
+    title: 'LADWP Solar Rooftops Program: Pay, Terms, Who Qualifies',
+    excerpt:
+      'LADWP rents your roof for a utility-owned solar system: $360 to $900 a year for up to 20 years. Eligibility, roof rules, selling your home and leaving early.',
+    date: '2026-09-23',
+    category: 'Roof Suitability',
+  },
+  {
+    slug: 'roof-leak-after-solar-panel-install',
+    title: 'Roof Leak After Solar Panel Install? What to Do in CA',
+    excerpt:
+      'A roof leak after solar goes in: protect the house, document it, give the installer written notice, and escalate to CSLB if it won’t fix its work.',
+    date: '2026-09-23',
+    category: 'Roof Suitability',
+  },
+  {
+    slug: 'solar-panels-tile-roof-california',
+    title: 'Solar Roof Tiles vs Panels on a Tile Roof in California',
+    excerpt:
+      'Clay or concrete tile mounts, what breaks tiles, setbacks and a future re-roof, and how solar roof tiles differ as a project. Get these in writing first.',
+    date: '2026-09-23',
+    category: 'Roof Suitability',
+  },
+  {
+    slug: 'rooftop-solar-credits-ruling-california',
+    title: 'California Rooftop Solar Credits Ruling: What It Means',
+    excerpt:
+      'California courts upheld the CPUC’s net billing (NEM 3.0) decision: the 2025 Supreme Court ruling, the 2026 appeal, and what it means for your solar credits.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'solar-broker',
+    title: 'What a solar broker is, and what one can legally do in California',
+    excerpt:
+      'A solar broker can refer you to licensed installers and book appointments, but California rules bar quoting or selling the contract. Questions to ask one.',
+    date: '2026-09-23',
+    category: 'Getting Quotes',
+  },
+  {
+    slug: 'solar-license-california',
+    title: 'California solar license requirements: installing and selling solar',
+    excerpt:
+      'The CSLB license you need to install solar in California, the registration you need to sell it, and the experience, exam, bond and fees for each.',
+    date: '2026-09-23',
+    category: 'Getting Quotes',
+  },
+  {
+    slug: 'what-percentage-of-california-power-is-solar',
+    title: 'What percentage of California\'s power is solar?',
+    excerpt:
+      'Solar supplied 21.3% of California’s 2024 power mix and 23.4% of in-state generation, before counting rooftop systems. What the CEC numbers mean.',
+    date: '2026-09-23',
+    category: 'Solar Savings',
+  },
+  {
+    slug: 'inflation-reduction-act-solar-california',
+    title: 'The Inflation Reduction Act and solar in California: what changed, and what is left',
+    excerpt:
+      'The IRA set a 30% home solar credit through 2032, but federal law ended it for installs completed after 2025. What California homeowners can still use.',
+    date: '2026-09-23',
+    category: 'California Solar Incentives',
+  },
+  {
+    slug: 'pros-and-cons-of-solar-panels-california',
+    title: 'Pros and cons of solar panels in California in 2026',
+    excerpt:
+      'The real advantages and drawbacks of home solar in California in 2026: net billing, no federal credit, battery costs, property tax, contracts and roofs.',
+    date: '2026-09-23',
+    category: 'Solar Savings',
+  },
+  {
+    slug: 'solar-resources',
+    title: 'California solar resources: the official tools, data and rules worth bookmarking',
+    excerpt:
+      'Free, official solar resources for California homeowners: sunlight and production data, license checks, net billing rules, incentives and market data.',
+    date: '2026-09-23',
+    category: 'Getting Quotes',
+  },
+  {
+    slug: 'ladwp-rates',
+    title: 'LADWP Rates 2026: Tier Prices, Peak Hours and Cost per kWh',
+    excerpt:
+      'LADWP electric rates for 2026: R-1A tier prices by season, R-1B peak hours, the Power Access Charge and how much rates rose from 2025.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'average-utility-bill-california',
+    title: 'Average Utility Bill in California: Electric, Gas and More',
+    excerpt:
+      'California homes averaged $161 a month for electricity in 2024, per EIA, plus about $59 for natural gas. See the numbers by utility and why bills vary.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'average-kwh-per-day-california',
+    title: 'Average kWh per Day in California: 16.5 kWh (2024 Data)',
+    excerpt:
+      'California homes averaged about 16.5 kWh a day in 2024, per EIA. See baseline allowances by utility and the cheapest hours to use power.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'pge-tier-rates',
+    title: 'PG&E Tier Rates 2026: Tier 1 vs Tier 2 Prices on E-1',
+    excerpt:
+      'PG&E\'s tiered E-1 plan charges 32.561¢ per kWh in Tier 1 and 40.702¢ in Tier 2 from March 1, 2026. See baseline allowances, history and a sample bill.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'where-does-california-get-its-electricity',
+    title: 'Where Does California Get Its Electricity? 2024 Power Mix',
+    excerpt:
+      'In 2024 California\'s power came 34% from natural gas, 21% from solar and 62% from clean sources, per the CEC. Imports, hydro, nuclear and daily use.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'average-pge-bill-for-1-bedroom-apartment',
+    title: 'Average PG&E Bill for a 1-Bedroom Apartment (2026)',
+    excerpt:
+      'No official average exists, so we priced typical apartment usage on PG&E\'s 2026 rates: about $105 to $191 a month for 250–450 kWh, before taxes.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'electricity-rates-highest-in-us-california',
+    title: 'California Electricity Rates: 2nd Highest in the U.S. (2026)',
+    excerpt:
+      'EIA: California\'s residential price was 34.74¢/kWh in June 2026, second only to Hawaii and nearly double the U.S. 18.34¢. State rankings and why.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'how-often-does-ladwp-bill',
+    title: 'How Often Does LADWP Bill? Every Two Months, Explained',
+    excerpt:
+      'LADWP bills homes every two months and businesses monthly. See why the bill covers about 60 days, how tiers scale, and 2026 water prices per HCF.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'income-qualified-bill-discount-pge',
+    title: 'PG&E Income-Qualified Bill Discount: CARE and FERA (2026)',
+    excerpt:
+      'PG&E\'s income-qualified discounts are CARE (35%+ off electricity) and FERA (18%). See 2026–27 income limits, the lower daily charge and how to apply.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'direct-access-electricity-california',
+    title: 'California Direct Access Electricity: Lottery, Cap and Rules',
+    excerpt:
+      'Direct Access lets a business buy power from a competitive supplier, but it is capped and closed to homes. See the 2025 lottery results and how to enroll.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'why-is-my-smud-bill-so-high',
+    title: 'Why Is My SMUD Bill So High? 2026 Rates and Summer Peaks',
+    excerpt:
+      'A SMUD bill jumps in summer because weekday prices from noon to midnight rise, 5–8 p.m. hits 37.65¢, and rates rose 3% in 2026. Check each cause.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'what-is-3rd-party-electric-on-pge-bill',
+    title: 'What Is 3rd Party Electric on a PG&E Bill? CCA Charges',
+    excerpt:
+      '3rd party electric on a PG&E bill is your community choice provider\'s generation charge. PG&E still delivers and bills. See the PCIA and a real comparison.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'sce-rate-schedules',
+    title: 'SCE Rate Schedules 2026: Every Residential Plan Explained',
+    excerpt:
+      'Every SCE residential rate schedule in one place: Schedule D, TOU-D 4-9PM, 5-8PM and PRIME, CARE, FERA and solar, with June 2026 prices and who qualifies.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'did-pge-rates-go-up',
+    title: 'Did PG&E Rates Go Up? Every Rate Change, 2023 to 2026',
+    excerpt:
+      'PG&E rates fell twice in 2026, to 33.7¢ per kWh, after big increases in 2023 and January 2024. See each change by date, why, and what 2027 may bring.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'sce-settlement-bill',
+    title: 'SCE Annual Settlement Bill: How to Read Your Solar True-Up',
+    excerpt:
+      'An SCE settlement bill is the yearly statement for NEM solar customers: the year\'s net energy charges come due, and extra credit pays about 1.8¢/kWh.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'selling-electricity-back-to-the-grid-price-per-kwh',
+    title: 'Selling Electricity Back to the Grid: Price per kWh (2026)',
+    excerpt:
+      'California utilities pay 0¢ to over $1 per kWh for solar exports, depending on the tariff, hour and month. See 2026 values for PG&E, SCE, SMUD and LADWP.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'chargepoint-cost-per-kwh-california',
+    title: 'ChargePoint Cost per kWh in California: Prices and Fees',
+    excerpt:
+      'ChargePoint prices are set by each station owner, plus a ChargePoint fee of $0.25–$0.99 a session. See California display rules and home-charging costs.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'ladwp-ev-charging-rates',
+    title: 'LADWP EV Charging Rates 2026: Discount, Meter and Rebates',
+    excerpt:
+      'LADWP takes 2.5¢ per kWh off EV charging in the Base period if the charger has its own TOU meter. See 2026 prices, the $10 minimum and rebates.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
   // claude/ca-green-20260918
   {
     slug: 'can-you-cancel-solar-panel-contract-before-installation-california',
@@ -376,10 +721,10 @@ const blogPosts: BlogPost[] = [
   // publishes one, which is why it is optional in BlogPost above.
   {
     slug: 'solar-carport-california-guide',
-    title: 'Solar Carports in California: Cost, Scope, and Quotes',
+    title: 'Solar Carports in California: Cost, Permits and Design',
     excerpt:
       'What a carport project includes beyond the panels \u2014 the structure, the foundations, the trenching \u2014 and the scope questions a quote has to answer before two quotes can be compared.',
-    date: '2026-09-18',
+    date: '2026-09-23',
     category: 'Getting Quotes',
   },
   {
@@ -397,14 +742,6 @@ const blogPosts: BlogPost[] = [
       'Purchase, loan, PPA, PACE and SBA paperwork compared for the same commercial project, so ownership and payment terms are chosen on documents rather than on a monthly figure.',
     date: '2026-09-11',
     category: 'Solar Financing',
-  },
-  {
-    slug: 'commercial-solar-installation-cost-california',
-    title: 'Commercial Solar Installation Cost in California',
-    excerpt:
-      'What a commercial price actually depends on, and the scope items a bid has to name before two bids are describing the same project.',
-    date: '2026-09-11',
-    category: 'Getting Quotes',
   },
   {
     slug: 'solar-tax-credit-2026',

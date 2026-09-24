@@ -2,6 +2,17 @@ import { getAllCitySlugs } from '../data/cities-data.ts';
 import { getPublishableCityCostSlugs } from '../data/city-cost-data.ts';
 
 export const GROWTH_ROUTES = [
+  // claude/ta-release-20260923 — companies pages built in the topical-authority wave
+  '/solar-companies/auburn',
+  '/solar-companies/berkeley',
+  '/solar-companies/concord',
+  '/solar-companies/lancaster',
+  '/solar-companies/lincoln',
+  '/solar-companies/oxnard',
+  '/solar-companies/redding',
+  '/solar-companies/san-marcos',
+  '/solar-companies/vacaville',
+  '/solar-companies/yorba-linda',
   '/blog/free-roof-replacement-with-solar-panels-california',
   '/blog/prepaid-ppa-california-2026',
   '/blog/solar-panel-removal-reinstall-cost',

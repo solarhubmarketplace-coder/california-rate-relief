@@ -153,7 +153,7 @@ export default function HowMuchToLeaseSolarPanelsCalifornia() {
       sources={sources}
       sourceCheckedDate="2026-09-22"
       topic="Understanding a solar lease or PPA quote"
-      primaryResourceHref="/blog/solar-ppa-vs-lease-california"
+      primaryResourceHref="/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa"
       primaryResourceLabel="Lease and PPA compared"
       comparisonHref="/blog/is-it-better-to-buy-or-lease-solar-panels-california"
       comparisonLabel="Buy or lease"
@@ -706,7 +706,7 @@ export default function HowMuchToLeaseSolarPanelsCalifornia() {
         intro="The terms that move a lease or PPA payment have their own pages."
         links={[
           {
-            href: "/blog/solar-ppa-vs-lease-california",
+            href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa",
             label: "Solar lease vs PPA in California",
             note: "what the two structures actually charge for",
           },

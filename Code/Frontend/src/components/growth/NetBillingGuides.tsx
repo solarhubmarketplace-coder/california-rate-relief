@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
+import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
 import { DecisionPage, QuoteChecklist, type Source } from "./DecisionPage";
 
 const cpucNem: Source = {
@@ -310,7 +311,7 @@ function ComparisonFaq() {
               Selling a home with a solar lease or PPA
             </Link>{" "}
             and{" "}
-            <Link className="underline" href="/blog/solar-ppa-vs-lease-california">
+            <Link className="underline" href="/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa">
               Solar PPA vs. lease
             </Link>
             .
@@ -631,6 +632,9 @@ export function NetBillingGuide({ kind }: { kind: NetBillingGuideKind }) {
       faq={faq}
     >
       {content}
+      {/* The comparison page is the NEM hub (SEO/24 §5.1): it lists every NEM
+          spoke. The other three kinds are spokes and link across to siblings. */}
+      <HubSpokeLinks hub="nem" currentPath={guide.path} />
     </DecisionPage>
   );
 }

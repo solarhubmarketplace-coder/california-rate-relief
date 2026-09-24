@@ -479,7 +479,7 @@ export default function ZeroDownSolarCalifornia() {
             label: "What determines a solar lease or PPA payment",
           },
           {
-            href: "/blog/solar-ppa-vs-lease-california",
+            href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa",
             label: "Solar lease vs PPA in California",
           },
           {

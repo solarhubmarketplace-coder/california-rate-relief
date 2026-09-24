@@ -477,7 +477,7 @@ export default function SunrunReview() {
             <RelatedGuides
               heading='What the agreement does over its full term'
               links={[
-                { href: '/blog/solar-ppa-vs-lease-california', label: 'How a PPA differs from a lease' },
+                { href: '/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa', label: 'How a PPA differs from a lease' },
                 { href: '/blog/what-happens-if-stop-paying-solar-lease-california', label: 'What default does to the agreement' },
                 { href: '/solar-problems/solar-escalator-clause-explained', label: 'What an annual escalator does to the later years' },
                 { href: '/battery/tesla-powerwall-3-cost-california', label: 'What a Powerwall 3 costs installed' },

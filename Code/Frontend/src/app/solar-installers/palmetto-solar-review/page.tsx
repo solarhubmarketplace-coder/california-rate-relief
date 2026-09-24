@@ -140,7 +140,7 @@ export default function PalmettoReview() {
                 Read that first sentence closely, because it is the most important thing on this page: <strong>&ldquo;we own the system&rdquo; means you do not own the panels on your roof.</strong> Whatever the product is called, third-party ownership has four consequences you should price in. The owner, not you, claims any tax credit. The agreement has to be transferred or settled when you sell the home, and a buyer must be willing to assume it. Responsibility for a roof leak under the array sits with whoever the contract says, which may not be the party you would expect. And the payment continues for the full term regardless of how your circumstances change.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Because the escalator is not published on that particular page, treat it as the first question you ask, not the last: request the annual escalation percentage in writing, then calculate the payment in year 10 and year 25, not just year one. A rate that starts below your utility bill does not necessarily stay below it. Compare the whole structure against buying outright in <a href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>cash, loan, lease and PPA obligations side by side</a> and <a href='/blog/solar-ppa-vs-lease-california' className='text-primary underline'>how a PPA differs from a lease</a>.
+                Because the escalator is not published on that particular page, treat it as the first question you ask, not the last: request the annual escalation percentage in writing, then calculate the payment in year 10 and year 25, not just year one. A rate that starts below your utility bill does not necessarily stay below it. Compare the whole structure against buying outright in <a href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>cash, loan, lease and PPA obligations side by side</a> and <a href='/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa' className='text-primary underline'>how a PPA differs from a lease</a>.
               </p>
 
               <h3 className='text-xl font-bold text-foreground mt-8 mb-3'>The product has two names: LightReach and the Palmetto Energy Plan</h3>
@@ -273,7 +273,7 @@ export default function PalmettoReview() {
               intro="Which agreement you are being offered matters more than which company offers it."
               links={[
                 { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california", label: "Cash, loan, lease and PPA obligations side by side" },
-                { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
+                { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa", label: "How a PPA differs from a lease" },
                 { href: "/blog/are-solar-panels-worth-it-california", label: "Whether the quote fits the home at all" },
                 { href: "/solar-problems/solar-dealer-fees-explained", label: "How a dealer fee pays for a low advertised rate" },
               ]}

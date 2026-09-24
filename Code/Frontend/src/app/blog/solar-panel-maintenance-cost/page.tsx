@@ -303,7 +303,11 @@ export default function SolarPanelMaintenanceCost() {
             <li>Find the warranty end dates for panels, inverters and workmanship, and put them on a calendar.</li>
             <li>Set aside NREL’s $30 per kW a year, or less if your warranties still cover labor.</li>
             <li>Check monitoring monthly so a fault costs weeks of output, not months.</li>
-            <li>Price the inverter replacement before its warranty ends, so the bill is not a surprise.</li>
+            <li>
+              Price the inverter replacement before its warranty ends, so the bill is not a surprise.{' '}
+              <Link href="/blog/replacement-solar-inverter-cost">What a replacement solar inverter costs</Link> shows
+              what goes into that quote.
+            </li>
             <li>Ask for a written remove-and-reinstall quote whenever a roofer gives you a roof estimate.</li>
           </ol>
         </section>

@@ -7,6 +7,7 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import { Calendar, Clock } from 'lucide-react';
 import {
   Q2_2026_URL,
@@ -482,6 +483,9 @@ export default function CaliforniaUtilityRateTrackerPage() {
                 <li><Link href='/blog/how-to-lower-electric-bill-california' className={sourceLink}>ways to lower your bill</Link></li>
                 <li><Link href='/solar-cost' className={sourceLink}>what solar costs in California</Link></li>
               </ul>
+              {/* Hub of two topics (SEO/24): utility rates, and bills and solar savings by city. */}
+              <HubSpokeLinks hub='utility_rates' currentPath={canonicalPath} title='Rate plans, rate changes and utility guides' />
+              <HubSpokeLinks hub='city_bills' currentPath={canonicalPath} title='Electric bills and solar savings by city and region' />
             </div>
 
             {/* The closing ask (2026-09-23): the inquiry form itself, in place of

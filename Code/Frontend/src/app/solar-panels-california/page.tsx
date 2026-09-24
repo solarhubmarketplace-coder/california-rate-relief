@@ -413,7 +413,12 @@ export default function SolarPanelsCalifornia() {
           <Link href="/blog/nem-3-california-still-worth-it" className={link}>
             whether solar is still worth it under NEM 3.0
           </Link>{' '}
-          for the net billing math.
+          for the net billing math. To see how many years a specific quote takes to pay for
+          itself, use{' '}
+          <Link href="/blog/solar-payback-period-california" className={link}>
+            the solar payback period guide
+          </Link>
+          .
         </p>
       </section>
 

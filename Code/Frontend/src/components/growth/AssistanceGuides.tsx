@@ -169,7 +169,12 @@ function TaxTiming() {
         original installation is completed. For construction or reconstruction
         of a structure, the taxpayer&apos;s original use of that structure sets
         the timing. Paying or signing in 2025 does not establish eligibility for
-        a 2026 completion.
+        a 2026 completion. How the Inflation Reduction Act set the credit and
+        what federal help is left is in{" "}
+        <Link href="/blog/inflation-reduction-act-solar-california" className={link}>
+          the Inflation Reduction Act and solar in California
+        </Link>
+        .
       </p>
       <p className="mt-3">
         Valid unused credit can carry forward under Section 25D(c). That does

@@ -274,7 +274,7 @@ export default function SolarPPAExplainedCalifornia() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For a full side-by-side of loan, lease, and cash across more scenarios, see <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>PPA vs. Loan vs. Lease vs. Cash in California</Link>; for a closer look at PPA vs. lease specifically, see <Link href='/blog/solar-ppa-vs-lease-california' className='text-primary underline'>Solar PPA vs. Lease in California</Link>.
+                For a full side-by-side of loan, lease, and cash across more scenarios, see <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>PPA vs. Loan vs. Lease vs. Cash in California</Link>; for a closer look at PPA vs. lease specifically, see <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa' className='text-primary underline'>Solar PPA vs. Lease in California</Link>.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>

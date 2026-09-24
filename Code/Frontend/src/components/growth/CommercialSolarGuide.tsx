@@ -81,7 +81,7 @@ function CommercialInquiry() {
 //
 // The twelve data-driven guides are read from src/data/article-pages.commercial.json
 // rather than typed out, so a new guide in that file appears here the day it
-// ships instead of waiting for someone to remember this list. The seven
+// ships instead of waiting for someone to remember this list. The twelve
 // hand-written pages have no such registry and are named explicitly.
 // =============================================================================
 
@@ -127,6 +127,51 @@ const WRITTEN_GUIDES: { href: string; anchor: string; blurb: string }[] = [
     anchor: "SGIP commercial battery storage: current category status",
     blurb:
       "Which commercial storage categories the program tracker shows closed, and why an existing reservation is a different question from a new application.",
+  },  {
+    href: "/commercial-solar/commercial-solar-carport-cost",
+    anchor: "Commercial solar carport cost in California",
+    blurb:
+      "The published benchmarks and what they leave out, what the canopy structure adds to the price, and how to read a carport bid against them.",
+  },
+  {
+    href: "/commercial-solar/commercial-solar-roofing",
+    anchor: "Commercial solar roofing: what to check before panels go on",
+    blurb:
+      "The roof's remaining life, how arrays attach to each roof type, structural loads and fire-access pathways, and who does the roofing versus the solar.",
+  },
+  {
+    href: "/commercial-solar/solar-developers",
+    anchor: "What a commercial solar developer does, and how to vet one",
+    blurb:
+      "How a developer differs from an EPC, installer or financier, how developers are paid, and what to ask one offering a PPA or lease.",
+  },
+  {
+    href: "/commercial-solar/car-dealerships-going-solar-california",
+    anchor: "Car dealerships going solar in California",
+    blurb:
+      "Roof or canopy, demand charges and EV-charging rates on the bill, code requirements for new showrooms, and what to put in a bid request.",
+  },
+  {
+    href: "/commercial-solar/rec-commercial-solar-panels",
+    anchor: "REC panels for commercial projects",
+    blurb:
+      "Which REC module lines are on the Energy Commission's equipment list, what that listing does and does not tell you, and where the modules were made.",
+  },
+];
+
+// Commercial-subject pages that live under /blog (topic hub "commercial").
+const BLOG_GUIDES: { href: string; anchor: string; blurb: string }[] = [
+  {
+    href: "/blog/commercial-solar-financing-california",
+    anchor: "Commercial solar financing in California: four options compared",
+    blurb:
+      "Purchase or loan, PPA, PACE and SBA-backed lending: who owns the system under each and which documents to compare.",
+  },
+  {
+    href: "/blog/solar-carport-california-guide",
+    anchor: "Solar carports in California: cost, permits and design",
+    blurb:
+      "Why a carport costs more than the same panels on a roof, which permit path applies, and the fire and access rules.",
   },
 ];
 
@@ -157,6 +202,17 @@ function SectionIndex() {
               {guide.h1}
             </Link>
             <span className="block text-sm text-muted-foreground">{guide.metaDescription}</span>
+          </li>
+        ))}
+      </ul>
+      <h3 className="mt-8">Related guides on the blog</h3>
+      <ul className="mt-3 space-y-3">
+        {BLOG_GUIDES.map((guide) => (
+          <li key={guide.href}>
+            <Link className="font-semibold text-primary underline" href={guide.href}>
+              {guide.anchor}
+            </Link>
+            <span className="block text-sm text-muted-foreground">{guide.blurb}</span>
           </li>
         ))}
       </ul>

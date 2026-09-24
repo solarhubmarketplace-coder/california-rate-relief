@@ -223,6 +223,22 @@ test('Decision 14: the held merges (G05, G08, G10, G11) are not redirected', () 
   }
 });
 
+// 2026-09-23, topical-authority wave (cities agent): new /solar-companies
+// pages built as CREATE_DEDICATED for installer-intent clusters. Each city
+// already had a /solar-cost page, so it now keeps one page per intent. These
+// were never redirect sources, so the table's row count does not change.
+const TA_NEW_COMPANIES_SLUGS_WITH_COST_TWIN = new Set(['auburn', 'lincoln', 'san-marcos']);
+for (const slug of TA_NEW_COMPANIES_SLUGS_WITH_COST_TWIN) REINSTATED_COMPANIES_SLUGS.add(slug);
+
+test('topical-authority wave: new companies pages with a cost twin render and are not redirected', () => {
+  const cost = new Set(getPublishableCityCostSlugs());
+  for (const slug of TA_NEW_COMPANIES_SLUGS_WITH_COST_TWIN) {
+    assert.ok(COMPANIES_ROUTE_SLUGS.has(slug), `${slug} must be in the /solar-companies/[city] static params`);
+    assert.equal(canonicalRedirectFor(`/solar-companies/${slug}`), null, slug);
+    assert.ok(cost.has(slug), `${slug} should keep its /solar-cost page`);
+  }
+});
+
 // ---------------------------------------------------------------------------
 // Cross-cutting checks. These read the registries above.
 // ---------------------------------------------------------------------------

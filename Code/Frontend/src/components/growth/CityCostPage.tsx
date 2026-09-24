@@ -12,6 +12,7 @@ import { BillComparison } from '@/components/growth/BillComparison';
 import { LocalProjectGuidance } from '@/components/growth/LocalProjectGuidance';
 import { CitySiblingLinks, NearbyCostCities } from '@/components/growth/NearbyCostCities';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { RelatedGuides, type RelatedGuideLink } from '@/components/shared/RelatedGuides';
 import { StatewideCostBenchmark } from '@/components/growth/StatewideCostBenchmark';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import {
@@ -28,6 +29,19 @@ import { growthCities } from '@/data/growth-cities';
 import { getCityBySlug } from '@/data/cities-data';
 import { companiesCityHref, hasCompaniesCityPage } from '@/lib/canonical-redirects';
 import { cityQuickCheckUtility, costPageModified, costPageSeo } from '@/lib/city-pages';
+
+// Per-city extra links where a city's cost page draws impressions for a query
+// another page answers (topical-authority wave 2026-09-23, CREATE_DEDICATED
+// holder links). Most cities have none.
+const CITY_COST_EXTRA_LINKS: Record<string, RelatedGuideLink[]> = {
+  'san-diego': [
+    {
+      href: '/blog/solar-resources',
+      label: 'Official California solar resources',
+      note: 'production data, license checks, net billing rules and incentives, from the agencies that publish them',
+    },
+  ],
+};
 
 // =============================================================================
 // CityCostPage — the template behind /solar-cost/[city]
@@ -667,6 +681,10 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                   See who actually serves {row.city} and what each written proposal should include.
                 </span>
               </Link>
+            )}
+
+            {CITY_COST_EXTRA_LINKS[row.slug] && (
+              <RelatedGuides heading={`More for ${row.city} homeowners`} links={CITY_COST_EXTRA_LINKS[row.slug]} />
             )}
 
             <NearbyCostCities row={row} />

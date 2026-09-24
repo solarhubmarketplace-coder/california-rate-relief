@@ -186,7 +186,7 @@ export default function AreSolarPanelsAScam() {
               <tbody>
                 <tr className="border-t">
                   <th scope="row" className={th}>“Free” solar or a “government program”</th>
-                  <td className={td}>Who owns the system and what you pay over the full term. See <Link href="/solar-problems/free-solar-california-is-it-real">whether free solar in California is real</Link>.</td>
+                  <td className={td}>Who owns the system and what you pay over the full term. See <Link href="/blog/free-solar-panels-california">whether free solar in California is real</Link>.</td>
                 </tr>
                 <tr className="border-t">
                   <th scope="row" className={th}>“We’re with your utility”</th>

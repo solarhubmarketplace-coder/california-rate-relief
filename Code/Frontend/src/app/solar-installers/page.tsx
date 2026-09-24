@@ -96,6 +96,11 @@ const COMPARISONS: Entry[] = [
 ];
 
 /** Programs and products that sit with the company reviews. */
+const CHECKS: Entry[] = [
+  { href: '/solar-installers/licensed-solar-installer', anchor: 'How to find a licensed solar installer', blurb: 'Which CSLB license classes cover solar work, how to pull the list of licensed solar contractors in your county, and how to confirm the one on your contract.' },
+  { href: '/solar-installers/worst-solar-companies-california', anchor: 'The worst solar companies in California: how to check a record', blurb: 'No agency ranks installers. The bankruptcy filings on the court record, and how to check any company yourself.' },
+];
+
 const PROGRAMS: Entry[] = [
   { href: '/solar-installers/pge-and-sunrun', anchor: 'PG&E and Sunrun battery programs', blurb: 'What PG&E’s programs with Sunrun paid enrolled customers, who could join and what to ask before enrolling.' },
   { href: '/battery/tesla-powerwall-3-cost-california', anchor: 'Tesla Powerwall 3 cost in California', blurb: 'The installed-cost benchmark, sizing, SGIP status and the net-billing case for a battery.' },
@@ -199,6 +204,7 @@ export default function SolarInstallersIndex() {
     ...REVIEWS,
     ...COMPARISONS,
     ...PROGRAMS,
+    ...CHECKS,
     ...guides.map((g) => ({ href: articleHref(g), anchor: g.h1, blurb: g.metaDescription })),
   ];
 
@@ -329,6 +335,11 @@ export default function SolarInstallersIndex() {
             <section className='mb-12'>
               <h2 className={h2}>Batteries, panels and utility programs</h2>
               <EntryList entries={PROGRAMS} />
+            </section>
+
+            <section className='mb-12'>
+              <h2 className={h2}>Checking a company before you sign</h2>
+              <EntryList entries={CHECKS} />
             </section>
 
             <section className='mb-12'>

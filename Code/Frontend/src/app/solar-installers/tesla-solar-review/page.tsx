@@ -264,7 +264,9 @@ export default function TeslaSolarReview() {
                 Service and repair issues were the largest share of BBB complaints for every installer we checked for these
                 reviews, so ask Tesla the same things
                 you would ask anyone: who will service the system, how a visit is requested, how quickly one is scheduled, and
-                who covers roof leaks at the mounting points. Get the answers in writing.
+                who covers roof leaks at the mounting points. Get the answers in writing. For the upkeep an owner handles
+                between service visits, see our guide to{' '}
+                <Link href='/solar-panel-maintenance-california' className={a}>solar panel maintenance in California</Link>.
               </p>
 
               <h2 className={h2}>Is Sunrun owned by Tesla?</h2>

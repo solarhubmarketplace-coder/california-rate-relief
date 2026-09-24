@@ -243,7 +243,7 @@ export default function SolarOptimumReview() {
               heading="Decide the structure before the installer"
               links={[
                 { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california", label: "Cash, loan, lease and PPA obligations side by side" },
-                { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
+                { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa", label: "How a PPA differs from a lease" },
                 { href: "/blog/are-solar-panels-worth-it-california", label: "Whether the quote fits the home at all" },
               ]}
             />

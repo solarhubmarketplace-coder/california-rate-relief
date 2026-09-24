@@ -687,7 +687,7 @@ export default function IsItBetterToBuyOrLeaseSolarPanelsCalifornia() {
             note: "and the document that has to carry the total",
           },
           {
-            href: "/blog/solar-ppa-vs-lease-california",
+            href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa",
             label: "Solar lease vs PPA in California",
             note: "one pays for equipment, the other for output",
           },

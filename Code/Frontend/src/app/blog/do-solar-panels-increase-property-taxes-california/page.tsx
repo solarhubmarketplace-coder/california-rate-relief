@@ -199,7 +199,7 @@ export default function DoSolarPanelsIncreasePropertyTaxesCalifornia() {
           should contact your County Assessor.” Second, a lease or PPA carries its
           own separate costs, which have nothing to do with property tax and are
           not reduced by this exclusion. What third-party ownership actually is:{" "}
-          <Link className="underline" href="/blog/solar-ppa-vs-lease-california">
+          <Link className="underline" href="/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa">
             solar PPA versus lease in California
           </Link>
           .
@@ -451,7 +451,7 @@ export default function DoSolarPanelsIncreasePropertyTaxesCalifornia() {
             label: "Change of ownership with a lease in place",
           },
           {
-            href: "/blog/solar-ppa-vs-lease-california",
+            href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa",
             label: "What third-party ownership is",
           },
           {
