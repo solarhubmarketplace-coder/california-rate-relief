@@ -41,7 +41,7 @@ const articleSchema = {
 
 export default function LASolarGroupReview() {
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel='LA Solar Group Review'>
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
@@ -49,7 +49,7 @@ export default function LASolarGroupReview() {
           <article className='max-w-3xl mx-auto'>
             <nav className='mb-8 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
               <Link href='/' className='hover:text-primary'>Home</Link><span>/</span>
-              <Link href='/best-solar-companies-california' className='hover:text-primary'>California Installer Reviews</Link><span>/</span>
+              <Link href='/solar-installers' className='hover:text-primary'>Solar company reviews</Link><span>/</span>
               <span className='text-foreground font-medium'>LA Solar Group Review</span>
             </nav>
 

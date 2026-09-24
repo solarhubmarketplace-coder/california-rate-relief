@@ -6,11 +6,13 @@ import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
+import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-import { ArrowLeft, Calendar, Clock } from 'lucide-react';
+import { Calendar, Clock } from 'lucide-react';
 
 const title = "PG&E vs SCE vs SDG&E (2026): Rates per kWh and Sample Bills";
 const description =
@@ -26,17 +28,20 @@ export const metadata: Metadata = {
 
 const sourceLink = 'text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
 
+// Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
+// feeds both the visible trail and the BreadcrumbList schema.
+const CRUMBS = defaultCrumbs('/blog/pge-vs-sce-vs-sdge-rates-compared');
+const CRUMB_LABEL = 'PG&E vs. SCE vs. SDG&E rates';
+
 export default function UtilityRatesCompared() {
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
       <ArticleJsonLd variant='Article' domain='crr' headline={title} url='https://ratereliefca.com/blog/pge-vs-sce-vs-sdge-rates-compared' datePublished='2026-04-14' dateModified='2026-09-18' description={description} />
       <Header />
       <main className='py-8 md:py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
-            <nav className='mb-6 md:mb-8'>
-              <Link href='/blog' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Blog</Link>
-            </nav>
+            <BreadcrumbTrail crumbs={CRUMBS} current={CRUMB_LABEL} className='mb-6 md:mb-8 flex flex-wrap items-center gap-2 text-sm text-muted-foreground' />
             <header className='mb-6 md:mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Utility Rates</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>PG&amp;E vs. SCE vs. SDG&amp;E: How Their Rates Compare in 2026</h1>

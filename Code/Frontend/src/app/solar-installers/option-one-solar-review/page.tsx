@@ -54,7 +54,7 @@ export default function OptionOneReview() {
           <article className='max-w-3xl mx-auto'>
             <nav className='mb-8 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
               <Link href='/' className='hover:text-primary'>Home</Link><span>/</span>
-              <Link href='/best-solar-companies-california' className='hover:text-primary'>Best Solar Companies in California</Link><span>/</span>
+              <Link href='/solar-installers' className='hover:text-primary'>Solar company reviews</Link><span>/</span>
               <span className='text-foreground font-medium'>Option One Solar Review</span>
             </nav>
 

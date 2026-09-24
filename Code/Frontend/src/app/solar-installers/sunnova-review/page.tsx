@@ -85,10 +85,10 @@ export default function SunnovaReview() {
               </Link>
               <span>/</span>
               <Link
-                href='/best-solar-companies-california'
+                href='/solar-installers'
                 className='hover:text-primary transition-colors'
               >
-                Best Solar Companies in California
+                Solar company reviews
               </Link>
               <span>/</span>
               <span className='text-foreground font-medium'>Sunnova Review</span>

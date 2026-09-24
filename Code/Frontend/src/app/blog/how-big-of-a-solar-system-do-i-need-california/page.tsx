@@ -4,9 +4,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
+import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
+import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
@@ -18,15 +20,20 @@ export const metadata: Metadata = {
   openGraph: { title: 'How Big of a Solar System Do You Need in California?', description: 'Solar system sizing for California homes.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
 };
 
+// Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
+// feeds both the visible trail and the BreadcrumbList schema.
+const CRUMBS = defaultCrumbs('/blog/how-big-of-a-solar-system-do-i-need-california');
+const CRUMB_LABEL = 'How big a solar system you need';
+
 export default function HowBigSolarSystem() {
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
       <ArticleJsonLd variant="Article" domain="crr" headline={"How Big of a Solar System Do You Need in California?"} url="https://ratereliefca.com/blog/how-big-of-a-solar-system-do-i-need-california" datePublished="2026-04-23" dateModified="2026-09-22" description={"How to size a solar system for your California home in 2026 — by monthly bill, by kWh usage, and by specific loads (EV, AC, pool). Plus why NEM 3.0 changes the optimal sizing."} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
-            <nav className='mb-8'><Link href='/blog' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Blog</Link></nav>
+            <BreadcrumbTrail crumbs={CRUMBS} current={CRUMB_LABEL} className='mb-8 flex flex-wrap items-center gap-2 text-sm text-muted-foreground' />
 
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>System Sizing</span>

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from "@/components/layout/PublicLayout";
+import { BreadcrumbTrail } from "@/components/shared/BreadcrumbTrail";
+import { defaultCrumbs } from "@/lib/breadcrumbs";
 import { Header } from "@/components/landing/Header";
 import { Footer } from "@/components/landing/Footer";
 import { ArticleJsonLd } from "@/components/shared/ArticleJsonLd";
@@ -83,9 +85,14 @@ export const metadata: Metadata = {
   },
 };
 
+// Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
+// feeds both the visible trail and the BreadcrumbList schema.
+const CRUMBS = defaultCrumbs("/blog/why-is-my-ladwp-bill-so-high");
+const CRUMB_LABEL = "LADWP bill guide";
+
 export default function WhyIsMyLADWPBillSoHigh() {
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
       <ArticleJsonLd
         variant="Article"
         domain="crr"
@@ -98,16 +105,7 @@ export default function WhyIsMyLADWPBillSoHigh() {
       <Header />
       <main className="bg-background py-12 md:py-16">
         <article className="mx-auto max-w-3xl px-4">
-          <nav
-            aria-label="Breadcrumb"
-            className="mb-6 flex flex-wrap gap-2 text-sm text-muted-foreground"
-          >
-            <Link href="/">Home</Link>
-            <span>/</span>
-            <Link href="/blog">Blog</Link>
-            <span>/</span>
-            <span>LADWP bill guide</span>
-          </nav>
+          <BreadcrumbTrail crumbs={CRUMBS} current={CRUMB_LABEL} className="mb-6 flex flex-wrap items-center gap-2 text-sm text-muted-foreground" />
           <header className="mb-8">
             <p className="text-sm font-semibold text-primary">
               LADWP · Los Angeles

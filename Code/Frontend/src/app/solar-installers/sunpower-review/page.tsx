@@ -35,7 +35,7 @@ const articleSchema = {
 
 export default function SunPowerReview() {
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel='SunPower Review'>
       <Header />
       <script type='application/ld+json' dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className='py-16 bg-background'>
@@ -44,7 +44,7 @@ export default function SunPowerReview() {
             <nav className='mb-8 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
               <Link href='/' className='hover:text-primary transition-colors'>Home</Link>
               <span>/</span>
-              <Link href='/best-solar-companies-california' className='hover:text-primary transition-colors'>Best Solar Companies in California</Link>
+              <Link href='/solar-installers' className='hover:text-primary transition-colors'>Solar company reviews</Link>
               <span>/</span>
               <span className='text-foreground font-medium'>SunPower Review</span>
             </nav>
