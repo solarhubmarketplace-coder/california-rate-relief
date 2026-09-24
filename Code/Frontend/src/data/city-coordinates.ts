@@ -74,6 +74,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   'rancho-cucamonga': [34.1306095, -117.5621696], // Rancho Cucamonga city, GEOID 0659451
   redlands: [34.0511294, -117.1711567], // Redlands city, GEOID 0659962
   richmond: [37.9517605, -122.3602500], // Richmond city, GEOID 0660620
+  vacaville: [38.3586717, -121.9673440], // Vacaville city, GEOID 0681554 (queried 2026-09-23)
   riverside: [33.9381301, -117.3949083], // Riverside city, GEOID 0662000
   rocklin: [38.8074883, -121.2487164], // Rocklin city, GEOID 0662364
   roseville: [38.7702963, -121.3196342], // Roseville city, GEOID 0662938

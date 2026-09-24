@@ -1934,6 +1934,7 @@ export const growthCities: Record<string, GrowthCity> = {
   camarillo: {
     name: "Camarillo",
     county: "Ventura County",
+    sourceCheckedDate: "2026-09-23",
     utility: "sce",
     hasSavingsGuide: false,
     bill: "If your SCE bill includes Clean Power Alliance generation, compare both portions. CPA’s solar guidance describes circumstances where generation and delivery enrollment can differ for an existing system. Have the bidder check the account and interconnection history instead of assuming one label applies to everything.",
@@ -1964,6 +1965,18 @@ export const growthCities: Record<string, GrowthCity> = {
     },
     sources: [
       {
+        "label": "City of Camarillo: solar eligibility checklist (expedited review)",
+        "url": "https://cms7files.revize.com/camarilloca/Departments/Building%20&%20Safety/handouts/Solar%20Eligibility%20checklist.pdf"
+      },
+      {
+        "label": "Clean Power Alliance: Camarillo community page",
+        "url": "https://cleanpoweralliance.org/place/camarillo/"
+      },
+      {
+        "label": "Clean Power Alliance: net energy metering and Solar Billing Plan",
+        "url": "https://cleanpoweralliance.org/nem/"
+      },
+      {
         label: "CPA: rooftop solar generation and SCE delivery billing",
         url: "https://cleanpoweralliance.org/solar/",
       },
@@ -1983,6 +1996,14 @@ export const growthCities: Record<string, GrowthCity> = {
     nearby: ["los-angeles"],
     faq: [
       [
+        "Can a Camarillo solar project with a battery use the expedited permit?",
+        "No. The City's solar eligibility checklist limits expedited review to utility-interactive systems without battery storage, 10 kW AC or smaller, roof-mounted on a home or accessory structure. A battery project goes through standard review."
+      ],
+      [
+        "Who supplies electricity in Camarillo?",
+        "SCE delivers the power and sends the bill; Clean Power Alliance supplies the generation, with 100% Green as Camarillo's default option."
+      ],
+      [
         "Can CPA and SCE treat an existing Camarillo system differently?",
         "CPA’s solar guidance describes an enrollment window with CPA NEM generation and SCE Solar Billing Plan delivery. Ask both providers to confirm your account before changing the system.",
       ],
@@ -1991,6 +2012,56 @@ export const growthCities: Record<string, GrowthCity> = {
         "Only if the written scope says so. Name the businesses responsible for removal, roof work, reinstallation and reconnection, and request the warranty responsibilities in writing.",
       ],
     ],
+    answer: "Camarillo's expedited solar review is narrow: it covers roof-mounted systems of 10 kW AC or less, on a home or accessory structure, with no battery and a service panel bus rated 225 amps or less. A solar installation company that adds a battery or a larger array will be on the standard review. Clean Power Alliance supplies Camarillo's generation at its 100% Green default, with SCE delivering. Compare three written bids on those terms.",
+    keyFacts: [
+      {
+        "label": "Expedited review limit",
+        "value": "10 kW AC, no battery",
+        "note": "Roof-mounted, 225 A bus or less, two central inverters max",
+        "source": {
+          "publisher": "City of Camarillo",
+          "date": "2026-09-23",
+          "url": "https://cms7files.revize.com/camarilloca/Departments/Building%20&%20Safety/handouts/Solar%20Eligibility%20checklist.pdf"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "Clean Power Alliance",
+        "note": "Camarillo default: 100% Green, serving since 2019",
+        "source": {
+          "publisher": "Clean Power Alliance",
+          "date": "2026-09-23",
+          "url": "https://cleanpoweralliance.org/place/camarillo/"
+        }
+      },
+      {
+        "label": "CPA surplus rate",
+        "value": "10% above SCE's",
+        "note": "April true-up for Solar Billing Plan customers",
+        "source": {
+          "publisher": "Clean Power Alliance",
+          "date": "2026-09-23",
+          "url": "https://cleanpoweralliance.org/nem/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "What Camarillo's expedited checklist allows",
+        "paragraphs": [
+          "Camarillo's solar eligibility checklist sets the line between a fast review and a standard one. To qualify, the system must be 10 kW AC (CEC rating) or less, utility-interactive with no battery storage, roof-mounted on a one- or two-family dwelling or accessory structure, and no taller than the legal building height. Electrically, it must tie into a single-phase service panel with a bus bar rated 225 amps or less, use no more than two central inverters, and keep to four strings per MPPT input where the inverter has source-circuit fusing (two where it does not). The plans must show clear fire access pathways, the fire classification of the system and all required labels.",
+          "Any item answered no means a design revision or the standard, non-expedited review. That makes the checklist a practical way to compare two Camarillo bids: if one design stays inside it and another adds a battery or a larger inverter setup, the second will take longer to permit, and that time belongs in the schedule you are promised."
+        ]
+      },
+      {
+        "heading": "Clean Power Alliance on a Camarillo solar bill",
+        "paragraphs": [
+          "Camarillo has been a Clean Power Alliance community since 2019, with 100% Green as its default option. CPA applies generation charges and credits on its side of the SCE bill and SCE handles the delivery side. Systems SCE approved on or before August 31, 2023 stay on net energy metering; later ones are on the Solar Billing Plan, which CPA trues up every April.",
+          "At true-up CPA pays surplus at rates it describes as 10% higher than SCE's, mailing a check for credits over $100. Existing-system owners replacing a roof should keep that enrollment in mind: ask any bidder who proposes new equipment whether the change affects the system's current billing plan before you sign."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   sonoma: {
     name: "Sonoma",
@@ -2160,11 +2231,10 @@ export const growthCities: Record<string, GrowthCity> = {
     name: "Grass Valley",
     county: "Nevada County",
     utility: "pge",
-    sourceCheckedDate: "2026-09-12",
+    sourceCheckedDate: "2026-09-23",
     hasSavingsGuide: false,
-    bill: "Use the provider and rate plan printed on the actual electricity bill. PG&E publishes current rate-plan and tariff information, but a proposal still needs the account's usage history, solar enrollment and site-specific production assumptions.",
-    local:
-      "Grass Valley lists solar permits, a residential solar checklist and a solar ordinance through its Building Department. Ask the bidder to identify the required documents, the permit holder, inspection steps and any roof or electrical work that does not appear in the solar proposal.",
+    bill: "Grass Valley became part of Pioneer Community Energy's service area in 2024, so on most bills Pioneer now supplies the generation and PG&E delivers it. A proposal written before that change, or one that models PG&E generation only, is modeling the wrong account. Use the provider and rate plan printed on your current bill and your full year of usage.",
+    local: "Grass Valley takes residential rooftop solar through SolarAPP+, which charges a $25 administration fee, but a SolarAPP+ pre-approval is not a permit: the contractor must then apply for the City permit in Accela Citizen Access as an Express Permit, pay the City's separate fees, and book the inspection in the same portal. Ask the bidder who handles each step and whether the $25 is in its price.",
     example:
       "Put the same full-year bill history, roof layout and equipment choice into each proposal. Then separate solar, storage, roof repair, electrical work, permit work and utility steps. Compare the signed scope with the remaining-bill model, not a single payment figure.",
     checks: [
@@ -2182,6 +2252,18 @@ export const growthCities: Record<string, GrowthCity> = {
       ],
     ],
     sources: [
+      {
+        "label": "City of Grass Valley: SolarAPP+ Submittals",
+        "url": "https://www.grassvalleyca.gov/pod/solarapp-submittals"
+      },
+      {
+        "label": "Pioneer Community Energy: about Pioneer and its service area",
+        "url": "https://pioneercommunityenergy.org/about-us/"
+      },
+      {
+        "label": "Pioneer Community Energy: understanding your solar bill",
+        "url": "https://pioneercommunityenergy.org/understanding-your-solar-bill/"
+      },
       {
         label: "City of Grass Valley: building permits, solar permits and residential checklist",
         url: "https://www.grassvalleyca.gov/post/apply-building-permit",
@@ -2201,6 +2283,14 @@ export const growthCities: Record<string, GrowthCity> = {
     ],
     faq: [
       [
+        "Is Grass Valley served by Pioneer Community Energy?",
+        "Yes. Pioneer says it added the cities of Grass Valley and Nevada City to its service area in 2024. PG&E still delivers the power and sends the bill."
+      ],
+      [
+        "Is a SolarAPP+ approval a Grass Valley building permit?",
+        "No. The City says that after SolarAPP+ issues a pre-approval, the applicant must obtain a City permit through Accela Citizen Access, where the City's separate solar permit fees are charged and the inspection is scheduled."
+      ],
+      [
         "Does every Grass Valley solar proposal include the same permit work?",
         "No. The City lists a residential solar checklist and permit documents, but the bidder must identify the actual submitted scope, permit holder and inspection responsibilities for the address.",
       ],
@@ -2209,6 +2299,56 @@ export const growthCities: Record<string, GrowthCity> = {
         "No. Use the rate plan and usage history on the account. A useful proposal shows its actual bill and production assumptions instead of substituting a city average.",
       ],
     ],
+    answer: "A solar company installing in Grass Valley runs the design through SolarAPP+ for a $25 administration fee, then pulls the City's Express Permit in Accela Citizen Access and schedules the inspection there. Since 2024 Grass Valley has been in Pioneer Community Energy's service area, so Pioneer's solar rules sit alongside PG&E's. Compare three written bids that model your current bill, not an older PG&E-only one.",
+    keyFacts: [
+      {
+        "label": "Supplies the generation",
+        "value": "Pioneer Community Energy",
+        "note": "Grass Valley joined Pioneer's service area in 2024; PG&E delivers",
+        "source": {
+          "publisher": "Pioneer Community Energy",
+          "date": "2026-09-23",
+          "url": "https://pioneercommunityenergy.org/about-us/"
+        }
+      },
+      {
+        "label": "SolarAPP+ fee",
+        "value": "$25",
+        "note": "City permit fees are separate",
+        "source": {
+          "publisher": "City of Grass Valley",
+          "date": "2026-09-23",
+          "url": "https://www.grassvalleyca.gov/pod/solarapp-submittals"
+        }
+      },
+      {
+        "label": "City permit",
+        "value": "Express Permit, Accela",
+        "note": "Required after the SolarAPP+ pre-approval",
+        "source": {
+          "publisher": "City of Grass Valley",
+          "date": "2026-09-23",
+          "url": "https://www.grassvalleyca.gov/pod/solarapp-submittals"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Two approvals for a Grass Valley rooftop system",
+        "paragraphs": [
+          "Grass Valley's SolarAPP+ page is written for installers and is clear that the automated review is only half the job. SolarAPP+ checks a residential, roof-mounted retrofit design against the code and charges a $25 administration fee. After it issues a pre-approval, the applicant must still obtain a City permit: in Accela Citizen Access, choose Express Permit, enter the SolarAPP+ approval ID and attach its documents. The City's own solar permit fees are charged through that application, and the inspection is scheduled in the same portal.",
+          "Ask each bidder whether its design fits SolarAPP+'s eligibility checklist or will need a full plan review, and who will be in Accela doing the filing. A bid that treats the SolarAPP+ approval as the finished permit has skipped a step."
+        ]
+      },
+      {
+        "heading": "Pioneer's rules now apply in Grass Valley",
+        "paragraphs": [
+          "Pioneer Community Energy launched in 2018 in Auburn, Colfax, Lincoln, Rocklin, Loomis and most of unincorporated Placer County, added unincorporated El Dorado County and Placerville in 2022, and brought in Grass Valley and Nevada City in 2024. The California Energy Commission's community choice layer, last updated in August 2025, had not yet caught up, which is why some older material describes Grass Valley as PG&E-only.",
+          "For a solar home, Pioneer's differences are specific. New systems are on the Solar Billing Plan, with exports valued at a variable export rate and positive charges paid monthly. Pioneer reviews each account during the March or April billing cycle and pays surplus at half a cent per kWh more than PG&E, by check if it is over $50 and as a bill credit if not."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   victorville: {
     name: "Victorville",
@@ -3874,6 +4014,443 @@ export const growthCities: Record<string, GrowthCity> = {
         "paragraphs": [
           "Since November 1, 2023, residential and commercial systems up to 10 kW CEC-AC are exempt from GWP's 110% historical-usage cap, and a system of that size may be paired with up to 30 kWh of storage. The contractor self-certifies the sizing need in PowerClerk. Above 10 kW, GWP estimates your annual load as 110% of your last 12 months of usage and compares it with the system's estimated production. GWP no longer requires a separate meter for home energy storage.",
           "GWP credits excess solar generation to your account and applies the credit automatically when it is needed. Questions go to GWPSolarSolutions@glendaleca.gov or 818-548-2750. A bid that does not mention the 10 kW line, the 30 kWh storage allowance or the meter reprogramming step was probably written for SCE territory."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  auburn: {
+    name: "Auburn",
+    county: "Placer County",
+    utility: "pge",
+    bill: "Auburn was one of the founding cities of Pioneer Community Energy in 2018, so most Auburn homes get generation from Pioneer and delivery from PG&E on one PG&E statement. The Energy Commission's map places the whole city in both service areas. Have each bidder model your actual Pioneer and PG&E enrollment rather than a PG&E-only account.",
+    local: "The City of Auburn processes residential solar and energy storage permits through Symbium, the automated platform it adopted under Senate Bill 379: the applicant applies and pays Symbium's fees in the Symbium portal, then logs into the City's Civic Access system to submit the documents, including the Symbium approval, line drawing, solar layout and equipment specifications, and pay the City's application fees. Questions go to City Hall at 530-823-4211.",
+    example: "Ask two Auburn bidders for the same deliverables: the Symbium approval and the City application they will file, a roof layout showing every plane and obstruction, the monthly production estimate next to your monthly Pioneer and PG&E usage, and any battery priced as its own line. Differences in those items explain most differences in price.",
+    sourceCheckedDate: "2026-09-23",
+    checks: [
+      [
+        "Permit filing",
+        "Say who applies in Symbium, who files in the City's Civic Access system, and which fees are in the price."
+      ],
+      [
+        "Pioneer and PG&E account",
+        "Model Pioneer generation and PG&E delivery from your current bill."
+      ],
+      [
+        "Battery scope",
+        "State usable kWh, backed-up circuits and whether storage is on the same Symbium application."
+      ],
+      [
+        "Contract and service",
+        "Name the contracting business, its CSLB license and who answers service calls after installation."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of Auburn: solar permits through Symbium",
+        "url": "https://www.auburn.ca.gov/700/Symbium-Permits"
+      },
+      {
+        "label": "Pioneer Community Energy: about Pioneer and its service area",
+        "url": "https://pioneercommunityenergy.org/about-us/"
+      },
+      {
+        "label": "Pioneer Community Energy: understanding your solar bill",
+        "url": "https://pioneercommunityenergy.org/understanding-your-solar-bill/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "How do I get a solar permit in Auburn, California?",
+        "Auburn uses Symbium for automated residential solar and storage permits. The contractor or homeowner applies and pays Symbium's fees in the Symbium portal, then submits the documents and pays the City's application fees in Civic Access."
+      ],
+      [
+        "Who supplies electricity in Auburn?",
+        "PG&E delivers the power and sends the bill; Pioneer Community Energy, which Auburn helped found in 2018, supplies the generation for most homes."
+      ],
+      [
+        "Are solar panels worth it in Auburn, California?",
+        "That depends on your own usage, how much of your production you use as it is made, and the price you are offered. Pioneer credits Solar Billing Plan exports at a variable export rate and pays a half-cent bonus on year-end surplus, so ask each bidder to show monthly production against your monthly use and how much of it the model assumes you export."
+      ]
+    ],
+    answer: "Solar companies working in Auburn, California file the permit in two systems: the automated Symbium portal, which the City adopted under Senate Bill 379, and then the City's Civic Access system for the documents and City fees. Pioneer Community Energy supplies Auburn's generation and PG&E delivers it. Get at least three written bids built on your own Pioneer and PG&E bill and compare them on the checks below.",
+    keyFacts: [
+      {
+        "label": "Permit platform",
+        "value": "Symbium, then Civic Access",
+        "note": "Automated plan review adopted under SB 379",
+        "source": {
+          "publisher": "City of Auburn",
+          "date": "2026-09-23",
+          "url": "https://www.auburn.ca.gov/700/Symbium-Permits"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "Pioneer Community Energy",
+        "note": "Auburn is a founding member (2018); PG&E delivers",
+        "source": {
+          "publisher": "Pioneer Community Energy",
+          "date": "2026-09-23",
+          "url": "https://pioneercommunityenergy.org/about-us/"
+        }
+      },
+      {
+        "label": "Pioneer surplus bonus",
+        "value": "+$0.005/kWh",
+        "note": "Above PG&E's rate; checks for amounts over $50",
+        "source": {
+          "publisher": "Pioneer Community Energy",
+          "date": "2026-09-23",
+          "url": "https://pioneercommunityenergy.org/understanding-your-solar-bill/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Auburn's Symbium permit, step by step",
+        "paragraphs": [
+          "Senate Bill 379 requires most California cities to offer automated, instant plan review for residential solar. Auburn meets it with Symbium rather than SolarAPP+. The City's page describes two steps: apply through the Symbium portal and pay the fees there, then log into the City's Civic Access system to submit the documents and pay the City's application fees. The document list includes a line drawing, the solar layout, equipment specifications and the Symbium approval, and the City publishes an inspection checklist alongside it.",
+          "Because both steps sit with the applicant, ask each bidder to confirm it will do both, and to show which fees are already in its price. The contract should say plainly who is responsible for the permit and the inspection."
+        ]
+      },
+      {
+        "heading": "What Pioneer changes for an Auburn solar home",
+        "paragraphs": [
+          "Auburn, Colfax, Lincoln, Rocklin, Loomis and most of unincorporated Placer County formed Pioneer Community Energy's original service area in 2018. On a solar account, Pioneer handles the generation side. New systems since April 15, 2023 are on the Solar Billing Plan, where exports are valued at a variable export rate and positive charges are paid monthly; older systems on net energy metering earn retail credits that roll forward.",
+          "Pioneer reviews each solar account over the prior twelve months during the March or April billing cycle and pays Net Surplus Compensation at half a cent per kWh above PG&E's rate, by check if the amount is over $50 and as a bill credit otherwise."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  lincoln: {
+    name: "Lincoln",
+    county: "Placer County",
+    utility: "pge",
+    bill: "Lincoln is one of the cities that formed Pioneer Community Energy in 2018, and the Energy Commission's map places all of Lincoln in both PG&E's delivery area and Pioneer's community choice area. On most bills, Pioneer supplies the generation and PG&E delivers it. Ask each bidder to build its savings figure on your current Pioneer and PG&E enrollment.",
+    local: "The City of Lincoln sends solar, energy storage and EV charger permits under Senate Bill 379 to the Symbium portal, where contractors and homeowners can get instantaneous plan review. The first step in the portal is confirming the address is inside Lincoln's city limits, since addresses outside them fall under Placer County. City Hall is at 916-434-2400.",
+    example: "Two Lincoln bids for the same roof should name the same permit route and the same account. Ask each for the Symbium approval it expects, a monthly production estimate set against your monthly Pioneer and PG&E usage, and separate prices for the panels, any battery and any main panel upgrade.",
+    sourceCheckedDate: "2026-09-23",
+    checks: [
+      [
+        "City limits",
+        "Confirm the address is inside Lincoln city limits in the Symbium portal before relying on the City's permit route."
+      ],
+      [
+        "Pioneer and PG&E account",
+        "Model Pioneer generation and PG&E delivery from your current bill."
+      ],
+      [
+        "Permit scope",
+        "List what the Symbium application covers: panels, storage, EV charger, panel upgrade."
+      ],
+      [
+        "Contract and service",
+        "Name the contracting business, its CSLB license and who handles service calls."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of Lincoln: solar, energy storage permit and EV charger (Symbium)",
+        "url": "https://www.lincolnca.gov/business-and-development/get-a-permit/solar-energy-storage-permit-and-ev-charger/"
+      },
+      {
+        "label": "Pioneer Community Energy: about Pioneer and its service area",
+        "url": "https://pioneercommunityenergy.org/about-us/"
+      },
+      {
+        "label": "Pioneer Community Energy: understanding your solar bill",
+        "url": "https://pioneercommunityenergy.org/understanding-your-solar-bill/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "How do I get a solar permit in Lincoln, California?",
+        "The City of Lincoln uses the Symbium portal for instantaneous plan review of solar, energy storage and EV charger permits under Senate Bill 379. Start by confirming your address is inside city limits in the portal."
+      ],
+      [
+        "Who supplies electricity in Lincoln, California?",
+        "PG&E delivers the power and sends the bill; Pioneer Community Energy, which Lincoln helped found in 2018, supplies the generation for most homes."
+      ],
+      [
+        "What does Pioneer pay for extra solar in Lincoln?",
+        "Pioneer pays Net Surplus Compensation at half a cent per kWh above PG&E's rate after its March or April annual review, by check if the amount is over $50 and as a bill credit otherwise."
+      ]
+    ],
+    answer: "Solar panels on a Lincoln, California home are permitted through the Symbium portal, which the City uses for instant plan review of solar, battery and EV charger permits, once the address is confirmed inside city limits. Pioneer Community Energy supplies Lincoln's generation and PG&E delivers it. Get at least three written bids from licensed solar companies that model your own Pioneer and PG&E bill, and compare them line by line.",
+    keyFacts: [
+      {
+        "label": "Permit platform",
+        "value": "Symbium",
+        "note": "Instant plan review for solar, storage and EV chargers",
+        "source": {
+          "publisher": "City of Lincoln",
+          "date": "2026-09-23",
+          "url": "https://www.lincolnca.gov/business-and-development/get-a-permit/solar-energy-storage-permit-and-ev-charger/"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "Pioneer Community Energy",
+        "note": "Lincoln is a founding member (2018); PG&E delivers",
+        "source": {
+          "publisher": "Pioneer Community Energy",
+          "date": "2026-09-23",
+          "url": "https://pioneercommunityenergy.org/about-us/"
+        }
+      },
+      {
+        "label": "Pioneer true-up",
+        "value": "March or April",
+        "note": "Surplus over $50 paid by check",
+        "source": {
+          "publisher": "Pioneer Community Energy",
+          "date": "2026-09-23",
+          "url": "https://pioneercommunityenergy.org/understanding-your-solar-bill/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "City of Lincoln or Placer County: who issues the permit",
+        "paragraphs": [
+          "Lincoln's permit page for solar, energy storage and EV chargers points to Symbium, the platform the City uses to meet Senate Bill 379's call for instantaneous plan review. The portal starts by checking that the address is inside Lincoln's city limits. That check matters because a Lincoln mailing address does not by itself put a home inside the city; an address outside city limits is handled by Placer County's own building department.",
+          "So the first question for any bidder is which jurisdiction it is filing with. A proposal that quotes Lincoln's process for a county address, or the reverse, may be wrong about timing and fees."
+        ]
+      },
+      {
+        "heading": "How Pioneer bills a Lincoln solar account",
+        "paragraphs": [
+          "Pioneer Community Energy has served Lincoln since its 2018 launch with Auburn, Colfax, Rocklin, Loomis and most of unincorporated Placer County. It handles the generation half of a solar account. A system installed since April 15, 2023 is on the Solar Billing Plan: exports are valued at a variable export rate and positive charges are paid each month. Earlier systems on net energy metering earn retail credits that carry forward month to month.",
+          "Once a year, during the March or April billing cycle, Pioneer looks back over twelve months and pays any Net Surplus Compensation at half a cent per kWh above PG&E's rate. Ask each bidder how much of the system's output its model assumes you will export, and at what value."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  vacaville: {
+    name: "Vacaville",
+    county: "Solano County",
+    utility: "pge",
+    bill: "Vacaville is PG&E territory. MCE serves Benicia, Fairfield, Vallejo and unincorporated Solano County, but its own list of member communities does not include Vacaville, even though an older Energy Commission layer shades the area as MCE's. Read the generation line on your PG&E bill; unless it names another provider, PG&E supplies both generation and delivery, and PG&E's Solar Billing Plan sets what new exports earn.",
+    local: "The City of Vacaville issues residential solar permits through Symbium's instant plan review under Senate Bill 379, starting with a check that the address is inside city limits; the City says permit processing takes about one to three business days, depending on staff availability. Systems the platform rejects can still be filed electronically in e-TRAKiT as Solar Residential OL, Solar with ESS Residential OL or ESS Only Residential OL.",
+    example: "If one Vacaville bid includes a battery and another does not, they may be on different permit paths. Ask each bidder whether its design passes Symbium's instant review or goes to e-TRAKiT, and what that does to the timeline, then compare the prices only after both answers are in writing.",
+    sourceCheckedDate: "2026-09-23",
+    hasSavingsGuide: false,
+    checks: [
+      [
+        "Generation provider",
+        "Confirm from your bill whether PG&E supplies generation, and model PG&E's Solar Billing Plan for a new system."
+      ],
+      [
+        "Permit path",
+        "State whether the job uses Symbium's instant review or e-TRAKiT, and which permit type."
+      ],
+      [
+        "Battery",
+        "Price storage separately and say whether it changes the permit type to Solar with ESS."
+      ],
+      [
+        "Contract and service",
+        "Name the contracting business, its CSLB license and who handles service calls."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of Vacaville: apply for residential solar permits (Symbium, e-TRAKiT)",
+        "url": "https://www.cityofvacaville.gov/government/community-development/building/building-permits/apply-for-residential-solar-permits"
+      },
+      {
+        "label": "MCE: member communities",
+        "url": "https://www.mcecleanenergy.org/service-area/"
+      },
+      {
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "How long does a solar permit take in Vacaville?",
+        "The City says permits processed through its Symbium instant-review portal take about one to three business days, depending on staff availability. Projects that do not qualify are filed in e-TRAKiT instead."
+      ],
+      [
+        "Is Vacaville in MCE's service area?",
+        "MCE's own list of 38 member communities includes Benicia, Fairfield, Vallejo and unincorporated Solano County but not Vacaville. Check the generation line on your PG&E bill."
+      ],
+      [
+        "How do I find a solar company in Vacaville?",
+        "Check each company's CSLB license, confirm it will file through the City's Symbium portal or e-TRAKiT, and compare at least three written bids built on your own PG&E bill. This page does not rank installers."
+      ]
+    ],
+    answer: "A solar company installing in Vacaville gets the permit through the City's Symbium portal, which the City says takes about one to three business days, or files in e-TRAKiT if the design does not qualify. Vacaville is PG&E territory, and MCE, which serves several neighboring Solano County cities, does not list Vacaville as a member. Compare at least three written bids built on your own PG&E bill.",
+    keyFacts: [
+      {
+        "label": "Electric utility",
+        "value": "PG&E",
+        "note": "MCE's member list does not include Vacaville",
+        "source": {
+          "publisher": "MCE",
+          "date": "2026-09-23",
+          "url": "https://www.mcecleanenergy.org/service-area/"
+        }
+      },
+      {
+        "label": "Permit time",
+        "value": "About 1 to 3 business days",
+        "note": "Symbium instant review, per the City",
+        "source": {
+          "publisher": "City of Vacaville",
+          "date": "2026-09-23",
+          "url": "https://www.cityofvacaville.gov/government/community-development/building/building-permits/apply-for-residential-solar-permits"
+        }
+      },
+      {
+        "label": "Fallback filing",
+        "value": "e-TRAKiT",
+        "note": "Solar, Solar with ESS or ESS Only Residential OL",
+        "source": {
+          "publisher": "City of Vacaville",
+          "date": "2026-09-23",
+          "url": "https://www.cityofvacaville.gov/government/community-development/building/building-permits/apply-for-residential-solar-permits"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Vacaville's two permit paths",
+        "paragraphs": [
+          "Vacaville partnered with Symbium to meet Senate Bill 379. Contractors and homeowners apply for instantaneous plan review in the Symbium portal after confirming the address is within city limits, and the City says permit processing takes about one to three business days, depending on staff availability. A design the platform disqualifies is not stuck: it can still be submitted electronically through e-TRAKiT under one of three permit types, Solar Residential OL, Solar with ESS Residential OL, or ESS Only Residential OL for a battery added on its own.",
+          "Ask each bidder which of those four routes it expects your job to take. A bid that assumes the instant path for a design with storage or unusual electrical work may be promising a timeline the City does not."
+        ]
+      },
+      {
+        "heading": "PG&E, not a community choice provider",
+        "paragraphs": [
+          "Much of Solano County gets generation from MCE, whose list of member communities names Benicia, Fairfield, Vallejo and unincorporated Solano County. Vacaville is not on that list. The Energy Commission's community choice layer, last updated in August 2025, shades Vacaville as MCE territory, so a quick map lookup can mislead; the provider's own list and your bill are the better guide.",
+          "For a PG&E customer, a new system goes on PG&E's Solar Billing Plan. PG&E enrolls residential solar customers in its Electric Home time-of-use rate, credits exports at values that vary by time of day, day of the week and season, and sends monthly statements plus an annual true-up. Ask each bidder which hours its model assumes you export in, since that sets what the exports are worth."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  richmond: {
+    name: "Richmond",
+    county: "Contra Costa County",
+    utility: "pge",
+    bill: "Richmond homes get delivery from PG&E and, by default, generation from MCE, which lists Richmond among its Contra Costa County member communities. PG&E charges for delivery and MCE's generation charges are settled on the same monthly bill. A proposal should model both, from your own statement.",
+    local: "Richmond, California issues rooftop solar permits through SolarAPP+, and its system creates the permit instantly only when four things line up: the contractor's CSLB license is current, its City of Richmond Business Tax Certificate is current, and the SolarAPP+ approval and the signed permit application are uploaded under the exact attachment names the City specifies. Homes on the Richmond Historic Register need a certificate of appropriateness from the Planning Division first.",
+    example: "For an older Richmond house, ask each bidder to check the Richmond Historic Register before quoting a timeline. A listed property needs the Planning Division's certificate of appropriateness before SolarAPP+ can be used, and the Division issues it only when the installation is consistent with the Secretary of the Interior's rehabilitation standards, which may change where the panels can go.",
+    sourceCheckedDate: "2026-09-23",
+    checks: [
+      [
+        "City credentials",
+        "Confirm the contractor has a current CSLB license and a current Richmond Business Tax Certificate."
+      ],
+      [
+        "Historic status",
+        "Check whether the property is on the Richmond Historic Register and, if so, who obtains the certificate of appropriateness."
+      ],
+      [
+        "MCE and PG&E account",
+        "Model MCE generation and PG&E delivery from your actual bill."
+      ],
+      [
+        "Permit filing",
+        "Say who files in SolarAPP+ and the City's permit system, and who schedules the inspection."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of Richmond, California: SolarAPP+ for solar installers",
+        "url": "https://www.ci.richmond.ca.us/4174/SolarAPP-For-Solar-Installers"
+      },
+      {
+        "label": "MCE: member communities",
+        "url": "https://www.mcecleanenergy.org/service-area/"
+      },
+      {
+        "label": "MCE: rooftop solar customers",
+        "url": "https://www.mcecleanenergy.org/solar-customers/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "What does a contractor need to pull a solar permit in Richmond, California?",
+        "For the City's instant SolarAPP+ permit, the contractor's CSLB license and its City of Richmond Business Tax Certificate must both be current, and the SolarAPP+ approval documents and signed permit application must be uploaded under the names the City specifies."
+      ],
+      [
+        "Do historic homes in Richmond need extra approval for solar?",
+        "Yes, if the property is listed on the Richmond Historic Register. The applicant must obtain a certificate of appropriateness from the Planning Division before applying through SolarAPP+."
+      ],
+      [
+        "Is Richmond, California served by MCE?",
+        "Yes. MCE lists Richmond among its Contra Costa County member communities; PG&E still delivers the power and sends the bill."
+      ]
+    ],
+    answer: "Solar companies installing in Richmond, California can get an instant permit through SolarAPP+, but only with a current CSLB license and a current City of Richmond Business Tax Certificate on file, which makes the permit a quick check on who you are hiring. Historic-register homes need a certificate of appropriateness first. MCE supplies Richmond's generation and PG&E delivers it. Compare three written bids on the checks below.",
+    keyFacts: [
+      {
+        "label": "Instant permit needs",
+        "value": "CSLB license + City business tax certificate",
+        "note": "Both current, plus correctly named uploads",
+        "source": {
+          "publisher": "City of Richmond",
+          "date": "2026-09-23",
+          "url": "https://www.ci.richmond.ca.us/4174/SolarAPP-For-Solar-Installers"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "MCE",
+        "note": "Richmond is an MCE member community; PG&E delivers",
+        "source": {
+          "publisher": "MCE",
+          "date": "2026-09-23",
+          "url": "https://www.mcecleanenergy.org/service-area/"
+        }
+      },
+      {
+        "label": "MCE surplus payment",
+        "value": "NSC rate + $0.02/kWh",
+        "note": "Up to $5,000 a year",
+        "source": {
+          "publisher": "MCE",
+          "date": "2026-09-23",
+          "url": "https://www.mcecleanenergy.org/solar-customers/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Richmond's SolarAPP+ conditions",
+        "paragraphs": [
+          "The City of Richmond uses SolarAPP+ for residential, roof-mounted retrofit systems that pass its eligibility checklist. SolarAPP+ charges its own processing fee; the contractor downloads the approved documents, applies for the building permit in the City's permitting system with the SolarAPP+ approval ID, uploads the SolarAPP+ documents and schedules the inspection. The City creates the permit instantly only when the contractor's CSLB license and its City of Richmond Business Tax Certificate are both current and the two uploads are named exactly as the City requires.",
+          "Those conditions double as a screen. A company that cannot get an instant permit in Richmond is missing a current license or a City business registration, and both are worth knowing about before you sign."
+        ]
+      },
+      {
+        "heading": "Historic properties and MCE's rules",
+        "paragraphs": [
+          "Richmond adds one local step. If a property is listed on the Richmond Historic Register, the applicant must obtain a certificate of appropriateness from the Planning Division before using SolarAPP+, and the Division issues it only when the installation is consistent with the Secretary of the Interior's standards for rehabilitation. Ask the bidder to check the register for your address before promising a timeline.",
+          "On the bill side, MCE serves Richmond. Systems whose applications were filed before April 14, 2023 stay on net energy metering; later ones are on the Solar Billing Plan. MCE's annual cycle runs April through March and pays surplus at the Net Surplus Compensation rate plus $0.02 per kWh, up to $5,000 a year, with another $0.01 per kWh for customers on its Deep Green option; amounts of $200 or less arrive as a bill credit."
         ]
       }
     ],

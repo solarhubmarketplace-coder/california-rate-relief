@@ -553,7 +553,7 @@ export const SAVINGS_BILLS_SEO: Readonly<Record<string, CitySeo & { modified: st
   sacramento: {
     title: 'Sacramento Electricity Provider: SMUD Rates & Bills',
     description:
-      'Sacramento electricity comes from SMUD, not PG&E. How SMUD bills a home, its time-of-day rate, the Solar and Storage Rate, and where the rates are published.',
+      'Sacramento electricity comes from SMUD, not PG&E: how SMUD bills a home, its Time-of-Day prices, the $27 fixed charge and its solar export credit.',
     h1: "Sacramento's Electricity Provider Is SMUD: Rates, Bills and Solar",
     modified: '2026-09-23',
   },
