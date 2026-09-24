@@ -311,46 +311,224 @@ export const growthCities: Record<string, GrowthCity> = {
   "san-diego": {
     name: "San Diego",
     county: "San Diego County",
+    sourceCheckedDate: "2026-09-23",
     utility: "sdge",
-    bill: "Check both the SDG&E delivery section and the generation provider on your bill. San Diego Community Power has its own solar billing information; a CCA generation price alone is not your total electricity price.",
-    local:
-      "The City of San Diego publishes a residential rooftop PV permit process. A property elsewhere in the county may use a different permitting authority. Ask the bidder to identify that authority and include the permit and inspection scope.",
-    example:
-      "If one proposal adds a battery and another does not, ask for the remaining annual utility bill under the same SDG&E schedule and generation provider. Then price the backup circuits separately. A battery bill-savings case and an outage-backup case answer different questions.",
+    bill: "San Diego Community Power buys the electricity for most homes in the City of San Diego and SDG&E delivers it, on one SDG&E bill with Community Power as a line item. SDG&E's average residential rate, 45.5 cents per kWh in June 2026 by the Public Advocates Office's count, is the highest of the state's three large utilities, and most bills also carry a Base Services Charge of about $24 a month that solar does not reduce.",
+    local: "The City of San Diego lets a contractor self-issue a Residential Rooftop-Mounted Solar PV Permit with no plan review for single-family homes, duplexes and townhouses designed to the template in Information Bulletin 301, if the system is 38.4 kW AC or less and needs no fire or structural review or roof alterations. The same permit can include a panel upgrade of up to 320 amps, storage of up to 38.4 kWh (each unit 20 kWh or less) and an inverter-integrated EV charger.",
+    example: "Two San Diego bids for the same house can land on different permits. A rooftop system with a battery of 38.4 kWh or less, in units of 20 kWh or less, and a panel upgrade of 320 amps or less can be self-issued; a larger battery, a roof framing change or a ground mount more than 5 feet high sends the job to a permit with plan review. Ask each bidder which permit its design needs.",
     sources: [
       {
-        label: "San Diego Community Power: solar billing and NEM",
-        url: "https://sdcommunitypower.org/net-energy-metering/",
+        "label": "City of San Diego: Residential Rooftop-Mounted Solar PV Permit",
+        "url": "https://www.sandiego.gov/development-services/permits/solar-photovoltaic-permit"
       },
       {
-        label: "City of San Diego: residential rooftop PV permits",
-        url: "https://www.sandiego.gov/development-services/permits/solar-photovoltaic-permit",
+        "label": "San Diego Community Power: net energy metering and Solar Billing Plan",
+        "url": "https://sdcommunitypower.org/net-energy-metering/"
       },
       {
-        label: "SDG&E pricing plan chooser",
-        url: "https://www.sdge.com/residential/pricing-plans",
+        "label": "SDG&E: Base Services Charge",
+        "url": "https://www.sdge.com/electric-billing"
       },
+      {
+        "label": "CPUC Public Advocates Office: Q2 2026 Electric Rates Report",
+        "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+      }
     ],
+    faq: [
+      [
+        "Do I need plan review for solar in San Diego?",
+        "Not for most homes. A single-family, duplex or townhouse rooftop system designed to the IB-301 template, 38.4 kW AC or less and needing no fire or structural review, gets a self-issued Residential Rooftop-Mounted Solar PV Permit with no plan review."
+      ],
+      [
+        "Can a battery go on the same San Diego solar permit?",
+        "Yes, up to 38.4 kWh of storage with no single unit over 20 kWh, along with a panel upgrade of up to 320 amps and an inverter-integrated EV charger."
+      ],
+      [
+        "Who supplies electricity in San Diego?",
+        "San Diego Community Power supplies the generation for most homes in the city; SDG&E delivers the power and sends the bill, with Community Power shown as a line item."
+      ],
+    ],
+    checks: [
+      [
+        "Self-issued permit",
+        "Confirm the design follows the IB-301 template, stays at or under 38.4 kW AC and needs no fire or structural review."
+      ],
+      [
+        "Battery and panel limits",
+        "Keep storage at 38.4 kWh or less (each unit 20 kWh or less) and any panel upgrade at 320 amps or less, or say which permit applies instead."
+      ],
+      [
+        "Community Power and SDG&E",
+        "Model Community Power generation, SDG&E delivery and the EV-TOU-5 rate Community Power says the Solar Billing Plan requires."
+      ],
+      [
+        "Fixed charge",
+        "Leave SDG&E's Base Services Charge on the post-solar bill."
+      ]
+    ],
+    answer: "Most San Diego home solar needs no plan review: the City lets contractors self-issue a Residential Rooftop-Mounted Solar PV Permit for single-family homes, duplexes and townhouses up to 38.4 kW AC, with up to 38.4 kWh of storage and a panel upgrade up to 320 amps on the same permit. San Diego Community Power buys the city's electricity and SDG&E delivers it. Compare at least three written bids built on your own bill.",
+    keyFacts: [
+      {
+        "label": "Permit",
+        "value": "Self-issued, no plan review",
+        "note": "Rooftop, 38.4 kW AC or less, IB-301 template",
+        "source": {
+          "publisher": "City of San Diego",
+          "date": "2026-09-23",
+          "url": "https://www.sandiego.gov/development-services/permits/solar-photovoltaic-permit"
+        }
+      },
+      {
+        "label": "Storage on the same permit",
+        "value": "Up to 38.4 kWh",
+        "note": "No single unit over 20 kWh",
+        "source": {
+          "publisher": "City of San Diego",
+          "date": "2026-09-23",
+          "url": "https://www.sandiego.gov/development-services/permits/solar-photovoltaic-permit"
+        }
+      },
+      {
+        "label": "SDG&E average rate",
+        "value": "45.5 cents/kWh",
+        "note": "June 2026, highest of the three large utilities",
+        "source": {
+          "publisher": "CPUC Public Advocates Office",
+          "date": "2026-09-23",
+          "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "San Diego's self-issued solar permit",
+        "paragraphs": [
+          "The City's Development Services Department no longer requires professional certification for residential rooftop solar. For a single-family home, duplex or townhouse designed per the template in Information Bulletin 301, the Residential Rooftop-Mounted Solar PV Permit is self-issued with no plan review, provided the system is no larger than 38.4 kW AC, needs no fire plan review or structural review under IB-301, and involves no work that calls for a combination building permit, such as changing the roof structure or adding a new structure. Solar shingles use the same permit.",
+          "Anything outside those limits takes a different permit. Solar on a structure other than a single-family home or duplex needs an electrical permit with plans; ground mounts more than 5 feet above the ground and projects requiring building modifications need a building permit. Applications are online, with PDF plans that must pass the City's upload validation, and fees depend on the project's scope under IB-301."
+        ]
+      },
+      {
+        "heading": "Community Power's rules for a new system",
+        "paragraphs": [
+          "Community Power appears as a line item on the SDG&E bill, and it says that line is not an extra charge. For a new system, it says the Solar Billing Plan requires SDG&E's EV-TOU-5 time-of-use rate and credits exports at avoided-cost values rather than the retail price. Ask each bidder which hours its model assumes you export in.",
+          "SDG&E's Base Services Charge of about $24 a month, about $12 on FERA and $6 on CARE, pays for equipment such as meters and transformers and for customer service, and it stays whatever the system produces. The fair test for a San Diego proposal is your own twelve months of bills against what it says would remain, not SDG&E's 45.5-cent average."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   fresno: {
     name: "Fresno",
     county: "Fresno County",
+    sourceCheckedDate: "2026-09-23",
     utility: "pge",
-    bill: "Use the electricity provider and schedule printed on your bill. For a PG&E account, compare delivery and any separate generation charges together. A Fresno mailing address does not prove a particular tariff or a provider’s service coverage.",
-    local:
-      "The City of Fresno offers SolarAPP+ for eligible residential projects; commercial work uses its standard permitting route. A permit process is not a promise of installation timing. Confirm whether the property is under city or county jurisdiction.",
-    example:
-      "If summer cooling pushes your usage above the rest of the year, do not size from that bill alone. Ask for a monthly usage and production comparison covering your full billing year, including the remaining evening imports.",
+    bill: "Fresno is PG&E territory for both generation and delivery; the Energy Commission's map shows no community choice provider over the city. The Public Advocates Office estimated PG&E's June 2026 average bill for customers not on CARE at $168 a month in its hot climate zone and $125 in its cool one. Since March 2026 PG&E bills have also carried a Base Services Charge of around $24 that solar does not reduce.",
+    local: "The City of Fresno uses SolarAPP+ for single-family and duplex rooftop solar: a licensed contractor registered with SolarAPP+ submits the design, uploads the SolarAPP+ confirmation to the City's Accela Citizens Access, and the permit is issued in real time as an express permit with no separate plan review. Commercial solar does not qualify and goes through a standard permit in the same system.",
+    example: "Ask each Fresno bidder whether it is registered with SolarAPP+ and will file the express permit in Accela Citizens Access. A registered contractor on a standard single-family roof should not need weeks of plan review, so a bid that quotes a long permit wait should say why the design falls outside SolarAPP+.",
     sources: [
       {
-        label: "City of Fresno: SolarAPP+ and standard permit routes",
-        url: "https://www.fresno.gov/planning/get-an-instantly-approved-solar-permit-through-solar-app/",
+        "label": "City of Fresno: SolarAPP+ provides instantly approved solar permits",
+        "url": "https://www.fresno.gov/planning/get-an-instantly-approved-solar-permit-through-solar-app/"
       },
       {
-        label: "PG&E solar billing plans",
-        url: "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
       },
+      {
+        "label": "PG&E: Base Services Charge",
+        "url": "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html"
+      },
+      {
+        "label": "CPUC Public Advocates Office: Q2 2026 Electric Rates Report",
+        "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
     ],
+    faq: [
+      [
+        "How fast can I get a solar permit in Fresno?",
+        "For single-family and duplex rooftop systems that pass SolarAPP+, the City issues the permit in real time once the contractor uploads the SolarAPP+ confirmation to Accela Citizens Access. Commercial projects need a standard permit."
+      ],
+      [
+        "Who can apply for a SolarAPP+ permit in Fresno?",
+        "Licensed contractors who have registered as installers with SolarAPP+. They apply on the SolarAPP+ site and are then directed to the City's Accela Citizens Access to complete the permit application."
+      ],
+      [
+        "What is the average electric bill in Fresno?",
+        "No source publishes a Fresno-only average. The CPUC Public Advocates Office estimated PG&E's June 2026 average bill for customers not on CARE at $168 a month in its hot climate zone and $125 in its cool zone; your own twelve months of bills are the better guide."
+      ],
+    ],
+    checks: [
+      [
+        "Express permit",
+        "Confirm the contractor is registered with SolarAPP+ and the home is a single-family house or duplex."
+      ],
+      [
+        "PG&E bill model",
+        "Model PG&E's Solar Billing Plan on the E-ELEC rate from your own twelve months of use."
+      ],
+      [
+        "Fixed charge",
+        "Leave PG&E's Base Services Charge on the post-solar bill; solar does not remove it."
+      ],
+      [
+        "Contract and service",
+        "Name the contracting business, its CSLB license and who handles service calls after installation."
+      ]
+    ],
+    answer: "Solar companies in Fresno can get a single-family or duplex rooftop permit in real time: the City uses SolarAPP+ as an express permit, so a registered contractor uploads its SolarAPP+ confirmation to Accela Citizens Access and the permit issues with no separate plan review. PG&E supplies and delivers Fresno's power. Compare at least three written bids built on your own twelve months of PG&E bills.",
+    keyFacts: [
+      {
+        "label": "Permit route",
+        "value": "SolarAPP+ express permit",
+        "note": "Single-family and duplex; issued in real time",
+        "source": {
+          "publisher": "City of Fresno",
+          "date": "2026-09-23",
+          "url": "https://www.fresno.gov/planning/get-an-instantly-approved-solar-permit-through-solar-app/"
+        }
+      },
+      {
+        "label": "PG&E average bill, hot zone",
+        "value": "$168/month",
+        "note": "June 2026 estimate, customers not on CARE",
+        "source": {
+          "publisher": "CPUC Public Advocates Office",
+          "date": "2026-09-23",
+          "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+        }
+      },
+      {
+        "label": "Electric utility",
+        "value": "PG&E",
+        "note": "No community choice provider mapped over the city",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Fresno's SolarAPP+ express permit",
+        "paragraphs": [
+          "The City of Fresno's Planning and Development Department adopted SolarAPP+ after testing it, and now processes eligible residential solar applications as express permits, which removes the need for plan review. The process has three steps: the contractor completes an application on the SolarAPP+ site; SolarAPP+ then directs it to the City's Accela Citizens Access to complete the permit application; and the contractor logs into its Accela account, uploads the SolarAPP+ confirmation as proof the design meets code, and receives the permit in real time.",
+          "Two limits apply. Only licensed contractors registered as installers with SolarAPP+ can use it, and only for single-family and duplex projects; commercial solar applies for a standard permit in Accela instead. If you plan to act as your own contractor, expect the standard route."
+        ]
+      },
+      {
+        "heading": "What PG&E's rules mean for a Fresno system",
+        "paragraphs": [
+          "A new Fresno system goes on PG&E's Solar Billing Plan. PG&E enrolls residential solar customers on its Electric Home time-of-use rate, credits exports at values that change with the time of day, the day of the week and the season, and sends monthly statements plus an annual true-up. The value of what you export depends on when you export it, so ask each bidder for the hourly assumption behind its savings figure.",
+          "Since March 2026 PG&E has moved part of its costs into a Base Services Charge of around $24 a month for most customers, around $12 on FERA and around $6 on CARE, and lowered its per-kWh prices to match. PG&E's residential average was 33.7 cents per kWh in June 2026, according to the Public Advocates Office. A proposal's savings should come off the per-kWh part of your bill, with the fixed charge still there."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   "los-angeles": {
     name: "Los Angeles",
@@ -473,22 +651,111 @@ export const growthCities: Record<string, GrowthCity> = {
   sacramento: {
     name: "Sacramento",
     county: "Sacramento County",
+    sourceCheckedDate: "2026-09-23",
     utility: "smud",
-    bill: "Read the electric utility name, not just the gas company name. For SMUD electricity, use SMUD’s Solar and Storage Rate or your confirmed legacy solar rate. The investor-owned utilities’ NEM 3.0 assumptions do not substitute for SMUD’s rules.",
-    local:
-      "SMUD distinguishes its current Solar and Storage Rate from eligible legacy NEM accounts. An existing system modification can affect the applicable rules. Ask SMUD about your current enrollment before pricing an expansion or battery incentive.",
-    example:
-      "For a SMUD customer adding storage, compare the battery quote with and without the proposed incentive and show which rate applies in each case. Check both the financial result and the circuits that would run during an outage.",
+    bill: "Sacramento homes buy electricity from SMUD, the Sacramento Municipal Utility District, not PG&E; the Energy Commission's map puts virtually the whole city in SMUD territory. SMUD bills a $27 monthly System Infrastructure Fixed Charge plus Time-of-Day energy prices, and a new solar customer goes on its Solar and Storage Rate, which credits exports at a flat 9.6 cents per kWh. A proposal built on PG&E's rules does not fit a Sacramento home.",
+    local: "The City of Sacramento permits residential solar through SolarAPP+ for registered licensed contractors on homes with one or two units or an ADU, with no ballasted systems. After SolarAPP+ approval, the contractor applies in the City's Public Permit Portal under Residential Solar and uploads the SolarAPP+ documents, the City's building application for solar and the SMUD interconnection letter. SolarAPP+'s fee and the City's permit fees are charged separately.",
+    example: "Because the City's solar application asks for SMUD's interconnection letter, a Sacramento bidder should be able to tell you when it will request it from SMUD and roughly when it expects to file with the City. Ask each bidder for that sequence in writing, then compare how each one models SMUD's 9.6-cent export credit against your own hourly use.",
     sources: [
       {
-        label: "SMUD Solar and Storage Rate and legacy-system conditions",
-        url: "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate",
+        "label": "City of Sacramento: residential solar permits (SolarAPP+ and direct review)",
+        "url": "https://www.cityofsacramento.gov/community-development/building/permit-services/residential-solar"
       },
       {
-        label: "SMUD residential rates",
-        url: "https://www.smud.org/Rate-Information/Residential-Rates",
+        "label": "SMUD: Solar and Storage Rate",
+        "url": "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate"
       },
+      {
+        "label": "SMUD: residential rates (Time-of-Day, System Infrastructure Fixed Charge)",
+        "url": "https://www.smud.org/Rate-Information/Residential-rates"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
     ],
+    faq: [
+      [
+        "How do I get a solar permit in Sacramento?",
+        "A licensed contractor registered with SolarAPP+ submits the design, then applies in the City of Sacramento Public Permit Portal under Residential Solar with the SolarAPP+ Approval ID, the SolarAPP+ documents, the City's solar building application and the SMUD interconnection letter. Projects that do not use SolarAPP+ can be submitted directly to the City for review."
+      ],
+      [
+        "What does SMUD pay for solar exports?",
+        "New solar customers are on SMUD's Solar and Storage Rate, which since June 1, 2026 credits exported power at 9.6 cents per kWh at any hour or season."
+      ],
+      [
+        "Is Sacramento PG&E or SMUD?",
+        "SMUD. The Energy Commission's utility map places virtually the whole City of Sacramento in SMUD's territory."
+      ],
+    ],
+    checks: [
+      [
+        "SMUD letter first",
+        "Say when the SMUD interconnection letter will be requested; the City's solar application requires it."
+      ],
+      [
+        "Permit route",
+        "Confirm the contractor is registered with SolarAPP+ and the home has one or two units or an ADU; otherwise say how it will submit directly to the City."
+      ],
+      [
+        "Export value",
+        "Model exports at SMUD's Solar and Storage Rate credit, 9.6 cents per kWh, not a retail rate."
+      ],
+      [
+        "Fixed charge",
+        "Leave SMUD's $27 System Infrastructure Fixed Charge on the post-solar bill."
+      ]
+    ],
+    answer: "Solar companies in Sacramento file through SolarAPP+ and the City's Public Permit Portal, and the City's application asks for SMUD's interconnection letter, so SMUD comes into the process before the permit. SMUD, not PG&E, is the utility: new solar customers are on its Solar and Storage Rate, which credits exports at 9.6 cents per kWh. Compare at least three written bids built on your own SMUD bill.",
+    keyFacts: [
+      {
+        "label": "Electric utility",
+        "value": "SMUD",
+        "note": "Not PG&E",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "SMUD export credit",
+        "value": "9.6 cents/kWh",
+        "note": "Solar and Storage Rate, any hour, since June 1, 2026",
+        "source": {
+          "publisher": "SMUD",
+          "date": "2026-09-23",
+          "url": "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate"
+        }
+      },
+      {
+        "label": "Permit needs",
+        "value": "SMUD interconnection letter",
+        "note": "Uploaded with the City's residential solar application",
+        "source": {
+          "publisher": "City of Sacramento",
+          "date": "2026-09-23",
+          "url": "https://www.cityofsacramento.gov/community-development/building/permit-services/residential-solar"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Sacramento's SolarAPP+ path, step by step",
+        "paragraphs": [
+          "The City lists four steps. Eligibility: residential structures with one or two units and ADUs only, licensed contractors only, and no ballasted systems. Review: the contractor submits the design to SolarAPP+ with its license information, pays SolarAPP+'s processing fee and downloads the approval documents. Application: in the City of Sacramento Public Permit Portal, under the Building tab, it chooses Residential Solar, enters the SolarAPP+ Approval ID, uploads the approval documents, the City's building application for solar energy systems, the SMUD interconnection letter and the construction plans, and pays the City's fees; a record number is then issued with the permit documents.",
+          "Inspection is requested in the same portal as a Residential Safety Inspection Request using that record number. Revisions go back through SolarAPP+. A project that does not qualify, or a contractor that prefers not to use SolarAPP+, can submit the residential solar application directly to the City for review instead."
+        ]
+      },
+      {
+        "heading": "How SMUD bills a Sacramento solar home",
+        "paragraphs": [
+          "SMUD's standard residential rate is Time-of-Day. Since June 1, 2026, summer prices (June through September) have been $0.1550 per kWh off-peak, $0.2139 mid-peak and $0.3765 during the weekday 5-to-8 p.m. peak; outside summer they are $0.1285 off-peak and $0.1776 at peak. Every account also pays a System Infrastructure Fixed Charge of $27 a month, or $17 on the low-use version.",
+          "Customers approved to install solar on or after March 1, 2022 are on the Solar and Storage Rate, which credits every exported kWh at 9.6 cents regardless of hour or season. Power you use yourself avoids the Time-of-Day price, which at the summer peak is almost four times the export credit, so a bid's savings depend heavily on how much of the output it assumes you use at home. Ask each bidder to show that split."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   bakersfield: {
     name: "Bakersfield",
@@ -3101,54 +3368,114 @@ export const growthCities: Record<string, GrowthCity> = {
     name: "Stockton",
     county: "San Joaquin County",
     utility: "pge",
-    sourceCheckedDate: "2026-09-12",
-    bill: "Use the provider, rate schedule and solar enrollment printed on the current electricity bill. For a PG&E account, compare delivery and any separate generation charges together. Require monthly production and remaining-bill assumptions based on a complete year of the property's usage.",
-    local:
-      "Stockton's Community Development Department controls building permits and its public records include residential photovoltaic permit categories. Ask the bidder to identify the current permit route, responsible contractor, plan package, inspection steps and any separate roof, service-panel or battery work.",
-    example:
-      "Use the same annual usage, roof and shade model for every Stockton bid. Compare monthly production, total contract cost, financing, permit duties, roof and electrical work and the remaining utility bill. Keep an advertised payment separate from the full obligation.",
+    sourceCheckedDate: "2026-09-23",
+    bill: "Since April 2025, Ava Community Energy has been the default generation provider in Stockton, after the City Council chose it; PG&E still delivers the power and sends the bill. Customers were enrolled automatically unless they opted out. The Energy Commission's community choice map, last updated in August 2025, does not yet show Stockton, so check the generation line on your own bill and have each bidder model Ava's solar rules if it says Ava.",
+    local: "Stockton's Building and Life Safety division lets licensed contractors get an auto-issued permit for most residential rooftop solar through SolarAPP+, which it calls the Residential Solar One Stop. Eligible jobs are on the main dwelling's roof of a permitted residential structure, with no ballasted or building-integrated systems. After SolarAPP+ approval, the contractor applies in the City's Accela Citizen Portal under the over-the-counter photovoltaic permit.",
+    example: "If your Stockton bill changed in 2025, compare bids against your new statement, not an older one. A home that moved to Ava has Ava generation charges and PG&E delivery charges, and a system installed now follows Ava's Solar Billing Plan rules, including the E-ELEC rate Ava requires, so a PG&E-only model is out of date.",
     checks: [
       [
-        "Account-specific utility model",
-        "Use the actual provider, rate plan and solar enrollment and show both imports and export credits.",
+        "Generation provider",
+        "Check whether your bill shows Ava or PG&E generation and model that provider's solar rules."
       ],
       [
-        "City permit scope",
-        "Name who submits plans, handles corrections, schedules inspection and includes roof, panel or storage work.",
+        "SolarAPP+ eligibility",
+        "Confirm panels go on the main dwelling's permitted roof and are not ballasted or building-integrated."
       ],
       [
-        "Contract total",
-        "Compare the same equipment, production inputs, warranties and total payment obligations, not only the first payment.",
+        "City permit filing",
+        "Say who files the OTC photovoltaic permit in the City's Accela Citizen Portal and books the inspection."
       ],
+      [
+        "Contract and service",
+        "Name the contracting business, its CSLB license and who handles service calls after installation."
+      ]
     ],
     sources: [
       {
-        label: "City of Stockton Open Data: Community Development and permit role",
-        url: "https://data.stocktonca.gov/stories/s/Development/kc7p-zqfj/",
+        "label": "City of Stockton: automated solar permitting (SolarAPP+ Residential Solar One Stop)",
+        "url": "https://www.stocktonca.gov/business/building___life_safety/automated_solar_permitting.php"
       },
       {
-        label: "City of Stockton Open Data: issued permits",
-        url: "https://data.stocktonca.gov/d/xrce-tkin",
+        "label": "City of Stockton: Ava Community Energy",
+        "url": "https://www.stocktonca.gov/government/city_manager/ava_community_engergy.php"
       },
       {
-        label: "PG&E: Solar Billing Plan information",
-        url: "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+        "label": "Ava Community Energy: service to Stockton and Lathrop from April 2025",
+        "url": "https://avaenergy.org/news/electricity-provider-ava-community-energy-brings-savings-to-stockton-and-lathrop/"
       },
       {
-        label: "CSLB: Solar Smart license and consumer information",
-        url: "https://www.cslb.ca.gov/solar",
+        "label": "Ava Community Energy: Solar Billing Plan",
+        "url": "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/"
       },
+      {
+        "label": "CSLB: Solar Smart license and consumer information",
+        "url": "https://www.cslb.ca.gov/solar"
+      }
     ],
     faq: [
       [
-        "What should I compare in a Stockton solar-company quote?",
-        "Compare the licensed contractor, equipment, annual and monthly production inputs, roof and electrical scope, permit duties, warranties, total payment obligations and remaining utility charges.",
+        "Is Stockton served by Ava Community Energy?",
+        "Yes. Ava became Stockton's default generation provider in April 2025; PG&E still delivers the power and sends the bill. Customers who opted out stay with PG&E for generation."
       ],
       [
-        "Does a Stockton address prove the utility rate or installer coverage?",
-        "No. Confirm the provider and rate from the bill and require each company to confirm the exact address and contracting business in writing.",
+        "How do I get a solar permit in Stockton?",
+        "A licensed contractor submits the design to SolarAPP+, then applies in the City of Stockton Accela Citizen Portal under over-the-counter permits, OTC - Photovoltaic, entering the SolarAPP+ approval number, and the permit is auto-issued."
       ],
+      [
+        "Which solar projects qualify for Stockton's automated permit?",
+        "Rooftop systems on the main dwelling of a permitted residential structure that meet SolarAPP+'s eligibility checklist. Ballasted and building-integrated systems do not qualify, and only licensed contractors can apply."
+      ]
     ],
+    answer: "Solar companies in Stockton get an auto-issued permit for most home rooftop systems through SolarAPP+, which the City calls its Residential Solar One Stop, then file the over-the-counter photovoltaic permit in its Accela portal. Since April 2025 Ava Community Energy has supplied Stockton's generation by default, with PG&E delivering it. Compare at least three written bids built on your current Ava and PG&E bill.",
+    keyFacts: [
+      {
+        "label": "Permit route",
+        "value": "SolarAPP+, auto-issued",
+        "note": "Licensed contractors; main-dwelling rooftop systems",
+        "source": {
+          "publisher": "City of Stockton",
+          "date": "2026-09-23",
+          "url": "https://www.stocktonca.gov/business/building___life_safety/automated_solar_permitting.php"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "Ava Community Energy",
+        "note": "Default since April 2025; PG&E delivers and bills",
+        "source": {
+          "publisher": "City of Stockton",
+          "date": "2026-09-23",
+          "url": "https://www.stocktonca.gov/government/city_manager/ava_community_engergy.php"
+        }
+      },
+      {
+        "label": "Ava export bonus",
+        "value": "+$0.025/kWh, 3 to 8 p.m.",
+        "note": "Solar Billing Plan customers not on CARE or FERA",
+        "source": {
+          "publisher": "Ava Community Energy",
+          "date": "2026-09-23",
+          "url": "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Stockton's Residential Solar One Stop",
+        "paragraphs": [
+          "Stockton's Building and Life Safety division, at 501 W. Weber Avenue, runs automated solar permits in three steps. First, eligibility: the panels go on the rooftop of the main dwelling, the structure is permitted and residential, the system is not ballasted or building-integrated, and the applicant is a licensed contractor. Second, the contractor submits the design to SolarAPP+ with its license information and pays SolarAPP+'s processing fee. Third, it logs into the City of Stockton Accela Citizen Portal, selects Over-the-Counter Permits and then OTC - Photovoltaic, enters the SolarAPP+ approval number and uploads the approval document.",
+          "The permit is then issued automatically. Because the process relies on the contractor's license and SolarAPP+ registration, it also tells you something about who you are hiring: a contractor that cannot use it on a standard roof should explain why."
+        ]
+      },
+      {
+        "heading": "Ava's arrival and what it changes for solar",
+        "paragraphs": [
+          "The Stockton City Council chose Ava Community Energy, formerly East Bay Community Energy, as the default generation provider in 2022, and Ava began service in Stockton and Lathrop in April 2025, enrolling customers in its Bright Choice service unless they opted out. PG&E still delivers the power, maintains the lines and sends the bill.",
+          "For a new solar system, that means Ava's Solar Billing Plan rules on the generation side. Ava requires its residential solar customers on that plan to take PG&E's E-ELEC rate, pays an extra $0.025 per kWh for exports between 3 and 8 p.m. to customers not on CARE or FERA, and an extra $0.01 per kWh on all exports to CARE and FERA customers. Ava settles its side each April; PG&E settles delivery on its own date."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   visalia: {
     name: "Visalia",
@@ -3380,7 +3707,7 @@ export const growthCities: Record<string, GrowthCity> = {
     county: "Alameda County",
     utility: "pge",
     sourceCheckedDate: "2026-09-23",
-    bill: "Most Hayward homes get generation from Ava Community Energy and delivery from PG&E, which sends the bill; the Energy Commission's map places the city's land in both areas. Ava settles its side of a solar account each April and PG&E settles delivery on its own date. Ask every bidder to model both, using the Ava plan and PG&E rate on your current bill.",
+    bill: "Hayward is one of the Alameda County cities in Ava Community Energy's service area, so the generation line on a Hayward PG&E statement usually reads Ava. PG&E still owns the wires, reads the meter and mails the bill. A solar proposal for a Hayward home needs both sets of charges, taken from your own statement rather than a PG&E-only estimate.",
     local: "Hayward accepts residential solar permits through SolarAPP+, and in March 2025 the automated route carried most of the volume: the City's own permit log for March 2025 lists 25 photovoltaic permits issued through SolarAPP+ against 10 conventional flush-mount permits. Before applying, the City asks you to confirm the address is inside Hayward rather than unincorporated Alameda County, and whether it falls in Hayward's Airport Safety Zone, where an FAA glare review comes first.",
     example: "If you live near Hayward's airport, ask each bidder to check the City's map for the Airport Safety Zone before quoting a start date. Inside the zone, the City will not process the permit until the FAA has reviewed a glare study with Form 7460-1 and issued a finding of No Hazard.",
     sources: [
@@ -3478,7 +3805,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "heading": "Mounting, inspection and Ava's solar rules",
         "paragraphs": [
           "The City's checklist says flush-mounted panels do not need structural calculations, but panels tilted steeper than the roof do, to verify wind resistance, and those calculations must be stamped and signed by an engineer and are reviewed at hourly rates. At the final inspection, the permit holder provides a safe ladder rated for at least 250 pounds that extends 3 feet above the roof and is secured, and the home must be open so the inspector can check smoke and carbon monoxide alarms; a signed self-certification can be offered instead.",
-          "On the bill, a new system in Hayward goes on the Solar Billing Plan, and Ava requires its residential customers on that plan to take PG&E's E-ELEC rate. Ava pays an extra $0.025 per kWh for exports between 3 and 8 p.m. to customers not on CARE or FERA, and $0.01 per kWh on all exports to CARE and FERA customers. Ask each bidder how many of your exports its model places in those hours."
+          "For the bill, expect Ava's Solar Billing Plan terms: residential solar customers must move to E-ELEC, and Ava tops up the export credit by 2.5 cents per kWh in the 3-to-8 p.m. window (1 cent on every exported kWh for CARE and FERA households). A Hayward bid that counts that bonus on midday exports is overstating it."
         ]
       }
     ],
@@ -5156,7 +5483,7 @@ export const growthCities: Record<string, GrowthCity> = {
     name: "Santa Ana",
     county: "Orange County",
     utility: "sce",
-    bill: "Santa Ana is Southern California Edison territory for both generation and delivery. The Energy Commission's map shows no community choice provider over the city, and Orange County Power Authority's member cities do not include Santa Ana. Since November 2025 SCE bills have carried a fixed Base Services Charge that solar does not reduce, so a proposal should show what remains on your SCE bill, not just what it offsets.",
+    bill: "In Santa Ana, SCE sells and delivers the electricity: no community choice program is mapped over the city by the Energy Commission, and it is not among Orange County Power Authority's members. Every SCE residential bill now includes a fixed monthly Base Services Charge, $24.15 for most customers, which solar leaves in place, so a proposal should show what remains on your SCE bill, not just what it offsets.",
     local: "Since June 1, 2026, the City of Santa Ana issues residential solar permits only after SolarAPP+ approval; projects without it are not processed. Only licensed contractors registered with SolarAPP+ may apply, permit runners may not, and ballasted systems and unpermitted structures are not eligible. SolarAPP+ charges $35, which covers up to three revisions, and the City's own permit fee is the same as for a regular solar permit.",
     example: "If a Santa Ana bid includes a battery, ask where it will go before you sign. The Planning Division does not allow storage equipment where it can be seen from the street without approved screening, and a battery in a garage cannot push the equipment or its protective bollard into the required parking space. The Fire Department also requires smoke alarms, and in some rooms an interconnected heat alarm, where storage is installed.",
     sourceCheckedDate: "2026-09-23",
@@ -5263,7 +5590,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "heading": "Battery placement and SCE's bill",
         "paragraphs": [
           "Santa Ana adds two conditions to storage that many cities leave to the general code. Planning does not allow batteries, power walls and similar equipment where they are visible from the public right-of-way, and any screening needs Planning Division approval. Fire rules require smoke alarms in rooms, basements and attached garages where storage is installed, with a listed heat alarm interconnected to them where a smoke alarm cannot go. A bid that includes a battery should show its location on the plan.",
-          "On the bill side, a new Santa Ana system is on SCE's Solar Billing Plan. Exports earn Energy Export Credits, SCE sends a yearly settlement bill in the month the system started service, and any leftover surplus is paid at SCE's Net Surplus Compensation Rate, which SCE puts at about $0.02 per kWh. SCE's fixed Base Services Charge, $24.15 a month for customers not on CARE or FERA, stays either way."
+          "For the bill, a Santa Ana home that adds solar now is credited under SCE's Solar Billing Plan: what you send out is valued by the hour, the balance is squared up in an annual True-Up bill, and a year-end surplus is bought back at roughly two cents per kWh. With exports worth that little, the battery questions above matter for the savings estimate as much as for the permit."
         ]
       }
     ],
@@ -5273,7 +5600,7 @@ export const growthCities: Record<string, GrowthCity> = {
     name: "San Bernardino",
     county: "San Bernardino County",
     utility: "sce",
-    bill: "San Bernardino is Southern California Edison territory, and the Energy Commission's map shows no community choice provider over the city, so SCE supplies generation and delivery on one bill. A new system goes on SCE's Solar Billing Plan, with exports credited monthly and a yearly settlement. SCE's fixed Base Services Charge stays on the bill whatever the system produces.",
+    bill: "San Bernardino has no community choice program on the Energy Commission's utility map; Southern California Edison supplies the generation, delivers it and bills for both. A new system goes on SCE's Solar Billing Plan, with exports credited monthly and a yearly settlement. SCE's fixed Base Services Charge stays on the bill whatever the system produces.",
     local: "The City of San Bernardino sends residential solar and storage permits under 38.4 kilowatts to the Symbium portal for instantaneous plan review under Senate Bill 379, and says processing may take about one to three business days. An active City business license is required before the permit is issued, and a main panel upgrade needs its own electrical permit from the City's Solar Division of Community Development and Housing.",
     example: "Ask each San Bernardino bidder whether the job will go through Symbium or the Building and Safety counter at Vanir Tower, and whether the price includes the separate electrical permit if your main panel needs upgrading. A bid that skips either answer may be assuming a timeline or a permit the City will not give.",
     sourceCheckedDate: "2026-09-23",
@@ -5595,8 +5922,8 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "heading": "How Ava credits a Berkeley solar system",
         "paragraphs": [
-          "A new Berkeley system goes on the Solar Billing Plan, and Ava requires residential customers on it to take PG&E's E-ELEC rate. Exports earn credits that vary by hour. Ava adds $0.025 per kWh for exports between 3 and 8 p.m. for customers not on CARE or FERA, and $0.01 per kWh on all exports for CARE and FERA customers.",
-          "The statewide Energy Export Bonus Credit is locked for nine years at the value for the year you interconnect; Ava lists it at $0.009 per kWh for a standard residential system interconnected in 2026 and $0.036 for income-qualified households. Ava settles its side each April and pays out a surplus of $100 or more, while PG&E settles delivery on its own date. Ask each bidder which hours its model assumes your exports happen in."
+          "Berkeley is in Ava's service area. For a system interconnected now, Ava's version of the Solar Billing Plan applies, and it only works alongside PG&E's all-electric E-ELEC rate, which Ava makes a condition. The credit for each exported kWh depends on the hour it leaves the house. Ava pays a premium for evening exports, from 3 to 8 p.m., if you are not on a discount program, while households on CARE or FERA get a smaller premium on every exported kWh instead.",
+          "The two halves of the account close on different calendars: Ava reconciles generation every April, and PG&E reconciles delivery on its own annual date. A Berkeley proposal should therefore show two annual statements, not one, and say which hours of the day it expects your panels to feed the grid."
         ]
       }
     ],
@@ -5736,7 +6063,7 @@ export const growthCities: Record<string, GrowthCity> = {
       ],
       [
         "SCE bill",
-        "Model SCE's Solar Billing Plan and the fixed Base Services Charge from your own twelve months of bills."
+        "Build the estimate on your last twelve SCE bills and keep the fixed monthly charge in it."
       ]
     ],
     sources: [
@@ -5747,10 +6074,6 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "label": "SCE: Solar Billing Plan",
         "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
-      },
-      {
-        "label": "SCE: Base Services Charge",
-        "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
       },
       {
         "label": "Orange County Power Authority: about and member cities",
@@ -5819,8 +6142,223 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "heading": "What SCE's rules mean for a Yorba Linda system",
         "paragraphs": [
-          "On SCE's Solar Billing Plan, each kWh you send to the grid earns an Energy Export Credit whose value depends on the hour, and SCE settles the account once a year in the month the system started service. Surplus that remains after the settlement is paid at SCE's Net Surplus Compensation Rate, which SCE gives as about $0.02 per kWh. SCE points out that storing your own energy for expensive hours is now worth more than exporting it.",
-          "The Base Services Charge, which SCE began billing in November 2025, is $24.15 a month for customers not on CARE or FERA, $12.08 on FERA and $6.00 on CARE, and solar does not change it. When you compare Yorba Linda bids, check that each savings estimate leaves that charge on the bill."
+          "A Yorba Linda system connected today is billed under SCE's Solar Billing Plan. Exports are credited at prices that move hour by hour, the running balance is reconciled once a year in the month your system was switched on, and any credit left over is bought back at roughly two cents per kWh. SCE itself now says that storing your own energy for expensive hours is worth more than exporting it.",
+          "SCE's monthly Base Services Charge is billed whether or not you have panels, so a proposal that shows your bill falling to zero has left something out. Ask each bidder for a month-by-month estimate of the SCE bill you would still pay."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  oxnard: {
+    name: "Oxnard",
+    county: "Ventura County",
+    utility: "sce",
+    bill: "Clean Power Alliance has supplied Oxnard's generation since 2019, and 100% Green is the city's default option, so most Oxnard homes pay CPA for generation and SCE for delivery on one SCE bill. CPA trues up solar customers every April and pays surplus at 10% above SCE's rate. A proposal should model your actual CPA option, not SCE's generation rates.",
+    local: "Oxnard issues solar permits in real time online for licensed contractors who have a SolarAPP+ approval. The contractor applies in the City's Click2Gov system, which requires a CSLB license, a City of Oxnard Business Tax Certificate, and a Click2Gov contractor account opened with the same phone number used for the business license. The application records the SolarAPP+ Approval ID, system kilowatts and panel count, which print on the permit.",
+    example: "Before you sign with an Oxnard bidder, ask whether it already has a City of Oxnard Business Tax Certificate and a Click2Gov contractor account, since the City's online solar permit cannot be pulled without both. Then check that the kilowatts and panel count it will print on the permit match the contract.",
+    sourceCheckedDate: "2026-09-23",
+    hasSavingsGuide: false,
+    checks: [
+      [
+        "City credentials",
+        "Confirm a CSLB license, a City of Oxnard Business Tax Certificate and a Click2Gov contractor account."
+      ],
+      [
+        "Permit details",
+        "Check that the SolarAPP+ Approval ID, system kW and panel count on the permit match the contract."
+      ],
+      [
+        "Inspection timing",
+        "Say who requests the inspection; the City requires it within 365 days of permit issuance."
+      ],
+      [
+        "CPA option",
+        "Price the generation at the CPA product on your bill, which is 100% Green unless you changed it."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of Oxnard Building and Engineering: online express solar processing with SolarAPP+ and Click2Gov",
+        "url": "https://sites.google.com/oxnard.org/onlinesolarpermitswithsolarapp/home"
+      },
+      {
+        "label": "Clean Power Alliance: Oxnard (default option, service start)",
+        "url": "https://cleanpoweralliance.org/place/oxnard/"
+      },
+      {
+        "label": "Clean Power Alliance: solar, NEM and Solar Billing Plan",
+        "url": "https://cleanpoweralliance.org/solar/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "How do I get a solar permit in Oxnard?",
+        "A licensed contractor gets SolarAPP+ approval, then applies in the City's Click2Gov system, uploads the approval documents, pays online and prints the permit in real time. Projects without SolarAPP+ approval use the City's other application options."
+      ],
+      [
+        "What does a contractor need to pull a solar permit in Oxnard?",
+        "A CSLB contractor license, a City of Oxnard Business Tax Certificate, and a Click2Gov account set up with the same phone number used for the business license."
+      ],
+      [
+        "Is Oxnard served by Clean Power Alliance?",
+        "Yes. CPA has served Oxnard since 2019, with 100% Green as the default option. SCE delivers the power and sends the bill."
+      ]
+    ],
+    answer: "Oxnard issues rooftop solar permits in real time online: a licensed contractor with a SolarAPP+ approval applies, pays and prints the permit in the City's Click2Gov system, provided it holds a City of Oxnard Business Tax Certificate. Clean Power Alliance supplies Oxnard's generation, 100% Green by default, and SCE delivers it. Compare at least three written bids built on your own CPA and SCE bill.",
+    keyFacts: [
+      {
+        "label": "Permit route",
+        "value": "SolarAPP+, then Click2Gov",
+        "note": "Real-time online issuance for licensed contractors",
+        "source": {
+          "publisher": "City of Oxnard",
+          "date": "2026-09-23",
+          "url": "https://sites.google.com/oxnard.org/onlinesolarpermitswithsolarapp/home"
+        }
+      },
+      {
+        "label": "City credential",
+        "value": "Business Tax Certificate",
+        "note": "Required to pull the permit online",
+        "source": {
+          "publisher": "City of Oxnard",
+          "date": "2026-09-23",
+          "url": "https://sites.google.com/oxnard.org/onlinesolarpermitswithsolarapp/home"
+        }
+      },
+      {
+        "label": "Default generation option",
+        "value": "CPA 100% Green",
+        "note": "Serving Oxnard since 2019; SCE delivers",
+        "source": {
+          "publisher": "Clean Power Alliance",
+          "date": "2026-09-23",
+          "url": "https://cleanpoweralliance.org/place/oxnard/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Oxnard's Click2Gov solar permit",
+        "paragraphs": [
+          "The City of Oxnard's Building and Engineering Division runs online express solar processing for contractors who already have a SolarAPP+ approval. Only SolarAPP+-reviewed permits can be applied for in Click2Gov; other projects use the City's other application options. The contractor must be licensed with the CSLB and hold a City of Oxnard Business Tax Certificate, also called a City business license. Its Click2Gov account has to be associated with a contractor and set up with the same phone number the contractor gave the City's Licensing Division; without that match, the account cannot be validated.",
+          "In the application, the contractor enters the SolarAPP+ Approval ID, the system's kilowatts and the number of panels, which print on the permit, then uploads the SolarAPP+ approval documents. Once the application is created, it can pay online, print the permit and request the inspection from the same site. Inspections must be requested within 365 days of issuance. The Division is at 214 South C Street, (805) 385-7925."
+        ]
+      },
+      {
+        "heading": "Clean Power Alliance and an Oxnard solar bill",
+        "paragraphs": [
+          "Oxnard homes have been enrolled with Clean Power Alliance since 2019, and the city's default is CPA's 100% Green Power product. Which solar rules apply depends on the date SCE approved the system. Older systems keep net energy metering with CPA for the full 20 years they are eligible. A system whose interconnection application was filed after August 2023 is billed under two Solar Billing Plans at once, CPA's for the power it supplies and SCE's for delivery, and the export credits change by hour according to the CPUC's avoided-cost values.",
+          "Unlike SCE, which settles each account on its own anniversary, CPA runs one annual settlement for all solar customers in April. If a year's exports exceed imports, CPA's compensation rate is set 10% higher than SCE's. A balance above $100 is mailed as a check, and a smaller one is carried as a credit on the CPA portion of the bill, though you can request a check. Ask each Oxnard bidder to show which CPA product and which true-up month its model assumes."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  redlands: {
+    name: "Redlands",
+    county: "San Bernardino County",
+    utility: "sce",
+    bill: "Southern California Edison is the only electric provider mapped over Redlands in the Energy Commission's utility layers, so SCE both supplies and delivers the power; there is no community choice program to model. What changes with solar is how SCE credits the power you send back, which is set by its Solar Billing Plan. Ask each bidder to model that plan from your own twelve months of SCE bills.",
+    local: "Redlands lets licensed contractors submit residential roof-mounted solar through SolarAPP+ and get an auto-issued permit online. Eligible systems go on the main dwelling's roof of a permitted residential structure; ballasted and ground-mounted systems are excluded. After SolarAPP+ approval, the contractor applies in the City's Online Public Portal under SolarAPP+ (Preapproved), pays online and prints the permit, and books the inspection through the QR code on the job card.",
+    example: "If one Redlands bid puts panels on a detached garage or on a ground mount and another keeps them on the house, they are on different permit paths: the City's SolarAPP+ route covers only the main dwelling's roof. Ask each bidder which path it is using and who handles the plan review if it is not SolarAPP+.",
+    sourceCheckedDate: "2026-09-23",
+    checks: [
+      [
+        "SolarAPP+ eligibility",
+        "Confirm the array is on the main dwelling's permitted roof and is not ballasted or ground-mounted."
+      ],
+      [
+        "Revisions",
+        "Ask how design changes will be handled; SolarAPP+'s initial fee covers up to three revisions."
+      ],
+      [
+        "Inspection booking",
+        "Say who books the inspection through the job card's QR code or the City's online booking page."
+      ],
+      [
+        "SCE bill",
+        "Model SCE's Solar Billing Plan from your own bill and state the share of output you use at home."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of Redlands: SolarAPP+ program (eligibility, portal, inspections, revisions)",
+        "url": "https://www.redlands.gov/solarapp-pilot-program/"
+      },
+      {
+        "label": "SCE: Solar Billing Plan",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "How do I get a solar permit in Redlands, CA?",
+        "A licensed contractor submits the design to SolarAPP+, then applies in the Redlands Online Public Portal under SolarAPP+ (Preapproved), enters the approval number, uploads the approval document, pays online and prints the permit."
+      ],
+      [
+        "What happens if my Redlands solar design changes after approval?",
+        "The revision goes back through SolarAPP+ first, which issues a revised approval document; SolarAPP+'s initial fee covers up to three revisions. If the change makes the project ineligible, the contractor coordinates with the City's Building and Safety Division."
+      ],
+      [
+        "Who provides electricity in Redlands?",
+        "Southern California Edison. It is the only electric provider the Energy Commission maps over the city."
+      ]
+    ],
+    answer: "Solar companies in Redlands can get an auto-issued permit for a roof-mounted system on the main house through SolarAPP+ and the City's Online Public Portal; ground-mounted and ballasted systems need a different path. SCE supplies and delivers Redlands' power, and new systems go on SCE's Solar Billing Plan. Compare at least three written bids that name the permit path and model your own SCE bill.",
+    keyFacts: [
+      {
+        "label": "Permit route",
+        "value": "SolarAPP+, auto-issued",
+        "note": "Main dwelling rooftop; licensed contractors",
+        "source": {
+          "publisher": "City of Redlands",
+          "date": "2026-09-23",
+          "url": "https://www.redlands.gov/solarapp-pilot-program/"
+        }
+      },
+      {
+        "label": "Not eligible",
+        "value": "Ballasted or ground-mounted",
+        "note": "Not eligible for the SolarAPP+ route",
+        "source": {
+          "publisher": "City of Redlands",
+          "date": "2026-09-23",
+          "url": "https://www.redlands.gov/solarapp-pilot-program/"
+        }
+      },
+      {
+        "label": "Revisions covered",
+        "value": "Up to 3",
+        "note": "Included in SolarAPP+'s initial processing fee",
+        "source": {
+          "publisher": "City of Redlands",
+          "date": "2026-09-23",
+          "url": "https://www.redlands.gov/solarapp-pilot-program/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Redlands' four SolarAPP+ steps",
+        "paragraphs": [
+          "The City's Building and Safety Division sets out four steps. Eligibility: the system is on the rooftop of the main dwelling, the structure is permitted and residential, it is not ballasted or ground-mounted, and the applicant is a licensed contractor. Automated review: the contractor submits the design to SolarAPP+ with its license information and pays SolarAPP+'s processing fee. Permit: in the Redlands Online Public Portal it selects SolarAPP+ (Preapproved), enters the approval number, uploads the approval document, pays online and prints the permit documents. Inspection: it books through the QR code on the job card or the City's online booking page.",
+          "Revisions go back through SolarAPP+ first, which issues a revised approval document; the initial fee covers up to three. If a revision makes the project ineligible, the contractor has to coordinate a regular submittal with the Division."
+        ]
+      },
+      {
+        "heading": "SCE's Solar Billing Plan in Redlands",
+        "paragraphs": [
+          "Under the Solar Billing Plan, power a Redlands home sends to the grid earns credits priced from hourly avoided-cost values, and those credits are applied against later bills. Once a year, in the month the system first went live, SCE issues a True-Up bill that settles the running balance. What is left over after that is bought back at SCE's surplus rate, which SCE currently puts near two cents per kWh.",
+          "Because the buy-back rate is so low, a Redlands design that sends most of its output to the grid is worth less than its kilowatt-hour total suggests. Ask each bidder what share of the production its model assumes you use at home, and whether a battery changes that."
         ]
       }
     ],

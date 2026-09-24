@@ -65,6 +65,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   oakland: [37.7695164, -122.2244858], // Oakland city, GEOID 0653000
   oceanside: [33.2246458, -117.3084145], // Oceanside city, GEOID 0653322
   ontario: [34.0392592, -117.6064073], // Ontario city, GEOID 0653896
+  oxnard: [34.2005568, -119.2142226], // Oxnard city, GEOID 0654652 (queried 2026-09-23)
   'pacific-grove': [36.6224077, -121.9262315], // Pacific Grove city, GEOID 0654848
   'palm-desert': [33.7377747, -116.3695003], // Palm Desert city, GEOID 0655184
   'palm-springs': [33.8015805, -116.5380755], // Palm Springs city, GEOID 0655254
