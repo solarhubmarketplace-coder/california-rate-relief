@@ -1,261 +1,111 @@
-> **Read first (added 2026-09-24).** This file describes the code as of April 2026, and parts of it are out of date. Business, SEO, content and writing rules live outside the repo, in `D:\5_Solar_Business\Web_Projects\` on Chad's machine (the only working folder): start at `00_START_HERE.md`, then `01_STATE\SITE_BLUEPRINT.md` and `01_STATE\CURRENT_STATE.md`. Where this file and those disagree, they win.
+# CLAUDE.md: California Rate Relief codebase
 
-# California Rate Relief — Solar CRM Project
+**Read first.** The one working folder is on Chad's machine: `D:\5_Solar_Business\Web_Projects\`.
+Before changing anything, read, in order:
+1. `00_START_HERE.md`
+2. `01_STATE\SITE_BLUEPRINT.md`
+3. `01_STATE\CURRENT_STATE.md` (owns live status and "next work")
+4. `01_STATE\RULES.md`
+5. `01_STATE\CODE_MAP.md`
 
-## What This Project Is
+Business, SEO, content and writing rules live there. Where they differ from this file, they win.
+This file covers only the code. Checked against branch `claude/ta-release-20260923` on 2026-09-24.
 
-An AI-powered solar appointment booking and CRM system that operates as a **neutral, third-party qualification site** called the **"California Rate Relief Program."** It automates the entire lead lifecycle — from initial contact through appointment scheduling — using AI voice agents, automated email sequences, and SMS campaigns.
+## What this repo is
 
-**The system runs across subsites and never mentions any specific installer, manufacturer, or financing company.** It helps California homeowners check if they qualify for net metering, confirms their info, and books them into a savings assessment. The actual installer/program details are only introduced after booking.
+- One Next.js 15 app (`Code/Frontend`) serves five sites. Host routing is in `Code/Frontend/src/middleware.ts`.
+- One Node/Express API (`Code/Backend`) serves `api.ratereliefca.com`: lead intake, the staff CRM API, voice calls, SMS and email. Data is in Supabase (Postgres).
+- The main site is California Rate Relief (ratereliefca.com), an independent California solar information and referral site. It is not a contractor and installs nothing.
 
-## Project Identity & Positioning (CRITICAL)
+| Site | Host | What the middleware does |
+|---|---|---|
+| California Rate Relief | ratereliefca.com (localhost and 127.0.0.1 are treated as this site) | `/reviews/*` 301s to greenreviewshub.com. Then the CRR redirect table (301). Sibling-site prefixes 404, except `/best-solar-companies-california` and `/tools/solar-panel-calculator`. |
+| Green Reviews Hub | greenreviewshub.com | `/` 302s to `/reviews`. Serves `/reviews*` and the shared trust pages only. |
+| Secure Home Gear | securehomegear.com | `/` rewrites to `/shg-home`. Serves `/cameras`, `/alternatives`, 7 `/compare/<a>-vs-<b>` pages and trust pages. |
+| At Home Biohacking | athomebiohacking.com | `/` rewrites to `/ahb-home`. Serves `/cold-plunge`, `/infrared-sauna`, `/pemf`, `/red-light-therapy`, `/vibration-plate`, `/guides`, `/learn`, `/vs` and trust pages. |
+| GLP1 Compare Hub | glp1comparehub.com | `/` rewrites to `/glp1-home`. Each route gets a redirect (308), 404 or noindex from `src/lib/glp1-seo-routes.ts`. |
+| Any other host | | 404, except `/api`. |
 
-- **Public-facing name:** "California Rate Relief Program"
-- **AI voice agent name:** Sarah
-- **Positioning:** Neutral third-party qualification service — NOT a solar company
-- **NEVER mention:** Any installer, manufacturer, or financing company by name (no Axia, QCells, EnFin, SunPower, etc.)
-- **NEVER say:** "our installers," "our partner," "we install," or anything implying we are a solar company
-- **How the program is described (only if the lead asks):** "We put solar panels on your roof at no cost out of pocket. Instead of paying [Utility] a different amount every month and never knowing what your bill's gonna be, you'd pay a fixed monthly payment that's usually 30 to 50% less than what you're paying now. All year round, for as long as you live there."
-- **All framing goes through:** The utility and net metering — not any company
-- **Target:** California homeowners (PG&E, SCE, SDG&E territories)
-- **Product:** PPA (Power Purchase Agreement) under NEM 3.0
-- **Goal of every call:** Confirm lead info → qualify → book a 15-30 min virtual savings assessment
+- Shared trust pages are host-aware on every domain: `/about`, `/contact`, `/affiliate-disclosure`, `/privacy`, `/terms`, `/methodology`, `/author/*`.
+- CRR cannot use these prefixes (the middleware 404s them): `/best*`, `/compare*`, `/tools*`, `/news*`, `/pricing*`, `/guides*`, `/learn*`, `/vs*`, `/research*`, `/providers*`, plus the other sibling-site prefixes listed in `middleware.ts`.
 
-## AI Voice Bot Approach
+## Deploy
 
-The bot is NOT pitching. It already has the lead's info from their website inquiry (name, utility provider, address, monthly bill, credit score). The call is:
+- A push to GitHub `main` (`solarhubmarketplace-coder/california-rate-relief`) deploys.
+  - Railway: ratereliefca.com from `/Code/Frontend`; api.ratereliefca.com from `/Code/Backend`.
+  - Vercel: the four sibling sites (`vercel.json` also runs a `/api/keep-alive` cron).
+- Only Chad pushes. Nothing is pushed, deployed or published without his explicit word in the session.
+- Never use `push_to_github.bat` at the repo root. It targets a different repo.
 
-1. **Opener:** "Hello?" + pause → "Hi [Name], this is Sarah with the California Rate Relief Program, calling on a recorded line. I'm following up on your inquiry — I see you're with [Utility] and your bills have been around $[amount]. Those rates have been climbing, right?"
-2. **Confirm:** Bill amount → homeowner status → credit score → roof sun exposure
-3. **Book:** "You qualify. What time works for a 15-30 minute savings assessment?"
-4. **Only explain the program if they ask.** Don't volunteer a pitch.
+## Code map (`Code/Frontend/src`)
 
-**Voice:** OpenAI Realtime API, "coral" voice (warm female), natural pauses (200-500ms)
+| Path | What |
+|---|---|
+| `middleware.ts` | Host routing for the five sites; serves the CRR redirect table |
+| `app/` | All routes, CRR and sibling sites side by side |
+| `app/sitemap.ts`, `app/robots.ts` | Host-aware sitemap and robots (`detectDomainKey`) |
+| `app/blog/page.tsx` | Blog index, grouped by topic hub |
+| `app/(main)/dashboard/*`, `app/(auth)/login` | Staff CRM screens (leads, calls, appointments, email, SMS, settings) |
+| `data/cities-data.ts`, `growth-cities.ts`, `city-cost-data.ts` | City page data (three overlapping files) |
+| `data/article-pages.{battery,commercial,installer,problems}.json` | JSON long-form articles; types in `article-types.ts` |
+| `data/topic-hubs.ts` | `TOPIC_HUBS` and `PRIMARY_HUB` (hub/spoke links, breadcrumbs, blog grouping) |
+| `data/json-article-links.ts` | "Next question" links for JSON articles (append only) |
+| `data/utility-rate-tracker.ts`, `solar-cost-index.ts`, `rate-sources.ts` | Rate tracker and cost index data |
+| `lib/canonical-redirects.ts` (+ `.test.ts`) | CRR 301 table (31 rows), `isRedirectedPath`, `savingsCityHref`, `companiesCityHref` |
+| `lib/growth-routes.ts` | `GROWTH_ROUTES`, `PUBLIC_CRR_NO_SESSION_ROUTES` (skip the Supabase session check) |
+| `lib/city-pages.ts`, `breadcrumbs.ts`, `cta-intent.ts` | City page helpers, breadcrumb trail, CTA routing |
+| `components/growth/` | `DecisionPage`, `HubSpokeLinks`, `JsonArticleLinks`, `HeroQuickCheck`, guide shells, city page parts |
+| `components/landing/` | Header, Footer, home sections, `QualificationWizard`, `CommercialAssessmentForm` |
+| `components/shared/` | `ArticleRoute`, `ArticleRenderer`, schema and breadcrumb components |
+| `app/crr-palette.css`, `app/globals.css`, `tailwind.config.ts` | Design tokens. Fonts: Plus Jakarta Sans + DM Serif Display via `next/font` in `app/layout.tsx`. |
+| `../scripts/` | QC gates, link asserts, link-graph crawler, IndexNow |
 
-## Key Decisions Already Made (April 2026)
+Other redirects: `next.config.js` `redirects()` holds 2 rules (308, not host-scoped).
 
-- Voice changed from "shimmer" to "coral" (warm female)
-- "Hello?" + pause disarming opener implemented (replaces old "Hi, this is Sarah calling on a recorded line..." opener)
-- All branding removed — no Sun Speed, no Axia, no QCells, no EnFin anywhere in production code
-- Lead qualification data (utility, bill, address, credit) now injected into AI prompt on EVERY call including first contact (was previously only on return calls — bug fixed in context.service.js and socket.service.js)
-- Default timezone changed from America/New_York to America/Los_Angeles
-- All SMS, email, and voicemail templates updated to "California Rate Relief Program" neutral framing
-- Email color scheme changed from orange to blue (institutional/neutral feel)
-- Confirm-and-book approach: no unsolicited pitching, program explanation only when asked
+## Page patterns
 
-## Still TODO
+- **Hand-written:** `app/<section>/<slug>/page.tsx`. Many blog posts wrap `components/growth/DecisionPage`; others use guide shells (`GuideShell`, `CostFinGuideShell`, `RateGuideParts`).
+- **JSON articles:** an entry in `data/article-pages.*.json`, rendered by the section's `[slug]` route through `ArticleRoute`, and gated by `scripts/qc-gate.mjs`.
+- **City pages:** dynamic `[city]` routes under `/solar-companies`, `/solar-cost` and `/solar-savings`, fed by the three city data files. `/solar-cost` sets `dynamicParams = false`.
+- A new page also needs its sitemap entry, blog index entry, hub spoke and links. Steps: `SITE_BLUEPRINT.md` section 4.5.
 
-- **Follow-up sequences:** Build 8-touch, 90-day SMS+email cadence for leads who don't book (D0, D1, D3, D7, D14, D30, D60, D90) per playbook
-- **Cold email campaign:** 50k non-opted-in lead system with warm-up, domain rotation, CAN-SPAM compliance
-- **Show-up system:** Add 2h reminder, personalized savings teaser in confirmation, pre-call education content
-- **ElevenLabs TTS:** A/B test after 50-100 calls (playbook recommends)
-- **Utility-specific savings data:** Bake PG&E/SCE/SDG&E year-1 savings ranges deeper into knowledge base
-- **Frontend updates:** Landing page still references old branding in some components — needs neutral pass
+## Hard rules
 
-## Project Structure
+- Don't change forms, tracking, consent text or the intake contract without a job that names them. Files: `src/lib/intake.ts`, `intake-routing.ts`, `attribution.ts`, `submission-identity.ts`, `components/landing/QualificationWizard.tsx`, `CommercialAssessmentForm.tsx`, `components/GoogleAnalyticsClient.tsx`, and backend `intake.routes.js` / `intake.controller.js` / `intake.service.js`. Frontend, backend and the Supabase RPC `ingest_crr_submission` share one contract.
+- Don't change `app/robots.ts` or `middleware.ts` without a job that names them.
+- Never commit credentials. `.env` files are gitignored. `Code/Backend/.env` holds live keys.
+- Never send a real lead, email or SMS, or write to Supabase, without Chad's word.
+- Copy:
+  - Never "our installers", "our partner", "we install", or "free". No savings guarantees.
+  - Every number comes from a primary source.
+  - The compliance sentence is exact and never paraphrased: "California Rate Relief is a referral service. We are not a licensed contractor."
+  - Brand: "California Rate Relief". Whether to drop "Program" everywhere is an open decision; don't add it to site copy.
 
-```
-SunSpeed_Project/
-├── Code/
-│   ├── Backend/          # Node.js + Express API (port 8000)
-│   └── Frontend/         # Next.js + React + TypeScript (port 3000)
-└── Docs/                 # Business docs, specs, lead data, roadmap
-```
-
-## Tech Stack
-
-### Backend
-- **Runtime**: Node.js
-- **Framework**: Express.js 5.x
-- **Database**: Supabase (PostgreSQL)
-- **Real-time**: WebSocket (ws)
-- **AI**: OpenAI Realtime API (voice), OpenAI text models (analysis), vector embeddings (knowledge base)
-- **Voice**: Twilio SDK
-- **Email**: Resend
-- **Phone Parsing**: libphonenumber-js
-
-### Frontend
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **UI**: React 18 + shadcn/ui + Radix UI + Tailwind CSS
-- **State**: React Context + TanStack React Query
-- **Forms**: React Hook Form + Zod
-- **Charts**: Recharts
-- **Calendar**: FullCalendar
-
-## Backend Architecture
-
-Entry point: `Code/Backend/src/app.js`
-
-### Key Directories
-- `src/controllers/` — 14 controllers handling API requests
-- `src/services/` — 20+ services containing business logic
-- `src/routes/` — 14 route files, all prefixed `/api/`
-- `src/tools/definitions.js` — AI voice agent tool definitions
-- `src/lib/` — Supabase client wrappers
-- `src/middleware/` — Error handling
-- `src/config/` — Configuration, templates, AI prompts
-- `src/config/scripts.js` — **SINGLE SOURCE OF TRUTH** for all AI prompts, SMS templates, email templates
-- `migrations/` — SQL schema migrations
-
-### Core Services
-| Service | File | Purpose |
-|---------|------|---------|
-| Lead | `services/lead.service.js` | Lead CRUD, bulk import, dedup, auto-sequencing |
-| Voice | `services/voice.service.js` | Twilio calls, OpenAI Realtime integration |
-| Socket | `services/socket.service.js` | WebSocket streaming, AI tool execution, live calls |
-| Email | `services/email.service.js` | Resend integration, email sending/logging |
-| SMS | `services/sms.service.js` | Twilio SMS, local number matching |
-| Appointment | `services/appointment.service.js` | Scheduling, Google Calendar, timezone handling |
-| Queue | `services/queue.service.js` | Task queue with quiet hours, retries |
-| Scheduler | `services/scheduler.service.js` | Auto-dial, email sequence progression, reminders |
-| Email Sequence | `services/email-sequence.service.js` | Multi-step campaign management |
-| Context | `services/context.service.js` | Call history, lead data injection, in-memory caching |
-| AI Analysis | `services/ai-analysis.service.js` | Call summarization, quality scoring |
-| Knowledge Base | `services/knowledge-base.service.js` | Vector search for solar info |
-| Phone Matcher | `services/phone-matcher.service.js` | Geographic Twilio number selection |
-
-### API Routes
-| Route | Purpose |
-|-------|---------|
-| `/api/leads` | Lead CRUD, bulk import, upgrades |
-| `/api/voice` | Voice call initiation, transfer |
-| `/api/appointments` | Appointment management |
-| `/api/email-sequences` | Email campaign CRUD |
-| `/api/email-templates` | Template management |
-| `/api/email-logs` | Email history |
-| `/api/sms-logs` | SMS history |
-| `/api/settings` | System configuration |
-| `/api/auth` | Google OAuth flow |
-| `/api/users` | User management |
-| `/api/track` | Link click tracking |
-| `/api/webhook` | External event handling |
-| `/api/booking` | Public booking confirmation |
-| `ws://[server]/streams` | Real-time call streaming |
-
-### AI Voice Agent Tools
-The AI voice agent (OpenAI Realtime) can call these functions during a live call:
-1. `checkAvailability` — Query available appointment slots
-2. `bookAppointment` — Schedule confirmed appointments (only after explicit "yes")
-3. `search_knowledge_base` — Query solar knowledge base (net metering, PPA, NEM 3.0, tax credits)
-4. `transferCall` — Route to human agent
-
-## Frontend Architecture
-
-Entry point: `Code/Frontend/src/app/page.tsx`
-
-### Page Routes (App Router)
-| Route | Purpose |
-|-------|---------|
-| `/` | Public landing page with qualification wizard |
-| `/login` | Authentication |
-| `/dashboard` | Main dashboard with stats, charts, activity feed |
-| `/dashboard/leads` | Lead management table |
-| `/dashboard/calls` | Call history and transcripts |
-| `/dashboard/appointments` | Calendar view and appointment management |
-| `/dashboard/book` | Manual booking interface |
-| `/dashboard/email-templates` | Email template editor |
-| `/dashboard/email-logs` | Email campaign history |
-| `/dashboard/sms-logs` | SMS message history |
-| `/dashboard/settings` | System settings |
-| `/dashboard/users` | User management |
-| `/dashboard/testing` | Development testing interface |
-
-### Key Frontend Components
-- `components/landing/` — Public-facing: Hero, QualificationWizard, ValueProps
-- `components/dashboard/` — StatCard, ActivityFeed, CallTrendsChart, LiveCallsWidget
-- `components/leads/` — LeadTable, LeadDetailDrawer, AddLeadModal, BulkImportModal
-- `components/calls/` — CallLogTable
-- `components/ui/` — 50+ shadcn/ui primitives
-- `components/layout/` — DashboardLayout, PublicLayout
-- `components/calendar/` — FullCalendar integration
-- `components/voice/` — Voice call interface
-
-### Qualification Wizard Fields Collected
-- Full Name, Phone, Email, Home Address (Google Places autocomplete)
-- Utility Provider (SCE, PG&E, SDG&E, MVU, LADWP, Other)
-- Monthly Bill Amount ($150-200, $201-350, $351-500, $500+)
-- Homeowner Status (disqualifies renters)
-- Credit Score (Above 650 / Below 650 / Unsure)
-- Ad tracking: gclid, fbclid, utm_source, utm_campaign, utm_content
-
-## Database Schema (Supabase/PostgreSQL)
-
-### Core Tables
-- `leads` — id, name, phone, email, address, source, type (hot/cold), status, bill_amount, utility_provider, credit_score, qualification_data, ad tracking fields
-- `call_logs` — id, lead_id, duration, status, ai_summary, transcript, recording_url, cost_breakdown
-- `appointments` — id, lead_id, start_time, end_time, status, notes
-- `communication_tasks` — id, lead_id, type (sms/voice/email), status, scheduled_at, attempt_number
-- `email_sequences` — id, name, description, lead_type (hot/cold), is_active
-- `email_sequence_steps` — id, sequence_id, step_order, delay_days, subject, html_content
-- `lead_sequence_tracking` — id, lead_id, sequence_id, current_step, last_sent_at
-- `email_logs` — id, lead_id, template_id, email_to, status, subject
-- `sms_logs` — id, lead_id, phone_to, body, status
-
-## Key Business Logic
-
-### Lead Flow
-1. Lead created (single or bulk import) → auto-deduped by phone
-2. Classified as `hot` (immediate call) or `cold` (email nurture)
-3. Hot leads → queued for AI voice call + welcome SMS
-4. Cold leads → assigned email sequence for drip campaign
-5. AI voice call → confirms info → books savings assessment or schedules follow-up
-
-### Queue System
-- Configurable delays: SMS (30s), Voice (60s), Email (60s)
-- Quiet hours: 8 PM - 9 AM local time (DST-aware)
-- Weekend handling: auto-shifts to Monday 9 AM
-- Retry logic: configurable max attempts (default 2)
-- Business timezone: America/Los_Angeles
-
-### Phone Number Matching
-- Twilio numbers matched to lead area codes for local presence
-- Numbers configured in `config/twilio-numbers.json`
-- All phones normalized to E.164 format (+1XXXXXXXXXX)
-
-## External Service Dependencies
-| Service | Purpose | Config Key |
-|---------|---------|------------|
-| Supabase | Database + Auth | SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY |
-| OpenAI | Voice AI + Analysis + Knowledge Base | OPENAI_API_KEY, OPENAI_VECTOR_STORE_ID |
-| Twilio | Voice calls + SMS | TWILIO_ACCOUNT_SID, TWILIO_AUTH_TOKEN |
-| Resend | Email delivery | RESEND_API_KEY |
-| Google | Calendar + OAuth | GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET |
-
-## Development Commands
+## Quality gates (run from `Code/Frontend`; in Claude's container run the heavy ones one at a time via `flock /tmp/crr-tsc.lock`)
 
 ```bash
-# Backend
-cd Code/Backend
-npm install
-npm run dev          # Development with nodemon (port 8000)
-npm start            # Production mode
-
-# Frontend
-cd Code/Frontend
-npm install
-npm run dev          # Development server (port 3000)
-npm run build        # Production build
-npm start            # Production server
+NODE_OPTIONS=--max-old-space-size=4096 npx tsc --noEmit -p .
+npm run -s test:growth
+node --experimental-strip-types --test src/lib/canonical-redirects.test.ts src/lib/cta-intent.test.ts src/lib/intake-routing.test.ts src/lib/city-pages.test.ts src/data/solar-cost-index.test.ts
+node --test src/components/landing/Header.test.mjs
+node scripts/qc-gate.mjs
+node scripts/qc-gate-tsx.mjs      # 0 new fails vs the base branch
+npm run -s assert:citylinks
+npm run -s assert:linkspine
+npx next build                     # before delivery; about 10 minutes
 ```
 
-## CORS / Deployment
-- Allowed origins: localhost:3000, localhost:3001, localhost:8000, sun-crm.aiovix.com, ratereliefca.com
-- Twilio webhooks require public URL (ngrok for local dev)
+- Offline builds need `NEXT_FONT_GOOGLE_MOCKED_RESPONSES` and placeholder `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` (see `CODE_MAP.md`).
+- Backend tests: `cd Code/Backend && npm test` (jest).
 
-## Coding Conventions
-- Backend: CommonJS modules (`require`/`module.exports`), Express middleware pattern
-- Frontend: TypeScript, ES modules, functional components with hooks
-- API responses: Standardized `{ status, message, data, error }` format
-- Error handling: Global middleware catches and formats errors
-- File naming: kebab-case for files, PascalCase for React components
-- **All AI prompts, SMS templates, email templates live in `src/config/scripts.js`** — edit ONLY that file for copy changes
+## Backend (`Code/Backend`)
 
-## Important Notes
-- The `.env` file in Backend contains live API keys — never commit it
-- The `config/twilio-numbers.json` maps area codes to Twilio phone numbers
-- Voice calls use WebSocket streaming at the `/streams` endpoint
-- The scheduler runs on a 10-second interval checking for pending tasks
-- All timezone handling is DST-aware using America/Los_Angeles
-- Lead data (utility, bill, address, credit) is injected into the AI prompt on EVERY call including first contact
-- The bot does NOT pitch unless asked — it confirms info and books
+- Entry: `src/app.js` (Express 5, CommonJS). Port from `PORT`, default 8000. Settings in `src/config/index.js`.
+- Public endpoints come before `requireStaff`: `/api/health`, `/api/intake`, Twilio voice/SMS callbacks (signature-checked), the Resend webhook, unsubscribe and tracking links. Everything after `requireStaff` is the private CRM API.
+- WebSocket `/streams` carries live call audio (`services/socket.service.js`). `VOICE_PROVIDER` picks OpenAI Realtime (default) or Inworld.
+- On start it runs `scheduler.service.js` (queued calls, SMS, email sequences, reminders) and `owner-notification.service.js`.
+- `src/config/scripts.js` holds the voice-agent prompts ("Sarah") and the SMS and email fallback templates. Edit copy there. A few strings also sit in `voice.service.js` and `queue.service.js`. These backend scripts still use the name "California Rate Relief Program".
+- Voice-agent tools: `src/tools/definitions.js` (`checkAvailability`, `bookAppointment`, `search_knowledge_base`, `transferCall`).
+- Other services: `lead`, `intake`, `email`, `email-sequence`, `sms`, `appointment`, `calendar`, `queue`, `context`, `knowledge-base`, `phone-matcher` (numbers in `config/twilio-numbers.json`).
+- Schema: `migrations/` and `supabase/migrations/`. Business timezone defaults to America/Los_Angeles.
+- Operating status of calls, SMS, email and the CRM: `01_STATE\CURRENT_STATE.md` and `OPERATIONS_STATE.md` in the working folder.
