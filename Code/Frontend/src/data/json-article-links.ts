@@ -44,4 +44,17 @@ export const JSON_ARTICLE_RELATED: Record<string, JsonArticleRelated> = {
       { href: '/solar-problems/solar-lawsuit-california', label: 'What solar lawsuits in California have been about' },
     ],
   },
+  // Tier 2 (reviews lane): the rebate and Powerwall 2 vs 3 sections on this
+  // page name these pages in prose; the JSON body cannot link them inline.
+  '/battery/tesla-powerwall-3-cost-california': {
+    heading: 'Rebates, installation and alternatives',
+    links: [
+      { href: '/battery/pge-permanent-battery-storage-rebate', label: 'Who qualifies for PG&E’s $7,500 battery rebate' },
+      { href: '/battery/sgip-battery-rebate-california', label: 'SGIP battery budgets and waitlists, by administrator' },
+      { href: '/blog/solar-rebates-by-california-utility', label: 'Solar and battery incentives by California utility' },
+      { href: '/battery/add-powerwall-to-existing-solar', label: 'Adding a Powerwall to solar you already have' },
+      { href: '/battery/powerwall-vs-enphase-vs-franklinwh', label: 'Powerwall 3 against Enphase and FranklinWH' },
+      { href: '/solar-installers/tesla-solar-review', label: 'Tesla Solar review: panels, inverter and service' },
+    ],
+  },
 };

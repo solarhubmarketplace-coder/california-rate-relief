@@ -1,0 +1,36 @@
+{
+  "agent": "t2-reviews",
+  "branch": "claude/t2-reviews-20260923",
+  "checked": "2026-09-23",
+  "pages": [
+    {
+      "path": "/battery/tesla-powerwall-3-cost-california",
+      "action": "UPGRADE",
+      "hub": "installer_reviews",
+      "file": "src/data/article-pages.battery.json",
+      "title": "Tesla Powerwall 3 Cost in California (2026): Price, Rebates",
+      "clusters": [77, 228, 532],
+      "sources": [
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/2/Datasheet/en-us/Powerwall-2-Datasheet.pdf",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
+        "https://www.tesla.com/support/energy/powerwall/learn/how-powerwall-works",
+        "https://www.tesla.com/support/energy/powerwall/order/rebate",
+        "https://www.tesla.com/support/energy/powerwall/learn/incentives",
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "https://www.smud.org/Going-Green/Battery-storage/Homeowner",
+        "https://sdcommunitypower.org/solar-battery-savings/",
+        "https://cleanpoweralliance.org/sun-storage-rebate/",
+        "https://www.anaheim.net/5730/Battery-Storage",
+        "https://3cenergy.org/rebates/residential-battery-rebate-program/"
+      ],
+      "status": "done",
+      "note": "Adds 'Powerwall 2 vs Powerwall 3' (datasheets + Tesla support: 5 vs 11.5 kW, 106 vs 185 LRA, integrated inverter) and 'Which rebates apply to a Powerwall in California': Tesla Next Million rebate (registration closed 6/30/2026, claims by 12/31/2026), PG&E $7,500 (179 left 9/18), SMUD (cut to $300/kWh on 9/23/2026), SDCP, CPA, Anaheim, 3CE (closed 3/19/2026). Table now lists rebates; the old payment-path table content is kept in the tax section. Tesla's incentives page is stale (lists 3CE, SMUD $8,000) and still says Powerwall 'is designed to qualify for the Federal ITC'; the page says the IRS rule governs owned 2026 installs. Title adds 'Rebates'. Next-question links added to src/data/json-article-links.ts."
+    }
+  ],
+  "sitemap_add": [],
+  "blog_index_add": [],
+  "redirect_requests": [],
+  "hub_links": [],
+  "link_requests": [],
+  "skipped": []
+}

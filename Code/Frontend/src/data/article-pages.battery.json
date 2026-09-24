@@ -1255,10 +1255,10 @@
   {
     "slug": "tesla-powerwall-3-cost-california",
     "cluster": "battery",
-    "metaTitle": "Tesla Powerwall 3 Cost in California (2026): Installed Price",
-    "metaDescription": "What a Powerwall 3 costs installed in California in 2026: LBNL price data, what Tesla's quote covers, SGIP status on Sept. 23 and the NEM 3.0 math.",
-    "h1": "Tesla Powerwall 3 Cost in California (2026): Installed Price, Incentives and Sizing",
-    "intro": "A single Tesla Powerwall 3 is likely to cost somewhere around $10,000 to $13,500 installed in California before any panel upgrade, based on the only primary benchmark available: Lawrence Berkeley National Laboratory found that battery storage added roughly $750 to $1,000 per kWh to the price of paired residential systems installed in 2023, and a Powerwall 3 holds 13.5 kWh. Tesla itself does not print a price. Its Powerwall order page asks for your installation address before it shows anything, which we confirmed on September 23, 2026, so your number comes from a quote, not a price list.\n\nTwo things changed the math this year. The federal Residential Clean Energy Credit (Section 25D) no longer applies to a system installed after December 31, 2025, and most Self-Generation Incentive Program (SGIP) budgets for home batteries are closed. What is left is the reason most Californians buy a battery now: under the CPUC's net billing tariff, stored midday solar is worth more when you use it in the evening than when you export it. This page covers the price, the specs that move it, sizing, SGIP, the tax picture and what a battery can earn.",
+    "metaTitle": "Tesla Powerwall 3 Cost in California (2026): Price, Rebates",
+    "metaDescription": "What a Powerwall 3 costs installed in California, which rebates apply on Sept. 23, 2026 (Tesla, SGIP, PG&E, SMUD, CCAs) and how Powerwall 2 and 3 differ.",
+    "h1": "Tesla Powerwall 3 Cost in California (2026): Installed Price, Rebates and Sizing",
+    "intro": "A single Tesla Powerwall 3 is likely to cost somewhere around $10,000 to $13,500 installed in California before any panel upgrade, based on the only primary benchmark available: Lawrence Berkeley National Laboratory found that battery storage added roughly $750 to $1,000 per kWh to the price of paired residential systems installed in 2023, and a Powerwall 3 holds 13.5 kWh. Tesla itself does not print a price. Its Powerwall order page asks for your installation address before it shows anything, which we confirmed on September 23, 2026, so your number comes from a quote, not a price list.\n\nSeveral things changed the math this year. The federal Residential Clean Energy Credit (Section 25D) no longer applies to a system installed after December 31, 2025, most Self-Generation Incentive Program (SGIP) budgets for home batteries are closed, and Tesla's own $500-per-unit Powerwall 3 rebate stopped taking registrations on June 30, 2026. What is left is a set of local rebates that depend on who delivers your power, plus the reason most Californians buy a battery now: under the CPUC's net billing tariff, stored midday solar is worth more when you use it in the evening than when you export it. This page covers the price, the specs that move it, how Powerwall 3 differs from Powerwall 2, which rebates still apply, sizing, the tax picture and what a battery can earn.",
     "keyStats": [
       {
         "label": "Storage price premium (LBNL, 2023 installs)",
@@ -1266,9 +1266,19 @@
         "note": "National estimate; about $10,100–$13,500 for one 13.5 kWh Powerwall 3"
       },
       {
-        "label": "Powerwall 3 energy and power",
-        "value": "13.5 kWh / 11.5 kW",
-        "note": "Tesla datasheet (2025); 10-year warranty"
+        "label": "Continuous power, Powerwall 3 vs. 2",
+        "value": "11.5 kW vs. 5 kW",
+        "note": "Same 13.5 kWh usable energy and 10-year warranty (Tesla datasheets)"
+      },
+      {
+        "label": "Tesla's own Powerwall 3 rebate",
+        "value": "Closed",
+        "note": "Registration ended June 30, 2026; registered claims due Dec. 31, 2026"
+      },
+      {
+        "label": "PG&E Permanent Battery Storage Rebate",
+        "value": "$7,500",
+        "note": "Five or more Wildfire Safety outages since 2024; 179 left on Sept. 18, 2026"
       },
       {
         "label": "Federal 25D credit on a 2026 install",
@@ -1295,6 +1305,14 @@
         "body": "Tesla's 2025 datasheet lists 13.5 kWh of usable energy and on-grid output that can be configured at 5.8, 7.6, 10 or 11.5 kW. The unit has a built-in solar inverter with six maximum power point trackers and up to 20 kW of solar input. On a new solar-plus-battery job, that can remove the separate string inverter from the equipment list, which is part of why a combined Powerwall 3 job can cost less than the battery and inverter bought separately.\n\nTesla rates solar-to-home efficiency at 97.5% and solar-to-battery-to-home at 89%. The datasheet lists a 185 locked-rotor-amp load start rating, which matters if you want the battery to start a well pump or an air-conditioning compressor during an outage. The warranty is 10 years.\n\nA site can hold up to four Powerwall 3 units and up to three Expansion units, seven units in total. At 13.5 kWh each, that is 94.5 kWh at the upper limit. Most homes buy one. LBNL reports that the median residential battery installed in 2025 was 13.5 kWh, the size of a single Powerwall."
       },
       {
+        "heading": "Powerwall 2 vs. Powerwall 3: what actually changed",
+        "body": "Both batteries hold the same 13.5 kWh of usable energy and carry a 10-year warranty, so the difference is not capacity. It is power, and what sits inside the box. Tesla's Powerwall 2 datasheet (the version dated July 2, 2024) lists 5 kW of continuous power and 7 kW for ten seconds at peak. The 2025 Powerwall 3 datasheet lists up to 11.5 kW continuous on grid, more than twice as much, and Tesla's support page rates Powerwall 3's motor start at 185 locked-rotor amps against 106 for Powerwall 2. That motor-start figure is what decides whether one battery can start a central air conditioner or a well pump when the grid is down.\n\nThe second change is the inverter. Powerwall 2 has none for solar, and Tesla describes it as designed to be added on to existing solar systems. Powerwall 3 has a built-in solar inverter with six maximum power point trackers and up to 20 kW of solar input, and Tesla describes it as designed for owners installing a new solar and storage system. If you are buying panels and a battery together, that is equipment you do not pay for twice. If you already own solar with a working inverter, the real question is how a new battery connects to it, which our guide to adding a Powerwall to existing solar works through.\n\nRead the efficiency numbers with care, because Tesla does not measure them the same way. Powerwall 2 is rated at 90% round trip, AC to battery to AC. Powerwall 3 is rated at 89% from solar to battery to home and 97.5% from solar straight to the home. Powerwall 3 is also heavier, 291.2 lb installed against 251.3 lb, and one site can hold up to four Powerwall 3 units plus three Expansion packs, where Tesla's support page lists up to 10 units for Powerwall 2. Tesla's 2026 rebate, below, covered Powerwall 3 and Powerwall 3 Expansion only."
+      },
+      {
+        "heading": "Which rebates apply to a Powerwall in California (September 2026)",
+        "body": "There is no statewide Powerwall rebate. What you can claim depends on three things: whether Tesla's own offer covered your order, which utility or community choice aggregator (CCA) serves your address, and your household's outage history and income. Tesla keeps a list of California programs on its incentives page, but some entries there were out of date when we checked, so every figure below comes from the program's own page on the date shown.\n\nTesla's Next Million Powerwall Rebate paid $500 per Powerwall 3 or Powerwall 3 Expansion, up to $1,000 and up to two units per Tesla account, as a virtual Visa reward card. It covered orders placed from November 1, 2025 through June 30, 2026 and installed during 2026, and registration closed on June 30, 2026. If you registered in time, the final claim, with proof of payment and a screenshot of the Powerwall serial number, is due by December 31, 2026. It never applied to Powerwall 2.\n\nPG&E's Permanent Battery Storage Rebate pays $7,500 per household to first-time battery customers whose account has had five or more Wildfire Safety outages since January 1, 2024, who are on a time-of-use rate, and who enroll the battery in the Emergency Load Reduction Program through their provider. PG&E lists Tesla's Virtual Power Plant as one way to enroll. The battery must have been bought on or after January 1, 2025. PG&E showed 179 rebates left as of September 18, 2026, and the application is due within 12 months of Permission to Operate or by December 31, 2026, whichever comes first.\n\nSMUD pays an enrollment incentive to customers who put a battery on its Solar and Storage Rate and enroll within 90 days of Permission to Operate. It was $500 per kWh, up to $10,000, for projects submitted for interconnection by September 22 and enrolled by December 31, 2026. Interconnection applications received on or after September 23 get $300 per kWh, up to $6,000. SMUD also pays a quarterly incentive that it says is currently available only for Tesla batteries: $110 for one, $220 for two and $330 for three or more.\n\nSan Diego Community Power pays $350 per kWh for a new solar-and-battery system or $250 per kWh for a battery added to existing solar, rising to $500 and $350 per kWh for CARE, FERA and Community of Concern customers. The battery has to charge from solar, your contractor reserves the rebate before installation, and you agree to discharge half the battery during a weekday window, which pays another 10 cents per kWh. You cannot be enrolled in ELRP or the state's Demand Side Grid Support program at the same time.\n\nClean Power Alliance's Sun Storage Rebate pays $2,000 to a CPA customer who installs an eligible battery, plus $1,250 in Public Safety Power Shutoff areas and $250 for Medical Baseline or for CARE or FERA customers, but not both, up to $3,500 on a first-come, first-served basis. Anaheim Public Utilities pays up to $3,000 per household for a battery of at least 5 kWh if you stay on a time-of-use rate and in its MyPower Savings program for 12 months. Central Coast Community Energy's residential battery rebate closed to new applications on March 19, 2026, although Tesla's page still listed it.\n\nStack these against a quote, not a brochure. On LBNL's benchmark of about $10,100 to $13,500 for one installed Powerwall 3, a PG&E household that qualifies for the $7,500 rebate would be left with roughly $2,600 to $6,000 before any panel upgrade. Count only rebates you have confirmed in writing with the program, and read each program's rules on combining it with another, because PG&E, SGIP and the CCAs each set their own. The SGIP section below covers the income-limited state budgets, and our guide to solar and battery incentives by utility covers LADWP, Roseville and the other public utilities."
+      },
+      {
         "heading": "How many Powerwalls do you need?",
         "body": "Start from the job you want the battery to do. If the goal is lower bills under net billing, size the battery to the evening use you want to cover, which you can read off 12 months of hourly or 15-minute interval data in your utility account. A household that uses 10 to 12 kWh between late afternoon and bedtime is already close to what one Powerwall 3 stores.\n\nIf the goal is backup, list the circuits you need during an outage: refrigerator, internet, lights, a well pump, medical equipment, perhaps one air-conditioning zone. Power, not energy, is usually the limit. One unit can deliver up to 11.5 kW continuously on grid, and heavy motor loads need the start rating noted above.\n\nA second unit adds cost almost in proportion to the hardware, while the permit, the backup switching equipment and part of the electrical labor are paid once. Ask your installer to price one and two units on the same visit so you can see the real cost of the second 13.5 kWh."
       },
@@ -1308,7 +1326,7 @@
       },
       {
         "heading": "Federal tax credits: buying versus leasing",
-        "body": "If you buy the battery, with cash or a loan, there is no federal credit on a 2026 installation. IRS guidance on Public Law 119-21 says the Section 25D credit is not allowed for expenditures made after December 31, 2025, and that an expenditure counts as made when the original installation is completed. A deposit paid in 2025 does not carry the credit into a 2026 install.\n\nUnder a lease or power purchase agreement, the company that owns the equipment may claim the commercial credit under Section 48E. The statute ends that credit for solar and wind property placed in service after December 31, 2027 unless construction began in time, but it states that the cut-off does not apply to energy storage. Whether any of the owner's credit reaches you depends on the contract, so compare the monthly payment and escalator against a cash quote rather than assuming a lease passes the credit through."
+        "body": "If you buy the battery, with cash or a loan, there is no federal credit on a 2026 installation. IRS guidance on Public Law 119-21 says the Section 25D credit is not allowed for expenditures made after December 31, 2025, and that an expenditure counts as made when the original installation is completed. A deposit paid in 2025 does not carry the credit into a 2026 install. A loan does not change that: you own the battery, so the same rule applies, and you pay interest on equipment with no federal credit behind it. Tesla's incentives page still says Powerwall is designed to qualify for the Federal Investment Tax Credit when it is charged entirely from solar; for a battery you own and install in 2026, the IRS guidance is what governs.\n\nUnder a lease or power purchase agreement, the company that owns the equipment may claim the commercial credit under Section 48E. The statute ends that credit for solar and wind property placed in service after December 31, 2027 unless construction began in time, but it states that the cut-off does not apply to energy storage. Whether any of the owner's credit reaches you depends on the contract, so compare the monthly payment and escalator against a cash quote rather than assuming a lease passes the credit through."
       },
       {
         "heading": "What a Powerwall can earn in a virtual power plant",
@@ -1324,39 +1342,67 @@
       }
     ],
     "dataTable": {
-      "caption": "Powerwall 3 in California: what each way of paying leaves you with in 2026",
+      "caption": "Powerwall rebates in California, checked September 23, 2026",
       "columns": [
-        "Path",
-        "Who owns the battery",
-        "Federal credit",
-        "SGIP (Sept. 23, 2026)",
-        "What you pay",
-        "Main risk"
+        "Program",
+        "Who it covers",
+        "Amount",
+        "Status"
       ],
       "rows": [
         [
-          "Cash purchase",
-          "You",
-          "None for installs completed after 12/31/2025 (IRS)",
-          "Only AB 209 equity budgets, open or waitlisted by administrator; income limits apply",
-          "The quoted installed price",
-          "Savings depend on your rate plan and evening use"
+          "Tesla Next Million Powerwall Rebate",
+          "Powerwall 3 or Expansion ordered Nov. 1, 2025 to June 30, 2026 and installed in 2026",
+          "$500 per unit, up to $1,000",
+          "Registration closed June 30, 2026; claims due Dec. 31, 2026"
         ],
         [
-          "Loan",
-          "You (lender may hold a lien)",
-          "None, same 25D rule",
-          "Same as cash",
-          "Quoted price plus interest",
-          "Debt on equipment with no federal credit behind it"
+          "PG&E Permanent Battery Storage Rebate",
+          "PG&E customers with five or more Wildfire Safety outages since Jan. 1, 2024; first battery; time-of-use rate; ELRP enrollment",
+          "$7,500 per household",
+          "179 left on Sept. 18, 2026; apply within 12 months of PTO or by Dec. 31, 2026"
         ],
         [
-          "Lease or PPA",
-          "The provider",
-          "The owner may claim Section 48E; storage is outside the 2027 solar/wind cut-off",
-          "Not claimed by you",
-          "Set by the contract, often little upfront",
-          "The provider's solvency and the escalator over the term"
+          "SGIP Residential Solar and Storage Equity (AB 209)",
+          "Income-limited households",
+          "$1.10 per Wh of storage",
+          "Waitlisted in most budgets; open in the PG&E and SCE POU budgets (data as of 9/23/2026)"
+        ],
+        [
+          "SMUD My Energy Optimizer Partner+",
+          "SMUD customers on the Solar and Storage Rate",
+          "$300 per kWh, up to $6,000, for applications from Sept. 23",
+          "Open; cut from $500 per kWh on Sept. 23, 2026"
+        ],
+        [
+          "San Diego Community Power Solar Battery Savings",
+          "SDCP residential customers with a solar-charged battery",
+          "$250 to $500 per kWh by project and customer type",
+          "Enrolling since Sept. 30, 2025"
+        ],
+        [
+          "Clean Power Alliance Sun Storage Rebate",
+          "CPA customers",
+          "$2,000 base, up to $3,500",
+          "First come, first served while funds last"
+        ],
+        [
+          "Anaheim Public Utilities battery rebate",
+          "Anaheim customers on time-of-use and MyPower Savings",
+          "Up to $3,000",
+          "No end date posted"
+        ],
+        [
+          "Central Coast Community Energy battery rebate",
+          "3CE residential customers",
+          "$300 to $500 per kWh",
+          "Closed to new applications March 19, 2026"
+        ],
+        [
+          "Federal Section 25D credit",
+          "Batteries you own",
+          "None",
+          "Not allowed for installs completed after Dec. 31, 2025"
         ]
       ]
     },
@@ -1367,8 +1413,20 @@
         "answer": "Tesla does not publish a price; its order page asks for your address first. The closest primary benchmark is LBNL's estimate that storage added roughly $750 to $1,000 per kWh to paired residential systems installed in 2023, which is about $10,100 to $13,500 for one 13.5 kWh Powerwall 3. A panel upgrade, a backup-loads subpanel or a long conduit run adds to that. Get an itemized quote and compare it line by line."
       },
       {
+        "question": "Is there a Tesla Powerwall rebate in California?",
+        "answer": "Not a new one from Tesla. Its Next Million Powerwall Rebate paid $500 per Powerwall 3, up to $1,000, but registration closed on June 30, 2026; buyers who registered in time have until December 31, 2026 to file the claim. What remains is local: PG&E's $7,500 rebate for households with repeated wildfire shutoffs, programs at SMUD, San Diego Community Power, Clean Power Alliance and Anaheim, and SGIP's income-limited budgets. Which one you can use depends on who serves your address."
+      },
+      {
         "question": "How much is a Powerwall without installation?",
         "answer": "Tesla does not sell Powerwall 3 as a hardware-only retail product with a published price, and its design tool quotes installed systems by address. Treat any hardware-only figure you see online as unverified, and ask the installer to show the hardware line separately in the quote."
+      },
+      {
+        "question": "What is the difference between Powerwall 2 and Powerwall 3?",
+        "answer": "They store the same 13.5 kWh and carry the same 10-year warranty. Powerwall 3 delivers up to 11.5 kW continuously against 5 kW for Powerwall 2, has a higher motor-start rating (185 against 106 locked-rotor amps) and has a built-in solar inverter that takes up to 20 kW of solar. Tesla describes Powerwall 2 as designed to add on to existing solar and Powerwall 3 as designed for new solar-and-storage systems."
+      },
+      {
+        "question": "How much does a Powerwall cost after rebates?",
+        "answer": "Start from your itemized installed quote and subtract only rebates you have confirmed in writing. On LBNL's benchmark of about $10,100 to $13,500 for one Powerwall 3, a PG&E customer who qualifies for the $7,500 Permanent Battery Storage Rebate would pay roughly $2,600 to $6,000 before any panel upgrade. Most households outside PG&E's outage test and the income-limited programs will get far less, or nothing."
       },
       {
         "question": "Is there a program that pays for most or all of a Powerwall?",
@@ -1391,7 +1449,7 @@
         "answer": "Yes, through programs such as the California Energy Commission's Demand Side Grid Support, which runs May to October and pays for capacity and load reduction during extreme events. Sunrun reported a September 9, 2026 dispatch of 580 MW from more than 140,000 home batteries under DSGS and ELRP. Terms vary by program and by the company that enrolls you."
       }
     ],
-    "bottomLine": "Budget roughly $10,000 to $13,500 for one installed Powerwall 3 before any panel upgrade, based on LBNL's $750 to $1,000 per kWh storage premium, and expect the real number to come only from an address-specific quote. The federal 25D credit is gone for systems installed after 2025, and SGIP is closed for most households outside the income-limited AB 209 budgets. The case for the battery in 2026 rests on net billing: stored solar used in the evening is worth more than solar exported at midday, plus backup during outages and, in some cases, payments from grid programs. Get two itemized quotes, confirm your rate plan, and check who stands behind the workmanship warranty.",
+    "bottomLine": "Budget roughly $10,000 to $13,500 for one installed Powerwall 3 before any panel upgrade, based on LBNL's $750 to $1,000 per kWh storage premium, and expect the real number to come only from an address-specific quote. The federal 25D credit is gone for systems installed after 2025, Tesla's own rebate has closed to new registrations, and SGIP is closed for most households outside the income-limited AB 209 budgets. The rebates that remain are local: PG&E's $7,500 for repeated wildfire shutoffs, SMUD, San Diego Community Power, Clean Power Alliance and Anaheim. Powerwall 3's edge over Powerwall 2 is power and a built-in solar inverter, not storage. The case for the battery in 2026 rests on net billing, backup during outages and, in some cases, payments from grid programs. Get two itemized quotes, confirm your rate plan and any rebate in writing, and check who stands behind the workmanship warranty.",
     "sources": [
       {
         "name": "Tesla — Powerwall design and order page",
@@ -1401,7 +1459,27 @@
       {
         "name": "Tesla Energy Library — Powerwall 3 datasheet (2025)",
         "url": "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
-        "supports": "13.5 kWh; 5.8/7.6/10/11.5 kW output; 20 kW solar input; 6 MPPTs; 97.5% and 89% efficiency; 185 LRA; 10-year warranty; up to 4 Powerwall 3 plus 3 Expansion units"
+        "supports": "13.5 kWh; 5.8/7.6/10/11.5 kW output; 20 kW solar input; 6 MPPTs; 97.5% and 89% efficiency; 185 LRA; 10-year warranty; up to 4 Powerwall 3 plus 3 Expansion units; 291.2 lb installed"
+      },
+      {
+        "name": "Tesla Energy Library — Powerwall 2 datasheet (NA, version dated July 2, 2024)",
+        "url": "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/2/Datasheet/en-us/Powerwall-2-Datasheet.pdf",
+        "supports": "13.5 kWh usable (14 kWh total); 5 kW continuous, 7 kW peak (10 s); 90% round-trip efficiency; 10-year warranty; 251.3 lb"
+      },
+      {
+        "name": "Tesla Support — How Powerwall works",
+        "url": "https://www.tesla.com/support/energy/powerwall/learn/how-powerwall-works",
+        "supports": "Powerwall 3 185 LRA vs Powerwall 2 106 LRA motor start; Powerwall 2 up to 10 units; Powerwall 2 designed to add to existing solar, Powerwall 3 for new solar and storage (checked September 23, 2026)"
+      },
+      {
+        "name": "Tesla Support — Next Million Powerwall Rebate",
+        "url": "https://www.tesla.com/support/energy/powerwall/order/rebate",
+        "supports": "$500 per Powerwall 3 or Expansion, up to $1,000, two per account; orders Nov. 1, 2025 to June 30, 2026; installs in 2026; registration deadline June 30, 2026; claims by Dec. 31, 2026 (checked September 23, 2026)"
+      },
+      {
+        "name": "Tesla Support — Energy incentives (California)",
+        "url": "https://www.tesla.com/support/energy/powerwall/learn/incentives",
+        "supports": "Tesla's list of California battery programs; says Powerwall is designed to qualify for the federal ITC when charged 100% from solar (checked September 23, 2026)"
       },
       {
         "name": "Lawrence Berkeley National Laboratory — Tracking the Sun, 2024 Edition",
@@ -1417,6 +1495,36 @@
         "name": "Self-Generation Incentive Program — Program Metrics",
         "url": "https://www.selfgenca.com/home/program_metrics/",
         "supports": "Residential storage budget status, data as of 9/23/2026: Small Residential Storage closed (Step 7); ratepayer equity, Equity Resiliency and San Joaquin Valley closed; AB 209 equity at $1.10/Wh storage, waitlisted or open by administrator"
+      },
+      {
+        "name": "PG&E — Permanent Battery Storage Rebate",
+        "url": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "supports": "$7,500 per household; five or more Wildfire Safety outages since Jan. 1, 2024; first-time; TOU; ELRP enrollment incl. Tesla VPP; purchased on or after Jan. 1, 2025; 179 remaining as of Sept. 18, 2026; deadline (checked September 23, 2026)"
+      },
+      {
+        "name": "SMUD — Battery storage for homeowners (My Energy Optimizer Partner+)",
+        "url": "https://www.smud.org/Going-Green/Battery-storage/Homeowner",
+        "supports": "$500/kWh up to $10,000 for projects submitted by Sept. 22 and enrolled by Dec. 31, 2026; $300/kWh up to $6,000 from Sept. 23; Solar and Storage Rate; 90 days after PTO; Tesla-only quarterly incentives $110/$220/$330 (checked September 23, 2026)"
+      },
+      {
+        "name": "San Diego Community Power — Solar Battery Savings",
+        "url": "https://sdcommunitypower.org/solar-battery-savings/",
+        "supports": "$350/$250 per kWh market rate, $500/$350 nonmarket; $0.10/kWh performance; solar-charged; contractor reserves; not in ELRP or DSGS; enrollment opened Sept. 30, 2025 (checked September 23, 2026)"
+      },
+      {
+        "name": "Clean Power Alliance — Sun Storage Rebate",
+        "url": "https://cleanpoweralliance.org/sun-storage-rebate/",
+        "supports": "$2,000 base; +$1,250 PSPS areas; +$250 Medical Baseline or CARE/FERA, not combined; $3,500 maximum; first come, first served (checked September 23, 2026)"
+      },
+      {
+        "name": "City of Anaheim — Battery Storage",
+        "url": "https://www.anaheim.net/5730/Battery-Storage",
+        "supports": "Up to $3,000 per household; at least 5 kWh; TOU rate and MyPower Savings for 12 months (checked September 23, 2026)"
+      },
+      {
+        "name": "Central Coast Community Energy — Residential Battery Rebate Program",
+        "url": "https://3cenergy.org/rebates/residential-battery-rebate-program/",
+        "supports": "Closed to new applications March 19, 2026; $300/$500 per kWh (checked September 23, 2026)"
       },
       {
         "name": "IRS — FAQs on modification of sections 25C, 25D and others under Public Law 119-21",
