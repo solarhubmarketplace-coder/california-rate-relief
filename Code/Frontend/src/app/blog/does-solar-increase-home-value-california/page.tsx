@@ -7,6 +7,7 @@ import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
+import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
 
 const sources: Source[] = [
   {
@@ -80,7 +81,7 @@ export const metadata: Metadata = {
       "What Revenue and Taxation Code section 73 settles, what it does not, and where the sale-price research stops.",
     type: "article",
     url: "https://ratereliefca.com/blog/does-solar-increase-home-value-california",
-    modifiedTime: "2026-09-22T00:00:00Z",
+    modifiedTime: "2026-09-23T00:00:00Z",
   },
 };
 
@@ -92,6 +93,9 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
       path="/blog/does-solar-increase-home-value-california"
       sources={sources}
       sourceCheckedDate="2026-09-22"
+      contentModifiedDate="2026-09-23"
+      breadcrumbs={[{ label: "Solar cost and value", href: "/solar-panels-california" }]}
+      breadcrumbLabel="Solar and home value"
       topic="Solar and home value in California"
       inquiry={
         <SolarInquiry
@@ -101,6 +105,20 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
         />
       }
     >
+      <p>
+        Short answer: California law keeps a qualifying system from raising your
+        property tax assessment while you own the home, and sale studies found
+        price premiums for owned systems on average, but no source gives a
+        number for your address. The value question sits beside the cost one;{" "}
+        <Link className="underline" href="/solar-panels-california">
+          what solar costs in California
+        </Link>{" "}
+        is the other half of the math, and{" "}
+        <Link className="underline" href="/blog/solar-payback-period-california">
+          the payback period guide
+        </Link>{" "}
+        shows how long a system takes to earn back its price.
+      </p>
       <section>
         <h2>What California law actually settles — and what it does not</h2>
         <p>
@@ -298,7 +316,7 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
         </p>
         <p className="mt-3">
           The two structures are compared on their own page —{" "}
-          <Link className="underline" href="/blog/solar-ppa-vs-lease-california">
+          <Link className="underline" href="/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa">
             what actually differs between a solar PPA and a lease
           </Link>{" "}
           — and the sale itself is covered in{" "}
@@ -646,8 +664,8 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
             label: "The lease-at-sale question",
           },
           {
-            href: "/blog/solar-ppa-vs-lease-california",
-            label: "Third-party ownership types",
+            href: "/blog/prepaid-lease-solar",
+            label: "What a prepaid lease changes at sale",
           },
           {
             href: "/solar-problems/ucc-1-lien-solar-california",
@@ -662,6 +680,10 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
             label: "Property-specific suitability",
           },
         ]}
+      />
+      <HubSpokeLinks
+        hub="cost_value"
+        currentPath="/blog/does-solar-increase-home-value-california"
       />
     </DecisionPage>
   );

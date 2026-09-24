@@ -1,175 +1,520 @@
-import { SgipStatusNote } from '@/components/growth/SgipStatusNote';
+// 2026-09-23 rewrite (topical-authority wave, agent costfin). The previous body
+// carried unsourced program claims (CARE/FERA percentages without a source, a
+// "retail-rate-equivalent" export credit for SMUD, Roseville and Glendale that
+// the utilities' own pages do not support, and PSPS/HFTD battery tiers). Every
+// figure below was fetched from the program's administrator, the CPUC or the
+// utility on 2026-09-23. Glendale Water & Power is left out because its current
+// terms could not be confirmed from a primary source this session; LADWP's own
+// site refused automated retrieval, so its section states only what the CPUC
+// and the SGIP tracker confirm. Prior body is in git history.
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { PublicLayout } from '@/components/layout/PublicLayout';
-import { Header } from '@/components/landing/Header';
-import { Footer } from '@/components/landing/Footer';
-import { TrustedSources } from '@/components/shared/TrustedSources';
-import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
-
-import { ArticleCTA } from '@/components/shared/ArticleCTA';
+import { FaqJsonLd, type FaqJsonLdItem } from '@/components/shared/FaqJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
-import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { CostFinGuideShell } from '@/components/growth/CostFinGuideShell';
+import type { Source } from '@/components/growth/DecisionPage';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
+import { Q2_2026_URL, RATE_TRACKER_PATH } from '@/data/utility-rate-tracker';
+
+const PATH = '/blog/solar-rebates-by-california-utility';
+const URL = `https://ratereliefca.com${PATH}`;
+const UPDATED = '2026-09-23';
+const link = 'text-primary underline underline-offset-2';
+
+const S = {
+  irs: 'https://www.irs.gov/credits-deductions/residential-clean-energy-credit',
+  cpucSgip: 'https://www.cpuc.ca.gov/sgip',
+  sgipTracker: 'https://www.selfgenca.com/home/program_metrics/',
+  cpucDac:
+    'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/solar-in-disadvantaged-communities',
+  cpucCareFera:
+    'https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/family-electric-rate-assistance-program',
+  cpucNem: 'https://www.cpuc.ca.gov/NEM/',
+  boe: 'https://boe.ca.gov/proptaxes/active-solar-energy-system/',
+  pgeBattery:
+    'https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/generator-and-battery-rebate-program.html',
+  pgeCalc: 'https://www.pge.com/en/clean-energy/clean-energy-calculator.html',
+  pgeSolarBill: 'https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html',
+  sce: 'https://www.sce.com/clean-energy-efficiency/solar-generation-storage/solar-billing-incentives',
+  sdge: 'https://www.sdge.com/solar/considering-solar',
+  sdcp: 'https://sdcommunitypower.org/solar-battery-savings/',
+  smudSsr: 'https://www.smud.org/Rate-Information/Solar-and-Storage-Rate',
+  smudBattery: 'https://www.smud.org/Going-Green/Battery-storage/Homeowner',
+  roseville: 'https://www.roseville.ca.gov/electric_utility/rates/roseville_solar_2_0/index.php',
+  ladwp: 'https://www.ladwp.com/residential-services/solar-programs',
+} as const;
+
+const sources: Source[] = [
+  { label: 'IRS: Residential Clean Energy Credit', url: S.irs },
+  { label: 'CPUC: Self-Generation Incentive Program', url: S.cpucSgip },
+  { label: 'SGIP program tracker: budget category status by administrator', url: S.sgipTracker },
+  { label: 'CPUC: Solar in Disadvantaged Communities (DAC-SASH, DAC-GT, CSGT)', url: S.cpucDac },
+  { label: 'CPUC: CARE and FERA discounts and income guidelines', url: S.cpucCareFera },
+  { label: 'CPUC: net energy metering and the Net Billing Tariff', url: S.cpucNem },
+  { label: 'Board of Equalization: Active Solar Energy System Exclusion', url: S.boe },
+  { label: 'CPUC Public Advocates Office: Q2 2026 Electric Rates Report', url: Q2_2026_URL },
+  { label: 'PG&E: Generator and Battery Rebate Program', url: S.pgeBattery },
+  { label: 'PG&E: Clean Energy Calculator', url: S.pgeCalc },
+  { label: 'PG&E: how solar customers are billed', url: S.pgeSolarBill },
+  { label: 'SCE: Solar billing and incentives', url: S.sce },
+  { label: 'SDG&E: Considering solar (incentives and programs)', url: S.sdge },
+  { label: 'San Diego Community Power: Solar Battery Savings', url: S.sdcp },
+  { label: 'SMUD: Solar and Storage Rate', url: S.smudSsr },
+  { label: 'SMUD: battery storage incentives for homeowners', url: S.smudBattery },
+  { label: 'Roseville Electric: Roseville Solar 2.0', url: S.roseville },
+];
+
+const metaTitle = 'Solar Rebates and Incentives by California Utility (2026)';
+const metaDescription =
+  'Solar and battery incentives by utility: PG&E, SCE, SDG&E, SMUD, LADWP and Roseville. What each pays in 2026, what is closed, and what ended.';
+
 export const metadata: Metadata = {
-  title: "Solar Rebates by California Utility (2026): PG&E to SMUD",
-  description:
-    "Solar and battery rebates by California utility in 2026: PG&E, SCE, SDG&E, LADWP, SMUD, and municipal-only programs like SGIP.",
-  alternates: { canonical: '/blog/solar-rebates-by-california-utility' },
+  title: metaTitle,
+  description: metaDescription,
+  alternates: { canonical: PATH },
   openGraph: {
-    title: 'Solar Rebates by California Utility (2026)',
-    description: 'A utility-by-utility guide to every 2026 solar and battery rebate in California.',
+    title: metaTitle,
+    description: metaDescription,
     type: 'article',
+    url: URL,
     publishedTime: '2026-04-24T00:00:00Z',
-    modifiedTime: '2026-09-11T00:00:00Z',
-    url: 'https://ratereliefca.com/blog/solar-rebates-by-california-utility',
+    modifiedTime: `${UPDATED}T00:00:00Z`,
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
+
+const faqs: FaqJsonLdItem[] = [
+  {
+    question: 'Does PG&E offer solar incentives?',
+    answer:
+      'PG&E does not pay a rebate for rooftop solar panels. It administers the state SGIP battery program for its territory, runs a Generator and Battery Rebate Program for portable equipment in high fire-risk areas (up to $300, plus up to $200 more for CARE or FERA customers), and its Clean Energy Calculator shows the incentives it finds for your account.',
+  },
+  {
+    question: 'What is the solar rebate in California?',
+    answer:
+      'For most homeowners there is no rebate on solar panels in 2026. The federal credit is not available for systems placed in service after December 31, 2025. The state program that remains, SGIP, pays toward batteries by budget category, and most residential categories were closed on September 23, 2026. Income-qualified homeowners in disadvantaged communities can apply to DAC-SASH, and some municipal utilities, such as SMUD, run their own battery incentives.',
+  },
+  {
+    question: 'How do I find solar incentives near me?',
+    answer:
+      'Start with the utility named on your electric bill, not your city. Investor-owned utilities (PG&E, SCE, SDG&E) share the state programs; city-owned utilities such as SMUD, LADWP and Roseville Electric set their own. If a community choice aggregator supplies your power, check it too: San Diego Community Power, for example, runs its own battery program.',
+  },
+  {
+    question: 'How do I apply for a solar or battery rebate in California?',
+    answer:
+      'Through the program’s administrator. SGIP goes through the administrator for your territory, DAC-SASH through GRID Alternatives, CARE and FERA through your utility, and municipal programs through that utility. SMUD, for example, requires enrollment within 90 days of permission to operate. Get the reservation or approval in writing before a contract counts on it.',
+  },
+  {
+    question: 'Is net metering a rebate?',
+    answer:
+      'No. It is how exported electricity is credited on your bill. On PG&E, SCE and SDG&E, systems that applied since April 15, 2023 are on the Net Billing Tariff, with export credits the CPUC says are usually lower than import rates. SMUD credits exports at 9.6 cents per kWh from June 1, 2026, and Roseville Electric at $0.0691 per kWh for newer systems.',
+  },
+];
 
 export default function SolarRebatesByCAUtility() {
   return (
-    <PublicLayout>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Solar Rebates by California Utility (2026): PG&E, SCE, SDG&E, LADWP, SMUD"} url="https://ratereliefca.com/blog/solar-rebates-by-california-utility" datePublished="2026-04-24" dateModified="2026-09-11" description={"Solar and battery rebates by California utility in 2026 — PG&E, SCE, SDG&E, LADWP, SMUD, Roseville Electric, Glendale Water & Power. SGIP, DAC-SASH, TECH Clean, and municipal-only programs."} />
-      <Header />
-      <main className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <article className="max-w-3xl mx-auto">
-            <SgipStatusNote/>
-            <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
-              <Link href="/" className="hover:text-primary">Home</Link>
-              <span>/</span>
-              <Link href="/blog" className="hover:text-primary">Blog</Link>
-              <span>/</span>
-              <span className="text-foreground">Solar Rebates by CA Utility</span>
-            </nav>
+    <PublicLayout
+      breadcrumbLabel="Solar rebates by utility"
+      breadcrumbParent={{ label: 'California solar incentives', href: '/blog/california-solar-tax-credit-2026' }}
+    >
+      <ArticleJsonLd
+        variant="Article"
+        domain="crr"
+        headline="Solar and battery incentives near you: rebates by California utility (2026)"
+        url={URL}
+        datePublished="2026-04-24"
+        dateModified={UPDATED}
+        description={metaDescription}
+      />
+      <FaqJsonLd items={faqs} />
+      <CostFinGuideShell
+        eyebrow="Rebate guide · 2026"
+        title="Solar and battery incentives near you: rebates by California utility (2026)"
+        crumbs={[{ label: 'California solar incentives', href: '/blog/california-solar-tax-credit-2026' }]}
+        crumbLabel="Solar rebates by utility"
+        updated={UPDATED}
+        sourceCheckedDate={UPDATED}
+        sources={sources}
+        faqs={faqs}
+        hub="incentives"
+        path={PATH}
+        intro={
+          <>
+            <p>
+              The solar incentives open to you depend on which utility bills you. For most
+              PG&amp;E, SCE and SDG&amp;E customers there is no rebate on solar panels in 2026:
+              the federal credit ended for systems installed after 2025, and most of the
+              state&rsquo;s SGIP battery budgets were closed on September 23, 2026. City-owned
+              utilities such as SMUD run their own programs. Find your utility below.
+            </p>
+            <p className="mt-3">
+              Every statewide program, including the tax-credit history, is in{' '}
+              <Link className={link} href="/blog/california-solar-tax-credit-2026">
+                California solar incentives and the tax credit in 2026
+              </Link>
+              . This page goes utility by utility.
+            </p>
+          </>
+        }
+        keyFacts={[
+          {
+            label: 'Federal homeowner credit',
+            value: 'Ended',
+            note: 'Not available for property placed in service after December 31, 2025.',
+            source: { publisher: 'IRS', date: '2026-09-23', url: S.irs },
+          },
+          {
+            label: 'SGIP residential budgets',
+            value: 'Mostly closed',
+            note: 'One AB 209 equity sub-category open under PG&E and SCE; others closed or waitlisted.',
+            source: { publisher: 'SGIP tracker', date: '2026-09-23', url: S.sgipTracker },
+          },
+          {
+            label: 'SMUD battery incentive',
+            value: '$300/kWh',
+            note: 'Up to $6,000 per household for projects submitted on or after September 23, 2026.',
+            source: { publisher: 'SMUD', date: '2026-09-23', url: S.smudBattery },
+          },
+          {
+            label: 'CARE / FERA bill discount',
+            value: '30–35% / 18%',
+            note: 'On the electric bill, for income-qualified households.',
+            source: { publisher: 'CPUC', date: '2026-09-23', url: S.cpucCareFera },
+          },
+        ]}
+        inquiry={<SolarInquiry topic="California solar rebates" />}
+      >
+        <section>
+          <h2>First, find out who actually bills you</h2>
+          <p>
+            &ldquo;Near me&rdquo; means your utility, not your ZIP code. PG&amp;E, SCE and
+            SDG&amp;E are investor-owned utilities regulated by the CPUC, and they share the
+            state programs below. City-owned utilities such as SMUD, LADWP and Roseville
+            Electric set their own solar rules. If a community choice aggregator supplies your
+            generation, it may run its own program too. Your bill names both. The{' '}
+            <Link className={link} href={RATE_TRACKER_PATH}>
+              California utility rate tracker
+            </Link>{' '}
+            shows who serves which area and what each charges.
+          </p>
+        </section>
 
-            <header className="mb-10">
-              <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Rebate Guide · 2026</span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">
-                Solar &amp; Battery Rebates by California Utility (2026)
-              </h1>
-              <p className="text-lg text-muted-foreground">
-                California&apos;s solar and battery incentives are fragmented. A few programs are statewide (SGIP for batteries); others are utility-specific, and the federal residential credit has ended. Here&apos;s what actually applies based on who bills you.
-              </p>
-            </header>
+        <section>
+          <h2>Programs that apply across PG&amp;E, SCE and SDG&amp;E</h2>
+          <ul className="mt-3 list-disc space-y-3 pl-5">
+            <li>
+              <strong>Federal Residential Clean Energy Credit: ended.</strong> The IRS says it
+              &ldquo;is not available for any property placed in service after December 31,
+              2025&rdquo; (
+              <a className={link} href={S.irs}>
+                IRS
+              </a>
+              ). That applies in every utility territory.
+            </li>
+            <li>
+              <strong>SGIP battery incentives.</strong> The CPUC&rsquo;s Self-Generation
+              Incentive Program serves customers of PG&amp;E, SCE, SoCalGas, SDG&amp;E, LADWP
+              and other publicly owned utilities and cooperatives (
+              <a className={link} href={S.cpucSgip}>
+                CPUC
+              </a>
+              ). On September 23, 2026 the{' '}
+              <a className={link} href={S.sgipTracker}>
+                program tracker
+              </a>{' '}
+              showed Small Residential Storage, Equity Resiliency and the ratepayer-funded
+              Residential Solar and Storage Equity category closed at PG&amp;E, SCE, SoCalGas
+              and the Center for Sustainable Energy (SDG&amp;E territory). The AB 209-funded
+              equity budget was waitlisted at most administrators, with one sub-category open
+              under PG&amp;E and SCE. The detail is in{' '}
+              <Link className={link} href="/battery/sgip-battery-rebate-california">
+                the SGIP battery rebate status guide
+              </Link>
+              .
+            </li>
+            <li>
+              <strong>DAC-SASH.</strong> The CPUC says it &ldquo;enables income-qualified
+              homeowners in DACs to receive no-cost rooftop solar,&rdquo; with &ldquo;$3/watt
+              incentives,&rdquo; administered by GRID Alternatives (
+              <a className={link} href={S.cpucDac}>
+                CPUC
+              </a>
+              ).
+            </li>
+            <li>
+              <strong>DAC Green Tariff and Community Solar Green Tariff.</strong> &ldquo;A 20%
+              bill discount&rdquo; for income-qualified residential customers in disadvantaged
+              communities who may be unable to install solar on their roof (CPUC). See{' '}
+              <Link className={link} href="/blog/solar-for-renters">
+                options for renters and homes without a suitable roof
+              </Link>
+              .
+            </li>
+            <li>
+              <strong>CARE and FERA.</strong> CARE gives a &ldquo;30–35% discount&rdquo; on the
+              electric bill; FERA &ldquo;applies an 18% discount&rdquo; for families whose
+              income slightly exceeds the CARE limits (
+              <a className={link} href={S.cpucCareFera}>
+                CPUC
+              </a>
+              ). These cut the bill; they do not pay for panels.
+            </li>
+            <li>
+              <strong>Property tax exclusion.</strong> A qualifying system does not raise your
+              assessment. The Board of Equalization says the statute &ldquo;is now scheduled to
+              sunset on January 1, 2027&rdquo; (
+              <a className={link} href={S.boe}>
+                BOE
+              </a>
+              ).
+            </li>
+          </ul>
+          <p className="mt-3">
+            Net billing is not a rebate. Systems that applied for interconnection since April
+            15, 2023 take service on the Net Billing Tariff, which credits exports at values
+            the CPUC says are &ldquo;usually lower than import rates&rdquo; (
+            <a className={link} href={S.cpucNem}>
+              CPUC
+            </a>
+            ). The rules are in{' '}
+            <Link className={link} href="/blog/nem-2-vs-nem-3-california">
+              NEM 2.0 versus NEM 3.0
+            </Link>
+            .
+          </p>
+        </section>
 
-            <div className="prose prose-slate max-w-none">
-              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
-              <div className='not-prose my-8'>
-                <HeroQuickCheck topic="California solar rebates" />
-              </div>
+        <section>
+          <h2>PG&amp;E</h2>
+          <ul className="mt-3 list-disc space-y-3 pl-5">
+            <li>
+              <strong>No PG&amp;E rebate on solar panels.</strong> PG&amp;E administers SGIP for
+              its territory; status is by category, above.
+            </li>
+            <li>
+              <strong>Generator and Battery Rebate Program.</strong> For portable generators and
+              portable batteries (290 Wh to 1,000 Wh), not home battery systems. Customers in
+              Tier 2 or 3 High Fire-Threat Districts, a High Fire Risk Area or on an Enhanced
+              Power Safety Settings circuit can get &ldquo;up to $300&rdquo; per account, and
+              CARE or FERA customers &ldquo;up to an additional $200.&rdquo; Applications are due
+              within 12 months of purchase or by December 31, 2026, whichever is sooner (
+              <a className={link} href={S.pgeBattery}>
+                PG&amp;E
+              </a>
+              ).
+            </li>
+            <li>
+              <strong>Clean Energy Calculator.</strong> Inside your PG&amp;E account, it uses
+              &ldquo;your household&rsquo;s past 12 months of energy usage&rdquo; and shows
+              &ldquo;available incentives&rdquo; alongside cost and break-even estimates (
+              <a className={link} href={S.pgeCalc}>
+                PG&amp;E
+              </a>
+              ). How to use it is in{' '}
+              <Link className={link} href="/blog/pge-solar-calculator">
+                the PG&amp;E solar calculator guide
+              </Link>
+              .
+            </li>
+            <li>
+              <strong>What a solar bill still carries.</strong> PG&amp;E&rsquo;s monthly Base
+              Services Charge, about $24 for most customers from March 2026, &ldquo;is not
+              eligible to be offset by monthly generation credits&rdquo; (
+              <a className={link} href={S.pgeSolarBill}>
+                PG&amp;E
+              </a>
+              ). PG&amp;E&rsquo;s residential average rate was $0.337 per kWh in June 2026 (
+              <a className={link} href={Q2_2026_URL}>
+                CPUC Public Advocates Office
+              </a>
+              ).
+            </li>
+          </ul>
+        </section>
 
-              <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">Statewide Programs (Apply Everywhere in California)</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Federal Residential Clean Energy Credit (ITC) — no longer available.</strong> Public Law 119-21 amended IRC § 25D so the credit does not apply to expenditures made after December 31, 2025. A homeowner who buys solar or a battery in 2026 gets nothing federally, in any utility territory. The commercial credit (IRC § 48E) still exists, but the system owner claims it — which on a lease or PPA is the provider, not you.</li>
-                <li><strong>Self-Generation Incentive Program (SGIP).</strong> CPUC battery rebate program for customers of the investor-owned utilities. Its categories open, close and waitlist separately; check the exact category on the official tracker at selfgenca.com. A waitlist or remaining balance does not promise a rebate.</li>
-                <li><strong>California Property Tax Exclusion.</strong> Solar and battery systems do not trigger property tax reassessment.</li>
-                <li><strong>DAC-SASH.</strong> Low-income solar program administered by GRID Alternatives for income-qualified homeowners in disadvantaged communities, per the CPUC. The original SASH program is closed.</li>
-                <li><strong>TECH Clean California.</strong> Heat-pump water heater and HVAC rebates for electrification — not solar-specific but stacks well with solar for home decarbonization.</li>
-              </ul>
+        <section>
+          <h2>SCE</h2>
+          <p>
+            SCE&rsquo;s own solar incentives page lists one rebate: SGIP, &ldquo;Rebates for
+            battery storage systems.&rdquo; The rest are billing arrangements, not payments: the
+            Solar Billing Plan, net energy metering for legacy customers, Virtual Net Metering
+            to share credits across accounts, and the Community Renewables Program (
+            <a className={link} href={S.sce}>
+              SCE
+            </a>
+            , checked September 23, 2026). SCE&rsquo;s residential average rate was $0.344 per
+            kWh on June 1, 2026 (CPUC Public Advocates Office). Plan choices are in{' '}
+            <Link className={link} href="/blog/sce-time-of-use-rates-2026">
+              SCE time-of-use rates for 2026
+            </Link>
+            .
+          </p>
+        </section>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">PG&amp;E (Pacific Gas &amp; Electric)</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>NEM 3.0 Net Billing.</strong> Export credits usually below the retail rate (CPUC); PG&amp;E&apos;s residential average was 33.7¢/kWh in June 2026 (CPUC Public Advocates Office).</li>
-                <li><strong>SGIP battery rebate.</strong> Eligibility depends on the budget category and project; PG&amp;E service alone does not establish eligibility. Equity Resiliency tier applies to Tier 2/3 HFTD zones (which covers large portions of Sonoma, Napa, Sierra foothills, and rural PG&amp;E territory).</li>
-                <li><strong>CARE &amp; FERA bill discounts.</strong> 30–35% (CARE) or 18% (FERA) off entire bill for income-qualified households.</li>
-                <li><strong>Medical Baseline allowance.</strong> Additional baseline electricity at lowest-tier pricing for medical-equipment households.</li>
-                <li><strong>PSPS battery incentive bonus.</strong> PG&amp;E occasionally runs PSPS-area-specific battery programs, confirm current offerings in the PG&amp;E Marketplace.</li>
-              </ul>
+        <section>
+          <h2>SDG&amp;E and San Diego</h2>
+          <ul className="mt-3 list-disc space-y-3 pl-5">
+            <li>
+              <strong>What SDG&amp;E lists.</strong> SGIP for storage, DAC-SASH, and the San
+              Diego Solar Equity Program, which &ldquo;offers monetary assistance to
+              income-qualifying, single-family homeowners in the City of San Diego to offset
+              the cost of solar panel installation&rdquo; (
+              <a className={link} href={S.sdge}>
+                SDG&amp;E
+              </a>
+              , checked September 23, 2026). That SDG&amp;E page still says residential
+              customers &ldquo;may qualify for a 30% federal tax credit.&rdquo; The IRS says the
+              credit is not available for systems placed in service after December 31, 2025;
+              go by the IRS.
+            </li>
+            <li>
+              <strong>San Diego Community Power battery incentive.</strong> For its residential
+              customers adding a solar-charged battery at a single-family home: $350 per kWh for
+              a new solar-and-battery system or $250 per kWh for a battery only at market rate,
+              and $500 or $350 per kWh for customers not on market rate, plus $0.10 per kWh for
+              weekday dispatch. Enrollment opened September 30, 2025 (
+              <a className={link} href={S.sdcp}>
+                San Diego Community Power
+              </a>
+              , checked September 23, 2026).
+            </li>
+            <li>
+              <strong>Rates.</strong> SDG&amp;E&rsquo;s residential average rate was $0.455 per
+              kWh in June 2026, the highest of the three (CPUC Public Advocates Office). The
+              plans are in{' '}
+              <Link className={link} href="/blog/sdge-time-of-use-rates-2026">
+                SDG&amp;E time-of-use rates
+              </Link>
+              .
+            </li>
+          </ul>
+        </section>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">SCE (Southern California Edison)</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>NEM 3.0 Net Billing.</strong> Export credits usually below the retail rate (CPUC); SCE&apos;s residential average was 34.4¢/kWh in June 2026 (CPUC Public Advocates Office).</li>
-                <li><strong>SGIP battery rebate.</strong> Eligibility depends on the budget category and project; SCE service alone does not establish eligibility. Equity Resiliency tier applies to Tier 2/3 HFTD zones (covers parts of Riverside, San Bernardino, LA mountain communities).</li>
-                <li><strong>CARE &amp; FERA bill discounts.</strong> Same structure as PG&amp;E.</li>
-                <li><strong>Medical Baseline.</strong> Same structure as PG&amp;E.</li>
-                <li><strong>SCE EV TOU rate plans.</strong> Time-of-use plans designed around home EV charging — worth pairing with solar + battery.</li>
-              </ul>
+        <section>
+          <h2>SMUD (Sacramento)</h2>
+          <ul className="mt-3 list-disc space-y-3 pl-5">
+            <li>
+              <strong>Export credit.</strong> Systems approved for interconnection on or after
+              March 1, 2022 are on SMUD&rsquo;s Solar and Storage Rate, which credits exports at
+              &ldquo;9.6¢/kWh&rdquo; effective June 1, 2026. Customers approved before March 1,
+              2022 can stay on their original net metering rate through December 31, 2030 (
+              <a className={link} href={S.smudSsr}>
+                SMUD
+              </a>
+              ).
+            </li>
+            <li>
+              <strong>My Energy Optimizer Partner+ battery incentive.</strong> $500 per kWh, up to
+              $10,000 per household, for projects submitted by September 22, 2026 and enrolled by
+              December 31, 2026. From September 23, 2026 it is $300 per kWh, up to $6,000. You
+              must be on the Solar and Storage Rate and enroll within 90 days of permission to
+              operate; individual rental units and MED Rate customers are not eligible (
+              <a className={link} href={S.smudBattery}>
+                SMUD
+              </a>
+              , checked September 23, 2026).
+            </li>
+          </ul>
+        </section>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">SDG&amp;E (San Diego Gas &amp; Electric)</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>NEM 3.0 Net Billing.</strong> Export credits usually below the retail rate (CPUC); SDG&amp;E&apos;s residential average was 45.5¢/kWh in June 2026, the highest of the three investor-owned utilities (CPUC Public Advocates Office), which makes self-consumption particularly valuable.</li>
-                <li><strong>SGIP battery rebate.</strong> Eligibility depends on the budget category and project; SDG&amp;E service alone does not establish eligibility.</li>
-                <li><strong>Rate plan, not a rebate.</strong> The largest change most SDG&amp;E customers can make without a rebate is the plan itself; <Link href='/blog/sdge-time-of-use-rates-2026' className='text-primary underline'>SDG&amp;E time-of-use rates</Link> sets out the peak windows and how to compare plans on your own usage.</li>
-                <li><strong>CARE &amp; FERA bill discounts.</strong> Same structure.</li>
-                <li><strong>EV-TOU-5 rate plan.</strong> San Diego-specific EV rate worth comparing when pairing with solar.</li>
-                <li><strong>Equity Resiliency battery incentive.</strong> Applies to back-country fire-prone zones (East County, Valley Center).</li>
-              </ul>
+        <section>
+          <h2>LADWP (Los Angeles)</h2>
+          <p>
+            LADWP is city-owned, so the CPUC&rsquo;s Net Billing Tariff, which covers PG&amp;E,
+            SCE and SDG&amp;E, does not set its solar credits (
+            <a className={link} href={S.cpucNem}>
+              CPUC
+            </a>
+            ). LADWP is an SGIP administrator, and on September 23, 2026 the tracker showed its
+            AB 209 equity budget on a waitlist. LADWP&rsquo;s own{' '}
+            <a className={link} href={S.ladwp}>
+              solar programs page
+            </a>{' '}
+            refused automated retrieval when this page was checked, so this guide does not
+            restate its current incentive amounts. Check that page or call LADWP before a
+            proposal counts on an LADWP incentive. Bills are covered in{' '}
+            <Link className={link} href="/blog/why-is-my-ladwp-bill-so-high">
+              why LADWP bills run high
+            </Link>
+            .
+          </p>
+        </section>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">LADWP (Los Angeles Department of Water and Power)</h2>
-              <p>
-                LADWP is a municipal utility and operates <em>outside</em> NEM 3.0 / CPUC jurisdiction. The economics are different:
-              </p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>LADWP Solar Incentive Program (SIP).</strong> LADWP has run a solar incentive in several iterations; confirm current availability and amounts on LADWP&apos;s own site before counting on it.</li>
-                <li><strong>LADWP net metering.</strong> LADWP sets its own export credit; the CPUC Net Billing Tariff does not apply. Confirm the current terms with LADWP.</li>
-                <li><strong>EZ-SAVE.</strong> Income-qualified households can check current LADWP assistance. The discount is not a universal percentage. <a href='https://www.ladwp.com/residential-services/assistance-programs/ez-save-program' className='text-primary underline'>Eligibility and application</a>. Checked September 11, 2026.</li>
-                <li><strong>Feed-In Tariff (FiT).</strong> Commercial / multi-family solar can sell power to LADWP under long-term contracts.</li>
-                <li><strong>SGIP does not apply in LADWP territory.</strong> LADWP runs its own battery program separately.</li>
-              </ul>
+        <section>
+          <h2>Roseville Electric</h2>
+          <p>
+            Systems interconnected on or after October 1, 2018, and existing systems expanded by
+            10% or more since then, are on Roseville Solar 2.0, which pays &ldquo;$0.0691 per
+            kWh&rdquo; for surplus energy sent to the grid. Earlier customers keep net energy
+            metering through October 1, 2028, or 20 years from interconnection, whichever is
+            later (
+            <a className={link} href={S.roseville}>
+              City of Roseville
+            </a>
+            , checked September 23, 2026). The Solar 2.0 page names no solar or battery rebate;
+            ask Roseville Electric about current rebates.
+          </p>
+        </section>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">SMUD (Sacramento Municipal Utility District)</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>SMUD Net Energy Metering.</strong> Retail-rate-equivalent export credit (again, much more favorable than NEM 3.0).</li>
-                <li><strong>SMUD Storage Incentive.</strong> Rebates for customer-sited batteries; check current funding levels.</li>
-                <li><strong>Energy Assistance Program Rate (EAPR).</strong> Discount for income-qualified SMUD customers.</li>
-                <li><strong>Medical Equipment Discount Rate (MEDR).</strong> Discount for medical-baseline households.</li>
-                <li><strong>EV Rate (Time-of-Day EV).</strong> Discounted overnight charging rate for EV owners.</li>
-              </ul>
+        <section>
+          <h2>Other city-owned utilities</h2>
+          <p>
+            Anaheim, Modesto Irrigation District, Corona and other publicly owned utilities set
+            their own solar and rebate terms, and some change them mid-year. Ask the utility for
+            its current export credit and any rebate before comparing quotes. The{' '}
+            <Link className={link} href={RATE_TRACKER_PATH}>
+              rate tracker
+            </Link>{' '}
+            links each one&rsquo;s own rate schedule.
+          </p>
+        </section>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Roseville Electric Utility</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Roseville Electric Net Metering.</strong> Retail-rate-equivalent export credit.</li>
-                <li><strong>Residential Electric Rate Assistance Program.</strong> Bill discount for income-qualified households.</li>
-                <li><strong>Electric vehicle rate.</strong> Lower overnight rate for EV charging.</li>
-                <li><strong>No SGIP.</strong> Roseville Electric runs its own battery incentive landscape separately.</li>
-              </ul>
+        <section>
+          <h2>How to claim what you qualify for</h2>
+          <ol className="mt-3 list-decimal space-y-2 pl-5">
+            <li>
+              <strong>Name the program and its administrator.</strong> A logo on a flyer is not
+              a reservation.
+            </li>
+            <li>
+              <strong>Check the status on the day you sign.</strong> SGIP categories and
+              municipal incentives change, as SMUD&rsquo;s September 23, 2026 reduction shows.
+            </li>
+            <li>
+              <strong>Keep incentives out of the base price.</strong> Compare the cash price
+              first, and ask who pays the difference if a rebate is denied.
+            </li>
+            <li>
+              <strong>Apply for bill help separately.</strong> CARE and FERA go through your
+              utility and do not depend on solar.
+            </li>
+            <li>
+              <strong>Check the net cost.</strong> Put the price and any confirmed incentive into
+              the{' '}
+              <Link className={link} href="/tools/solar-panel-calculator">
+                California solar cost calculator
+              </Link>
+              , and see{' '}
+              <Link className={link} href="/blog/solar-payback-period-california">
+                how long a system takes to pay back
+              </Link>
+              .
+            </li>
+          </ol>
+        </section>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Glendale Water &amp; Power</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><strong>GWP Net Metering.</strong> Retail-rate-equivalent export credit.</li>
-                <li><strong>GWP Smart Home Rebate program.</strong> Rebates on EV chargers, heat-pump water heaters, and related electrification.</li>
-                <li><strong>Low-income assistance programs.</strong> Multiple bill-discount options for qualifying households.</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How to Claim Everything You Qualify For</h2>
-              <ol className="list-decimal pl-6 space-y-2">
-                <li><strong>Federal 30% ITC — only if your expenditure was made on or before December 31, 2025.</strong> Claim it on IRS Form 5695 with the return for the year the system was placed in service, and keep the contractor invoice and proof of payment. Nothing you spend in 2026 qualifies.</li>
-                <li><strong>SGIP (if applicable)</strong>. Your installer usually files on your behalf; confirm before signing, and confirm the category is open on the official tracker.</li>
-                <li><strong>Utility-specific incentives</strong>. Usually handled through utility Marketplace program or manufacturer rebate forms. Ask your installer for a list of all applicable utility programs and which they&apos;ll file.</li>
-                <li><strong>CARE / FERA / EZ-SAVE / EAPR</strong> — apply directly through the applicable utility. These are bill-assistance programs, not solar installation rebates.</li>
-                <li><strong>TECH Clean California</strong> (heat pump water heater/HVAC), apply through participating contractor; the rebate is deducted from your install cost.</li>
-              </ol>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li><Link href="/blog/solar-battery-backup-california" className="text-primary underline">Solar Battery Backup in California</Link></li>
-                <li><Link href="/blog/low-income-solar-california" className="text-primary underline">Low-Income Solar Programs in California</Link></li>
-                <li><Link href="/blog/solar-tax-credit-expired-2026-options" className="text-primary underline">Federal Solar Tax Credit 2026 Options</Link></li>
-                <li><Link href="/blog/nem-3-california-still-worth-it" className="text-primary underline">Is Solar Still Worth It Under NEM 3.0?</Link></li>
-                <li><Link href="/blog/pge-vs-sce-vs-sdge-rates-compared" className="text-primary underline">PG&amp;E vs SCE vs SDG&amp;E Rates Compared</Link></li>
-              </ul>
-            </div>
-          <ArticleCTA />
-          <div className="mt-8">
-            <SolarInquiry topic="California solar rebates" />
-          </div>
-             <RelatedGuides
-               heading="Programme reality checks"
-               links={[
-                 { href: "/battery/sgip-battery-rebate-california", label: "SGIP battery budget status before you plan on it" },
-                 { href: "/solar-problems/free-solar-california-is-it-real", label: "What a free-solar offer actually is" },
-                 { href: "/blog/is-community-solar-worth-it", label: "When a shared project is the better route" },
-               ]}
-             />
-
-          </article>
-        </div>
-      </main>
-      <Footer />
-    <div className="container mx-auto px-4 max-w-3xl"><TrustedSources domain="crr" variant="compact" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} /></div>
-    <div className="container mx-auto px-4 max-w-3xl"><RelatedInstallers picks="general" /></div>
+        <section>
+          <h2>A referral request is optional and separate</h2>
+          <p>
+            California Rate Relief is a referral service. We are not a licensed contractor. We
+            do not administer or decide eligibility for any program on this page, and a
+            referral request does not reserve a rebate.
+          </p>
+        </section>
+      </CostFinGuideShell>
     </PublicLayout>
   );
 }

@@ -1,0 +1,349 @@
+{
+  "agent": "costfin",
+  "branch": "claude/ta-costfin-20260923",
+  "updated": "2026-09-23",
+  "pages": [
+    {
+      "path": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+      "action": "UPGRADE",
+      "hub": "financing",
+      "file": "src/components/growth/Guides.tsx (kind 'financing') + src/components/growth/FinancingHubExtras.tsx",
+      "title": "Solar Lease vs PPA vs Purchase (2026): 7 Terms Compared",
+      "clusters": [65, 332],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.cpuc.ca.gov/NEM/",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://boe.ca.gov/proptaxes/active-solar-energy-system/",
+        "https://boe.ca.gov/proptaxes/active-solar-energy-system/frequently-asked-questions.htm",
+        "https://www.osti.gov/servlets/purl/1342946"
+      ],
+      "status": "done",
+      "note": "D14 G03 winner. Folded the unique, still-accurate content of /blog/solar-ppa-vs-lease-california: lease-vs-PPA mechanism (#lease-vs-ppa), minimum-energy guarantee, PPA price per kWh vs utility rates (#ppa-price-per-kwh, the query the loser ranked better on), 20-25 year term and the 10% savings-estimate cap, property tax and resale for TPO systems, FAQ with FAQPage schema. Loser's installer-marketing-sourced figures (Sunrun/Tesla escalator and guarantee wording) not carried. Hub's own links to the loser repointed to #lease-vs-ppa. HubSpokeLinks added (hub lists its spokes)."
+    },
+    {
+      "path": "/blog/free-solar-panels-california",
+      "action": "UPGRADE",
+      "hub": "incentives",
+      "file": "src/components/growth/AssistanceGuides.tsx (kind 'free') + src/components/growth/FreeSolarRealityExtras.tsx",
+      "title": "Are Free Solar Panels Real in California? The CPUC Answer",
+      "clusters": [20, 154],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/solar-in-disadvantaged-communities",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/cslb-disclosure-documents",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.sec.gov/Archives/edgar/data/1772695/000177269525000105/nova-20250608.htm"
+      ],
+      "status": "done",
+      "note": "D14 G06 'is it real' winner. Folded unique content of /solar-problems/free-solar-california-is-it-real: DAC-GT and CSGT 20% bill discounts, SGIP low-income categories with 2026-09-23 tracker status, the two-part disclosure package (cover page since 2019, Supporting Information since 2025-11-01), provider-failure risk (CPUC + Sunnova 8-K), when $0-down is honest financing. Rule 5 kept: no promise of free solar. Not carried (unverifiable or Rule 5): other named-company bankruptcy dates, 'guaranteed 50%+ savings' TPO description, non-compliant provider list status, CSLB bond and PACE cap key facts. Links to both D14 losers repointed. CREATE_DEDICATED link to /blog/no-upfront-cost-solar-panels added. Title unchanged."
+    },
+    {
+      "path": "/blog/solar-rebates-by-california-utility",
+      "action": "UPGRADE",
+      "hub": "incentives",
+      "file": "src/app/blog/solar-rebates-by-california-utility/page.tsx",
+      "title": "Solar Rebates and Incentives by California Utility (2026)",
+      "clusters": [53],
+      "sources": [
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+        "https://www.cpuc.ca.gov/sgip",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/solar-in-disadvantaged-communities",
+        "https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/family-electric-rate-assistance-program",
+        "https://www.cpuc.ca.gov/NEM/",
+        "https://boe.ca.gov/proptaxes/active-solar-energy-system/",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/generator-and-battery-rebate-program.html",
+        "https://www.pge.com/en/clean-energy/clean-energy-calculator.html",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.sce.com/clean-energy-efficiency/solar-generation-storage/solar-billing-incentives",
+        "https://www.sdge.com/solar/considering-solar",
+        "https://sdcommunitypower.org/solar-battery-savings/",
+        "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate",
+        "https://www.smud.org/Going-Green/Battery-storage/Homeowner",
+        "https://www.roseville.ca.gov/electric_utility/rates/roseville_solar_2_0/index.php"
+      ],
+      "status": "done",
+      "note": "Rewritten: previous body had unsourced program claims (SMUD/Roseville/Glendale 'retail-rate-equivalent' export credits contradicted by the utilities' pages, unsourced CARE/FERA %, HFTD battery tiers). Glendale dropped (no primary source). LADWP section limited to what CPUC and SGIP tracker confirm: ladwp.com returned 403 to WebFetch. SMUD incentive reduced to $300/kWh (max $6,000) effective 2026-09-23, per SMUD. SDG&E's own page still claims a 30% federal credit; page tells readers to go by the IRS. Removed the stale SgipStatusNote correction banner."
+    },
+    {
+      "path": "/blog/prepaid-lease-solar",
+      "action": "CREATE_DEDICATED",
+      "hub": "financing",
+      "file": "src/app/blog/prepaid-lease-solar/page.tsx",
+      "title": "Prepaid Solar Lease in California: What You Pay and Own",
+      "clusters": [249],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+        "https://boe.ca.gov/proptaxes/active-solar-energy-system/frequently-asked-questions.htm",
+        "https://www.osti.gov/servlets/purl/1342946"
+      ],
+      "status": "done",
+      "note": "Holder /blog/prepaid-ppa-california-2026 now links to it. Also linked from the financing hub, rent page and home-value page."
+    },
+    {
+      "path": "/blog/no-upfront-cost-solar-panels",
+      "action": "CREATE_DEDICATED",
+      "hub": "cost_value",
+      "file": "src/app/blog/no-upfront-cost-solar-panels/page.tsx",
+      "title": "No Upfront Cost Solar Panels in California: Who Pays",
+      "clusters": [266],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/solar-in-disadvantaged-communities",
+        "https://www.cpuc.ca.gov/NEM/",
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+        "https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A48E+edition%3Aprelim%29",
+        "https://www.osti.gov/servlets/purl/1342946"
+      ],
+      "status": "done",
+      "note": "Holder /blog/free-solar-panels-california now links to it (twice). Angle kept distinct from the live /blog/zero-down-solar-california (down-payment cap) and from the free page (genuine no-cost programs): who pays, how providers are paid, pros and cons, total-cost test. Flag for Block 6: /blog/zero-down-solar-california is a near neighbour; watch for cannibalization."
+    },
+    {
+      "path": "/tools/solar-panel-calculator",
+      "action": "UPGRADE",
+      "hub": "cost_value",
+      "file": "src/components/growth/Guides.tsx (kind 'calculator') + src/components/growth/CalculatorGuideExtras.tsx",
+      "title": "California Solar Cost Calculator: Check Your Quote",
+      "clusters": [274, 292],
+      "sources": [
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/cslb-disclosure-documents",
+        "https://www.pge.com/en/clean-energy/clean-energy-calculator.html",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+        "https://www.selfgenca.com/home/program_metrics/"
+      ],
+      "status": "done",
+      "note": "Explanatory content and intent only: new title/H1/intro/meta, 'what each result means', where inputs come from, LBNL price-per-watt context, why there is no rebate field ('california solar rebate calculator'), 'solar estimate' section, FAQ. SolarCalculator.tsx, solar-savings-engine, calculator-context and all trackEvent calls untouched. WebApplication schema name/description follow the new title/intro automatically."
+    },
+    {
+      "path": "/blog/solar-payback-period-california",
+      "action": "CREATE_DEDICATED",
+      "hub": "cost_value",
+      "file": "src/app/blog/solar-payback-period-california/page.tsx",
+      "title": "Solar Payback Period in California (2026): Work Out Yours",
+      "clusters": [2140],
+      "sources": [
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M521/K084/521084906.pdf",
+        "https://www.cpuc.ca.gov/NEM/",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+        "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate",
+        "https://www.smud.org/Going-Green/Battery-storage/Homeowner",
+        "https://www.roseville.ca.gov/electric_utility/rates/roseville_solar_2_0/index.php",
+        "https://www.selfgenca.com/home/program_metrics/"
+      ],
+      "status": "partial",
+      "note": "Built. The CREATE_DEDICATED holder link is still needed: the holder /solar-panels-california belongs to the installers agent (Guides.tsx kind 'panels'), so it is requested under link_requests instead of edited here. No statewide payback figure exists from a primary source; page gives the method, sourced inputs and one labeled round-number example. 'Is solar worth it' questions answered briefly and linked to the worth pages (G11 merge held)."
+    },
+    {
+      "path": "/blog/free-solar-for-seniors-california",
+      "action": "UPGRADE",
+      "hub": "incentives",
+      "file": "src/components/growth/AssistanceGuides.tsx (kind 'seniors') + src/components/growth/SeniorSolarExtras.tsx",
+      "title": "Free Solar for Seniors in California? What Actually Applies",
+      "clusters": [316],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/cslb-disclosure-documents",
+        "https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/medical-baseline",
+        "https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/family-electric-rate-assistance-program",
+        "https://dfpi.ca.gov/consumers/housing/pace/"
+      ],
+      "status": "done",
+      "note": "Improved for its own senior-specific intent only: five-business-day cancellation at 65+, license check, fixed-income bill help (CARE, FERA table, Medical Baseline), long contracts/heirs/PACE lien, FAQ with FAQPage schema, HubSpokeLinks. Title and targeting unchanged: G06 seniors differentiation held (Decision 14 default)."
+    },
+    {
+      "path": "/blog/rent-solar-panels-for-your-home-california",
+      "action": "UPGRADE",
+      "hub": "financing",
+      "file": "src/app/blog/rent-solar-panels-for-your-home-california/page.tsx",
+      "title": "Rent Solar Panels for Your Home in California: Lease vs PPA",
+      "clusters": [420, 242, 80],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.cpuc.ca.gov/NEM/",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+        "https://boe.ca.gov/proptaxes/active-solar-energy-system/frequently-asked-questions.htm",
+        "https://www.osti.gov/servlets/purl/1342946",
+        "https://www.sec.gov/Archives/edgar/data/1772695/000177269525000105/nova-20250608.htm",
+        "https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-updates-existing-community-solar-programs"
+      ],
+      "status": "done",
+      "note": "Added rent-to-own, monthly cost method, who qualifies, end of lease, getting out of a lease, rent vs buy table, FAQ. Title kept: G03 rent-post retitle held (Decision 14 default). G05 lease-cost fold-in held: page links to /blog/how-much-does-it-cost-to-lease-solar-panels-california instead of absorbing it. Tenant options moved to /blog/solar-for-renters. Removed claims with no primary source this session (SOMAH tenant credit amounts, CCA count, provider customer count). Dropped the templated RelatedInstallers/TrustedSources blocks; compensation disclosure sentence kept verbatim."
+    },
+    {
+      "path": "/blog/does-solar-increase-home-value-california",
+      "action": "UPGRADE",
+      "hub": "cost_value",
+      "file": "src/app/blog/does-solar-increase-home-value-california/page.tsx",
+      "title": "Does Solar Increase Home Value in California? The Rules",
+      "clusters": [275],
+      "sources": [],
+      "status": "done",
+      "note": "Already on-intent and fully sourced (2026-09-17/22). Light upgrade: short direct answer with hub link in the first 150 words, visible breadcrumb to the cost hub, repointed the two links to the G03 loser, HubSpokeLinks. No new figures."
+    },
+    {
+      "path": "/blog/california-solar-tax-credit-2026",
+      "action": "UPGRADE",
+      "hub": "incentives",
+      "file": "src/components/growth/AssistanceGuides.tsx (kind 'california') + src/components/growth/IncentivesHubExtras.tsx",
+      "title": "California Solar Tax Credit and Incentives (2026 Guide)",
+      "clusters": [347, 42],
+      "sources": [
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+        "https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A25D+edition%3Aprelim%29",
+        "https://www.ftb.ca.gov/file/personal/credits/index.html",
+        "https://boe.ca.gov/proptaxes/active-solar-energy-system/",
+        "https://www.cpuc.ca.gov/sgip",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://www.smud.org/Going-Green/Battery-storage/Homeowner",
+        "https://www.sdge.com/solar/considering-solar"
+      ],
+      "status": "done",
+      "note": "Incentives hub. Retitled to carry 'california solar tax credit' and 'california solar incentives' (old title in a code comment). Opening answers the tax-credit question: no state credit (FTB list); federal 25D 30% for 2022-2025, not available for property placed in service after 2025-12-31 (Pub. L. 119-21, July 4, 2025; installation-completion rule per IRS FAQ). Added incentives table, grouped visible list of every incentive spoke, FAQ, HubSpokeLinks. topic-hubs.ts hubPageLabel for incentives still carries the old title: update at integration."
+    },
+    {
+      "path": "/blog/solar-pool-heating-california",
+      "action": "UPGRADE",
+      "hub": "cost_value",
+      "file": "src/app/blog/solar-pool-heating-california/page.tsx",
+      "title": "Solar Pool Heating in California: Cost, Sizing and Payback",
+      "clusters": [394],
+      "sources": ["https://www.energy.gov/energysaver/solar-swimming-pool-heaters"],
+      "status": "done",
+      "note": "Lead now answers cost directly (DOE $2,500-$4,000, 1-7 yr payback); inground-pool sizing arithmetic from DOE ratios; lifetime 10-20 yrs (DOE); FAQ with FAQPage schema; cost hub link; HubSpokeLinks. Permit paragraph no longer asserts an uncited statute."
+    },
+    {
+      "path": "/blog/pge-solar-calculator",
+      "action": "CREATE",
+      "hub": "cost_value",
+      "file": "src/app/blog/pge-solar-calculator/page.tsx",
+      "title": "PG&E Solar Calculator: How to Use It and Check a Quote",
+      "clusters": [542],
+      "sources": [
+        "https://www.pge.com/en/clean-energy/clean-energy-calculator.html",
+        "https://www.pge.com/en/newsroom/currents/energy-savings/articles-4009-resource-roundup-ev-savings-solar-calculators-help-customers-save.html",
+        "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+        "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "https://www.cpuc.ca.gov/NEM/",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/generator-and-battery-rebate-program.html",
+        "https://www.selfgenca.com/home/program_metrics/"
+      ],
+      "status": "done",
+      "note": "Utility-named slug per section convention (no -california)."
+    },
+    {
+      "path": "/blog/solar-for-renters",
+      "action": "CREATE",
+      "hub": "financing",
+      "file": "src/app/blog/solar-for-renters/page.tsx",
+      "title": "Solar for Renters in California: What You Can Actually Do",
+      "clusters": [573],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/solar-in-disadvantaged-communities",
+        "https://www.pge.com/en_US/residential/solar-and-vehicles/options/solar/solar-choice/rate-calculator.page",
+        "https://www.sce.com/clean-energy-efficiency/solar-generation-storage/solar-billing-incentives",
+        "https://calsomah.org/about",
+        "https://www.calsomah.org/property-owners",
+        "https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-updates-existing-community-solar-programs",
+        "https://www.cpuc.ca.gov/consumer-support/financial-assistance-savings-and-discounts/family-electric-rate-assistance-program",
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+        "https://boe.ca.gov/proptaxes/active-solar-energy-system/frequently-asked-questions.htm"
+      ],
+      "status": "done",
+      "note": "Slug kept as assigned (/blog/solar-for-renters, no -california suffix) because the CSV names it; rename is a Chad/Block 6 call."
+    },
+    {
+      "path": "/blog/replacement-solar-inverter-cost",
+      "action": "CREATE",
+      "hub": "cost_value",
+      "file": "src/app/blog/replacement-solar-inverter-cost/page.tsx",
+      "title": "Replacement Solar Inverter Cost in California: What Sets It",
+      "clusters": [556],
+      "sources": [
+        "https://www.energy.ca.gov/programs-and-topics/programs/solar-equipment-lists",
+        "https://atb.nrel.gov/electricity/2024/residential_pv",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.cpuc.ca.gov/NEM/",
+        "https://www.selfgenca.com/home/program_metrics/"
+      ],
+      "status": "done",
+      "note": "No dollar replacement price: none found from a primary source (NREL O&M model and cost benchmarks give no residential replacement figure; NREL docs PDFs refused retrieval). Page covers what sets the price, warranty/lease coverage, CEC inverter list, utility notice, NREL ATB upkeep benchmark ($30/kW-yr)."
+    },
+    {
+      "path": "/blog/prepaid-ppa-california-2026",
+      "action": "UPGRADE",
+      "hub": "financing",
+      "file": "src/app/blog/prepaid-ppa-california-2026/page.tsx",
+      "title": "Prepaid Solar PPA in California (2026): 5 Terms to Check",
+      "clusters": [1798],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/cslb-disclosure-documents",
+        "https://www.cpuc.ca.gov/NEM/",
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+        "https://www.sec.gov/Archives/edgar/data/1772695/000177269525000105/nova-20250608.htm"
+      ],
+      "status": "done",
+      "note": "Opening now defines a prepaid PPA; added 'Can you buy out a solar PPA?', prepaid PPA vs prepaid lease (links the new CREATE_DEDICATED page), FAQ with FAQPage schema, breadcrumb to the financing hub, HubSpokeLinks. Removed installer-marketing citations (Sunrun, Palmetto, Tesla)."
+    }
+  ],
+  "sitemap_add": [
+    "/blog/prepaid-lease-solar",
+    "/blog/no-upfront-cost-solar-panels",
+    "/blog/solar-payback-period-california",
+    "/blog/pge-solar-calculator",
+    "/blog/solar-for-renters",
+    "/blog/replacement-solar-inverter-cost"
+  ],
+  "blog_index_add": [
+    {"slug": "prepaid-lease-solar", "title": "Prepaid Solar Lease in California: What You Pay and Own", "hub": "financing"},
+    {"slug": "no-upfront-cost-solar-panels", "title": "No Upfront Cost Solar Panels in California: Who Pays", "hub": "cost_value"},
+    {"slug": "solar-payback-period-california", "title": "Solar Payback Period in California (2026): Work Out Yours", "hub": "cost_value"},
+    {"slug": "pge-solar-calculator", "title": "PG&E Solar Calculator: How to Use It and Check a Quote", "hub": "cost_value"},
+    {"slug": "solar-for-renters", "title": "Solar for Renters in California: What You Can Actually Do", "hub": "financing"},
+    {"slug": "replacement-solar-inverter-cost", "title": "Replacement Solar Inverter Cost in California: What Sets It", "hub": "cost_value"}
+  ],
+  "redirect_requests": [
+    {"from": "/blog/solar-ppa-vs-lease-california", "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california", "why": "D14 G03 (high): unique content folded into the winner on this branch (sections #lease-vs-ppa and #ppa-price-per-kwh). The 301 is the merges agent's; listed so integration can check both land together."},
+    {"from": "/solar-problems/free-solar-california-is-it-real", "to": "/blog/free-solar-panels-california", "why": "D14 G06 'is it real' (high): unique content folded into the winner on this branch. The 301 is the merges agent's; the JSON entry in article-pages.problems.json was not removed here."}
+  ],
+  "hub_links": [
+    {"hub": "financing", "href": "/blog/prepaid-lease-solar", "label": "Prepaid solar lease: what you pay and own"},
+    {"hub": "financing", "href": "/blog/solar-for-renters", "label": "Solar options for renters"},
+    {"hub": "cost_value", "href": "/blog/no-upfront-cost-solar-panels", "label": "No-upfront-cost solar: who pays"},
+    {"hub": "cost_value", "href": "/blog/solar-payback-period-california", "label": "Solar payback period in California"},
+    {"hub": "cost_value", "href": "/blog/pge-solar-calculator", "label": "PG&E solar calculator, explained"},
+    {"hub": "cost_value", "href": "/blog/replacement-solar-inverter-cost", "label": "Replacement inverter cost"},
+    {"hub": "incentives", "href": "/blog/solar-for-renters", "label": "Bill-discount solar for renters"},
+    {"hub": "incentives", "href": "/blog/low-income-solar-california", "label": "Low-income solar application paths"},
+    {"hub": "incentives", "href": "/battery/sgip-battery-rebate-california", "label": "SGIP battery rebate status"}
+  ],
+  "hub_data_changes": [
+    {"file": "src/data/topic-hubs.ts", "change": "financing spokes: remove /blog/solar-ppa-vs-lease-california once its 301 lands (D14 G03)."},
+    {"file": "src/data/topic-hubs.ts", "change": "incentives hubPageLabel: 'California Solar Tax Credit and Incentives (2026 Guide)' (was 'California solar incentives 2026: which program does what?')."},
+    {"file": "src/data/topic-hubs.ts", "change": "cost_value spoke label for /tools/solar-panel-calculator: 'California Solar Cost Calculator: Check Your Quote'. incentives spoke label for /blog/solar-rebates-by-california-utility: 'Solar Rebates and Incentives by California Utility (2026)'."}
+  ],
+  "link_requests": [
+    {"from": "/solar-panels-california", "to": "/blog/solar-payback-period-california", "why": "CREATE_DEDICATED holder link (payback impressions land on the cost hub). Page is owned by the installers agent (Guides.tsx kind 'panels'); not edited here to avoid a conflicting hunk."},
+    {"from": "/blog/solar-panel-maintenance-cost", "to": "/blog/replacement-solar-inverter-cost", "why": "Topic overlap: that page discusses inverter replacement; gives the new page a third in-body inbound link from its own subject."},
+    {"from": "any page still linking /blog/solar-ppa-vs-lease-california", "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa", "why": "After the G03 301. Repointed on this branch in the files costfin touched (Guides.tsx, AssistanceGuides.tsx, prepaid-ppa, home-value). Remaining at the last commit: NetBillingGuides.tsx, solar-installers/{palmetto-solar-review,solar-optimum-review,sunrun-review}, blog/{do-solar-panels-increase-property-taxes-california,is-it-better-to-buy-or-lease-solar-panels-california,solar-ppa-explained-california,how-much-does-it-cost-to-lease-solar-panels-california (incl. primaryResourceHref),what-happens-to-solar-lease-when-i-sell-california,zero-down-solar-california}, sitemap.ts, growth-routes.ts, cta-intent.test.ts."},
+    {"from": "any page still linking /solar-problems/free-solar-california-is-it-real", "to": "/blog/free-solar-panels-california", "why": "After the G06 301. Repointed on this branch in AssistanceGuides.tsx (free, seniors, income) and dropped from the rewritten rebates page. A grep at the last commit finds no other in-body link; only the loser's own entry in src/data/article-pages.problems.json remains (ArticleRoute sibling lists read it), for the merges agent."}
+  ],
+  "skipped": [
+    {"url": "/blog/freedom-solar-california", "why": "Installer-name query (Freedom Solar: freedomsolar.net and a Campbell, CA listing hold the SERP), not an incentive program despite its 'incentives' hub tag. Brief §5 default: skip review pages for small/obscure installer names. Needs Chad's call if wanted as a review page."},
+    {"url": "/blog/rent-solar-panels-for-your-home-california (retitle)", "why": "held: Decision 14 default (G03 rent-post differentiation/retitle, medium confidence)"},
+    {"url": "/blog/free-solar-for-seniors-california (retarget)", "why": "held: Decision 14 default (G06 seniors differentiation, medium confidence). Senior-specific content improvements were still made."},
+    {"url": "/blog/nem-3-california-still-worth-it -> /blog/are-solar-panels-worth-it-california", "why": "held: Decision 14 default (G11, medium confidence)"},
+    {"url": "/blog/how-much-does-it-cost-to-lease-solar-panels-california -> /blog/rent-solar-panels-for-your-home-california", "why": "held: Decision 14 default (G05, low confidence)"}
+  ]
+}
