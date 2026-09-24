@@ -93,7 +93,9 @@
  * hub_page_map.csv (rule3_gate pass_gsc or pass_serp) is removed, so the
  * installer page renders again and the cost page keeps the cost intent.
  * Each reinstated slug is in cities-data.ts (the page's generateStaticParams
- * source), so the route renders. Vallejo (no_serp) stays redirected. The
+ * source), so the route renders. San Diego, kept on 2026-09-22 for its
+ * DR 25 SERP floor, also passes Rule 3 on Search Console and was removed in
+ * a separate commit. Vallejo (no_serp) stays redirected. The
  * /solar-savings rows are unchanged: bill/rate queries share more of their
  * SERP with cost pages (36%) than with installer pages (0%).
  */
@@ -168,9 +170,13 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   //     manteca, marina, monterey, oceanside, pacific-grove, rancho-cordova,
   //     salinas, walnut-creek, watsonville, winchester, and from the second
   //     wave below beaumont, encinitas, seaside.
-  // Kept 2026-09-22: San Diego's page-1 floor for "solar companies san diego"
-  // is DR 25 (Ahrefs, exported 2026-09-22) — not a beatable SERP.
-  '/solar-companies/san-diego': '/solar-cost/san-diego',
+  //
+  //     san-diego was kept on 2026-09-22 because the page-1 floor for "solar
+  //     companies san diego" is DR 25 (Ahrefs, exported 2026-09-22). It was
+  //     removed on 2026-09-23 in its own Decision 15 commit: it passes Rule 3
+  //     on Search Console (hub_page_map.csv rule3_gate pass_gsc; 1,881
+  //     installer-query impressions in 90 days, average position 58.0 per
+  //     redirect_intent_audit.csv), which is the test Decision 15 applies.
 
   // --- Added 2026-09-18 (second wave). These six /solar-companies city pages
   //     had no cost twin when the layer was first retired; the re-screen pass

@@ -109,12 +109,18 @@ test('the 24 evidence-backed growthCities entries are reinstated (not redirected
   }
 });
 
-test('san-diego stays redirected (2026-09-22: DR 25 SERP floor)', () => {
-  assert.equal(
-    canonicalRedirectFor('/solar-companies/san-diego'),
-    '/solar-cost/san-diego',
-    'san-diego is the one growthCities entry kept redirected (DR 25 SERP floor)',
-  );
+// 2026-09-23, Decision 15 (own commit): san-diego was kept redirected on
+// 2026-09-22 for its DR 25 SERP floor, but it passes Rule 3 on Search
+// Console (hub_page_map.csv rule3_gate pass_gsc), so it is reinstated too.
+REINSTATED_COMPANIES_SLUGS.add('san-diego');
+ROW_DELTAS.push(-1);
+
+test('Decision 15: san-diego is reinstated (passes Rule 3 on Search Console)', () => {
+  assert.equal(canonicalRedirectFor('/solar-companies/san-diego'), null);
+  assert.equal(companiesCityHref('san-diego'), '/solar-companies/san-diego');
+  assert.equal(hasCompaniesCityPage('san-diego'), true);
+  assert.ok(COMPANIES_ROUTE_SLUGS.has('san-diego'), 'the route must render');
+  assert.equal(isRedirectedPath('/solar-cost/san-diego'), false);
 });
 
 test('a /solar-companies city page with no cost twin is left alone', () => {
