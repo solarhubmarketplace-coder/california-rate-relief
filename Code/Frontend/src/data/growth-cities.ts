@@ -7784,7 +7784,7 @@ export const growthCities: Record<string, GrowthCity> = {
     "region": {
       "heading": "Bay Area providers and permit offices by city",
       "intro": [
-        "The California Energy Commission's utility map shows PG&E as the delivery utility across most of the region, with a patchwork of community choice aggregators supplying generation on top of it, and three cities outside PG&E altogether: Palo Alto (City of Palo Alto Utilities), Santa Clara (Silicon Valley Power) and Alameda (Alameda Municipal Power). Each community choice provider names its own member communities: Ava lists 16 cities plus unincorporated Alameda and San Joaquin counties, Silicon Valley Clean Energy 12 cities plus unincorporated Santa Clara County, and Sonoma Clean Power Sonoma and Mendocino counties.",
+        "The California Energy Commission's utility map shows PG&E as the delivery utility across most of the region, with a patchwork of community choice aggregators supplying generation on top of it, and three cities outside PG&E altogether: Palo Alto (City of Palo Alto Utilities), Santa Clara (Silicon Valley Power) and Alameda (the City of Alameda's own utility, listed on the map as Alameda Power & Telecom). Each community choice provider names its own member communities: Ava lists 16 cities plus unincorporated Alameda and San Joaquin counties, Silicon Valley Clean Energy 12 cities plus unincorporated Santa Clara County, and Sonoma Clean Power Sonoma and Mendocino counties.",
         "The permit column shows each city's own report to the Energy Commission under SB 379: residential solar permits issued, the share with battery storage, and the share issued online, for 2024 unless another year is named."
       ],
       "places": [
@@ -7909,8 +7909,8 @@ export const growthCities: Record<string, GrowthCity> = {
         },
         {
           "name": "Alameda",
-          "utility": "Alameda Municipal Power (city utility)",
-          "generation": "Alameda Municipal Power",
+          "utility": "City of Alameda utility (Alameda Power & Telecom on the CEC map)",
+          "generation": "The city utility",
           "permit": "City of Alameda: 86 permits in 2023, 14% online"
         },
         {
@@ -8043,7 +8043,7 @@ export const growthCities: Record<string, GrowthCity> = {
       ],
       [
         "Which Bay Area cities are not served by PG&E?",
-        "On the Energy Commission's map, Palo Alto is served by City of Palo Alto Utilities, Santa Clara by Silicon Valley Power and Alameda by Alameda Municipal Power. Each is a city-owned utility that sets its own solar rules outside the CPUC's net billing tariff."
+        "On the Energy Commission's map, Palo Alto is served by City of Palo Alto Utilities, Santa Clara by Silicon Valley Power and Alameda by the City of Alameda's own utility, listed on the map as Alameda Power & Telecom. Each is a city-owned utility that sets its own solar rules outside the CPUC's net billing tariff."
       ],
       [
         "How long does a Bay Area solar permit take?",
