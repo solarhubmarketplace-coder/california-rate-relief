@@ -49,6 +49,9 @@ export const SRC = {
   cpucGrcProcess: { label: 'CPUC: Understanding How the CPUC Processes a General Rate Case (July 29, 2025)', url: 'https://www.cpuc.ca.gov/news-and-updates/all-news/understanding-how-the-cpuc-processes-a-general-rate-case' },
   cpucCareFera: { label: 'CPUC: CARE/FERA Program (income limits June 1, 2026 to May 31, 2027)', url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program' },
   cpucNbt: { label: 'CPUC: Net Energy Metering and Net Billing', url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing' },
+  cpucDaProgram: { label: 'CPUC: California Direct Access Program (SB 695 rules and cap)', url: 'https://www.cpuc.ca.gov/consumer-support/consumer-programs-and-services/electrical-energy-and-energy-efficiency/community-choice-aggregation-and-direct-access-/direct-access/learn-more-about-costs-and-rates' },
+  cpucDaLottery2025: { label: 'CPUC Energy Division: 2025 Direct Access Lottery Enrollment Report (June 2026)', url: 'https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/direct-access-implementation-activity-reports/2025/2025-da-lottery-report.pdf' },
+  sceDirectAccess: { label: 'SCE: Direct Access overview and FAQ', url: 'https://www.sce.com/partners/partnerships/direct-access' },
   cpucDirectAccess: { label: 'CPUC: Direct Access', url: 'https://www.cpuc.ca.gov/consumer-support/consumer-programs-and-services/electrical-energy-and-energy-efficiency/community-choice-aggregation-and-direct-access-/direct-access' },
   cpucRateComparison: { label: 'CPUC: California Electric Rate Comparison', url: 'https://www.cpuc.ca.gov/RateComparison' },
   cpucClimateCredit: { label: 'CPUC: California Climate Credit (2026 amounts and months)', url: 'https://www.cpuc.ca.gov/climatecredit' },
@@ -69,6 +72,10 @@ export const SRC = {
   pgeBillExplainer: { label: 'PG&E: Bill Explainer video transcript', url: 'https://www.pge.com/assets/pge/transcripts/bill-explainer.pdf' },
   pgeCca: { label: 'PG&E: Community Choice Aggregation (CCA)', url: 'https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html' },
   pgeFera: { label: 'PG&E: Family Electric Rate Assistance (FERA)', url: 'https://www.pge.com/en/account/billing-and-assistance/financial-assistance/fera-program.html' },
+  pgeWestLightJrc: { label: 'PG&E and WestLight Energy: Joint Rate Comparisons (rates current July 2026)', url: 'https://www.pge.com/assets/pge/docs/account/alternate-energy-providers/WestLightEnergy_JointRateComparisons.pdf' },
+  pgeCare: { label: 'PG&E: California Alternate Rates for Energy (CARE) program', url: 'https://www.pge.com/en/account/billing-and-assistance/financial-assistance/california-alternate-rates-for-energy-program.html' },
+  pgeFinancialAssistance: { label: 'PG&E: Financial assistance (REACH, Match My Payment, LIHEAP, AMP)', url: 'https://www.pge.com/en/account/billing-and-assistance/financial-assistance.html' },
+  opucPgeIqbd: { label: 'Oregon PUC: Portland General Electric Advice No. 22-01, Income Qualified Bill Discount', url: 'https://apps.puc.state.or.us/edockets/docket.asp?DocketID=23171' },
   pgeMeterSchedule: { label: 'PG&E: Meter reading schedule', url: 'https://www.pge.com/en/save-energy-and-money/energy-saving-programs/smartmeter/meter-reading-schedule.html' },
   pgeTouPlans: { label: 'PG&E: Time-of-Use rate plans', url: 'https://www.pge.com/en/account/rate-plans/time-of-use-rate-plans.html' },
   pgeEvPlans: { label: 'PG&E: Electric Vehicle (EV) rate plans', url: 'https://www.pge.com/en/account/rate-plans/electric-vehicles.html' },
@@ -82,6 +89,7 @@ export const SRC = {
   sceBsc: { label: 'SCE: Base Services Charge', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc' },
   sceRateOptions: { label: "SCE: Southern California Edison's Electric Rate Options (residential and nonresidential summary)", url: 'https://www.sce.com/sites/default/files/custom-files/Summary%20of%20Available%20Residential%20and%20Nonresidential%20Rate%20Options.pdf' },
   sceNemBill: { label: 'SCE: Guide to Your Net Energy Metering Bill', url: 'https://www.sce.com/customer-service-center/help-center/solar/net-energy-metering/understanding-nem-bill' },
+  sceTariffBooks: { label: 'SCE: Rates & Pricing Choices (tariff books)', url: 'https://www.sce.com/regulatory/tariff-books/rates-pricing-choices' },
   sceRateCompare: { label: 'SCE: Rate Plan Comparison tool', url: 'https://www.sce.com/save-money/rates-financing/rate-plan-comparison' },
   dceSolar: { label: 'Desert Community Energy: Solar customers (true-up timing)', url: 'https://desertcommunityenergy.org/your-options/solar-customers/' },
   sceHistorical: { label: 'SCE: Historical Prices and Rate Schedules', url: 'https://www.sce.com/regulatory/tariff-books/historical-rates' },
@@ -111,6 +119,7 @@ export const SRC = {
   // --- SMUD ----------------------------------------------------------------
   smudResRates: { label: 'SMUD: Residential rates (2026 prices and bill comparison)', url: 'https://www.smud.org/Rate-Information/Residential-rates' },
   smudTodDetails: { label: 'SMUD: Time-of-Day (5-8 p.m.) Rate details and holidays', url: 'https://www.smud.org/Rate-Information/Residential-rates/Time-of-Day-5-8pm-Rate/Rate-details' },
+  smudLowIncome: { label: 'SMUD: Low income and nonprofits (EAPR limits effective Feb. 1, 2026)', url: 'https://www.smud.org/Rate-Information/Low-income-and-nonprofits' },
   smudRateArchive: { label: 'SMUD: Rate change archive (2026 and 2027 increases)', url: 'https://www.smud.org/Rate-Information/Rate-archive' },
 
   // --- EIA, CEC, CDFA ------------------------------------------------------
