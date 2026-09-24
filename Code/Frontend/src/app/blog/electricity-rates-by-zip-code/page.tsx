@@ -24,7 +24,7 @@ const url = `https://ratereliefca.com${path}`;
 const title = 'Electricity Rates by ZIP Code in California (2026)';
 const h1 = 'Electricity Rates by ZIP Code in California: How to Find Your Real Rate';
 const description =
-  'California rates follow your utility, CCA and plan, not your ZIP. Find who serves your address, then compare 2026 prices for PG&E, SCE, SDG&E, SMUD and LADWP.';
+  'California rates follow your utility, CCA and plan, not your ZIP. Find who serves your address and compare 2026 prices for PG&E, SCE, SDG&E, SMUD, LADWP.';
 const published = '2026-09-23';
 const updated = '2026-09-23';
 const hub = { label: 'California utility rate tracker', href: '/california-utility-rate-tracker' };

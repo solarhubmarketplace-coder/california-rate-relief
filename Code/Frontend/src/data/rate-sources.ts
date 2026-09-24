@@ -169,6 +169,9 @@ export const SRC = {
   cecTseg2024: { label: 'California Energy Commission, 2024 Total System Electric Generation', url: 'https://www.energy.ca.gov/data-reports/energy-almanac/california-electricity-data/2024-total-system-electric-generation' },
   chargepointPricing: { label: 'ChargePoint: What are the pricing policies and fees? (updated June 16, 2026)', url: 'https://www.chargepoint.com/drivers/support/faqs/what-are-pricing-policies-and-fees-i-should-be-aware' },
   chargepointServiceFee: { label: 'ChargePoint: What is the service fee? (updated June 16, 2026)', url: 'https://www.chargepoint.com/drivers/support/faqs/what-service-fee' },
+  estarPoolPumps: { label: 'ENERGY STAR: Pool Pumps (energy use, speed, timers and cleaner study)', url: 'https://www.energystar.gov/products/pool_pumps' },
+  estarPoolFactSheet: { label: 'ENERGY STAR: Pool Pump Fact Sheet (2022)', url: 'https://www.energystar.gov/sites/default/files/asset/document/ES_PoolPumps_FactSheet_2022.pdf' },
+  ecfrPoolPumps: { label: 'U.S. DOE energy conservation standards for pumps, 10 CFR 431.465 (dedicated-purpose pool pumps from July 19, 2021)', url: 'https://www.ecfr.gov/current/title-10/chapter-II/subchapter-D/part-431/subpart-Y/section-431.465' },
   cdfaEvfsFaq: { label: 'CDFA Division of Measurement Standards, EV Fueling Systems FAQ', url: 'https://www.cdfa.ca.gov/dms/pdfs/EVFS_FAQ.pdf' },
 
   // --- Tier 3 additions (2026-09-23): each fetched and read on this date. ---
@@ -185,9 +188,11 @@ export const SRC = {
   pgeE1Tariff: { label: 'PG&E: Electric Schedule E-1, Residential Services (tariff)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-1.pdf' },
   pgeEtoudTariff: { label: 'PG&E: Electric Schedule E-TOU-D, peak pricing 5 to 8 p.m. non-holiday weekdays (tariff)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-TOU-D.pdf' },
   pgeNem2Tariff: { label: 'PG&E: Electric Schedule NEM2, Net Energy Metering Service (tariff)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_NEM2.pdf' },
+  pgeRule3: { label: 'PG&E: Electric Rule 3, Application for Service', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_3.pdf' },
   pgeRule7: { label: 'PG&E: Electric Rule 7, Deposits (effective July 16, 2020)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_7.pdf' },
   pgeRule9: { label: 'PG&E: Electric Rule 9, Rendering and Payment of Bills', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_9.pdf' },
   pgeRule10: { label: 'PG&E: Electric Rule 10, Disputed Bills', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_10.pdf' },
+  pgeRule11: { label: 'PG&E: Electric Rule 11, Discontinuance and Restoration of Service', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_11.pdf' },
   pgeRule17_1: { label: 'PG&E: Electric Rule 17.1, Adjustment of Bills for Billing Error', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_17.1.pdf' },
   pgeRule21: { label: 'PG&E: Electric Rule 21, Generating Facility Interconnections', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_21.pdf' },
   pgeRule30: { label: 'PG&E: Electric Rule 30, Retail Service Transmission Facilities (effective December 4, 2025)', url: 'https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_RULES_30.pdf' },
@@ -211,6 +216,7 @@ export const SRC = {
   smudSolarShares: { label: 'SMUD: Residential SolarShares', url: 'https://www.smud.org/Going-Green/Residential-SolarShares' },
   smudFees: { label: 'SMUD: Fees and deposits schedule (effective June 1, 2026)', url: 'https://www.smud.org/fees' },
   ladwpServiceRules: { label: 'LADWP: Rules Governing Water and Electric Service (Rules 3, 6 and 7)', url: 'https://www.ladwp.com/sites/default/files/2023-11/Rules%20Governing%20Water%20%20Electric%20Service%20Oct%202008%20reso%20010%20331%20%20010%20362%20%20011%20121%20%20013%20115%20%20013%20246%20%20017%20180%20%20019%20170%20019%20201%20024%20028%20WEB%20101623.pdf' },
+  ladwpConstructionCharges: { label: 'LADWP: Electric service charges and fees (temporary service standard charges)', url: 'https://www.ladwp.com/construction-services/construction-and-renovation-electric-service-requests/charges-fees' },
   laLifelineUut: { label: 'City of Los Angeles Office of Finance: Lifeline utility users tax exemption', url: 'https://finance.lacity.gov/tax-education/tax-exemptions/lifeline-utility-users-tax-exemption-seniors-and-individuals' },
 } as const satisfies Record<string, RateSource>;
 
