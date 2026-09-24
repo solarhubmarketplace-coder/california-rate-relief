@@ -36,6 +36,7 @@ import {
   cityPageDates,
   cityPageMetadata,
   cityQuickCheckUtility,
+  growthUtilityForForm,
   regionalHubsFor,
   savingsPageSeo,
 } from '@/lib/city-pages';
@@ -265,6 +266,20 @@ export default async function CityPage({ params }: PageProps) {
                       {paragraph}
                     </p>
                   ))}
+                  {/* 2026-09-23 (Tier 3): the section's next-question links. */}
+                  {section.links && section.links.length > 0 && (
+                    <p className="text-foreground/80 leading-relaxed mb-6">
+                      <span className="font-semibold">Read next:</span>{' '}
+                      {section.links.map((link, i) => (
+                        <span key={link.href}>
+                          {i > 0 && ' · '}
+                          <Link href={link.href} className="text-primary hover:underline">
+                            {link.label}
+                          </Link>
+                        </span>
+                      ))}
+                    </p>
+                  )}
                 </div>
               ))}
 
@@ -784,8 +799,10 @@ export default async function CityPage({ params }: PageProps) {
             </div>
 
             <div className="mt-8">
+              {/* growthUtilityForForm: a city-utility code the form does not
+                  list ('cpau', 'gwp') reaches it as the utility's name. */}
               <SolarInquiry
-                utility={needsUtilityConfirmation ? '' : city.utilityCode}
+                utility={needsUtilityConfirmation ? '' : growthUtilityForForm(city.utilityCode)}
                 topic={`${city.name} solar savings and quote comparison`}
               />
             </div>

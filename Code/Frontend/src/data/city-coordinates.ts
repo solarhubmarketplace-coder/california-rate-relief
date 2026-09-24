@@ -62,6 +62,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   'mountain-view': [37.4005649, -122.0795486], // Mountain View city, GEOID 0649670
   murrieta: [33.5743760, -117.1906785], // Murrieta city, GEOID 0650076
   napa: [38.2974793, -122.3010855], // Napa city, GEOID 0650258
+  'newport-beach': [33.6150110, -117.8671944], // Newport Beach city, GEOID 0651182 (queried 2026-09-23)
   oakland: [37.7695164, -122.2244858], // Oakland city, GEOID 0653000
   oceanside: [33.2246458, -117.3084145], // Oceanside city, GEOID 0653322
   ontario: [34.0392592, -117.6064073], // Ontario city, GEOID 0653896
@@ -69,6 +70,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   'pacific-grove': [36.6224077, -121.9262315], // Pacific Grove city, GEOID 0654848
   'palm-desert': [33.7377747, -116.3695003], // Palm Desert city, GEOID 0655184
   'palm-springs': [33.8015805, -116.5380755], // Palm Springs city, GEOID 0655254
+  'palo-alto': [37.3952288, -122.1429189], // Palo Alto city, GEOID 0655282 (queried 2026-09-23)
   pasadena: [34.1596757, -118.1388655], // Pasadena city, GEOID 0656000
   perris: [33.7898009, -117.2233475], // Perris city, GEOID 0656700
   petaluma: [38.2421637, -122.6266387], // Petaluma city, GEOID 0656784

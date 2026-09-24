@@ -44,7 +44,7 @@
 // Last full data audit: April 15, 2026.
 // =============================================================================
 
-import { getUtilityRate, Q2_2026_URL, type UtilityRateKey } from './utility-rate-tracker.ts';
+import { getUtilityRate, Q2_2026_URL, Q3_2025_URL, type UtilityRateKey } from './utility-rate-tracker.ts';
 
 // ---------------------------------------------------------------------------
 // Utility Territory Data
@@ -391,6 +391,35 @@ export const UTILITY_DATA: Record<string, UtilityData> = {
       fetchedAt: '2026-09-22',
     },
   },
+  // 2026-09-23 (Tier 3, citysav): City of Palo Alto Utilities, for the new
+  // /solar-savings/palo-alto page. CPAU bills a two-tier Schedule E-1, not a
+  // single average, so ratePerKwh is a sentinel and the templates show
+  // rateDisplay/rateLabel instead. Every figure below is from the City's own
+  // schedules, fetched 2026-09-23.
+  cpau: {
+    code: 'cpau',
+    name: 'City of Palo Alto Utilities',
+    shortName: 'CPAU',
+    ratePerKwh: 0,
+    rateDisplay: 'See schedule',
+    rateLabel: 'CPAU: two-tier Schedule E-1',
+    peakTouRate: 'n/a — tiered; E-1-TOU is optional', // not rendered
+    annualIncrease: 0, // not rendered
+    fixedCharge: 5.38, // E-1 customer charge, $/month; only CPUC IOUs render fixedCharge
+    accountUrl: 'https://www.paloalto.gov/Departments/Utilities',
+    careFeraUrl: 'https://www.paloalto.gov/Departments/Utilities/Customer-Service/Utilities-Assistance/Rate-Assistance-Program-RAP',
+    ratePlanAdvice:
+      'Separately metered single-family homes in Palo Alto are billed on Schedule E-1: a $5.38 monthly customer charge plus $0.21494 per kWh for the first 15 kWh a day and $0.23975 per kWh above that, effective July 1, 2026. A voluntary time-of-use schedule, E-1-TOU, is open to homes with an advanced meter but not to net-metered solar customers.',
+    nemVersion: 'CPAU NEM 2',
+    exportRate: 'the Export Electricity Compensation rate on Schedule E-EEC-1, $0.0990 per kWh from July 1, 2026', // not rendered
+    rateIncreaseHistory:
+      'CPAU publishes no single blended average rate, so none is stated here; its Schedule E-1 tiers are the prices to use.',
+    rateSource: {
+      label: 'City of Palo Alto Utilities — Utility Rate Schedule E-1, effective July 1, 2026',
+      url: 'https://www.paloalto.gov/files/assets/public/v/7/utilities/rates-schedules-for-utilities/residential-utility-rates/e-1_effective_2026-07-01.pdf',
+      fetchedAt: '2026-09-23',
+    },
+  },
   // FUTURE UTILITIES — Add when expanding to new territories
   // bwp: { ... },    // Burbank Water & Power
   // iid: { ... },    // Imperial Irrigation District
@@ -413,7 +442,13 @@ export interface CityLocalTip {
 export interface CityBillsContent {
   /** Direct answer to the page's question, 2-3 sentences. */
   answer: string;
-  sections: { heading: string; paragraphs: string[] }[];
+  /**
+   * `links` (optional, 2026-09-23 Tier 3): internal pages that answer the
+   * reader's next question from this section, rendered as one line of links
+   * after its paragraphs. Paragraphs stay plain strings so the FAQ schema and
+   * word counts read them as text.
+   */
+  sections: { heading: string; paragraphs: string[]; links?: { href: string; label: string }[] }[];
   faqs?: CityFAQ[];
   sources: { label: string; url: string; fetchedAt: string }[];
 }
@@ -1943,33 +1978,109 @@ export const CITIES: CityData[] = [
     systemCostCash: 14100,
     introText:
       'Oakland is the largest city in the East Bay with a population of around 430,000. Oakland is in PG&E territory. PG&E\'s average residential rate was 33.7¢ per kWh as of June 2026, a bundled average across the whole residential class (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). The city\'s diverse neighborhoods range from sunny flatlands to foggy hills, creating varied solar potential.',
+    // 2026-09-23 (Tier 3, citysav): the unsourced sunshine-hour figures and
+    // neighbourhood fog claims were removed with the bills-and-rates upgrade.
     electricitySection:
-      'No primary source publishes an average household electric bill for Oakland, so this guide does not quote one. Your own last twelve bills are the better guide: they show your usage, your rate plan and the seasonal swing. PG&E\'s average residential rate was 33.7¢ per kWh as of June 2026, a bundled average across the whole residential class (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). On a time-of-use plan the price also changes by time of day, so when you use power matters as well as how much.\n\nOakland\'s mild climate means less AC usage than inland cities, but the high per-kWh rate means even moderate usage adds up quickly.',
+      'An Oakland bill carries both providers on one PG&E statement: PG&E\'s delivery charges, which include the Base Services Charge, and Ava\'s generation charges on a page of their own. To compare your plan with the joint comparison above, find your rate schedule in the upper left of the Electric Delivery Charges section, where PG&E and Ava point customers to look, and your monthly kWh.\n\nThe usage that comparison assumes, 338 kWh a month on E-TOU-C, is a typical figure rather than an Oakland one. The same document prices all-electric and EV households on their own plans at higher usage: 922 kWh a month on E-ELEC and 710 kWh on EV2-A.',
     solarPotentialText:
-      'Oakland averages approximately 2,900 hours of sunshine per year with 5.0 peak sun hours per day. The East Bay gets more sun than San Francisco, especially in the flatlands and southern neighborhoods.',
+      'What a rooftop system produces in Oakland depends on the individual roof: its direction, pitch, shade from trees and neighbouring buildings, and its condition. Give every bidder the same roof layout and shade information, and ask for a month-by-month production estimate you can check.',
     localTips: [
       {
-        title: 'Neighborhood sun variation:',
+        title: 'Check your PCIA vintage:',
         content:
-          'Oakland Hills gets more fog than the flatlands. Neighborhoods like Fruitvale, East Oakland, and the Laurel District tend to get the best solar exposure.',
+          'The joint comparison quoted above is for customers with a 2018 vintage; Ava publishes a second comparison for a 2025 vintage. Your vintage year is printed in small text under Total PG&E Electric Delivery Charges on the bill.',
+      },
+      {
+        title: 'Discounts go with you:',
+        content:
+          'Ava says CARE, FERA and Medical Baseline discounts are the same whether Ava or PG&E supplies your generation, and households on those programs are placed on Bright Choice whatever their city\'s default.',
       },
     ],
     whenSolarDoesntWork:
       'If your electric bill is already low, your roof has heavy shade, or you plan to sell within 1-2 years.',
     bottomLine:
-      'Solar is worth pricing in Oakland, especially in the sunnier flatland neighborhoods; compare quotes against your actual PG&E bills.',
+      'In Oakland, read the generation page of your PG&E bill first to see whether Ava or PG&E supplies your power. Compare your own twelve months of usage against the joint comparison for your schedule, and have any solar quote model both Ava\'s and PG&E\'s credits and both true-up months.',
     faqs: [
       { question: 'How much does solar cost in Oakland in 2026?', answer: 'No primary source publishes a solar price for Oakland. Your price depends on the system size your usage needs, the roof, the equipment and the installer. As a benchmark, Lawrence Berkeley National Laboratory\'s Tracking the Sun (October 2024) found that host-owned residential systems installed in 2023 were priced at $3.20–$5.50 per watt (20th to 80th percentile, national sample), with California near the middle. A system you buy in 2026 gets no federal residential credit: IRC § 25D does not apply to expenditures made after December 31, 2025. A lease or PPA is priced by its own contract, so compare its total payments.' },
-      { question: 'What is the average electric bill in Oakland?', answer: 'No primary source publishes an average electric bill for Oakland, so this page does not quote one. PG&E\'s average residential rate was 33.7¢ per kWh as of June 2026, a bundled average across the whole residential class (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). What you pay depends on your usage, rate plan and season, so use the totals on your last twelve bills.' },
       { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
-      { question: 'How many hours of sun does Oakland get?', answer: 'Oakland averages approximately 2,900 hours of sunshine per year with 5.0 peak sun hours per day.' },
     ],
-    metaTitle: 'Solar Panels in Oakland, CA: 2026 PG&E Rates & Cost',
-    metaDescription: 'Learn solar costs and every option to lower your bill.',
-    ogTitle: 'Solar Savings in Oakland, CA: 2026 PG&E Rates & Options',
-    ogDescription: 'Here\'s what drives the cost of solar in your city.',
+    metaTitle: 'Oakland Electricity Provider: Ava & PG&E Rates (2026)',
+    metaDescription: 'Oakland electricity: Ava Community Energy generation and PG&E delivery on one bill, typical monthly costs on each plan, the $24 charge and solar true-ups.',
+    ogTitle: 'Oakland Electricity Provider: Ava & PG&E Rates (2026)',
+    ogDescription: 'Who supplies and delivers Oakland\'s electricity, what a typical month costs on each plan, and how solar is credited.',
     googleSunroofUrl: 'https://sunroof.withgoogle.com',
-    relatedArticles: PGE_RELATED_ARTICLES,
+    relatedArticles: [
+      { slug: 'what-is-3rd-party-electric-on-pge-bill', title: 'What Is 3rd Party Electric on a PG&E Bill? CCA Charges' },
+      { slug: 'why-is-my-pge-bill-so-high', title: 'Why Is My PG&E Bill So High? 7 Causes to Check' },
+      { slug: 'income-qualified-bill-discount-pge', title: 'PG&E Income-Qualified Bill Discount: CARE and FERA' },
+      { slug: 'pge-vs-sce-vs-sdge-rates-compared', title: 'PG&E vs SCE vs SDG&E: Rates Compared' },
+    ],
+    // 2026-09-23 (Tier 3, citysav; Decision 18): re-scoped to the city's
+    // provider and bill question ("electricity provider oakland california",
+    // "average pg&e bill oakland ca", "electricity rates oakland").
+    bills: {
+      answer:
+        'Oakland homes get their electricity from two providers on one bill: PG&E delivers it, maintains the lines and sends the statement, and Ava Community Energy supplies the generation, on its Bright Choice plan unless a household chose otherwise. On the joint comparison PG&E and Ava publish, a home on PG&E\'s common E-TOU-C plan using 338 kWh a month comes to $138.33 on Bright Choice and $138.52 with PG&E generation.',
+      sections: [
+        {
+          heading: 'Who provides electricity in Oakland',
+          paragraphs: [
+            'Ava Community Energy is a not-for-profit local government agency and the default electricity provider for most of Alameda County. It buys the power; PG&E delivers it and bills for both. Oakland\'s default residential plan is Bright Choice, which Ava prices 0.5% below PG&E\'s equivalent rate, fees included. Renewable 100, its 100% renewable plan, costs 1¾ cents more per kWh than PG&E. You can change plans at any time or choose PG&E generation, and households on CARE, FERA or Medical Baseline are placed on Bright Choice whatever their city\'s default.',
+            'On the California Energy Commission\'s utility map, PG&E\'s territory covers about 91% of Oakland\'s land, and Ava\'s service area the same part of the city. The other 9% is the Port of Oakland\'s area, which the map shows as the Port\'s own publicly owned utility. The name on your bill settles which one serves you.',
+          ],
+        },
+        {
+          heading: 'What an Oakland electric bill costs',
+          paragraphs: [
+            'PG&E and Ava\'s joint rate comparison, using PG&E rates as of March 2026 and Ava rates as of January 2026, prices a typical month on E-TOU-C, the most common PG&E schedule, at 338 kWh: $138.52 with PG&E generation, $138.33 on Bright Choice and $144.43 on Renewable 100. On the tiered E-1 plan at 371 kWh the figures are $154.10, $153.88 and $160.59, and a CARE household on E-TOU-C using 347 kWh pays $78.59, $78.39 or $84.66. The comparison leaves out the California Climate Credit.',
+            'In March 2026 PG&E moved some fixed costs out of the per-kWh price and into a Base Services Charge of about $24 a month, about $6 on CARE and $12 on FERA. PG&E says the price of each kWh is lower in exchange, but whether a household\'s total falls depends on its usage. Across PG&E\'s territory, the CPUC Public Advocates Office put the residential average rate at 33.7 cents per kWh in June 2026, unchanged since March.',
+          ],
+          links: [
+            { href: '/blog/what-is-3rd-party-electric-on-pge-bill', label: 'How Ava\'s charges appear on a PG&E bill' },
+            { href: '/blog/why-is-my-pge-bill-so-high', label: 'Why a PG&E bill runs high' },
+          ],
+        },
+        {
+          heading: 'Solar on an Ava account',
+          paragraphs: [
+            'Ava says solar customers who applied for interconnection before April 15, 2023 are on NEM 1.0 or 2.0 for 20 years, and later systems are on the Solar Billing Plan. Under NEM, Ava and PG&E each credit exports at their own retail rate against their own charges, and there are two annual true-ups: Ava\'s every April, and PG&E\'s in a month set by your account.',
+            'Ava bills its NEM customers monthly for any generation charges their credits do not cover, unless they choose annual billing by February 28 or 29. At the April true-up, surplus is paid at Ava\'s Net Surplus Compensation rate, which Ava says is generally lower than the retail rate: as a bill credit for balances under $100 and as a payment above that. No solar credit can pay PG&E\'s Base Services Charge.',
+          ],
+          links: [
+            { href: '/blog/pge-solar-billing-plan', label: 'How PG&E\'s Solar Billing Plan works' },
+            { href: '/blog/net-billing-vs-net-metering-california', label: 'Net billing vs. net metering' },
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Who is the electricity provider in Oakland, California?',
+          answer: 'Two providers share the bill. PG&E delivers the power and sends the statement, and Ava Community Energy supplies the generation, on its Bright Choice plan by default. You can switch to Ava\'s Renewable 100 or to PG&E generation. The Port of Oakland\'s area has its own utility on the state\'s map.',
+        },
+        {
+          question: 'What is the average electric bill in Oakland?',
+          answer: 'No official Oakland average is published. PG&E and Ava\'s joint comparison uses a typical month of 338 kWh on E-TOU-C, which comes to $138.33 on Bright Choice and $138.52 with PG&E generation. Your own usage and plan will differ, so your last twelve bills are the better guide.',
+        },
+        {
+          question: 'Is Ava cheaper than PG&E?',
+          answer: 'On Bright Choice, slightly. Ava prices it 0.5% below PG&E\'s equivalent rate, which the joint comparison shows as $138.33 against $138.52 for a 338 kWh E-TOU-C month. Renewable 100 costs more: $144.43 for the same month.',
+        },
+        {
+          question: 'When does Ava true up solar customers?',
+          answer: 'Every April, for all of its NEM customers. PG&E runs a separate true-up for delivery charges in a month set by your account, so an Oakland solar home can see two settlement bills a year.',
+        },
+      ],
+      sources: [
+        { label: 'Ava Community Energy: How it works', url: 'https://avaenergy.org/your-energy-options/how-it-works/', fetchedAt: '2026-09-23' },
+        { label: 'Ava Community Energy: Who we serve (default plans by city)', url: 'https://avaenergy.org/community/who-we-serve/', fetchedAt: '2026-09-23' },
+        { label: 'Ava Community Energy: Plans and rates', url: 'https://avaenergy.org/your-energy-options/plans-and-rates/rates/', fetchedAt: '2026-09-23' },
+        { label: 'Ava Community Energy: Net Energy Metering billing and true-up', url: 'https://avaenergy.org/your-energy-options/plans-and-rates/rates/net-energy-metering/', fetchedAt: '2026-09-23' },
+        { label: 'PG&E and Ava: Joint Rate Comparisons (PG&E rates March 2026, Ava rates January 2026)', url: 'https://www.pge.com/assets/pge/docs/account/alternate-energy-providers/ava-rcc.pdf', fetchedAt: '2026-09-23' },
+        { label: 'PG&E: Base Services Charge', url: 'https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html', fetchedAt: '2026-09-23' },
+        { label: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report', url: Q2_2026_URL, fetchedAt: '2026-09-23' },
+        { label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23', url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about', fetchedAt: '2026-09-23' },
+      ],
+    },
     seoData: { primaryKeyword: 'solar panels oakland', volume: 230, kd: 5, verdict: 'PRIORITY BUILD' },
   },
 
@@ -3439,57 +3550,126 @@ export const CITIES: CityData[] = [
     population: '307K',
     systemSizeKw: 8.5,
     systemCostCash: 25500,
+    // 2026-09-23 (Tier 3, citysav): intro, tips and FAQs rewritten with the
+    // bills-and-rates upgrade. The removed copy named no source for its HOA,
+    // Title 24 and sunshine claims, and said SCE alone served Irvine.
     introText:
-      'Irvine is Orange County\'s largest planned community with a population of around 307,000, known for master-planned neighborhoods, excellent schools, and strict community standards. Served by Southern California Edison, Irvine residents pay SCE\'s high rates on relatively efficient, newer homes. The city\'s extensive HOA infrastructure — largest in California (Irvine Ranch HOA) — combined with strict Title 24 solar-ready building codes makes Irvine a sophisticated solar market with unique considerations.',
+      'Irvine homes are billed by Southern California Edison, which delivers the power, and most get their generation from Orange County Power Authority, the community choice provider the City helped found. This guide covers what that means for your bill, your rate plan and a solar quote.',
     electricitySection:
-      'No primary source publishes an average household electric bill for Irvine, so this guide does not quote one. Your own last twelve bills are the better guide: they show your usage, your rate plan and the seasonal swing. SCE\'s average residential rate was 34.4¢ per kWh as of June 1, 2026, a bundled average across the whole residential class (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). On a time-of-use plan the price also changes by time of day, so when you use power matters as well as how much. SCE residential customers not on CARE or FERA also pay a $24.15 monthly fixed charge (about $6 on CARE and $12 on FERA) under CPUC Decision 24-05-028. Many Irvine homes are newer and more efficient, but summer air conditioning still drives usage, billed at SCE\'s rates.',
+      'An Irvine bill carries both providers on one SCE statement: SCE\'s delivery charges, which include the Base Services Charge, and OCPA\'s generation charges. To compare your own plan with the joint comparison above, find your rate schedule on the detailed page of the bill, just below the heading Details of your new charges, and your monthly kWh.\n\nSCE\'s index of communities places Irvine in baseline regions 6 and 8, both of which SCE classes as cool. The summer baseline is 11.4 kWh a day in region 6 and 12.8 in region 8. On the tiered plan that much is billed at the lower Tier 1 price, and on TOU-D-4-9PM it earns a baseline credit of 10 cents per kWh.',
     solarPotentialText:
-      'Irvine averages approximately 3,200 hours of sunshine per year with 5.75 peak sun hours per day. Most Irvine neighborhoods were built after 1990 with modern roof designs offering excellent southern and western exposure. The flat, sunny topography and minimal shade obstruction make nearly every Irvine home a good solar candidate.',
+      'What a rooftop system produces in Irvine depends on the individual roof: its direction, pitch, shade and condition. Ask every bidder for a monthly production estimate built on the same roof layout, then check it against an independent estimate for your address.',
     localTips: [
       {
-        title: 'Irvine Ranch HOA + AB 2188 solar rights enforcement:',
+        title: 'Compare the generation line:',
         content:
-          'Irvine Ranch is the largest HOA in California, managing architecture in most neighborhoods. However, California\'s Solar Rights Act (Civil Code § 714) makes HOA restrictions that increase a solar system\'s cost by more than $1,000 or reduce its efficiency by more than 10% unenforceable. Irvine Ranch enforcement of AB 2188 is rigorous — you have strong legal protection.',
+          'If OCPA\'s Basic Choice is on your bill, the joint comparison puts it above SCE generation for a typical month. You can move to another OCPA plan or opt out to SCE generation; check the generation charges on your own recent bills before deciding.',
       },
       {
-        title: 'Master-planned solar-ready communities:',
+        title: 'Medical Baseline:',
         content:
-          'Many newer Irvine neighborhoods were built with solar-ready electrical infrastructure (conduit, panels pre-positioned). If your home was built after 2020, check your closing documents — you may own builder-installed solar, or it may be under a lease/PPA from the builder.',
-      },
-      {
-        title: 'Title 24 compliance already built in:',
-        content:
-          'All Irvine homes built after 2020 must comply with California\'s Title 24 building standard, which requires solar-ready design. This means easier installations and lower labor costs compared to retrofit projects in older neighborhoods.',
+          'Households that rely on powered medical equipment can apply for Medical Baseline, which adds 16.5 kWh a day to SCE\'s baseline allocation. OCPA says Medical Baseline, CARE and FERA apply to its customers as they do to SCE\'s.',
       },
     ],
     whenSolarDoesntWork:
-      'If your electric bill is already low, you are renting, your roof has unusual shade (rare in flat Irvine), or you plan to sell within 1-2 years. While HOA restrictions cannot block solar entirely, a complex design review can add time to the project.',
+      'If your electric bill is already low, you are renting, your roof is heavily shaded, or you plan to sell within 1-2 years. An HOA cannot block solar, but its design review can add time to the project.',
     bottomLine:
-      'Irvine\'s combination of master-planned solar-ready communities, excellent sunshine, SCE\'s high rates, and strong HOA solar rights enforcement make it an ideal solar market. The main timeline consideration is HOA architectural review, but protections under AB 2188 are strong.',
+      'In Irvine, check who generates your power before anything else: OCPA\'s Basic Choice by default, or SCE if you opted out. Then compare your own twelve months of bills against the joint comparison, and have any solar quote model OCPA\'s generation credits and April true-up alongside SCE\'s delivery side.',
     faqs: [
       {
         question: 'How much does solar cost in Irvine in 2026?',
         answer: 'No primary source publishes a solar price for Irvine. Your price depends on the system size your usage needs, the roof, the equipment and the installer. As a benchmark, Lawrence Berkeley National Laboratory\'s Tracking the Sun (October 2024) found that host-owned residential systems installed in 2023 were priced at $3.20–$5.50 per watt (20th to 80th percentile, national sample), with California near the middle. A system you buy in 2026 gets no federal residential credit: IRC § 25D does not apply to expenditures made after December 31, 2025. A lease or PPA is priced by its own contract, so compare its total payments.',
       },
       {
-        question: 'What is the average electric bill in Irvine?',
-        answer: 'No primary source publishes an average electric bill for Irvine, so this page does not quote one. SCE\'s average residential rate was 34.4¢ per kWh as of June 1, 2026, a bundled average across the whole residential class (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). What you pay depends on your usage, rate plan and season, so use the totals on your last twelve bills.',
-      },
-      {
-        question: 'Can Irvine Ranch HOA block solar panels?',
-        answer: 'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot impose restrictions that increase a solar system\'s cost by more than $1,000 or reduce its efficiency by more than 10%. Irvine Ranch strictly enforces AB 2188 protections, so you have strong legal backing.',
+        question: 'Can an Irvine HOA block solar panels?',
+        answer: 'No. Under California\'s Solar Rights Act (Civil Code § 714), HOAs cannot impose restrictions that increase a solar system\'s cost by more than $1,000 or reduce its efficiency by more than 10%.',
       },
       {
         question: 'How long does HOA approval take in Irvine?',
         answer: 'Your right to install is protected, and under Civil Code § 714 an application the HOA does not deny in writing within 45 days of receiving it is deemed approved. Submit detailed plans showing proposed mount, color, and angle. Submit complete plans so the review can start right away.',
       },
     ],
-    metaTitle: 'Irvine Solar Cost 2026: $25,500 System, SCE Rates',
-    metaDescription: 'AB 2188 protects your right to install despite Irvine Ranch HOA rules.',
-    ogTitle: 'Solar Savings in Irvine, CA: 2026 SCE Rates & Options',
-    ogDescription: 'Here\'s what solar costs in master-planned communities.',
+    metaTitle: 'Irvine Electricity Provider: OCPA & SCE Rates (2026)',
+    metaDescription: 'Irvine electricity: Orange County Power Authority generation and SCE delivery on one bill, what a typical month costs on each and how solar is credited.',
+    ogTitle: 'Irvine Electricity Provider: OCPA & SCE Rates (2026)',
+    ogDescription: 'Who supplies and delivers Irvine\'s electricity, what a typical month costs on each plan, and how solar is credited.',
     googleSunroofUrl: 'https://sunroof.withgoogle.com',
-    relatedArticles: SCE_RELATED_ARTICLES,
+    relatedArticles: [
+      { slug: 'sce-rate-increase-2026', title: 'SCE Rate Increases 2025–2026: History and Rate Chart' },
+      { slug: 'california-24-dollar-fixed-charge-explained', title: 'The New $24 Fixed Charge, Explained' },
+      { slug: 'sce-settlement-bill', title: 'SCE Annual Settlement Bill: How to Read Your Solar True-Up' },
+      { slug: 'pge-vs-sce-vs-sdge-rates-compared', title: 'PG&E vs SCE vs SDG&E: Rates Compared' },
+    ],
+    // 2026-09-23 (Tier 3, citysav; Decision 18): re-scoped to the city's
+    // provider and rate question ("electricity provider irvine california",
+    // "irvine electricity cost", "electricity rates irvine").
+    bills: {
+      answer:
+        'Irvine homes get their electricity from two providers on one SCE bill: Southern California Edison delivers it, and Orange County Power Authority (OCPA) supplies the generation, on its Basic Choice plan unless a household chose otherwise. On the two providers\' joint comparison, a typical 522 kWh month on SCE\'s TOU-D-4-9PM plan comes to $226.95 on Basic Choice against $202.09 with SCE generation.',
+      sections: [
+        {
+          heading: 'Who provides electricity in Irvine',
+          paragraphs: [
+            'OCPA is a not-for-profit public agency run by elected officials from its member cities. Irvine was the first Orange County city to explore it and funded its formation in 2021; Buena Park and Fullerton are the other members, with Fountain Valley starting service soon. Residential service began in October 2022. Homes are enrolled automatically, each city picks a default plan, and Irvine\'s is Basic Choice, 49% renewable in 2026. Any household can choose Smart Choice or 100% Renewable Choice instead, or opt out to SCE generation.',
+            'SCE still delivers the power, maintains the lines and sends the bill. On the California Energy Commission\'s utility map, SCE\'s territory covers all of Irvine and OCPA\'s service area 99.8% of it. OCPA says CARE, FERA, Medical Baseline and the other bill-assistance programs apply to its customers just as they do to SCE\'s.',
+          ],
+        },
+        {
+          heading: 'What an Irvine electric bill costs',
+          paragraphs: [
+            'SCE and OCPA\'s joint rate comparison, using SCE rates as of June 1, 2026 and OCPA rates as of October 20, 2025, prices a 522 kWh month on TOU-D-4-9PM at $202.09 with SCE generation, $226.95 on Basic Choice, $232.17 on Smart Choice (60% renewable plus 40% carbon-free) and $234.78 on 100% Renewable Choice. A CARE household with the same usage pays $122.02 with SCE generation and $146.88 on Basic Choice.',
+            'The gap is on the generation side. In that comparison OCPA\'s Basic Choice generation rate is 13.88 cents per kWh against SCE\'s 11.66 cents, and OCPA customers pay 3.75 cents in surcharges, which recover power SCE bought before customers left and the city franchise fee, partly offset by a lower SCE delivery rate. OCPA says its generation rates are locked for 2026, while SCE\'s can change four to six times a year.',
+            'Every Irvine home also pays SCE\'s Base Services Charge, which replaced the Basic Charge in November 2025: $24.15 a month for most customers, $12.08 on FERA and $6.00 on CARE. SCE says the price of each kWh fell about 10% in exchange.',
+          ],
+          links: [
+            { href: '/blog/why-is-my-sce-bill-so-high', label: 'Why an Edison bill runs high' },
+            { href: '/blog/sce-time-of-use-rates-2026', label: 'SCE time-of-use hours and prices' },
+          ],
+        },
+        {
+          heading: 'Solar on an OCPA account',
+          paragraphs: [
+            'OCPA runs its own net energy metering for the generation half of a solar bill, and SCE handles the delivery half. OCPA applies banked credits at the full retail rate, trues up every April, before the summer, and pays any credit left over at the lower Net Surplus Compensation rate. It says it currently treats solar customers on the state\'s Net Billing Tariff as if their generation were under NEM 2.0.',
+            'SCE\'s side of a new system follows its Solar Billing Plan and the TOU-D-PRIME rate, with export credits that vary by the hour. Ask each bidder to model both halves from your own bill rather than an SCE-only account.',
+          ],
+          links: [
+            { href: '/blog/sce-solar-billing-plan', label: 'How SCE’s Solar Billing Plan pays for exported solar' },
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Who is the electricity provider in Irvine, California?',
+          answer: 'Two providers share the bill. SCE delivers the power and sends the statement, and Orange County Power Authority supplies the generation, on its Basic Choice plan by default. You can pick another OCPA plan or opt out to SCE generation.',
+        },
+        {
+          question: 'Is OCPA cheaper than SCE?',
+          answer: 'Not on the current joint comparison. For a 522 kWh month on TOU-D-4-9PM it shows $226.95 on Basic Choice and $202.09 with SCE generation, using SCE rates as of June 1, 2026. OCPA\'s rates are locked for 2026 while SCE\'s can change during the year, so compare the generation lines on your own recent bills.',
+        },
+        {
+          question: 'What is the average electric bill in Irvine?',
+          answer: 'No official Irvine average is published. The joint comparison\'s typical 522 kWh month comes to $226.95 on Basic Choice. For another reference point, Irvine is in SCE\'s cool baseline regions 6 and 8, and in region 6 the CPUC Public Advocates Office\'s sample non-CARE SCE bill was $152 a month in June 2026, on about 385 kWh. Your own twelve bills are the better guide.',
+        },
+        {
+          question: 'How does OCPA credit rooftop solar?',
+          answer: 'OCPA handles the generation side of a solar bill and SCE the delivery side. OCPA applies credits at the retail rate, trues up in April and pays leftover credit at the Net Surplus Compensation rate. It currently treats Net Billing Tariff customers as if their generation were under NEM 2.0.',
+        },
+      ],
+      sources: [
+        { label: 'Orange County Power Authority: About us (formation, member cities, service start)', url: 'https://www.ocpower.org/about-us/', fetchedAt: '2026-09-23' },
+        { label: 'Orange County Power Authority: FAQ (member cities and default plans)', url: 'https://www.ocpower.org/faq/', fetchedAt: '2026-09-23' },
+        { label: 'Orange County Power Authority: Residential rates', url: 'https://www.ocpower.org/residential-rates/', fetchedAt: '2026-09-23' },
+        { label: 'SCE and OCPA: Joint Rate Comparison (SCE rates June 1, 2026; OCPA rates October 20, 2025)', url: 'https://www.ocpower.org/wp-content/uploads/SCE-and-OCPA-Joint-Rate-Comparison-Effective-June-1-2026.pdf', fetchedAt: '2026-09-23' },
+        { label: 'Orange County Power Authority: Solar / Net Energy Metering', url: 'https://www.ocpower.org/energy-programs/solar-net-energy-metering/', fetchedAt: '2026-09-23' },
+        { label: 'SCE: Base Services Charge', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc', fetchedAt: '2026-09-23' },
+        { label: 'SCE: Solar Billing Plan', url: 'https://www.sce.com/residential/generating-your-own-power/solar-billing-plan', fetchedAt: '2026-09-23' },
+        { label: 'SCE: Tiered Rate Plan (baseline allocations and climate zones, rates as of June 1, 2026)', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan', fetchedAt: '2026-09-23' },
+        { label: 'SCE: Time-of-Use residential rate plans (baseline credit)', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans', fetchedAt: '2026-09-23' },
+        { label: 'SCE tariff: Index of Communities, baseline regions (Cal. PUC Sheet 53902-E)', url: 'https://www.sce.com/sites/default/files/inline-files/ce62-12.pdf', fetchedAt: '2026-09-23' },
+        { label: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report', url: Q2_2026_URL, fetchedAt: '2026-09-23' },
+        { label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23', url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about', fetchedAt: '2026-09-23' },
+      ],
+    },
     seoData: { primaryKeyword: 'solar panels irvine california', volume: 200, kd: 14, verdict: 'PRIORITY BUILD' },
   },
 
@@ -5407,5 +5587,359 @@ export const CITIES: CityData[] = [
   googleSunroofUrl: 'https://sunroof.withgoogle.com',
   relatedArticles: MUNI_RELATED_ARTICLES,
   seoData: { primaryKeyword: 'solar companies in roseville', volume: 150, kd: 0, verdict: 'BUILD — marketplace competitor pos 2, no CRR page' },
+},
+
+// ===========================================================================
+// 2026-09-23 (Tier 3, citysav): bills-and-rates pages for three cities that
+// had no /solar-savings page. Each answers who provides the city's
+// electricity and what it costs (Decision 18); the SEO lives in
+// SAVINGS_BILLS_SEO in src/lib/city-pages.ts. The legacy stat fields below
+// are 0 or '' on purpose: they are not sourced and no template renders them.
+// Lancaster and Palo Alto already have growth-cities.ts companies pages, which
+// take precedence over the older companies template for those slugs.
+// ===========================================================================
+{
+  name: 'Lancaster',
+  slug: 'lancaster',
+  county: 'Los Angeles County',
+  state: 'California',
+  utilityCode: 'sce',
+  avgMonthlyBill: 0,
+  peakSunHours: 0,
+  annualSunshineHours: 0,
+  population: '',
+  systemSizeKw: 0,
+  systemCostCash: 0,
+  introText:
+    'Lancaster homes are billed by Southern California Edison, which delivers the power, and most get their generation from Lancaster Energy, the City\'s community choice program. This guide covers what that means for your bill, your rate plan and a solar quote.',
+  electricitySection:
+    'A Lancaster bill carries both providers on one SCE statement: SCE\'s delivery charges, which include the Base Services Charge, and Lancaster Energy\'s generation charges. The joint comparison above uses typical usage; the kWh and the rate schedule printed on your own bill are the figures to compare.\n\nTiming matters as well as totals. For customers with SCE generation, SCE\'s TOU-D-4-9PM plan charges about 58 cents per kWh from 4 to 9 p.m. on summer weekdays and 34 cents at other hours. Lancaster Energy customers pay its generation price in place of SCE\'s, and Lancaster Energy also describes its time-of-use peak as 4 to 9 p.m.',
+  solarPotentialText:
+    'What a Lancaster roof produces depends on its direction, pitch, shading and condition. Because Lancaster Energy values year-end surplus at $0.06 per kWh, a system matched to your own annual use matters more than fitting the most panels on the roof.',
+  localTips: [
+    {
+      title: 'Know both settlement dates:',
+      content:
+        'Lancaster Energy settles Personal Choice solar accounts every October. SCE settles the delivery side on its own annual cycle, so check both dates on your bills before planning around a true-up.',
+    },
+    {
+      title: 'CARE and FERA still apply:',
+      content:
+        'Income-qualified discounts run through SCE: CARE takes 30 to 35% off the electric bill and FERA 18%, and both lower the Base Services Charge. The joint comparison prices CARE households on Lancaster Energy too.',
+    },
+  ],
+  whenSolarDoesntWork:
+    'Solar is harder to justify in Lancaster when the bill is already low, the roof needs replacing soon, shade is heavy, or you may move before a loan or contract ends. Weigh year-end surplus at Lancaster Energy\'s $0.06 per kWh rebate basis, not at the price you pay for power.',
+  bottomLine:
+    'In Lancaster, start with the generation line on your bill: Lancaster Energy or SCE. On the joint comparison, Clear Choice costs more than SCE generation for a typical month, so compare your own bills, and price any solar quote on the credits your provider actually pays.',
+  faqs: [],
+  metaTitle: 'Lancaster Electricity Rates: SCE & Lancaster Energy',
+  metaDescription:
+    'Lancaster electricity: SCE delivery plus Lancaster Energy generation, what a typical month costs on each, the $24 charge and how solar is credited.',
+  ogTitle: 'Lancaster Electricity Rates: SCE & Lancaster Energy',
+  ogDescription:
+    'Who supplies and delivers Lancaster\'s electricity, what a typical month costs on each, and how solar is credited.',
+  googleSunroofUrl: 'https://sunroof.withgoogle.com',
+  relatedArticles: [
+    { slug: 'sce-time-of-use-rates-2026', title: 'SCE Time-of-Use Rates 2026: Peak Hours and Prices' },
+    { slug: 'california-24-dollar-fixed-charge-explained', title: 'The New $24 Fixed Charge, Explained' },
+    { slug: 'sce-settlement-bill', title: 'SCE Annual Settlement Bill: How to Read Your Solar True-Up' },
+  ],
+  bills: {
+    answer:
+      'Lancaster homes get their electricity from two providers on one bill: Southern California Edison delivers it and sends the statement, and Lancaster Energy, the City\'s community choice program, supplies the generation unless a household opted out. On the joint comparison the two post, a typical Lancaster month of 659 kWh on SCE\'s standard plan comes to $249.05 with SCE generation and $292.00 on Lancaster Energy\'s Clear Choice, using SCE rates as of June 1, 2026.',
+    sections: [
+      {
+        heading: 'Who provides electricity in Lancaster',
+        paragraphs: [
+          'Lancaster Energy buys the electricity, and SCE delivers it, maintains the lines and sends the bill. The Lancaster City Council sets Lancaster Energy\'s rates once a year. Homes are served by Lancaster Energy unless they opt out, and it offers two options: Clear Choice, which it says meets or exceeds the state\'s renewable requirements, and Smart Choice, with 100% renewable content.',
+          'On the California Energy Commission\'s utility map, SCE\'s territory covers all of Lancaster and Lancaster Energy\'s service area 99.9% of it. SCE\'s index of communities places Lancaster in baseline regions 14 and 16, and SCE classes region 14 as hot: its summer baseline is 19.2 kWh a day, against 11.4 in the cool coastal region 6. That is the usage billed at the lower Tier 1 price on the tiered plan, or credited 10 cents per kWh on TOU-D-4-9PM.',
+        ],
+      },
+      {
+        heading: 'What a Lancaster electric bill costs',
+        paragraphs: [
+          'The joint rate comparison Lancaster Energy and SCE post, using SCE rates as of June 1, 2026 and Lancaster Energy rates published August 21, 2024, prices a typical Lancaster month of 659 kWh on SCE\'s standard Schedule D at $249.05 with SCE generation, $292.00 on Clear Choice and $302.00 on Smart Choice, which adds a $10 monthly premium. For a CARE household with the same usage, the figures are $152.61 with SCE generation and $195.56 on Clear Choice.',
+          'The difference is the generation line: 15.71 cents per kWh from Lancaster Energy against 11.76 cents from SCE in that comparison, plus a 3.16-cent surcharge Lancaster Energy customers pay, partly offset by a slightly lower SCE delivery rate. Every Lancaster home also pays SCE\'s Base Services Charge, which replaced the Basic Charge in November 2025: $24.15 a month for most customers, $12.08 on FERA and $6.00 on CARE.',
+          'Across SCE\'s territory, the CPUC Public Advocates Office put the residential average rate at 34.4 cents per kWh on June 1, 2026, down from 35.3 cents after SCE\'s rate case raised it on October 1, 2025.',
+        ],
+        links: [
+          { href: '/blog/sce-rate-increase-2026', label: 'How SCE rates changed in 2025 and 2026' },
+          { href: '/blog/why-is-my-sce-bill-so-high', label: 'Why an Edison bill runs high' },
+        ],
+      },
+      {
+        heading: 'Solar on a Lancaster account',
+        paragraphs: [
+          'Solar owners on SCE\'s net energy metering move into Lancaster Energy\'s Personal Choice program automatically. Lancaster Energy tallies usage and exports each month, billing when you used more and crediting when you sent more, and trues up each October: production above consumption for the year earns a rebate based on $0.06 per kWh.',
+          'SCE handles interconnection and the delivery side of the bill, and new systems go on its Solar Billing Plan with the TOU-D-PRIME rate. SCE says that because its export credits are worth less than the power you buy, storing your own energy for the expensive hours is now worth more than exporting it. Ask each bidder which Lancaster Energy and SCE credits its model assumes.',
+        ],
+        links: [
+          { href: '/blog/sce-solar-billing-plan', label: 'SCE’s Solar Billing Plan, explained' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Who is the electricity provider in Lancaster, California?',
+        answer: 'Two providers share the bill. SCE delivers the power and sends the statement, and Lancaster Energy, the City\'s community choice program, supplies the generation unless you opted out.',
+      },
+      {
+        question: 'What are the electricity rates in Lancaster?',
+        answer: 'For a typical 659 kWh month on Schedule D, the joint comparison puts the all-in price at 44.31 cents per kWh on Lancaster Energy\'s Clear Choice and 37.79 cents with SCE generation. SCE\'s own tiered plan charged 30 cents per kWh up to the baseline allocation and 40 cents above it as of June 1, 2026, and most homes also pay the $24.15 monthly Base Services Charge.',
+      },
+      {
+        question: 'What is the average electric bill in Lancaster?',
+        answer: 'No official Lancaster average is published. The joint comparison uses a typical Lancaster month of 659 kWh, which comes to $292.00 on Clear Choice and $249.05 with SCE generation on Schedule D. Your own last twelve bills, which show the seasonal swing, are the better guide.',
+      },
+      {
+        question: 'Is Lancaster Energy cheaper than SCE?',
+        answer: 'Not on the joint comparison posted with SCE\'s June 1, 2026 rates: $292.00 a month on Clear Choice against $249.05 with SCE generation for 659 kWh. Lancaster Energy customers can opt out; compare the generation section of your own bills before deciding.',
+      },
+    ],
+    sources: [
+      { label: 'Lancaster Energy: how it works with SCE', url: 'https://lancasterenergy.com/', fetchedAt: '2026-09-23' },
+      { label: 'Lancaster Energy: your options (Clear Choice, Smart Choice, opting out)', url: 'https://lancasterenergy.com/your-options/', fetchedAt: '2026-09-23' },
+      { label: 'Lancaster Energy: residential rates', url: 'https://lancasterenergy.com/billing-rates/residential-rates/', fetchedAt: '2026-09-23' },
+      { label: 'Lancaster Energy and SCE: Joint Rate Comparison (SCE rates June 1, 2026; LE rates August 21, 2024)', url: 'https://lancasterenergy.com/wp-content/uploads/2026/07/JRC_LCE_August-2024_SCE_June-1-2026_WEB-POST-VERSION.pdf', fetchedAt: '2026-09-23' },
+      { label: 'Lancaster Energy: Personal Choice for solar customers', url: 'https://lancasterenergy.com/your-options/personal-choice/', fetchedAt: '2026-09-23' },
+      { label: 'SCE: Base Services Charge', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc', fetchedAt: '2026-09-23' },
+      { label: 'SCE: Tiered Rate Plan (baseline allocations and climate zones, rates as of June 1, 2026)', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan', fetchedAt: '2026-09-23' },
+      { label: 'SCE: Time-of-Use residential rate plans', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans', fetchedAt: '2026-09-23' },
+      { label: 'SCE: Solar Billing Plan', url: 'https://www.sce.com/residential/generating-your-own-power/solar-billing-plan', fetchedAt: '2026-09-23' },
+      { label: 'SCE tariff: Index of Communities, baseline regions (Cal. PUC Sheet 53902-E)', url: 'https://www.sce.com/sites/default/files/inline-files/ce62-12.pdf', fetchedAt: '2026-09-23' },
+      { label: 'CPUC: CARE/FERA Program', url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program', fetchedAt: '2026-09-23' },
+      { label: 'CPUC Public Advocates Office, Q3 2025 Electric Rates Report', url: Q3_2025_URL, fetchedAt: '2026-09-23' },
+      { label: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report', url: Q2_2026_URL, fetchedAt: '2026-09-23' },
+      { label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23', url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about', fetchedAt: '2026-09-23' },
+    ],
+  },
+  seoData: { primaryKeyword: 'electricity rates lancaster', volume: 200, kd: 0, verdict: 'Tier 3 build_page (Rule 3 pass_serp)' },
+},
+
+{
+  name: 'Newport Beach',
+  slug: 'newport-beach',
+  county: 'Orange County',
+  state: 'California',
+  utilityCode: 'sce',
+  avgMonthlyBill: 0,
+  peakSunHours: 0,
+  annualSunshineHours: 0,
+  population: '',
+  systemSizeKw: 0,
+  systemCostCash: 0,
+  introText:
+    'Newport Beach homes get all of their electricity from Southern California Edison, with no community choice provider in between. This guide covers what SCE charges, how your bill is built and what that means for a solar quote.',
+  electricitySection:
+    'Your SCE bill names your rate schedule on its detailed page, just below the heading Details of your new charges, and shows your monthly kWh. Those two figures are what to compare with the prices above or with any solar proposal.\n\nBaseline allocations also move the bill. A home in region 8 gets a larger summer allowance at the lower price than one in region 6, 12.8 kWh a day against 11.4, so the same usage can land differently between the tiers.',
+  solarPotentialText:
+    'What a Newport Beach roof produces depends on its direction, pitch, shading and condition. Get each bidder\'s monthly production estimate on the same roof layout, and compare it with an independent estimate for your address.',
+  localTips: [
+    {
+      title: 'Your baseline region:',
+      content:
+        'Newport Beach addresses fall in SCE baseline region 6 or 8. In winter the order flips: region 6 gets 11.0 kWh a day at the lower price and region 8 gets 10.3.',
+    },
+    {
+      title: 'Medical Baseline:',
+      content:
+        'Households that rely on powered medical equipment can apply to SCE for Medical Baseline, which adds 16.5 kWh a day to the baseline allocation.',
+    },
+  ],
+  whenSolarDoesntWork:
+    'Solar is harder to justify when the bill is already low, the roof needs replacing soon, shade is heavy, or you may move before a loan or contract ends. Under SCE\'s Solar Billing Plan, exports earn less than the power you buy, so a system far larger than your own use adds little.',
+  bottomLine:
+    'In Newport Beach, SCE is the only provider on the bill. Check your plan and baseline region, apply for CARE or FERA if you qualify, and weigh any solar quote against SCE\'s Solar Billing Plan credits rather than its retail price.',
+  faqs: [],
+  metaTitle: 'Newport Beach Electricity Provider: SCE Rates (2026)',
+  metaDescription:
+    'Newport Beach electricity comes from SCE alone, with no community choice program: SCE\'s 2026 plan prices, the $24 charge, typical coastal bills and solar.',
+  ogTitle: 'Newport Beach Electricity Provider: SCE Rates (2026)',
+  ogDescription:
+    'Who provides Newport Beach\'s electricity, what SCE charges and what a typical coastal bill looks like.',
+  googleSunroofUrl: 'https://sunroof.withgoogle.com',
+  relatedArticles: [
+    { slug: 'why-is-my-sce-bill-so-high', title: 'Why Is My Edison Bill So High? SCE Bill Checklist' },
+    { slug: 'california-24-dollar-fixed-charge-explained', title: 'The New $24 Fixed Charge, Explained' },
+    { slug: 'pge-vs-sce-vs-sdge-rates-compared', title: 'PG&E vs SCE vs SDG&E: Rates Compared' },
+  ],
+  bills: {
+    answer:
+      'Southern California Edison is Newport Beach\'s electricity provider, supplying and delivering the power itself, because the city is not a member of a community choice program. SCE\'s residential average rate was 34.4 cents per kWh on June 1, 2026, according to the CPUC Public Advocates Office, and most homes also pay a $24.15 monthly Base Services Charge.',
+    sections: [
+      {
+        heading: 'Who provides electricity in Newport Beach',
+        paragraphs: [
+          'On the California Energy Commission\'s utility map, all of Newport Beach\'s land is SCE territory. Orange County Power Authority, the community choice provider in Orange County, lists Buena Park, Fullerton and Irvine as its member cities, with Fountain Valley starting service soon. Newport Beach is not one of them, so its bills show SCE\'s generation and delivery charges with no second provider.',
+          'SCE\'s index of communities places Newport Beach in baseline regions 6 and 8, both of which SCE classes as cool. The summer baseline is 11.4 kWh a day in region 6 and 12.8 in region 8: the usage billed at the lower Tier 1 price on the tiered plan, or credited 10 cents per kWh on TOU-D-4-9PM.',
+        ],
+      },
+      {
+        heading: 'What SCE charges a Newport Beach home',
+        paragraphs: [
+          'As of June 1, 2026, SCE\'s tiered Schedule D charged 30 cents per kWh up to the baseline allocation and 40 cents above it. On TOU-D-4-9PM, summer weekday power, June through September, costs about 58 cents per kWh from 4 to 9 p.m. and 34 cents at other hours. From October through May it is 51 cents from 4 to 9 p.m., 33 cents from 8 a.m. to 4 p.m. and 37 cents overnight.',
+          'Since November 2025 every bill also carries the Base Services Charge: $24.15 a month for most customers, $12.08 on FERA and $6.00 on CARE. SCE says it lowered the price of each kWh by about 10% in exchange, so a low-use home can pay more than before and a high-use home less.',
+          'For scale, the CPUC Public Advocates Office tracks a sample of SCE bills in baseline region 6. In June 2026 the average non-CARE bill there was $152 a month and the average CARE bill $81, for homes using around 385 kWh a month. That is a zone average, not a Newport Beach figure.',
+        ],
+        links: [
+          { href: '/blog/sce-time-of-use-rates-2026', label: 'SCE time-of-use hours and prices' },
+          { href: '/blog/sce-rate-increase-2026', label: 'How SCE rates changed in 2025 and 2026' },
+        ],
+      },
+      {
+        heading: 'Cleaner power and solar without a community choice provider',
+        paragraphs: [
+          'Without a community choice provider, the renewable option inside SCE service is SCE\'s own Green Rate. SCE says interest in both its 50% and 100% Green Rate options has exceeded the capacity approved for them, so it keeps a waitlist.',
+          'New rooftop systems go on SCE\'s Solar Billing Plan and its TOU-D-PRIME rate. Exports earn Energy Export Credits that vary by the hour and are locked for nine years from the year the system starts, and customers who enroll before 2028 get an extra credit of about 4 cents per kWh, or about 9 cents if income-qualified. The credits cannot pay the Base Services Charge, and SCE settles the year on a true-up bill in the month the system began service.',
+        ],
+        links: [
+          { href: '/blog/sce-solar-billing-plan', label: 'How SCE’s Solar Billing Plan values exports' },
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Who is the electricity provider in Newport Beach, California?',
+        answer: 'Southern California Edison, for both generation and delivery. Newport Beach is not a member of Orange County Power Authority, the community choice provider in Orange County, so SCE\'s charges are the only ones on the bill.',
+      },
+      {
+        question: 'What are the electricity rates in Newport Beach?',
+        answer: 'SCE\'s. As of June 1, 2026, its tiered plan charged 30 cents per kWh up to the baseline allocation and 40 cents above it. On TOU-D-4-9PM, summer weekday power costs about 58 cents per kWh from 4 to 9 p.m. and 34 cents at other hours. Most homes also pay a $24.15 monthly Base Services Charge.',
+      },
+      {
+        question: 'What is the average electric bill in Newport Beach?',
+        answer: 'No Newport Beach average is published. The nearest official figure is the CPUC Public Advocates Office\'s sample for SCE baseline region 6, which covers part of the city: $152 a month for non-CARE homes in June 2026, on about 385 kWh. Your own last twelve bills are the better guide.',
+      },
+      {
+        question: 'Can Newport Beach residents join Orange County Power Authority?',
+        answer: 'Not on their own. OCPA enrolls homes in its member cities, and a city becomes a member by a decision of its city council. Newport Beach is not a member, so its homes stay on SCE generation.',
+      },
+    ],
+    sources: [
+      { label: 'SCE: Tiered Rate Plan (rates as of June 1, 2026; baseline allocations and climate zones)', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan', fetchedAt: '2026-09-23' },
+      { label: 'SCE: Time-of-Use residential rate plans (TOU-D-4-9PM prices, baseline credit)', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans', fetchedAt: '2026-09-23' },
+      { label: 'SCE: Base Services Charge', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc', fetchedAt: '2026-09-23' },
+      { label: 'SCE: Solar Billing Plan', url: 'https://www.sce.com/residential/generating-your-own-power/solar-billing-plan', fetchedAt: '2026-09-23' },
+      { label: 'SCE tariff: Index of Communities, baseline regions (Cal. PUC Sheet 53902-E)', url: 'https://www.sce.com/sites/default/files/inline-files/ce62-12.pdf', fetchedAt: '2026-09-23' },
+      { label: 'SCE and OCPA: Joint Rate Comparison, June 1, 2026 (SCE Green Rate waitlist; where to find your rate schedule)', url: 'https://www.ocpower.org/wp-content/uploads/SCE-and-OCPA-Joint-Rate-Comparison-Effective-June-1-2026.pdf', fetchedAt: '2026-09-23' },
+      { label: 'Orange County Power Authority: FAQ (member cities)', url: 'https://www.ocpower.org/faq/', fetchedAt: '2026-09-23' },
+      { label: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report', url: Q2_2026_URL, fetchedAt: '2026-09-23' },
+      { label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23', url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about', fetchedAt: '2026-09-23' },
+    ],
+  },
+  seoData: { primaryKeyword: 'electricity provider newport beach california', volume: 70, kd: 0, verdict: 'Tier 3 build_page (Rule 3 pass_serp)' },
+},
+
+{
+  name: 'Palo Alto',
+  slug: 'palo-alto',
+  county: 'Santa Clara County',
+  state: 'California',
+  utilityCode: 'cpau',
+  avgMonthlyBill: 0,
+  peakSunHours: 0,
+  annualSunshineHours: 0,
+  population: '',
+  systemSizeKw: 0,
+  systemCostCash: 0,
+  introText:
+    'Palo Alto runs its own electric utility, City of Palo Alto Utilities, so PG&E\'s rates and programs do not apply to most homes here. This guide covers CPAU\'s prices, its bill assistance and how it credits solar.',
+  electricitySection:
+    'A CPAU bill shows electricity alongside the City\'s other utility charges, including gas for homes that have it. On the electric lines, check the rate schedule, the kWh billed in Tier 1 and Tier 2, and the customer charge; those are the figures to compare with any solar proposal.\n\nBecause Tier 1 is set per day, a longer billing period comes with a larger Tier 1. Compare bills by kWh per day rather than by the monthly total.',
+  solarPotentialText:
+    'What a Palo Alto roof produces depends on its direction, pitch, shading and condition. With exports paid at $0.0990 per kWh, size a system to your own annual use and ask each bidder for a monthly production estimate you can check.',
+  localTips: [
+    {
+      title: 'Time-of-use and solar:',
+      content:
+        'E-1-TOU is voluntary and needs an advanced meter, and it is not open to net-metered solar customers, so a solar home prices the power it buys on E-1\'s tiers.',
+    },
+    {
+      title: 'One-time bill help:',
+      content:
+        'Beyond the Rate Assistance Program, the City\'s Project Pledge offers one-time help paying a utility bill; call (650) 329-2161.',
+    },
+  ],
+  whenSolarDoesntWork:
+    'CPAU\'s tier prices sit well below PG&E\'s average and exports earn $0.0990 per kWh, so solar is harder to justify when the bill is already low, the roof needs replacing soon, shade is heavy, or you may move before a loan or contract ends. A system far larger than your own use adds little.',
+  bottomLine:
+    'In Palo Alto, price everything on CPAU\'s terms: the E-1 tiers for power you buy, the E-EEC-1 rate for power you export, and the Rate Assistance Program if you qualify. PG&E\'s rates and programs do not apply to a CPAU account.',
+  faqs: [],
+  metaTitle: 'Palo Alto Electricity Provider: CPAU Rates (2026)',
+  metaDescription:
+    'Palo Alto electricity comes from City of Palo Alto Utilities, not PG&E: CPAU\'s 2026 tiered rates, customer charge, bill assistance and solar export rate.',
+  ogTitle: 'Palo Alto Electricity Provider: CPAU Rates (2026)',
+  ogDescription:
+    'Who provides Palo Alto\'s electricity, what CPAU charges and how it credits solar.',
+  googleSunroofUrl: 'https://sunroof.withgoogle.com',
+  relatedArticles: [
+    { slug: 'pge-vs-sce-vs-sdge-rates-compared', title: 'California Utility Rates Compared' },
+    { slug: 'nem-3-california-still-worth-it', title: 'Is Solar Still Worth It Under NEM 3.0?' },
+  ],
+  bills: {
+    answer:
+      'Palo Alto\'s electricity comes from the City itself: City of Palo Alto Utilities (CPAU) supplies and delivers power to almost all of the city, so PG&E and the community choice providers around it do not bill Palo Alto homes. CPAU\'s residential Schedule E-1, effective July 1, 2026, charges a $5.38 monthly customer charge plus 21.494 cents per kWh for the first 15 kWh a day and 23.975 cents above that.',
+    sections: [
+      {
+        heading: 'Who provides electricity in Palo Alto',
+        paragraphs: [
+          'CPAU is the City\'s own utility, and its rate schedules are issued by the City Council rather than set by the CPUC. On the California Energy Commission\'s utility map, CPAU\'s territory covers about 99% of Palo Alto\'s land, with slivers at the edges in PG&E territory; the name on your bill settles it. No community choice provider sits on top, so one utility handles generation, delivery and billing.',
+          'Because CPAU is not one of the investor-owned utilities, the CPUC programs built for PG&E, SCE and SDG&E customers, such as CARE, FERA, the Base Services Charge and the Net Billing Tariff, are not how Palo Alto bills work. CPAU has its own bill assistance and its own solar rules, both below.',
+        ],
+        links: [
+          { href: '/solar-companies/bay-area', label: 'The Bay Area cities that run their own utilities' },
+        ],
+      },
+      {
+        heading: 'What CPAU charges a home',
+        paragraphs: [
+          'Schedule E-1 applies to separately metered single-family homes. Each kWh price has three parts. Tier 1 is 10.839 cents for the commodity, 10.024 cents for distribution and 0.631 cents for public benefits, 21.494 cents in all; Tier 2 is 13.973, 9.371 and 0.631 cents, 23.975 cents in all. Tier 1 covers 15 kWh a day, prorated by the days between meter readings, which is 450 kWh in a 30-day bill.',
+          'At those prices a 30-day month using 450 kWh comes to about $102 before any taxes or surcharges ($5.38 plus 450 × $0.21494, our arithmetic), and each kWh above Tier 1 adds about 24 cents. A voluntary time-of-use schedule, E-1-TOU, is open to homes with an advanced meter, but not to net-metered solar customers.',
+          'For scale, the CPUC Public Advocates Office put PG&E\'s residential average rate at 33.7 cents per kWh in June 2026. That is a class-wide average rather than a tier price, but it shows why a Palo Alto quote should never be built on PG&E\'s rates.',
+        ],
+      },
+      {
+        heading: 'Help with the bill, and solar',
+        paragraphs: [
+          'CPAU\'s Rate Assistance Program takes 35% off electricity charges, and 25% off gas, for households with a physician-certified medical need or income up to 80% of the area median: as of July 1, 2026, $113,700 a year for one person and $162,400 for a household of four.',
+          'New solar customers are on CPAU\'s NEM 2 program, which began when the original program reached its 10.8 MW cap at the end of 2017. NEM 2 customers are paid for exported electricity under Schedule E-EEC-1: $0.0990 per kWh from July 1, 2026, less than half the E-1 tier prices, so power used at home as it is produced is worth more than power sent to the grid.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Who is the electricity provider in Palo Alto, California?',
+        answer: 'City of Palo Alto Utilities, the City\'s own utility, for almost all of Palo Alto; PG&E appears only in slivers along the city\'s edges on the Energy Commission\'s map. CPAU supplies, delivers and bills for the power.',
+      },
+      {
+        question: 'What are the electricity rates in Palo Alto?',
+        answer: 'Schedule E-1, effective July 1, 2026: a $5.38 monthly customer charge, 21.494 cents per kWh for the first 15 kWh a day and 23.975 cents per kWh above that.',
+      },
+      {
+        question: 'What is the average electric bill in Palo Alto?',
+        answer: 'CPAU does not publish one. At E-1 prices, a 30-day month using 450 kWh comes to about $102 before taxes and surcharges; your own bills show your real usage.',
+      },
+      {
+        question: 'Do CARE and FERA apply in Palo Alto?',
+        answer: 'No. They are CPUC programs for customers of the investor-owned utilities. CPAU runs its own Rate Assistance Program, which takes 35% off electricity charges for households under its income limits or with a certified medical need.',
+      },
+      {
+        question: 'What does CPAU pay for solar exports?',
+        answer: '$0.0990 per kWh under Schedule E-EEC-1, effective July 1, 2026, for customers on its NEM 2 program.',
+      },
+    ],
+    sources: [
+      { label: 'City of Palo Alto Utilities: Utility Rate Schedule E-1, residential (effective July 1, 2026)', url: 'https://www.paloalto.gov/files/assets/public/v/7/utilities/rates-schedules-for-utilities/residential-utility-rates/e-1_effective_2026-07-01.pdf', fetchedAt: '2026-09-23' },
+      { label: 'City of Palo Alto Utilities: Residential rates (E-1, E-1-TOU, solar schedules)', url: 'https://www.paloalto.gov/Departments/Utilities/Customer-Service/Utilities-Rates/Residential-Rates', fetchedAt: '2026-09-23' },
+      { label: 'City of Palo Alto Utilities: Schedule E-EEC-1, Export Electricity Compensation (effective July 1, 2026)', url: 'https://www.paloalto.gov/files/assets/public/v/7/utilities/rates-schedules-for-utilities/residential-utility-rates/e-eec-1_effective_2026-07-01.pdf', fetchedAt: '2026-09-23' },
+      { label: 'City of Palo Alto Utilities: Net Energy Metering (NEM 1 cap, NEM 2)', url: 'https://www.paloalto.gov/Departments/Utilities/Electrification/Electrify-My-Home/Consider-Solar/Net-Energy-Metering', fetchedAt: '2026-09-23' },
+      { label: 'City of Palo Alto Utilities: Rate Assistance Program (income limits as of July 1, 2026)', url: 'https://www.paloalto.gov/Departments/Utilities/Customer-Service/Utilities-Assistance/Rate-Assistance-Program-RAP', fetchedAt: '2026-09-23' },
+      { label: 'CPUC: CARE/FERA Program', url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program', fetchedAt: '2026-09-23' },
+      { label: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report', url: Q2_2026_URL, fetchedAt: '2026-09-23' },
+      { label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23', url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about', fetchedAt: '2026-09-23' },
+    ],
+  },
+  seoData: { primaryKeyword: 'electricity provider palo alto california', volume: 50, kd: 0, verdict: 'Tier 3 build_page (Rule 3 pass_serp)' },
 },
 ];
