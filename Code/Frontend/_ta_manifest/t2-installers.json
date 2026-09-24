@@ -15,7 +15,9 @@
         87,
         117,
         231,
-        1842
+        1842,
+        437,
+        449
       ],
       "sources": [
         "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
@@ -97,15 +99,64 @@
     }
   ],
   "sitemap_add": [],
-  "blog_index_add": [],
+  "blog_index_add": [
+    {
+      "slug": "solar-system-quotes-california",
+      "title": "Solar Quotes in California: How to Get and Compare Bids",
+      "hub": "installers",
+      "note": "UPDATE of the existing entry in src/app/blog/page.tsx (title and excerpt are the April ones); not a new post."
+    }
+  ],
   "redirect_requests": [],
   "hub_links": [
     {
       "hub": "installers",
       "href": "/blog/solar-system-quotes-california",
-      "label": "Solar quotes in California: how to get and compare bids"
+      "label": "Solar quotes in California: how to get and compare bids",
+      "note": "label update for an existing spoke in topic-hubs.ts"
     }
   ],
-  "link_requests": [],
-  "skipped": []
+  "link_requests": [
+    {
+      "from": "/commercial-solar/companies-california",
+      "to": "/best-solar-companies-california",
+      "anchor": "choosing a solar company for your home",
+      "why": "'solar energy companies' (518 impr) and 'top solar companies' (170 impr) land on the commercial page; homeowners need a visible hand-off to the residential hub. The hub now has a C&I section linking back."
+    },
+    {
+      "from": "/solar-installers/licensed-solar-installer",
+      "to": "/best-solar-companies-california#accredited",
+      "anchor": "what licensed, NABCEP-certified and accredited mean",
+      "why": "'accredited solar installers' folded into the hub; the licensed-installer page is the closest sibling and should point to it."
+    },
+    {
+      "from": "/solar-installers/tesla-solar-review",
+      "to": "/best-solar-companies-california#company-reviews",
+      "anchor": "other California solar company reviews",
+      "why": "'solar city california' folded into the hub. Suggest the reviews owner also add one sourced line: SolarCity became a wholly owned subsidiary of Tesla on 2016-11-21 (https://www.sec.gov/Archives/edgar/data/1408356/000119312516773728/d275338d8k.htm)."
+    }
+  ],
+  "skipped": [
+    {
+      "url": "/solar-installers/solar-energy-installers-tri-county",
+      "why": "Obscure installer/region name (T2 brief \u00a74 skip rule). 80/mo, text_only evidence, 12 GSC impressions landing on /solar-companies/pleasanton. No page built."
+    },
+    {
+      "url": "/solar-installers/solar-universe-review",
+      "why": "Small/obscure installer name (T2 brief \u00a74; main brief \u00a75 'skip review pages for small/obscure installer names'). 60/mo, 30 impressions at pos 87 on /solar-companies/livermore."
+    },
+    {
+      "url": "/solar-installers/accredited-solar-installers",
+      "why": "folded into /best-solar-companies-california (section #accredited + FAQ). licensed-solar-installer and how-to-verify covered the license but not NABCEP/BBB/accreditation; a separate page would split 'licensed vs accredited' across two URLs for ~60 searches/mo."
+    },
+    {
+      "url": "/solar-installers/solar-city-california",
+      "why": "folded into /best-solar-companies-california (SolarCity paragraph in #company-reviews + FAQ). SolarCity became a wholly owned Tesla subsidiary on 2016-11-21 (SEC 8-K); it is a name question, not a topic. Also routes 'california city solar' to /solar-cost/california-city."
+    }
+  ],
+  "integration_notes": [
+    "topic-hubs.ts hubPageLabel for hubs 'installers' and 'city_installers' still reads 'Compare solar companies in California' (pre-Tier-1 title of /best-solar-companies-california).",
+    "Removed anchor #near-me-map on /best-solar-companies-california; nothing in src/ linked to it. New anchors: #near-me, #good-bid, #track-record, #accredited, #top-rated, #solar-roof, #commercial.",
+    "Rows: 18 total. 14 done across 4 upgraded pages; 2 folded (accredited, solar city); 2 skipped (tri-county, solar universe)."
+  ]
 }
