@@ -66,6 +66,14 @@ const SRC = {
   murphy: 'https://www.courtlistener.com/docket/71177446/murphy-v-momentum-solar-llc/',
   whitten: 'https://www.courtlistener.com/docket/69330690/whitten-v-momentum-solar-llc/',
   adt: 'https://investor.adt.com/News--Events/news/news-details/2024/ADT-Provides-Solar-Business-Update-and-Advances-Capital-Allocation-Strategy/default.aspx',
+  ftc: 'https://consumer.ftc.gov/articles/multi-level-marketing-businesses-pyramid-schemes',
+  careers: 'https://www.momentumsolar.com/careers/sales/',
+  clPyramid: 'https://www.courtlistener.com/?type=r&q=%28%22Momentum%20Solar%22%20OR%20%22Pro%20Custom%20Solar%22%29%20AND%20pyramid',
+  munoz: 'https://www.courtlistener.com/docket/67599227/munoz-v-pro-custom-solar/',
+  tapia: 'https://www.courtlistener.com/docket/18422447/tapia-v-pro-custom-solar-llc/',
+  greer: 'https://www.courtlistener.com/docket/17140910/greer-v-pro-custom-solar-llc/',
+  teslaLic: 'https://www.tesla.com/support/energy/more/legal/contractor-licenses',
+  teslaDesign: 'https://www.tesla.com/energy/design',
 };
 
 const sources: ReviewSource[] = [
@@ -77,6 +85,14 @@ const sources: ReviewSource[] = [
   { name: 'CourtListener — Gordon v. Momentum Solar, LLC, S.D. Cal. No. 3:24-cv-00693', url: SRC.gordon, supports: 'Filed April 17, 2024', checked },
   { name: 'ADT — Solar business update (January 24, 2024)', url: SRC.adt, supports: 'ADT will exit its residential solar business', checked },
   { name: 'CourtListener — Velasco v. Momentum Solar, LLC, C.D. Cal. No. 2:25-cv-00016', url: SRC.velasco, supports: 'Filed January 2, 2025; terminated February 25, 2025', checked },
+  { name: 'Federal Trade Commission — Multi-level marketing businesses and pyramid schemes (July 2022)', url: SRC.ftc, supports: 'Pyramid scheme income based mostly on recruiting; a legitimate business pays on sales to retail customers', checked },
+  { name: 'Momentum Solar — Careers: Sales', url: SRC.careers, supports: 'Base pay plus uncapped commissions and bonuses; meets homeowners 1–3 times a day, 5 days a week; company leads plus referrals; full benefits (medical, dental, 401K); two-week instructor-led training; no recruiting-based pay mentioned', checked },
+  { name: 'CourtListener — RECAP search, “Momentum Solar” or “Pro Custom Solar” with “pyramid”', url: SRC.clPyramid, supports: 'No docket alleging a pyramid scheme; the one opinion hit cites an unrelated case named In re Pyramid Co. of Burlington', checked },
+  { name: 'CourtListener — Munoz v. Pro Custom Solar, E.D.N.Y. No. 1:23-cv-05291', url: SRC.munoz, supports: 'Fair Labor Standards Act; filed July 11, 2023; terminated September 26, 2024', checked },
+  { name: 'CourtListener — Tapia v. Pro Custom Solar LLC, E.D.N.Y. No. 2:20-cv-04180', url: SRC.tapia, supports: 'Fair Labor Standards Act; filed September 8, 2020; terminated April 1, 2021', checked },
+  { name: 'CourtListener — Greer v. Pro Custom Solar LLC, M.D. Fla. No. 6:20-cv-00800', url: SRC.greer, supports: 'Fair Labor Standards Act; filed May 8, 2020; terminated January 14, 2021', checked },
+  { name: 'Tesla Support — Contractor licenses', url: SRC.teslaLic, supports: 'California: CSLB 888104 and CSLB 1127593', checked },
+  { name: 'Tesla — Design your Solar + Powerwall system', url: SRC.teslaDesign, supports: 'Quotes by address and average bill', checked },
 ];
 
 const faqs = [
@@ -96,9 +112,14 @@ const faqs = [
       'On the BBB profile we checked, 254 of 561 complaints in three years were service or repair issues, 113 were sales and advertising issues, 71 product issues and 64 order issues. Recent complaints describe long waits for repair visits, systems left offline, damage claims and incomplete paperwork or inspections.',
   },
   {
-    question: 'Is Momentum Solar a scam or a pyramid scheme?',
+    question: 'Is Momentum Solar a scam?',
     answer:
-      'We found no primary source that describes it as either. The federal dockets naming the company include claims under the Telephone Consumer Protection Act, the law on marketing calls and texts, along with employment and contract cases. Those are allegations until a court decides them. Judge the offer on its contract, and verify the license before you sign.',
+      'We found no primary source that describes it as one. The federal dockets naming the company include claims under the Telephone Consumer Protection Act, the law on marketing calls and texts, along with employment and contract cases. Those are allegations until a court decides them. Judge the offer on its contract, and verify the license before you sign.',
+  },
+  {
+    question: 'Is Momentum Solar a pyramid scheme?',
+    answer:
+      'No court record we found says so. The FTC describes a pyramid scheme as one where pay comes mostly from recruiting people rather than from selling to customers. Momentum’s careers page describes its sales jobs as base pay plus commissions and bonuses on sales to homeowners, with medical, dental and 401K benefits, and mentions no pay for recruiting. A CourtListener search on September 23, 2026 returned no case alleging a pyramid scheme; the lawsuits naming the company include marketing-call and wage-and-hour cases.',
   },
   {
     question: 'What equipment and warranty does Momentum Solar offer?',
@@ -135,7 +156,7 @@ export default function MomentumSolarReview() {
               <LastReviewedStamp date={checked} variant='reviewed' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime={checked}>Updated September 23, 2026</time></div>
-                <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>9 min read</span></div>
+                <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>11 min read</span></div>
               </div>
             </header>
 
@@ -247,6 +268,38 @@ export default function MomentumSolarReview() {
                 lists the pressure points to watch for.
               </p>
 
+              <h2 className={h2}>Is Momentum Solar a pyramid scheme?</h2>
+              <p className={p}>
+                No court case or company record we checked describes it as one. The Federal Trade Commission draws the line
+                by where the money comes from: in a pyramid scheme, “your income would be based mostly on how many people
+                you recruit, not how much product you sell,” while a legitimate business pays “based on your sales to retail
+                customers.”<Cite href={SRC.ftc} date={checked} />
+              </p>
+              <p className={p}>
+                Momentum’s own careers page describes its sales jobs as base pay plus uncapped commissions and bonuses,
+                meeting homeowners one to three times a day, five days a week, working company leads as well as referrals,
+                with full benefits (medical, dental and 401K) and two weeks of instructor-led training. It says nothing
+                about pay for recruiting other salespeople.<Cite href={SRC.careers} date={checked} /> That is the company’s
+                account of the job, not an audit of how any representative is actually paid.
+              </p>
+              <p className={p}>
+                A CourtListener search on September 23, 2026 for “Momentum Solar” or its legal name, Pro Custom Solar,
+                together with “pyramid” returned no case making that claim; the only opinion it found used the word as part
+                of an unrelated case name.<Cite href={SRC.clPyramid} date={checked} /> The dockets that do name the company
+                include the marketing-call cases above and wage-and-hour cases under the Fair Labor Standards Act, such as{' '}
+                <em>Munoz v. Pro Custom Solar</em> (E.D.N.Y., filed July 11, 2023, closed September 26, 2024),{' '}
+                <em>Tapia v. Pro Custom Solar LLC</em> (E.D.N.Y., filed September 8, 2020) and{' '}
+                <em>Greer v. Pro Custom Solar LLC</em> (M.D. Fla., filed May 8, 2020).
+                <Cite href={SRC.munoz} date={checked} />
+                <Cite href={SRC.tapia} date={checked} />
+                <Cite href={SRC.greer} date={checked} /> The BBB file counts 113 sales and advertising complaints among the
+                561 in three years.<Cite href={SRC.bbbComplaints} date={checked} /> None of these is a finding against the
+                company. They tell you what to ask a representative: who employs them, how the price was set, and whether
+                anything they said is in the contract. Our guide to{' '}
+                <Link href='/solar-problems/solar-door-to-door-sales-california' className={a}>door-to-door solar sales in California</Link>{' '}
+                covers your rights when a salesperson comes to the house.
+              </p>
+
               <h2 className={h2}>Equipment, warranty and financing</h2>
               <p className={p}>
                 Momentum’s homepage refers to battery storage and financing but names no panel, inverter or
@@ -259,6 +312,20 @@ export default function MomentumSolarReview() {
                   cash, loan, lease and PPA comparison
                 </Link>
                 .
+              </p>
+
+              <h2 className={h2}>Tesla Solar vs Momentum Solar in California</h2>
+              <p className={p}>
+                For a California home this is not a like-for-like choice. Momentum’s homepage lists seven service states
+                and California is not one of them,<Cite href={SRC.site} date={checked} /> while Tesla lists two California
+                contractor licenses, CSLB 888104 and 1127593, and quotes by address through its online design tool.
+                <Cite href={SRC.teslaLic} date={checked} />
+                <Cite href={SRC.teslaDesign} date={checked} /> If you were weighing the two, put Tesla’s written quote beside
+                one from another company that lists California. The{' '}
+                <Link href='/solar-installers/tesla-solar-review' className={a}>Tesla Solar review</Link> covers its panels,
+                lease terms and service, and{' '}
+                <Link href='/solar-installers/sunrun-vs-tesla-solar' className={a}>Sunrun vs Tesla Solar</Link> compares it
+                with a company that does sell here.
               </p>
 
               <h2 className={h2}>Momentum Solar compared with ADT Solar and Trinity Solar</h2>
