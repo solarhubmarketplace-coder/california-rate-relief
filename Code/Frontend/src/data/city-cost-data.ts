@@ -393,12 +393,16 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "San Diego County",
     utilityKey: "sdge",
     cca: "Clean Energy Alliance",
+    // 2026-09-23: CCA membership sourced to SDG&E's own list. The City's
+    // SolarAPP+ page returned 403 to every request that day, so the permit
+    // fields below keep their 2026-09-18 verification and are reworded only.
+    ccaSource: SDGE_ACTIVE_CCAS,
     permitUrl: "https://www.carlsbadca.gov/departments/community-development/building/solarapp",
     permitFeeNote:
-      "Page states: \"There is a $25 administration fee to use SolarAPP+ paid directly to SolarAPP+ during the application process. This fee is in addition to the city's regular permitting fees, which are outlined in the Master Fee Schedule.\" Revisions beyond the first three free ones cost $25 each.",
-    permitFeeSource: "City of Carlsbad Residential solar permitting with SolarAPP+ page (carlsbadca.gov)",
+      "The City says SolarAPP+ charges a $25 administration fee, paid directly to SolarAPP+ during the application, on top of the City's regular permit fees in its Master Fee Schedule. The first three revisions are free; each one after that costs $25.",
+    permitFeeSource: "City of Carlsbad, Residential solar permitting with SolarAPP+",
     permitOnline:
-      "Yes, via Customer Self Service online portal after SolarAPP+ approval; SolarAPP+ named and required for licensed-contractor rooftop projects",
+      "Yes. Licensed contractors doing rooftop projects use SolarAPP+, then apply through the City's Customer Self Service portal with the approval.",
     sourcesFetchedAt: "2026-09-18",
   },
   {
@@ -434,12 +438,15 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "San Diego County",
     utilityKey: "sdge",
     permitUrl: "https://www.elcajon.gov/your-government/departments/community-development/building-fire-safety/photovoltaic",
+    // 2026-09-23: re-fetched. Battery storage became SolarAPP+-eligible in
+    // January 2026, and the City's route replaces City inspections with a
+    // third-party inspection declaration and a final review.
     permitFeeNote:
-      "Page confirms permits are filed through the \"City of El Cajon Solar APP+ online permit site\" and notes SolarAPP+ offers \"three free revisions,\" but does not state a specific dollar fee amount; it directs applicants to Building Safety (619-441-1726 / Building@elcajon.gov) for exact fees.",
-    permitFeeSource: "City of El Cajon Photovoltaic page (elcajon.gov)",
+      "El Cajon's photovoltaic page does not state a dollar figure. It says the permit is issued electronically as soon as all applicable fees are paid, that SolarAPP+ includes three free revisions, and that fee questions go to Building Safety at 619-441-1726 or Building@elcajon.gov.",
+    permitFeeSource: "City of El Cajon, Photovoltaic (SolarAPP+) page",
     permitOnline:
-      "Yes, online via the city's SolarAPP+ portal; SolarAPP+ named as the primary automated permitting system",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Licensed contractors get SolarAPP+ pre-approval, then apply on the City's SolarAPP+ permit site, where the permit issues once fees are paid. Adding a battery energy storage system has been eligible through SolarAPP+ since January 2026.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "el-dorado-hills",
@@ -1155,6 +1162,76 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     ],
     permitOnline:
       "Yes. PermitsDIRECT!, powered by Symbium, issues same-day permits to licensed contractors for a rooftop system up to 38.4 kW with no more than one battery. Larger systems, or more than one battery, are submitted through the IrvineReady! online portal, where the City says to expect five working days for the first plan check.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'fremont',
+    city: 'Fremont',
+    county: 'Alameda County',
+    utilityKey: 'pge',
+    cca: 'Ava Community Energy',
+    ccaSource: AVA_COMMUNITIES,
+    permitUrl:
+      'https://www.fremont.gov/government/departments/community-development/planning-building-permit-services/planning-building-permits/permit-types/instant-solar-permit-isp',
+    permitFeeNote:
+      "Fremont's Master Fee Schedule, effective July 1, 2026, charges $133 for an Instant Solar Permit up to 15 kW, plus $7.50 for each kW above that, and $280 for a residential solar permit that goes through regular review, plus $15 for each kW above 15 kW. The schedule says these fees cover application, plan check and inspection and are capped by Government Code section 66015. Each extra inspection or re-inspection is $133, and an Instant Solar Permit issued automatically is exempt from the separate building permit application fee.",
+    permitFeeSource: 'City of Fremont, Instant Solar Permit (ISP)',
+    permitSources: [
+      {
+        label: 'City of Fremont Master Fee Schedule, Resolution No. 8672, fees effective July 1, 2026 (II.P.4 Renewable Energy Systems)',
+        url: 'https://www.fremont.gov/home/showpublisheddocument/20810/639184906195370000',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      'Yes. Contractors registered with SolarAPP+ apply for the Instant Solar Permit online for roof-mounted systems with or without a battery, and a main electrical service upgrade can be added to it. Designs outside the SolarAPP+ eligibility checklists go through regular review.',
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'riverside',
+    city: 'Riverside',
+    county: 'Riverside County',
+    utilityKey: 'riverside',
+    permitUrl: 'https://riversideca.gov/cedd/building-safety/online-permits/solarapp',
+    permitFeeNote:
+      "Riverside's Building & Safety fee schedule lists an expedited solar energy system permit, up to 38 kW, at $190, and a residential solar energy system of 15 kW or less at $350 plus $15 for each additional kW, with a $39 permit issuance fee on top. SolarAPP+ charges its own $25 processing fee. Separately, Riverside Public Utilities charges a $275 residential application and processing fee for its net energy metering initial review, effective July 1, 2026.",
+    permitFeeSource: 'City of Riverside, SolarAPP+ (Community & Economic Development)',
+    permitSources: [
+      {
+        label: 'City of Riverside, Building & Safety Fee Schedule (posted PDF; no effective date printed)',
+        url: 'https://www.riversideca.gov/cedd/sites/riversideca.gov.cedd/files/BUILDING%20&%20SAFETY%20FEE%20SCHEDULE.pdf',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'Riverside Public Utilities, Electric Rules Appendix A: Electric Fees and Charges Schedule, effective July 1, 2026 (Rule 22, net energy metering initial review)',
+        url: 'https://www.riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-electric/2026/july1-2026/Electric%20Rule%20Appendix%20A.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      'Yes, for residential rooftop systems under 38 kW through SolarAPP+ and the City of Riverside Public Portal. Ground-mounted or ballasted systems, projects with a panel upgrade or derate, homes with existing panels, and any system with an existing or new battery are not eligible for SolarAPP+.',
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'oakland',
+    city: 'Oakland',
+    county: 'Alameda County',
+    utilityKey: 'pge',
+    cca: 'Ava Community Energy',
+    ccaSource: AVA_COMMUNITIES,
+    permitUrl: 'https://www.oaklandca.gov/My-Household/Building-and-Remodeling/Homeowner-Projects-Permits/Solar-Energy-Systems-Facilities',
+    permitFeeNote:
+      "Oakland's Master Fee Schedule, effective July 1, 2026, sets the residential solar electric inspection fee at $450, plus $4.03 for each kW above 15 kW, and a SolarApp+ filing fee of $21.49 per permit. A residential energy storage system permit is $268.64 for up to 80 kW in aggregate or 20 kW in a single unit. SolarAPP+ may also charge its own subscription or processing fee.",
+    permitFeeSource: 'City of Oakland, Solar Energy Systems & Facilities',
+    permitSources: [
+      {
+        label: 'City of Oakland Master Fee Schedule, fiscal year 2026-27, effective July 1, 2026 (Planning & Building: Solar Electric; Energy Storage Systems; SolarApp+ Filing Fee)',
+        url: 'https://www.oaklandca.gov/files/assets/city/v/2/finance/documents/financial-reporting/master-fee-schedules/fiscal-year-2026-27-adopted-mfs.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Licensed contractors take eligible rooftop systems on a permitted main dwelling through SolarAPP+, then enter the approval number in the City's Online Permit Center. Batteries and related electrical work are allowed; ballasted systems and building-integrated PV are not.",
     sourcesFetchedAt: '2026-09-23',
   },
 ];

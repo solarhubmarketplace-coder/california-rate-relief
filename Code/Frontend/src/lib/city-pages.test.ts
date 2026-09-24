@@ -19,6 +19,8 @@ test('split-utility cities pre-select nothing on any of their pages', () => {
     ['companies', 'merced'], // Merced ID / PG&E ("other" in growth data)
     ['savings', 'riverside'], // RPU / SCE (confirmation required)
     ['companies', 'riverside'],
+    ['cost', 'temecula'], // SCE / SDG&E in the southwest corner (added 2026-09-23)
+    ['companies', 'temecula'],
   ] as const) {
     assert.equal(cityQuickCheckUtility(type, slug), '', `${type}/${slug}`);
   }
@@ -27,7 +29,9 @@ test('split-utility cities pre-select nothing on any of their pages', () => {
 test('single-utility cities pre-select that utility', () => {
   assert.equal(utilityCodeFor(cityQuickCheckUtility('cost', 'fresno')), 'pge');
   assert.equal(utilityCodeFor(cityQuickCheckUtility('companies', 'fresno')), 'pge');
-  assert.equal(utilityCodeFor(cityQuickCheckUtility('savings', 'temecula')), 'sce');
+  // 2026-09-23: was temecula, which now carries a sourced SCE/SDG&E split on
+  // its cost row (CEC territory layer) and so pre-selects nothing.
+  assert.equal(utilityCodeFor(cityQuickCheckUtility('savings', 'murrieta')), 'sce');
   assert.equal(utilityCodeFor(cityQuickCheckUtility('companies', 'san-diego')), 'sdge');
 });
 

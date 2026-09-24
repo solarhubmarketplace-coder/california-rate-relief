@@ -68,7 +68,11 @@ export type UtilityRateKey =
   | 'roseville'
   | 'mid'
   | 'anaheim'
-  | 'corona';
+  | 'corona'
+  // 2026-09-23 (Tier 2 city-cost wave): two more publicly owned utilities, so
+  // /solar-cost/riverside and /solar-cost/pasadena name the right biller.
+  | 'riverside'
+  | 'pasadena';
 
 export interface UtilityRateRecord {
   key: UtilityRateKey;
@@ -221,6 +225,32 @@ const RECORDS: Record<UtilityRateKey, UtilityRateRecord> = {
     basisNote:
       'Corona runs a city-owned electric utility, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only',
     fetchedAt: '2026-09-18',
+  },
+  riverside: {
+    key: 'riverside',
+    name: 'RPU',
+    longName: 'Riverside Public Utilities',
+    averageResidentialRateCents: null,
+    averageResidentialRatePerKwh: null,
+    asOf: 'no CPUC average published; see the utility rate schedules',
+    sourceLabel: 'Riverside Public Utilities — Electric Rules & Rates',
+    sourceUrl: 'https://www.riversideca.gov/utilities/residents/rates/electric-rules-rates',
+    basisNote:
+      "Riverside Public Utilities is the City of Riverside's own electric utility, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only",
+    fetchedAt: '2026-09-23',
+  },
+  pasadena: {
+    key: 'pasadena',
+    name: 'PWP',
+    longName: 'Pasadena Water and Power',
+    averageResidentialRateCents: null,
+    averageResidentialRatePerKwh: null,
+    asOf: 'no CPUC average published; see the utility rate schedules',
+    sourceLabel: 'Pasadena Water and Power — Water and Electric Rates (rate card effective July 1, 2026)',
+    sourceUrl: 'https://pwp.cityofpasadena.net/water-and-electric-rates/',
+    basisNote:
+      "Pasadena Water and Power describes itself as a locally owned utility of the City of Pasadena, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only",
+    fetchedAt: '2026-09-23',
   },
 };
 

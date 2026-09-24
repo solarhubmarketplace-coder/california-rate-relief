@@ -91,6 +91,93 @@
    ],
    "status": "done",
    "note": "Fee now from the FY2026-27 user fee schedule ($568 roof, $970 ground); SolarAPP+ excludes expansions; fire inspection first; ESS garage rule; added SCE/SDG&E utility split (CEC layer: SW corner SDG&E), matching the companies page."
+  },
+  {
+   "path": "/solar-cost/el-cajon",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in El Cajon, CA: What Sets the Price (2026)",
+   "clusters": [
+    611
+   ],
+   "sources": [
+    "https://www.elcajon.gov/your-government/departments/community-development/building-fire-safety/photovoltaic",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas"
+   ],
+   "status": "done",
+   "note": "Re-verified: batteries eligible for SolarAPP+ since Jan 2026; third-party inspection declaration + PACO final review replaces City inspections; no CCA (SDG&E Active CCAs list; the CEC CCA layer wrongly shades El Cajon as SDCP). City fee schedule page returned 403, so no fee figure."
+  },
+  {
+   "path": "/solar-cost/carlsbad",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panels in Carlsbad, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    615
+   ],
+   "sources": [
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas",
+    "https://thecleanenergyalliance.org/net-energy-metering/"
+   ],
+   "status": "done",
+   "note": "carlsbadca.gov returned 403 to every request this session, so permit fields keep their 2026-09-18 verification (reworded only). Added CCA source (SDG&E list) and Clean Energy Alliance surplus-compensation check ($0.06/kWh; checks at $100)."
+  },
+  {
+   "path": "/solar-cost/fremont",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Fremont, CA: What Sets the Price (2026)",
+   "clusters": [
+    614
+   ],
+   "sources": [
+    "https://www.fremont.gov/government/departments/community-development/planning-building-permit-services/planning-building-permits/permit-types/instant-solar-permit-isp",
+    "https://www.fremont.gov/home/showpublisheddocument/20810/639184906195370000",
+    "https://avaenergy.org/community/who-we-serve/",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + Ava; Instant Solar Permit $133 vs regular $280 (fee schedule eff. 2026-07-01), panel upgrade can join ISP; Ava Solar Billing Plan export bonuses. fremont.gov returns 403 to direct requests; page and fee PDF text were read through the r.jina.ai reader. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/riverside",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Riverside, CA: What Sets the Price (2026)",
+   "clusters": [
+    605
+   ],
+   "sources": [
+    "https://riversideca.gov/cedd/building-safety/online-permits/solarapp",
+    "https://www.riversideca.gov/cedd/sites/riversideca.gov.cedd/files/BUILDING%20&%20SAFETY%20FEE%20SCHEDULE.pdf",
+    "https://riversideca.gov/utilities/residents/solar-info",
+    "https://www.riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-electric/2026/july1-2026/Electric%20Rule%20Appendix%20A.pdf",
+    "https://www.riversideca.gov/utilities/residents/rates/electric-rules-rates"
+   ],
+   "status": "done",
+   "note": "New row: Riverside Public Utilities (new tracker key 'riverside'); expedited $190 vs regular $350 permit + $39 issuance; SolarAPP+ excludes batteries/panel upgrades; RPU $275 NEM review fee (eff. 2026-07-01); RPU NEM rules and sizing limit. CEC layer: RPU covers 99.5% of city area, no split recorded. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/oakland",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Oakland, CA: What Sets the Price (2026)",
+   "clusters": [
+    287
+   ],
+   "sources": [
+    "https://www.oaklandca.gov/My-Household/Building-and-Remodeling/Homeowner-Projects-Permits/Solar-Energy-Systems-Facilities",
+    "https://www.oaklandca.gov/files/assets/city/v/2/finance/documents/financial-reporting/master-fee-schedules/fiscal-year-2026-27-adopted-mfs.pdf",
+    "https://avaenergy.org/community/who-we-serve/",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + Ava; FY2026-27 fee schedule ($450 solar electric inspection, $21.49 SolarApp+ filing, $268.64 battery permit); panel/subpanel/ESS on one permit; Fire Prevention Bureau battery thresholds. Fee PDF read through r.jina.ai (oaklandca.gov 403s). The row's current_page was /solar-companies/pleasanton (brand keyword), which gets its own /solar-cost/pleasanton link; /solar-companies/oakland links this page via CitySiblingLinks."
   }
  ],
  "sitemap_add": [],
@@ -106,6 +193,21 @@
    "hub": "city_cost",
    "href": "/solar-cost/irvine",
    "label": "Solar panel cost in Irvine"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/fremont",
+   "label": "Solar panel cost in Fremont"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/riverside",
+   "label": "Solar panel cost in Riverside"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/oakland",
+   "label": "Solar panel cost in Oakland"
   }
  ],
  "link_requests": [],
@@ -113,11 +215,15 @@
   "src/components/growth/CityCostPage.tsx (all /solar-cost pages): corrected the 'Is solar worth it' FAQ to the October 2025 CPUC guide (no fixed 10 percent escalation cap; estimate may use at most the CPUC's calculated average); added a 'without paying upfront' FAQ sourced to the CPUC guide; added Gov. Code 66015 (residential permit fee limit) and 65850.52 (automated permitting) to the permit section; renders row ccaSource, permitSources and extraFaqs; links /blog/no-upfront-cost-solar-panels.",
   "src/data/city-cost-data.ts: optional gated fields ccaSource, permitSources, extraFaqs; CCA source constants; COST_TEMPLATE_CSLB_VERIFIED re-verified 2026-09-23 (so every cost page's dateModified is 2026-09-23).",
   "src/data/local-project-guidance.ts: rendered only by CityCostPage; new and rewritten per-city entries.",
-  "src/lib/canonical-redirects.test.ts: new dated registry section T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN; no redirect-table rows added."
+  "src/lib/canonical-redirects.test.ts: new dated registry section T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN; no redirect-table rows added.",
+  "src/data/solar-cost-index.ts (California Solar Cost Index, reads city-cost-data rows): FEES/PLATFORMS re-keyed to the rewritten notes and new rows added; UTILITY_TYPE gains riverside and pasadena; CCAS gains Ava members fremont/oakland, OCPA (irvine) and WestLight (san-mateo). solar-cost-index.test.ts passes.",
+  "src/data/utility-rate-tracker.ts: two new publicly owned utility records, 'riverside' (RPU) and 'pasadena' (PWP), rate null with the utility's own rate page as source. The tracker page reads rows by name and does not render them.",
+  "src/lib/city-pages.test.ts: the single-utility example moved from temecula to murrieta (temecula now carries a sourced SCE/SDG&E split), and temecula added to the split-city list."
  ],
  "integration_notes": [
   "/solar-cost/<city> pages enter the sitemap automatically from getPublishableCityCostRows(); no sitemap_add needed.",
-  "New cost pages are linked from their /solar-companies and /solar-savings twins automatically through CitySiblingLinks once they pass the gate."
+  "New cost pages are linked from their /solar-companies and /solar-savings twins automatically through CitySiblingLinks once they pass the gate.",
+  "Several city sites (fremont.gov, oaklandca.gov) return 403 to direct requests from this environment; their pages and fee PDFs were read through the r.jina.ai reader, which returns the city's own document text. carlsbadca.gov and elcajon.gov fee pages could not be read at all."
  ],
  "decisions_for_chad": [],
  "skipped": []

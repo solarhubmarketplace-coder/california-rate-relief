@@ -260,6 +260,109 @@ const ocpaSolarNem: LocalGuidanceSource = {
     'OCPA runs solar true-ups ahead of summer, pays unused credits at the Net Surplus Compensation rate, treats Net Billing Tariff customers as if their generation were under NEM 2.0, and SCE handles the delivery charges and credits. Membership: the OCPA home page lists Irvine among its member communities.',
 };
 
+
+const elCajonPv: LocalGuidanceSource = {
+  label: 'City of El Cajon — Photovoltaic (SolarAPP+)',
+  url: 'https://www.elcajon.gov/your-government/departments/community-development/building-fire-safety/photovoltaic',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ pre-approval, then the City SolarAPP+ permit site; permit issues once fees are paid; three free revisions; battery storage eligible since January 2026; contractor completes a third-party inspection declaration, uploads it to PACO and requests final review for SDG&E release; no other City inspections required. No fee amount stated.',
+};
+
+const ceaNem: LocalGuidanceSource = {
+  label: 'Clean Energy Alliance — Net Energy Metering',
+  url: 'https://thecleanenergyalliance.org/net-energy-metering/',
+  verifiedAt: verified20260923,
+  scope:
+    'Net Surplus Compensation at $0.06 per kWh for excess over the 12-month period, described as slightly higher than SDG&E’s credit; checks for $100 or more, smaller amounts rolled forward; true-up on the NEM enrollment anniversary.',
+};
+
+const fremontIsp: LocalGuidanceSource = {
+  label: 'City of Fremont — Instant Solar Permit (ISP)',
+  url: 'https://www.fremont.gov/government/departments/community-development/planning-building-permit-services/planning-building-permits/permit-types/instant-solar-permit-isp',
+  verifiedAt: verified20260923,
+  scope:
+    'For contractors registered with SolarAPP+; roof-mounted PV with or without storage; a main electrical service upgrade can be added; only systems on the SolarAPP+ eligibility checklists qualify.',
+};
+
+const fremontFees2026: LocalGuidanceSource = {
+  label: 'City of Fremont — Master Fee Schedule (Resolution No. 8672), effective July 1, 2026',
+  url: 'https://www.fremont.gov/home/showpublisheddocument/20810/639184906195370000',
+  verifiedAt: verified20260923,
+  scope:
+    'Renewable energy systems (fees include application, plan check, inspection; maximum set by Gov. Code 66015): ISP up to 15 kW $133, plus $7.50 per kW above; residential solar through regular review up to 15 kW $280, plus $15 per kW above; additional inspection or re-inspection $133; automatically issued ISP exempt from the building permit application fee.',
+};
+
+const avaSolarBilling: LocalGuidanceSource = {
+  label: 'Ava Community Energy — Solar Billing Plan',
+  url: 'https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/',
+  verifiedAt: verified20260923,
+  scope:
+    'Export credits vary by hour and day; extra $0.01 per kWh on exports for CARE/FERA customers; extra $0.025 per kWh on exports from 3 to 8 pm for other customers; annual true-up each April; balances over $100 paid, smaller ones rolled forward; separate true-ups with Ava (generation) and PG&E (delivery).',
+};
+
+const avaCommunities: LocalGuidanceSource = {
+  label: 'Ava Community Energy — Communities We Serve',
+  url: 'https://avaenergy.org/community/who-we-serve/',
+  verifiedAt: verified20260923,
+  scope:
+    'Names Albany, Berkeley, Dublin, Emeryville, Fremont, Hayward, Livermore, Newark, Oakland, Piedmont, Pleasanton, San Leandro, Tracy, Union City and unincorporated Alameda County, plus Lathrop, Stockton and unincorporated San Joaquin County.',
+};
+
+const riversideSolarApp: LocalGuidanceSource = {
+  label: 'City of Riverside — SolarAPP+',
+  url: 'https://riversideca.gov/cedd/building-safety/online-permits/solarapp',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ only for residential rooftop systems under 38 kW; excludes ground-mount or ballasted systems, panel upgrades or derating, existing PV, and any existing or new battery; $25 SolarAPP+ fee; systems not to exceed 150% of historical annual use and must meet RPU Electric Rule 22.',
+};
+
+const riversideFees: LocalGuidanceSource = {
+  label: 'City of Riverside — Building & Safety Fee Schedule',
+  url: 'https://www.riversideca.gov/cedd/sites/riversideca.gov.cedd/files/BUILDING%20&%20SAFETY%20FEE%20SCHEDULE.pdf',
+  verifiedAt: verified20260923,
+  scope:
+    'Expedited solar energy system (up to 38 kW) $190; residential solar energy system up to 15 kW $350, plus $15 per additional kW; permit issuance fee $39. No effective date is printed on the posted file.',
+};
+
+const rpuSolarInfo: LocalGuidanceSource = {
+  label: 'Riverside Public Utilities — Solar Info',
+  url: 'https://riversideca.gov/utilities/residents/solar-info',
+  verifiedAt: verified20260923,
+  scope:
+    'RPU bills solar customers under its Net Energy Metering rate (net difference within each billing period); systems may offset up to 100% of historical 12-month use, or 2 watts per square foot of living space including garages without history; customers pay for a meter upgrade if no net meter is installed.',
+};
+
+const rpuFees2026: LocalGuidanceSource = {
+  label: 'Riverside Public Utilities — Electric Fees and Charges Schedule (Appendix A), effective July 1, 2026',
+  url: 'https://www.riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-electric/2026/july1-2026/Electric%20Rule%20Appendix%20A.pdf',
+  verifiedAt: verified20260923,
+  scope: 'Rule 22 distributed generation application and processing fee, net energy metering initial review: residential $275.',
+};
+
+const rpuServiceArea: LocalGuidanceSource = {
+  label: 'Riverside Public Utilities — Service Area Maps',
+  url: 'https://riversideca.gov/utilities/about-rpu/service-area-maps',
+  verifiedAt: verified20260923,
+  scope: 'RPU publishes its electric service area as a map; the page gives no address lookup.',
+};
+
+const oaklandSolar: LocalGuidanceSource = {
+  label: 'City of Oakland — Solar Energy Systems & Facilities',
+  url: 'https://www.oaklandca.gov/My-Household/Building-and-Remodeling/Homeowner-Projects-Permits/Solar-Energy-Systems-Facilities',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ for rooftop systems on permitted main dwellings by California-licensed contractors; batteries and related electrical work allowed; no ballasted or BIPV systems; panel replacement, subpanels and storage may be included in the solar permit; Fire Prevention Bureau approval for storage above 20 kWh single, 40 kWh aggregate in closets, sheds or basements, or 80 kWh outside.',
+};
+
+const oaklandFees2627: LocalGuidanceSource = {
+  label: 'City of Oakland — Master Fee Schedule, fiscal year 2026-27 (effective July 1, 2026)',
+  url: 'https://www.oaklandca.gov/files/assets/city/v/2/finance/documents/financial-reporting/master-fee-schedules/fiscal-year-2026-27-adopted-mfs.pdf',
+  verifiedAt: verified20260923,
+  scope:
+    'Solar electric, residential: $450 inspection plus $4.03 per kW above 15 kW; SolarApp+ filing fee $21.49 per permit; residential energy storage system up to 80 kW aggregate or 20 kW single: $268.64 per permit.',
+};
+
 export const LOCAL_PROJECT_GUIDANCE = {
   temecula: {
     city: 'Temecula',
@@ -473,7 +576,7 @@ export const LOCAL_PROJECT_GUIDANCE = {
   },
   carlsbad: {
     city: 'Carlsbad',
-    actionIds: ['CA28'],
+    actionIds: ['CA28', 'T2-CITYCOST'],
     intro:
       'Carlsbad has a defined two-step online route for eligible rooftop work. Make the bidder identify whether the proposed roof, panel and storage scope fits it.',
     quoteQuestions: [
@@ -488,14 +591,19 @@ export const LOCAL_PROJECT_GUIDANCE = {
       },
       {
         title: 'Confirm the generation line',
-        body: 'Clean Energy Alliance names Carlsbad as a member city, while SDG&E continues delivery and billing. The actual bill establishes whether the account is enrolled.',
+        body: 'SDG&E lists Carlsbad among the cities Clean Energy Alliance serves, and SDG&E continues delivery and billing. The actual bill establishes whether the account is enrolled.',
+      },
+      {
+        title: 'How Clean Energy Alliance pays for surplus',
+        body: 'Clean Energy Alliance says a solar customer who produces more than they use over the 12 months to their true-up earns Net Surplus Compensation at $0.06 per kWh, which it describes as slightly higher than SDG&E’s credit. It mails a check once that credit reaches $100 and rolls smaller amounts forward.',
       },
     ],
     related: [
       { href: '/solar-savings/san-diego-county', label: 'San Diego County project guide' },
       { href: '/blog/is-my-roof-good-for-solar-california', label: 'Check roof condition before bidding' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
     ],
-    sources: [carlsbadPermit, ceaBill],
+    sources: [carlsbadPermit, ceaBill, ceaNem, sdgeActiveCcas],
   },
   oceanside: {
     city: 'Oceanside',
@@ -618,6 +726,142 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
     ],
     sources: [irvineRooftop, irvineFees2627, ocpaSolarNem],
+  },
+  'el-cajon': {
+    city: 'El Cajon',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "El Cajon's SolarAPP+ route replaces City inspections with a third-party inspection declaration and a final review, and the bill has no community choice provider. Both change what a quote has to cover.",
+    quoteQuestions: [
+      'Does the design fit the SolarAPP+ eligibility checklist, and if a battery is included, is it on the same SolarAPP+ permit as the panels?',
+      "Who completes the third-party inspection declaration, uploads it to the City's PACO portal and requests the final review that releases the project to SDG&E?",
+      "Does the bill model use SDG&E's own generation rates rather than a community choice provider's?",
+    ],
+    localChecks: [
+      {
+        title: 'A declaration instead of City inspections',
+        body: "On El Cajon's SolarAPP+ route the contractor completes a third-party inspection declaration on the permit, uploads it to the City's PACO portal and requests a final review to obtain SDG&E's solar release. The City says no other City inspections are required.",
+      },
+      {
+        title: 'Batteries can go through SolarAPP+',
+        body: 'Since January 2026, El Cajon has accepted battery energy storage systems through SolarAPP+. Ask whether the battery in a quote is permitted with the panels or on its own.',
+      },
+      {
+        title: 'SDG&E supplies generation too',
+        body: "SDG&E's list of active community choice aggregators names Chula Vista, La Mesa, San Diego and other nearby cities but not El Cajon, so an El Cajon bill normally shows SDG&E for generation as well as delivery.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/san-diego-county', label: 'San Diego County project guide' },
+      { href: '/blog/sdge-time-of-use-rates-2026', label: 'Check SDG&E time-of-use periods' },
+      { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [elCajonPv, sdgeActiveCcas],
+  },
+  fremont: {
+    city: 'Fremont',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Fremont prices its automated Instant Solar Permit well below a permit that goes through regular review, so the route a design takes shows up directly in the permit line.",
+    quoteQuestions: [
+      "Does the design qualify for Fremont's Instant Solar Permit through SolarAPP+, or will it need regular review?",
+      'If the main electrical service is being upgraded, has it been added to the Instant Solar Permit, as Fremont allows?',
+      "Does the bill model use Ava Community Energy's generation credits and PG&E's delivery charges, with their separate true-ups?",
+    ],
+    localChecks: [
+      {
+        title: 'Two routes, two fees',
+        body: "Fremont's fee schedule effective July 1, 2026 charges $133 for an Instant Solar Permit up to 15 kW and $280 for a residential solar permit through regular review, each with a per-kW add-on above 15 kW. Every extra inspection or re-inspection is $133, so ask who pays if one fails.",
+      },
+      {
+        title: 'Panel upgrades can join the instant permit',
+        body: 'Fremont says a main electrical service upgrade can be added to the Instant Solar Permit, which covers roof-mounted systems with or without a battery.',
+      },
+      {
+        title: 'How Ava credits exports',
+        body: 'Ava Community Energy says Solar Billing Plan customers earn export credits that vary by hour, plus $0.025 per kWh on exports between 3 and 8 pm for customers not on CARE or FERA, or $0.01 per kWh on every export for CARE and FERA customers. Ava trues up each April and pays balances over $100; PG&E runs its own true-up for delivery charges.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [fremontIsp, fremontFees2026, avaSolarBilling, avaCommunities],
+  },
+  riverside: {
+    city: 'Riverside',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      "Riverside's electricity comes from the City's own utility, not SCE, so both the permit and the solar rules are set locally. Its SolarAPP+ route is narrower than in many cities, and that changes the permit fee.",
+    quoteQuestions: [
+      "Does the design qualify for the City's expedited SolarAPP+ permit: rooftop, under 38 kW, no battery, no panel upgrade or derate, and no existing panels?",
+      'If a battery or a panel upgrade is part of the job, which City permit route and fee does the quote assume?',
+      "Is the system sized within Riverside Public Utilities' limit, and does the quote account for RPU's $275 net energy metering review fee and any net meter upgrade?",
+    ],
+    localChecks: [
+      {
+        title: 'SolarAPP+ here excludes batteries',
+        body: "Riverside's SolarAPP+ route covers only residential rooftop systems under 38 kW with no battery, no panel upgrade or derate and no existing panels. Other projects take the regular permit, which the City's fee schedule prices at $350 for up to 15 kW against $190 for the expedited permit.",
+      },
+      {
+        title: 'RPU sets the size limit',
+        body: "Riverside Public Utilities says its solar program lets a customer offset up to 100 percent of historical 12-month use, and sizes a home without a year of history at two watts per square foot of living space, including garages. The City's SolarAPP+ page states a 150 percent ceiling, so ask the installer which limit the design meets.",
+      },
+      {
+        title: 'RPU runs its own net metering',
+        body: 'RPU bills solar customers on its Net Energy Metering rate, where the meter tracks the net difference between the power you use and the power you send to RPU within each billing period. RPU charges for a meter upgrade if the home does not already have a net meter.',
+      },
+      {
+        title: 'Confirm RPU serves the address',
+        body: "RPU publishes its electric service area as a map rather than an address lookup. Read the utility named on your bill before applying RPU's rules, or its fees, to a quote.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/inland-empire', label: 'Inland Empire bill and project guide' },
+      { href: '/blog/solar-rebates-by-california-utility', label: 'Rebates by California utility' },
+      { href: '/blog/what-size-solar-system-do-i-need', label: 'Size a system from 12 months of use' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [riversideSolarApp, riversideFees, rpuSolarInfo, rpuFees2026, rpuServiceArea],
+  },
+  oakland: {
+    city: 'Oakland',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      'Oakland lets a panel replacement, subpanels and a battery ride on the solar permit, but a larger battery bank also needs Fire Prevention Bureau approval. Settle the storage size before comparing bids.',
+    quoteQuestions: [
+      'Is the home a permitted main dwelling with a rooftop design SolarAPP+ can approve, or will the permit take another route?',
+      'How large is the battery? Oakland requires Fire Prevention Bureau approval above 20 kWh in one battery, above 40 kWh in a utility closet, shed or basement, or at 80 kWh outside.',
+      "Does the bill model use Ava Community Energy's generation credits and PG&E's delivery charges, with their separate true-ups?",
+    ],
+    localChecks: [
+      {
+        title: 'One permit can cover the electrical work',
+        body: 'Oakland says a main service panel replacement, subpanels and energy storage installed as part of the solar installation may be included in the solar permit application.',
+      },
+      {
+        title: 'Battery size can add a fire review',
+        body: 'Energy storage needs Fire Prevention Bureau approval where a single battery exceeds 20 kWh, the system exceeds 40 kWh inside a utility closet, shed or basement, or 80 kWh is installed outside. A quote for a large battery bank should say whether that review is included.',
+      },
+      {
+        title: 'The City fees',
+        body: "Oakland's 2026-27 fee schedule sets the residential solar electric inspection fee at $450 plus $4.03 per kW above 15 kW, a $21.49 SolarApp+ filing fee, and a residential energy storage permit at $268.64 up to its size threshold.",
+      },
+      {
+        title: 'What Ava pays for exports',
+        body: "On Ava's Solar Billing Plan, export credits change by the hour. Customers outside CARE and FERA get a $0.025 per kWh bonus on exports from 3 to 8 pm, CARE and FERA customers get $0.01 per kWh on every export, and Ava settles once a year in April.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/solar-battery-backup-california', label: 'Plan battery backup' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
+    ],
+    sources: [oaklandSolar, oaklandFees2627, avaSolarBilling, avaCommunities],
   },
 } as const satisfies Record<string, LocalProjectGuidanceEntry>;
 

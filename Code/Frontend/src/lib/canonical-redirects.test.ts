@@ -245,7 +245,7 @@ test('topical-authority wave: new companies pages with a cost twin render and ar
 // the city now keeps one page per intent. No row is added to the redirect
 // table, so the table's row count does not change.
 const T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN = new Set([
-  'san-mateo', 'irvine',
+  'san-mateo', 'irvine', 'fremont', 'riverside', 'oakland',
 ]);
 for (const slug of T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN) REINSTATED_COMPANIES_SLUGS.add(slug);
 

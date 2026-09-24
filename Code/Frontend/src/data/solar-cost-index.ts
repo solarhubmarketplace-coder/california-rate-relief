@@ -122,10 +122,21 @@ interface FeeEntry {
  * SolarAPP+ or Symbium platform charge is separate and is noted in `extra`.
  */
 const FEES: Record<string, FeeEntry> = {
-  temecula: { status: 'not-published', evidence: 'no dollar amount is published on the page' },
+  // 2026-09-23 (Tier 2 city-cost wave): temecula, murrieta, fresno, carlsbad
+  // and el-cajon re-keyed to their rewritten notes; san-mateo, irvine,
+  // fremont, riverside and oakland added.
+  temecula: {
+    status: 'published',
+    components: [
+      { label: 'building plan check, residential roof-mounted', usd: 326, quote: '$326 for building plan check' },
+      { label: 'building inspection', usd: 242, quote: '$242 for building inspection' },
+    ],
+    extra: 'A residential ground-mounted system is $970, including a $228 fire plan check.',
+  },
   murrieta: {
     status: 'published',
-    components: [{ label: 'residential solar permit fee', usd: 450, quote: 'four hundred fifty dollars' }],
+    components: [{ label: 'residential PV permit, 15 kW or less', usd: 450, quote: '$450 for a system of 15 kW or less' }],
+    extra: 'Above 15 kW: a $500 base fee plus $15 per kW over 15 kW.',
   },
   'san-diego': {
     status: 'published',
@@ -160,7 +171,7 @@ const FEES: Record<string, FeeEntry> = {
   carlsbad: {
     status: 'not-published',
     extra: 'The City states a $25 SolarAPP+ administration fee on top of its regular permit fees.',
-    evidence: "This fee is in addition to the city's regular permitting fees",
+    evidence: "on top of the City's regular permit fees",
   },
   'chula-vista': {
     status: 'published',
@@ -172,15 +183,15 @@ const FEES: Record<string, FeeEntry> = {
     extra: 'The traditional path totals $722.',
   },
   corona: { status: 'not-published', evidence: 'It publishes no specific dollar figure for a solar permit' },
-  'el-cajon': { status: 'not-published', evidence: 'does not state a specific dollar fee amount' },
+  'el-cajon': { status: 'not-published', evidence: 'does not state a dollar figure' },
   'el-dorado-hills': { status: 'not-retrievable', evidence: 'returned a 403/empty response on fetch' },
   fresno: {
     status: 'published',
     components: [
-      { label: 'plan check, first 15 kW', usd: 165.01, quote: 'Plan Check $165.01' },
-      { label: 'inspection', usd: 157.72, quote: 'Inspection Fee $157.72' },
+      { label: 'plan check, first 15 kW', usd: 170.37, quote: '$170.37 for plan check' },
+      { label: 'inspection', usd: 162.85, quote: '$162.85 for inspection' },
     ],
-    extra: 'Each additional kW adds $10.92 in plan check.',
+    extra: 'Each additional kW adds $11.27 in inspection fees.',
   },
   'grass-valley': {
     status: 'not-published',
@@ -334,6 +345,41 @@ const FEES: Record<string, FeeEntry> = {
   vallejo: { status: 'not-published', evidence: 'does not give a dollar figure' },
   windsor: { status: 'not-published', evidence: 'The page does not give a dollar figure' },
   'yuba-city': { status: 'not-published', evidence: 'does not specify the dollar amount' },
+  'san-mateo': {
+    status: 'published',
+    components: [{ label: 'combination permit, solar on a single-family dwelling', usd: 450, quote: '$450 for each combination permit' }],
+    extra: 'A new energy storage system installed on its own is $450.',
+  },
+  irvine: {
+    status: 'published',
+    components: [
+      { label: 'plan check, residential solar per system', usd: 349.11, quote: '$349.11 for plan check' },
+      { label: 'inspection', usd: 299, quote: '$299.00 for inspection' },
+      { label: 'permit issuance', usd: 31.88, quote: '$31.88 permit issuance fee' },
+    ],
+    extra: 'Each additional kW over 15 kW adds $12.08.',
+  },
+  fremont: {
+    status: 'published',
+    components: [{ label: 'Instant Solar Permit, up to 15 kW', usd: 133, quote: '$133 for an Instant Solar Permit up to 15 kW' }],
+    extra: 'Regular review is $280 up to 15 kW; above 15 kW add $7.50 (instant) or $15 (regular) per kW.',
+  },
+  riverside: {
+    status: 'published',
+    components: [
+      { label: 'expedited solar energy system permit, up to 38 kW', usd: 190, quote: 'up to 38 kW, at $190' },
+      { label: 'permit issuance', usd: 39, quote: '$39 permit issuance fee' },
+    ],
+    extra: 'The regular route is $350 up to 15 kW plus $15 per additional kW; Riverside Public Utilities adds a $275 net metering review fee.',
+  },
+  oakland: {
+    status: 'published',
+    components: [
+      { label: 'solar electric inspection, residential', usd: 450, quote: 'inspection fee at $450' },
+      { label: 'SolarApp+ filing fee', usd: 21.49, quote: 'SolarApp+ filing fee of $21.49' },
+    ],
+    extra: 'Each kW above 15 kW adds $4.03; a residential battery permit is $268.64.',
+  },
 };
 
 // -----------------------------------------------------------------------------
@@ -361,17 +407,8 @@ interface PlatformEntry {
 }
 
 const PLATFORMS: Record<string, PlatformEntry> = {
-  temecula: { platform: 'solarapp', evidence: 'SolarAPP+ accepted since 30 September 2023' },
-  murrieta: {
-    platform: 'solarapp',
-    evidence: 'SolarAPP+ automated permits',
-    source: {
-      label: 'City of Murrieta, Self-Issuing Permits & Solar App+',
-      url: 'https://www.murrietaca.gov/1368/Self--Issuing-Permits-Solar-App',
-      verifiedAt: '2026-09-23',
-    },
-    note: 'Named on the City\'s Self-Issuing Permits & Solar App+ page; the fee bulletin itself does not name it.',
-  },
+  temecula: { platform: 'solarapp', evidence: 'SolarAPP+ has been available since September 30, 2023' },
+  murrieta: { platform: 'solarapp', evidence: 'must be submitted through SolarAPP+' },
   'san-diego': { platform: 'city-instant', evidence: 'Self-certified systems issue instantly' },
   escondido: { platform: 'solarapp', evidence: 'SolarAPP+ for licensed contractors' },
   anaheim: { platform: 'none-named', evidence: 'page does not name SolarAPP+' },
@@ -387,7 +424,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
       verifiedAt: '2026-09-23',
     },
   },
-  carlsbad: { platform: 'solarapp', evidence: 'SolarAPP+ named and required' },
+  carlsbad: { platform: 'solarapp', evidence: 'rooftop projects use SolarAPP+' },
   'chula-vista': { platform: 'solarapp', evidence: 'SolarAPP+ named as the required expedited path' },
   corona: {
     platform: 'symbium',
@@ -398,9 +435,9 @@ const PLATFORMS: Record<string, PlatformEntry> = {
       verifiedAt: '2026-09-23',
     },
   },
-  'el-cajon': { platform: 'solarapp', evidence: 'SolarAPP+ named as the primary automated permitting system' },
+  'el-cajon': { platform: 'solarapp', evidence: 'Licensed contractors get SolarAPP+ pre-approval' },
   'el-dorado-hills': { platform: 'symbium', evidence: 'partnered with Symbium (NOT SolarAPP+)' },
-  fresno: { platform: 'solarapp', evidence: 'SolarAPP+ named on page' },
+  fresno: { platform: 'solarapp', evidence: 'Single-family and duplex projects can use SolarAPP+' },
   'grass-valley': { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
   hollister: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned' },
   lincoln: { platform: 'symbium', evidence: 'online filing via the Symbium portal' },
@@ -451,6 +488,11 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   vallejo: { platform: 'none-named', evidence: 'or whether SolarAPP+ is used' },
   windsor: { platform: 'symbium', evidence: 'Windsor uses Symbium' },
   'yuba-city': { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
+  'san-mateo': { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
+  irvine: { platform: 'symbium', evidence: 'powered by Symbium' },
+  fremont: { platform: 'solarapp', evidence: 'Contractors registered with SolarAPP+' },
+  riverside: { platform: 'solarapp', evidence: 'under 38 kW through SolarAPP+' },
+  oakland: { platform: 'solarapp', evidence: 'eligible rooftop systems on a permitted main dwelling through SolarAPP+' },
 };
 
 export type OnlineFiling = 'yes' | 'general-portal' | 'not-yet' | 'in-person' | 'not-stated' | 'unclassified';
@@ -512,6 +554,9 @@ const UTILITY_TYPE: Record<UtilityRateKey, { type: 'IOU' | 'POU'; cecName: strin
   mid: { type: 'POU', cecName: 'Modesto Irrigation District' },
   anaheim: { type: 'POU', cecName: 'City of Anaheim Public Utilities Department' },
   corona: { type: 'POU', cecName: 'City of Corona Department of Water & Power' },
+  // 2026-09-23: the CEC layer's own names for the two utilities added then.
+  riverside: { type: 'POU', cecName: 'City of Riverside' },
+  pasadena: { type: 'POU', cecName: 'Pasadena Water & Power' },
 };
 
 /**
@@ -604,7 +649,7 @@ const CCAS: CcaEntry[] = [
   {
     name: 'Ava Community Energy',
     match: 'Ava Community Energy',
-    members: ['livermore', 'stockton', 'tracy'],
+    members: ['livermore', 'stockton', 'tracy', 'fremont', 'oakland'],
     source: {
       label: 'Ava Community Energy, Who We Serve',
       url: 'https://avaenergy.org/community/who-we-serve/',
@@ -638,6 +683,28 @@ const CCAS: CcaEntry[] = [
     source: {
       label: 'City of San José, Energy Department (San José Clean Energy)',
       url: 'https://www.sanjoseca.gov/your-government/departments-offices/energy',
+      verifiedAt: '2026-09-23',
+    },
+  },
+  // 2026-09-23 (Tier 2 city-cost wave).
+  {
+    name: 'Orange County Power Authority',
+    match: 'Orange County Power Authority',
+    members: ['irvine'],
+    source: {
+      label: 'Orange County Power Authority, home page (member communities)',
+      url: 'https://www.ocpower.org/',
+      verifiedAt: '2026-09-23',
+    },
+  },
+  {
+    name: 'WestLight Energy',
+    match: 'WestLight Energy',
+    // WestLight says it serves San Mateo County and Los Banos.
+    members: ['san-mateo'],
+    source: {
+      label: 'WestLight Energy (formerly Peninsula Clean Energy), home page',
+      url: 'https://www.westlightenergy.org/',
       verifiedAt: '2026-09-23',
     },
   },
