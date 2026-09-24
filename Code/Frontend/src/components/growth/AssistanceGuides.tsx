@@ -3,6 +3,16 @@ import { CRR_SOCIAL_CARD, crrTwitter } from "@/lib/crr-social";
 import Link from "next/link";
 import { DecisionPage } from "./DecisionPage";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
+import { HubSpokeLinks } from "./HubSpokeLinks";
+import {
+  GreenTariffDiscounts,
+  SgipEquityStatus,
+  DisclosurePackage,
+  ProviderFailureRisk,
+  WhenZeroDownIsFair,
+  CPUC_DISCLOSURE_DOCS,
+  SUNNOVA_8K,
+} from "./FreeSolarRealityExtras";
 
 const link = "text-primary underline underline-offset-2";
 const law25 =
@@ -123,7 +133,7 @@ export function assistanceMetadata(kind: AssistanceKey): Metadata {
       type: "article",
       url: `https://ratereliefca.com${path}`,
       modifiedTime:
-        kind === "free" ? "2026-09-22T00:00:00Z" : "2026-09-10T00:00:00Z",
+        kind === "free" ? "2026-09-23T00:00:00Z" : "2026-09-10T00:00:00Z",
       images: [CRR_SOCIAL_CARD],
     },
     twitter: crrTwitter(metaTitle, metaDescription),
@@ -335,7 +345,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
       title={d.title}
       intro={d.intro}
       path={d.path}
-      sourceCheckedDate={kind === "free" ? "2026-09-22" : "2026-09-10"}
+      sourceCheckedDate={kind === "free" ? "2026-09-23" : "2026-09-10"}
       sources={[
         ...(kind === "options" || kind === "records" || kind === "california"
           ? [
@@ -411,6 +421,15 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               {
                 label: "CSD: Low-Income Weatherization Program page",
                 url: liwpProgramPage,
+              },
+              {
+                label:
+                  "CPUC: CSLB solar disclosure documents (cover page and Supporting Information)",
+                url: CPUC_DISCLOSURE_DOCS,
+              },
+              {
+                label: "Sunnova Energy International: Form 8-K (Item 1.03), filed 2025-06-09",
+                url: SUNNOVA_8K,
               },
             ]
           : []),
@@ -575,7 +594,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
                 compare cash, loan, lease and PPA obligations
               </Link>
               , read{" "}
-              <Link href="/blog/solar-ppa-vs-lease-california" className={link}>
+              <Link href="/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa" className={link}>
                 how a PPA differs from a lease
               </Link>
               , and check{" "}
@@ -598,7 +617,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
             intro="The complaint patterns Californian households report most often."
             links={[
               { href: "/solar-problems/solar-door-to-door-sales-california", label: "What a door-to-door rep can and cannot legally do" },
-              { href: "/solar-problems/free-solar-california-is-it-real", label: "What a free-solar offer actually is" },
+              { href: "/blog/free-solar-panels-california", label: "What a no-money-down solar offer actually is" },
               { href: "/solar-problems/does-solar-mean-free-electricity-california", label: "Why solar is not free electricity" },
             ]}
           />
@@ -778,7 +797,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
             </p>
             <p className="mt-3">
               How the two third-party structures differ from each other:{" "}
-              <Link href="/blog/solar-ppa-vs-lease-california" className={link}>
+              <Link href="/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa" className={link}>
                 solar PPA versus lease in California
               </Link>
               .
@@ -955,6 +974,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               about bill assistance for your own account.
             </p>
           </section>
+          <GreenTariffDiscounts />
           <section id="bill-assistance">
             <h2>
               Bill assistance is a different door, and it is usually the faster
@@ -1003,6 +1023,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               programme name alone.
             </p>
           </section>
+          <SgipEquityStatus />
           <section id="federal-credit-2026">
             <h2>There is no homeowner federal tax credit for a 2026 completion</h2>
             <p>
@@ -1050,6 +1071,8 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               for the §48E detail.
             </p>
           </section>
+          <ProviderFailureRisk />
+          <DisclosurePackage />
           <section id="offer-questions">
             <h2>How to read the offer in front of you</h2>
             <p>
@@ -1151,6 +1174,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               for how to send the notice. (Verified 2026-09-17.)
             </p>
           </section>
+          <WhenZeroDownIsFair />
           <section>
             <h2>A referral request is optional and separate</h2>
             <p>
@@ -1277,12 +1301,11 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
           <RelatedGuides
             heading="What the offer turns out to be"
             links={[
-              { href: "/solar-problems/free-solar-california-is-it-real", label: "Is free solar in California real?" },
+              { href: "/blog/no-upfront-cost-solar-panels", label: "What no-upfront-cost solar costs over the contract" },
               { href: "/solar-problems/does-solar-mean-free-electricity-california", label: "Does solar mean free electricity?" },
               { href: "/solar-problems/hidden-costs-of-solar-california", label: "The costs that arrive after the quote" },
               { href: "/solar-problems/solar-sales-tactics-california", label: "What each sales tactic obscures" },
               { href: "/solar-problems/why-solar-reps-get-a-bad-name", label: "Why the sales channel earns its reputation" },
-              { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
               { href: "/blog/solar-ppa-explained-california", label: "How a solar PPA actually works" },
               { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california", label: "Cash, loan, lease and PPA side by side" },
               { href: "/blog/can-you-cancel-solar-panel-contract-before-installation-california", label: "The statutory cancellation window" },
@@ -1300,6 +1323,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               program.
             </p>
           </section>
+          <HubSpokeLinks hub="incentives" currentPath={definitions.free.path} />
         </>
       )}
       {kind === "income" && (
@@ -1361,7 +1385,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
             heading="Other routes when a rooftop project does not fit"
             links={[
               { href: "/blog/is-community-solar-worth-it", label: "Whether a shared community project is worth it" },
-              { href: "/solar-problems/free-solar-california-is-it-real", label: "What a free-solar offer actually is" },
+              { href: "/blog/free-solar-panels-california", label: "What a no-money-down solar offer actually is" },
             ]}
           />
         </>
