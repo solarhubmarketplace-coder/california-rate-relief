@@ -247,7 +247,7 @@ test('topical-authority wave: new companies pages with a cost twin render and ar
 const T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN = new Set([
   'san-mateo', 'irvine', 'fremont', 'riverside', 'oakland', 'pleasanton',
   'chico', 'pasadena', 'santa-clarita', 'long-beach', 'santa-ana',
-  'sacramento', 'sunnyvale', 'visalia',
+  'sacramento', 'sunnyvale', 'visalia', 'mountain-view', 'huntington-beach',
 ]);
 for (const slug of T2_COST_PAGES_WITH_LIVE_COMPANIES_TWIN) REINSTATED_COMPANIES_SLUGS.add(slug);
 

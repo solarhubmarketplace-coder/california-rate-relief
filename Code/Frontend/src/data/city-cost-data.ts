@@ -464,12 +464,15 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "Riverside County",
     utilityKey: "corona",
     permitUrl: "https://www.coronaca.gov/departments/building-division/expedited-permits",
+    // 2026-09-23: re-read. The page now carries a Symbium route alongside the
+    // expedited plan-check packages.
     permitFeeNote:
-      "The City states that plan check processing will not begin until payment of plan check fees has been confirmed by the Building Division. It publishes no specific dollar figure for a solar permit on that page, so ask the Building Division for the current amount.",
-    permitFeeSource: "City of Corona Expedited Permits page (coronaca.gov)",
+      "Corona's Expedited Permits page does not state a dollar figure for a solar permit. It says plan check processing will not begin until the Building Division has confirmed payment of the plan check fees, so ask the Building Division for the current amount.",
+    permitFeeSource: "City of Corona, Building Division, Expedited Permits",
+    permitSources: [CEC_SB379_DATA],
     permitOnline:
-      "Yes, electronically via the city's eTRAKiT portal (etrakit.coronaca.gov); SolarAPP+ is not mentioned on this page - Corona uses its own expedited/Symbium solar review process instead",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes, two ways. For a Symbium solar permit, the City has you first verify that the address is inside Corona's city limits, then apply through Symbium and finish in the City's eTRAKiT portal. Expedited plan-check packages for central-inverter and microinverter systems, built from the City's application form, eligibility checklist, standard plan and structural criteria form, can also be submitted in eTRAKiT. The California Energy Commission's SB 379 data lists Corona's platform as Symbium.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "el-cajon",
@@ -629,15 +632,20 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Modesto",
     county: "Stanislaus County",
     utilityKey: "mid",
-    permitUrl: "https://www.modestogov.com/DocumentCenter/View/19115/Building-Safety-Division-Development-User-Fees-Fiscal-Year-25-26-PDF",
+    // 2026-09-23: the fiscal year 25-26 fee PDF this row used to link now
+    // returns 404; the City's Building Safety Fees page carries the 2026-27
+    // table. The platform is now read from the CEC's SB 379 data.
+    permitUrl: "https://www.modestogov.com/3308/Building-Safety-Fees",
     permitFeeNote:
-      "Fee schedule lists: \"Electrical Photovoltaic - Residential $333.00 Permit\" (flat fee) and \"Electrical Photovoltaic - Commercial $1,098.00 Deposit\"",
-    permitFeeSource: "City of Modesto Building Safety Division Development User Fees, Fiscal Year 25-26 (fee schedule PDF)",
+      "Modesto's Building Safety fee table for July 1, 2026 to June 30, 2027 lists a residential electrical photovoltaic permit at $333.00 per permit, due when you apply. A commercial photovoltaic permit is a $1,098.00 deposit.",
+    permitFeeSource: "City of Modesto, Building Safety Fees (effective July 1, 2026 to June 30, 2027)",
+    permitSources: [CEC_SB379_DATA],
     permitOnline:
-      "yes \u2014 online filing available via the City's eTRAKiT permit portal (mode-trk.aspgov.com/eTRAKiT); an older city document titled \"SOLAR-APP\" (Community and Economic Development) suggests SolarAPP+ has been used, but that specific link now 404s and was not independently reconfirmed on a live page",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Modesto's Building Safety Division takes permits online through its eTRAKiT permits portal, and the California Energy Commission's SB 379 data lists Modesto's automated solar permitting platform as SolarAPP+. The City's pages checked do not describe the solar route step by step.",
+    sourcesFetchedAt: "2026-09-23",
     // Added 2026-09-22: MID's own service-area statement stops at the
     // Tuolumne River, and the CEC layer places part of the city in TID.
+    // Both re-checked 2026-09-23.
     utilitySplit: {
       others: "TID",
       note:
@@ -646,11 +654,18 @@ export const CITY_COST_ROWS: CityCostRow[] = [
         {
           label: "Modesto Irrigation District, Who We Are (electric service area)",
           url: "https://www.mid.org/about-us/who-we-are/",
-          verifiedAt: "2026-09-22",
+          verifiedAt: "2026-09-23",
         },
-        CEC_SERVICE_TERRITORY_SOURCE,
+        CEC_SERVICE_TERRITORY_SOURCE_0923,
       ],
     },
+    extraFaqs: [
+      {
+        question: "How does MID treat rooftop solar in Modesto?",
+        answer:
+          "Where the Modesto Irrigation District serves the address, MID, not PG&E, sets the solar terms. MID says it currently offers only NEM 2.0 and credits energy a system pushes back to its grid at 7.6 cents per kWh, shown as a negative amount on the monthly bill. It caps a system at 115 percent of the meter's annual demonstrated load, charges a $900 interconnection fee for a system under 100 kW AC per meter, and says it normally performs its interconnection inspection within 12 working days.",
+      },
+    ],
   },
   {
     slug: "monterey",
@@ -832,13 +847,24 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "Santa Clara County",
     utilityKey: "pge",
     cca: "San Jose Clean Energy",
+    ccaSource: PGE_CCA_LIST,
     permitUrl: "https://www.sanjoseca.gov/businesses/development-services-permit-center/start-your-project/single-family-duplex-properties/solar-storage-battery-projects",
+    // 2026-09-23: fee basis now read from the Building Division's own
+    // 2026-27 schedule, which prices electrical permits by inspection time.
     permitFeeNote:
-      "Page does not give a dollar amount. States: \"For permits issued online, SJPermits.org will present the permit fee and enable online payment. Or find fee information and payment methods at Building Fees.\"",
-    permitFeeSource: "City of San Jose Solar & Storage Battery Projects page",
+      "San Jose's solar page says SJPermits.org shows the permit fee and takes payment for permits issued online, but it does not state the amount. The Building Division's fee schedule for fiscal year 2026-27, effective August 10, 2026, charges electrical permits at $315 per hour of required inspection time or by item, whichever is greater, and allocates a minimum of 60 minutes of inspection time to a single-family photovoltaic system. Those fees are in addition to the permit issuance fee, which the schedule sets at $211 per hour of processing time or the listed amount, whichever is greater.",
+    permitFeeSource: "City of San Jose, Solar & Storage Battery Projects",
+    permitSources: [
+      {
+        label: "City of San Jose, Building and Structure Permits Fee Schedule, fiscal year 2026-27, effective August 10, 2026 (Electrical Permits: Photovoltaic System, Single Family)",
+        url: "https://www.sanjoseca.gov/home/showpublisheddocument/26047/639219591833200000",
+        verifiedAt: "2026-09-23",
+      },
+      CEC_SB379_DATA,
+    ],
     permitOnline:
-      "Yes for qualifying rooftop residential/duplex/townhouse systems - filed and paid online via SJPermits.org. SolarAPP+ is not named on this page.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. A rooftop system on a single-family home, duplex or townhouse can be permitted online at SJPermits.org if the panels weigh under 5 pounds per square foot with frame, put under 40 pounds on each support point, sit no more than 18 inches above the roof and are not ballasted; the City inspector reviews the electrical plan on site at inspection. Other projects go through the City's Standard Plan Review. The City does not name SolarAPP+, and the California Energy Commission's SB 379 data lists San Jose's platform as a custom one.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "san-luis-obispo",
@@ -1140,13 +1166,24 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Ontario",
     county: "San Bernardino County",
     utilityKey: "sce",
-    permitUrl: "https://www.ontarioca.gov/government/community-development/building/apply-residential-solar-permits",
+    // 2026-09-23: the City's reroof-and-solar page still returns a server
+    // error, so the row now links the Building Department page, which
+    // announces the Symbium route.
+    permitUrl: "https://www.ontarioca.gov/government/community-development/building",
     permitFeeNote:
-      "This dedicated solar-permit page returned a server error (HTTP 500) at every attempt to fetch it during research and could not be reached. The general Building Department Fees page (https://www.ontarioca.gov/Building/Fees) lists fee Tables A-F (building, electrical, mechanical, plumbing, grading) but gives no separate dollar figure for solar/photovoltaic permits, and directs applicants to call permit technicians at 909-395-2023 for specifics.",
-    permitFeeSource: "City of Ontario Building Department Fees page (the Apply for Residential Reroof and Solar Permits page itself returned a 500 error and could not be read)",
+      "Ontario's Building Department Fees page lists no fee specifically for solar. It sets an electrical permit issuance fee of $41.00 and plan check at 80 percent of permit fees, calls its figures an estimate only, and refers applicants to permit technicians at 909-395-2023 for the exact amount due at issuance.",
+    permitFeeSource: "City of Ontario, Building Department",
+    permitSources: [
+      {
+        label: "City of Ontario, Building Department Fees (Table B, Electrical Permit Fees)",
+        url: "https://www.ontarioca.gov/government/community-development/building/building-department-fees",
+        verifiedAt: "2026-09-23",
+      },
+      CEC_SB379_DATA,
+    ],
     permitOnline:
-      "Could not be determined: the city's dedicated \"Apply for Residential Reroof and Solar Permits\" page returned a server error (HTTP 500) on every fetch attempt during research and its online-filing/SolarAPP+ details could not be confirmed.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Since August 4, 2025, contractors and homeowners can apply for residential solar and energy storage permits through Symbium's real-time permitting platform, which the City says expedites approval and permit issuance. The California Energy Commission's SB 379 data also lists Ontario's platform as Symbium. The City's separate page on residential reroof and solar permits returned a server error when checked.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "palm-springs",
@@ -1196,13 +1233,24 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "San Joaquin County",
     utilityKey: "pge",
     cca: "Ava Community Energy",
+    ccaSource: AVA_COMMUNITIES,
     permitUrl: "https://www.cityoftracy.org/Departments/Community-and-Economic-Development/Building-Safety/Permit-Process-and-Fees",
+    // 2026-09-23: fee now read from the City's adopted 2026/27 Master Fee
+    // Schedule; filing route re-read on the permit page.
     permitFeeNote:
-      "The page does not give a dollar figure for a solar permit. It only directs photovoltaic project submittals to a dedicated email address, \"photovoltaic@cityoftracy.org,\" rather than listing fee amounts.",
-    permitFeeSource: "City of Tracy Permit Process and Fees page",
+      "Tracy's Citywide Master Fee Schedule for fiscal year 2026/27 (Resolution 2026-119, with building fees in effect from July 17, 2026) lists a residential solar PV system up to 15 kW at a flat $450, plus $15 per kW above 15 kW, and marks both as fees set by the State. The City's permit page says the plan check fee is paid before plans are reviewed and the balance of the permit fees when the permit is issued.",
+    permitFeeSource: "City of Tracy, Permit Process and Fees",
+    permitSources: [
+      {
+        label: "City of Tracy, Citywide Master Fee Schedule FY 2026/27, adopted May 19, 2026 (Resolution 2026-119): fee 26, Solar (PV) Systems",
+        url: "https://www.cityoftracy.org/files/assets/city/v/3/finance/documents/budget-amp-financial-documents/master-fee-schedule/approved-fy2026-2027-citywide-master-fee-schedule.pdf",
+        verifiedAt: "2026-09-23",
+      },
+      CEC_SB379_DATA,
+    ],
     permitOnline:
-      "The page does not say whether solar permits specifically can be filed online or whether SolarAPP+ is used; PV submittals are routed by email to the Building Safety division.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Tracy takes photovoltaic applications by email at photovoltaic@cityoftracy.org with the plans and also offers an online application submittal process; permit fees are paid through eTRAKiT or in person at City Hall. The City's page does not name SolarAPP+, and the California Energy Commission's SB 379 data lists Tracy's platform as a custom one.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "vallejo",
@@ -1572,6 +1620,92 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "Yes. Licensed contractors take the design through SolarAPP+, then file a Residential Solar Permit with SolarApp in the City's Citizen Access portal, where the permit is auto-issued within seconds of payment. At inspection the contractor has to provide the project's single-line diagram and load calculations.",
     sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'mountain-view',
+    city: 'Mountain View',
+    county: 'Santa Clara County',
+    utilityKey: 'pge',
+    cca: 'Silicon Valley Clean Energy',
+    ccaSource: SVCE_ABOUT,
+    permitUrl: 'https://developmentpermits.mountainview.gov/about-permits/apply-for-permit/building-permits/solar-permits',
+    permitFeeNote:
+      "Mountain View's Solar Permits page does not state a dollar figure, and the City's Building Permit Fees page refers to that page for solar. For systems filed through ePermitsMV, the City collects the fee online before the permit issues.",
+    permitFeeSource: 'City of Mountain View, Solar Permits',
+    permitSources: [
+      {
+        label: 'City of Mountain View, Building Permit Fees (Solar Permits (Photovoltaic): see the Solar Permits page)',
+        url: 'https://developmentpermits.mountainview.gov/about-permits/fees/building-fees',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes. Contractors registered with SolarAPP+ can file roof-mounted or building-integrated solar on a single-family home, with or without battery storage or a service panel upgrade, and the permit issues automatically; it is still a City of Mountain View building permit. A City building inspector then checks the installation at a site inspection the contractor schedules at least one business day after approval. Multifamily, commercial and other single-family systems go through ePermitsMV with plans.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'huntington-beach',
+    city: 'Huntington Beach',
+    county: 'Orange County',
+    utilityKey: 'sce',
+    permitUrl: 'https://www.huntingtonbeachca.gov/departments/community_development/building___inspection/solar_app.php',
+    permitFeeNote:
+      "Huntington Beach's SolarAPP+ page says SolarAPP+ charges its own processing fee, currently $35, and that the City's permit fees are then paid online in the HB ACA portal. It does not state the City's amount.",
+    permitFeeSource: 'City of Huntington Beach, SolarAPP+',
+    permitSources: [CEC_SB379_DATA],
+    permitOnline:
+      "Yes. After SolarAPP+ approval, the contractor creates a Residential Photovoltaic System record in the City's HB ACA portal, uploads the SolarAPP+ documents, pays and requests inspections there. SolarAPP+ can approve rooftop systems up to 38.4 kW on a main service of up to 400A, with service disconnects and busbars rated up to 225A. A homeowner installing their own system cannot use it without the contractor licenses the work requires.",
+    sourcesFetchedAt: '2026-09-23',
+    extraFaqs: [
+      {
+        question: 'Is Huntington Beach still part of Orange County Power Authority?',
+        answer:
+          "No. The Huntington Beach City Council voted in May 2023 to leave Orange County Power Authority. OCPA says solar (NEM) customers in the city were switched to SCE bundled service beginning in April 2024 and all other customers in June 2024, so SCE again provides both generation and delivery. OCPA also says the move back did not change a customer's NEM type, whether NEM 1.0, NEM 2.0 or the Solar Billing Plan.",
+      },
+    ],
+  },
+  {
+    slug: 'arcata',
+    city: 'Arcata',
+    county: 'Humboldt County',
+    utilityKey: 'pge',
+    cca: 'Redwood Coast Energy Authority',
+    ccaSource: {
+      label: "City of Arcata, Community Choice Energy Program (Arcata joined Redwood Coast Energy Authority's program in May 2017)",
+      url: 'https://www.cityofarcata.org/739/Community-Choice-Energy-Program',
+      verifiedAt: '2026-09-23',
+    },
+    permitUrl: 'https://www.cityofarcata.org/166/Building-Permits',
+    // An undated City submittal guide for PV of 10 kW or less quotes a
+    // "standard fee" of $121.18, below the current $159.00 minimum permit fee,
+    // and links a solar page that now 404s. It is not quoted here.
+    permitFeeNote:
+      "Arcata's Master Fee Schedule for fiscal year 2026-27, effective September 21, 2026, has no separate line for solar. Building permit fees there are set by project valuation, with a $159.00 minimum permit fee and plan review at 65 percent of the building permit fee, and 4 percent each is added for permit issuance, database management and technology, waste diversion and the General Plan, all figured on the permit fee and plan review deposit. Confirm the amount for your project with the Building Division at 707-822-5956.",
+    permitFeeSource: 'City of Arcata, Building Permits',
+    permitSources: [
+      {
+        label: 'City of Arcata, Master Fee Schedule FY 2026-27, effective September 21, 2026 (section 21, Building and Other Related Permit Fees)',
+        url: 'https://www.cityofarcata.org/DocumentCenter/View/16642/2027-Master-Fee-Schedule-Updated-8-19-2026',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'City of Arcata, online permit portal: PV/EV/Battery Backup Permit',
+        url: 'https://arcataca.viewpointcloud.com/categories/1089',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes. Arcata's online permit portal offers a PV/EV/Battery Backup Permit that can be applied for at any time, though the City notes approval happens only during business hours. The California Energy Commission's SB 379 data lists Arcata as without an automated solar permitting platform.",
+    sourcesFetchedAt: '2026-09-23',
+    extraFaqs: [
+      {
+        question: 'How much does solar cost in Humboldt County?',
+        answer:
+          "No public source prices an installation for the county. What differs by address is the permit and the power provider. Inside the City of Arcata, the 2026-27 fee schedule has no separate solar fee: building permits are priced by valuation with a $159.00 minimum. The California Energy Commission's SB 379 data lists Humboldt County's own permitting platform as SolarAPP+. Redwood Coast Energy Authority, which says about 90 percent of Humboldt County residents get their electricity from it, supplies generation, and PG&E delivers the power and handles billing.",
+      },
+    ],
   },
 ];
 

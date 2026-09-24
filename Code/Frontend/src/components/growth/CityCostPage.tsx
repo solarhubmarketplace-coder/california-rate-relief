@@ -16,6 +16,7 @@ import { RelatedGuides, type RelatedGuideLink } from '@/components/shared/Relate
 import { StatewideCostBenchmark } from '@/components/growth/StatewideCostBenchmark';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import {
+  CEC_SERVICE_TERRITORY_SOURCE_0923,
   COST_TEMPLATE_CSLB_VERIFIED,
   cityCostPath,
   type CityCostRow,
@@ -29,6 +30,10 @@ import { growthCities } from '@/data/growth-cities';
 import { getCityBySlug } from '@/data/cities-data';
 import { companiesCityHref, hasCompaniesCityPage } from '@/lib/canonical-redirects';
 import { cityQuickCheckUtility, costPageModified, costPageSeo } from '@/lib/city-pages';
+
+/** The City of Corona's own statement of whom its electric utility serves. */
+const CORONA_ELECTRIC_SERVICE_URL =
+  'https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service';
 
 // Per-city extra links where a city's cost page draws impressions for a query
 // another page answers (topical-authority wave 2026-09-23, CREATE_DEDICATED
@@ -218,12 +223,17 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       verifiedAt: utility.fetchedAt,
     },
     ...(split ? split.sources : []),
+    // 2026-09-23: the City now calls its utility the Utilities Department;
+    // the CEC layer (re-queried that day) shows how its area sits inside SCE's.
     ...(hasAddressSpecificUtility
-      ? [{
-          label: 'City of Corona Department of Water and Power — Electric Service',
-          url: 'https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service',
-          verifiedAt: '2026-09-20',
-        }]
+      ? [
+          {
+            label: 'City of Corona Utilities Department — Electric Service',
+            url: CORONA_ELECTRIC_SERVICE_URL,
+            verifiedAt: '2026-09-23',
+          },
+          CEC_SERVICE_TERRITORY_SOURCE_0923,
+        ]
       : []),
     ...STATE_SOURCES,
   ];
@@ -258,7 +268,7 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       question: `Which utility serves ${row.city}?`,
       answer:
         hasAddressSpecificUtility
-          ? 'The City of Corona Department of Water and Power states that its electric service is limited to its service area; some Corona addresses are served by Southern California Edison. Check the utility named on your actual bill or confirm the address with the utility before using a rate, a bill comparison, or a project estimate. Source: City of Corona Department of Water and Power, Electric Service, verified September 20, 2026.'
+          ? "The City of Corona's own electric utility, run by its Utilities Department, provides bundled service to residents and businesses within the City's electric service area, and its customers do not receive an electric bill from Southern California Edison. The California Energy Commission's service-territory map shows that area as a small part of Corona inside SCE's territory. Check the utility named on your actual bill before using a rate, a bill comparison, or a project estimate. Sources: City of Corona Utilities Department, Electric Service, and the CEC service-territory map, both verified September 23, 2026."
           : split
             ? `${split.note} ${utilityRateSentence(utility, rate, `Where ${utility.name} serves the address, `)}`
             : `${utility.longName} (${utility.name}). Its current average residential rate is ${rate}, as of ${utility.asOf}, per ${utility.sourceLabel}, fetched ${formatVerified(utility.fetchedAt)}. That rate is ${utility.basisNote}.`,
@@ -360,17 +370,24 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
               {hasAddressSpecificUtility ? (
                 <>
                   <p>
-                    The City of Corona Department of Water and Power says its electric service is
-                    limited to its service area. Some Corona addresses are served by Southern
-                    California Edison. Read the utility name on the actual bill before treating a
-                    DWP schedule, an SCE schedule, or an online estimate as yours.
+                    Corona runs its own electric utility. The City&apos;s Utilities Department
+                    provides bundled service to residents and businesses within the City&apos;s
+                    electric service area, and those customers do not get an electric bill from
+                    Southern California Edison. The California Energy Commission&apos;s
+                    service-territory map shows that area as a small part of Corona inside
+                    SCE&apos;s territory. Read the utility name on the actual bill before treating
+                    a City utility schedule, an SCE schedule, or an online estimate as yours.
                   </p>
                   <p className='text-foreground/60 text-sm'>
-                    Source:{' '}
-                    <a href='https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service' target='_blank' rel='noopener noreferrer' className={link}>
-                      City of Corona Department of Water and Power — Electric Service
+                    Sources:{' '}
+                    <a href={CORONA_ELECTRIC_SERVICE_URL} target='_blank' rel='noopener noreferrer' className={link}>
+                      City of Corona Utilities Department — Electric Service
                     </a>
-                    . Verified September 20, 2026.
+                    ;{' '}
+                    <a href={CEC_SERVICE_TERRITORY_SOURCE_0923.url} target='_blank' rel='noopener noreferrer' className={link}>
+                      {CEC_SERVICE_TERRITORY_SOURCE_0923.label}
+                    </a>
+                    . Verified September 23, 2026.
                   </p>
                 </>
               ) : split ? (

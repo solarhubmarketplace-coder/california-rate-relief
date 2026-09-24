@@ -9,7 +9,7 @@ import { utilityCodeFor } from './quick-start.ts';
 
 test('split-utility cities pre-select nothing on any of their pages', () => {
   for (const [type, slug] of [
-    ['cost', 'corona'], // City of Corona DWP or SCE by address
+    ['cost', 'corona'], // City of Corona electric utility or SCE by address
     ['cost', 'modesto'], // MID / TID
     ['companies', 'modesto'],
     ['savings', 'modesto'],

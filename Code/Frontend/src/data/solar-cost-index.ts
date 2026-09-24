@@ -186,7 +186,7 @@ const FEES: Record<string, FeeEntry> = {
     }],
     extra: 'The traditional path totals $722.',
   },
-  corona: { status: 'not-published', evidence: 'It publishes no specific dollar figure for a solar permit' },
+  corona: { status: 'not-published', evidence: 'does not state a dollar figure for a solar permit' },
   'el-cajon': { status: 'not-published', evidence: 'does not state a dollar figure' },
   'el-dorado-hills': { status: 'not-published', evidence: "does not state it or the County's permit fee" },
   fresno: {
@@ -232,8 +232,9 @@ const FEES: Record<string, FeeEntry> = {
     components: [{
       label: 'electrical photovoltaic permit, residential (flat)',
       usd: 333,
-      quote: 'Electrical Photovoltaic - Residential $333.00 Permit',
+      quote: 'residential electrical photovoltaic permit at $333.00',
     }],
+    extra: 'A commercial photovoltaic permit is a $1,098.00 deposit.',
   },
   monterey: {
     status: 'published',
@@ -284,7 +285,11 @@ const FEES: Record<string, FeeEntry> = {
       { label: 'solar permit fee, residential', usd: 152, quote: 'Solar Permit Fee Residential $152.00' },
     ],
   },
-  'san-jose': { status: 'not-published', evidence: 'Page does not give a dollar amount' },
+  'san-jose': {
+    status: 'not-published',
+    extra: 'Electrical permits are billed at $315 per hour of inspection time, with at least 60 minutes for a single-family PV system, plus a permit issuance fee.',
+    evidence: 'but it does not state the amount',
+  },
   'san-luis-obispo': {
     status: 'published',
     components: [{ label: 'photovoltaic system, residential roof mount (IT surcharge included)', usd: 332.5, quote: 'at $332.50' }],
@@ -341,7 +346,11 @@ const FEES: Record<string, FeeEntry> = {
     evidence: 'The page does not give a dollar amount',
   },
   'los-angeles': { status: 'not-published', evidence: 'the bulletin does not name a dollar figure' },
-  ontario: { status: 'not-retrievable', evidence: 'returned a server error (HTTP 500)' },
+  ontario: {
+    status: 'not-published',
+    extra: 'The electrical permit issuance fee is $41.00; plan check is 80% of permit fees.',
+    evidence: 'lists no fee specifically for solar',
+  },
   'palm-springs': { status: 'not-published', evidence: 'does not give a specific dollar figure' },
   rocklin: {
     status: 'not-published',
@@ -349,7 +358,11 @@ const FEES: Record<string, FeeEntry> = {
     evidence: "the city's own building permit fee is separate and not quantified",
   },
   seaside: { status: 'not-published', evidence: 'does not give a dollar amount' },
-  tracy: { status: 'not-published', evidence: 'The page does not give a dollar figure' },
+  tracy: {
+    status: 'published',
+    components: [{ label: 'residential solar PV system up to 15 kW (flat, State-set)', usd: 450, quote: 'up to 15 kW at a flat $450' }],
+    extra: 'Above 15 kW: $15 per kW.',
+  },
   vallejo: {
     status: 'published',
     components: [
@@ -439,6 +452,18 @@ const FEES: Record<string, FeeEntry> = {
     ],
     extra: 'Each kW above 15 kW adds $4.03; a residential battery permit is $268.64.',
   },
+  // 2026-09-23 (Tier 2 city-cost wave, batch 8).
+  'mountain-view': { status: 'not-published', evidence: 'does not state a dollar figure' },
+  'huntington-beach': {
+    status: 'not-published',
+    extra: 'SolarAPP+ charges its own $35 processing fee.',
+    evidence: "It does not state the City's amount",
+  },
+  arcata: {
+    status: 'not-published',
+    extra: 'No solar line: valuation-based building permit fees with a $159.00 minimum.',
+    evidence: 'has no separate line for solar',
+  },
 };
 
 // -----------------------------------------------------------------------------
@@ -489,15 +514,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   },
   carlsbad: { platform: 'solarapp', evidence: 'rooftop projects use SolarAPP+' },
   'chula-vista': { platform: 'solarapp', evidence: 'expedited solar permits must go through SolarAPP+' },
-  corona: {
-    platform: 'symbium',
-    evidence: 'Symbium Solar Permits',
-    source: {
-      label: 'City of Corona, Building Division, Expedited Permits',
-      url: 'https://www.coronaca.gov/departments/building-division/expedited-permits',
-      verifiedAt: '2026-09-23',
-    },
-  },
+  corona: { platform: 'symbium', evidence: "lists Corona's platform as Symbium" },
   'el-cajon': { platform: 'solarapp', evidence: 'Licensed contractors get SolarAPP+ pre-approval' },
   'el-dorado-hills': { platform: 'symbium', evidence: 'through Symbium for residential parcels' },
   fresno: { platform: 'solarapp', evidence: 'Single-family and duplex projects can use SolarAPP+' },
@@ -508,9 +525,9 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   manteca: { platform: 'symbium', evidence: 'issued instantly online through Symbium' },
   marina: { platform: 'none-named', evidence: 'the page does not mention SolarAPP+ specifically' },
   modesto: {
-    platform: 'unconfirmed',
-    evidence: 'was not independently reconfirmed on a live page',
-    note: 'An older City document suggests SolarAPP+ was used; the link now fails.',
+    platform: 'solarapp',
+    evidence: "lists Modesto's automated solar permitting platform as SolarAPP+",
+    note: 'Per the CEC SB 379 data (self-reported); the City pages checked do not describe the route.',
   },
   monterey: { platform: 'solarapp', evidence: "lists Monterey's platform as SolarAPP+" },
   napa: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned' },
@@ -525,7 +542,11 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   'rancho-cucamonga': { platform: 'solarapp', evidence: 'SolarAPP+ named and available' },
   roseville: { platform: 'solarapp', evidence: 'The design goes through SolarAPP+' },
   salinas: { platform: 'solarapp', evidence: 'Yes, via SolarAPP+' },
-  'san-jose': { platform: 'none-named', evidence: 'SolarAPP+ is not named on this page' },
+  'san-jose': {
+    platform: 'city-instant',
+    evidence: "lists San Jose's platform as a custom one",
+    note: 'Online permits at SJPermits.org; the CEC SB 379 data (self-reported) lists a custom platform.',
+  },
   'san-luis-obispo': { platform: 'solarapp', evidence: 'After SolarAPP+ review' },
   'san-marcos': { platform: 'solarapp', evidence: 'contractors use SolarAPP+' },
   'santa-cruz': { platform: 'solarapp', evidence: 'After SolarAPP+ approval' },
@@ -543,11 +564,15 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   danville: { platform: 'solarapp', evidence: 'SolarApp+ Submittals' },
   encinitas: { platform: 'none-named', evidence: 'SolarAPP+ is not named on this specific page' },
   'los-angeles': { platform: 'none-named', evidence: 'SolarAPP+ is not named in this bulletin' },
-  ontario: { platform: 'unconfirmed', evidence: 'could not be confirmed' },
+  ontario: { platform: 'symbium', evidence: "through Symbium's real-time permitting platform" },
   'palm-springs': { platform: 'none-named', evidence: 'SolarAPP+ is not named on this page' },
   rocklin: { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
   seaside: { platform: 'solarapp', evidence: 'submitted for automated review through SolarAPP+' },
-  tracy: { platform: 'none-named', evidence: 'or whether SolarAPP+ is used' },
+  tracy: {
+    platform: 'none-named',
+    evidence: 'does not name SolarAPP+',
+    note: 'Applications by email or online submittal; the CEC SB 379 data (self-reported) lists a custom platform.',
+  },
   vallejo: { platform: 'symbium', evidence: "lists Vallejo's platform as Symbium" },
   windsor: { platform: 'symbium', evidence: 'Windsor uses Symbium' },
   'yuba-city': { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
@@ -573,6 +598,9 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   sunnyvale: { platform: 'solarapp', evidence: 'Licensed contractors get SolarAPP+ pre-approval' },
   visalia: { platform: 'solarapp', evidence: 'take the design through SolarAPP+' },
   oakland: { platform: 'solarapp', evidence: 'eligible rooftop systems on a permitted main dwelling through SolarAPP+' },
+  'mountain-view': { platform: 'solarapp', evidence: 'Contractors registered with SolarAPP+' },
+  'huntington-beach': { platform: 'solarapp', evidence: 'After SolarAPP+ approval' },
+  arcata: { platform: 'none-named', evidence: 'as without an automated solar permitting platform' },
 };
 
 export type OnlineFiling = 'yes' | 'general-portal' | 'not-yet' | 'in-person' | 'not-stated' | 'unclassified';
@@ -599,8 +627,6 @@ const ONLINE_EXCEPTIONS: Record<string, { value: Exclude<OnlineFiling, 'yes' | '
   'pacific-grove': { value: 'yes', evidence: "online Solar Permit Application portal" },
   'walnut-creek': { value: 'general-portal', evidence: 'general online permit portal' },
   yucaipa: { value: 'general-portal', evidence: 'Yes for permits generally' },
-  ontario: { value: 'not-stated', evidence: 'Could not be determined' },
-  tracy: { value: 'not-stated', evidence: 'The page does not say whether solar permits specifically can be filed online' },
 };
 
 function isOnlineYes(row: CityCostRow): boolean {
@@ -646,13 +672,18 @@ const UTILITY_TYPE: Record<UtilityRateKey, { type: 'IOU' | 'POU'; cecName: strin
  */
 const ADDRESS_SPECIFIC_UTILITY: Record<string, { display: string; note: string; sources: IndexSource[] }> = {
   corona: {
-    display: 'Corona DWP or SCE',
+    display: 'City of Corona or SCE',
     note:
-      "The City of Corona's electric utility serves residents and businesses within the City's electric service area. Its customers do not receive an electric bill from Southern California Edison; other Corona addresses are SCE customers. Read the utility name on your bill.",
+      "The City of Corona's electric utility serves residents and businesses within the City's electric service area, and its customers do not receive an electric bill from Southern California Edison. The CEC's service-territory map shows that area as a small part of Corona inside SCE's territory. Read the utility name on your bill.",
     sources: [
       {
-        label: 'City of Corona Department of Water and Power, Electric Service',
+        label: 'City of Corona Utilities Department, Electric Service',
         url: 'https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service',
+        verifiedAt: '2026-09-23',
+      },
+      {
+        label: 'California Energy Commission, Electric Load Serving Entities (IOU & POU) service-territory map',
+        url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about',
         verifiedAt: '2026-09-23',
       },
     ],
@@ -749,7 +780,7 @@ const CCAS: CcaEntry[] = [
   {
     name: 'Silicon Valley Clean Energy',
     match: 'Silicon Valley Clean Energy',
-    members: ['sunnyvale'],
+    members: ['sunnyvale', 'mountain-view'],
     source: {
       label: 'Silicon Valley Clean Energy, About (communities served)',
       url: 'https://svcleanenergy.org/about/',
@@ -795,6 +826,18 @@ const CCAS: CcaEntry[] = [
     source: {
       label: 'WestLight Energy (formerly Peninsula Clean Energy), home page',
       url: 'https://www.westlightenergy.org/',
+      verifiedAt: '2026-09-23',
+    },
+  },
+  {
+    name: 'Redwood Coast Energy Authority',
+    match: 'Redwood Coast Energy Authority',
+    // RCEA describes itself as Humboldt County's CCA without listing cities;
+    // the City of Arcata's own page states that Arcata joined in May 2017.
+    members: ['arcata'],
+    source: {
+      label: 'City of Arcata, Community Choice Energy Program (joined Redwood Coast Energy Authority, May 2017)',
+      url: 'https://www.cityofarcata.org/739/Community-Choice-Energy-Program',
       verifiedAt: '2026-09-23',
     },
   },

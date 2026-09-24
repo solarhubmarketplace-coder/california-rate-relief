@@ -213,18 +213,21 @@ const RECORDS: Record<UtilityRateKey, UtilityRateRecord> = {
       'Anaheim Public Utilities is a city-owned municipal utility, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only',
     fetchedAt: '2026-09-18',
   },
+  // 2026-09-23: renamed from 'Corona DWP'. The City's own electric pages now
+  // name the City of Corona Utilities Department; the CEC map layer still
+  // carries the older Department of Water & Power name.
   corona: {
     key: 'corona',
-    name: 'Corona DWP',
-    longName: 'the City of Corona Department of Water and Power',
+    name: 'Corona Utilities',
+    longName: 'the City of Corona Utilities Department',
     averageResidentialRateCents: null,
     averageResidentialRatePerKwh: null,
     asOf: 'no CPUC average published; see the department rate schedule',
-    sourceLabel: 'City of Corona Department of Water and Power — Electric Rates',
+    sourceLabel: 'City of Corona Utilities Department — Electric Rates',
     sourceUrl: 'https://www.coronaca.gov/departments/utilities/customer-care/services/electric-rates',
     basisNote:
       'Corona runs a city-owned electric utility, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only',
-    fetchedAt: '2026-09-18',
+    fetchedAt: '2026-09-23',
   },
   riverside: {
     key: 'riverside',
