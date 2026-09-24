@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import type { ReactElement } from 'react';
+import { SECTION_CRUMBS, type Crumb } from '@/lib/breadcrumb-sections';
 
 // =============================================================================
 // BreadcrumbJsonLd — schema.org BreadcrumbList for CRR public pages
@@ -12,20 +13,24 @@ import type { ReactElement } from 'react';
 // already render a VISIBLE breadcrumb nav (Home / Blog / This Page); this adds
 // the machine-readable half, which was missing site-wide.
 //
-// Trail shape:  Home > <section index, when one really exists> > <current page>
+// Trail shape:  Home > <hub or section index> > [<mid-level>] > <current page>
 //
 // A ListItem pointing at a 404 is worse than omitting it, so a first path
-// segment is linked only when a real index page exists under src/app.
-// Verified 2026-09-10 against src/app:
-//   /blog              page.tsx present           -> linked
-//   /commercial-solar  page.tsx present           -> linked
-//   /battery           page.tsx present           -> linked
-//   /panel-reviews     page.tsx present           -> linked
-//   /solar-savings     no page.tsx (only [city]/) -> segment skipped
-//   /solar-companies   no page.tsx (only [city]/) -> segment skipped
-//   /solar-installers  no page.tsx (only [slug]/) -> segment skipped
+// segment is linked only when a real index page exists under src/app. The
+// section table is lib/breadcrumb-sections.ts (SECTION_CRUMBS), shared with the
+// page shells so a derived visible trail and this schema use the same names.
+// Checked 2026-09-23 against src/app (topic map Block 5 §5.6):
+//   /blog, /battery, /commercial-solar, /panel-reviews, /solar-problems,
+//   /solar-cost, /solar-installers   page.tsx present           -> linked
+//   /solar-savings, /solar-companies  no page.tsx (only [city]/) -> skipped
 // Skipped segments drop out of the list entirely; position stays 1-based and
 // sequential over whatever survives.
+//
+// A page whose visible trail is not the URL section passes it: `parents` (the
+// whole list between Home and the page) or the older single `parent`. The
+// shells (DecisionPage, ArticleRoute) always pass `parents`, taken from the
+// same list they render, so an empty list means "no middle crumb" and is not
+// replaced by the URL section.
 // =============================================================================
 
 const DEFAULT_BASE_URL = 'https://ratereliefca.com';
@@ -73,24 +78,6 @@ const EXCLUDED_PREFIXES = [
   '/register',
   '/signup',
 ];
-
-/**
- * First-segment section labels. href === null means no real index page exists
- * for that section, so the segment is omitted rather than linked to a 404.
- */
-const SECTIONS: Record<string, { label: string; href: string | null }> = {
-  blog: { label: 'Blog', href: '/blog' },
-  'solar-savings': { label: 'Solar Savings by City', href: null },
-  'solar-companies': { label: 'Solar Companies by City', href: null },
-  'solar-installers': { label: 'Solar Installer Reviews', href: null },
-  'commercial-solar': { label: 'Commercial Solar', href: '/commercial-solar' },
-  battery: { label: 'Home Battery', href: '/battery' },
-  'panel-reviews': { label: 'Solar Panel Reviews', href: '/panel-reviews' },
-  // Not in the original spec list, but /solar-problems/page.tsx does exist and
-  // /solar-problems/[slug] pages hang off it (both via ArticleRoute, which
-  // renders PublicLayout), so the parent crumb is real and worth linking.
-  'solar-problems': { label: 'Solar Problems', href: '/solar-problems' },
-};
 
 /** Slug tokens that are acronyms or trade names, not words to title-case. */
 const ACRONYMS: Record<string, string> = {
@@ -144,13 +131,19 @@ export interface BreadcrumbJsonLdProps {
    * Replaces the section crumb derived from the first path segment, so the
    * schema trail matches the page's visible breadcrumb.
    */
-  parent?: { label: string; href: string };
+  parent?: Crumb;
+  /**
+   * Every crumb between Home and this page, in order. Takes precedence over
+   * `parent`; an empty array means the page has no middle crumb.
+   */
+  parents?: Crumb[];
 }
 
 export function BreadcrumbJsonLd({
   currentLabel,
   baseUrl = DEFAULT_BASE_URL,
   parent,
+  parents,
 }: BreadcrumbJsonLdProps): ReactElement | null {
   const pathname = usePathname();
 
@@ -186,14 +179,18 @@ export function BreadcrumbJsonLd({
   if (segments.length === 0) return null;
 
   const origin = baseUrl.replace(/\/+$/, '');
-  const section = SECTIONS[segments[0]];
+  const section = SECTION_CRUMBS[segments[0]];
 
   const trail: { name: string; item: string }[] = [
     { name: 'Home', item: `${origin}/` },
   ];
 
   // The section index earns its own crumb only when the page sits below it.
-  if (parent && parent.href.startsWith('/')) {
+  if (parents) {
+    for (const crumb of parents) {
+      if (crumb.href.startsWith('/')) trail.push({ name: crumb.label, item: `${origin}${crumb.href}` });
+    }
+  } else if (parent && parent.href.startsWith('/')) {
     trail.push({ name: parent.label, item: `${origin}${parent.href}` });
   } else if (segments.length > 1 && section && section.href) {
     trail.push({ name: section.label, item: `${origin}${section.href}` });

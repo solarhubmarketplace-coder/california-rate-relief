@@ -254,10 +254,12 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
           {/* Article column plus the desktop "On this page" rail (design pass 2). */}
           <div className={`mx-auto max-w-6xl ${RAIL_GRID}`}>
           <article className='min-w-0 max-w-3xl'>
-            <nav className='mb-4 md:mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
-              <Link href='/' className='hover:text-primary'>Home</Link><span>/</span>
-              <Link href='/solar-cost' className='hover:text-primary'>Solar cost by city</Link><span>/</span>
-              <span className='text-foreground'>Solar cost in {row.city}</span>
+            {/* Same trail as the BreadcrumbList from PublicLayout above
+                (Home > Solar cost by city > city, Block 5 §5.6). */}
+            <nav aria-label='Breadcrumb' className='mb-4 md:mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
+              <Link href='/' className='hover:text-primary'>Home</Link><span aria-hidden='true'>/</span>
+              <Link href='/solar-cost' className='hover:text-primary'>Solar cost by city</Link><span aria-hidden='true'>/</span>
+              <span className='text-foreground' aria-current='page'>Solar cost in {row.city}</span>
             </nav>
 
             <header className='mb-6 md:mb-8'>
