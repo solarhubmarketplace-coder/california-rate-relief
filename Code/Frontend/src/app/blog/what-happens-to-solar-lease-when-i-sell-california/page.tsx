@@ -2,11 +2,67 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
+import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
+import type { FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
+
+// 2026-09-23 Tier 2 (agent costfin): upgraded for the "sell solar rent" cluster
+// and the questions Search Console shows reaching this page ("can you buy out a
+// solar ppa", "selling a home with ppa solar panels", "solar panel lease
+// transfer", "who is responsible for transferring the lease", "what happens at
+// the end of a solar lease"). Opening now answers directly; added buyout,
+// who-does-what, moving the panels, end of term, a FAQ and the financing hub
+// block. Quotations re-fetched 2026-09-23 from the CPUC guide and Sunrun's
+// FY2025 Form 10-K (one provider's contract terms, labeled as such).
+const CPUC_GUIDE_FULL =
+  "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide";
+const SUNRUN_10K =
+  "https://www.sec.gov/Archives/edgar/data/1469367/000162828026012289/run-20251231.htm";
+const SMUD_SSR = "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate";
+
+const faqs: FaqJsonLdItem[] = [
+  {
+    question: "What happens to a solar lease or PPA when you sell your house in California?",
+    answer:
+      "It does not end. The CPUC says that if you sell before the contract is over, you will have to pay the solar provider the remainder of the value of the lease or PPA or transfer the contract to the new owner. Some contracts also let you buy the system and sell it with the house. The contract decides which options you have and at what price.",
+  },
+  {
+    question: "Can you buy out a solar PPA or lease?",
+    answer:
+      "Usually, on the contract's terms. The CPUC warns that buying out a lease or PPA can cost thousands of dollars and suggests asking whether ending early means a balloon payment or an early termination fee. Ask the provider for the payoff amount in writing before you list the home.",
+  },
+  {
+    question: "Who is responsible for transferring a solar lease when a house is sold?",
+    answer:
+      "The seller, who signed the contract, starts it with the solar provider, and the buyer has to apply and be accepted. Sunrun, for example, says in its 2025 annual report that a customer can assign the agreement to a new homeowner who meets its credit requirements and agrees to its terms. Agents and escrow coordinate the timing, but the provider approves the transfer.",
+  },
+  {
+    question: "Can I take leased solar panels to my new house?",
+    answer:
+      "Not on your own. With a lease or PPA the solar provider owns the system on your property, so moving it is the provider's decision and the contract's terms. Ask whether the contract allows relocation and at what cost; usually the choice at a sale is transfer or payoff.",
+  },
+  {
+    question: "What happens at the end of a solar lease?",
+    answer:
+      "Whatever the contract's end-of-term section says. One provider's filing gives the common menu: renew, buy the system at fair market value, or have it removed. Ask who restores the roof after removal and whether renewal pricing is set in the contract.",
+  },
+];
 
 const sources: Source[] = [
   {
     label: "CPUC: California Solar Consumer Protection Guide",
     url: "https://www.cpuc.ca.gov/solarguide/",
+  },
+  {
+    label: "CPUC: Consumer Protection Guide, leases and PPAs in detail (sale, buyout, escalators)",
+    url: CPUC_GUIDE_FULL,
+  },
+  {
+    label: "Sunrun Inc.: Form 10-K for fiscal year 2025, filed February 26, 2026 (home-sale and end-of-term terms)",
+    url: SUNRUN_10K,
+  },
+  {
+    label: "SMUD: Solar and Storage Rate (what a buyer of a SMUD solar home is billed on)",
+    url: SMUD_SSR,
   },
   {
     label: "CSLB: Solar requirements and disclosure information",
@@ -31,7 +87,7 @@ export const metadata: Metadata = {
       "Selling a home with a solar lease or PPA? See how transfer, buyout and end-of-term options work before you list.",
     type: "article",
     url: "https://ratereliefca.com/blog/what-happens-to-solar-lease-when-i-sell-california",
-    modifiedTime: "2026-09-11T00:00:00Z",
+    modifiedTime: "2026-09-23T00:00:00Z",
   },
 };
 
@@ -39,12 +95,148 @@ export default function SolarLeaseHomeSaleCA() {
   return (
     <DecisionPage
       title="Selling a California Home With a Solar Lease or PPA: Transfer or Buyout"
-      intro="A solar lease or power-purchase agreement doesn't end when you sell — it can transfer to the buyer, be bought out, or reach an end-of-term option, depending on what the contract allows. The contract itself controls which of those paths are available, so pull the actual documents before you list rather than relying on a general rule. This page covers transfer, buyout and end-of-term, in that order."
+      intro="Selling a California home with a solar lease or PPA usually means one of two things: the buyer takes over the contract, or you pay off what is left of it. The CPUC puts it plainly: you will have to pay the provider the remainder of the value of the lease or PPA or transfer the contract to the new owner. Your contract decides the price and the paperwork, so read it before you list."
       path="/blog/what-happens-to-solar-lease-when-i-sell-california"
       sources={sources}
-      sourceCheckedDate="2026-09-11"
+      sourceCheckedDate="2026-09-23"
+      contentModifiedDate="2026-09-23"
       topic="Solar lease or PPA home-sale review"
+      faqs={faqs}
+      breadcrumbs={[{ label: "Leases, PPAs and financing", href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california" }]}
+      breadcrumbLabel="Selling a home with a solar lease"
     >
+      <section>
+        <h2>Your three options when you sell</h2>
+        <p>
+          The CPUC&apos;s consumer guide lists the usual paths for a home with a leased or PPA
+          system: &ldquo;the new owner must agree to take on the lease/agreement, you continue
+          making payments, or you buy out the lease/agreement, which could be thousands of
+          dollars&rdquo; (
+          <a className="underline" href={CPUC_GUIDE_FULL}>
+            CPUC
+          </a>
+          , checked September 23, 2026). In practice that means:
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            <strong>Transfer the contract to the buyer.</strong> The buyer applies to the provider
+            and takes over the remaining payments. The provider decides whether the buyer qualifies.
+          </li>
+          <li>
+            <strong>Pay off or buy out the contract.</strong> You pay what the contract says is
+            left. Some contracts let the seller buy the system so it sells with the house; Sunrun, for
+            example, says a customer who sells &ldquo;has the right to purchase the system or assign
+            the Customer Agreement to the new homeowner.&rdquo;
+          </li>
+          <li>
+            <strong>Prepay part of it to make a transfer easier.</strong> Some providers let the
+            seller prepay remaining payments to lower the buyer&apos;s monthly rate. Sunrun says its
+            customers may &ldquo;prepay all or a portion of the remaining payments due&rdquo; to
+            &ldquo;lower or eliminate the monthly rate to be paid by the new homeowner&rdquo; (
+            <a className="underline" href={SUNRUN_10K}>
+              Sunrun Form 10-K, filed February 26, 2026
+            </a>
+            ).
+          </li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Can you buy out a solar PPA or lease?</h2>
+        <p>
+          Usually, but the contract sets the price, not the law. The CPUC says that if you sell
+          before the contract is over, you &ldquo;will have to pay the solar provider the remainder
+          of the value of the lease or PPA,&rdquo; and that &ldquo;buying out a lease or PPA can cost
+          thousands of dollars.&rdquo; Its question list for any lease or PPA includes: &ldquo;If I
+          end my agreement early, will I owe a balloon payment and/or an early termination fee? If
+          so, how much will I owe?&rdquo; (
+          <a className="underline" href={CPUC_GUIDE_FULL}>
+            CPUC
+          </a>
+          ).
+        </p>
+        <p className="mt-3">
+          Ask the provider for a written payoff quote with a date on it before you list, and ask how
+          it is calculated so you can check it. If you prepaid a PPA, ask whether the payoff credits
+          the electricity you paid for and have not yet received; see{" "}
+          <Link className="underline" href="/blog/prepaid-ppa-california-2026">
+            the prepaid PPA checklist
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section>
+        <h2>Who does what in a solar lease transfer</h2>
+        <ul className="list-disc space-y-2 pl-5">
+          <li>
+            <strong>Seller:</strong> signed the contract, so starts the transfer or payoff with the
+            provider and supplies the contract, payment history and system documents.
+          </li>
+          <li>
+            <strong>Buyer:</strong> applies to the provider and must be accepted. Sunrun, for example,
+            says a customer can assign the agreement to a new homeowner who &ldquo;meets our credit
+            requirements and agrees to be bound by the terms and conditions&rdquo; (
+            <a className="underline" href={SUNRUN_10K}>
+              Sunrun Form 10-K
+            </a>
+            ). Other providers set their own terms.
+          </li>
+          <li>
+            <strong>Provider:</strong> approves or declines the buyer, quotes any transfer fee or
+            payoff, and updates the contract.
+          </li>
+          <li>
+            <strong>Agents and escrow:</strong> build the provider&apos;s timeline into the sale.
+          </li>
+        </ul>
+        <p className="mt-3">
+          The CPUC suggests asking, before you sign a lease or PPA, &ldquo;What happens if the home
+          buyer doesn&apos;t want the solar system or doesn&apos;t qualify to take on my lease,
+          PPA, or PACE-financed system?&rdquo; and &ldquo;Are there fees for transferring the lease,
+          PPA, or PACE financing to a new homeowner?&rdquo; If you did not ask then, ask now.
+        </p>
+      </section>
+
+      <section>
+        <h2>Can you take the panels with you?</h2>
+        <p>
+          Not on your own. With a lease or PPA, the CPUC says, &ldquo;the solar provider owns the
+          system on your property.&rdquo; Moving it to your next home is a question for the provider
+          and your contract. If you move within a utility territory, the account side changes too:
+          SMUD, for example, puts customers who move to a property with solar on its Solar and
+          Storage Rate (
+          <a className="underline" href={SMUD_SSR}>
+            SMUD
+          </a>
+          ). For an owned system, what removal and reinstallation involve is in{" "}
+          <Link className="underline" href="/blog/solar-panel-removal-reinstall-cost">
+            solar panel removal and reinstall
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section>
+        <h2>What happens at the end of a solar lease</h2>
+        <p>
+          If you are not selling, the end of the term is the other exit. The contract&apos;s
+          end-of-term section decides it. One provider&apos;s annual report lists the usual menu:
+          after the initial term, customers can renew &ldquo;typically at a 10% discount to
+          then-prevailing power prices,&rdquo; buy the system at its fair market value, or have it
+          removed (
+          <a className="underline" href={SUNRUN_10K}>
+            Sunrun Form 10-K
+          </a>
+          ). Ask who repairs the roof after removal and whether renewal pricing is written into
+          the contract. More on renting and its end is in{" "}
+          <Link className="underline" href="/blog/rent-solar-panels-for-your-home-california">
+            renting solar panels for your home
+          </Link>
+          .
+        </p>
+      </section>
+
       <section>
         <h2>Start with the signed agreement</h2>
         <p>
@@ -149,8 +341,8 @@ export default function SolarLeaseHomeSaleCA() {
       <section>
         <h2>A referral request does not resolve a home sale</h2>
         <p>
-          California Rate Relief is a private referral service. A request for a
-          review does not approve a transfer, determine a payoff, promise a
+          California Rate Relief is a referral service. We are not a licensed contractor. A
+          request for a review does not approve a transfer, determine a payoff, promise a
           buyer outcome or establish a sale timeline. Review written documents
           from the provider and the professionals handling the transaction
           before choosing a path.
@@ -169,8 +361,11 @@ export default function SolarLeaseHomeSaleCA() {
           // claude/ca-financing-20260918
           { href: "/blog/is-it-better-to-buy-or-lease-solar-panels-california", label: "Whether buying or leasing fits the next house" },
           { href: "/blog/how-much-does-it-cost-to-lease-solar-panels-california", label: "What determines a lease or PPA payment in the first place" },
+          { href: "/blog/do-solar-panels-increase-property-taxes-california", label: "The property tax exclusion and a change in ownership" },
+          { href: "/blog/does-solar-increase-home-value-california", label: "What solar does to a California home's value" },
         ]}
       />
+      <HubSpokeLinks hub="financing" currentPath="/blog/what-happens-to-solar-lease-when-i-sell-california" />
     </DecisionPage>
   );
 }

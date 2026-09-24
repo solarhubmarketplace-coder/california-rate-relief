@@ -155,6 +155,136 @@
    ],
    "status": "partial",
    "note": "Cost basis is California DG Stats (CPUC-authorized per D.14-11-001), residential solar-only average cost per AC watt for systems >=10 kW, 2025 permission-to-operate year, pulled from the site's own chart endpoint (/api/v1.2/interconnection/cpw_over_time, sector=res, basis=nominal): all IOUs $4.26 (n=3,966), PG&E $4.08 (2,173), SCE $3.42 (664), SDG&E $5.11 (1,129); 2026 YTD $4.35 (772). Dollar figures for 10 kW are labeled as our arithmetic. Berkeley Lab 2026 update for installer spread ($2.4-$6.3/W medians), size distribution, storage premium (+$2.1/W) and loan premium, all quoted from its text. No production figure: NREL's PVWatts API was blocked by the proxy, so the page links PVWatts instead. Partial only because the CREATE_DEDICATED holder (/commercial-solar/cost-per-watt-california, commercial lane) needs the link; requested."
+  },
+  {
+   "path": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "UPGRADE",
+   "hub": "financing",
+   "file": "src/components/growth/FinancingHubExtras.tsx (Guides kind 'financing')",
+   "title": "Solar Lease vs PPA vs Purchase (2026): 7 Terms Compared",
+   "clusters": [
+    303
+   ],
+   "sources": [
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide"
+   ],
+   "status": "done",
+   "note": "Row for 301 source /blog/solar-ppa-vs-lease-california ('ppa cost') worked on the winner: new #ppa-cost section (how a PPA's total cost is built: year-by-year price schedule, production, total of payments, remaining utility bill; links to prepaid PPA, PPA companies and sale pages) and a 'Can you buy out a solar PPA or lease?' FAQ entry. The existing #ppa-price-per-kwh section already answers the price-per-kWh queries."
+  },
+  {
+   "path": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "UPGRADE",
+   "hub": "financing",
+   "file": "src/components/growth/FinancingHubExtras.tsx (Guides kind 'financing')",
+   "title": "Solar Lease vs PPA vs Purchase (2026): 7 Terms Compared",
+   "clusters": [
+    414
+   ],
+   "sources": [
+    "https://www.californiadgstats.ca.gov/charts/nem/",
+    "https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A48E+edition%3Aprelim%29"
+   ],
+   "status": "done",
+   "note": "Row for 301 source /blog/solar-ppa-vs-lease-california ('lease solar panels california') worked on the winner: new #leasing-in-california section (DG Stats lease share, 26 USC 48E(i)) routing the c12 lease questions (monthly cost, end of lease, getting out, buy vs lease) to the pages that own them, and a 'Can you lease solar panels in California?' FAQ entry."
+  },
+  {
+   "path": "/blog/rent-solar-panels-for-your-home-california",
+   "action": "UPGRADE",
+   "hub": "financing",
+   "file": "src/app/blog/rent-solar-panels-for-your-home-california/page.tsx",
+   "title": "Rent Solar Panels for Your Home in California: Lease vs PPA",
+   "clusters": [
+    80
+   ],
+   "sources": [
+    "https://www.ladwp.com/residential-services/solar-programs/solar-rooftops"
+   ],
+   "status": "done",
+   "note": "Tier 1 already answered this cluster's sub-questions (cost, rent-to-own, end of lease, getting out, buy vs rent). Added the one question GSC shows still unanswered, 'lease roof for solar panels' (21 impr): a section on the reverse deal, sourced to LADWP Solar Rooftops, linking the Rooftops and all-programs LADWP pages. Title unchanged (G03 retitle still held)."
+  },
+  {
+   "path": "/blog/prepaid-ppa-california-2026",
+   "action": "UPGRADE",
+   "hub": "financing",
+   "file": "src/app/blog/prepaid-ppa-california-2026/page.tsx",
+   "title": "Prepaid Solar PPA in California (2026): 5 Terms to Check",
+   "clusters": [
+    1798
+   ],
+   "sources": [
+    "https://www.sec.gov/Archives/edgar/data/1469367/000162828026012289/run-20251231.htm"
+   ],
+   "status": "done",
+   "note": "Cluster 'prepaid ppa solar' (prepaid solar power/energy). Tier 1 content already answered what a prepaid PPA is and buyout. Added a concrete answer to the page's own over/under-production question (one provider's 10-K true-up terms, labeled as one contract) and put 'prepaid solar power' in the meta description. Title unchanged. Compliance sentence now verbatim."
+  },
+  {
+   "path": "/blog/prepaid-ppa-california-2026",
+   "action": "UPGRADE",
+   "hub": "financing",
+   "file": "src/app/blog/prepaid-ppa-california-2026/page.tsx",
+   "title": "Prepaid Solar PPA in California (2026): 5 Terms to Check",
+   "clusters": [
+    464
+   ],
+   "sources": [
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.californiadgstats.ca.gov/charts/nem/"
+   ],
+   "status": "done",
+   "note": "Cluster 'ppa solar california' / 'power purchase agreement california': new section 'Solar PPAs in California: the rules that apply to any PPA' (CSLB license classes, disclosure document, 10% escalation cap on estimates, 3/5-day cancel, PPA share from DG Stats) linking the PPA explainer, PPA companies and the commercial PPA page ('commercial ppas ca' reaches this page)."
+  },
+  {
+   "path": "/blog/what-happens-to-solar-lease-when-i-sell-california",
+   "action": "UPGRADE",
+   "hub": "financing",
+   "file": "src/app/blog/what-happens-to-solar-lease-when-i-sell-california/page.tsx",
+   "title": "Selling a CA Home With Solar Lease or PPA: Buyout Guide",
+   "clusters": [
+    1817
+   ],
+   "sources": [
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.sec.gov/Archives/edgar/data/1469367/000162828026012289/run-20251231.htm",
+    "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate"
+   ],
+   "status": "done",
+   "note": "Opening now answers directly (CPUC: pay the remainder or transfer). Added: the three options at a sale, 'Can you buy out a solar PPA or lease?' (27 GSC impr), who does what in a transfer (the GSC quiz query), whether you can take the panels, end of lease; FAQ with FAQPage via DecisionPage faqs; breadcrumbs; HubSpokeLinks; sources re-checked 2026-09-23. Compliance sentence now verbatim. qc-gate-tsx SCHEMA/LINKS FAILs are the gate's known blind spot for DecisionPage-wrapped pages (same result on untouched /blog/what-happens-if-stop-paying-solar-lease-california)."
+  },
+  {
+   "path": "/blog/solar-pool-heating-california",
+   "action": "UPGRADE",
+   "hub": "cost_value",
+   "file": "src/app/blog/solar-pool-heating-california/page.tsx",
+   "title": "Solar Pool Heating in California: Cost, Sizing and Payback",
+   "clusters": [
+    103,
+    1826
+   ],
+   "sources": [
+    "https://www.energy.gov/energysaver/solar-swimming-pool-heaters",
+    "https://www.energy.gov/energysaver/heat-pump-swimming-pool-heaters",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/california-solar-initiative/csi-thermal-program-solar-water-heating",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide"
+   ],
+   "status": "done",
+   "note": "Both pool rows ('pool solar', 'residential solar pool heating systems'). Added: system types (glazed vs unglazed) and the four components, SRCC OG400 Btu/day-per-dollar comparison, Southern California and desert sizing context (DOE's Florida 100% and NorCal 60-70% reference points; no invented SoCal ratio), heat-pump pool heater on solar panels (GSC 'monobloc heat pumps with solar'), closed CSI-Thermal rebate; 3 FAQ entries; verbatim compliance sentence. DOE pages were read with WebFetch (curl gets a 404 from energy.gov)."
+  },
+  {
+   "path": "/blog/solar-for-renters",
+   "action": "CREATE_DEDICATED",
+   "hub": "financing",
+   "file": "src/app/blog/solar-for-renters/page.tsx",
+   "title": "Solar for Renters in California: What You Can Actually Do",
+   "clusters": [
+    364
+   ],
+   "sources": [
+    "https://www.pge.com/en/clean-energy/solar/community-renewable-programs.html",
+    "https://www.pge.com/en/save-energy-and-money/energy-saving-programs/green-saver-program.html",
+    "https://www.ladwp.com/residential-services/solar-programs/shared-solar"
+   ],
+   "status": "done",
+   "note": "Page already built in Tier 1 and the holder (/blog/rent-solar-panels-for-your-home-california) already links it. Corrected: PG&E Solar Choice enrollment is on hold (D.21-12-036) and the source URL is PG&E's current page; Green Saver is at capacity (auto-enrollment). Added LADWP Shared Solar for LA renters with 2026 rates vs Tier 1."
   }
  ],
  "sitemap_add": [
@@ -302,7 +432,38 @@
    "to": "/blog/solar-leasing-company",
    "anchor": "how to compare solar leasing companies",
    "why": "Sibling financing page on lease cost; its readers' next question is which company. Not owned this wave."
+  },
+  {
+   "from": "/blog/income-qualified-bill-discount-pge",
+   "to": "/blog/pge-solar-program",
+   "anchor": "PG&E's solar programs, including Green Saver",
+   "why": "Green Saver requires CARE/FERA eligibility and stacks its 20% on top; CARE readers' next question. Rates lane owns the page."
+  },
+  {
+   "from": "/blog/help-with-pge-bill",
+   "to": "/blog/pge-solar-program",
+   "anchor": "PG&E's solar and community solar programs",
+   "why": "Rates lane's new page; bill-help readers ask about PG&E solar programs next."
+  },
+  {
+   "from": "any page linking /programs/care-california",
+   "to": "/blog/income-qualified-bill-discount-pge",
+   "anchor": "CARE and FERA discounts",
+   "why": "/programs/care-california is linked from src/components/growth/CaliforniaBillDecisionPages.tsx (2 places) and src/app/blog/california-24-dollar-fixed-charge-explained/page.tsx but no such route exists (not in src/app, not in the prod crawl, no redirect). Broken internal link; not in this lane's files."
   }
  ],
- "skipped": []
+ "skipped": [
+  {
+   "url": "/blog/pge-care-program",
+   "why": "folded into /blog/income-qualified-bill-discount-pge (rates lane, 2026-09-23): it already answers every sub-question (what CARE is, 35%/20% discounts, 2026-27 income limits by household size, eligibility rules, how to apply, renewal, FERA, CCA customers). A second CARE page would split the query. Needs Chad/rates owner: consider retitling that page to lead with 'PG&E CARE Program' (600/mo) instead of 'Income-Qualified Bill Discount'."
+  },
+  {
+   "url": "/blog/solar-property-tax-exemption-california",
+   "why": "folded into /blog/do-solar-panels-increase-property-taxes-california: it already covers the exclusion (not exemption), leased/PPA systems, no filing, change of ownership and the January 1, 2027 sunset. Not owned this wave, so not edited. Note for its owner: AB 2389 (2025-26), which would extend the exclusion to 2031, was held under submission in committee on 2026-05-14 (CalMatters Digital Democracy; leginfo blocks automated reads), so the 2027 sunset stands. 'california solar sales tax exemption' is unanswered; no primary source was fetched for it."
+  },
+  {
+   "url": "/blog/solar-relief-program",
+   "why": "No government program by that name: CPUC low-income solar pages, the CEC and a web search turn up only lead-generation sites using the phrase. Brief: skip if it is a lead-gen brand. Needs Chad's decision because CRR's own brand is 'California Rate Relief Program'; any page on 'relief program' ad names is a brand call."
+  }
+ ]
 }

@@ -29,6 +29,13 @@ const BOE_FAQ =
   'https://boe.ca.gov/proptaxes/active-solar-energy-system/frequently-asked-questions.htm';
 const BOE_EXCLUSION = 'https://boe.ca.gov/proptaxes/active-solar-energy-system/';
 const LBNL_TPO = 'https://www.osti.gov/servlets/purl/1342946';
+// 2026-09-23 Tier 2 (agent costfin): the 301'd /blog/solar-ppa-vs-lease-california
+// held two more clusters, "ppa cost" and "lease solar panels california"; their
+// questions are answered in the two sections added below (#ppa-cost,
+// #leasing-in-california). Sources fetched 2026-09-23.
+const DG_STATS = 'https://www.californiadgstats.ca.gov/charts/nem/';
+const US_48E =
+  'https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A48E+edition%3Aprelim%29';
 
 /** Sources the added sections cite, appended to the hub's own list. */
 export const financingHubExtraSources: Source[] = [
@@ -49,6 +56,15 @@ export const financingHubExtraSources: Source[] = [
     label:
       'Berkeley Lab: Leasing Into the Sun, sales of California homes with third-party-owned solar (LBNL-1007003, January 2017)',
     url: LBNL_TPO,
+  },
+  {
+    label:
+      'California Distributed Generation Statistics (CPUC-authorized): residential ownership by type, data through May 31, 2026',
+    url: DG_STATS,
+  },
+  {
+    label: 'U.S. Code: 26 U.S.C. § 48E(i), denial of credit for solar leasing arrangements',
+    url: US_48E,
   },
 ];
 
@@ -77,6 +93,16 @@ const faqs: FaqJsonLdItem[] = [
     question: 'Will a leased or PPA system raise my property taxes?',
     answer:
       'Not under the current exclusion. The Board of Equalization says a qualifying system is excluded from new-construction assessment whether it is leased or owned, and no form or filing is required. The statute is scheduled to sunset on January 1, 2027.',
+  },
+  {
+    question: 'Can you buy out a solar PPA or lease?',
+    answer:
+      'Usually, on the contract’s terms. The CPUC says that if you sell before the contract ends you will have to pay the provider the remainder of its value or transfer it to the buyer, and that buying out a lease or PPA can cost thousands of dollars. Ask for the buyout price or formula for every year in writing before you sign.',
+  },
+  {
+    question: 'Can you lease solar panels in California?',
+    answer:
+      'Yes, if you own the home, but few people do now. California Distributed Generation Statistics shows leases were about 3% of residential solar projects at PG&E, SCE and SDG&E in 2025, against about 42% PPAs. Most offers without a purchase are PPAs, billed per kWh.',
   },
 ];
 
@@ -208,6 +234,105 @@ export function FinancingHubExtras() {
           receive a monthly bill from a loan company or solar provider.&rdquo; The
           utility bill does not go away; it shrinks, and a second bill starts.
         </p>
+      </section>
+
+      <section id="ppa-cost">
+        <h2>What a solar PPA costs in total</h2>
+        <p>
+          A PPA has no sticker price, because you buy electricity, not equipment. Its cost is the
+          sum of every year&rsquo;s bill from the provider: that year&rsquo;s price per kWh times the
+          kWh the system produces, for the whole term. The CPUC says the contract &ldquo;will specify
+          the kilowatt-hour rate you pay in the first year and every year after that&rdquo; (
+          <a className={link} href={CPUC_GUIDE}>
+            CPUC
+          </a>
+          ), so you can add it up before you sign. Ask for three numbers:
+        </p>
+        <ol className="mt-3 list-decimal space-y-2 pl-5">
+          <li>
+            <strong>The year-by-year price schedule,</strong> which shows the escalator in dollars
+            rather than as a percentage.
+          </li>
+          <li>
+            <strong>The estimated production for each year,</strong> and how a shortfall is handled.
+          </li>
+          <li>
+            <strong>The total of all payments over the term,</strong> which the CPUC lists as the
+            first question to ask about any lease or PPA.
+          </li>
+        </ol>
+        <p className="mt-3">
+          Then add what stays on your utility bill, and compare the total with a cash or loan price
+          for the same system. If the PPA is offered prepaid, the upfront payment is that total paid
+          early; see{' '}
+          <Link className={link} href="/blog/prepaid-ppa-california-2026">
+            what a prepaid PPA still leaves you owing
+          </Link>
+          . How PPA companies differ, and what to ask each one, is in{' '}
+          <Link className={link} href="/blog/solar-ppa-companies">
+            how to compare solar PPA companies
+          </Link>
+          . Ending early has its own price: the CPUC says buying out a lease or PPA &ldquo;can cost
+          thousands of dollars,&rdquo; and what happens at a home sale is in{' '}
+          <Link className={link} href="/blog/what-happens-to-solar-lease-when-i-sell-california">
+            selling a home with a solar lease or PPA
+          </Link>
+          .
+        </p>
+      </section>
+
+      <section id="leasing-in-california">
+        <h2>Leasing solar panels in California now</h2>
+        <p>
+          Leases have become the exception. California Distributed Generation Statistics shows that
+          of residential solar projects at PG&amp;E, SCE and SDG&amp;E with permission to operate in
+          2025, about 3% were leases and about 42% PPAs; the rest were owned by the homeowner (
+          <a className={link} href={DG_STATS}>
+            DG Stats
+          </a>
+          , data through May 31, 2026). One reason to ask how a lease is priced in 2026: the 2025
+          federal tax law added 26 U.S.C. § 48E(i), under which no business credit is determined for
+          residential solar property &ldquo;if the taxpayer rents or leases such property to a third
+          party&rdquo; (
+          <a className={link} href={US_48E}>
+            26 U.S.C. § 48E
+          </a>
+          ). What that means for a given offer is for the provider to explain.
+        </p>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>
+            <strong>What a lease costs each month:</strong>{' '}
+            <Link className={link} href="/blog/how-much-does-it-cost-to-lease-solar-panels-california">
+              what sets a solar lease payment
+            </Link>
+            .
+          </li>
+          <li>
+            <strong>Choosing a leasing company:</strong>{' '}
+            <Link className={link} href="/blog/solar-leasing-company">
+              how to compare solar leasing companies
+            </Link>
+            .
+          </li>
+          <li>
+            <strong>The end of a lease, and getting out early:</strong>{' '}
+            <Link className={link} href="/blog/rent-solar-panels-for-your-home-california">
+              renting solar panels for your home
+            </Link>
+            , which covers renewal, buyout and removal, and{' '}
+            <Link className={link} href="/blog/what-happens-if-stop-paying-solar-lease-california">
+              what happens if you stop paying
+            </Link>
+            .
+          </li>
+          <li>
+            <strong>Buy or lease:</strong>{' '}
+            <Link className={link} href="/blog/is-it-better-to-buy-or-lease-solar-panels-california">
+              the 2026 buy-or-lease decision
+            </Link>
+            .
+          </li>
+        </ul>
       </section>
 
       <section id="tpo-property-tax-resale">

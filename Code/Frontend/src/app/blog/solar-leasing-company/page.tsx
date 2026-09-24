@@ -48,7 +48,7 @@ const sources: Source[] = [
 
 const metaTitle = 'Solar Leasing Companies in California: How to Compare Them';
 const metaDescription =
-  'A solar leasing company owns the panels and bills you monthly for 20 to 25 years. How few Californians lease now, why tax law changed it, and what to check.';
+  'A solar leasing company owns the panels and bills you monthly for 20 to 25 years. How few Californians lease now, why tax law changed it, what to check.';
 
 export const metadata: Metadata = {
   title: metaTitle,
