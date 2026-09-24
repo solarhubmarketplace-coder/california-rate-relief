@@ -326,6 +326,8 @@ const T3_CITYCOS_COMPANIES_SLUGS = new Set([
   'tracy', 'davis', 'petaluma', 'elk-grove', 'galt', 'clovis', 'yuba-city', 'merced',
   'hollister', 'la-mesa', 'poway', 'santee', 'fallbrook', 'westminster', 'la-habra',
   'fullerton', 'newport-beach', 'aliso-viejo', 'mission-viejo', 'lake-forest', 'tustin',
+  'burbank', 'diamond-bar', 'downey', 'palmdale', 'hesperia', 'moreno-valley', 'wildomar',
+  'coachella-valley', 'ventura-county',
 ]);
 for (const slug of T3_CITYCOS_COMPANIES_SLUGS) REINSTATED_COMPANIES_SLUGS.add(slug);
 

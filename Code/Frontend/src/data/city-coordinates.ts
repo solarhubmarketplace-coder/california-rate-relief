@@ -18,9 +18,11 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   anaheim: [33.8389984, -117.8573937], // Anaheim city, GEOID 0602000
   antioch: [37.9786917, -121.7959824], // Antioch city, GEOID 0602252 (queried 2026-09-23)
   aptos: [36.9911500, -121.8934565], // Aptos CDP, GEOID 0602378
+  arcata: [40.8616619, -124.0752237], // Arcata city, GEOID 0602476 (queried 2026-09-23)
   auburn: [38.8949136, -121.0777135], // Auburn city, GEOID 0603204
   bakersfield: [35.3528015, -119.0359555], // Bakersfield city, GEOID 0603526
   beaumont: [33.9083764, -116.9785403], // Beaumont city, GEOID 0604758
+  bellflower: [33.8880357, -118.1271134], // Bellflower city, GEOID 0604982 (queried 2026-09-23)
   brentwood: [37.9355778, -121.7189698], // Brentwood city, GEOID 0608142 (queried 2026-09-23)
   burbank: [34.1879077, -118.3234890], // Burbank city, GEOID 0608954 (queried 2026-09-23)
   'california-city': [35.1578139, -117.8722241], // California City city, GEOID 0609780
@@ -32,6 +34,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   clovis: [36.8308604, -119.6838769], // Clovis city, GEOID 0614218 (queried 2026-09-23)
   concord: [37.9721841, -122.0015871], // Concord city, GEOID 0616000 (queried 2026-09-23)
   corona: [33.8615850, -117.5649056], // Corona city, GEOID 0616350
+  cupertino: [37.3168277, -122.0465330], // Cupertino city, GEOID 0617610 (queried 2026-09-23)
   danville: [37.8121416, -121.9698235], // Danville town, GEOID 0617988
   davis: [38.5551036, -121.7370923], // Davis city, GEOID 0618100 (queried 2026-09-23)
   'diamond-bar': [33.9991633, -117.8161331], // Diamond Bar city, GEOID 0619192 (queried 2026-09-23)
@@ -89,6 +92,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   'palm-desert': [33.7377747, -116.3695003], // Palm Desert city, GEOID 0655184
   'palm-springs': [33.8015805, -116.5380755], // Palm Springs city, GEOID 0655254
   palmdale: [34.5944586, -118.1057190], // Palmdale city, GEOID 0655156 (queried 2026-09-23)
+  'palo-alto': [37.3952288, -122.1429189], // Palo Alto city, GEOID 0655282 (queried 2026-09-23)
   pasadena: [34.1596757, -118.1388655], // Pasadena city, GEOID 0656000
   perris: [33.7898009, -117.2233475], // Perris city, GEOID 0656700
   petaluma: [38.2421637, -122.6266387], // Petaluma city, GEOID 0656784
@@ -100,7 +104,11 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   redlands: [34.0511294, -117.1711567], // Redlands city, GEOID 0659962
   richmond: [37.9517605, -122.3602500], // Richmond city, GEOID 0660620
   'san-rafael': [37.9818008, -122.5072684], // San Rafael city, GEOID 0668364 (queried 2026-09-23)
+  'san-ramon': [37.7620479, -121.9354251], // San Ramon city, GEOID 0668378 (queried 2026-09-23)
+  'santa-clara': [37.3646205, -121.9679735], // Santa Clara city, GEOID 0669084 (queried 2026-09-23)
+  'santa-monica': [34.0090870, -118.5026057], // Santa Monica city, GEOID 0670000 (queried 2026-09-23)
   santee: [32.8554240, -116.9851413], // Santee city, GEOID 0670224 (queried 2026-09-23)
+  'scotts-valley': [37.0554989, -122.0117689], // Scotts Valley city, GEOID 0670588 (queried 2026-09-23)
   tustin: [33.7309206, -117.8105909], // Tustin city, GEOID 0680854 (queried 2026-09-23)
   vacaville: [38.3586717, -121.9673440], // Vacaville city, GEOID 0681554 (queried 2026-09-23)
   riverside: [33.9381301, -117.3949083], // Riverside city, GEOID 0662000

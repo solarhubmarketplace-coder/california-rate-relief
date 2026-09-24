@@ -434,6 +434,8 @@ const GROWTH_UTILITY_LABEL: Record<string, string> = {
   pwp: 'Pasadena Water and Power',
   gwp: 'Glendale Water & Power',
   redding: 'Redding Electric Utility',
+  // 2026-09-23 (Tier 3, citycos): Burbank's companies page.
+  bwp: 'Burbank Water and Power',
 };
 
 /**
