@@ -1,3 +1,5 @@
+> **Read first (added 2026-09-24).** This file describes the code as of April 2026, and parts of it are out of date. Business, SEO, content and writing rules live outside the repo, in `D:\5_Solar_Business\Web_Projects\` on Chad's machine (the only working folder): start at `00_START_HERE.md`, then `01_STATE\SITE_BLUEPRINT.md` and `01_STATE\CURRENT_STATE.md`. Where this file and those disagree, they win.
+
 # California Rate Relief — Solar CRM Project
 
 ## What This Project Is
