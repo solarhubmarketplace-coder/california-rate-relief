@@ -35,6 +35,7 @@ export const BATTERY_TOPIC_LINKS: Record<string, BatteryTopicLinks> = {
     heading: 'Next questions for a PG&E customer',
     links: [
       { href: '/battery/pge-permanent-battery-storage-rebate', label: 'The $7,500 outage rebate, condition by condition' },
+      { href: '/battery/tesla-powerwall-3-cost-california', label: 'Which rebates apply to a Powerwall in California' },
       { href: '/battery/sgip-battery-rebate-california', label: 'SGIP budget status by utility' },
       { href: '/blog/nem-3-export-rates-california', label: 'What PG&E pays for exported solar, hour by hour' },
       { href: '/battery/battery-payback-nem-3-california', label: 'Whether storage pays back under net billing' },
@@ -56,6 +57,7 @@ export const BATTERY_TOPIC_LINKS: Record<string, BatteryTopicLinks> = {
   'battery-storage-capacity-california': {
     heading: 'What the grid numbers mean at home',
     links: [
+      { href: '/blog/solar-duck-curve-california', label: 'What the batteries are flattening: the duck curve' },
       { href: '/blog/nem-3-export-rates-california', label: 'Why evening solar exports are worth more' },
       { href: '/battery/battery-payback-nem-3-california', label: 'Home battery payback under NEM 3.0' },
       { href: '/battery/how-many-batteries-do-i-need-california', label: 'Sizing a home battery in kWh' },
@@ -128,6 +130,7 @@ export const BATTERY_TOPIC_LINKS: Record<string, BatteryTopicLinks> = {
     links: [
       { href: '/battery/pge-permanent-battery-storage-rebate', label: 'PG&E’s separate $7,500 outage rebate' },
       { href: '/battery/pge-solar-battery-rebate', label: 'All PG&E battery programs in one table' },
+      { href: '/battery/tesla-powerwall-3-cost-california', label: 'Powerwall rebates by utility and community energy program' },
       { href: '/blog/solar-battery-backup-california', label: 'What a backup battery runs, costs and saves' },
       { href: '/blog/sce-solar-billing-plan', label: 'The SCE Solar Billing Plan that SGIP requires' },
       { href: '/battery/home-battery-cost-california', label: 'What a home battery costs before any incentive' },

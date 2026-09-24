@@ -245,7 +245,12 @@ export default function LadwpSolarProgramPage() {
             <a className={link} href={S.cpucNem}>
               CPUC
             </a>
-            ), not LADWP&rsquo;s.
+            ), not LADWP&rsquo;s. How LADWP credits your exports, and what happens to leftover credit,
+            is covered in{' '}
+            <Link className={link} href="/blog/ladwp-net-metering">
+              LADWP net metering
+            </Link>
+            .
           </p>
         </section>
 

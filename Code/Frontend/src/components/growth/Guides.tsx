@@ -1316,7 +1316,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             kilowatt-hour delivered to the grid at a given hour is worth
             over a 30-year horizon, built separately for each utility’s
             climate zones. The CPUC notes these credits are “usually lower
-            than import rates” but “can rise above the retail rate on late
+            than the retail rate” but “can rise above the retail rate on late
             summer evenings,” when grid demand peaks. In practice this
             means:
           </p>

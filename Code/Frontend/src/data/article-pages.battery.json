@@ -43,7 +43,7 @@
       },
       {
         "heading": "PG&E's outage rebates change the math in fire country",
-        "body": "If PG&E serves you and your area sees repeated wildfire-safety outages, two PG&E programs tilt the comparison.\n\nThe Permanent Battery Storage Rebate pays $7,500 once per household after a qualifying permanent battery is installed and gets Permission to Operate. You must be a first-time battery storage customer with five or more Wildfire Safety outages since January 1, 2024, be on a time-of-use rate, pick a battery from PG&E's Qualified Product List bought on or after January 1, 2025, and enroll it in the Emergency Load Reduction Program through your provider. PG&E listed 200 rebates remaining on September 14, 2026, and applications close December 31, 2026 at the latest.\n\nThe Generator and Battery Rebate pays up to $300, plus up to $200 more for CARE and FERA customers, toward a portable generator that is CARB-compliant and on PG&E's qualified product list, or a portable battery between 290 Wh and 1 kWh. It applies in Tier 2 or 3 High Fire-Threat Districts, High Fire Risk Areas, or on EPSS circuits, with the same December 31, 2026 cutoff.\n\nPG&E's Residential Storage Initiative goes further for some households: a battery installed at no charge for customers on EPSS circuits with five or more EPSS outages since January 1, 2024 who are enrolled in CARE, FERA, Medical Baseline or the Self-Identified Vulnerable program. Nothing comparable is offered for whole-house standby generators on these PG&E pages."
+        "body": "If PG&E serves you and your area sees repeated wildfire-safety outages, two PG&E programs tilt the comparison.\n\nThe Permanent Battery Storage Rebate pays $7,500 once per household after a qualifying permanent battery is installed and gets Permission to Operate. You must be a first-time battery storage customer with five or more Wildfire Safety outages since January 1, 2024, be on a time-of-use rate, pick a battery from PG&E's Qualified Product List bought on or after January 1, 2025, and enroll it in the Emergency Load Reduction Program through your provider. PG&E's page showed 179 rebates remaining as of September 18, 2026, when we checked on September 24, 2026, and applications close December 31, 2026 at the latest.\n\nThe Generator and Battery Rebate pays up to $300, plus up to $200 more for CARE and FERA customers, toward a portable generator that is CARB-compliant and on PG&E's qualified product list, or a portable battery between 290 Wh and 1 kWh. It applies in Tier 2 or 3 High Fire-Threat Districts, High Fire Risk Areas, or on EPSS circuits, with the same December 31, 2026 cutoff.\n\nPG&E's Residential Storage Initiative goes further for some households: a battery installed at no charge for customers on EPSS circuits with five or more EPSS outages since January 1, 2024 who are enrolled in CARE, FERA, Medical Baseline or the Self-Identified Vulnerable program. Nothing comparable is offered for whole-house standby generators on these PG&E pages."
       },
       {
         "heading": "Noise, permitting, and where you're actually allowed to run one",
@@ -214,7 +214,7 @@
       {
         "name": "PG&E: Permanent Battery Storage Rebate",
         "url": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
-        "supports": "$7,500 rebate conditions, 200 remaining on 09/14/2026, deadline"
+        "supports": "$7,500 rebate conditions, 179 remaining as of 09/18/2026 (page read 2026-09-24), deadline"
       },
       {
         "name": "PG&E: Generator and Battery Rebate Program",
@@ -2206,7 +2206,7 @@
       },
       {
         "heading": "If your account has had repeated wildfire outages",
-        "body": "PG&E's Permanent Battery Storage Rebate pays $7,500 once per household after a qualifying permanent battery is installed and receives Permission to Operate. You need five or more Wildfire Safety outages since January 1, 2024, a time-of-use rate, a battery from PG&E's Qualified Product List bought on or after January 1, 2025, and enrollment in the Emergency Load Reduction Program through your battery provider. PG&E showed 200 rebates remaining on September 14, 2026, and applications close December 31, 2026 at the latest.\n\nIf you also receive CARE, FERA, Medical Baseline or are enrolled as Self-Identified Vulnerable, and your circuit is one of PG&E's EPSS circuits, the Residential Storage Initiative installs a battery at no charge. PG&E says it reaches eligible customers by letter or email.\n\nThe two can't be combined. The rebate's terms exclude anyone who took part in the Residential Storage Initiative, the Reliability Battery Initiative or SGIP. The Reliability Battery Initiative itself says it is full for 2026."
+        "body": "PG&E's Permanent Battery Storage Rebate pays $7,500 once per household after a qualifying permanent battery is installed and receives Permission to Operate. You need five or more Wildfire Safety outages since January 1, 2024, a time-of-use rate, a battery from PG&E's Qualified Product List bought on or after January 1, 2025, and enrollment in the Emergency Load Reduction Program through your battery provider. PG&E's page showed 179 rebates remaining as of September 18, 2026, when we checked on September 24, 2026, and applications close December 31, 2026 at the latest.\n\nIf you also receive CARE, FERA, Medical Baseline or are enrolled as Self-Identified Vulnerable, and your circuit is one of PG&E's EPSS circuits, the Residential Storage Initiative installs a battery at no charge. PG&E says it reaches eligible customers by letter or email.\n\nThe two can't be combined. The rebate's terms exclude anyone who took part in the Residential Storage Initiative, the Reliability Battery Initiative or SGIP. The Reliability Battery Initiative itself says it is full for 2026."
       },
       {
         "heading": "If your household is income-qualified",
@@ -2244,7 +2244,7 @@
           "PG&E",
           "First-time battery owners with 5+ Wildfire Safety outages since Jan 1, 2024",
           "$7,500 per household",
-          "Open; 200 left as of Sept 14, 2026; apply by Dec 31, 2026"
+          "Open; 179 left as of Sept 18, 2026 (checked Sept 24); apply by Dec 31, 2026"
         ],
         [
           "Residential Storage Initiative",
@@ -2322,7 +2322,7 @@
       {
         "name": "PG&E: Permanent Battery Storage Rebate",
         "url": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
-        "supports": "$7,500 rebate, eligibility, ELRP, 200 remaining on 09/14/2026, deadline"
+        "supports": "$7,500 rebate, eligibility, ELRP, 179 remaining as of 09/18/2026 (page read 2026-09-24), deadline"
       },
       {
         "name": "PG&E: Self-Generation Incentive Program",
@@ -2808,7 +2808,7 @@
       },
       {
         "heading": "Money that still applies in 2026",
-        "body": "The federal residential clean energy credit is not available for a battery installed now. The IRS says it is not allowed for expenditures made after December 31, 2025, and an expenditure counts as made when installation is complete.\n\nPG&E's Permanent Battery Storage Rebate pays $7,500 to first-time battery owners whose accounts have had five or more Wildfire Safety outages since January 1, 2024. It requires enrolling the battery in the Emergency Load Reduction Program, and PG&E names Tesla's Virtual Power Plant with PG&E as one enrollment path. PG&E showed 200 rebates remaining on September 14, 2026, with applications closing December 31, 2026.\n\nSGIP's income-qualified equity budget pays $1.10 per watt-hour, but it was waitlisted for PG&E and SCE electric customers on the program's tracker on September 23, 2026."
+        "body": "The federal residential clean energy credit is not available for a battery installed now. The IRS says it is not allowed for expenditures made after December 31, 2025, and an expenditure counts as made when installation is complete.\n\nPG&E's Permanent Battery Storage Rebate pays $7,500 to first-time battery owners whose accounts have had five or more Wildfire Safety outages since January 1, 2024. It requires enrolling the battery in the Emergency Load Reduction Program, and PG&E names Tesla's Virtual Power Plant with PG&E as one enrollment path. PG&E's page showed 179 rebates remaining as of September 18, 2026, when we checked on September 24, 2026, with applications closing December 31, 2026.\n\nSGIP's income-qualified equity budget pays $1.10 per watt-hour, but it was waitlisted for PG&E and SCE electric customers on the program's tracker on September 23, 2026."
       }
     ],
     "dataTable": {
@@ -2938,7 +2938,7 @@
       {
         "name": "PG&E: Permanent Battery Storage Rebate",
         "url": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
-        "supports": "$7,500 rebate conditions, Tesla VPP enrollment path, 200 remaining, deadline"
+        "supports": "$7,500 rebate conditions, Tesla VPP enrollment path, 179 remaining as of 09/18/2026 (page read 2026-09-24), deadline"
       },
       {
         "name": "SGIP program metrics (selfgenca.com)",

@@ -178,7 +178,7 @@ export default function SolarSystemQuotes() {
               <strong>Which billing rules apply to you.</strong> PG&amp;E, SCE and SDG&amp;E
               customers applying to connect since April 15, 2023 take service on the Net Billing
               Tariff, which credits exported power at values that are &ldquo;usually lower than
-              import rates&rdquo; (CPUC, checked September 23, 2026). City-run utilities such as
+              the retail rate&rdquo; (CPUC, checked September 24, 2026). City-run utilities such as
               LADWP and SMUD write their own rules. A quote modeled on the wrong tariff is wrong
               from the first line.
             </li>

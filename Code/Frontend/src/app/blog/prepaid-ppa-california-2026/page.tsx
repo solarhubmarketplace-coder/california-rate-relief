@@ -289,11 +289,11 @@ export default function PrepaidPpaCalifornia2026() {
           Then add the utility bill that remains. On PG&amp;E, SCE and SDG&amp;E, new
           solar customers take service on the Net Billing Tariff, which credits
           exported electricity at values the CPUC says are &ldquo;usually lower than
-          import rates&rdquo; (
+          the retail rate&rdquo; (
           <a className="underline" href={CPUC_NEM}>
             CPUC
           </a>
-          , checked September 23, 2026). You have prepaid for every kWh the system
+          , checked September 24, 2026). You have prepaid for every kWh the system
           makes, including the ones you export for a smaller credit.
         </p>
       </section>

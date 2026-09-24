@@ -273,7 +273,8 @@ export default function LadwpNetMeteringPage() {
                 <Link href="/battery/sgip-battery-rebate-california" className={link}>SGIP status page</Link>.
               </p>
               <p>
-                LADWP also runs programs that are not net metering. Its{' '}
+                LADWP also runs programs that are not net metering; the full list is in{' '}
+                <Link href="/blog/ladwp-solar-program" className={link}>LADWP’s solar programs</Link>. Its{' '}
                 <Link href="/blog/ladwp-solar-rooftops-program" className={link}>Solar Rooftops program</Link>{' '}
                 puts utility-owned panels on eligible homes. Its Virtual Net Energy Metering pilot buys the output of
                 solar on multifamily sites at 14.5 cents per kWh for 10 to 500 kW projects and 14.0 cents above that, and

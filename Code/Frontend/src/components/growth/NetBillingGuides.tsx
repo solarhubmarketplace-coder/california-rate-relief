@@ -192,7 +192,7 @@ function ComparisonContent() {
               <tr className="border-t">
                 <th scope="row" className="p-4 align-top">Export compensation basis</th>
                 <td className="p-4">Bill credits at the full retail rate &mdash; generation, distribution and transmission components together, per the CPUC</td>
-                <td className="p-4">Credits from the CPUC&apos;s Avoided Cost Calculator (ACC), a value &ldquo;usually lower than import rates&rdquo; that varies by time of day, day of week and season, per the CPUC and PG&amp;E</td>
+                <td className="p-4">Credits from the CPUC&apos;s Avoided Cost Calculator (ACC), a value &ldquo;usually lower than the retail rate&rdquo; that varies by time of day, day of week and season, per the CPUC and PG&amp;E</td>
               </tr>
               <tr className="border-t">
                 <th scope="row" className="p-4 align-top">Time-of-use requirement</th>
@@ -264,7 +264,7 @@ function ComparisonContent() {
                 <th scope="row" className="p-4 align-top">Credit for exports before true-up</th>
                 <td className="p-4">Import (retail) rates</td>
                 <td className="p-4">Import (retail) rates</td>
-                <td className="p-4">Avoided Cost Calculator values, usually lower than import rates</td>
+                <td className="p-4">Avoided Cost Calculator values, usually lower than retail rates</td>
               </tr>
               <tr className="border-t">
                 <th scope="row" className="p-4 align-top">Surplus at true-up</th>
@@ -662,7 +662,7 @@ function BillingContent() {
           applications submitted on or after April 15, 2023, and
           compensates exports using the CPUC&apos;s Avoided Cost Calculator
           instead &mdash; a value the CPUC states is &ldquo;usually lower
-          than import rates.&rdquo; For the full side-by-side of what that
+          than the retail rate.&rdquo; For the full side-by-side of what that
           changes on a bill, see{" "}
           <Link className="underline" href="/blog/nem-2-vs-nem-3-california">
             NEM 2.0 vs. NEM 3.0 in California

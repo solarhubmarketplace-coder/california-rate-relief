@@ -649,7 +649,12 @@ export default function HowMuchToLeaseSolarPanelsCalifornia() {
           that the licence must be active and in classification C-46 (Solar
           Contractor), C-10 (Electrical Contractor) or B (General Building
           Contractor) to be valid for this work (verified 18 September 2026). The
-          CSLB lookup lets you check both.
+          CSLB lookup lets you check both. For what else separates one provider
+          from another, see{" "}
+          <Link className="underline" href="/blog/solar-leasing-company">
+            how to compare solar leasing companies
+          </Link>
+          .
         </p>
         <p className="mt-3">
           The CPUC also requires solar providers to give you its consumer

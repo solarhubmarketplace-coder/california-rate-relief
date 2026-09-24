@@ -212,7 +212,9 @@ export default function LadwpSolarRooftopsProgram() {
             Space is limited. The guidelines cap the program at about one megawatt, estimated at 300 to 450 homes,
             and say applications are reviewed monthly in the order received, with selection at LADWP’s discretion
             to spread systems across the city and build on the most suitable homes. Applying does not guarantee a
-            place.
+            place. If you aren’t selected, or you rent or live in a condo,{' '}
+            <Link href="/blog/ladwp-solar-program">LADWP’s other solar programs</Link> include Shared Solar for
+            apartment and condo households and SGIP funding for income-qualified customers.
           </p>
         </section>
 
@@ -284,7 +286,9 @@ export default function LadwpSolarRooftopsProgram() {
             and for subscription options, see <Link href="/blog/is-community-solar-worth-it">whether community solar is worth it</Link>.
             Tile-roofed homes don’t meet the fact sheet’s composite-shingle requirement, so{' '}
             <Link href="/blog/solar-panels-tile-roof-california">solar on a tile roof</Link> is the route to read
-            if that is your roof.
+            if that is your roof. If your home is outside LADWP’s service area, see{' '}
+            <Link href="/blog/lease-roof-for-solar-panels">how roof leases work outside Los Angeles</Link> and the
+            contract terms to check before you sign one.
           </p>
         </section>
 

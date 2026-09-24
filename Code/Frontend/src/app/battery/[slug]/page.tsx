@@ -6,6 +6,7 @@ import {
 } from '@/components/shared/ArticleRoute';
 import { RelatedGuides } from '@/components/shared/RelatedGuides';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { JSON_ARTICLE_RELATED } from '@/data/json-article-links';
 import { BATTERY_TOPIC_LINKS } from './topic-links';
 
 export function generateStaticParams() {
@@ -28,6 +29,13 @@ export default async function Page({
 }) {
   const { slug } = await params;
   const topic = BATTERY_TOPIC_LINKS[slug];
+  // Cross-lane "next question" links for JSON pages live in
+  // json-article-links.ts (the other JSON routes render them through
+  // JsonArticleLinks). Show them here too, minus any link the topic block
+  // above already carries.
+  const topicHrefs = new Set(topic?.links.map((l) => l.href) ?? []);
+  const related = JSON_ARTICLE_RELATED[`/battery/${slug}`];
+  const relatedLinks = related?.links.filter((l) => !topicHrefs.has(l.href)) ?? [];
   // JSON bodies are plain text, so each guide's topical links (up to the hub,
   // across to siblings, out to NEM / incentives / cost) render under the
   // article instead of inline.
@@ -35,6 +43,9 @@ export default async function Page({
     <>
       {topic && (
         <RelatedGuides heading={topic.heading} intro={topic.intro} links={topic.links} />
+      )}
+      {related && relatedLinks.length > 0 && (
+        <RelatedGuides heading={related.heading} intro={related.intro} links={relatedLinks} />
       )}
       <HubSpokeLinks hub="battery" currentPath={`/battery/${slug}`} />
     </>

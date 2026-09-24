@@ -319,7 +319,11 @@ function LowerBillContent() {
           Compare kWh per day and electric charges per day so weather, billing
           period length and one-time adjustments do not distort the decision.
           Then mark the rate plan and any separate generation provider shown on
-          the statement.
+          the statement. If PG&amp;E sends the bill, the{" "}
+          <Link className="underline" href="/blog/how-to-lower-pge-bill">
+            PG&amp;E-specific steps to lower the bill
+          </Link>{" "}
+          put its discounts, plans and peak hours in order.
         </p>
       </section>
       <BillComparison utilityName="California electric" />
@@ -537,12 +541,14 @@ function LowerBillContent() {
         <p className="mt-3">
           For 2026, PG&amp;E and SCE residential electric customers are
           getting $36.18 and $36.00, and SDG&amp;E customers $49.36 &mdash;
-          each split across two credits, posted in August and September
-          2026. That&apos;s a change from the April/October pattern of past
+          and each of those amounts is paid twice, once in August and again
+          in September 2026, so a PG&amp;E account gets $72.36 in all.
+          That&apos;s a change from the April/October pattern of past
           years: the CPUC moved the schedule to land during the
           higher-usage summer months instead. It shows up as its own line
           on the statement, separate from usage charges, so it won&apos;t
-          turn up in a rate comparison. Full amounts and dates:{" "}
+          turn up in a rate comparison. Full amounts and dates (checked
+          September 24, 2026):{" "}
           <a className="underline" href="https://www.cpuc.ca.gov/climatecredit" target="_blank" rel="noopener noreferrer">
             the CPUC&apos;s California Climate Credit page
           </a>

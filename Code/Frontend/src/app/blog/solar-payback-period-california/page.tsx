@@ -78,7 +78,7 @@ const faqs: FaqJsonLdItem[] = [
   {
     question: 'How does NEM 3.0 change solar payback?',
     answer:
-      'Under the Net Billing Tariff, which applies to PG&E, SCE and SDG&E customers who applied since April 15, 2023, exported solar is credited at values the CPUC says are usually lower than import rates. Solar you use at home is worth more than solar you export, so payback depends heavily on how much of your production you use yourself.',
+      'Under the Net Billing Tariff, which applies to PG&E, SCE and SDG&E customers who applied since April 15, 2023, exported solar is credited at values the CPUC says are usually lower than the retail rate. Solar you use at home is worth more than solar you export, so payback depends heavily on how much of your production you use yourself.',
   },
   {
     question: 'What is the payback period for solar plus a battery in California?',
@@ -152,7 +152,7 @@ export default function SolarPaybackPeriodCaliforniaPage() {
           },
           {
             label: 'Export credits (PG&E, SCE, SDG&E)',
-            value: 'Usually below import rates',
+            value: 'Usually below the retail rate',
             note: 'Net Billing Tariff, for applications since April 15, 2023.',
             source: { publisher: 'CPUC', date: '2026-09-23', url: S.cpucNem },
           },
@@ -219,8 +219,8 @@ export default function SolarPaybackPeriodCaliforniaPage() {
           <p>
             On PG&amp;E, SCE and SDG&amp;E, systems that applied for interconnection since April
             15, 2023 take service on the Net Billing Tariff. Exports are credited at Avoided
-            Cost Calculator values the CPUC says are &ldquo;usually lower than import
-            rates&rdquo; (
+            Cost Calculator values the CPUC says are &ldquo;usually lower than the retail
+            rate&rdquo; (
             <a className={link} href={S.cpucNem}>
               CPUC
             </a>
