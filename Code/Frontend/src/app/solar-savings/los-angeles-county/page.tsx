@@ -15,6 +15,10 @@ import { savingsCityHref } from '@/lib/canonical-redirects';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { FaqBlock } from '@/components/trust/FaqBlock';
+import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
+import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { RATE_TRACKER_PATH } from '@/data/utility-rate-tracker';
 
 /**
  * Los Angeles County regional hub.
@@ -32,18 +36,68 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
  * the site's search impressions.
  */
 
+// 2026-09-23 (topical-authority pass, city_bills hub): this page ranks for
+// "electricity provider los angeles california" and "average electric bill
+// los angeles", so it now answers those first, with the county's providers
+// read from the California Energy Commission's service-territory layers and
+// the bill figures from the CPUC Public Advocates Office Q2 2026 report.
+const TITLE = 'Los Angeles Electricity Providers: LADWP, SCE & More (2026)';
+const DESCRIPTION =
+  'LADWP serves the City of Los Angeles, SCE most of the county, and Pasadena, Glendale, Burbank and others run their own utilities. Rates, bills and solar rules.';
+
 export const metadata: Metadata = {
-  title: 'Solar Panels in Los Angeles County: 2026 Rates & Cost',
-  description:
-    'Find solar guides for Los Angeles County homes. Check the provider and rate schedule on your electricity bill before comparing proposals.',
+  title: TITLE,
+  description: DESCRIPTION,
   alternates: { canonical: '/solar-savings/los-angeles-county' },
   openGraph: {
-    title: 'Solar in Los Angeles County: Rates, Costs and Options',
-    description:
-      'Los Angeles County has several electric utilities. Find your city, confirm your provider and compare proposals against your own electricity bill.',
-    type: 'website',
+    title: TITLE,
+    description: DESCRIPTION,
+    type: 'article',
+    url: 'https://ratereliefca.com/solar-savings/los-angeles-county',
+    modifiedTime: '2026-09-23T00:00:00Z',
   },
 };
+
+const CEC_URL =
+  'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about';
+const PAO_Q2_2026_URL =
+  'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf';
+
+/** Providers in Los Angeles County, from the CEC layers queried 2026-09-23. */
+const PROVIDERS: { name: string; kind: string; where: string }[] = [
+  { name: 'Southern California Edison (SCE)', kind: 'Investor-owned utility', where: 'Most of the county: about 74% of its area on the CEC map' },
+  { name: 'Los Angeles Department of Water and Power (LADWP)', kind: 'City-owned utility', where: 'The City of Los Angeles: about 10% of county area' },
+  { name: 'Glendale Water & Power, Pasadena Water and Power, Burbank Water and Power', kind: 'City-owned utilities', where: 'Their own cities' },
+  { name: 'Vernon, Azusa, Cerritos, City of Industry', kind: 'City-owned utilities', where: 'Parts of those cities' },
+  {
+    name: 'Clean Power Alliance, Lancaster Energy, Energy for Palmdale’s Independent Choice, Pomona Choice Energy, Pico Rivera Innovative Municipal Energy',
+    kind: 'Community choice providers (generation only)',
+    where: 'Member cities inside SCE territory; SCE still delivers',
+  },
+];
+
+const FAQS = [
+  {
+    question: 'Who is the electricity provider in Los Angeles, California?',
+    answer:
+      'For the City of Los Angeles it is LADWP, the city-owned Los Angeles Department of Water and Power. Most of the rest of Los Angeles County is Southern California Edison territory, often with a community choice provider such as Clean Power Alliance supplying the generation, and Glendale, Pasadena, Burbank, Vernon, Azusa, Cerritos and the City of Industry run their own utilities. The name on your bill settles it.',
+  },
+  {
+    question: 'What is the average electric bill in Los Angeles?',
+    answer:
+      'No source publishes one figure for the whole county. For SCE customers, the CPUC Public Advocates Office estimated June 2026 average bills for customers not on CARE at $152 a month in a cool climate zone where homes use about 385 kWh a month, and $254 in a hot zone where they use about 700 kWh. Its Q2 2026 city comparison put the Greater Los Angeles area (SCE) above San Jose and San Diego. LADWP bills are not covered by those reports.',
+  },
+  {
+    question: 'How much is electricity in Los Angeles?',
+    answer:
+      "For SCE customers, the Public Advocates Office put SCE's residential average rate at 34.4 cents per kWh as of June 1, 2026, and SCE adds a Base Services Charge of $24.15 a month for customers not on CARE or FERA. LADWP prices its standard residential rate in tiers that depend on your usage and zone; check the rate schedule printed on your bill.",
+  },
+  {
+    question: "Do LADWP customers get the CPUC's solar rules?",
+    answer:
+      'No. LADWP is city-owned and credits customer solar under its own net energy metering rider, not the CPUC Net Billing Tariff that applies to SCE, PG&E and SDG&E customers. Glendale and Pasadena set their own rules too.',
+  },
+];
 
 const LA_CITIES = CITIES.filter((c) => c.county === 'Los Angeles County').sort(
   (a, b) => a.name.localeCompare(b.name),
@@ -82,8 +136,8 @@ export default function LosAngelesCountySolarPage() {
                 Home
               </Link>
               <span>/</span>
-              <Link href="/solar-panels-california" className="hover:text-foreground">
-                California
+              <Link href={RATE_TRACKER_PATH} className="hover:text-foreground">
+                Rate tracker
               </Link>
               <span>/</span>
               <span className="text-foreground font-medium">Los Angeles County</span>
@@ -91,17 +145,122 @@ export default function LosAngelesCountySolarPage() {
 
             <div className="mb-12">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-4 tracking-tight">
-                Solar Energy in Los Angeles County
+                Who Provides Electricity in Los Angeles County
               </h1>
               <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
-                Los Angeles County has several electric utilities. What solar is worth here depends
-                on which one serves your address, your rate plan and your usage.
-                LADWP publishes tiered and time-of-use schedules. Compare your
-                own billing period in the{' '}
-                <Link href='/blog/why-is-my-ladwp-bill-so-high' className='text-primary underline'>LADWP bill and rate guide</Link>
-                {' '}before using a county-wide estimate.
+                If you live in the City of Los Angeles, your electricity comes
+                from LADWP, the city-owned Department of Water and Power. Most
+                of the rest of the county is Southern California Edison
+                territory, and Glendale, Pasadena, Burbank and a few smaller
+                cities run their own utilities. Which one serves your address
+                sets your rates, your bill and the solar rules that apply.
+              </p>
+              <p className="text-sm text-muted-foreground mt-3">
+                Updated September 23, 2026. Provider areas from the California
+                Energy Commission; rates and bill estimates from the CPUC Public
+                Advocates Office and the utilities.{' '}
+                California Rate Relief is a referral service. We are not a licensed contractor.
               </p>
             </div>
+
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-foreground mb-4 tracking-tight">
+                Electricity providers in Los Angeles County
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                The California Energy Commission maps every utility&apos;s
+                service territory. Laid over the county boundary, its layers
+                (queried September 23, 2026) show these providers:
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-border">
+                <table className="w-full text-left text-sm">
+                  <caption className="sr-only">Electricity providers in Los Angeles County</caption>
+                  <thead className="bg-muted">
+                    <tr>
+                      <th className="p-3">Provider</th>
+                      <th className="p-3">Type</th>
+                      <th className="p-3">Where</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {PROVIDERS.map((p) => (
+                      <tr key={p.name} className="border-t border-border">
+                        <th scope="row" className="p-3 align-top font-medium text-foreground">{p.name}</th>
+                        <td className="p-3 align-top text-muted-foreground">{p.kind}</td>
+                        <td className="p-3 align-top text-muted-foreground">{p.where}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-muted-foreground leading-relaxed mt-4">
+                A community choice provider buys the power but does not own the
+                wires: in its member cities SCE still delivers the electricity
+                and sends one bill with both sets of charges. The Energy
+                Commission&apos;s map also shows SCE along parts of the City of
+                Los Angeles boundary, so an LA mailing address is not proof of an
+                LADWP account. Source:{' '}
+                <a href={CEC_URL} target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                  California Energy Commission, Electric Load Serving Entities
+                </a>
+                .
+              </p>
+            </section>
+
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-foreground mb-4 tracking-tight">
+                What electricity costs in Los Angeles County
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                <strong className="text-foreground">SCE.</strong> The CPUC
+                Public Advocates Office put SCE&apos;s residential average rate
+                at $0.344 per kWh as of June 1, 2026, up 56% over five years and
+                101% since January 2016, and names wildfire mitigation and
+                liability costs, transmission and distribution investment, and
+                rooftop solar incentives as the main statewide drivers. Since
+                November 2025 SCE has also charged a Base Services Charge of
+                $24.15 a month for customers not on CARE or FERA ($12.08 on FERA,
+                $6.00 on CARE), and says per-kWh prices fell about 10% to offset
+                it.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                <strong className="text-foreground">Average bills.</strong> For
+                June 2026 the Public Advocates Office estimated SCE bills for
+                customers not on CARE at $152 a month in a cool climate zone
+                where homes use about 385 kWh a month, and $254 in a hot zone
+                where they use about 700 kWh; CARE customers averaged $81 and
+                $165. Its Q2 2026 city comparison put the Greater Los Angeles
+                area (SCE) ahead of San Jose and San Diego. About 813,943 SCE
+                customers, 17%, were behind on their bills in May 2026, owing
+                $733 on average.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                <strong className="text-foreground">LADWP.</strong> The CPUC
+                reports do not cover LADWP. Its standard residential rate (R-1A)
+                is tiered by usage and zone: in Zone 1 the first tier is the
+                first 350 kWh, the second the next 700 kWh and the third
+                everything above 1,050 kWh; in Zone 2 the tiers are 700, 1,400
+                and above 2,100 kWh. LADWP also offers a time-of-use rate
+                (R-1B). The prices are on your bill and in LADWP&apos;s Schedule
+                R-1; see our{' '}
+                <Link href='/blog/why-is-my-ladwp-bill-so-high' className='text-primary underline'>LADWP bill and rate guide</Link>
+                {' '}and, for SCE customers, the{' '}
+                <Link href='/blog/why-is-my-sce-bill-so-high' className='text-primary underline'>SCE high-bill breakdown</Link>
+                .
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Sources:{' '}
+                <a href={PAO_Q2_2026_URL} target="_blank" rel="noopener noreferrer" className="text-primary underline">CPUC Public Advocates Office, Q2 2026 Electric Rates Report</a>
+                ;{' '}
+                <a href="https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc" target="_blank" rel="noopener noreferrer" className="text-primary underline">SCE, Base Services Charge</a>
+                ;{' '}
+                <a href="https://www.ladwp.com/account/understanding-your-rates/residential-electric-rates" target="_blank" rel="noopener noreferrer" className="text-primary underline">LADWP, residential electric rates</a>
+                . All fetched September 23, 2026. Current averages for every
+                utility are on the{' '}
+                <Link href={RATE_TRACKER_PATH} className="text-primary underline">California utility rate tracker</Link>
+                .
+              </p>
+            </section>
 
             {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
             <HeroQuickCheck topic="Los Angeles County solar savings and quote comparison" className="mb-12" />
@@ -208,7 +367,17 @@ export default function LosAngelesCountySolarPage() {
                 counties that this hub's own grid does not reach. */}
             <RegionalCostCities region='Los Angeles County' counties={['Los Angeles County']} />
 
-            <div className="bg-primary/5 rounded-2xl border border-primary/20 p-8 md:p-10 text-center">
+            <FaqJsonLd items={FAQS} />
+            <FaqBlock items={FAQS} id="faq" schema={false} />
+
+            <HubSpokeLinks
+              hub="city_bills"
+              currentPath="/solar-savings/los-angeles-county"
+              max={6}
+              title="Electric rates and bills in other California cities"
+            />
+
+            <div className="mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 md:p-10 text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-3 tracking-tight">
                 See what solar is worth at your address
               </h2>
@@ -252,9 +421,9 @@ export default function LosAngelesCountySolarPage() {
       <ArticleJsonLd
         variant="Article"
         domain="crr"
-        headline="Solar Energy in Los Angeles County"
+        headline="Who Provides Electricity in Los Angeles County"
         url="https://ratereliefca.com/solar-savings/los-angeles-county"
-        dateModified="2026-09-11"
+        dateModified="2026-09-23"
       />
 
       <Footer />

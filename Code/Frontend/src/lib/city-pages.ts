@@ -32,6 +32,7 @@ import {
 } from '../data/city-cost-data.ts';
 import { formatAverageRateCents, getUtilityRate } from '../data/utility-rate-tracker.ts';
 import { hasCompaniesCityPage, hasSavingsCityPage } from './canonical-redirects.ts';
+import { utilityOptions } from './calculator-context.ts';
 
 export type CityPageType = 'cost' | 'companies' | 'savings';
 
@@ -132,6 +133,44 @@ export interface NearbyCityLink {
   sameCounty: boolean;
 }
 
+/**
+ * Anchor wordings per page type (Block 5 §5.5: templated blocks rotate 2-3
+ * phrasings instead of one exact-match anchor on every page). The wording is
+ * picked from the linking page and the target together, so a target's inbound
+ * anchors vary across the site while a given page always renders the same text.
+ * Every wording names the target's own intent: a cost anchor never leads to a
+ * companies page, and the reverse.
+ */
+const LINK_LABELS: Record<CityPageType, ((name: string) => string)[]> = {
+  cost: [
+    (name) => `Solar panel cost in ${name}`,
+    (name) => `What solar costs in ${name}`,
+    (name) => `${name} solar price factors`,
+  ],
+  companies: [
+    (name) => `Solar companies in ${name}`,
+    (name) => `Comparing ${name} solar installers`,
+    (name) => `${name} solar company checks`,
+  ],
+  savings: [
+    (name) => `Solar savings in ${name}`,
+    (name) => `${name} electric rates and solar savings`,
+    (name) => `Bills and rates in ${name}`,
+  ],
+};
+
+/** Small stable hash, so a page renders the same anchor on every build. */
+function stableIndex(key: string, size: number): number {
+  let h = 0;
+  for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) >>> 0;
+  return h % size;
+}
+
+export function cityLinkLabel(type: CityPageType, targetSlug: string, fromKey = ''): string {
+  const options = LINK_LABELS[type];
+  return options[stableIndex(`${fromKey}>${targetSlug}`, options.length)](cityName(targetSlug));
+}
+
 const LINK_LABEL: Record<CityPageType, (name: string) => string> = {
   cost: (name) => `Solar panel cost in ${name}`,
   companies: (name) => `Solar companies in ${name}`,
@@ -174,11 +213,57 @@ export function nearbyCityLinks(slug: string, currentType: CityPageType, max = 6
       county: cityCounty(other),
       type,
       href: cityPagePath(type, other),
-      label: LINK_LABEL[type](name),
+      label: cityLinkLabel(type, other, `${currentType}:${slug}`),
       sameCounty: cityCounty(other) === county,
     };
   });
 }
+
+/**
+ * A city's own pages, one per intent, for the "Compare installers / What it
+ * costs here / Your bills and rates" row near the top of every city page
+ * (Block 5 §4.2: the companion card goes after the intro). Only live pages are
+ * returned, so no link ever points at a 301 source.
+ */
+export interface CitySiblingLink {
+  type: CityPageType;
+  href: string;
+  /** Short intent label, the same on every city ("What it costs here"). */
+  intent: string;
+  /** Descriptive anchor naming the city. */
+  label: string;
+  current: boolean;
+}
+
+const SIBLING_INTENT: Record<CityPageType, string> = {
+  companies: 'Compare installers',
+  cost: 'What it costs here',
+  savings: 'Your bills and rates',
+};
+
+const SIBLING_LABEL: Record<CityPageType, (name: string) => string> = {
+  companies: (name) => `Solar companies and quote checks for ${name}`,
+  cost: (name) => `What sets the price of solar in ${name}`,
+  savings: (name) => `${name} electric rates, bills and solar savings`,
+};
+
+export function citySiblingLinks(slug: string, currentType: CityPageType): CitySiblingLink[] {
+  const name = cityName(slug);
+  return OWNER_ORDER.filter((type) => type === currentType || isLiveCityPage(type, slug)).map((type) => ({
+    type,
+    href: cityPagePath(type, slug),
+    intent: SIBLING_INTENT[type],
+    label: SIBLING_LABEL[type](name),
+    current: type === currentType,
+  }));
+}
+
+/** The statewide hub each city page type sits under (Block 5 §4.1). */
+export const CITY_TYPE_HUB: Record<CityPageType, { href: string; label: string }> = {
+  companies: { href: '/best-solar-companies-california', label: 'Solar companies across California' },
+  cost: { href: '/solar-cost', label: 'Solar cost in every California city we cover' },
+  savings: { href: '/california-utility-rate-tracker', label: 'California utility rate tracker' },
+};
 
 /** The city's other live pages, for the "Also for <city>" links. */
 export function companionCityLinks(slug: string, currentType: CityPageType): NearbyCityLink[] {
@@ -278,7 +363,15 @@ export function cityPageDates(type: CityPageType, slug: string): CityPageDateInf
     return { modified: row ? costPageModified(row) : GROWTH_DEFAULT_CHECKED };
   }
   if (type === 'companies' && growthCities[slug]) {
-    return { modified: growthCities[slug].sourceCheckedDate || GROWTH_DEFAULT_CHECKED };
+    const city = growthCities[slug];
+    return { modified: maxIso(city.sourceCheckedDate || GROWTH_DEFAULT_CHECKED, city.contentModified) };
+  }
+  if (type === 'savings' && SAVINGS_BILLS_SEO[slug]?.modified) {
+    const record = CITY_PAGE_DATES[slug];
+    return {
+      published: record?.added,
+      modified: maxIso(record?.added, record?.updated, SAVINGS_BILLS_SEO[slug].modified),
+    };
   }
   const record = CITY_PAGE_DATES[slug];
   if (type === 'companies') {
@@ -338,7 +431,22 @@ const GROWTH_UTILITY_LABEL: Record<string, string> = {
   smud: 'SMUD',
   apu: 'Anaheim Public Utilities',
   reu: 'Roseville Electric',
+  pwp: 'Pasadena Water and Power',
+  gwp: 'Glendale Water & Power',
+  redding: 'Redding Electric Utility',
 };
+
+/**
+ * The utility a growth companies page hands to its inquiry form. The form's
+ * select only lists the large utilities, and any other value is shown to the
+ * visitor as their typed "other" answer, so a city-utility code such as
+ * 'pwp' becomes the utility's name instead of the bare code.
+ */
+export function growthUtilityForForm(code: string): string {
+  if (!code || code === 'other') return code;
+  if (utilityOptions.some(([id]) => id === code)) return code;
+  return GROWTH_UTILITY_LABEL[code] ?? code;
+}
 
 /** /solar-cost/<city> */
 export function costPageSeo(row: CityCostRow): CitySeo {
@@ -438,8 +546,43 @@ export function companiesPageSeo(slug: string): CitySeo | null {
   };
 }
 
+/**
+ * /solar-savings/<city> pages re-scoped to the city bills-and-rates intent
+ * (Decision 18: the URL stays, the title and H1 change). Search data puts
+ * "electricity provider <city>", "average electric bill <city>" and "why is
+ * electricity so expensive in <city>" on a different results page from the
+ * installer and cost queries (bill/rate vs installer SERPs share 0 of 127
+ * same-place keyword pairs, Block 6 §4), so these pages answer the bill.
+ * Hand-written per city because each title names that city's actual provider.
+ */
+export const SAVINGS_BILLS_SEO: Readonly<Record<string, CitySeo & { modified: string }>> = {
+  'san-diego': {
+    title: 'San Diego Electric Bills & SDG&E Rates (2026)',
+    description:
+      'San Diego bills: SDG&E delivery, San Diego Community Power generation, the $24 Base Services Charge, CARE/FERA and why SDG&E rates run highest.',
+    h1: 'San Diego Electric Bills and SDG&E Rates: What You Pay and Why',
+    modified: '2026-09-23',
+  },
+  sacramento: {
+    title: 'Sacramento Electricity Provider: SMUD Rates & Bills',
+    description:
+      'Sacramento electricity comes from SMUD, not PG&E: how SMUD bills a home, its Time-of-Day prices, the $27 fixed charge and its solar export credit.',
+    h1: "Sacramento's Electricity Provider Is SMUD: Rates, Bills and Solar",
+    modified: '2026-09-23',
+  },
+  'san-mateo': {
+    title: 'San Mateo Electric Bills, Rates & Solar Savings (2026)',
+    description:
+      'San Mateo bills: PG&E delivery plus WestLight Energy (formerly Peninsula Clean Energy) generation, the $24 Base Services Charge, CARE/FERA and solar.',
+    h1: 'San Mateo Electric Bills and Rates: PG&E, WestLight Energy and Solar',
+    modified: '2026-09-23',
+  },
+};
+
 /** /solar-savings/<city> */
 export function savingsPageSeo(city: CityData): CitySeo {
+  const bills = SAVINGS_BILLS_SEO[city.slug];
+  if (bills) return { title: bills.title, description: bills.description, h1: bills.h1 };
   const name = city.name;
   const utility = legacyUtilityLabel(city);
   const confirm = city.utilityConfirmationRequired === true;

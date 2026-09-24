@@ -410,6 +410,14 @@ export interface CityLocalTip {
   content: string;   // the tip text
 }
 
+export interface CityBillsContent {
+  /** Direct answer to the page's question, 2-3 sentences. */
+  answer: string;
+  sections: { heading: string; paragraphs: string[] }[];
+  faqs?: CityFAQ[];
+  sources: { label: string; url: string; fetchedAt: string }[];
+}
+
 export interface CityData {
   // Identity
   name: string;              // Display name (e.g. "Temecula")
@@ -463,6 +471,15 @@ export interface CityData {
 
   // Related blog posts (slugs)
   relatedArticles: { slug: string; title: string }[];
+
+  /**
+   * 2026-09-23 (Decision 18): a /solar-savings/<city> page re-scoped to the
+   * city's bills-and-rates question. When present, the savings template opens
+   * with this answer and these sections instead of the generic intro, and its
+   * title comes from SAVINGS_BILLS_SEO in src/lib/city-pages.ts. Every figure
+   * in it is in `sources`, each with the date it was fetched.
+   */
+  bills?: CityBillsContent;
 
   // Ahrefs data (for internal reference, not displayed)
   seoData?: {
@@ -1751,43 +1768,93 @@ export const CITIES: CityData[] = [
     introText:
       'Sacramento is the state capital with a population of about 525,000. Unlike most California cities, Sacramento is served by SMUD, a municipal utility that sets its own rates. While rates are lower, Sacramento\'s extreme summer heat still drives significant electricity bills, and solar remains a strong option.',
     electricitySection:
-      'No primary source publishes an average household electric bill for Sacramento, so this guide does not quote one. Your own last twelve bills are the better guide: they show your usage, your rate plan and the seasonal swing. SMUD sets its own rates, so PG&E\'s numbers do not apply here; check SMUD\'s current Residential Rate Guide for your plan.\n\nSacramento\'s summer temperatures regularly exceed 100°F, driving heavy AC usage that pushes summer bills higher.',
+      'Your own last twelve bills are the best guide to what you pay: they show your usage, your rate plan and the seasonal swing. SMUD sets its own rates, so PG&E\'s numbers and the CPUC\'s average-rate reports do not apply here. SMUD\'s standard plan is its Time-of-Day (5-8 p.m.) rate, with summer weekday evenings the most expensive hours of the year.',
     solarPotentialText:
-      'Sacramento averages approximately 3,250 hours of sunshine per year with 5.5 peak sun hours per day. The Central Valley location provides excellent, consistent solar production.',
+      'What a Sacramento roof can produce depends on its orientation, pitch and shading, including from mature street trees, and no public source gives one figure for the city. Ask for a monthly production estimate made for your own roof and set it against your own SMUD usage.',
     localTips: [
       {
         title: 'SMUD sets its own rates:',
         content:
-          'Because SMUD sets its own rates, a purchase that pencils out in PG&E territory may not here; run the numbers on your own SMUD bills. For a PPA, compare its starting price and escalator with what you pay SMUD now; the PPA price can rise every year of the contract.',
+          'Because SMUD sets its own rates and solar rules, a purchase that pencils out in PG&E territory may not here; run the numbers on your own SMUD bills. For a PPA, compare its starting price and escalator with what you pay SMUD now; the PPA price can rise every year of the contract.',
       },
       {
-        title: 'Extreme summer heat:',
+        title: 'Summer evenings cost the most:',
         content:
-          'Sacramento summers regularly top 100°F. Even with SMUD\'s lower rates, summer bills can spike. Solar + battery storage helps manage peak demand charges.',
+          'On SMUD\'s standard Time-of-Day rate, weekday power from 5 to 8 p.m. in summer costs $0.3765 per kWh, more than twice the summer off-peak price. Shifting laundry, dishwashing and EV charging out of that window lowers the bill with or without solar.',
       },
     ],
     whenSolarDoesntWork:
-      'If your electric bill is already low, your roof has heavy shade from Sacramento\'s mature trees, or you plan to sell within 1-2 years.',
+      'If your electric bill is already low, your roof is heavily shaded, or you plan to sell within a year or two.',
     bottomLine:
-      'SMUD sets its own rates and solar rules, so compare any quote against your SMUD bills and SMUD\'s current solar terms, especially if your household uses a lot of power in summer.',
+      'Sacramento\'s electricity provider is SMUD, not PG&E. Your bill is SMUD\'s $27 monthly System Infrastructure Fixed Charge plus Time-of-Day energy prices that peak on summer weekday evenings. Check EAPR if your income qualifies, and judge any solar offer against SMUD\'s 9.6-cent export credit, not a retail price.',
     faqs: [
       {
         question: 'How much does solar cost in Sacramento in 2026?',
-        answer: 'No primary source publishes a solar price for Sacramento. Your price depends on the system size your usage needs, the roof, the equipment and the installer. As a benchmark, Lawrence Berkeley National Laboratory\'s Tracking the Sun (October 2024) found that host-owned residential systems installed in 2023 were priced at $3.20–$5.50 per watt (20th to 80th percentile, national sample), with California near the middle. A system you buy in 2026 gets no federal residential credit: IRC § 25D does not apply to expenditures made after December 31, 2025. A lease or PPA is priced by its own contract, so compare its total payments.',
-      },
-      {
-        question: 'What is the average electric bill in Sacramento?',
-        answer: 'No primary source publishes an average electric bill for Sacramento, so this page does not quote one. SMUD sets its own rates and publishes no single average residential rate, so check the current schedule on your bill or on the utility\'s site. What you pay depends on your usage, rate plan and season, so use the totals on your last twelve bills.',
+        answer: 'No primary source publishes a solar price for Sacramento. Your price depends on the system size your usage needs, the roof, the equipment and the contract. As a benchmark, Lawrence Berkeley National Laboratory\'s Tracking the Sun (October 2024) found that host-owned residential systems installed in 2023 were priced at $3.20–$5.50 per watt (20th to 80th percentile, national sample), with California near the middle. A system you buy in 2026 gets no federal residential credit: IRC § 25D does not apply to expenditures made after December 31, 2025. A lease or PPA is priced by its own contract, so compare its total payments.',
       },
       {
         question: 'Can my HOA block solar panels?',
-        answer: 'No. California\'s Solar Rights Act protects your right to install solar.',
+        answer: 'No. California\'s Solar Rights Act (Civil Code § 714) protects your right to install solar, though an association can apply reasonable restrictions.',
       },
       {
         question: 'How does SMUD compare to PG&E for solar?',
-        answer: 'SMUD sets its own rates and its own rules for solar customers, and they are not PG&E\'s. Judge a purchase on your own SMUD bills, and for a PPA compare its starting price and escalator with what you pay SMUD now.',
+        answer: 'SMUD sets its own rates and its own rules for solar customers. New solar customers are on SMUD\'s Solar and Storage Rate, which credits exports at a flat 9.6 cents per kWh; PG&E customers are on the CPUC\'s Solar Billing Plan. Judge a purchase on your own SMUD bills.',
       },
     ],
+    // 2026-09-23 (Decision 18): this page answers "electricity provider
+    // sacramento california" and "average electric bill sacramento".
+    bills: {
+      answer:
+        'Sacramento\'s electricity provider is SMUD, the Sacramento Municipal Utility District, not PG&E: the Energy Commission\'s map puts virtually the whole city in SMUD territory. A SMUD bill is a $27 monthly System Infrastructure Fixed Charge plus Time-of-Day energy prices, which since June 1, 2026 run from $0.1285 per kWh off-peak outside summer to $0.3765 on summer weekday evenings from 5 to 8 p.m.',
+      sections: [
+        {
+          heading: 'Who provides electricity in Sacramento',
+          paragraphs: [
+            'SMUD, a publicly owned utility, both supplies and delivers the power, and it bills you directly. The California Energy Commission\'s service-territory map places more than 99% of the city in SMUD\'s territory. PG&E electric rates, the CPUC\'s quarterly average-rate reports and the CARE and FERA discounts do not apply to a SMUD electric account.',
+          ],
+        },
+        {
+          heading: 'SMUD\'s 2026 residential prices',
+          paragraphs: [
+            'Most homes are on SMUD\'s Time-of-Day (5-8 p.m.) rate. Effective June 1, 2026, summer prices (June through September) are $0.1550 per kWh off-peak, $0.2139 mid-peak and $0.3765 during the weekday 5-to-8 p.m. peak; outside summer they are $0.1285 off-peak and $0.1776 at peak. Every account also pays a System Infrastructure Fixed Charge of $27 a month, or $17 for customers on the low-use version of the rate. SMUD says hydrogeneration charges are currently $0.00 per kWh.',
+            'SMUD also offers an optional Fixed Rate plan with one price at all hours, $0.2189 per kWh in summer and $0.1371 the rest of the year, which it says costs about 4% more than Time-of-Day on average. It suits a household that cannot move its evening use; everyone else usually pays less by shifting use out of the peak window.',
+          ],
+        },
+        {
+          heading: 'What a Sacramento bill adds up to',
+          paragraphs: [
+            'No source publishes an average SMUD bill for the city, and the CPUC reports that estimate average bills cover only PG&E, SCE and SDG&E. You can build your own from SMUD\'s prices: every kWh used on a summer weekday evening costs about 2.4 times a summer off-peak kWh, so two homes with the same monthly usage can pay quite different amounts. Twelve months of your own bills show which pattern you have.',
+          ],
+        },
+        {
+          heading: 'Discounts and solar on a SMUD account',
+          paragraphs: [
+            'SMUD\'s Energy Assistance Program Rate (EAPR) gives an income-based monthly discount: up to $105 for households at or below 50% of the federal poverty level (combining EAPR with SMUD\'s Rate Stabilization Fund discount), $42 at 50 to 100%, $20 at 100 to 150% and $10 at 150 to 200%. From February 1, 2026 the monthly income limit is $3,607 for a household of one or two and $5,500 for four. SMUD also runs a separate Medical Equipment Discount.',
+            'Solar customers approved on or after March 1, 2022 are on SMUD\'s Solar and Storage Rate, which since June 1, 2026 credits exported power at 9.6 cents per kWh at any hour or season. Customers approved earlier may stay on SMUD\'s original net metering until December 31, 2030, unless they add a SMUD-incentivized battery, modify the system or move. With exports worth 9.6 cents against a 37.65-cent summer peak, the value of solar in Sacramento lies in the power you use yourself.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Who is the electricity provider in Sacramento, California?',
+          answer: 'SMUD, the Sacramento Municipal Utility District. The Energy Commission\'s service-territory map places more than 99% of the City of Sacramento in SMUD territory. SMUD supplies and delivers the power and sends the electric bill.',
+        },
+        {
+          question: 'What is the average electric bill in Sacramento?',
+          answer: 'No source publishes one; the CPUC\'s average-bill estimates cover only PG&E, SCE and SDG&E. A SMUD bill is a $27 monthly fixed charge plus Time-of-Day energy prices from $0.1285 to $0.3765 per kWh (effective June 1, 2026), so your own twelve months of usage decide the total.',
+        },
+        {
+          question: 'How much does SMUD pay for solar exports?',
+          answer: 'Under the Solar and Storage Rate, SMUD credits exported power at 9.6 cents per kWh regardless of time of day or season, effective June 1, 2026. It applies to customers approved to install solar on or after March 1, 2022.',
+        },
+      ],
+      sources: [
+        { label: 'SMUD: Residential rates (Time-of-Day, Fixed Rate, System Infrastructure Fixed Charge)', url: 'https://www.smud.org/Rate-Information/Residential-rates', fetchedAt: '2026-09-23' },
+        { label: 'SMUD: Solar and Storage Rate', url: 'https://www.smud.org/Rate-Information/Solar-and-Storage-Rate', fetchedAt: '2026-09-23' },
+        { label: 'SMUD: Income-eligible assistance (EAPR)', url: 'https://www.smud.org/Rate-Information/Low-income-and-nonprofits', fetchedAt: '2026-09-23' },
+        { label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU)', url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about', fetchedAt: '2026-09-23' },
+      ],
+    },
     metaTitle: 'Solar Panels in Sacramento, CA: 2026 SMUD Rates & Cost',
     metaDescription: 'Learn your rate, solar costs, and every option to lower your bill.',
     ogTitle: 'Solar Savings in Sacramento, CA: 2026 SMUD Rates & Options',
@@ -2301,21 +2368,80 @@ export const CITIES: CityData[] = [
     introText:
       'San Diego is California\'s second-largest city with 1.4 million residents, served by SDG&E. Of California\'s three large investor-owned utilities, SDG&E had the highest average residential rate in the CPUC Public Advocates Office\'s Q2 2026 report: 45.5¢ per kWh as of June 1, 2026, against 34.4¢ for SCE and 33.7¢ for PG&E. The mild coastal climate keeps usage lower, but every kWh you buy is billed at SDG&E\'s rates.',
     electricitySection:
-      'No primary source publishes an average household electric bill for San Diego, so this guide does not quote one. Your own last twelve bills are the better guide: they show your usage, your rate plan and the seasonal swing. Bills are lower than in inland cities because the mild climate requires little AC, but the per-kWh rate is the highest of the three large investor-owned utilities.\n\nSDG&E\'s average residential rate was 45.5¢ per kWh as of June 1, 2026, a bundled average across the whole residential class (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). On a time-of-use plan the price also changes by time of day, so when you use power matters as well as how much. Even moderate usage at these rates produces significant bills.',
+      'Your own last twelve bills are the best guide to what you pay: they show your usage, your rate plan and the seasonal swing. SDG&E\'s average residential rate was 45.5¢ per kWh as of June 1, 2026, a bundled average across the whole residential class (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). On a time-of-use plan the price also changes by hour, so when you use power matters as well as how much.',
     solarPotentialText:
-      'San Diego averages approximately 3,300 hours of sunshine per year with 5.7 peak sun hours per day. The city\'s excellent solar resource combined with the highest utility rates in California creates an exceptional solar market.',
+      'What a San Diego roof can produce depends on its orientation, pitch and shading, and no public source gives one figure for the whole city. Ask for a monthly production estimate made for your own roof and set it against your own monthly usage.',
     localTips: [
       { title: 'SDG&E rates:', content: 'Of California\'s three large investor-owned utilities, SDG&E had the highest average residential rate in the CPUC Public Advocates Office\'s Q2 2026 report: 45.5¢ per kWh as of June 1, 2026, against 34.4¢ for SCE and 33.7¢ for PG&E. That makes each kWh a system produces for your own use worth more than in PG&E or SCE territory, but the export credit, your usage and the contract decide what you actually keep.' },
-      { title: 'Coastal vs. inland:', content: 'San Diego neighborhoods vary significantly. Inland areas (El Cajon, Santee, Poway) are hotter with higher AC usage. Coastal areas have lower bills but still benefit from the high per-kWh rate.' },
+      { title: 'Coastal and inland bills differ:', content: 'The Public Advocates Office\'s June 2026 estimates put the average non-CARE bill in SDG&E\'s coastal climate zone at $156 a month and in its desert zone at $130, and note that coastal customers use more electricity in winter. Your own bill history is still the number to use.' },
     ],
-    whenSolarDoesntWork: 'If your electric bill is already low, your roof has heavy shade, or you plan to sell within 1-2 years.',
-    bottomLine: 'San Diego combines good sunshine with SDG&E\'s rates, so solar is worth pricing carefully for your home.',
+    whenSolarDoesntWork: 'If your electric bill is already low, your roof has heavy shade, or you plan to sell within a year or two.',
+    bottomLine: 'San Diego households pay the highest average residential rate of California\'s three large investor-owned utilities, split across SDG&E delivery, San Diego Community Power generation and a Base Services Charge of about $24 a month. Start from your own twelve bills, check CARE and FERA eligibility, and measure any solar offer against what would remain on the bill.',
     faqs: [
-      { question: 'How much does solar cost in San Diego in 2026?', answer: 'No primary source publishes a solar price for San Diego. Your price depends on the system size your usage needs, the roof, the equipment and the installer. As a benchmark, Lawrence Berkeley National Laboratory\'s Tracking the Sun (October 2024) found that host-owned residential systems installed in 2023 were priced at $3.20–$5.50 per watt (20th to 80th percentile, national sample), with California near the middle. A system you buy in 2026 gets no federal residential credit: IRC § 25D does not apply to expenditures made after December 31, 2025. A lease or PPA is priced by its own contract, so compare its total payments.' },
-      { question: 'What is the average electric bill in San Diego?', answer: 'No primary source publishes an average electric bill for San Diego, so this page does not quote one. SDG&E\'s average residential rate was 45.5¢ per kWh as of June 1, 2026, a bundled average across the whole residential class (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). What you pay depends on your usage, rate plan and season, so use the totals on your last twelve bills.' },
-      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act protects your right to install solar.' },
-      { question: 'How many hours of sun does San Diego get?', answer: 'San Diego averages approximately 3,300 hours of sunshine per year with 5.7 peak sun hours per day.' },
+      { question: 'How much does solar cost in San Diego in 2026?', answer: 'No primary source publishes a solar price for San Diego. Your price depends on the system size your usage needs, the roof, the equipment and the contract. As a benchmark, Lawrence Berkeley National Laboratory\'s Tracking the Sun (October 2024) found that host-owned residential systems installed in 2023 were priced at $3.20–$5.50 per watt (20th to 80th percentile, national sample), with California near the middle. A system you buy in 2026 gets no federal residential credit: IRC § 25D does not apply to expenditures made after December 31, 2025. A lease or PPA is priced by its own contract, so compare its total payments.' },
+      { question: 'Can my HOA block solar panels?', answer: 'No. California\'s Solar Rights Act (Civil Code § 714) protects your right to install solar, though an association can apply reasonable restrictions.' },
     ],
+    // 2026-09-23 (Decision 18): this page answers "average electric bill san
+    // diego" and "why is electricity so expensive in san diego".
+    bills: {
+      answer:
+        'The CPUC Public Advocates Office estimated that a San Diego household not on CARE paid about $156 a month for electricity in June 2026 in SDG&E\'s coastal climate zone, and $87 on CARE. SDG&E\'s average residential rate, 45.5 cents per kWh, is the highest of California\'s three large utilities, and since October 2025 most bills also carry a Base Services Charge of about $24 a month.',
+      sections: [
+        {
+          heading: 'What the average San Diego electric bill looks like',
+          paragraphs: [
+            'No source publishes one official average bill for the City of San Diego. The closest public figures come from the CPUC\'s Public Advocates Office, which estimates SDG&E bills each quarter from utility data. For June 2026 it put the average monthly bill for customers not on CARE at $156 in SDG&E\'s coastal climate zone and $130 in its desert zone; CARE customers averaged $87 on the coast and $126 in the desert. The office notes that coastal non-CARE customers use more electricity in winter than desert ones.',
+            'In the same report\'s city comparison of average Q2 2026 bills for customers not on CARE, San Diego\'s bar sits below both San Jose\'s (PG&E) and the Greater Los Angeles area\'s (SCE), even though SDG&E charges the highest average rate of the three. Your own bill is the figure that matters: usage and rate plan move it more than the city does.',
+          ],
+        },
+        {
+          heading: 'Why electricity costs so much in San Diego',
+          paragraphs: [
+            'SDG&E\'s residential average rate was $0.455 per kWh after its June 1, 2026 rate change, against $0.344 for SCE and $0.337 for PG&E. It is up 5% over three years, 42% over five and 97% since January 2016, and 117% since 2014, the steepest rise of the three utilities in the Public Advocates Office\'s chart. The office names the main statewide drivers as wildfire mitigation and wildfire liability costs, transmission and distribution investment, and rooftop solar incentives under net energy metering. For SDG&E, wildfire-related costs made up 14% of its authorized revenue requirement in January 2026.',
+            'Not every change goes up. SDG&E\'s June 1, 2026 filing cut its residential average rate by about 2%, mainly from lower transmission costs after a federal regulatory decision. The report also shows how much bills strain households: about 253,820 SDG&E customers, 18%, were behind on their energy bills in May 2026, owing $501 on average.',
+          ],
+        },
+        {
+          heading: 'Who sends the bill, and the $24 charge',
+          paragraphs: [
+            'San Diego Community Power buys the electricity for most homes in the city, and SDG&E delivers it. Customers receive one SDG&E bill, with Community Power as a line item; Community Power says that line is not an extra charge.',
+            'Since October 2025 SDG&E bills carry a Base Services Charge of about $24 a month (about $12 on FERA and $6 on CARE) for equipment such as transformers and meters, plus customer service. SDG&E says moving those costs out of per-kWh prices means paying about 10% less per kWh, roughly 5 cents on delivery.',
+          ],
+        },
+        {
+          heading: 'Lowering the bill: discounts first, then solar',
+          paragraphs: [
+            'Check the income-qualified programs before anything else. The CPUC\'s CARE program takes 30–35% off the electric bill for households at or under 200% of the federal poverty guidelines, and FERA takes 18% off for households up to 250%; for June 1, 2026 through May 31, 2027, a household of four qualifies at $66,000 for CARE and $82,500 for FERA.',
+            'Solar lowers the kWh you buy, not the Base Services Charge. A new system in San Diego goes on the Solar Billing Plan, which Community Power says requires the EV-TOU-5 time-of-use rate and credits exports at avoided-cost values rather than the retail price. So the useful comparison is your twelve months of bills against what a proposal says would remain, not against the 45.5-cent average.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'What is the average electric bill in San Diego?',
+          answer: 'The CPUC Public Advocates Office estimated about $156 a month in June 2026 for a customer not on CARE in SDG&E\'s coastal climate zone, and $87 for a CARE customer there. In the desert zone the figures were $130 and $126. Your own twelve months of bills are the better guide for your home.',
+        },
+        {
+          question: 'Why are SDG&E rates so high?',
+          answer: 'SDG&E\'s average residential rate was 45.5 cents per kWh in June 2026, the highest of California\'s three large utilities and up 97% since January 2016. The Public Advocates Office names wildfire mitigation and liability costs, transmission and distribution investment, and rooftop solar incentives as the main statewide drivers.',
+        },
+        {
+          question: 'Who provides electricity in San Diego?',
+          answer: 'SDG&E delivers the power and sends the bill; San Diego Community Power supplies the generation for most homes in the city, shown as a line item on the SDG&E bill.',
+        },
+        {
+          question: 'What is the SDG&E Base Services Charge?',
+          answer: 'A monthly charge of about $24 (about $12 on FERA, $6 on CARE) that has appeared on SDG&E bills since October 2025. SDG&E says it moved these costs out of per-kWh prices, which are about 10% lower as a result.',
+        },
+      ],
+      sources: [
+        { label: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report (rates, bill estimates, drivers, arrears)', url: 'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf', fetchedAt: '2026-09-23' },
+        { label: 'SDG&E: Base Services Charge', url: 'https://www.sdge.com/electric-billing', fetchedAt: '2026-09-23' },
+        { label: 'San Diego Community Power: net energy metering and Solar Billing Plan', url: 'https://sdcommunitypower.org/net-energy-metering/', fetchedAt: '2026-09-23' },
+        { label: 'CPUC: CARE/FERA program', url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program', fetchedAt: '2026-09-23' },
+        { label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers)', url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about', fetchedAt: '2026-09-23' },
+      ],
+    },
     metaTitle: 'Solar Panels in San Diego, CA: 2026 SDG&E Rates & Cost',
     metaDescription: 'San Diego residents on SDG&E pay 45.7¢/kWh — the highest in CA. Learn solar costs and every option to lower your bill.',
     ogTitle: 'Solar Savings in San Diego, CA: 2026 SDG&E Rates & Options',
@@ -3133,50 +3259,95 @@ export const CITIES: CityData[] = [
     systemSizeKw: 8.0,
     systemCostCash: 28000,
     introText:
-      'Solar in San Mateo comes with two factors a generic estimate misses: persistent coastal fog, which cuts into production, and PG&E\'s rates, which set the value of each kWh you avoid buying. The sections below cover both, before getting into city background. Compare your own roof and usage against these local factors rather than a statewide average.',
+      'San Mateo electric bills come from two providers on one PG&E statement: WestLight Energy (formerly Peninsula Clean Energy) supplies the generation for most homes, and PG&E charges for delivery. This page covers what each one charges, the discounts that apply, and how solar changes what you still pay.',
     electricitySection:
-      'No primary source publishes an average household electric bill for San Mateo, so this guide does not quote one. Your own last twelve bills are the better guide: they show your usage, your rate plan and the seasonal swing. PG&E\'s average residential rate was 33.7¢ per kWh as of June 2026, a bundled average across the whole residential class (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). On a time-of-use plan the price also changes by time of day, so when you use power matters as well as how much. The marine layer fog characteristic of the Peninsula reduces summer solar output compared to inland areas, so ask each bidder to model it for your roof. PG&E residential customers not on CARE or FERA also pay a $24.15 monthly fixed charge (about $6 on CARE and $12 on FERA) under CPUC Decision 24-05-028.',
+      'No primary source publishes an average household electric bill for San Mateo alone, so this page does not invent one. Your own last twelve bills are the better guide: they show your usage, your rate plan and the seasonal swing. PG&E\'s average residential rate was 33.7¢ per kWh as of June 2026, a bundled average across the whole residential class that has not changed since March 2026 (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). On a time-of-use plan the price also changes by hour, so when you use power matters as well as how much.',
     solarPotentialText:
-      'San Mateo averages approximately 2,950 hours of sunshine per year with 5.2 peak sun hours per day. The Peninsula location means persistent morning/midday fog June through August, reducing summer production. However, September through May offers excellent conditions. The city\'s dense housing (many condos and townhomes) means limited roof space — most systems range from 4-7 kW rather than 10+ kW in suburban areas.',
+      'How much a roof in San Mateo can produce depends on its orientation, pitch, shading from trees and neighboring buildings, and the local marine layer, and no public source gives a single figure for the city. Ask for a monthly production estimate made for your own roof, and compare it with your monthly usage rather than with a statewide average.',
     localTips: [
       {
-        title: 'Heavy fog corridors near coast — inland areas better:',
+        title: 'WestLight Energy is the old Peninsula Clean Energy:',
         content:
-          'San Mateo neighborhoods near Caltrain corridor and downtown experience heavier fog than inland Hillsdale area. Production varies by location. Always check Google Project Sunroof for your specific address before committing.',
+          'Peninsula Clean Energy now operates as WestLight Energy and says its service and rates did not change. If a letter or a proposal uses either name, it means the same generation provider on your PG&E bill.',
       },
       {
-        title: 'Peninsula Clean Energy:',
+        title: 'Read the two halves of the bill separately:',
         content:
-          'San Mateo customers can get their generation from Peninsula Clean Energy, a community choice aggregator, rather than PG&E. Check the generation charges on your bill and Peninsula Clean Energy\'s current terms for solar customers, which can differ from PG&E\'s, and make sure each proposal uses them.',
-      },
-      {
-        title: 'Dense housing + battery storage priority:',
-        content:
-          'Most San Mateo homes are condos or townhomes with limited roof space. Smaller 4-6 kW solar systems work well paired with 5-10 kWh battery storage to offset evening peak hours (4-9 PM) when rates are highest.',
+          'The generation charges (WestLight) and the delivery charges (PG&E) move for different reasons. A PG&E rate change shows up in the delivery half; a WestLight plan change shows up in the generation half.',
       },
     ],
     whenSolarDoesntWork:
-      'If your electric bill is already low, you are renting without landlord permission, your roof is heavily shaded by surrounding buildings or coastal hills, or you plan to sell within 1-2 years. Condos with shared roof space may face common area disputes — check CC&Rs carefully.',
+      'If your electric bill is already low, you are renting without landlord permission, your roof is heavily shaded, or you plan to sell within a year or two. Condominiums with shared roofs also need the association\'s approval process worked out first; check the CC&Rs.',
     bottomLine:
-      'San Mateo\'s fog and density make solar less straightforward than inland areas, so get a production estimate for your roof and check Peninsula Clean Energy\'s current terms before deciding. Pair solar with battery storage to maximize evening peak hour value. Fog is the challenge; energy management is the solution.',
+      'In San Mateo, the bill you are trying to lower has two parts: WestLight Energy\'s generation charges and PG&E\'s delivery charges, including a Base Services Charge of about $24 a month. Start from your own twelve months of usage, check CARE and FERA eligibility, and measure any solar offer against both halves of the bill.',
     faqs: [
       {
         question: 'How much does solar cost in San Mateo in 2026?',
-        answer: 'No primary source publishes a solar price for San Mateo. Your price depends on the system size your usage needs, the roof, the equipment and the installer. As a benchmark, Lawrence Berkeley National Laboratory\'s Tracking the Sun (October 2024) found that host-owned residential systems installed in 2023 were priced at $3.20–$5.50 per watt (20th to 80th percentile, national sample), with California near the middle. A system you buy in 2026 gets no federal residential credit: IRC § 25D does not apply to expenditures made after December 31, 2025. A lease or PPA is priced by its own contract, so compare its total payments.',
-      },
-      {
-        question: 'What is the average electric bill in San Mateo?',
-        answer: 'No primary source publishes an average electric bill for San Mateo, so this page does not quote one. PG&E\'s average residential rate was 33.7¢ per kWh as of June 2026, a bundled average across the whole residential class (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). What you pay depends on your usage, rate plan and season, so use the totals on your last twelve bills.',
+        answer: 'No primary source publishes a solar price for San Mateo. Your price depends on the system size your usage needs, the roof, the equipment and the contract. As a benchmark, Lawrence Berkeley National Laboratory\'s Tracking the Sun (October 2024) found that host-owned residential systems installed in 2023 were priced at $3.20–$5.50 per watt (20th to 80th percentile, national sample), with California near the middle. A system you buy in 2026 gets no federal residential credit: IRC § 25D does not apply to expenditures made after December 31, 2025. A lease or PPA is priced by its own contract, so compare its total payments.',
       },
       {
         question: 'Can my HOA block solar panels in San Mateo?',
-        answer: 'No. California\'s Solar Rights Act protects your right. However, most San Mateo is condos or townhomes with shared roofs — check your CC&Rs and HOA approval process before planning.',
-      },
-      {
-        question: 'How much does fog affect solar in San Mateo?',
-        answer: 'Coastal fog reduces production in June-August compared to inland California, and a bidder\'s production estimate should account for it. September-May offers excellent conditions. Peninsula neighborhoods near downtown experience heavier fog; Hillsdale area receives more consistent sun. Check Google Project Sunroof for your address.',
+        answer: 'No. California\'s Solar Rights Act (Civil Code § 714) protects your right to install solar, though an association can apply reasonable restrictions. On a shared roof, check your CC&Rs and the association\'s approval process before planning.',
       },
     ],
+    // 2026-09-23 (Decision 14, G13): this page answers the bills-and-rates
+    // question; installer questions belong to /solar-companies/san-mateo.
+    bills: {
+      answer:
+        'A San Mateo home\'s electric bill comes from two companies on one PG&E statement. WestLight Energy, the county\'s community choice provider (formerly Peninsula Clean Energy), supplies the generation for most homes; PG&E delivers it and, since March 2026, adds a Base Services Charge of about $24 a month (about $12 on FERA, $6 on CARE). PG&E\'s average residential rate was 33.7 cents per kWh in June 2026.',
+      sections: [
+        {
+          heading: 'Who sends a San Mateo electric bill',
+          paragraphs: [
+            'Two providers share a San Mateo account. PG&E owns the wires and the meter, delivers the power and sends the statement. WestLight Energy, which announced that Peninsula Clean Energy is now WestLight Energy and that its service and rates stayed the same, buys the power for the account; it serves San Mateo County and Los Banos, and says 97% of its neighbors in those areas get their electricity from it. The California Energy Commission\'s service-territory map places San Mateo inside both PG&E\'s delivery area and WestLight\'s community choice area.',
+            'On the bill that means two sets of charges: WestLight\'s generation charges and PG&E\'s delivery charges, plus PG&E\'s fixed monthly line. When your total changes, check which half moved before deciding what to do about it.',
+          ],
+        },
+        {
+          heading: 'What PG&E charges San Mateo homes in 2026',
+          paragraphs: [
+            'The CPUC\'s Public Advocates Office put PG&E\'s residential average rate at $0.337 per kWh in its Q2 2026 report, unchanged since March 2026. Over longer periods it is up 8% in three years, 39% in five and 69% since January 2016. The same report names the main statewide drivers as wildfire mitigation and wildfire liability costs, transmission and distribution investment, and rooftop solar incentives under net energy metering.',
+            'Since March 2026 PG&E has split part of its costs into a Base Services Charge of around $24 a month for most customers, around $12 on FERA and around $6 on CARE, and lowered its per-kWh prices to match. PG&E stresses that this is a restructuring, not a new fee, and that lower per-kWh prices may or may not lower a given customer\'s total bill.',
+            'For a sense of scale, the Public Advocates Office estimated PG&E\'s average June 2026 monthly bill for a customer not on CARE at $125 in its sample cool climate zone and $168 in its hot one; CARE customers in the same zones averaged $69 and $124. Those are regional estimates, not a San Mateo average: your own twelve bills are the number that matters.',
+          ],
+        },
+        {
+          heading: 'Discounts: CARE and FERA',
+          paragraphs: [
+            'The CPUC\'s CARE program gives a 30–35% discount on the electric bill to households at or under 200% of the federal poverty guidelines; FERA gives 18% to households up to 250%. For June 1, 2026 through May 31, 2027, a household of four qualifies for CARE at $66,000 and for FERA at $82,500. The Public Advocates Office notes that, with cost exemptions and the lower Base Services Charge, CARE customers now see total discounts of about 40%.',
+          ],
+        },
+        {
+          heading: 'How solar changes what a San Mateo household still pays',
+          paragraphs: [
+            'Solar reduces the kWh you buy, not the fixed monthly line: the Base Services Charge stays on the bill whatever your panels produce. What your exported power earns depends on your plan and your provider. For customers on net energy metering, WestLight values net production at the otherwise applicable rate plus a $0.01 per kWh production premium, reviews accounts after the April billing cycle, sends a check to customers with a credit balance over $500, and caps annual cash-outs at $10,000.',
+            'So the useful comparison is your last twelve months of both halves of the bill against what a proposal says will remain. For the installer side of that decision, including San Mateo\'s SolarAPP+ requirements for contractors, see the San Mateo solar companies page linked above.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Who is the electricity provider in San Mateo?',
+          answer: 'Two companies: PG&E delivers the power and sends the bill, and WestLight Energy (formerly Peninsula Clean Energy) supplies the generation for most San Mateo homes. Your PG&E statement shows both.',
+        },
+        {
+          question: 'What is the average electric bill in San Mateo?',
+          answer: 'No source publishes a San Mateo-only average. The CPUC Public Advocates Office estimated PG&E\'s average June 2026 bill for non-CARE customers at $125 a month in its sample cool climate zone and $168 in its hot zone. PG&E\'s residential average rate was 33.7 cents per kWh, and most customers also pay a Base Services Charge of about $24 a month.',
+        },
+        {
+          question: 'Why are PG&E bills so high?',
+          answer: 'The Public Advocates Office lists wildfire mitigation and liability costs, transmission and distribution investment, and rooftop solar incentives as the main statewide drivers. PG&E\'s residential average rate rose 69% between January 2016 and June 2026.',
+        },
+      ],
+      sources: [
+        { label: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report', url: 'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf', fetchedAt: '2026-09-23' },
+        { label: 'PG&E: Base Services Charge', url: 'https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html', fetchedAt: '2026-09-23' },
+        { label: 'CPUC: CARE/FERA program', url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program', fetchedAt: '2026-09-23' },
+        { label: 'WestLight Energy (formerly Peninsula Clean Energy): home page and service area', url: 'https://www.westlightenergy.org/', fetchedAt: '2026-09-23' },
+        { label: 'WestLight Energy: net energy metering', url: 'https://www.westlightenergy.org/residential/rates-billing/solar-rates/net-energy-metering/', fetchedAt: '2026-09-23' },
+        { label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers)', url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about', fetchedAt: '2026-09-23' },
+      ],
+    },
     metaTitle: 'Solar Panels in San Mateo: 2026 Cost, PG&E Rates',
     metaDescription: 'Battery options inside.',
     ogTitle: 'Solar Savings in San Mateo, CA: 2026 PG&E Rates & Options',

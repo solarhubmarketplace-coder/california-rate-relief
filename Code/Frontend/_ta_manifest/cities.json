@@ -1,0 +1,1661 @@
+{
+ "agent": "cities",
+ "branch": "claude/ta-cities-20260923",
+ "pages": [
+  {
+   "path": "/solar-companies/san-francisco",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Francisco, CA (2026)",
+   "clusters": [
+    91,
+    118
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://cleanpowersf.org/understanding-my-bill",
+    "https://cleanpowersf.org/net-energy-metering",
+    "https://www.sf.gov/new-solar-permit-cancelling-abandoned-otc-applications-recheck-escalation-reference-drawings-and-new-fee-rates",
+    "https://luminalt.com/"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/oakland",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Oakland, CA (2026)",
+   "clusters": [
+    198
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://avaenergy.org/about-ava/faq/",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/",
+    "https://www.oaklandca.gov/My-Household/Building-and-Remodeling/Homeowner-Projects-Permits/Solar-Energy-Systems-Facilities",
+    "https://nrgcleanpower.com/locations/california/oakland/"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/san-diego",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Diego, CA (2026)",
+   "clusters": [
+    393,
+    404
+   ],
+   "sources": [
+    "https://www.sandiego.gov/development-services/permits/solar-photovoltaic-permit",
+    "https://sdcommunitypower.org/net-energy-metering/",
+    "https://www.sdge.com/electric-billing",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+   ],
+   "status": "done",
+   "note": "Strong growth entry added; page is still 301 to /solar-cost/san-diego on this branch. Merges agent reinstates it (Decision 15, commit 32d8d2c on its branch)."
+  },
+  {
+   "path": "/solar-companies/fresno",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Fresno, CA (2026)",
+   "clusters": [
+    181,
+    408
+   ],
+   "sources": [
+    "https://www.fresno.gov/planning/get-an-instantly-approved-solar-permit-through-solar-app/",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/los-angeles",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Los Angeles, CA (2026)",
+   "clusters": [
+    73,
+    131
+   ],
+   "sources": [
+    "https://www.ladwp.com/residential-services/solar-programs/solar-rooftops",
+    "https://dbs.lacity.gov/sites/default/files/efs/forms/pc17/ib-p-gi-2020-003-express-permits_rev-5-28-2024.pdf",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.ladwp.com/residential-services/solar-programs",
+    "https://webprod.ladwp.com/account/customer-service/electric-rates/ev-nem-reo-rates"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/sacramento",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Sacramento, CA (2026)",
+   "clusters": [
+    335
+   ],
+   "sources": [
+    "https://www.cityofsacramento.gov/community-development/building/permit-services/residential-solar",
+    "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate",
+    "https://www.smud.org/Rate-Information/Residential-rates",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/san-jose",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Jose, CA (2026)",
+   "clusters": [
+    7,
+    206
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://sanjosecleanenergy.org/solar-billing-nem/",
+    "https://www.sanjoseca.gov/businesses/development-services-permit-center/start-your-project/single-family-duplex-properties/solar-storage-battery-projects"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/el-cajon",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in El Cajon, CA (2026)",
+   "clusters": [
+    176
+   ],
+   "sources": [
+    "https://www.elcajon.gov/your-government/departments/community-development/building-fire-safety/photovoltaic",
+    "https://sdcommunitypower.org/net-energy-metering/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.elcajon.gov/Home/Components/News/News/5754/18?arch=1&npage=4",
+    "https://www.sdge.com/solar/solar-billing-plan/UnderstandingYourSolarBill",
+    "https://johnsonsolar.com/"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/modesto",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Modesto, CA (2026)",
+   "clusters": [
+    128
+   ],
+   "sources": [
+    "https://www.tid.org/customer-service/go-solar/",
+    "https://www.mid.org/saving-energy-money/solar/",
+    "https://www.mid.org/about-us/who-we-are/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.modestogov.com/FormCenter/Building-Safety-and-Neighborhood-Preserv-26/Eligibility-Checklist-for-Expedited-Sola-420",
+    "https://www.midstatesolar.com/"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/palm-springs",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Palm Springs, CA (2026)",
+   "clusters": [
+    210
+   ],
+   "sources": [
+    "https://ecode360.com/42997503",
+    "https://www.palmspringsca.gov/government/departments/building/permit-applications-forms",
+    "https://desertcommunityenergy.org/your-options/solar-customers/",
+    "https://www.palmspringsca.gov/government/departments/building/permits",
+    "https://www.palmspringsca.gov/government/departments/development-services",
+    "https://www.suntreksolar.com/solar-company-in-palm-springs/"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/livermore",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Livermore, CA (2026)",
+   "clusters": [
+    93
+   ],
+   "sources": [
+    "https://avaenergy.org/go-electric/residential-solar-storage/smarthome-battery/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/net-energy-metering/",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/",
+    "https://www.livermoreca.gov/departments/community-development/permit-center/residential-photovoltaic/solarapp",
+    "https://www.synergypower.com/"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/san-luis-obispo",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Luis Obispo, CA (2026)",
+   "clusters": [
+    359
+   ],
+   "sources": [
+    "https://www.slocity.org/government/department-directory/community-development/building-safety/permit-forms-and-applications/solar-documents",
+    "https://3cenergy.org/billing/nem/",
+    "https://3cenergy.org/solar-billing-plan/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/temecula",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Temecula, CA (2026)",
+   "clusters": [
+    497
+   ],
+   "sources": [
+    "https://temeculaca.gov/304/Photovoltaic-Systems",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.cslb.ca.gov/solar"
+   ],
+   "status": "done",
+   "note": "CEC map: about 93% SCE, 7% SDG&E by area."
+  },
+  {
+   "path": "/solar-companies/murrieta",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Murrieta, CA (2026)",
+   "clusters": [
+    209
+   ],
+   "sources": [
+    "https://www.murrietaca.gov/DocumentCenter/View/2399/Solar-Permits-Residential-IB-125",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.murrietaca.gov/1368/Self--Issuing-Permits-Solar-App",
+    "https://www.murrietaca.gov/1330/Permit-Center",
+    "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+    "https://www.newdaysolar.com/"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/rocklin",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Rocklin, CA (2026)",
+   "clusters": [
+    315
+   ],
+   "sources": [
+    "https://www.rocklin.ca.us/online-solar-permitting",
+    "https://pioneercommunityenergy.org/about-us/",
+    "https://www.rocklin.ca.us/post/electricity-options",
+    "https://www.rocklin.ca.gov/301/Permit-Center",
+    "https://pioneercommunityenergy.org/understanding-your-solar-bill/",
+    "https://pioneercommunityenergy.org/residential-programs/gridgen/",
+    "https://aztecsolar.com/service-areas/rocklin/"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/camarillo",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Camarillo, CA (2026)",
+   "clusters": [
+    147
+   ],
+   "sources": [
+    "https://cms7files.revize.com/camarilloca/Departments/Building%20&%20Safety/handouts/Solar%20Eligibility%20checklist.pdf",
+    "https://cleanpoweralliance.org/place/camarillo/",
+    "https://cleanpoweralliance.org/nem/",
+    "https://cleanpoweralliance.org/solar/",
+    "https://cleanpoweralliance.org/community/camarillo/",
+    "https://c2g.cityofcamarillo.org/Click2GovBP/index.html",
+    "https://www.photonbrothers.com/central-coast/service-area/camarillo"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/sonoma",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Sonoma, CA (2026)",
+   "clusters": [
+    314
+   ],
+   "sources": [
+    "https://www.sonomacity.org/expedited-solar-permitting-one-two-family-dwellings/",
+    "https://permitsonoma.org/divisions/engineeringandconstruction/building/solarpermits",
+    "https://sonomacleanpower.org/solar-customers",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.cslb.ca.gov/solar"
+   ],
+   "status": "done",
+   "note": "Content upgraded. D14 group G12 (Santa Rosa) held: Decision 14 default; no merge change made."
+  },
+  {
+   "path": "/solar-companies/ventura",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Ventura, CA (2026)",
+   "clusters": [
+    361
+   ],
+   "sources": [
+    "https://www.cityofventura.ca.gov/2554/Contractor-Solar-Permits-SB-379",
+    "https://cleanpoweralliance.org/place/ventura/",
+    "https://cleanpoweralliance.org/solar/",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+    "https://www.cslb.ca.gov/solar"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/grass-valley",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Grass Valley, CA (2026)",
+   "clusters": [
+    368
+   ],
+   "sources": [
+    "https://www.grassvalleyca.gov/pod/solarapp-submittals",
+    "https://pioneercommunityenergy.org/about-us/",
+    "https://pioneercommunityenergy.org/understanding-your-solar-bill/",
+    "https://www.grassvalleyca.gov/post/apply-building-permit",
+    "https://www.cityofgrassvalley.com/sites/main/files/file-attachments/residential_solar_pv_submittal_checklist_202001071103529016.pdf?1587599826=",
+    "https://www.pge.com/en/account/rate-plans.html",
+    "https://www.cslb.ca.gov/solar"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/thousand-oaks",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Thousand Oaks, CA (2026)",
+   "clusters": [
+    197
+   ],
+   "sources": [
+    "https://www.toaks.gov/solarsystems",
+    "https://cleanpoweralliance.org/place/thousand-oaks/",
+    "https://cleanpoweralliance.org/nem/",
+    "https://www.toaks.org/departments/community-development/building",
+    "https://cleanpoweralliance.org/residential-rate/",
+    "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+    "https://www.cslb.ca.gov/solar"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/irvine",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Irvine, CA (2026)",
+   "clusters": [
+    186,
+    387
+   ],
+   "sources": [
+    "https://cityofirvine.gov/building-permits-and-inspections/adding-rooftop-solar-energy-system",
+    "https://www.cityofirvine.gov/news-media/news-article/city-irvine-offers-same-day-permits-residential-solar-and-battery-systems",
+    "https://www.cityofirvine.gov/solarize",
+    "https://www.ocpower.org/residential/",
+    "https://cityofirvine.org/community-development/homeowner-association-review-solar-energy-systems",
+    "https://www.ocpower.org/energy-programs/solar-net-energy-metering/",
+    "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/stockton",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Stockton, CA (2026)",
+   "clusters": [
+    388
+   ],
+   "sources": [
+    "https://www.stocktonca.gov/business/building___life_safety/automated_solar_permitting.php",
+    "https://www.stocktonca.gov/government/city_manager/ava_community_engergy.php",
+    "https://avaenergy.org/news/electricity-provider-ava-community-energy-brings-savings-to-stockton-and-lathrop/",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/",
+    "https://www.cslb.ca.gov/solar"
+   ],
+   "status": "done",
+   "note": "Ava Community Energy has served Stockton since April 2025; CEC CCA layer (Aug 2025) does not show it. Legacy /solar-savings/stockton copy predates Ava (not in this assignment)."
+  },
+  {
+   "path": "/solar-companies/fontana",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Fontana, CA (2026)",
+   "clusters": [
+    349
+   ],
+   "sources": [
+    "https://www.fontanaca.gov/3682/Solar-PV-Permit-with-SolarAPP",
+    "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+    "https://www.hcd.ca.gov/mmh/residents/modifications-alterations",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Content upgraded (sourced local detail). D14 group G14 (Fontana) held: Decision 14 default; no merge change made."
+  },
+  {
+   "path": "/solar-companies/hayward",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Hayward, CA (2026)",
+   "clusters": [
+    410
+   ],
+   "sources": [
+    "https://www.hayward-ca.gov/sites/default/files/documents/Permit-Log-March-2025.pdf",
+    "https://www.hayward-ca.gov/sites/default/files/documents/005-Residential-Solar-Checklist.pdf",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/lakewood",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Lakewood, CA (2026)",
+   "clusters": [
+    339
+   ],
+   "sources": [
+    "https://www.lakewoodca.gov/Development-Services/Building/Solar-Permitting-for-Homes",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/long-beach",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Long Beach, CA (2026)",
+   "clusters": [
+    233
+   ],
+   "sources": [
+    "https://longbeach.gov/globalassets/lbcd/media-library/documents/building--safety/information-bulletins/ib-023",
+    "https://longbeach.gov/lbcd/building/permit-center/solar-permit/",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/mountain-view",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Mountain View, CA (2026)",
+   "clusters": [
+    142
+   ],
+   "sources": [
+    "https://developmentpermits.mountainview.gov/about-permits/apply-for-permit/building-permits/solar-permits",
+    "https://svcleanenergy.org/net-energy-metering/",
+    "https://svcleanenergy.org/solar2/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/santa-clarita",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Santa Clarita, CA (2026)",
+   "clusters": [
+    254
+   ],
+   "sources": [
+    "https://santaclarita.gov/building-safety/permit-center/",
+    "https://santaclarita.gov/wp-content/uploads/sites/42/migration/Solar%20PV%20Re-roofing%20Policy%20(Residential).pdf",
+    "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://cleanpoweralliance.org/"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/pasadena",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Pasadena, CA (2026)",
+   "clusters": [
+    239
+   ],
+   "sources": [
+    "https://pwp.cityofpasadena.net/water-and-electric-rates",
+    "https://pwp.cityofpasadena.net/solar-application-instructions/",
+    "https://pwp.cityofpasadena.net/solar-eligibility-and-requirements/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Pasadena Water and Power defect fixed (growth entry, utility pwp)."
+  },
+  {
+   "path": "/solar-companies/concord",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Concord, CA (2026)",
+   "clusters": [
+    280,
+    325
+   ],
+   "sources": [
+    "https://www.cityofconcord.org/718/Solar-PV-Projects",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://www.mcecleanenergy.org/solar-customers/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ. New growth-only slug."
+  },
+  {
+   "path": "/solar-companies/san-mateo",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Mateo, CA (2026)",
+   "clusters": [
+    608
+   ],
+   "sources": [
+    "https://www.cityofsanmateo.org/4770/SolarApp-For-Solar-Installers",
+    "https://www.westlightenergy.org/",
+    "https://www.westlightenergy.org/residential/rates-billing/solar-rates/net-energy-metering/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "D14 G13 applied (commit 7863512): companies page keeps installer intent; /solar-savings/san-mateo differentiated to bills/rates."
+  },
+  {
+   "path": "/solar-companies/glendale",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Glendale, CA (2026)",
+   "clusters": [
+    288,
+    299
+   ],
+   "sources": [
+    "https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-interconnection",
+    "https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-pv-interconnection-and-nem-for-under-15-kw-cec-ac-residential-systems",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/auburn",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Auburn, CA (2026)",
+   "clusters": [
+    278
+   ],
+   "sources": [
+    "https://www.auburn.ca.gov/700/Symbium-Permits",
+    "https://pioneercommunityenergy.org/about-us/",
+    "https://pioneercommunityenergy.org/understanding-your-solar-bill/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Has a /solar-cost twin: canonical-redirects.test.ts twin rule must register it as reinstated."
+  },
+  {
+   "path": "/solar-companies/lincoln",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Lincoln, CA (2026)",
+   "clusters": [
+    513
+   ],
+   "sources": [
+    "https://www.lincolnca.gov/business-and-development/get-a-permit/solar-energy-storage-permit-and-ev-charger/",
+    "https://pioneercommunityenergy.org/about-us/",
+    "https://pioneercommunityenergy.org/understanding-your-solar-bill/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Has a /solar-cost twin: canonical-redirects.test.ts twin rule must register it as reinstated."
+  },
+  {
+   "path": "/solar-companies/vacaville",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Vacaville, CA (2026)",
+   "clusters": [
+    366
+   ],
+   "sources": [
+    "https://www.cityofvacaville.gov/government/community-development/building/building-permits/apply-for-residential-solar-permits",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "MCE does not list Vacaville as a member although the CEC CCA layer shades it."
+  },
+  {
+   "path": "/solar-companies/richmond",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Richmond, CA (2026)",
+   "clusters": [
+    227
+   ],
+   "sources": [
+    "https://www.ci.richmond.ca.us/4174/SolarAPP-For-Solar-Installers",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://www.mcecleanenergy.org/solar-customers/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/carlsbad",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Carlsbad, CA (2026)",
+   "clusters": [
+    215,
+    367
+   ],
+   "sources": [
+    "https://www.carlsbadca.gov/departments/community-development/building/go-green",
+    "https://thecleanenergyalliance.org/faqs/",
+    "https://thecleanenergyalliance.org/net-energy-metering-explained/",
+    "https://www.sdge.com/electric-billing",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Strong growth entry added; page is still 301 to /solar-cost/carlsbad on this branch. Merges agent reinstates it (Decision 15); cost page already links it once live."
+  },
+  {
+   "path": "/solar-companies/san-marcos",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Marcos, CA (2026)",
+   "clusters": [
+    255
+   ],
+   "sources": [
+    "https://www.sanmarcosca.gov/Business-Services/Building-Division/Solar-Permits",
+    "https://thecleanenergyalliance.org/faqs/",
+    "https://thecleanenergyalliance.org/net-energy-metering-explained/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Has a /solar-cost twin: canonical-redirects.test.ts twin rule must register it as reinstated."
+  },
+  {
+   "path": "/solar-companies/santa-ana",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Santa Ana, CA (2026)",
+   "clusters": [
+    295
+   ],
+   "sources": [
+    "https://www.santa-ana.org/solarapp-automated-solar-plan-review/",
+    "https://www.santa-ana.org/upcoming-changes-to-the-residential-solar-permit-requirement-effective-june-1st-2026/",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+    "https://www.ocpower.org/about-us/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/san-bernardino",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Bernardino, CA (2026)",
+   "clusters": [
+    439
+   ],
+   "sources": [
+    "https://www.sanbernardino.gov/1650/Apply-for-Residential-Solar-Permits",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/lancaster",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Lancaster, CA (2026)",
+   "clusters": [
+    148
+   ],
+   "sources": [
+    "https://www.cityoflancasterca.org/our-city/departments-services/community-development/building-and-safety/instant-permits",
+    "https://lancasterenergy.com/",
+    "https://lancasterenergy.com/your-options/personal-choice/",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ. New growth-only slug."
+  },
+  {
+   "path": "/solar-companies/berkeley",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Berkeley, CA (2026)",
+   "clusters": [
+    269
+   ],
+   "sources": [
+    "https://berkeleyca.gov/construction-development/permits-design-parameters/permit-types/solar-permits",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/",
+    "https://avaenergy.org/community/who-we-serve/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ. New growth-only slug."
+  },
+  {
+   "path": "/solar-companies/redding",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Redding, CA (2026)",
+   "clusters": [
+    318
+   ],
+   "sources": [
+    "https://www.cityofredding.gov/government/departments/redding_electric_utility/going_green/solar_photovoltaic_(pv)_program.php",
+    "https://files.cityofredding.gov/Document%20Center/Departments/Development%20Services/Building/Building%20Resources%20And%20Learning/Complete%20Permit%20Application%20Packages/C.O.R.%20SolarAPP%20Landing%20Page%20v5.pdf",
+    "https://files.cityofredding.gov/Document%20Center/Departments/Redding%20Electric%20Utility/Going%20Green/Solar%20Power/Solar%20PV%20Information%20Sheet.pdf",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Utility is Redding Electric Utility (code redding)."
+  },
+  {
+   "path": "/solar-companies/yorba-linda",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Yorba Linda, CA (2026)",
+   "clusters": [
+    473
+   ],
+   "sources": [
+    "https://www.yorbalindaca.gov/880/Solar-Permits",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.ocpower.org/about-us/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ. New growth-only slug."
+  },
+  {
+   "path": "/solar-companies/oxnard",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Oxnard, CA (2026)",
+   "clusters": [
+    544
+   ],
+   "sources": [
+    "https://sites.google.com/oxnard.org/onlinesolarpermitswithsolarapp/home",
+    "https://cleanpoweralliance.org/place/oxnard/",
+    "https://cleanpoweralliance.org/solar/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ. New growth-only slug."
+  },
+  {
+   "path": "/solar-companies/redlands",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Redlands, CA (2026)",
+   "clusters": [
+    428
+   ],
+   "sources": [
+    "https://www.redlands.gov/solarapp-pilot-program/",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-companies/huntington-beach",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Huntington Beach Solar Panels & Solar Companies (2026)",
+   "clusters": [
+    684
+   ],
+   "sources": [
+    "https://www.huntingtonbeachca.gov/departments/community_development/building___inspection/solar_app.php",
+    "https://www.ocpower.org/energy-programs/solar-net-energy-metering/",
+    "https://www.ocpower.org/about-us/",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Sourced local permit route and utility/CCA rules; answer, key facts, sections, checks and FAQ."
+  },
+  {
+   "path": "/solar-savings/los-angeles-county",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/app/solar-savings/los-angeles-county/page.tsx",
+   "title": "Los Angeles Electricity Providers: LADWP, SCE & More (2026)",
+   "clusters": [
+    285
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+    "https://www.ladwp.com/account/understanding-your-rates/residential-electric-rates"
+   ],
+   "status": "done",
+   "note": "Retitled to answer who provides electricity in LA County; provider shares from CEC layers, SCE and LADWP bill facts."
+  },
+  {
+   "path": "/solar-savings/orange-county",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/app/solar-savings/orange-county/page.tsx",
+   "title": "Orange County Electricity Providers: SCE, Anaheim, SDG&E",
+   "clusters": [
+    454
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.ocpower.org/about-us/",
+    "https://www.ocpower.org/energy-programs/solar-net-energy-metering/",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc"
+   ],
+   "status": "done",
+   "note": "Retitled toward providers/bills; OCPA members and solar terms."
+  },
+  {
+   "path": "/solar-savings/san-diego",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/data/cities-data.ts (bills) + src/lib/city-pages.ts (SAVINGS_BILLS_SEO)",
+   "title": "San Diego Electric Bills & SDG&E Rates (2026)",
+   "clusters": [
+    165,
+    461
+   ],
+   "sources": [
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+    "https://www.sdge.com/electric-billing",
+    "https://sdcommunitypower.org/net-energy-metering/",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program"
+   ],
+   "status": "done",
+   "note": "Stays at its URL (Decision 18), retitled to bills and rates."
+  },
+  {
+   "path": "/solar-savings/sacramento",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/data/cities-data.ts (bills) + src/lib/city-pages.ts (SAVINGS_BILLS_SEO)",
+   "title": "Sacramento Electricity Provider: SMUD Rates & Bills",
+   "clusters": [
+    452
+   ],
+   "sources": [
+    "https://www.smud.org/Rate-Information/Residential-rates",
+    "https://www.smud.org/Rate-Information/Solar-and-Storage-Rate",
+    "https://www.smud.org/Rate-Information/Low-income-and-nonprofits"
+   ],
+   "status": "done",
+   "note": "Stays at its URL (Decision 18), retitled to SMUD bills and rates; false demand-charge claim removed."
+  },
+  {
+   "path": "/solar-savings/san-mateo",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/data/cities-data.ts (bills) + src/lib/city-pages.ts (SAVINGS_BILLS_SEO)",
+   "title": "San Mateo Electric Bills, Rates & Solar Savings (2026)",
+   "clusters": [],
+   "sources": [
+    "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+    "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf"
+   ],
+   "status": "done",
+   "note": "D14 G13: differentiated to bills/rates (WestLight Energy, formerly Peninsula Clean Energy)."
+  },
+  {
+   "path": "/solar-companies/dublin",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    111,
+    312
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "SERP is Dublin, Ireland; no California intent to serve."
+  },
+  {
+   "path": "/solar-companies/arcadia",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    48
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "SERP dominated by the Arcadia Power brand."
+  },
+  {
+   "path": "/solar-savings/san-francisco",
+   "action": "CREATE",
+   "hub": "city_bills",
+   "file": "",
+   "title": "",
+   "clusters": [
+    436
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "URL is a 301 in canonical-redirects.ts; creating it needs the redirect removed (Chad/merges decision)."
+  },
+  {
+   "path": "/solar-companies/danville",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    183
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "SERP is Danville KY/VA."
+  },
+  {
+   "path": "/solar-companies/visalia",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    191,
+    267
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "City SolarAPP+ page blocked this session (403/429); no new sourced local facts."
+  },
+  {
+   "path": "/solar-companies/vista",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    322
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Query is the \"Solar Vista\" brand; row points at /solar-cost/chula-vista."
+  },
+  {
+   "path": "/solar-companies/bay-area",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    149
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Regional companies page not built this session (needs a regional template, not a city entry)."
+  },
+  {
+   "path": "/solar-companies/castro-valley",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    304
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Not reached this session (unincorporated; Alameda County permits)."
+  },
+  {
+   "path": "/solar-companies/san-diego-county",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    309
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Regional companies page not built this session."
+  },
+  {
+   "path": "/solar-savings/san-jose",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_bills",
+   "file": "",
+   "title": "",
+   "clusters": [
+    466
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "URL is a 301 in canonical-redirects.ts; creating it needs the redirect removed (Chad/merges decision)."
+  },
+  {
+   "path": "/solar-companies/encinitas",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    326
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "City permit pages returned 403 this session."
+  },
+  {
+   "path": "/solar-companies/monterey",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    384
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "held: Decision 14 default (G02 Monterey/Salinas)."
+  },
+  {
+   "path": "/solar-companies/bakersfield",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    127
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "City permit page returned no content; Kern County page covers unincorporated areas only."
+  },
+  {
+   "path": "/solar-companies/beaumont",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    512
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "City SolarAPP+ page returned 404."
+  },
+  {
+   "path": "/solar-companies/winchester",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    386
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Riverside County TLMA permit pages returned 403."
+  },
+  {
+   "path": "/solar-companies/manteca",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    409
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "City permit page returned 403/404."
+  },
+  {
+   "path": "/solar-companies/san-clemente",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    336
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Not reached this session."
+  },
+  {
+   "path": "/solar-companies/northern-california",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    400
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Regional companies page not built this session."
+  },
+  {
+   "path": "/solar-companies/southern-california",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    424,
+    427
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Regional companies page not built this session."
+  },
+  {
+   "path": "/solar-companies/wilmington",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    383
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "SERP is Wilmington NC."
+  },
+  {
+   "path": "/solar-companies/corona",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    247,
+    345
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Not reached this session (search failed; split City of Corona DWP/SCE)."
+  },
+  {
+   "path": "/solar-companies/fremont",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    257
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "City Instant Solar Permit page returned 403."
+  },
+  {
+   "path": "/solar-cost/culver-city",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "",
+   "title": "",
+   "clusters": [
+    272
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Not built: needs a sourced permit row in city-cost-data.ts; not reached this session."
+  },
+  {
+   "path": "/solar-companies/victorville",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    238
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "City SolarAPP+ pages returned 403."
+  },
+  {
+   "path": "/solar-companies/riverside",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    311
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "RPU page gives no current export rate and the City SolarAPP+ page did not resolve; split RPU/SCE city needs care."
+  },
+  {
+   "path": "/solar-savings/bakersfield",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_bills",
+   "file": "",
+   "title": "",
+   "clusters": [
+    572
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Query is the \"Baker Electric\" brand, and the URL is a 301; not a bills page intent."
+  },
+  {
+   "path": "/solar-companies/paramount",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    500
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Brand query (Paramount), not the city."
+  },
+  {
+   "path": "/solar-companies/orange",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    501
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Ambiguous (Orange County / orange color / brands)."
+  },
+  {
+   "path": "/solar-companies/simi-valley",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    674
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "City photovoltaic page returned 403."
+  },
+  {
+   "path": "/solar-companies/sunnyvale",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    670
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "City SolarAPP+ page returned 403."
+  },
+  {
+   "path": "/solar-companies/lake-elsinore",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "",
+   "title": "",
+   "clusters": [
+    755
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Not reached this session."
+  }
+ ],
+ "sitemap_add": [
+  "/solar-companies/concord",
+  "/solar-companies/vacaville",
+  "/solar-companies/auburn",
+  "/solar-companies/lincoln",
+  "/solar-companies/san-marcos",
+  "/solar-companies/lancaster",
+  "/solar-companies/berkeley",
+  "/solar-companies/redding",
+  "/solar-companies/yorba-linda",
+  "/solar-companies/oxnard"
+ ],
+ "blog_index_add": [],
+ "redirect_requests": [
+  {
+   "from": "/solar-companies/carlsbad",
+   "to": "(remove redirect)",
+   "why": "Decision 15 reinstatement; strong growth entry now exists on this branch. Merges branch already removes it."
+  },
+  {
+   "from": "/solar-companies/san-diego",
+   "to": "(remove redirect)",
+   "why": "Decision 15 reinstatement; growth entry now exists. Merges branch already removes it (32d8d2c)."
+  },
+  {
+   "from": "/solar-savings/san-francisco",
+   "to": "(remove redirect)",
+   "why": "Only if Chad wants the CREATE bills page; not built while the 301 stands."
+  },
+  {
+   "from": "/solar-savings/san-jose",
+   "to": "(remove redirect)",
+   "why": "Only if Chad wants the CREATE_DEDICATED bills page; not built while the 301 stands."
+  }
+ ],
+ "integration_notes": [
+  "Add /solar-companies/{concord,vacaville,auburn,lincoln,san-marcos,lancaster,berkeley,redding,yorba-linda,oxnard} to GROWTH_ROUTES (src/lib/growth-routes.ts) so src/app/sitemap.ts lists them; they are growth-only slugs not in cities-data.ts.",
+  "canonical-redirects.test.ts (\"every /solar-companies city page with a /solar-cost twin redirects there\") fails on this branch for auburn, lincoln and san-marcos, which are CREATE_DEDICATED pages with cost twins. Register them in the merges branch REINSTATED_COMPANIES_SLUGS registry.",
+  "src/data/topic-hubs.ts labels contain a literal \"&amp;\" in some spoke labels; they render as text \"&amp;\".",
+  "CEC ElectricLoadServingEntities_Other (CCA) layer was last edited 2025-08-28 and is stale for Stockton (Ava since April 2025), Grass Valley (Pioneer 2024), Vacaville (not MCE) and Santa Clarita; provider pages were used instead.",
+  "Peninsula Clean Energy is now WestLight Energy; other site copy still uses the old name.",
+  "NREL PVWatts was blocked this session, so no climate/production figures were added."
+ ],
+ "hub_links": [
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/auburn",
+   "label": "Solar companies in Auburn"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/berkeley",
+   "label": "Solar companies in Berkeley"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/camarillo",
+   "label": "Solar companies in Camarillo"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/carlsbad",
+   "label": "Solar companies in Carlsbad"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/concord",
+   "label": "Solar companies in Concord"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/grass-valley",
+   "label": "Solar companies in Grass Valley"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/hayward",
+   "label": "Solar companies in Hayward"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/lakewood",
+   "label": "Solar companies in Lakewood"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/lancaster",
+   "label": "Solar companies in Lancaster"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/lincoln",
+   "label": "Solar companies in Lincoln"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/mountain-view",
+   "label": "Solar companies in Mountain View"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/oxnard",
+   "label": "Solar companies in Oxnard"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/redding",
+   "label": "Solar companies in Redding"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/redlands",
+   "label": "Solar companies in Redlands"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/san-diego",
+   "label": "Solar companies in San Diego"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/san-marcos",
+   "label": "Solar companies in San Marcos"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/vacaville",
+   "label": "Solar companies in Vacaville"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/ventura",
+   "label": "Solar companies in Ventura"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/yorba-linda",
+   "label": "Solar companies in Yorba Linda"
+  },
+  {
+   "hub": "city_bills",
+   "href": "/solar-savings/los-angeles-county",
+   "label": "Who provides electricity in Los Angeles County"
+  }
+ ],
+ "skipped": [
+  {
+   "url": "/solar-companies/dublin",
+   "why": "SERP is Dublin, Ireland; no California intent to serve."
+  },
+  {
+   "url": "/solar-companies/arcadia",
+   "why": "SERP dominated by the Arcadia Power brand."
+  },
+  {
+   "url": "/solar-savings/san-francisco",
+   "why": "URL is a 301 in canonical-redirects.ts; creating it needs the redirect removed (Chad/merges decision)."
+  },
+  {
+   "url": "/solar-companies/danville",
+   "why": "SERP is Danville KY/VA."
+  },
+  {
+   "url": "/solar-companies/visalia",
+   "why": "City SolarAPP+ page blocked this session (403/429); no new sourced local facts."
+  },
+  {
+   "url": "/solar-companies/vista",
+   "why": "Query is the \"Solar Vista\" brand; row points at /solar-cost/chula-vista."
+  },
+  {
+   "url": "/solar-companies/bay-area",
+   "why": "Regional companies page not built this session (needs a regional template, not a city entry)."
+  },
+  {
+   "url": "/solar-companies/castro-valley",
+   "why": "Not reached this session (unincorporated; Alameda County permits)."
+  },
+  {
+   "url": "/solar-companies/san-diego-county",
+   "why": "Regional companies page not built this session."
+  },
+  {
+   "url": "/solar-savings/san-jose",
+   "why": "URL is a 301 in canonical-redirects.ts; creating it needs the redirect removed (Chad/merges decision)."
+  },
+  {
+   "url": "/solar-companies/encinitas",
+   "why": "City permit pages returned 403 this session."
+  },
+  {
+   "url": "/solar-companies/monterey",
+   "why": "held: Decision 14 default (G02 Monterey/Salinas)."
+  },
+  {
+   "url": "/solar-companies/bakersfield",
+   "why": "City permit page returned no content; Kern County page covers unincorporated areas only."
+  },
+  {
+   "url": "/solar-companies/beaumont",
+   "why": "City SolarAPP+ page returned 404."
+  },
+  {
+   "url": "/solar-companies/winchester",
+   "why": "Riverside County TLMA permit pages returned 403."
+  },
+  {
+   "url": "/solar-companies/manteca",
+   "why": "City permit page returned 403/404."
+  },
+  {
+   "url": "/solar-companies/san-clemente",
+   "why": "Not reached this session."
+  },
+  {
+   "url": "/solar-companies/northern-california",
+   "why": "Regional companies page not built this session."
+  },
+  {
+   "url": "/solar-companies/southern-california",
+   "why": "Regional companies page not built this session."
+  },
+  {
+   "url": "/solar-companies/wilmington",
+   "why": "SERP is Wilmington NC."
+  },
+  {
+   "url": "/solar-companies/corona",
+   "why": "Not reached this session (search failed; split City of Corona DWP/SCE)."
+  },
+  {
+   "url": "/solar-companies/fremont",
+   "why": "City Instant Solar Permit page returned 403."
+  },
+  {
+   "url": "/solar-cost/culver-city",
+   "why": "Not built: needs a sourced permit row in city-cost-data.ts; not reached this session."
+  },
+  {
+   "url": "/solar-companies/victorville",
+   "why": "City SolarAPP+ pages returned 403."
+  },
+  {
+   "url": "/solar-companies/riverside",
+   "why": "RPU page gives no current export rate and the City SolarAPP+ page did not resolve; split RPU/SCE city needs care."
+  },
+  {
+   "url": "/solar-savings/bakersfield",
+   "why": "Query is the \"Baker Electric\" brand, and the URL is a 301; not a bills page intent."
+  },
+  {
+   "url": "/solar-companies/paramount",
+   "why": "Brand query (Paramount), not the city."
+  },
+  {
+   "url": "/solar-companies/orange",
+   "why": "Ambiguous (Orange County / orange color / brands)."
+  },
+  {
+   "url": "/solar-companies/simi-valley",
+   "why": "City photovoltaic page returned 403."
+  },
+  {
+   "url": "/solar-companies/sunnyvale",
+   "why": "City SolarAPP+ page returned 403."
+  },
+  {
+   "url": "/solar-companies/lake-elsinore",
+   "why": "Not reached this session."
+  }
+ ]
+}

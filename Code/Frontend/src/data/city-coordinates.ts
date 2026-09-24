@@ -20,10 +20,12 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   bakersfield: [35.3528015, -119.0359555], // Bakersfield city, GEOID 0603526
   beaumont: [33.9083764, -116.9785403], // Beaumont city, GEOID 0604758
   'california-city': [35.1578139, -117.8722241], // California City city, GEOID 0609780
+  berkeley: [37.8663942, -122.2989164], // Berkeley city, GEOID 0606000 (queried 2026-09-23)
   camarillo: [34.2229954, -119.0321552], // Camarillo city, GEOID 0610046
   carlsbad: [33.1246265, -117.2835437], // Carlsbad city, GEOID 0611194
   chico: [39.7571245, -121.8172296], // Chico city, GEOID 0613014
   'chula-vista': [32.6281388, -117.0143700], // Chula Vista city, GEOID 0613392
+  concord: [37.9721841, -122.0015871], // Concord city, GEOID 0616000 (queried 2026-09-23)
   corona: [33.8615850, -117.5649056], // Corona city, GEOID 0616350
   danville: [37.8121416, -121.9698235], // Danville town, GEOID 0617988
   'el-cajon': [32.8016733, -116.9604685], // El Cajon city, GEOID 0621712
@@ -44,6 +46,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   irvine: [33.6772013, -117.7738402], // Irvine city, GEOID 0636770
   'lake-elsinore': [33.6846868, -117.3344535], // Lake Elsinore city, GEOID 0639486
   lakewood: [33.8470755, -118.1221583], // Lakewood city, GEOID 0639892
+  lancaster: [34.6934638, -118.1753047], // Lancaster city, GEOID 0640130 (queried 2026-09-23)
   lincoln: [38.8774847, -121.3044800], // Lincoln city, GEOID 0641474
   livermore: [37.6867558, -121.7606574], // Livermore city, GEOID 0641992
   lodi: [38.1218057, -121.2930667], // Lodi city, GEOID 0642202
@@ -62,6 +65,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   oakland: [37.7695164, -122.2244858], // Oakland city, GEOID 0653000
   oceanside: [33.2246458, -117.3084145], // Oceanside city, GEOID 0653322
   ontario: [34.0392592, -117.6064073], // Ontario city, GEOID 0653896
+  oxnard: [34.2005568, -119.2142226], // Oxnard city, GEOID 0654652 (queried 2026-09-23)
   'pacific-grove': [36.6224077, -121.9262315], // Pacific Grove city, GEOID 0654848
   'palm-desert': [33.7377747, -116.3695003], // Palm Desert city, GEOID 0655184
   'palm-springs': [33.8015805, -116.5380755], // Palm Springs city, GEOID 0655254
@@ -71,8 +75,10 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   pleasanton: [37.6663228, -121.8804974], // Pleasanton city, GEOID 0657792
   'rancho-cordova': [38.5736650, -121.2527201], // Rancho Cordova city, GEOID 0659444
   'rancho-cucamonga': [34.1306095, -117.5621696], // Rancho Cucamonga city, GEOID 0659451
+  redding: [40.5702465, -122.3655747], // Redding city, GEOID 0659920 (queried 2026-09-23)
   redlands: [34.0511294, -117.1711567], // Redlands city, GEOID 0659962
   richmond: [37.9517605, -122.3602500], // Richmond city, GEOID 0660620
+  vacaville: [38.3586717, -121.9673440], // Vacaville city, GEOID 0681554 (queried 2026-09-23)
   riverside: [33.9381301, -117.3949083], // Riverside city, GEOID 0662000
   rocklin: [38.8074883, -121.2487164], // Rocklin city, GEOID 0662364
   roseville: [38.7702963, -121.3196342], // Roseville city, GEOID 0662938
@@ -111,6 +117,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   wildomar: [33.6172783, -117.2583117], // Wildomar city, GEOID 0685446
   winchester: [33.7146079, -117.0774331], // Winchester CDP, GEOID 0685894
   windsor: [38.5422826, -122.8088032], // Windsor town, GEOID 0685922
+  'yorba-linda': [33.8890131, -117.7712954], // Yorba Linda city, GEOID 0686832 (queried 2026-09-23)
   'yuba-city': [39.1322915, -121.6394821], // Yuba City city, GEOID 0686972
   yucaipa: [34.0335696, -117.0428872], // Yucaipa city, GEOID 0687042
 };

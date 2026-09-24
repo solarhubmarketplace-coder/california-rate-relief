@@ -10,7 +10,8 @@ import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { BillComparison } from '@/components/growth/BillComparison';
 import { LocalProjectGuidance } from '@/components/growth/LocalProjectGuidance';
-import { NearbyCostCities } from '@/components/growth/NearbyCostCities';
+import { CitySiblingLinks, NearbyCostCities } from '@/components/growth/NearbyCostCities';
+import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import { StatewideCostBenchmark } from '@/components/growth/StatewideCostBenchmark';
 import { Calendar, MapPin, ArrowRight } from 'lucide-react';
 import {
@@ -286,6 +287,19 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 it does not install anything, and it does not estimate what a system would cost you.
               </p>
 
+              {/* 2026-09-23: this city's other pages, one per question, right
+                  after the answer. Installer queries for a city land here when
+                  it has no companies page; the first link sends them to the
+                  page built for that question (CREATE_DEDICATED items). The
+                  rate tracker is linked in the utility section below, so it is
+                  left out of the statewide line here. */}
+              <CitySiblingLinks
+                slug={row.slug}
+                type='cost'
+                omitStatewide={[RATE_TRACKER_PATH]}
+                className='mb-8'
+              />
+
               <StatewideCostBenchmark cityName={row.city} />
 
               {/* ---------- Utility ---------- */}
@@ -418,7 +432,16 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
               <p>
                 These are mechanisms, not figures. Each one changes the scope of the job, which is
                 what a price is attached to. Work through them against your own house and you will
-                know which parts of two quotes are not comparable.
+                know which parts of two quotes are not comparable. For the statewide numbers behind
+                them, see our{' '}
+                <Link href='/solar-panels-california' className={link}>
+                  California solar panel cost and sizing guide
+                </Link>
+                ; for how the payment structure changes the total, see{' '}
+                <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className={link}>
+                  paying cash versus a loan, lease or PPA
+                </Link>
+                .
               </p>
               <ul className='list-disc pl-6 space-y-3'>
                 <li>
@@ -627,7 +650,6 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 <Link href='/solar-problems/solar-dealer-fees-explained' className={link}>dealer fees</Link>,{' '}
                 <Link href='/solar-problems/solar-escalator-clause-explained' className={link}>escalator clauses</Link>,{' '}
                  <Link href='/blog/is-it-better-to-buy-or-lease-solar-panels-california' className={link}>buy or lease</Link>,{' '}
-                <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className={link}>PPA, loan, lease and cash comparison</Link>,{' '}
                  <Link href='/blog/is-my-roof-good-for-solar-california' className={link}>is my roof suited to solar</Link>.
               </p>
             </div>
@@ -648,6 +670,8 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
             )}
 
             <NearbyCostCities row={row} />
+
+            <HubSpokeLinks hub='city_cost' currentPath={path} max={6} title='Solar cost in other California cities' />
 
             <SolarInquiry
               variant='bill'
