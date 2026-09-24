@@ -1949,54 +1949,110 @@ export const growthCities: Record<string, GrowthCity> = {
     name: "Temecula",
     county: "Riverside County",
     utility: "sce",
-    sourceCheckedDate: "2026-09-12",
-    bill: "Temecula's utility page identifies Southern California Edison for electricity. Use the provider and rate plan printed on the actual account when comparing bids. A high bill can start a solar conversation, but it does not by itself determine system size, production or savings.",
-    local:
-      "Temecula publishes SolarAPP+, expedited and standard photovoltaic plan-review paths. Its page says expansions to existing PV systems do not qualify for SolarAPP+ or expedited review. Ask the bidder to identify the correct path, the permit responsibility and any fire, roof, panel or battery scope before relying on a schedule.",
-    example:
-      "Ask every bidder to use the same full-year bill history, roof layout and equipment scope. Keep solar, storage, roof repair, electrical upgrades, permits and utility steps separate. Then compare cash and contract totals with the remaining utility bill, rather than comparing a monthly payment alone.",
+    sourceCheckedDate: "2026-09-23",
+    bill: "Most of Temecula is Southern California Edison territory: the Energy Commission's map puts about 93% of the city's area in SCE's service area and about 7% in SDG&E's, with no community choice provider over either. The two utilities have different solar rules and rates, so confirm from your own bill which one serves your address before comparing any savings estimate.",
+    local: "Temecula offers three plan-check routes for solar: SolarAPP+ with automatic permit issuance in the City's CSS portal, an expedited review of about 3 business days for systems built on City Standard Plans, and a standard review of 10 to 12 business days. Adding panels to an existing system does not qualify for SolarAPP+ or expedited review. Every SolarAPP+ permit also needs a Fire Department inspection before the building inspection.",
+    example: "If a Temecula bid includes a battery in the garage, ask whether your home has a residential fire sprinkler system. The City's fire rules do not allow energy storage in a garage without one, so a bid that places it there on an unsprinklered house will need a new location before it can pass inspection.",
     checks: [
       [
-        "Account and usage",
-        "Use the SCE plan and twelve months of usage printed on the actual account; list imports, exports and remaining bill assumptions separately.",
+        "Plan-check route",
+        "Say whether the job uses SolarAPP+, the 3-day expedited route on City Standard Plans, or the 10-to-12-day standard review."
       ],
       [
-        "Project path",
-        "State whether the project uses SolarAPP+, expedited or standard review, and identify any exception for an existing-system expansion or storage scope.",
+        "Battery location",
+        "Confirm storage is not in the garage unless the home has residential fire sprinklers."
       ],
       [
-        "Inspection and scope",
-        "List permit, fire and building-inspection responsibilities, plus roof, electrical-panel and backup-circuit work.",
+        "Fire inspection",
+        "Say who books the required Fire Department inspection (951-308-6363) and brings the certificates of compliance."
       ],
+      [
+        "Which utility",
+        "Confirm from your bill whether SCE or SDG&E serves the address and model that utility's solar rules."
+      ]
     ],
     sources: [
       {
-        label: "City of Temecula: photovoltaic systems and permit paths",
-        url: "https://temeculaca.gov/304/Photovoltaic-Systems",
+        "label": "City of Temecula: photovoltaic systems (SolarAPP+, expedited and standard routes, fire requirements)",
+        "url": "https://temeculaca.gov/304/Photovoltaic-Systems"
       },
       {
-        label: "City of Temecula: electric utility information",
-        url: "https://www.temeculaca.gov/754/Utilities",
+        "label": "SCE: Solar Billing Plan",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
       },
       {
-        label: "SCE: residential rate-plan information",
-        url: "https://www.sce.com/customer-service-center/help-center/rate-plans-pricing/resources/rates-faq",
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
       },
       {
-        label: "CSLB: Solar Smart license and consumer information",
-        url: "https://www.cslb.ca.gov/solar",
-      },
+        "label": "CSLB: Solar Smart license and consumer information",
+        "url": "https://www.cslb.ca.gov/solar"
+      }
     ],
     faq: [
       [
-        "Does every Temecula solar project qualify for SolarAPP+?",
-        "No. Temecula lists SolarAPP+, expedited and standard paths and says existing-PV expansions do not qualify for SolarAPP+ or expedited review. Confirm the path for the actual scope.",
+        "How long does a solar permit take in Temecula?",
+        "SolarAPP+ approvals are issued automatically in the City's CSS portal. Systems built on City Standard Plans can use expedited review of about 3 business days, and other systems go through standard review of 10 to 12 business days."
       ],
       [
-        "Can I compare Temecula solar offers using monthly payment alone?",
-        "No. Compare the written cash price or total payments, equipment, roof and electrical work, permit scope, production assumptions and remaining utility bill.",
+        "Can I put a home battery in my garage in Temecula?",
+        "Only if the home has a residential fire sprinkler system. The City's fire rules also say no heat or smoke detector may be installed in the garage for this purpose, because none is currently listed for it."
       ],
+      [
+        "Does adding panels to an existing system qualify for fast permits in Temecula?",
+        "No. The City says expansions to existing PV systems do not qualify for SolarAPP+ or expedited review."
+      ]
     ],
+    answer: "Temecula gives solar companies three permit routes: SolarAPP+ with automatic issuance, an expedited 3-business-day review for City Standard Plans, and a 10-to-12-day standard review. SolarAPP+ jobs also need a Fire Department inspection first, and batteries cannot go in a garage without fire sprinklers. Most of Temecula is SCE territory, with a small part in SDG&E's. Compare at least three written bids built on your own bill.",
+    keyFacts: [
+      {
+        "label": "Expedited review",
+        "value": "About 3 business days",
+        "note": "City Standard Plans; standard review is 10 to 12 days",
+        "source": {
+          "publisher": "City of Temecula",
+          "date": "2026-09-23",
+          "url": "https://temeculaca.gov/304/Photovoltaic-Systems"
+        }
+      },
+      {
+        "label": "Battery in garage",
+        "value": "Only with fire sprinklers",
+        "note": "Temecula Fire Department requirement",
+        "source": {
+          "publisher": "City of Temecula",
+          "date": "2026-09-23",
+          "url": "https://temeculaca.gov/304/Photovoltaic-Systems"
+        }
+      },
+      {
+        "label": "Utility split",
+        "value": "About 93% SCE, 7% SDG&E",
+        "note": "Share of the city's area",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Temecula's SolarAPP+ steps",
+        "paragraphs": [
+          "SolarAPP+ has been available in Temecula since September 30, 2023. The City's list runs in order: confirm the project qualifies, register for a Citizen Self Service (CSS) account, obtain a City business license, have a valid state contractor's license ready, register with SolarAPP+ and submit the design there for a fee, then apply for the building permit in CSS under SolarAPP+ Photovoltaic with the approved plans uploaded, which carries its own fee.",
+          "The last step is specific to Temecula: a Fire Department inspection, booked at 951-308-6363, must be scheduled and passed before the building inspection can be scheduled. The fire inspector needs a certificate of compliance for all materials and parts, and the Fire Prevention Division does not accept an authorization to mark pages in its place; missing paperwork means a failed inspection and possible reinspection fees."
+        ]
+      },
+      {
+        "heading": "Batteries and the other two routes",
+        "paragraphs": [
+          "Temecula's fire rules shape where a battery can go. Energy storage is not allowed in a garage unless the home has a residential fire sprinkler system, and no heat or smoke detector may be installed in the garage to get around that, since none is currently listed for the purpose. Ask each bidder to show the storage location on its plan.",
+          "Projects that do not use SolarAPP+ have two other routes. Systems drawn on the City's Standard Plans qualify for expedited review of about three business days; everything else goes through standard review of 10 to 12 business days, and plans that are not City Standard Plans do not get expedited review. All systems must meet the City's residential photovoltaic and digital submittal requirements, and expanding an existing system rules out both faster routes."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   murrieta: {
     name: "Murrieta",
@@ -6359,6 +6415,115 @@ export const growthCities: Record<string, GrowthCity> = {
         "paragraphs": [
           "Under the Solar Billing Plan, power a Redlands home sends to the grid earns credits priced from hourly avoided-cost values, and those credits are applied against later bills. Once a year, in the month the system first went live, SCE issues a True-Up bill that settles the running balance. What is left over after that is bought back at SCE's surplus rate, which SCE currently puts near two cents per kWh.",
           "Because the buy-back rate is so low, a Redlands design that sends most of its output to the grid is worth less than its kilowatt-hour total suggests. Ask each bidder what share of the production its model assumes you use at home, and whether a battery changes that."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  "huntington-beach": {
+    name: "Huntington Beach",
+    county: "Orange County",
+    utility: "sce",
+    bill: "Huntington Beach is a member city of Orange County Power Authority, so most homes get generation from OCPA and delivery from Southern California Edison, which sends the bill. OCPA reconciles generation charges monthly, runs its annual true-up in April and pays 10% more than SCE for yearly surplus. A proposal should model OCPA's rules, not SCE's generation rates.",
+    local: "Huntington Beach issues solar permits instantly through SolarAPP+. The contractor pays SolarAPP+'s $35 processing fee, downloads the approval documents, creates a Residential Photovoltaic System record in the City's HB ACA portal with the Permit and Asbestos Disclosure Form, pays the City's fees and requests inspections there. Homeowners installing their own systems cannot use SolarAPP+ unless they hold the appropriate contractor licenses.",
+    example: "For a Huntington Beach home with a 400-amp or smaller main service, ask each bidder whether its design stays within SolarAPP+'s equipment limits and whether it has completed the solar-plus-storage training if a battery is included. A bid that cannot use SolarAPP+ should say which route it will take instead.",
+    sourceCheckedDate: "2026-09-23",
+    checks: [
+      [
+        "SolarAPP+ limits",
+        "Confirm the main service is 400 A or less and disconnects and busbars 225 A or less, and the system is 38.4 kW or smaller."
+      ],
+      [
+        "Storage training",
+        "If a battery is included, confirm the contractor has SolarAPP+'s solar-and-storage training certificate."
+      ],
+      [
+        "City record",
+        "Say who creates the HB ACA record, uploads the Permit and Asbestos Disclosure Form and requests the inspection."
+      ],
+      [
+        "OCPA and SCE bill",
+        "Model OCPA generation with its April true-up and SCE delivery from your own bill."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of Huntington Beach: SolarAPP+ instant solar permits",
+        "url": "https://www.huntingtonbeachca.gov/departments/community_development/building___inspection/solar_app.php"
+      },
+      {
+        "label": "Orange County Power Authority: solar and net energy metering",
+        "url": "https://www.ocpower.org/energy-programs/solar-net-energy-metering/"
+      },
+      {
+        "label": "Orange County Power Authority: about and member cities",
+        "url": "https://www.ocpower.org/about-us/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "How do I get a solar permit in Huntington Beach?",
+        "A licensed contractor submits the design in SolarAPP+, pays its $35 processing fee, then creates a Residential Photovoltaic System record in the City's HB ACA portal, uploads the SolarAPP+ approval and the Permit and Asbestos Disclosure Form, pays the City's fees and gets the permit."
+      ],
+      [
+        "Can a homeowner use SolarAPP+ in Huntington Beach?",
+        "Not unless the homeowner is a licensed contractor with the appropriate licenses. Owner-installed systems use the City's regular permit process."
+      ],
+      [
+        "What does OCPA pay for extra solar in Huntington Beach?",
+        "Orange County Power Authority pays 10% more than SCE for yearly surplus at its April true-up, reconciles generation charges monthly, and currently treats Solar Billing Plan customers' generation as if it were under NEM 2.0."
+      ]
+    ],
+    answer: "Huntington Beach issues rooftop solar permits instantly through SolarAPP+: a licensed contractor pays SolarAPP+'s $35 fee, then files and pays in the City's HB ACA portal. Orange County Power Authority supplies most of the city's generation and SCE delivers it; OCPA trues up in April, pays 10% more than SCE for surplus and treats new solar customers' generation as if it were under NEM 2.0. Compare at least three written bids.",
+    keyFacts: [
+      {
+        "label": "SolarAPP+ fee",
+        "value": "$35",
+        "note": "City permit fees paid separately in HB ACA",
+        "source": {
+          "publisher": "City of Huntington Beach",
+          "date": "2026-09-23",
+          "url": "https://www.huntingtonbeachca.gov/departments/community_development/building___inspection/solar_app.php"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "Orange County Power Authority",
+        "note": "Member city; SCE delivers and bills",
+        "source": {
+          "publisher": "Orange County Power Authority",
+          "date": "2026-09-23",
+          "url": "https://www.ocpower.org/about-us/"
+        }
+      },
+      {
+        "label": "OCPA true-up",
+        "value": "April",
+        "note": "Surplus paid 10% above SCE's rate",
+        "source": {
+          "publisher": "Orange County Power Authority",
+          "date": "2026-09-23",
+          "url": "https://www.ocpower.org/energy-programs/solar-net-energy-metering/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "What SolarAPP+ checks in Huntington Beach",
+        "paragraphs": [
+          "The City explains that SolarAPP+ replaces the plan set with a design questionnaire: the software checks the contractor's inputs against the model building, electrical and fire codes and either approves the design for an instant permit after payment or says right away why it cannot. The City notes that traditional review of a site plan and electrical plan averages 5 to 10 business days. Workmanship and whether the installation matches the approved design are then checked at inspection.",
+          "SolarAPP+ has no overall wattage cap, but it enforces equipment limits: the home's main service can be rated up to 400 amps, and service disconnects and busbars up to 225 amps; within those limits it can approve systems up to 38.4 kW. Contractors must complete IREC's training once to use it, and a separate solar-and-storage training to submit projects with batteries."
+        ]
+      },
+      {
+        "heading": "Orange County Power Authority's solar terms",
+        "paragraphs": [
+          "Orange County Power Authority names Huntington Beach among its member cities. On a solar account, SCE handles delivery charges and credits and OCPA handles the generation side, reconciling generation charges every month. OCPA holds its annual true-up in April, before summer, so that credits earned in the sunny months can be used at the retail rate rather than cashed out early at the lower surplus rate.",
+          "When credits do remain at the true-up, OCPA pays 10% more than SCE's Net Surplus Compensation rate. OCPA also says it currently treats customers on the Net Billing Tariff, the Solar Billing Plan that applies to new systems, as if their generation were under NEM 2.0. That makes OCPA's generation credit different from SCE's, so ask each bidder whether its model reflects OCPA's rules."
         ]
       }
     ],
