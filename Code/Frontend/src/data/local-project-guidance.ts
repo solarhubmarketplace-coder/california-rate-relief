@@ -970,6 +970,159 @@ const rceaSolar: LocalGuidanceSource = {
     'Extra $0.01 per kWh for net generators; RCEA generation billed monthly with no RCEA true-up, PG&E delivery trued up annually; automatic cash-out check each May for credit balances of $100 or more, capped at $5,000; PTO after April 14, 2023 places customers on the Solar Billing Plan.',
 };
 
+// -----------------------------------------------------------------------------
+// Tier 3 city-cost wave, 2026-09-23. Fetched that day; each scope line states
+// exactly what the entry relies on the source for.
+// -----------------------------------------------------------------------------
+const mceAbout: LocalGuidanceSource = {
+  label: 'MCE — About Us (member communities)',
+  url: 'https://www.mcecleanenergy.org/about-us/',
+  verifiedAt: verified20260923,
+  scope:
+    'MCE serves 38 member communities in Contra Costa, Marin, Napa and Solano counties; the communities named include Concord, Richmond, San Ramon and Napa. Vacaville is not among them.',
+};
+
+const cecSb379T3: LocalGuidanceSource = {
+  label: 'California Energy Commission — Residential Solar Permitting Program data (SB 379)',
+  url: 'https://www.energy.ca.gov/media/9247',
+  verifiedAt: verified20260923,
+  scope:
+    'Self-reported platform status per jurisdiction, data last updated August 3, 2026; the CEC says it does not certify compliance. Rows used for the Tier 3 cities: Santa Clara, Clovis, Berkeley, Concord, Richmond and San Clemente (SolarAPP+).',
+};
+
+const concordSolarPv: LocalGuidanceSource = {
+  label: 'City of Concord — Solar PV Projects',
+  url: 'https://www.cityofconcord.org/718/Solar-PV-Projects',
+  verifiedAt: verified20260923,
+  scope:
+    'Residential rooftop PV applications go through the Permit Portal. Three design routes are accepted: SolarAPP+ (permit type "Solar PV (Solar APP)"), design-professional drawings, or the City\'s standardized central-inverter and micro-inverter plans (both "Solar PV").',
+};
+
+const concordFees2026: LocalGuidanceSource = {
+  label: 'City of Concord — Building Division fee schedule (Res. No. 26.6042.1, last adopted April 28, 2026)',
+  url: 'https://www.cityofconcord.org/DocumentCenter/View/2580/Building-Permit-Fees-Schedule-PDF',
+  verifiedAt: verified20260923,
+  scope:
+    'Section 6: residential SolarAPP (38.4 kW maximum) $70 administrative plus $380 inspection, plus $15 per kW above 15 kW; residential with drawing plan review $70 plus $115 plan review and $265 inspection, plus $5 and $10 per kW above 15 kW; main service panel upgrade inspection $192; administrative, technology and General Plan fees do not apply to solar permits.',
+};
+
+const richmondSolarApp: LocalGuidanceSource = {
+  label: 'City of Richmond — SolarAPP+ For Solar Installers',
+  url: 'https://www.richmondca.gov/4174/SolarAPP-For-Solar-Installers',
+  verifiedAt: verified20260923,
+  scope:
+    'Instant permit once the CSLB license and Richmond business tax certificate are current and the SolarAPP+ approval and signed permit application are uploaded under set names; homes on the Richmond Historic Register need a Planning Division certificate of appropriateness first; SolarAPP+ charges its own fee.',
+};
+
+const richmondMfs2627: LocalGuidanceSource = {
+  label: 'City of Richmond — Master Fee Schedule FY 2026-27',
+  url: 'https://www.ci.richmond.ca.us/DocumentCenter/View/80176',
+  verifiedAt: verified20260923,
+  scope: 'Community Development, building permits: Solar Structure - Residential System $450.00. The City lists this schedule as effective July 23, 2026.',
+};
+
+const richmondResidentialSolar: LocalGuidanceSource = {
+  label: 'City of Richmond — Residential Solar Systems',
+  url: 'https://www.ci.richmond.ca.us/2771/Residential-Solar-Systems',
+  verifiedAt: verified20260923,
+  scope:
+    'Publishes a 2019 solar permitting guidebook, an expedited eligibility checklist, a plan submittal checklist and standard plans for central/string-inverter and micro-inverter systems.',
+};
+
+const berkeleySolar: LocalGuidanceSource = {
+  label: 'City of Berkeley — Solar Permits',
+  url: 'https://berkeleyca.gov/construction-development/permits-design-parameters/permit-types/solar-permits',
+  verifiedAt: verified20260923,
+  scope:
+    'Three routes: SolarAPP+ real-time permits for rooftop PV with or without storage on a single-family home or duplex; a streamlined permit for systems of 10 kW AC or less that pass the eligibility checklist; the standard process, reviewed within one working day.',
+};
+
+const berkeleyFees2025: LocalGuidanceSource = {
+  label: 'City of Berkeley — Planning and Development Fee Schedule, effective July 1, 2025',
+  url: 'https://berkeleyca.gov/sites/default/files/2026-04/City%20of%20Berkeley%20Planning%20and%20Development%20Fee%20Schedule%20July%202025.pdf',
+  verifiedAt: verified20260923,
+  scope:
+    'Residential solar via SolarApp+ $100 per system; residential 15 kW or less $200, over 15 kW $250 plus $15 per kW above 15 kW, plan check included; residential energy storage up to 50 kW aggregate $150; technology enhancement fee 5% of building and electrical permit fees.',
+};
+
+const avaSolarBilling0923: LocalGuidanceSource = {
+  label: 'Ava Community Energy — Solar Billing Plan',
+  url: 'https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/',
+  verifiedAt: verified20260923,
+  scope:
+    'Energy Export Bonus Credit for new voluntary residential installs, locked for nine years: $0.009 per kWh for a 2026 interconnection ($0.036 income-qualified), and PG&E pays it too; Ava adds $0.025 per kWh for 3 to 8 pm exports (non-CARE/FERA) or $0.01 per kWh (CARE/FERA); April true-up, balances over $100 paid.',
+};
+
+const santaClaraSolarApp: LocalGuidanceSource = {
+  label: 'City of Santa Clara — SolarAPP+',
+  url: 'https://www.santaclaraca.gov/our-city/departments-a-f/community-development/building-division/solarapp',
+  verifiedAt: verified20260923,
+  scope:
+    'Licensed contractors only; energy storage limited to one battery of 20 kWh or less; the Silicon Valley Power interconnection agreement pre-approval letter is a required document; ineligible projects go through the Permitting Online Portal (POP); the City inspects the installation.',
+};
+
+const santaClaraFees2627: LocalGuidanceSource = {
+  label: 'City of Santa Clara — FY 2026/27 Municipal Fee Schedule (adopted April 21, 2026)',
+  url: 'https://www.santaclaraca.gov/home/showpublisheddocument/86787/639046974163330000',
+  verifiedAt: verified20260923,
+  scope:
+    'Building: Photovoltaic - Residential, $450 for 15 kW or less plus $15 per kW above (Res. 21-8981, citing Gov. Code 66015). Fire / Construction Permits: Solar Photovoltaic Power Systems - Residential, $463 (Res. 26-9552). Technology fee of 3.37% marked as applying to both.',
+};
+
+const svpRatesNm: LocalGuidanceSource = {
+  label: 'Silicon Valley Power — Rates and Fees',
+  url: 'https://www.siliconvalleypower.com/residents/rates-and-fees',
+  verifiedAt: verified20260923,
+  scope:
+    'Schedule D-1 for residential service; SVP lists its average residential rate at $0.182 per kWh effective January 1, 2026. Rate Schedule NM (NM1.0) offers net metering under Public Utilities Code 2827; SVP says it has not reached the 5% threshold and that any successor tariff the City Council adopts may be priced differently from NEM 2.0 or 3.0.',
+};
+
+const sanClementePermits: LocalGuidanceSource = {
+  label: 'City of San Clemente — Permits (Solar/Photovoltaic Permits)',
+  url: 'https://www.sanclemente.gov/258/Permits',
+  verifiedAt: verified20260923,
+  scope:
+    'SolarAPP+ for permitted main-dwelling rooftop systems, no ballasted systems, licensed contractors registered with SolarAPP+; $25 SolarAPP+ processing fee; approval uploaded to eTRAKiT; permit runners may not request SolarAPP+ permits; non-SolarAPP+ applications emailed as PDFs.',
+};
+
+const sanClementeFees: LocalGuidanceSource = {
+  label: 'City of San Clemente — Solar Permit Fees (undated)',
+  url: 'https://www.sanclemente.gov/DocumentCenter/View/660',
+  verifiedAt: verified20260923,
+  scope: 'Residential PV $400 up to 15 kW plus $15 per kW above 15 kW; commercial PV $950 up to 50 kW with per-kW steps above. No date or resolution printed.',
+};
+
+const sanClementeBulletin: LocalGuidanceSource = {
+  label: 'City of San Clemente — Submittal Requirements Bulletin, Solar PV 10 kW or Less (undated)',
+  url: 'https://www.sanclemente.gov/DocumentCenter/View/666/SC-Solar-PV-Step-1-Submittal-Requirements-PDF',
+  verifiedAt: verified20260923,
+  scope:
+    'For one- and two-family dwellings at 10 kW or less: plan check fee 25% of the electrical permit fee, $450 described as typical; Fire Department approval not required at this size; inspections by phone or eTRAKiT, typically next business day.',
+};
+
+const clovisBuilding: LocalGuidanceSource = {
+  label: 'City of Clovis — Building Division (Solar Information)',
+  url: 'https://www.clovisca.gov/services/planning_development/building/index.php',
+  verifiedAt: verified20260923,
+  scope:
+    'Since September 30, 2023: in-person plan submittal, online plan submittal through CSS, or SolarAPP (SB 379) through CSS, the last for contractors only; says residential roof- and ground-mounted PV permits have their own fee structure without stating it.',
+};
+
+const clovisEligibility: LocalGuidanceSource = {
+  label: 'City of Clovis — SolarAPP+ Eligibility List',
+  url: 'https://www.clovisca.gov/documents/Services/Planning%20Development/Building/Photovoltaic-System-Eligibility-List.pdf',
+  verifiedAt: verified20260923,
+  scope:
+    'Residential roof-mounted PV up to 38.4 kWdc; lithium-ion storage only, C-10 license to install it; existing service only, with no service upgrade or like-for-like panel change; main service 400A or less; no existing PV or storage on the home; not on wood shake or wood shingle roofs.',
+};
+
+const clovisSubmittal: LocalGuidanceSource = {
+  label: 'City of Clovis — Residential Roof-Mounted Photovoltaic Submittal Requirements (Rev. 05-24-2024)',
+  url: 'https://www.clovisca.gov/documents/Services/Planning%20Development/Building/Photovoltaic%20Minimum%20Submittal%20Requirements%20for%20Roof%20Mounted%20Systems%202025.pdf',
+  verifiedAt: verified20260923,
+  scope: 'Roof plans must show two access pathways at least 36 inches wide, one of them from the street side of the house, in front of the fence.',
+};
+
 export const LOCAL_PROJECT_GUIDANCE = {
   temecula: {
     city: 'Temecula',
@@ -2437,6 +2590,213 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
     ],
     sources: [arcataFees2627, arcataPortal, arcataCce, rceaAbout, rceaSolar, pgeCcaList, cecSb379],
+  },
+  // ---------------------------------------------------------------------------
+  // Tier 3 city-cost wave, 2026-09-23.
+  // ---------------------------------------------------------------------------
+  concord: {
+    city: 'Concord',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      "Concord charges the same $450 for a home system up to 15 kW whether it goes through SolarAPP+ or through plan review, and it leaves its usual add-on fees off solar permits, so two Concord bids should not differ on the permit line.",
+    quoteQuestions: [
+      'Which design route does the quote use: SolarAPP+, drawings from a design professional, or the City\'s standardized plans?',
+      "Does the job include a main service panel upgrade? Concord charges $192 to inspect one, on top of the solar permit.",
+      "Does the bill estimate use MCE's generation charges and export credits alongside PG&E's delivery charges, or PG&E's alone?",
+    ],
+    localChecks: [
+      {
+        title: 'One price, two routes',
+        body: "Under the fee schedule last adopted April 28, 2026, a SolarAPP+ permit is a $70 administrative fee plus a $380 inspection fee, and a permit reviewed from drawings is $70 plus $115 for plan review and $265 for inspection. Both total $450 up to 15 kW; above that, each extra kW adds $15.",
+      },
+      {
+        title: 'No add-on fees',
+        body: "Concord's schedule says its administrative, technology and General Plan fees, charged on most other permits, do not apply to solar energy system permits.",
+      },
+      {
+        title: 'Standard plans on file',
+        body: 'Instead of custom drawings, an installer can prepare the plan set from the City\'s standardized central-inverter and micro-inverter configurations and file it under the "Solar PV" permit type in the Permit Portal.',
+      },
+      {
+        title: "MCE's solar credits",
+        body: "MCE adds a Solar Bonus Credit worth 10 percent of the export credits earned each month, pays income-qualified customers $0.05 per kWh, and mails a check for balances over $200, up to $5,000, after the spring cash-out.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [concordSolarPv, concordFees2026, mceAbout, mceSolarBilling, cecSb379T3],
+  },
+  richmond: {
+    city: 'Richmond',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      "Richmond's building fee for a home solar system is a flat $450 for 2026-27, and eligible projects get an instant permit. The things that slow a Richmond job are paperwork: a current city business tax certificate, correctly named uploads, and, on a historic home, Planning sign-off first.",
+    quoteQuestions: [
+      'Is the house on the Richmond Historic Register? If so, who gets the certificate of appropriateness, and is that time in the schedule?',
+      "Does the installer hold a current Richmond business tax certificate, so the SolarAPP+ permit can issue instantly?",
+      "Is the bill estimate built on MCE generation and PG&E delivery, the way a Richmond bill is split?",
+    ],
+    localChecks: [
+      {
+        title: 'A flat $450 building fee',
+        body: "The fiscal year 2026-27 Master Fee Schedule, listed as effective July 23, 2026, sets Solar Structure - Residential System at $450.00. SolarAPP+ adds its own processing fee.",
+      },
+      {
+        title: 'Instant, if the uploads are right',
+        body: "The City issues the permit instantly only when the contractor's CSLB license and Richmond business tax certificate are current and the SolarAPP+ approval and signed permit application are uploaded under the file names the City specifies.",
+      },
+      {
+        title: 'Historic homes go to Planning first',
+        body: 'A property on the Richmond Historic Register needs a certificate of appropriateness from the Planning Division before the SolarAPP+ application, and it is issued only if the installation fits the Secretary of the Interior\'s Standards for Rehabilitation.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+      { href: '/blog/solar-installation-timeline-california', label: 'Map the installation stages and handoffs' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [richmondSolarApp, richmondMfs2627, richmondResidentialSolar, mceAbout, cecSb379T3],
+  },
+  berkeley: {
+    city: 'Berkeley',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      "Berkeley prices a SolarAPP+ permit at $100, well under the state limit, so the permit is a small line in any Berkeley quote. Ava Community Energy's export bonuses matter more to what a system is worth here.",
+    quoteQuestions: [
+      'Will the permit go through SolarAPP+ ($100), the streamlined route for 10 kW AC or less, or the standard process?',
+      'If a battery is included, is its $150 storage permit in the quote as its own line?',
+      "Does the savings estimate include Ava's peak-hours export bonus and the Energy Export Bonus Credit locked in for a 2026 interconnection?",
+    ],
+    localChecks: [
+      {
+        title: 'Permit fees by route',
+        body: 'Under the fee schedule effective July 1, 2025, a residential SolarAPP+ permit is $100 per system; City review is $200 up to 15 kW, or $250 plus $15 per kW above, plan check included; a home battery system up to 50 kW is $150. A 5 percent technology fee is added.',
+      },
+      {
+        title: 'Three ways to file',
+        body: 'SolarAPP+ gives a real-time permit for rooftop solar with or without storage on a house or duplex. Systems of 10 kW AC or less that pass the City checklist can use the streamlined route, and anything else goes through the standard process, which the City reviews within one working day.',
+      },
+      {
+        title: "Ava's export bonuses",
+        body: 'A new voluntary residential system interconnected in 2026 earns an Energy Export Bonus Credit of $0.009 per kWh ($0.036 for income-qualified homes) for nine years, which PG&E also pays. Ava adds $0.025 per kWh for exports between 3 and 8 pm for customers not on CARE or FERA.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/blog/solar-battery-backup-california', label: 'Plan battery backup' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [berkeleySolar, berkeleyFees2025, avaCommunities, avaSolarBilling0923, cecSb379T3],
+  },
+  'santa-clara': {
+    city: 'Santa Clara',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      'Santa Clara is not PG&E territory. Silicon Valley Power, the city-run utility, bills most homes and still offers net metering, so a quote built on PG&E rates or on the Solar Billing Plan does not fit a Santa Clara bill.',
+    quoteQuestions: [
+      "Is the savings estimate built on SVP's Schedule D-1 rates and its Rate Schedule NM, not on PG&E's rates and Solar Billing Plan?",
+      "Has the installer obtained SVP's interconnection agreement pre-approval letter, which the City requires with a SolarAPP+ application?",
+      'Does the quote include both City lines, the $450 building permit and the $463 Fire Prevention fee, plus the technology fee?',
+    ],
+    localChecks: [
+      {
+        title: 'SVP, not PG&E',
+        body: "The California Energy Commission's service-territory map places about 99 percent of Santa Clara in Silicon Valley Power's territory. SVP's rates page lists its average residential rate at $0.182 per kWh as of January 1, 2026, measured its own way, so do not compare it directly with a PG&E average.",
+      },
+      {
+        title: 'Net metering is still open',
+        body: 'SVP offers net metering under Rate Schedule NM and says it has not reached the 5 percent threshold in Public Utilities Code section 2827. A successor tariff, if the City Council adopts one, may be priced differently from NEM 2.0 or NEM 3.0.',
+      },
+      {
+        title: 'Two City fee lines',
+        body: "The fiscal year 2026/27 fee schedule lists a $450 residential photovoltaic building permit up to 15 kW, plus $15 per kW above, and a $463 Fire Prevention fee for a residential solar photovoltaic system, with a 3.37 percent technology fee on each.",
+      },
+      {
+        title: 'SolarAPP+ with one battery',
+        body: 'SolarAPP+ accepts storage of no more than one battery and 20 kWh. Larger or otherwise ineligible projects are filed through the Permitting Online Portal.',
+      },
+    ],
+    related: [
+      { href: '/solar-savings/bay-area', label: 'Bay Area bill and project guide' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'Net metering versus net billing' },
+      { href: '/blog/solar-rebates-by-california-utility', label: 'Rebates by California utility' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [santaClaraSolarApp, santaClaraFees2627, svpRatesNm, cecTerritory0923, cecSb379T3],
+  },
+  'san-clemente': {
+    city: 'San Clemente',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      'San Clemente sits in SDG&E territory, not SCE like most of Orange County, and no community choice provider serves it, so a San Clemente bill is SDG&E for both generation and delivery.',
+    quoteQuestions: [
+      "Is the savings estimate built on SDG&E's rates and time-of-use periods rather than SCE's?",
+      "Which City fee does the quote carry? San Clemente's fee sheet lists $400 up to 15 kW; its older bulletin calls $450 typical.",
+      'Will a licensed contractor file through SolarAPP+ and eTRAKiT? Permit runners cannot request SolarAPP+ permits in San Clemente.',
+    ],
+    localChecks: [
+      {
+        title: 'SDG&E with no CCA',
+        body: "The CEC service-territory map places San Clemente in SDG&E's territory, and SDG&E's list of active community choice aggregators does not name San Clemente as a member of Clean Energy Alliance or San Diego Community Power.",
+      },
+      {
+        title: 'Two undated fee documents',
+        body: "The City's Solar Permit Fees sheet lists $400 up to 15 kW plus $15 per kW above. Its bulletin for systems of 10 kW or less adds a plan check at 25 percent of the electrical permit fee and calls $450 typical. Neither is dated.",
+      },
+      {
+        title: 'No fire review at 10 kW',
+        body: "The same bulletin says Fire Department approval is not required for a home system of 10 kW or less, and that inspections requested in business hours are usually scheduled for the next business day.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/orange-county', label: 'Orange County bill guide' },
+      { href: '/blog/sdge-time-of-use-rates-2026', label: 'Check SDG&E time-of-use periods' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [sanClementePermits, sanClementeFees, sanClementeBulletin, sdgeActiveCcas, cecTerritory0923, cecSb379T3],
+  },
+  clovis: {
+    city: 'Clovis',
+    actionIds: ['T3-CITYCOST'],
+    intro:
+      "Clovis does not publish its solar permit fee, and its SolarAPP+ route excludes any job with a service upgrade or an existing system, so the permit route itself tells you something about the scope of a Clovis quote.",
+    quoteQuestions: [
+      'Does the design qualify for SolarAPP+ in Clovis: no service upgrade or panel change, a main service of 400A or less, and no existing solar or battery on the house?',
+      "What is the City's permit fee in the quote? Clovis does not publish the amount.",
+      'Does the roof layout leave two 36-inch access pathways, one from the street side, as the City requires?',
+    ],
+    localChecks: [
+      {
+        title: 'Strict SolarAPP+ limits',
+        body: "Clovis's eligibility list allows SolarAPP+ only for a roof-mounted system up to 38.4 kWdc on the existing service, with no service upgrade, a main service of 400A or less, no existing solar or storage, and lithium-ion storage installed by a C-10 contractor.",
+      },
+      {
+        title: 'Owner-builders file plans',
+        body: 'SolarAPP+ through the CSS portal is for contractors only. A homeowner acting as owner-builder files plans in person or online through the same portal.',
+      },
+      {
+        title: 'Street-side roof access',
+        body: "The City's submittal requirements call for two roof access pathways at least 36 inches wide, one from the street side of the house in front of the fence, which can take panel space on the front of the roof.",
+      },
+      {
+        title: 'PG&E with no CCA',
+        body: "PG&E's list of community choice aggregators names none serving Fresno County, so a Clovis bill is PG&E for generation and delivery.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/central-valley', label: 'Central Valley bill and project guide' },
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+      { href: '/blog/is-my-roof-good-for-solar-california', label: 'Check the roof before a quote' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [clovisBuilding, clovisEligibility, clovisSubmittal, pgeCcaList, cecSb379T3],
   },
 } as const satisfies Record<string, LocalProjectGuidanceEntry>;
 

@@ -464,6 +464,38 @@ const FEES: Record<string, FeeEntry> = {
     extra: 'No solar line: valuation-based building permit fees with a $159.00 minimum.',
     evidence: 'has no separate line for solar',
   },
+  // 2026-09-23 (Tier 3 city-cost wave).
+  concord: {
+    status: 'published',
+    components: [
+      { label: 'administrative fee, residential solar', usd: 70, quote: 'a $70 administrative fee' },
+      { label: 'inspection, SolarAPP+ permit up to 15 kW', usd: 380, quote: 'a $380 inspection fee' },
+    ],
+    extra: 'The plan-review path also totals $450; a main panel upgrade inspection adds $192.',
+  },
+  richmond: {
+    status: 'published',
+    components: [{ label: 'solar structure, residential system (flat)', usd: 450, quote: 'at $450' }],
+  },
+  berkeley: {
+    status: 'published',
+    components: [{ label: 'residential solar via SolarAPP+ (per system)', usd: 100, quote: 'at $100 per system' }],
+    extra: 'City review: $200 up to 15 kW; residential storage up to 50 kW: $150; plus a 5% technology fee.',
+  },
+  'santa-clara': {
+    status: 'published',
+    components: [{ label: 'photovoltaic building permit, residential, 15 kW or less', usd: 450, quote: 'at $450 for 15 kW or less' }],
+    extra: 'The schedule also lists a $463 Fire Prevention fee for a residential PV system; 3.37% technology fee.',
+  },
+  'san-clemente': {
+    status: 'conflicting',
+    extra: 'Fee sheet: $400 up to 15 kW plus $15 per kW above; 10 kW bulletin: $450 typical. Neither is dated.',
+    evidence: 'calls $450 typical for most solar systems',
+  },
+  clovis: {
+    status: 'not-published',
+    evidence: "neither that page nor the City's solar submittal documents state the amount",
+  },
 };
 
 // -----------------------------------------------------------------------------
@@ -601,6 +633,13 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   'mountain-view': { platform: 'solarapp', evidence: 'Contractors registered with SolarAPP+' },
   'huntington-beach': { platform: 'solarapp', evidence: 'After SolarAPP+ approval' },
   arcata: { platform: 'none-named', evidence: 'as without an automated solar permitting platform' },
+  // 2026-09-23 (Tier 3 city-cost wave).
+  concord: { platform: 'solarapp', evidence: 'Contractors can use SolarAPP+' },
+  richmond: { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
+  berkeley: { platform: 'solarapp', evidence: 'real-time permit through SolarAPP+' },
+  'santa-clara': { platform: 'solarapp', evidence: 'permit an eligible project through SolarAPP+' },
+  'san-clemente': { platform: 'solarapp', evidence: 'registered with SolarAPP+' },
+  clovis: { platform: 'solarapp', evidence: 'a SolarAPP+ application through the same portal' },
 };
 
 export type OnlineFiling = 'yes' | 'general-portal' | 'not-yet' | 'in-person' | 'not-stated' | 'unclassified';
@@ -663,6 +702,9 @@ const UTILITY_TYPE: Record<UtilityRateKey, { type: 'IOU' | 'POU'; cecName: strin
   // 2026-09-23: the CEC layer's own names for the two utilities added then.
   riverside: { type: 'POU', cecName: 'City of Riverside' },
   pasadena: { type: 'POU', cecName: 'Pasadena Water & Power' },
+  // 2026-09-23 (Tier 3 city-cost wave): the CEC layer's own names, queried that day.
+  svp: { type: 'POU', cecName: 'Silicon Valley Power' },
+  reu: { type: 'POU', cecName: 'Redding Electric Utility' },
 };
 
 /**
@@ -760,7 +802,7 @@ const CCAS: CcaEntry[] = [
   {
     name: 'Ava Community Energy',
     match: 'Ava Community Energy',
-    members: ['livermore', 'stockton', 'tracy', 'fremont', 'oakland', 'pleasanton'],
+    members: ['livermore', 'stockton', 'tracy', 'fremont', 'oakland', 'pleasanton', 'berkeley'],
     source: {
       label: 'Ava Community Energy, Who We Serve',
       url: 'https://avaenergy.org/community/who-we-serve/',
@@ -770,7 +812,7 @@ const CCAS: CcaEntry[] = [
   {
     name: 'MCE',
     match: 'MCE',
-    members: ['napa', 'walnut-creek', 'danville', 'vallejo'],
+    members: ['napa', 'walnut-creek', 'danville', 'vallejo', 'concord', 'richmond'],
     source: {
       label: 'MCE, Service Area',
       url: 'https://www.mcecleanenergy.org/service-area/',

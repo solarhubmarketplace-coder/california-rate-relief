@@ -25,6 +25,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   carlsbad: [33.1246265, -117.2835437], // Carlsbad city, GEOID 0611194
   chico: [39.7571245, -121.8172296], // Chico city, GEOID 0613014
   'chula-vista': [32.6281388, -117.0143700], // Chula Vista city, GEOID 0613392
+  clovis: [36.8308604, -119.6838769], // Clovis city, GEOID 0614218 (queried 2026-09-23)
   concord: [37.9721841, -122.0015871], // Concord city, GEOID 0616000 (queried 2026-09-23)
   corona: [33.8615850, -117.5649056], // Corona city, GEOID 0616350
   danville: [37.8121416, -121.9698235], // Danville town, GEOID 0617988
@@ -78,6 +79,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   redding: [40.5702465, -122.3655747], // Redding city, GEOID 0659920 (queried 2026-09-23)
   redlands: [34.0511294, -117.1711567], // Redlands city, GEOID 0659962
   richmond: [37.9517605, -122.3602500], // Richmond city, GEOID 0660620
+  'santa-clara': [37.3646205, -121.9679735], // Santa Clara city, GEOID 0669084 (queried 2026-09-23)
   vacaville: [38.3586717, -121.9673440], // Vacaville city, GEOID 0681554 (queried 2026-09-23)
   riverside: [33.9381301, -117.3949083], // Riverside city, GEOID 0662000
   rocklin: [38.8074883, -121.2487164], // Rocklin city, GEOID 0662364

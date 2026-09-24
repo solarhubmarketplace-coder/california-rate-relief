@@ -1,0 +1,185 @@
+{
+ "agent": "t3-citycost",
+ "branch": "claude/t3-citycost-20260923",
+ "pages": [
+  {
+   "path": "/solar-cost/concord",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Concord, CA: What Sets the Price (2026)",
+   "clusters": [
+    612
+   ],
+   "sources": [
+    "https://www.cityofconcord.org/718/Solar-PV-Projects",
+    "https://www.cityofconcord.org/DocumentCenter/View/2580/Building-Permit-Fees-Schedule-PDF",
+    "https://www.mcecleanenergy.org/about-us/",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://mcecleanenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + MCE; Concord's fee schedule (Res. 26.6042.1, adopted 2026-04-28) prices both the SolarAPP+ path ($70 + $380) and the drawings path ($70 + $115 + $265) at $450 up to 15 kW; panel upgrade inspection $192; admin/technology/General Plan fees excluded for solar. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/richmond",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Richmond, CA: What Sets the Price (2026)",
+   "clusters": [
+    645
+   ],
+   "sources": [
+    "https://www.richmondca.gov/4174/SolarAPP-For-Solar-Installers",
+    "https://www.ci.richmond.ca.us/2771/Residential-Solar-Systems",
+    "https://www.ci.richmond.ca.us/DocumentCenter/View/80176",
+    "https://www.mcecleanenergy.org/service-area/"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + MCE; FY 2026-27 MFS Solar Structure - Residential System $450; instant permit conditions (CSLB, business tax certificate, named uploads); historic-register certificate of appropriateness. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/berkeley",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Berkeley, CA: What Sets the Price (2026)",
+   "clusters": [
+    648
+   ],
+   "sources": [
+    "https://berkeleyca.gov/construction-development/permits-design-parameters/permit-types/solar-permits",
+    "https://berkeleyca.gov/sites/default/files/2026-04/City%20of%20Berkeley%20Planning%20and%20Development%20Fee%20Schedule%20July%202025.pdf",
+    "https://avaenergy.org/community/who-we-serve/",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/"
+   ],
+   "status": "done",
+   "note": "New row: PG&E + Ava; fee schedule effective 2025-07-01 (the newest the City posts): SolarAPP+ $100/system, City review $200 up to 15 kW, storage $150, 5% technology fee; three filing routes; Ava export bonuses. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/santa-clara",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Santa Clara Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    641
+   ],
+   "sources": [
+    "https://www.santaclaraca.gov/our-city/departments-a-f/community-development/building-division/solarapp",
+    "https://www.santaclaraca.gov/home/showpublisheddocument/86787/639046974163330000",
+    "https://www.siliconvalleypower.com/residents/rates-and-fees",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "New row on a new tracker utility 'svp' (Silicon Valley Power, ~99% of the city per the CEC layer). SVP still offers net metering (Rate Schedule NM, under the PUC 2827 5% threshold) - extra FAQ. FY 2026/27 fee schedule: $450 building PV permit + a separate $463 Fire Prevention fee, 3.37% technology fee. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/san-clemente",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "San Clemente Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    621
+   ],
+   "sources": [
+    "https://www.sanclemente.gov/258/Permits",
+    "https://www.sanclemente.gov/DocumentCenter/View/660",
+    "https://www.sanclemente.gov/DocumentCenter/View/666/SC-Solar-PV-Step-1-Submittal-Requirements-PDF",
+    "https://www.sdge.com/customer-choice/community-choice-aggregation/active-ccas"
+   ],
+   "status": "done",
+   "note": "New row: SDG&E (CEC layer), no CCA (SDG&E active-CCA member lists). Two undated City fee documents ($400 up to 15 kW; bulletin calls $450 typical) - index status 'conflicting'. Companies twin (legacy template) registered."
+  },
+  {
+   "path": "/solar-cost/clovis",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panels in Clovis, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    630
+   ],
+   "sources": [
+    "https://www.clovisca.gov/services/planning_development/building/index.php",
+    "https://www.clovisca.gov/documents/Services/Planning%20Development/Building/Photovoltaic-System-Eligibility-List.pdf",
+    "https://www.clovisca.gov/documents/Services/Planning%20Development/Building/Photovoltaic%20Minimum%20Submittal%20Requirements%20for%20Roof%20Mounted%20Systems%202025.pdf",
+    "https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html"
+   ],
+   "status": "done",
+   "note": "New row: PG&E, no CCA; fee not published (the City's fee letter is a scanned image); SolarAPP+ eligibility excludes service upgrades and existing systems; 36-inch street-side access pathway. No companies page on this branch; citycos is creating /solar-companies/clovis this wave."
+  }
+ ],
+ "new_cost_slugs": [
+  "concord",
+  "richmond",
+  "berkeley",
+  "santa-clara",
+  "san-clemente",
+  "clovis"
+ ],
+ "new_cost_slugs_with_live_companies_twin_registered": [
+  "concord",
+  "richmond",
+  "berkeley",
+  "santa-clara",
+  "san-clemente"
+ ],
+ "new_cost_slugs_for_citycos_to_reconcile": [
+  "clovis"
+ ],
+ "sitemap_add": [],
+ "blog_index_add": [],
+ "redirect_requests": [],
+ "hub_links": [
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/concord",
+   "label": "Solar panel cost in Concord"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/richmond",
+   "label": "Solar panel cost in Richmond"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/berkeley",
+   "label": "Solar panel cost in Berkeley"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/santa-clara",
+   "label": "Solar panel cost in Santa Clara"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/san-clemente",
+   "label": "Solar panel cost in San Clemente"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/clovis",
+   "label": "Solar panel cost in Clovis"
+  }
+ ],
+ "link_requests": [],
+ "shared_changes": [
+  "src/data/city-cost-data.ts: Tier 3 rows appended in a dated section; no template or gate change.",
+  "src/data/local-project-guidance.ts: Tier 3 source constants and entries appended (rendered only by CityCostPage).",
+  "src/data/utility-rate-tracker.ts: new publicly owned utility records 'svp' (Silicon Valley Power) and 'reu' (Redding Electric Utility), rate null with the utility's own rate page as source; the tracker page reads rows by name and does not render them.",
+  "src/data/solar-cost-index.ts: FEES/PLATFORMS entries for each new row; UTILITY_TYPE gains svp and reu (CEC layer names); CCAS membership additions. solar-cost-index.test.ts passes.",
+  "src/data/city-coordinates.ts: Census TIGERweb internal points added for new slugs that had none (nearby-city ordering only).",
+  "src/lib/canonical-redirects.test.ts: new dated registry section T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN; no redirect-table rows added."
+ ],
+ "integration_notes": [
+  "/solar-cost/<city> pages enter the sitemap and the /solar-cost index automatically from getPublishableCityCostRows(); no sitemap_add needed.",
+  "WebSearch budget for the session was exhausted early; city pages were found by navigating each city's own site. Sites that refuse direct requests (santaclaraca.gov, sanclemente.gov, siliconvalleypower.com, mcecleanenergy.org) were read with WebFetch or the r.jina.ai reader, which returns the publisher's own text.",
+  "Citycos (Tier 3) is creating /solar-companies pages for clovis, elk-grove and mission-viejo, which get new cost pages here. When both land, canonical-redirects.test.ts's cross-cutting check needs each of them in a reinstated registry; the citycos lane registers its own slugs. Also check the title owner: costPageSeo switches a cost page to the 'What Sets the Price' title once a live companies twin exists."
+ ],
+ "decisions_for_chad": [],
+ "skipped": []
+}

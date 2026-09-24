@@ -72,7 +72,11 @@ export type UtilityRateKey =
   // 2026-09-23 (Tier 2 city-cost wave): two more publicly owned utilities, so
   // /solar-cost/riverside and /solar-cost/pasadena name the right biller.
   | 'riverside'
-  | 'pasadena';
+  | 'pasadena'
+  // 2026-09-23 (Tier 3 city-cost wave): more city-owned utilities, so
+  // /solar-cost/santa-clara and /solar-cost/redding name the right biller.
+  | 'svp'
+  | 'reu';
 
 export interface UtilityRateRecord {
   key: UtilityRateKey;
@@ -253,6 +257,35 @@ const RECORDS: Record<UtilityRateKey, UtilityRateRecord> = {
     sourceUrl: 'https://pwp.cityofpasadena.net/water-and-electric-rates/',
     basisNote:
       "Pasadena Water and Power describes itself as a locally owned utility of the City of Pasadena, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only",
+    fetchedAt: '2026-09-23',
+  },
+  // 2026-09-23 (Tier 3 city-cost wave). SVP's own page states an average
+  // residential rate, but on its own basis, not the Public Advocates Office
+  // method the IOU rows use, so it is not entered as a comparable figure.
+  svp: {
+    key: 'svp',
+    name: 'SVP',
+    longName: 'Silicon Valley Power',
+    averageResidentialRateCents: null,
+    averageResidentialRatePerKwh: null,
+    asOf: 'no CPUC average published; see the utility rate schedules',
+    sourceLabel: 'Silicon Valley Power — Rates and Fees (Schedule D-1 and Rate Schedule NM)',
+    sourceUrl: 'https://www.siliconvalleypower.com/residents/rates-and-fees',
+    basisNote:
+      "Silicon Valley Power is the City of Santa Clara's electric utility, whose net metering schedule the City Council adopted, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only",
+    fetchedAt: '2026-09-23',
+  },
+  reu: {
+    key: 'reu',
+    name: 'REU',
+    longName: 'Redding Electric Utility',
+    averageResidentialRateCents: null,
+    averageResidentialRatePerKwh: null,
+    asOf: 'no CPUC average published; see the utility rate schedules',
+    sourceLabel: 'City of Redding — Rates & Fees (Redding Electric Utility: Residential Service E1, effective January 1, 2025)',
+    sourceUrl: 'https://www.cityofredding.gov/government/departments/utilities/customer_service/rates___fees.php',
+    basisNote:
+      "Redding Electric Utility describes itself as Redding's community-owned electric utility, with fees and charges approved by the Redding City Council, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only",
     fetchedAt: '2026-09-23',
   },
 };
