@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { growthCities } from "@/data/growth-cities";
-import { hasSavingsCityPage } from "@/lib/canonical-redirects";
 import { RelatedGuides, type RelatedGuideLink } from "@/components/shared/RelatedGuides";
 import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
 import { DecisionPage, QuoteChecklist } from "./DecisionPage";
@@ -13,7 +12,7 @@ import {
   CityQuestions,
 } from "./CityLocalDetails";
 import { CitySiblingLinks, NearbyCityPages } from "./NearbyCostCities";
-import { cityPageDates, cityQuickCheckUtility, companiesPageSeo } from "@/lib/city-pages";
+import { cityPageDates, cityQuickCheckUtility, companiesPageSeo, isLiveCityPage } from "@/lib/city-pages";
 
 /**
  * The contract-risk guides a reader comparing installers needs. Until
@@ -100,66 +99,42 @@ export function CityComparison({ slug }: { slug: string }) {
         <p>{city.example}</p>
       </section>
       <section>
-        <h2>Verify the company behind the quote</h2>
+        <h2>Verify the company behind the {city.name} quote</h2>
         <p>
-          Ask for the legal business name, installer license number, written
-          address coverage and the company responsible for repairs. Match the
-          proposal to the{" "}
+          Match the legal business name and license number on the proposal to the{" "}
           <a
             href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx"
             className="underline"
           >
             CSLB license record
-          </a>
-          , and use our{" "}
+          </a>{" "}
+          and follow our{" "}
           <Link className="underline" href="/solar-installers/how-to-verify-a-solar-contractor-california">
-            step-by-step contractor check
-          </Link>{" "}
-          for the classification, bond and complaint history. A brand appearing
-          in search results is not proof that it currently serves your home.
-        </p>
-      </section>
-      <section>
-        <h2>Next: work through the bill and system assumptions</h2>
-        <p>
-          Use the{" "}
-          <Link className="underline" href="/tools/solar-panel-calculator">
-            bill and quote calculator
-          </Link>{" "}
-          to compare your own inputs.
-          {" "}
-          Compare the same scope across a{" "}
+            contractor verification steps
+          </Link>
+          . Then line the offers up on the{" "}
           <Link className="underline" href="/blog/ppa-loan-vs-solar-lease-vs-cash-california">
-            PPA, loan, lease and cash purchase
-          </Link>{" "}
-          before treating a monthly payment as a project price.
-          {city.hasSavingsGuide !== false && hasSavingsCityPage(slug) && (
+            PPA, loan, lease and cash comparison
+          </Link>
+          {hasCostTwin ? (
             <>
-              {" "}
-              The{" "}
-              <Link className="underline" href={`/solar-savings/${slug}`}>
-                {city.name} rates and bills guide
-              </Link>{" "}
-              addresses the separate question of what you pay the utility now;
-              the utility and proposal still need to be checked for your address.
+              {" "}and the{" "}
+              <Link className="underline" href={cityCostPath(slug)}>
+                {city.name} price factors
+              </Link>
             </>
-          )}
+          ) : null}
+          {city.hasSavingsGuide !== false && isLiveCityPage("savings", slug) ? (
+            <>
+              ; what you pay the utility today is on the{" "}
+              <Link className="underline" href={`/solar-savings/${slug}`}>
+                {city.name} rates and bills page
+              </Link>
+            </>
+          ) : null}
+          .
         </p>
       </section>
-      {hasCostTwin && (
-        <section>
-          <h2>What solar costs in {city.name}</h2>
-          <p>
-            The utility rate, {city.name}&apos;s permit process, and the ownership and
-            property-tax rules that actually set the price for a project here are
-            covered separately, with no company list involved. See{" "}
-            <Link className="underline" href={cityCostPath(slug)}>
-              the {city.name} price factors
-            </Link>
-            .
-          </p>
-        </section>
-      )}
       <CityQuestions slug={slug} />
       {/*
         Phase 1 of the 2026-09-17 California strategy linked every /solar-problems

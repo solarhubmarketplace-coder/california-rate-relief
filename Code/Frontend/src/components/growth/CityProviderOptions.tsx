@@ -48,34 +48,17 @@ export function CityProviderOptions({
   name: string;
 }) {
   const option = regional[slug];
-  if (!option) {
-    return (
-      <section>
-        <h2>Verify the company behind each {name} quote</h2>
-        <p>
-          This page does not rank or confirm local companies. Ask each bidder
-          for the legal business name, license number, written address coverage
-          and the person responsible for installation and later service. Check
-          the current record through the{" "}
-          <a
-            href="https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx"
-            className="underline"
-          >
-            CSLB license lookup
-          </a>{" "}
-          before signing.
-        </p>
-      </section>
-    );
-  }
+  // 2026-09-23: with no published option for the city, nothing renders here;
+  // CityComparison's own "Verify the company behind the quote" section carries
+  // the CSLB check, so the same paragraph no longer appears twice.
+  if (!option) return null;
   return (
     <section>
       <h2>Company options to investigate in {name}</h2>
       <p className="mb-4">
-        These company websites were checked September 10, 2026. Their published
-        locations help start a comparison; each company must confirm your
-        address and project. This is an unranked list, with no claim of a
-        referral agreement or verified current license.
+        Company websites checked September 10, 2026, listed unranked. Each
+        company must confirm your address; nothing here claims a referral
+        agreement or a current license.
       </p>
       <div className="overflow-x-auto rounded-xl border">
         <table className="w-full text-left text-sm">
@@ -120,11 +103,7 @@ export function CityProviderOptions({
           </tbody>
         </table>
       </div>
-      <p className="mt-4">
-        Add another local bid where available. Use the same usage history and
-        equipment requirements for every proposal, then check the exact
-        contracting business in CSLB’s current records.
-      </p>
+
     </section>
   );
 }

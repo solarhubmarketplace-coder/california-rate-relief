@@ -24,6 +24,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   carlsbad: [33.1246265, -117.2835437], // Carlsbad city, GEOID 0611194
   chico: [39.7571245, -121.8172296], // Chico city, GEOID 0613014
   'chula-vista': [32.6281388, -117.0143700], // Chula Vista city, GEOID 0613392
+  concord: [37.9721841, -122.0015871], // Concord city, GEOID 0616000 (queried 2026-09-23)
   corona: [33.8615850, -117.5649056], // Corona city, GEOID 0616350
   danville: [37.8121416, -121.9698235], // Danville town, GEOID 0617988
   'el-cajon': [32.8016733, -116.9604685], // El Cajon city, GEOID 0621712
