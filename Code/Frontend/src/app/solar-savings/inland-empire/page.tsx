@@ -187,6 +187,12 @@ export default function InlandEmpireSolarPage() {
                 counties that this hub's own grid does not reach. */}
             <RegionalCostCities region='Inland Empire' counties={inlandEmpireCounties} />
 
+            {/* 2026-09-23 (Tier 2, citycos): the county and region companies
+                pages, and city pages that exist only on the companies layer. */}
+            <p className='text-muted-foreground leading-relaxed mb-12'>
+              Comparing installers rather than bills? See <Link href='/solar-companies/riverside-county' className='text-primary underline'>solar companies across Riverside County</Link>, where the utility changes from city to city, <Link href='/solar-companies/high-desert' className='text-primary underline'>High Desert solar companies and permit offices</Link> for the Victor Valley and Helendale, and the pages for <Link href='/solar-companies/ontario' className='text-primary underline'>Ontario</Link>, <Link href='/solar-companies/corona' className='text-primary underline'>Corona</Link> and <Link href='/solar-companies/lake-elsinore' className='text-primary underline'>Lake Elsinore</Link>.
+            </p>
+
             <p className='mb-12 text-muted-foreground leading-relaxed'>
               Roof age and condition come before equipment; the <Link href='/blog/is-my-roof-good-for-solar-california' className='text-primary underline'>roof guide</Link> covers what belongs in the scope. For a business property, use the <Link href='/commercial-assessment' className='text-primary underline'>commercial assessment</Link> instead of the home form.
             </p>

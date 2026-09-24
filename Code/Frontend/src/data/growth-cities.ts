@@ -29,6 +29,35 @@ export interface GrowthCityKeyFact {
   source?: { publisher?: string; date?: string; url?: string };
 }
 
+/**
+ * 2026-09-23 (Tier 2, citycos agent): a /solar-companies page for a county or
+ * region rather than one city. A region page is only built when it carries
+ * facts a city page cannot: which utility and community choice aggregator
+ * serve each place in it, and which office issues the building permit there.
+ * Every row is sourced in the entry's `sources`; `slug` is set when the place
+ * has its own city page, and the table links to it.
+ */
+export interface GrowthRegionPlace {
+  name: string;
+  slug?: string;
+  /** Who delivers the power and sends the bill. */
+  utility: string;
+  /** Generation provider by default (a CCA), or the utility itself. */
+  generation: string;
+  /** Who issues the building permit for a home solar system. */
+  permit: string;
+}
+
+export interface GrowthRegion {
+  heading: string;
+  intro: string[];
+  places: GrowthRegionPlace[];
+  /** Short note printed under the table (what the table cannot settle). */
+  note?: string;
+  /** The region's bills-and-rates hub, when one exists. */
+  hub?: { href: string; label: string };
+}
+
 export interface GrowthCity {
   name: string;
   county: string;
@@ -48,69 +77,76 @@ export interface GrowthCity {
   keyFacts?: GrowthCityKeyFact[];
   sections?: GrowthCitySection[];
   contentModified?: string;
+  region?: GrowthRegion;
+  /** Title, description or H1 to use instead of the template's (each ≤ its limit). */
+  seo?: { title?: string; description?: string; h1?: string };
 }
 
 export const growthCities: Record<string, GrowthCity> = {
   "san-francisco": {
-    name: "San Francisco",
-    county: "San Francisco County",
-    utility: "pge",
-    sourceCheckedDate: "2026-09-23",
-    bill: "Check the generation provider and enrolled program on the PG&E bill before comparing proposals. CleanPowerSF supplies generation for enrolled customers, while PG&E delivers the electricity and sends the bill. Have each bidder use both portions and the account's actual solar-billing enrollment.",
-    local:
-      "San Francisco's current digital S Permit covers qualifying solar work on R3 occupancies and goes through the registered electrical-contractor portal. Ask whether your property and scope qualify. Roof work, a service or subpanel change, storage and any additional review belong in the written permit plan.",
-    example:
-      "Put the same roof layout, shade model and monthly production in both proposals. Then separate solar, storage, roof and electrical work. The remaining bill should use the same CleanPowerSF or PG&E generation enrollment and show imports and export credits instead of promising that the bill disappears.",
-    checks: [
+    "name": "San Francisco",
+    "county": "San Francisco County",
+    "utility": "pge",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Check the generation provider and enrolled program on the PG&E bill before comparing proposals. CleanPowerSF supplies generation for enrolled customers, while PG&E delivers the electricity and sends the bill. Have each bidder use both portions and the account's actual solar-billing enrollment.",
+    "local": "San Francisco's current digital S Permit covers qualifying solar work on R3 occupancies and goes through the registered electrical-contractor portal. Ask whether your property and scope qualify. Roof work, a service or subpanel change, storage and any additional review belong in the written permit plan.",
+    "example": "Put the same roof layout, shade model and monthly production in both proposals. Then separate solar, storage, roof and electrical work. The remaining bill should use the same CleanPowerSF or PG&E generation enrollment and show imports and export credits instead of promising that the bill disappears.",
+    "checks": [
       [
         "Generation and delivery",
-        "Use the provider, rate schedule and solar program printed on the bill; show generation and PG&E delivery separately.",
+        "Use the provider, rate schedule and solar program printed on the bill; show generation and PG&E delivery separately."
       ],
       [
         "Roof and shade",
-        "Map each roof plane, obstruction and shading input, then show monthly production and the work excluded from the price.",
+        "Map each roof plane, obstruction and shading input, then show monthly production and the work excluded from the price."
       ],
       [
         "Permit and electrical scope",
-        "State whether the S Permit applies and identify service-panel, subpanel, storage or other review in the application scope.",
+        "State whether the S Permit applies and identify service-panel, subpanel, storage or other review in the application scope."
       ],
       [
         "Contract and service",
-        "Name the contracting business, installation crew, service contact and written responsibility for roof penetrations and equipment service.",
-      ],
+        "Name the contracting business, installation crew, service contact and written responsibility for roof penetrations and equipment service."
+      ]
     ],
-    provider: {
-      name: "Luminalt",
-      url: "https://luminalt.com/",
-      detail:
-        "Its website identifies a San Francisco office and publishes home solar, battery storage, small-commercial and remodeling/new-construction services.",
-      ask: "Confirm acceptance of the exact address and request a roof-specific design, itemized cash price, equipment list and the legal business responsible for the contract and service.",
+    "provider": {
+      "name": "Luminalt",
+      "url": "https://luminalt.com/",
+      "detail": "Its website identifies a San Francisco office and publishes home solar, battery storage, small-commercial and remodeling/new-construction services.",
+      "ask": "Confirm acceptance of the exact address and request a roof-specific design, itemized cash price, equipment list and the legal business responsible for the contract and service."
     },
-    sources: [
+    "sources": [
       {
         "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
         "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
       },
       {
-        label:
-          "CleanPowerSF: understanding generation and PG&E delivery charges",
-        url: "https://cleanpowersf.org/understanding-my-bill",
+        "label": "CleanPowerSF: understanding generation and PG&E delivery charges",
+        "url": "https://cleanpowersf.org/understanding-my-bill"
       },
       {
-        label: "CleanPowerSF: rooftop solar billing information",
-        url: "https://cleanpowersf.org/net-energy-metering",
+        "label": "CleanPowerSF: rooftop solar billing information",
+        "url": "https://cleanpowersf.org/net-energy-metering"
       },
       {
-        label: "San Francisco DBI: current digital solar permit process",
-        url: "https://www.sf.gov/new-solar-permit-cancelling-abandoned-otc-applications-recheck-escalation-reference-drawings-and-new-fee-rates",
+        "label": "San Francisco DBI: current digital solar permit process",
+        "url": "https://www.sf.gov/new-solar-permit-cancelling-abandoned-otc-applications-recheck-escalation-reference-drawings-and-new-fee-rates"
       },
       {
-        label: "Luminalt: published San Francisco service scope",
-        url: "https://luminalt.com/",
+        "label": "Luminalt: published San Francisco service scope",
+        "url": "https://luminalt.com/"
       },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      }
     ],
-    nearby: ["oakland", "pleasanton", "san-jose"],
-    faq: [
+    "nearby": [
+      "oakland",
+      "pleasanton",
+      "san-jose"
+    ],
+    "faq": [
       [
         "What are the best solar companies in San Francisco and the Bay Area?",
         "No list on this site ranks them, and a company that ranks well online is not proof that it serves your block. In San Francisco the practical filter is whether the company can file DBI's S Permit through the registered electrical contractor portal and holds a CSLB license covering solar. Get at least three written bids on the same roof design and compare them line by line."
@@ -121,15 +157,19 @@ export const growthCities: Record<string, GrowthCity> = {
       ],
       [
         "Should every San Francisco proposal assume CleanPowerSF generation?",
-        "No. Read the provider and enrolled program on the current PG&E bill. The proposal should use that account information and show generation and delivery separately.",
+        "No. Read the provider and enrolled program on the current PG&E bill. The proposal should use that account information and show generation and delivery separately."
       ],
       [
         "Does every San Francisco solar project use the same permit path?",
-        "No. The current S Permit is described for qualifying R3 work. Ask the bidder to identify the path for your property and include roof, electrical, storage and inspection responsibilities in writing.",
+        "No. The current S Permit is described for qualifying R3 work. Ask the bidder to identify the path for your property and include roof, electrical, storage and inspection responsibilities in writing."
       ],
+      [
+        "How many home solar permits does San Francisco issue?",
+        "San Francisco reported 887 residential solar permits to the California Energy Commission for 2024. Of those, 234 included battery storage and 152, about 17%, were issued online; most still went through review. In San Jose, by comparison, every one of 3,698 permits that year was issued online."
+      ]
     ],
-    answer: "Solar companies working in San Francisco file for the City's digital S Permit through the Department of Building Inspection's registered electrical contractor portal, then connect the system to PG&E. For most homes, CleanPowerSF supplies the generation and credits surplus solar at its own rate. Compare written bids from at least three companies that can file that permit, using your own CleanPowerSF and PG&E bill.",
-    keyFacts: [
+    "answer": "Solar companies working in San Francisco file for the City's digital S Permit through the Department of Building Inspection's registered electrical contractor portal, then connect the system to PG&E. For most homes, CleanPowerSF supplies the generation and credits surplus solar at its own rate. Compare written bids from at least three companies that can file that permit, using your own CleanPowerSF and PG&E bill.",
+    "keyFacts": [
       {
         "label": "Delivers the power",
         "value": "PG&E",
@@ -161,7 +201,7 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "Who can file a San Francisco solar permit",
         "paragraphs": [
@@ -178,7 +218,21 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23",
+    "projectLinks": [
+      {
+        "href": "/solar-companies/bay-area",
+        "label": "Comparing solar companies across the Bay Area"
+      },
+      {
+        "href": "/blog/pge-time-of-use-rates-2026",
+        "label": "PG&E time-of-use hours and what they do to a solar estimate"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a home battery is worth adding"
+      }
+    ]
   },
   oakland: {
     name: "Oakland",
@@ -531,16 +585,14 @@ export const growthCities: Record<string, GrowthCity> = {
     contentModified: "2026-09-23",
   },
   "los-angeles": {
-    name: "Los Angeles",
-    county: "Los Angeles County",
-    sourceCheckedDate: "2026-09-23",
-    utility: "ladwp",
-    bill: "Confirm whether the bill is from LADWP or another electric utility. LADWP publishes its own net energy metering rules. Do not apply the PG&E/SCE/SDG&E Net Billing Tariff to an LADWP account, or assume every Los Angeles County address has LADWP.",
-    local:
-      "LADWP separates rooftop solar, shared solar and other customer programs. A shared-solar offering is not a rooftop installation quote. Match the proposal to the meter and property you actually control.",
-    example:
-      "If a salesperson uses an SCE export-credit assumption for your LADWP bill, ask for a corrected comparison before judging the price. Identify the actual meter, tariff and billing period first.",
-    sources: [
+    "name": "Los Angeles",
+    "county": "Los Angeles County",
+    "sourceCheckedDate": "2026-09-23",
+    "utility": "ladwp",
+    "bill": "Confirm whether the bill is from LADWP or another electric utility. LADWP publishes its own net energy metering rules. Do not apply the PG&E/SCE/SDG&E Net Billing Tariff to an LADWP account, or assume every Los Angeles County address has LADWP.",
+    "local": "LADWP separates rooftop solar, shared solar and other customer programs. A shared-solar offering is not a rooftop installation quote. Match the proposal to the meter and property you actually control.",
+    "example": "If a salesperson uses an SCE export-credit assumption for your LADWP bill, ask for a corrected comparison before judging the price. Identify the actual meter, tariff and billing period first.",
+    "sources": [
       {
         "label": "LADWP: Solar Rooftops program (payments, eligibility, ownership)",
         "url": "https://www.ladwp.com/residential-services/solar-programs/solar-rooftops"
@@ -554,29 +606,41 @@ export const growthCities: Record<string, GrowthCity> = {
         "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
       },
       {
-        label: "LADWP solar programs",
-        url: "https://www.ladwp.com/residential-services/solar-programs",
+        "label": "LADWP solar programs",
+        "url": "https://www.ladwp.com/residential-services/solar-programs"
       },
       {
-        label: "LADWP net energy metering service rider",
-        url: "https://webprod.ladwp.com/account/customer-service/electric-rates/ev-nem-reo-rates",
+        "label": "LADWP net energy metering service rider",
+        "url": "https://webprod.ladwp.com/account/customer-service/electric-rates/ev-nem-reo-rates"
       },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "U.S. Census Bureau TIGERweb: City of Los Angeles place boundary, queried 2026-09-23",
+        "url": "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer"
+      }
     ],
-    projectLinks: [
+    "projectLinks": [
       {
-        href: "/solar-installers/licensed-solar-installer",
-        label: "How to find a licensed solar installer and confirm the one on your contract",
+        "href": "/solar-companies/santa-monica",
+        "label": "Santa Monica, on SCE and Clean Power Alliance instead"
       },
       {
-        href: "/battery/solar-battery-company",
-        label: "How to vet a solar battery company before adding storage",
+        "href": "/solar-installers/licensed-solar-installer",
+        "label": "How to find a licensed solar installer and confirm the one on your contract"
       },
       {
-        href: "/blog/solar-broker",
-        label: "What a solar broker can and cannot do for you",
+        "href": "/battery/solar-battery-company",
+        "label": "How to vet a solar battery company before adding storage"
       },
+      {
+        "href": "/blog/solar-broker",
+        "label": "What a solar broker can and cannot do for you"
+      }
     ],
-    faq: [
+    "faq": [
       [
         "Are solar panels worth it in Los Angeles?",
         "It depends on your LADWP bill, how LADWP's net energy metering rider credits your exports, and the contract you are offered, not on the city. Compare a purchase or lease quote with what LADWP's Solar Rooftops program would pay you for the roof ($360 to $900 a year for up to 20 years), and with doing nothing. If your bill comes from SCE, the answer uses SCE's rules instead."
@@ -585,8 +649,16 @@ export const growthCities: Record<string, GrowthCity> = {
         "Do Los Angeles solar companies need a special permit?",
         "For rooftop systems of 10 kW or less on one- and two-family homes, LADBS issues Express Permits online to licensed contractors without plan check, under Information Bulletin P/GI 2026-003. Larger or non-standard systems need plan check. Ask your bidder which path it will use."
       ],
+      [
+        "Are Sherman Oaks and other San Fernando Valley neighborhoods part of this page?",
+        "Yes, if they are inside the City of Los Angeles. Sherman Oaks is a neighborhood of the city on the Census Bureau's boundary map, and the California Energy Commission's utility map places it in LADWP territory, so a Sherman Oaks home follows the same LADWP solar program and City of Los Angeles building permits described here. Nearby cities such as Burbank, Glendale and Santa Monica have their own utilities or permit offices."
+      ],
+      [
+        "How many solar permits does Los Angeles issue?",
+        "The City of Los Angeles reported 11,600 residential solar permits to the California Energy Commission for 2024, 7,024 of them, about 61%, issued online, and 1,137 with battery storage."
+      ]
     ],
-    checks: [
+    "checks": [
       [
         "Utility on the bill",
         "Name LADWP or SCE from the actual bill, and the LADWP rider or SCE tariff the savings figure uses."
@@ -604,8 +676,8 @@ export const growthCities: Record<string, GrowthCity> = {
         "Compare the offer with LADWP Solar Rooftops payments for your roof and with keeping your current bill."
       ]
     ],
-    answer: "In the City of Los Angeles, a solar company's work runs through two local offices: LADBS, which issues Express Permits online to contractors for rooftop systems of 10 kW or less on one- and two-family homes, and LADWP, whose own net energy metering rider decides how your exports are credited. LADWP also offers Solar Rooftops, where it owns the panels and pays you for the roof. Weigh that against at least three written bids.",
-    keyFacts: [
+    "answer": "In the City of Los Angeles, a solar company's work runs through two local offices: LADBS, which issues Express Permits online to contractors for rooftop systems of 10 kW or less on one- and two-family homes, and LADWP, whose own net energy metering rider decides how your exports are credited. LADWP also offers Solar Rooftops, where it owns the panels and pays you for the roof. Weigh that against at least three written bids.",
+    "keyFacts": [
       {
         "label": "Electric utility",
         "value": "LADWP",
@@ -637,7 +709,7 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "LADWP sets its own solar rules",
         "paragraphs": [
@@ -660,7 +732,7 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23"
   },
   sacramento: {
     name: "Sacramento",
@@ -771,51 +843,152 @@ export const growthCities: Record<string, GrowthCity> = {
     ],
     contentModified: "2026-09-23",
   },
-  bakersfield: {
-    name: "Bakersfield",
-    county: "Kern County",
-    utility: "pge",
-    bill: "Use the utility, generation provider and rate plan shown on your electricity bill. A PG&E proposal should show the current solar billing treatment and retained utility charges. Do not estimate from a statewide average rate.",
-    local:
-      "Kern County publishes a SolarAPP+ path for eligible residential PV with or without storage. That county process does not establish the permit path for a property inside Bakersfield city limits. Ask the bidder to name the governing building department.",
-    example:
-      "If a proposal uses a high summer bill to advertise year-round savings, ask for the full monthly model. Include cooling use, winter consumption, roof work, evening imports and a separate battery line item.",
-    sources: [
+  "bakersfield": {
+    "name": "Bakersfield",
+    "county": "Kern County",
+    "utility": "pge",
+    "bill": "Use the utility, generation provider and rate plan shown on your electricity bill. A PG&E proposal should show the current solar billing treatment and retained utility charges. Do not estimate from a statewide average rate.",
+    "local": "Kern County publishes a SolarAPP+ path for eligible residential PV with or without storage. That county process does not establish the permit path for a property inside Bakersfield city limits. Ask the bidder to name the governing building department.",
+    "example": "If a proposal uses a high summer bill to advertise year-round savings, ask for the full monthly model. Include cooling use, winter consumption, roof work, evening imports and a separate battery line item.",
+    "sources": [
       {
-        label: "Kern County: SolarAPP+ process",
-        url: "https://www.kernpublicworks.com/services/development/building-inspection/solarapp-streamlined-permitting-process",
+        "label": "Kern County: SolarAPP+ process",
+        "url": "https://www.kernpublicworks.com/services/development/building-inspection/solarapp-streamlined-permitting-process"
       },
       {
-        label: "PG&E solar billing plan",
-        url: "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+        "label": "PG&E solar billing plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
       },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
     ],
+    "sourceCheckedDate": "2026-09-23",
+    "contentModified": "2026-09-23",
+    "answer": "Solar companies working in Bakersfield design for PG&E, which serves the whole city on the California Energy Commission's map, and for a City permit office that reported issuing none of its 1,160 residential solar permits online in 2024. Most of those permits, 79%, included a battery. Homes outside city limits, such as Oildale, Rosedale or Buttonwillow, are permitted by the County of Kern instead. Compare at least three written bids built on your own PG&E bill.",
+    "keyFacts": [
+      {
+        "label": "Utility",
+        "value": "PG&E",
+        "note": "No community choice provider in Kern County",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "2024 solar permits",
+        "value": "1,160",
+        "note": "79% with storage; none issued online",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      },
+      {
+        "label": "2023 solar permits",
+        "value": "5,288",
+        "note": "70% with storage",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      }
+    ],
+    "checks": [
+      [
+        "Permit office",
+        "Confirm the address is inside Bakersfield city limits; unincorporated neighborhoods are permitted by the County of Kern."
+      ],
+      [
+        "Review time",
+        "Ask how long the bidder's recent Bakersfield permits took, since the City reported none issued online in 2024."
+      ],
+      [
+        "PG&E billing",
+        "Model PG&E's Solar Billing Plan from your own bill, with the True-Up month and any bonus credit."
+      ],
+      [
+        "Battery",
+        "State the battery's usable kWh and backed-up circuits, and price it on its own line."
+      ]
+    ],
+    "sections": [
+      {
+        "heading": "What Bakersfield's permit reports show",
+        "paragraphs": [
+          "Bakersfield reported 5,288 residential solar permits to the California Energy Commission for 2023 and 1,160 for 2024. None were issued through an online, automated platform in either year, so a Bakersfield permit still goes through the City's review; ask each bidder how long its recent permits took. Storage became the norm over the same period: 70% of the 2023 permits and 79% of the 2024 permits included a battery.",
+          "The County of Kern reported a different pattern for the unincorporated areas around the city: all 461 of its 2024 residential solar permits were issued online. Neighborhoods outside the city limits are permitted by the County, so have the bidder confirm which office will permit your home."
+        ]
+      },
+      {
+        "heading": "PG&E's Solar Billing Plan in Bakersfield",
+        "paragraphs": [
+          "On the Energy Commission's map PG&E serves all of Bakersfield, and the Commission's community choice layer shows no provider anywhere in Kern County, so PG&E sets both halves of a solar bill here. A new system goes on PG&E's Solar Billing Plan, which values credits and charges by time of day, day of the week and season, gives Energy Export Bonus Credits to customers who start before 2028, and closes each 12-month cycle with a True-Up statement.",
+          "PG&E says Solar Billing Plan customers save the most when they use the energy they produce on-site. That is the case a battery quote has to prove on your own usage, including summer cooling and winter use, rather than on a single high summer bill."
+        ]
+      }
+    ],
+    "faq": [
+      [
+        "Is Bakersfield PG&E or SCE?",
+        "PG&E. The California Energy Commission's map places all of Bakersfield in PG&E territory. SCE serves other parts of Kern County, including Delano, Tehachapi and the eastern desert."
+      ],
+      [
+        "How many solar permits does Bakersfield issue?",
+        "The City reported 1,160 residential solar permits to the California Energy Commission for 2024, down from 5,288 in 2023. In 2024, 920 of them included battery storage and none were issued online."
+      ],
+      [
+        "Who are the solar installers in Kern County?",
+        "This site does not rank them. Outside Bakersfield, the permit office and even the utility change: SCE serves Delano and the east, and the County of Kern permits unincorporated areas. The Kern County page lists who serves and permits each community."
+      ]
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/kern-county",
+        "label": "PG&E, SCE and permit offices across Kern County"
+      },
+      {
+        "href": "/solar-cost/bakersfield",
+        "label": "What sets the price of solar in Bakersfield"
+      },
+      {
+        "href": "/blog/why-is-my-pge-bill-so-high",
+        "label": "Why a PG&E bill runs high"
+      }
+    ]
   },
   "san-jose": {
-    name: "San Jose",
-    county: "Santa Clara County",
-    sourceCheckedDate: "2026-09-23",
-    utility: "pge",
-    bill: "Check PG&E delivery and the generation provider, which may be San José Clean Energy. SJCE’s generation billing and PG&E’s delivery billing are distinct. Confirm whether the account is on legacy NEM or a newer solar billing plan before comparing exports.",
-    local:
-      "San José publishes separate requirements for solar and storage battery projects, including its streamlined permit path. An existing roof or electrical service change can alter the project scope. Have the bidder identify that work in the quote.",
-    example:
-      "If competing quotes use different SJCE/PG&E billing assumptions, ask both to use your actual account enrollment and the same production profile. A larger array does not automatically produce a better financial result.",
-    sources: [
+    "name": "San Jose",
+    "county": "Santa Clara County",
+    "sourceCheckedDate": "2026-09-23",
+    "utility": "pge",
+    "bill": "Check PG&E delivery and the generation provider, which may be San José Clean Energy. SJCE’s generation billing and PG&E’s delivery billing are distinct. Confirm whether the account is on legacy NEM or a newer solar billing plan before comparing exports.",
+    "local": "San José publishes separate requirements for solar and storage battery projects, including its streamlined permit path. An existing roof or electrical service change can alter the project scope. Have the bidder identify that work in the quote.",
+    "example": "If competing quotes use different SJCE/PG&E billing assumptions, ask both to use your actual account enrollment and the same production profile. A larger array does not automatically produce a better financial result.",
+    "sources": [
       {
         "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
         "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
       },
       {
-        label: "San José Clean Energy: solar billing and NEM",
-        url: "https://sanjosecleanenergy.org/solar-billing-nem/",
+        "label": "San José Clean Energy: solar billing and NEM",
+        "url": "https://sanjosecleanenergy.org/solar-billing-nem/"
       },
       {
-        label: "City of San José: solar and battery projects",
-        url: "https://www.sanjoseca.gov/businesses/development-services-permit-center/start-your-project/single-family-duplex-properties/solar-storage-battery-projects",
-      },
+        "label": "City of San José: solar and battery projects",
+        "url": "https://www.sanjoseca.gov/businesses/development-services-permit-center/start-your-project/single-family-duplex-properties/solar-storage-battery-projects"
+      }
     ],
-    faq: [
+    "faq": [
       [
         "Which solar companies operate in San José?",
         "Many do, and this page does not rank them or confirm that any one serves your street. A company doing the work must hold a CSLB license that covers solar and must pull a City permit through SJPermits for your address. Ask each bidder for its license number and for the permit it will file, then compare at least three written proposals."
@@ -823,10 +996,10 @@ export const growthCities: Record<string, GrowthCity> = {
       [
         "Is a San José solar bid supposed to use SJCE rates?",
         "If your PG&E statement shows San José Clean Energy as the generation provider, yes. SJCE's generation charges and solar credits sit inside the PG&E statement, and SJCE trues up in April, so the bid should model both companies."
-      ],
+      ]
     ],
-    answer: "Any solar company that installs in San José has to get two approvals before the system can run: a City building permit through SJPermits and a PG&E interconnection. On most San José bills, San José Clean Energy (SJCE) supplies the generation and PG&E delivers it. Get at least three written bids built on your own SJCE and PG&E account, then compare them on the checks below.",
-    keyFacts: [
+    "answer": "Any solar company that installs in San José has to get two approvals before the system can run: a City building permit through SJPermits and a PG&E interconnection. On most San José bills, San José Clean Energy (SJCE) supplies the generation and PG&E delivers it. Get at least three written bids built on your own SJCE and PG&E account, then compare them on the checks below.",
+    "keyFacts": [
       {
         "label": "Delivers the power",
         "value": "PG&E",
@@ -858,7 +1031,7 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "How SJCE and PG&E split a San José solar bill",
         "paragraphs": [
@@ -876,7 +1049,13 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23",
+    "projectLinks": [
+      {
+        "href": "/solar-companies/santa-clara",
+        "label": "Santa Clara, where Silicon Valley Power sets the solar rules"
+      }
+    ]
   },
   pleasanton: {
     name: "Pleasanton",
@@ -939,64 +1118,69 @@ export const growthCities: Record<string, GrowthCity> = {
     ],
   },
   "santa-cruz": {
-    name: "Santa Cruz",
-    county: "Santa Cruz County",
-    utility: "pge",
-    bill: "For a PG&E account with Central Coast Community Energy generation, compare both parts of the bill. 3CE publishes separate Solar Billing Plan rules and warns that voluntarily leaving legacy NEM is permanent for both generation and delivery. Check your enrollment before accepting a storage offer that changes it.",
-    local:
-      "The City of Santa Cruz lists SolarAPP+ for residential rooftop solar and storage. A Santa Cruz mailing address can still require a different building authority; have the bidder identify the permit jurisdiction and roof layout before promising an installation date.",
-    example:
-      "An existing solar owner may be offered a battery rebate alongside a change in billing. Compare keeping the existing enrollment with the proposed transition, using the same usage and battery settings. Put the continuing bill difference beside the rebate. The upfront amount is only part of the decision.",
-    checks: [
+    "name": "Santa Cruz",
+    "county": "Santa Cruz County",
+    "utility": "pge",
+    "bill": "For a PG&E account with Central Coast Community Energy generation, compare both parts of the bill. 3CE publishes separate Solar Billing Plan rules and warns that voluntarily leaving legacy NEM is permanent for both generation and delivery. Check your enrollment before accepting a storage offer that changes it.",
+    "local": "The City of Santa Cruz lists SolarAPP+ for residential rooftop solar and storage. A Santa Cruz mailing address can still require a different building authority; have the bidder identify the permit jurisdiction and roof layout before promising an installation date.",
+    "example": "An existing solar owner may be offered a battery rebate alongside a change in billing. Compare keeping the existing enrollment with the proposed transition, using the same usage and battery settings. Put the continuing bill difference beside the rebate. The upfront amount is only part of the decision.",
+    "checks": [
       [
         "Existing solar enrollment",
-        "Record current NEM or Solar Billing Plan status and any proposed change before signing.",
+        "Record current NEM or Solar Billing Plan status and any proposed change before signing."
       ],
       [
         "Roof-level production",
-        "Ask for a shade assessment and monthly output for each roof plane; use your site’s inputs.",
+        "Ask for a shade assessment and monthly output for each roof plane; use your site’s inputs."
       ],
       [
         "Storage and permit",
-        "Name the backed-up circuits, equipment location and city or county application path.",
-      ],
+        "Name the backed-up circuits, equipment location and city or county application path."
+      ]
     ],
-    provider: {
-      name: "Allterra Solar",
-      url: "https://www.allterrasolar.com/",
-      detail:
-        "Publishes Santa Cruz and Central Coast residential/light-commercial solar services, storage and financing information.",
-      ask: "Request the roof-specific production model and a comparison that preserves or explicitly changes your confirmed 3CE/PG&E enrollment.",
+    "provider": {
+      "name": "Allterra Solar",
+      "url": "https://www.allterrasolar.com/",
+      "detail": "Publishes Santa Cruz and Central Coast residential/light-commercial solar services, storage and financing information.",
+      "ask": "Request the roof-specific production model and a comparison that preserves or explicitly changes your confirmed 3CE/PG&E enrollment."
     },
-    sources: [
+    "sources": [
       {
-        label: "3CE: Solar Billing Plan and legacy transition",
-        url: "https://3cenergy.org/solar-billing-plan/",
+        "label": "3CE: Solar Billing Plan and legacy transition",
+        "url": "https://3cenergy.org/solar-billing-plan/"
       },
       {
-        label: "3CE: residential battery program conditions",
-        url: "https://3cenergy.org/rebates/residential-battery-rebate-program/",
+        "label": "3CE: residential battery program conditions",
+        "url": "https://3cenergy.org/rebates/residential-battery-rebate-program/"
       },
       {
-        label: "City of Santa Cruz: Building & Safety",
-        url: "https://www.santacruzca.gov/Government/City-Departments/Community-Development/Building-Safety",
+        "label": "City of Santa Cruz: Building & Safety",
+        "url": "https://www.santacruzca.gov/Government/City-Departments/Community-Development/Building-Safety"
       },
       {
-        label: "Allterra Solar: published service scope",
-        url: "https://www.allterrasolar.com/",
-      },
+        "label": "Allterra Solar: published service scope",
+        "url": "https://www.allterrasolar.com/"
+      }
     ],
-    nearby: ["san-jose"],
-    faq: [
+    "nearby": [
+      "san-jose"
+    ],
+    "faq": [
       [
         "Can a battery offer change my Santa Cruz solar billing?",
-        "Some offers can. 3CE’s battery program conditions require existing NEM participants to move to the Solar Billing Plan. Compare the continuing billing effect before accepting the offer.",
+        "Some offers can. 3CE’s battery program conditions require existing NEM participants to move to the Solar Billing Plan. Compare the continuing billing effect before accepting the offer."
       ],
       [
         "Does a Santa Cruz company’s address prove it serves my home?",
-        "No. Ask for written service coverage and identify whether your property is inside the city or under another permit authority.",
-      ],
+        "No. Ask for written service coverage and identify whether your property is inside the city or under another permit authority."
+      ]
     ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/scotts-valley",
+        "label": "Solar companies in nearby Scotts Valley"
+      }
+    ]
   },
   "el-cajon": {
     name: "El Cajon",
@@ -1575,86 +1759,89 @@ export const growthCities: Record<string, GrowthCity> = {
     contentModified: "2026-09-23",
   },
   "palm-desert": {
-    name: "Palm Desert",
-    county: "Riverside County",
-    utility: "other",
-    bill: "Palm Desert’s General Plan identifies SCE across most of the city and IID in a limited portion. Read the electric bill before using either utility’s solar assumptions. The city name cannot settle the tariff, export treatment or interconnection process at your meter.",
-    local:
-      "Palm Desert uses its Clariti portal for current applications and publishes a separate solar-permit entry point. Its permit page directs owners of older eTRAKiT applications to the Development Services Center. Have the bidder identify where your project record lives and who manages inspections.",
-    example:
-      "If proposals for the same property name different utilities, stop the comparison there. Get the meter’s utility confirmed, then rerun each proposal on that utility’s current solar rules. For a home used seasonally, include the cooling and pool equipment left running when nobody is home.",
-    checks: [
+    "name": "Palm Desert",
+    "county": "Riverside County",
+    "utility": "other",
+    "bill": "Palm Desert’s General Plan identifies SCE across most of the city and IID in a limited portion. Read the electric bill before using either utility’s solar assumptions. The city name cannot settle the tariff, export treatment or interconnection process at your meter.",
+    "local": "Palm Desert uses its Clariti portal for current applications and publishes a separate solar-permit entry point. Its permit page directs owners of older eTRAKiT applications to the Development Services Center. Have the bidder identify where your project record lives and who manages inspections.",
+    "example": "If proposals for the same property name different utilities, stop the comparison there. Get the meter’s utility confirmed, then rerun each proposal on that utility’s current solar rules. For a home used seasonally, include the cooling and pool equipment left running when nobody is home.",
+    "checks": [
       [
         "SCE or IID meter",
-        "Confirm the account provider before accepting any rate, export credit or approval schedule.",
+        "Confirm the account provider before accepting any rate, export credit or approval schedule."
       ],
       [
         "Roof material and attachments",
-        "Ask for the attachment and waterproofing method for the actual roof, with roof repair and warranty responsibility stated.",
+        "Ask for the attachment and waterproofing method for the actual roof, with roof repair and warranty responsibility stated."
       ],
       [
         "Application record",
-        "Identify Clariti or the existing application record, inspection responsibility and utility interconnection as separate scope items.",
+        "Identify Clariti or the existing application record, inspection responsibility and utility interconnection as separate scope items."
       ],
       [
         "Structure and authority",
-        "Confirm whether the home is conventional or manufactured, which authority controls this installation, whether the mounting design is accepted for that structure, and who signs off on access, attachments and warranty responsibility.",
+        "Confirm whether the home is conventional or manufactured, which authority controls this installation, whether the mounting design is accepted for that structure, and who signs off on access, attachments and warranty responsibility."
       ],
       [
         "Production assumptions",
-        "Ask each bidder to identify the temperature, roof-plane and obstruction inputs in its monthly production estimate, alongside the household's seasonal use assumptions.",
-      ],
+        "Ask each bidder to identify the temperature, roof-plane and obstruction inputs in its monthly production estimate, alongside the household's seasonal use assumptions."
+      ]
     ],
-    provider: {
-      name: "Hot Purple Energy",
-      url: "https://hotpurpleenergy.com/",
-      detail:
-        "Describes Coachella Valley solar projects, batteries, repairs and work across multiple roof materials.",
-      ask: "Confirm Palm Desert address coverage, SCE or IID experience for this meter, roof attachment scope and the battery operating design.",
+    "provider": {
+      "name": "Hot Purple Energy",
+      "url": "https://hotpurpleenergy.com/",
+      "detail": "Describes Coachella Valley solar projects, batteries, repairs and work across multiple roof materials.",
+      "ask": "Confirm Palm Desert address coverage, SCE or IID experience for this meter, roof attachment scope and the battery operating design."
     },
-    sources: [
+    "sources": [
       {
-        label: "Palm Desert: General Plan electric service areas",
-        url: "https://www.palmdesert.gov/build-develop/general-plan",
+        "label": "Palm Desert: General Plan electric service areas",
+        "url": "https://www.palmdesert.gov/build-develop/general-plan"
       },
       {
-        label: "Palm Desert: current permit portal",
-        url: "https://www.palmdesert.gov/build-develop/permit",
+        "label": "Palm Desert: current permit portal",
+        "url": "https://www.palmdesert.gov/build-develop/permit"
       },
       {
-        label: "Palm Desert: solar forms and handouts (manufactured-home and solar materials checked September 20, 2026)",
-        url: "https://www.palmdesert.gov/build-develop/forms",
+        "label": "Palm Desert: solar forms and handouts (manufactured-home and solar materials checked September 20, 2026)",
+        "url": "https://www.palmdesert.gov/build-develop/forms"
       },
       {
-        label: "California HCD: manufactured-home modifications and alterations (checked September 20, 2026)",
-        url: "https://www.hcd.ca.gov/mmh/residents/modifications-alterations",
+        "label": "California HCD: manufactured-home modifications and alterations (checked September 20, 2026)",
+        "url": "https://www.hcd.ca.gov/mmh/residents/modifications-alterations"
       },
       {
-        label: "Hot Purple Energy: published service scope",
-        url: "https://hotpurpleenergy.com/",
-      },
+        "label": "Hot Purple Energy: published service scope",
+        "url": "https://hotpurpleenergy.com/"
+      }
     ],
-    projectLinks: [
+    "projectLinks": [
       {
-        href: "/blog/is-my-roof-good-for-solar-california",
-        label: "Check whether the roof is suited to solar",
+        "href": "/solar-companies/high-desert",
+        "label": "The High Desert: Victor Valley and Antelope Valley"
       },
+      {
+        "href": "/blog/is-my-roof-good-for-solar-california",
+        "label": "Check whether the roof is suited to solar"
+      }
     ],
-    nearby: ["palm-springs"],
-    faq: [
+    "nearby": [
+      "palm-springs"
+    ],
+    "faq": [
       [
         "Does every Palm Desert home use SCE?",
-        "No. The city’s General Plan identifies a limited IID service area as well. Use the name on your electric bill and have the bidder verify the meter.",
+        "No. The city’s General Plan identifies a limited IID service area as well. Use the name on your electric bill and have the bidder verify the meter."
       ],
       [
         "Where should I look for my Palm Desert permit?",
-        "The city directs current applications through Clariti and provides a solar application link. For an older eTRAKiT submission, follow its instructions to contact the Development Services Center.",
+        "The city directs current applications through Clariti and provides a solar application link. For an older eTRAKiT submission, follow its instructions to contact the Development Services Center."
       ],
       [
         "Can a manufactured Palm Desert home use the same solar permit path as a conventional home?",
-        "Do not assume so. Palm Desert publishes separate manufactured-home and solar materials, while California HCD regulates alterations of existing HUD-labeled manufactured homes. Confirm the property type, responsible authority and the proposed mounting and electrical scope before relying on a permit path.",
-      ],
-    ],
+        "Do not assume so. Palm Desert publishes separate manufactured-home and solar materials, while California HCD regulates alterations of existing HUD-labeled manufactured homes. Confirm the property type, responsible authority and the proposed mounting and electrical scope before relying on a permit path."
+      ]
+    ]
   },
   menifee: {
     name: "Menifee",
@@ -1781,74 +1968,78 @@ export const growthCities: Record<string, GrowthCity> = {
       ],
     ],
   },
-  riverside: {
-    name: "Riverside",
-    county: "Riverside County",
-    utility: "other",
-    sourceCheckedDate: "2026-09-12",
-    bill: "Start with the provider printed on the current bill. Check the current RPU service-area map and the bill before a bidder applies RPU assumptions. If the provider remains uncertain, use SCE’s official lookup rather than inferring a provider from the city name. For an RPU account, RPU explains that grid-connected solar customers continue to receive utility bills.",
-    local:
-      "For an RPU-served address, RPU describes City permit approval and utility interconnection before operation. Have each bidder identify the actual permit authority, inspection sequence, interconnection application and meter work for this address. New solar, solar plus storage, roof-first work, an expansion to an existing system and a commercial project are different scopes. The written proposal should say which one it covers.",
-    example:
-      "Give every bidder the same twelve months of usage, serving utility, requested system size, roof layout, shade information and backup-load scope. Require each bidder to show its monthly production estimate and explain material differences. Get a separate cash price for solar, storage, roof and electrical work before comparing a loan, lease or PPA. Then compare total obligations, exclusions, service responsibility and the modeled remaining bill.",
-    checks: [
+  "riverside": {
+    "name": "Riverside",
+    "county": "Riverside County",
+    "utility": "other",
+    "sourceCheckedDate": "2026-09-12",
+    "bill": "Start with the provider printed on the current bill. Check the current RPU service-area map and the bill before a bidder applies RPU assumptions. If the provider remains uncertain, use SCE’s official lookup rather than inferring a provider from the city name. For an RPU account, RPU explains that grid-connected solar customers continue to receive utility bills.",
+    "local": "For an RPU-served address, RPU describes City permit approval and utility interconnection before operation. Have each bidder identify the actual permit authority, inspection sequence, interconnection application and meter work for this address. New solar, solar plus storage, roof-first work, an expansion to an existing system and a commercial project are different scopes. The written proposal should say which one it covers.",
+    "example": "Give every bidder the same twelve months of usage, serving utility, requested system size, roof layout, shade information and backup-load scope. Require each bidder to show its monthly production estimate and explain material differences. Get a separate cash price for solar, storage, roof and electrical work before comparing a loan, lease or PPA. Then compare total obligations, exclusions, service responsibility and the modeled remaining bill.",
+    "checks": [
       [
         "Serving utility",
-        "Match the proposal to the provider and rate schedule on the current bill. Use the official RPU map or SCE lookup when the provider is uncertain; do not infer it from the city name.",
+        "Match the proposal to the provider and rate schedule on the current bill. Use the official RPU map or SCE lookup when the provider is uncertain; do not infer it from the city name."
       ],
       [
         "Project type and handoffs",
-        "State whether the bid covers new solar, solar plus storage, roof-first work, an existing-system expansion or a commercial project. Identify the permit, inspection, interconnection and meter responsibilities for that scope.",
+        "State whether the bid covers new solar, solar plus storage, roof-first work, an existing-system expansion or a commercial project. Identify the permit, inspection, interconnection and meter responsibilities for that scope."
       ],
       [
         "Comparable design",
-        "Use the same requested DC system size, equipment class, roof planes, shade information and backup-load scope in each bid. Require each bidder to show its own monthly production estimate and explain material differences.",
+        "Use the same requested DC system size, equipment class, roof planes, shade information and backup-load scope in each bid. Require each bidder to show its own monthly production estimate and explain material differences."
       ],
       [
         "Itemized price and finance",
-        "Separate the cash prices for solar, battery, roof, panel work, permits and interconnection. Compare financing only after the underlying cash scope matches.",
+        "Separate the cash prices for solar, battery, roof, panel work, permits and interconnection. Compare financing only after the underlying cash scope matches."
       ],
       [
         "Installer and service",
-        "Name the legal contracting business, CSLB license, installation crew and company responsible for roof penetrations, equipment service and warranty claims. Confirm address coverage in writing.",
-      ],
+        "Name the legal contracting business, CSLB license, installation crew and company responsible for roof penetrations, equipment service and warranty claims. Confirm address coverage in writing."
+      ]
     ],
-    sources: [
+    "sources": [
       {
-        label: "Riverside Public Utilities: solar process, interconnection and ongoing bills",
-        url: "https://www.riversideca.gov/utilities/residents/solar-info/all-about-solar",
+        "label": "Riverside Public Utilities: solar process, interconnection and ongoing bills",
+        "url": "https://www.riversideca.gov/utilities/residents/solar-info/all-about-solar"
       },
       {
-        label: "Riverside Public Utilities: current electric rules and rates index",
-        url: "https://www.riversideca.gov/utilities/residents/rates/electric-rules-rates",
+        "label": "Riverside Public Utilities: current electric rules and rates index",
+        "url": "https://www.riversideca.gov/utilities/residents/rates/electric-rules-rates"
       },
       {
-        label: "Riverside Public Utilities: electric service-area map (checked 2026-09-20)",
-        url: "https://riversideca.gov/utilities/about-rpu/service-area-maps",
+        "label": "Riverside Public Utilities: electric service-area map (checked 2026-09-20)",
+        "url": "https://riversideca.gov/utilities/about-rpu/service-area-maps"
       },
       {
-        label: "SCE: service-area lookup (checked 2026-09-20)",
-        url: "https://www.sce.com/customer-service-center/help-center/stop-start-move-service/faq/how-to-know-if-sce-is-my-electric-utility",
+        "label": "SCE: service-area lookup (checked 2026-09-20)",
+        "url": "https://www.sce.com/customer-service-center/help-center/stop-start-move-service/faq/how-to-know-if-sce-is-my-electric-utility"
       },
       {
-        label: "CSLB: Solar Smart license and consumer information",
-        url: "https://www.cslb.ca.gov/solar",
-      },
+        "label": "CSLB: Solar Smart license and consumer information",
+        "url": "https://www.cslb.ca.gov/solar"
+      }
     ],
-    faq: [
+    "faq": [
       [
         "Does every Riverside address use RPU?",
-        "Do not assume that from the city name. Check the provider on the current bill and use the official RPU map or SCE lookup before applying a utility-specific rate or interconnection rule.",
+        "Do not assume that from the city name. Check the provider on the current bill and use the official RPU map or SCE lookup before applying a utility-specific rate or interconnection rule."
       ],
       [
         "Will Riverside solar eliminate every utility bill?",
-        "For an RPU account, RPU says grid-connected solar customers continue to receive utility bills. Ask the bidder to model remaining charges using the actual provider, usage and rate schedule.",
+        "For an RPU account, RPU says grid-connected solar customers continue to receive utility bills. Ask the bidder to model remaining charges using the actual provider, usage and rate schedule."
       ],
       [
         "Does every Riverside project have the same interconnection process?",
-        "No. The utility and project scope control. The bidder should identify the permit, inspection, interconnection, equipment scope and responsible parties for the specific address.",
-      ],
+        "No. The utility and project scope control. The bidder should identify the permit, inspection, interconnection, equipment scope and responsible parties for the specific address."
+      ]
     ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/riverside-county",
+        "label": "Utilities and permit activity across Riverside County"
+      }
+    ]
   },
   "san-luis-obispo": {
     name: "San Luis Obispo",
@@ -1959,15 +2150,15 @@ export const growthCities: Record<string, GrowthCity> = {
     ],
     contentModified: "2026-09-23",
   },
-  temecula: {
-    name: "Temecula",
-    county: "Riverside County",
-    utility: "sce",
-    sourceCheckedDate: "2026-09-23",
-    bill: "Most of Temecula is Southern California Edison territory: the Energy Commission's map puts about 93% of the city's area in SCE's service area and about 7% in SDG&E's, with no community choice provider over either. The two utilities have different solar rules and rates, so confirm from your own bill which one serves your address before comparing any savings estimate.",
-    local: "Temecula offers three plan-check routes for solar: SolarAPP+ with automatic permit issuance in the City's CSS portal, an expedited review of about 3 business days for systems built on City Standard Plans, and a standard review of 10 to 12 business days. Adding panels to an existing system does not qualify for SolarAPP+ or expedited review. Every SolarAPP+ permit also needs a Fire Department inspection before the building inspection.",
-    example: "If a Temecula bid includes a battery in the garage, ask whether your home has a residential fire sprinkler system. The City's fire rules do not allow energy storage in a garage without one, so a bid that places it there on an unsprinklered house will need a new location before it can pass inspection.",
-    checks: [
+  "temecula": {
+    "name": "Temecula",
+    "county": "Riverside County",
+    "utility": "sce",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Most of Temecula is Southern California Edison territory: the Energy Commission's map puts about 93% of the city's area in SCE's service area and about 7% in SDG&E's, with no community choice provider over either. The two utilities have different solar rules and rates, so confirm from your own bill which one serves your address before comparing any savings estimate.",
+    "local": "Temecula offers three plan-check routes for solar: SolarAPP+ with automatic permit issuance in the City's CSS portal, an expedited review of about 3 business days for systems built on City Standard Plans, and a standard review of 10 to 12 business days. Adding panels to an existing system does not qualify for SolarAPP+ or expedited review. Every SolarAPP+ permit also needs a Fire Department inspection before the building inspection.",
+    "example": "If a Temecula bid includes a battery in the garage, ask whether your home has a residential fire sprinkler system. The City's fire rules do not allow energy storage in a garage without one, so a bid that places it there on an unsprinklered house will need a new location before it can pass inspection.",
+    "checks": [
       [
         "Plan-check route",
         "Say whether the job uses SolarAPP+, the 3-day expedited route on City Standard Plans, or the 10-to-12-day standard review."
@@ -1985,7 +2176,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "Confirm from your bill whether SCE or SDG&E serves the address and model that utility's solar rules."
       ]
     ],
-    sources: [
+    "sources": [
       {
         "label": "City of Temecula: photovoltaic systems (SolarAPP+, expedited and standard routes, fire requirements)",
         "url": "https://temeculaca.gov/304/Photovoltaic-Systems"
@@ -2001,9 +2192,13 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "label": "CSLB: Solar Smart license and consumer information",
         "url": "https://www.cslb.ca.gov/solar"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
       }
     ],
-    faq: [
+    "faq": [
       [
         "How long does a solar permit take in Temecula?",
         "SolarAPP+ approvals are issued automatically in the City's CSS portal. Systems built on City Standard Plans can use expedited review of about 3 business days, and other systems go through standard review of 10 to 12 business days."
@@ -2015,10 +2210,14 @@ export const growthCities: Record<string, GrowthCity> = {
       [
         "Does adding panels to an existing system qualify for fast permits in Temecula?",
         "No. The City says expansions to existing PV systems do not qualify for SolarAPP+ or expedited review."
+      ],
+      [
+        "What are the best solar companies in Temecula?",
+        "This site does not rank them. Look for a CSLB license covering solar, a company that has pulled Temecula permits through the City's CSS portal and knows the Fire Department inspection step, and written confirmation that it serves your address. The City reported 794 residential solar permits to the California Energy Commission for 2024, 41% issued online, so plenty of local installers file here; compare at least three written bids for the same system."
       ]
     ],
-    answer: "Temecula gives solar companies three permit routes: SolarAPP+ with automatic issuance, an expedited 3-business-day review for City Standard Plans, and a 10-to-12-day standard review. SolarAPP+ jobs also need a Fire Department inspection first, and batteries cannot go in a garage without fire sprinklers. Most of Temecula is SCE territory, with a small part in SDG&E's. Compare at least three written bids built on your own bill.",
-    keyFacts: [
+    "answer": "Temecula gives solar companies three permit routes: SolarAPP+ with automatic issuance, an expedited 3-business-day review for City Standard Plans, and a 10-to-12-day standard review. SolarAPP+ jobs also need a Fire Department inspection first, and batteries cannot go in a garage without fire sprinklers. Most of Temecula is SCE territory, with a small part in SDG&E's. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
       {
         "label": "Expedited review",
         "value": "About 3 business days",
@@ -2050,7 +2249,7 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "Temecula's SolarAPP+ steps",
         "paragraphs": [
@@ -2066,40 +2265,43 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23",
+    "projectLinks": [
+      {
+        "href": "/solar-companies/riverside-county",
+        "label": "Utilities and permit activity across Riverside County"
+      }
+    ]
   },
-  murrieta: {
-    name: "Murrieta",
-    county: "Riverside County",
-    utility: "sce",
-    sourceCheckedDate: "2026-09-23",
-    bill: "Have each bidder use the electric utility and rate schedule printed on your bill. For an SCE account, distinguish the current Solar Billing Plan from confirmed legacy enrollment. Do not let a proposal for a nearby community determine your meter’s rate or export treatment.",
-    local:
-      "Murrieta’s current self-service instructions direct residential roof-mounted solar applications through SolarAPP+ and other permits through its CSS portal. The city also describes how revised documents reach the permit record and what must be available at inspection. Ask the bidder to own that handoff.",
-    example:
-      "Suppose the selected inverter or battery location changes after the permit is issued. Ask for revised plans, the updated production/backup model and confirmation that the city record was updated before inspection. An equipment substitution can affect more than the price.",
-    checks: [
+  "murrieta": {
+    "name": "Murrieta",
+    "county": "Riverside County",
+    "utility": "sce",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Have each bidder use the electric utility and rate schedule printed on your bill. For an SCE account, distinguish the current Solar Billing Plan from confirmed legacy enrollment. Do not let a proposal for a nearby community determine your meter’s rate or export treatment.",
+    "local": "Murrieta’s current self-service instructions direct residential roof-mounted solar applications through SolarAPP+ and other permits through its CSS portal. The city also describes how revised documents reach the permit record and what must be available at inspection. Ask the bidder to own that handoff.",
+    "example": "Suppose the selected inverter or battery location changes after the permit is issued. Ask for revised plans, the updated production/backup model and confirmation that the city record was updated before inspection. An equipment substitution can affect more than the price.",
+    "checks": [
       [
         "Roof versus ground mount",
-        "Identify the mounting type and applicable city application route instead of assuming every project uses the same review.",
+        "Identify the mounting type and applicable city application route instead of assuming every project uses the same review."
       ],
       [
         "Inspection documents",
-        "Name who maintains approved plans, inspection checklist and equipment specifications on site.",
+        "Name who maintains approved plans, inspection checklist and equipment specifications on site."
       ],
       [
         "Post-quote changes",
-        "Request written cost, output and backup changes when equipment or layout changes.",
-      ],
+        "Request written cost, output and backup changes when equipment or layout changes."
+      ]
     ],
-    provider: {
-      name: "New Day Solar",
-      url: "https://www.newdaysolar.com/",
-      detail:
-        "Publishes a Murrieta solar installation site with residential solar and battery service information.",
-      ask: "Confirm address coverage and separate roof-mounted or ground-mounted design, permit revisions and storage scope.",
+    "provider": {
+      "name": "New Day Solar",
+      "url": "https://www.newdaysolar.com/",
+      "detail": "Publishes a Murrieta solar installation site with residential solar and battery service information.",
+      "ask": "Confirm address coverage and separate roof-mounted or ground-mounted design, permit revisions and storage scope."
     },
-    sources: [
+    "sources": [
       {
         "label": "Murrieta Information Bulletin 125: residential solar photovoltaic permits ($450 fee)",
         "url": "https://www.murrietaca.gov/DocumentCenter/View/2399/Solar-Permits-Residential-IB-125"
@@ -2109,24 +2311,38 @@ export const growthCities: Record<string, GrowthCity> = {
         "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
       },
       {
-        label: "Murrieta: SolarAPP+, CSS and inspection instructions",
-        url: "https://www.murrietaca.gov/1368/Self--Issuing-Permits-Solar-App",
+        "label": "Murrieta: SolarAPP+, CSS and inspection instructions",
+        "url": "https://www.murrietaca.gov/1368/Self--Issuing-Permits-Solar-App"
       },
       {
-        label: "Murrieta: Permit Center",
-        url: "https://www.murrietaca.gov/1330/Permit-Center",
+        "label": "Murrieta: Permit Center",
+        "url": "https://www.murrietaca.gov/1330/Permit-Center"
       },
       {
-        label: "SCE: Solar Billing Plan",
-        url: "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan",
+        "label": "SCE: Solar Billing Plan",
+        "url": "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan"
       },
       {
-        label: "New Day Solar: published service scope",
-        url: "https://www.newdaysolar.com/",
+        "label": "New Day Solar: published service scope",
+        "url": "https://www.newdaysolar.com/"
       },
+      {
+        "label": "IRS: Residential Clean Energy Credit",
+        "url": "https://www.irs.gov/credits-deductions/residential-clean-energy-credit"
+      },
+      {
+        "label": "CPUC: Self-Generation Incentive Program (Residential Solar and Storage Equity)",
+        "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program"
+      },
+      {
+        "label": "California Revenue and Taxation Code § 73 (active solar energy system exclusion)",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=RTC&sectionNum=73"
+      }
     ],
-    nearby: ["palm-desert"],
-    faq: [
+    "nearby": [
+      "palm-desert"
+    ],
+    "faq": [
       [
         "How much is a solar permit in Murrieta?",
         "Murrieta's residential solar bulletin (Information Bulletin 125, May 2022) states $450 for a residential solar PV permit, payable when the permit is issued. Ask the City whether a battery or other added equipment changes that, and check that each bid shows the fee."
@@ -2137,15 +2353,19 @@ export const growthCities: Record<string, GrowthCity> = {
       ],
       [
         "Does every Murrieta solar project follow the same application path?",
-        "The city distinguishes residential roof-mounted solar applications from other permit types. Ask for the route appropriate to your actual mounting and electrical scope.",
+        "The city distinguishes residential roof-mounted solar applications from other permit types. Ask for the route appropriate to your actual mounting and electrical scope."
       ],
       [
         "What should I receive after equipment is substituted?",
-        "Ask for the revised written scope, price, output assumptions and approved documents. Murrieta’s instructions require revised SolarAPP+ documents to be added to the permit record.",
+        "Ask for the revised written scope, price, output assumptions and approved documents. Murrieta’s instructions require revised SolarAPP+ documents to be added to the permit record."
       ],
+      [
+        "Are there solar rebates in Murrieta?",
+        "There is no federal credit on a 2026 purchase: the IRS says the Residential Clean Energy Credit is not available for property placed in service after December 31, 2025. What remains is state and utility programs: SCE's Energy Export Bonus Credit for customers who enroll in its Solar Billing Plan before 2028, SGIP incentives for income-qualified households, and California's property tax exclusion for solar, in effect until January 1, 2027. The Murrieta solar savings page walks through each."
+      ]
     ],
-    answer: "Every solar company installing a residential roof-mounted system in Murrieta has to file it through SolarAPP+, and the City's bulletin puts the residential solar permit at $450. Murrieta homes are on Southern California Edison, and the Energy Commission's map shows no community choice provider here, so SCE's Solar Billing Plan sets how exports are paid. Compare three written bids against those two facts.",
-    keyFacts: [
+    "answer": "Every solar company installing a residential roof-mounted system in Murrieta has to file it through SolarAPP+, and the City's bulletin puts the residential solar permit at $450. Murrieta homes are on Southern California Edison, and the Energy Commission's map shows no community choice provider here, so SCE's Solar Billing Plan sets how exports are paid. Compare three written bids against those two facts.",
+    "keyFacts": [
       {
         "label": "Electric utility",
         "value": "SCE",
@@ -2177,7 +2397,7 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "Murrieta's permit route, and who it leaves out",
         "paragraphs": [
@@ -2194,7 +2414,7 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23"
   },
   rocklin: {
     name: "Rocklin",
@@ -2807,59 +3027,63 @@ export const growthCities: Record<string, GrowthCity> = {
     ],
     contentModified: "2026-09-23",
   },
-  victorville: {
-    name: "Victorville",
-    county: "San Bernardino County",
-    utility: "sce",
-    sourceCheckedDate: "2026-09-12",
-    hasSavingsGuide: false,
-    bill: "Start with the electricity provider, rate plan and usage history shown on the actual account. A proposal should state its system-production and remaining-bill assumptions for the property. A generic city estimate cannot determine the outcome for an individual meter.",
-    local:
-      "Victorville describes SolarAPP+ as an automated code-compliance path for eligible residential roof-mounted retrofit systems and publishes a separate permit-center process. Ask the bidder to identify the path, approved plans, permit number and inspection steps for the actual scope.",
-    example:
-      "Give each bidder the same full-year usage history and roof layout. Then separate the array, storage, roof work, service work, permit/inspection duties and contract total. Compare the written scope and remaining-bill model before comparing a monthly payment.",
-    checks: [
+  "victorville": {
+    "name": "Victorville",
+    "county": "San Bernardino County",
+    "utility": "sce",
+    "sourceCheckedDate": "2026-09-12",
+    "hasSavingsGuide": false,
+    "bill": "Start with the electricity provider, rate plan and usage history shown on the actual account. A proposal should state its system-production and remaining-bill assumptions for the property. A generic city estimate cannot determine the outcome for an individual meter.",
+    "local": "Victorville describes SolarAPP+ as an automated code-compliance path for eligible residential roof-mounted retrofit systems and publishes a separate permit-center process. Ask the bidder to identify the path, approved plans, permit number and inspection steps for the actual scope.",
+    "example": "Give each bidder the same full-year usage history and roof layout. Then separate the array, storage, roof work, service work, permit/inspection duties and contract total. Compare the written scope and remaining-bill model before comparing a monthly payment.",
+    "checks": [
       [
         "Bill inputs",
-        "Use the actual account's rate plan and usage history. Request the production and remaining-bill assumptions in writing.",
+        "Use the actual account's rate plan and usage history. Request the production and remaining-bill assumptions in writing."
       ],
       [
         "City approval",
-        "Ask which permit route applies, who keeps the approved plans and who schedules the inspection using the City permit record.",
+        "Ask which permit route applies, who keeps the approved plans and who schedules the inspection using the City permit record."
       ],
       [
         "Scope changes",
-        "If the equipment, roof work, storage or electrical service changes, ask for the revised plans and a written change to cost and scope.",
-      ],
+        "If the equipment, roof work, storage or electrical service changes, ask for the revised plans and a written change to cost and scope."
+      ]
     ],
-    sources: [
+    "sources": [
       {
-        label: "City of Victorville: SolarAPP+ automated solar-plan reviews",
-        url: "https://www.victorvilleca.gov/Government/City-Departments/Building/SolarApp-Automated-Solar-Plan-Reviews",
+        "label": "City of Victorville: SolarAPP+ automated solar-plan reviews",
+        "url": "https://www.victorvilleca.gov/Government/City-Departments/Building/SolarApp-Automated-Solar-Plan-Reviews"
       },
       {
-        label: "City of Victorville: Building Permit Center process",
-        url: "https://www.victorvilleca.gov/Government/City-Departments/Building/Permit-Center",
+        "label": "City of Victorville: Building Permit Center process",
+        "url": "https://www.victorvilleca.gov/Government/City-Departments/Building/Permit-Center"
       },
       {
-        label: "SCE: residential rate-plan information",
-        url: "https://www.sce.com/customer-service-center/help-center/rate-plans-pricing/resources/rates-faq",
+        "label": "SCE: residential rate-plan information",
+        "url": "https://www.sce.com/customer-service-center/help-center/rate-plans-pricing/resources/rates-faq"
       },
       {
-        label: "CSLB: Solar Smart license and consumer information",
-        url: "https://www.cslb.ca.gov/solar",
-      },
+        "label": "CSLB: Solar Smart license and consumer information",
+        "url": "https://www.cslb.ca.gov/solar"
+      }
     ],
-    faq: [
+    "faq": [
       [
         "Does every Victorville solar project use SolarAPP+?",
-        "No. Victorville describes SolarAPP+ for eligible residential roof-mounted retrofit systems. Ask the bidder to identify the path and any additional review for the property's actual scope.",
+        "No. Victorville describes SolarAPP+ for eligible residential roof-mounted retrofit systems. Ask the bidder to identify the path and any additional review for the property's actual scope."
       ],
       [
         "Can I decide from an advertised monthly payment?",
-        "No. Compare the full written price or total payments, roof and electrical scope, permit duties, production inputs and remaining utility charges.",
-      ],
+        "No. Compare the full written price or total payments, roof and electrical scope, permit duties, production inputs and remaining utility charges."
+      ]
     ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/high-desert",
+        "label": "Solar companies across the High Desert"
+      }
+    ]
   },
   petaluma: {
     name: "Petaluma",
@@ -3203,58 +3427,62 @@ export const growthCities: Record<string, GrowthCity> = {
       ],
     ],
   },
-  anaheim: {
-    name: "Anaheim",
-    county: "Orange County",
-    utility: "apu",
-    sourceCheckedDate: "2026-09-12",
-    bill: "Anaheim Public Utilities is a municipal utility with its own solar and net-metering rules. Do not use an SCE or investor-owned-utility NEM 3 assumption. Have each bidder use the account's past twelve months, current Anaheim rate and published excess-energy treatment.",
-    local:
-      "Anaheim publishes an online permit route for qualifying small residential rooftop systems. Its solar guidance also requires City permitting and utility interconnection steps. Ask who submits the engineering plan, handles review and inspection and includes any service-panel, roof or storage work.",
-    example:
-      "Ask every bidder to use the same annual Anaheim usage and the same roof design. Compare monthly production, total price, financing terms, permit/interconnection duties and remaining Anaheim bill. Separate the battery and panel work from the core array.",
-    checks: [
+  "anaheim": {
+    "name": "Anaheim",
+    "county": "Orange County",
+    "utility": "apu",
+    "sourceCheckedDate": "2026-09-12",
+    "bill": "Anaheim Public Utilities is a municipal utility with its own solar and net-metering rules. Do not use an SCE or investor-owned-utility NEM 3 assumption. Have each bidder use the account's past twelve months, current Anaheim rate and published excess-energy treatment.",
+    "local": "Anaheim publishes an online permit route for qualifying small residential rooftop systems. Its solar guidance also requires City permitting and utility interconnection steps. Ask who submits the engineering plan, handles review and inspection and includes any service-panel, roof or storage work.",
+    "example": "Ask every bidder to use the same annual Anaheim usage and the same roof design. Compare monthly production, total price, financing terms, permit/interconnection duties and remaining Anaheim bill. Separate the battery and panel work from the core array.",
+    "checks": [
       [
         "Anaheim utility rules",
-        "Use Anaheim Public Utilities' current rate and solar program; reject an SCE or generic NEM assumption.",
+        "Use Anaheim Public Utilities' current rate and solar program; reject an SCE or generic NEM assumption."
       ],
       [
         "Permit and interconnection",
-        "Name who submits plans, completes inspection and satisfies Anaheim's utility and building requirements.",
+        "Name who submits plans, completes inspection and satisfies Anaheim's utility and building requirements."
       ],
       [
         "Same system scope",
-        "Compare equal equipment, production, roof, panel, storage and warranty scope before comparing price.",
-      ],
+        "Compare equal equipment, production, roof, panel, storage and warranty scope before comparing price."
+      ]
     ],
-    sources: [
+    "sources": [
       {
-        label: "Anaheim Public Utilities: solar energy and net metering",
-        url: "https://www.anaheim.net/636/Solar-Energy-and-Net-Metering",
+        "label": "Anaheim Public Utilities: solar energy and net metering",
+        "url": "https://www.anaheim.net/636/Solar-Energy-and-Net-Metering"
       },
       {
-        label: "City of Anaheim: online rooftop-solar permit route",
-        url: "https://www.anaheim.net/6015/Online-Permit-Center",
+        "label": "City of Anaheim: online rooftop-solar permit route",
+        "url": "https://www.anaheim.net/6015/Online-Permit-Center"
       },
       {
-        label: "Anaheim Public Utilities: electric utility rules",
-        url: "https://www.anaheim.net/883/Electric-Utility-Rules",
+        "label": "Anaheim Public Utilities: electric utility rules",
+        "url": "https://www.anaheim.net/883/Electric-Utility-Rules"
       },
       {
-        label: "CSLB: Solar Smart license and consumer information",
-        url: "https://www.cslb.ca.gov/solar",
-      },
+        "label": "CSLB: Solar Smart license and consumer information",
+        "url": "https://www.cslb.ca.gov/solar"
+      }
     ],
-    faq: [
+    "faq": [
       [
         "Is Anaheim on the same NEM 3 program as SCE customers?",
-        "No. Anaheim Public Utilities publishes its own wholesale-based NEM 2.0 program and says Anaheim is not moving to NEM 3. Use the municipal utility's current rules for the account.",
+        "No. Anaheim Public Utilities publishes its own wholesale-based NEM 2.0 program and says Anaheim is not moving to NEM 3. Use the municipal utility's current rules for the account."
       ],
       [
         "Should I compare at least three Anaheim solar bids?",
-        "Anaheim's own solar guidance recommends obtaining bids from at least three contractors. Give each bidder the same usage and system scope so the totals are comparable.",
-      ],
+        "Anaheim's own solar guidance recommends obtaining bids from at least three contractors. Give each bidder the same usage and system scope so the totals are comparable."
+      ]
     ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/orange-county",
+        "label": "How Orange County cities differ on utilities and permits"
+      }
+    ]
   },
   roseville: {
     name: "Roseville",
@@ -3305,16 +3533,15 @@ export const growthCities: Record<string, GrowthCity> = {
       ],
     ],
   },
-  irvine: {
-    name: "Irvine",
-    county: "Orange County",
-    utility: "sce",
-    sourceCheckedDate: "2026-09-23",
-    bill: "Check the generation provider and rate plan on the current SCE bill. Orange County Power Authority can provide generation while SCE delivers electricity and handles billing. Solar charges and credits belong to both sides, so a proposal should not model an SCE-only generation account unless that is what the bill shows.",
-    local: "Irvine now issues same-day permits for most home solar jobs through PermitsDIRECT!, powered by Symbium, when a licensed contractor applies for a rooftop system no larger than 38.4 kW with no more than one battery. Larger systems, or jobs with more than one battery, go through the IrvineReady! plan submission portal instead. Ask each bidder which route it will use and who answers the City if corrections come back.",
-    example:
-      "Give every bidder the same SCE/OCPA bill history and roof layout. Compare monthly production, total contract price, financing, roof and panel work, storage, permit duties and remaining generation and delivery charges. A battery changes both scope and permit route.",
-    checks: [
+  "irvine": {
+    "name": "Irvine",
+    "county": "Orange County",
+    "utility": "sce",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Check the generation provider and rate plan on the current SCE bill. Orange County Power Authority can provide generation while SCE delivers electricity and handles billing. Solar charges and credits belong to both sides, so a proposal should not model an SCE-only generation account unless that is what the bill shows.",
+    "local": "Irvine now issues same-day permits for most home solar jobs through PermitsDIRECT!, powered by Symbium, when a licensed contractor applies for a rooftop system no larger than 38.4 kW with no more than one battery. Larger systems, or jobs with more than one battery, go through the IrvineReady! plan submission portal instead. Ask each bidder which route it will use and who answers the City if corrections come back.",
+    "example": "Give every bidder the same SCE/OCPA bill history and roof layout. Compare monthly production, total contract price, financing, roof and panel work, storage, permit duties and remaining generation and delivery charges. A battery changes both scope and permit route.",
+    "checks": [
       [
         "OCPA and SCE bill",
         "Model OCPA's generation treatment and plan (Basic, Smart or 100% Renewable Choice) and SCE's delivery rate from your actual bill."
@@ -3332,7 +3559,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "Keep HOA review, City permit duties, roof work and the licensed contractor's obligations separate and written."
       ]
     ],
-    sources: [
+    "sources": [
       {
         "label": "City of Irvine: Adding a Rooftop Solar Energy System (same-day and standard routes)",
         "url": "https://cityofirvine.gov/building-permits-and-inspections/adding-rooftop-solar-energy-system"
@@ -3362,7 +3589,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "url": "https://www.sce.com/residential/generating-your-own-power/solar-billing-plan"
       }
     ],
-    faq: [
+    "faq": [
       [
         "Does OCPA replace SCE for an Irvine account?",
         "No. OCPA supplies the generation and handles the generation side of solar charges and credits; SCE delivers the power and handles the delivery side. Both appear on the SCE bill."
@@ -3376,8 +3603,8 @@ export const growthCities: Record<string, GrowthCity> = {
         "A City of Irvine program run with the nonprofit OC Goes Solar that offers group pricing on solar and battery storage through contractors selected by a community evaluation panel. It is one option to compare, alongside bids from companies outside the program."
       ]
     ],
-    answer: "Irvine runs its own program for choosing a solar company: Solarize Irvine, a partnership with the nonprofit OC Goes Solar, uses a community evaluation panel to vet and select contractors and negotiates group pricing. Whatever route you take, your panels will be permitted through the City's same-day PermitsDIRECT! system, and Orange County Power Authority (not SCE) sets how your exported generation is paid.",
-    keyFacts: [
+    "answer": "Irvine runs its own program for choosing a solar company: Solarize Irvine, a partnership with the nonprofit OC Goes Solar, uses a community evaluation panel to vet and select contractors and negotiates group pricing. Whatever route you take, your panels will be permitted through the City's same-day PermitsDIRECT! system, and Orange County Power Authority (not SCE) sets how your exported generation is paid.",
+    "keyFacts": [
       {
         "label": "Delivers the power",
         "value": "SCE",
@@ -3409,7 +3636,7 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "Solarize Irvine: the City's own contractor screen",
         "paragraphs": [
@@ -3432,17 +3659,23 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23",
+    "projectLinks": [
+      {
+        "href": "/solar-companies/orange-county",
+        "label": "Utilities and permit offices across Orange County"
+      }
+    ]
   },
-  stockton: {
-    name: "Stockton",
-    county: "San Joaquin County",
-    utility: "pge",
-    sourceCheckedDate: "2026-09-23",
-    bill: "Since April 2025, Ava Community Energy has been the default generation provider in Stockton, after the City Council chose it; PG&E still delivers the power and sends the bill. Customers were enrolled automatically unless they opted out. The Energy Commission's community choice map, last updated in August 2025, does not yet show Stockton, so check the generation line on your own bill and have each bidder model Ava's solar rules if it says Ava.",
-    local: "Stockton's Building and Life Safety division lets licensed contractors get an auto-issued permit for most residential rooftop solar through SolarAPP+, which it calls the Residential Solar One Stop. Eligible jobs are on the main dwelling's roof of a permitted residential structure, with no ballasted or building-integrated systems. After SolarAPP+ approval, the contractor applies in the City's Accela Citizen Portal under the over-the-counter photovoltaic permit.",
-    example: "If your Stockton bill changed in 2025, compare bids against your new statement, not an older one. A home that moved to Ava has Ava generation charges and PG&E delivery charges, and a system installed now follows Ava's Solar Billing Plan rules, including the E-ELEC rate Ava requires, so a PG&E-only model is out of date.",
-    checks: [
+  "stockton": {
+    "name": "Stockton",
+    "county": "San Joaquin County",
+    "utility": "pge",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Since April 2025, Ava Community Energy has been the default generation provider in Stockton, after the City Council chose it; PG&E still delivers the power and sends the bill. Customers were enrolled automatically unless they opted out. The Energy Commission's community choice map, last updated in August 2025, does not yet show Stockton, so check the generation line on your own bill and have each bidder model Ava's solar rules if it says Ava.",
+    "local": "Stockton's Building and Life Safety division lets licensed contractors get an auto-issued permit for most residential rooftop solar through SolarAPP+, which it calls the Residential Solar One Stop. Eligible jobs are on the main dwelling's roof of a permitted residential structure, with no ballasted or building-integrated systems. After SolarAPP+ approval, the contractor applies in the City's Accela Citizen Portal under the over-the-counter photovoltaic permit.",
+    "example": "If your Stockton bill changed in 2025, compare bids against your new statement, not an older one. A home that moved to Ava has Ava generation charges and PG&E delivery charges, and a system installed now follows Ava's Solar Billing Plan rules, including the E-ELEC rate Ava requires, so a PG&E-only model is out of date.",
+    "checks": [
       [
         "Generation provider",
         "Check whether your bill shows Ava or PG&E generation and model that provider's solar rules."
@@ -3460,7 +3693,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "Name the contracting business, its CSLB license and who handles service calls after installation."
       ]
     ],
-    sources: [
+    "sources": [
       {
         "label": "City of Stockton: automated solar permitting (SolarAPP+ Residential Solar One Stop)",
         "url": "https://www.stocktonca.gov/business/building___life_safety/automated_solar_permitting.php"
@@ -3480,9 +3713,13 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "label": "CSLB: Solar Smart license and consumer information",
         "url": "https://www.cslb.ca.gov/solar"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
       }
     ],
-    faq: [
+    "faq": [
       [
         "Is Stockton served by Ava Community Energy?",
         "Yes. Ava became Stockton's default generation provider in April 2025; PG&E still delivers the power and sends the bill. Customers who opted out stay with PG&E for generation."
@@ -3494,10 +3731,22 @@ export const growthCities: Record<string, GrowthCity> = {
       [
         "Which solar projects qualify for Stockton's automated permit?",
         "Rooftop systems on the main dwelling of a permitted residential structure that meet SolarAPP+'s eligibility checklist. Ballasted and building-integrated systems do not qualify, and only licensed contractors can apply."
+      ],
+      [
+        "What is the best solar company in Stockton?",
+        "This site does not rank them, and no public source does in a way that fits one roof. Narrow the field to companies with a CSLB license covering solar that know the City's automated permit and model Ava's generation credits alongside PG&E's delivery charges, then compare at least three written bids for the same system."
+      ],
+      [
+        "Which Stockton solar companies offer leases?",
+        "Ask each bidder whether it offers a lease or power purchase agreement as well as cash and loan prices, all priced on the same system. The CSLB describes a lease as fixed monthly payments for a set term, typically 20 years, often with an escalator clause, and warns that selling the home during the term can be harder. Under a lease or PPA the company, not you, gets the tax benefits."
+      ],
+      [
+        "How many solar permits does Stockton issue?",
+        "The City reported 4,362 residential solar permits to the California Energy Commission for 2024, up from 3,224 in 2023. In 2024, 2,047 included battery storage and 2,278, about 52%, were issued online."
       ]
     ],
-    answer: "Solar companies in Stockton get an auto-issued permit for most home rooftop systems through SolarAPP+, which the City calls its Residential Solar One Stop, then file the over-the-counter photovoltaic permit in its Accela portal. Since April 2025 Ava Community Energy has supplied Stockton's generation by default, with PG&E delivering it. Compare at least three written bids built on your current Ava and PG&E bill.",
-    keyFacts: [
+    "answer": "Solar companies in Stockton get an auto-issued permit for most home rooftop systems through SolarAPP+, which the City calls its Residential Solar One Stop, then file the over-the-counter photovoltaic permit in its Accela portal. Since April 2025 Ava Community Energy has supplied Stockton's generation by default, with PG&E delivering it. Compare at least three written bids built on your current Ava and PG&E bill.",
+    "keyFacts": [
       {
         "label": "Permit route",
         "value": "SolarAPP+, auto-issued",
@@ -3529,7 +3778,7 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "Stockton's Residential Solar One Stop",
         "paragraphs": [
@@ -3545,7 +3794,21 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23",
+    "projectLinks": [
+      {
+        "href": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+        "label": "Lease, PPA, loan or cash: the California comparison"
+      },
+      {
+        "href": "/solar-problems/solar-escalator-clause-explained",
+        "label": "What an escalator clause does to a lease payment"
+      },
+      {
+        "href": "/solar-savings/central-valley",
+        "label": "Central Valley utilities and permit reports"
+      }
+    ]
   },
   visalia: {
     name: "Visalia",
@@ -3906,26 +4169,135 @@ export const growthCities: Record<string, GrowthCity> = {
   },
 
   "lake-elsinore": {
-    name: "Lake Elsinore",
-    county: "Riverside County",
-    utility: "sce",
-    sourceCheckedDate: "2026-09-22",
-    bill:
-      "Lake Elsinore is billed by Southern California Edison (SCE) for both generation and delivery. No community choice aggregator was found operating in Lake Elsinore as of this check — read the provider name printed on the current bill to confirm.",
-    local:
-      "Lake Elsinore's Community Development Department issues residential building permits, including solar; the city's own site could not be reached in enough depth this session to confirm its current permit path, so ask the bidder to name it and the review timeline directly. Lake Elsinore sits in an inland Riverside County valley with hot, largely cloudless summers that favor solar production but also raise panel temperatures on the hottest afternoons.",
-    example:
-      "Put the same roof layout, shading and twelve months of SCE usage into every Lake Elsinore bid. Then compare total price, financing terms, equipment, the city's permit scope and the SCE bill that remains after the system is installed.",
-    sources: [
-      {
-        label: "City of Lake Elsinore — official site",
-        url: "https://www.lake-elsinore.org/",
-      },
-      {
-        label: "SCE — official site",
-        url: "https://www.sce.com/",
-      },
+    "name": "Lake Elsinore",
+    "county": "Riverside County",
+    "utility": "sce",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Lake Elsinore is Southern California Edison territory for both delivery and generation: the California Energy Commission's map shows no community choice provider over the city. A new system goes on SCE's Solar Billing Plan, so a proposal should use SCE's hourly export credits and your own SCE usage, not a retail-rate estimate.",
+    "local": "Lake Elsinore takes building and fire permit applications, plan uploads, fee payments and inspection requests through its online Citizen Self-Service Portal, and every residential solar permit the City reported to the Energy Commission for 2022 and 2023 was issued online. The City's written solar requirements add local detail: 36-inch clearances at the ridge, valleys and eaves, and a structural analysis when the roof and array together weigh more than 10 pounds per square foot.",
+    "example": "Lake Elsinore bids differ most on the roof. Ask each bidder for the array's weight per square foot and your roof's existing dead load, since a total over 10 pounds per square foot, a tile roof or a trussed roof means engineering calculations. For a ground mount, ask about the 10-foot vegetation clearance and whether Planning must approve the site plan.",
+    "checks": [
+      [
+        "Roof load",
+        "State the array weight and existing roof dead load; over 10 lb/sq ft, a tile roof or trusses require engineering calculations."
+      ],
+      [
+        "Fire clearances",
+        "Show 36-inch clearances at the ridge, valleys and eaves, or three ground-to-ridge access points if the array runs to the eave."
+      ],
+      [
+        "Ground mount",
+        "Keep a 10-foot mowed or vegetation-free perimeter and confirm whether Planning approval of the site plan is needed."
+      ],
+      [
+        "SCE billing",
+        "Model SCE's Solar Billing Plan from your own bill, with the nine-year credit lock and settlement month."
+      ]
     ],
+    "sources": [
+      {
+        "label": "City of Lake Elsinore Building and Safety: residential solar photovoltaic requirements (DOCX)",
+        "url": "https://www.lake-elsinore.org/DocumentCenter/View/1488/Solar-Requirements-DOCX"
+      },
+      {
+        "label": "City of Lake Elsinore: Citizen Self-Service Portal",
+        "url": "https://www.lake-elsinore.org/446/Citizen-Self-Service-Portal"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/riverside-county",
+        "label": "Utilities and permit offices across Riverside County"
+      },
+      {
+        "href": "/blog/solar-pool-heating-california",
+        "label": "Solar pool heating: how it differs from solar panels"
+      },
+      {
+        "href": "/blog/sce-settlement-bill",
+        "label": "Reading SCE's annual solar settlement bill"
+      }
+    ],
+    "faq": [
+      [
+        "How do I get a solar permit in Lake Elsinore?",
+        "The contractor registers for the City's Citizen Self-Service Portal, submits the building permit application with the plans, pays the fees and requests inspections there. The City reported all 1,125 of its 2023 residential solar permits to the Energy Commission as issued online."
+      ],
+      [
+        "What roof rules apply to solar in Lake Elsinore?",
+        "The City's solar requirements call for 36-inch clearances at the ridgeline, valleys and eaves; an array may run down to the eave if three access points from the ground to the ridge remain. If the roof's existing dead load plus the array exceeds 10 pounds per square foot, or the roof is tile or trussed, the plans need engineering calculations."
+      ],
+      [
+        "Is there a community choice provider in Lake Elsinore?",
+        "No. The California Energy Commission's map shows Lake Elsinore entirely in SCE territory with no community choice aggregator, so SCE supplies both generation and delivery."
+      ],
+      [
+        "Does solar pool heating need the same permit as solar panels?",
+        "The City's solar requirement sheet covers photovoltaic systems, which make electricity. Solar pool heating uses the sun to heat pool water instead, so ask the City which permit applies to it; the site's solar pool heating guide explains how the two differ."
+      ]
+    ],
+    "answer": "Solar companies in Lake Elsinore apply through the City's online Citizen Self-Service Portal, and the City reported every residential solar permit for 2022 and 2023 as issued online. Its written requirements call for 36-inch roof clearances and engineering calculations for heavy, tile or trussed roofs. SCE supplies and delivers the power, with no community choice provider. Compare at least three written bids built on your own SCE bill.",
+    "keyFacts": [
+      {
+        "label": "Permits issued online",
+        "value": "All 1,125 in 2023",
+        "note": "1,303 in 2022, also all online",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      },
+      {
+        "label": "Structural analysis",
+        "value": "Over 10 lb per sq ft",
+        "note": "Roof dead load plus array; also tile or trussed roofs",
+        "source": {
+          "publisher": "City of Lake Elsinore",
+          "date": "2026-09-23",
+          "url": "https://www.lake-elsinore.org/DocumentCenter/View/1488/Solar-Requirements-DOCX"
+        }
+      },
+      {
+        "label": "Utility",
+        "value": "SCE",
+        "note": "No community choice provider",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Lake Elsinore's written solar requirements",
+        "paragraphs": [
+          "The City's Building and Safety sheet for residential photovoltaic systems, written for the 2019 code cycle, spells out what a plan set has to show: module, panel, array and framing specifications; a plot plan with the array, setbacks, disconnects, inverters and meters; conduit and wire sizes; roof attachment and flashing details; an electrical single-line diagram with panel bus and breaker ratings; the required signage; and manufacturer brochures for the inverter, modules and racking. Ask your bidder which parts the City's current online submittal still requires.",
+          "Two rules shape the design itself. Roof-mounted arrays keep a 36-inch clearance at the ridgeline, valleys and eaves, though an array may run to the eave if three access points from the ground to the ridge remain. And when the existing roof's dead load plus the array's weight exceeds 10 pounds per square foot, or the roof is tile or trussed, the submittal must include a structural analysis. Ground-mounted arrays need a 10-foot vegetation-free or mowed perimeter, and Planning may have to approve the site plan."
+        ]
+      },
+      {
+        "heading": "What the permit reports show, and SCE's billing",
+        "paragraphs": [
+          "Lake Elsinore reported 1,303 residential solar permits to the California Energy Commission for 2022 and 1,125 for 2023, every one issued online. Battery storage was still uncommon: 51 of the 2022 permits and 140 of the 2023 permits included it.",
+          "New systems here go on SCE's Solar Billing Plan. SCE locks export credit values for nine years from the year you start, pays higher credits in June through September and on summer evenings, and gives customers who enroll before 2028 a bonus credit of about $0.04 per kWh, or about $0.09 if income-qualified. SCE itself says its export credits are worth less than what you pay for grid power, so ask each bidder to show the bill with and without a battery."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
   },
 
   lakewood: {
@@ -4443,15 +4815,15 @@ export const growthCities: Record<string, GrowthCity> = {
     ],
     contentModified: "2026-09-23",
   },
-  pasadena: {
-    name: "Pasadena",
-    county: "Los Angeles County",
-    utility: "pwp",
-    bill: "Pasadena Water and Power, the City's own utility, bills almost all of Pasadena; the Energy Commission's map shows a small SCE area at the edge of the city. PWP charges a tiered rate, effective July 1, 2026: a $17.50 monthly Customer and Grid Access Charge, energy and transmission charges on every kWh, and a distribution charge that climbs from 3.505 cents for the first 350 kWh to 25.233 cents above 750 kWh. A proposal built on SCE or PG&E rates is not a Pasadena proposal.",
-    local: "PWP must approve a solar project before the City issues a building permit. The installer applies online through PWP's PowerClerk system with a single-line diagram, site plan, the signed customer contract, a copy of your electric bill, the Net Metering and Surplus Compensation enrollment form and, if you have one, your HOA's approval letter. Ask each bidder who files with PWP and when.",
-    example: "Because PWP's distribution charge is tiered, the first kWh your panels offset each month are the most expensive ones you buy. Ask two bidders to show your last twelve PWP bills, how many kWh each month fell in the 25.233-cent tier, and how much of that their system removes. A bid that values every offset kWh at one average price is guessing.",
-    sourceCheckedDate: "2026-09-23",
-    checks: [
+  "pasadena": {
+    "name": "Pasadena",
+    "county": "Los Angeles County",
+    "utility": "pwp",
+    "bill": "Pasadena Water and Power, the City's own utility, bills almost all of Pasadena; the Energy Commission's map shows a small SCE area at the edge of the city. PWP charges a tiered rate, effective July 1, 2026: a $17.50 monthly Customer and Grid Access Charge, energy and transmission charges on every kWh, and a distribution charge that climbs from 3.505 cents for the first 350 kWh to 25.233 cents above 750 kWh. A proposal built on SCE or PG&E rates is not a Pasadena proposal.",
+    "local": "PWP must approve a solar project before the City issues a building permit. The installer applies online through PWP's PowerClerk system with a single-line diagram, site plan, the signed customer contract, a copy of your electric bill, the Net Metering and Surplus Compensation enrollment form and, if you have one, your HOA's approval letter. Ask each bidder who files with PWP and when.",
+    "example": "Because PWP's distribution charge is tiered, the first kWh your panels offset each month are the most expensive ones you buy. Ask two bidders to show your last twelve PWP bills, how many kWh each month fell in the 25.233-cent tier, and how much of that their system removes. A bid that values every offset kWh at one average price is guessing.",
+    "sourceCheckedDate": "2026-09-23",
+    "checks": [
       [
         "PWP size limit",
         "Show the system is no more than 150% of your average annual use on PWP's billing record, or 2 W DC per square foot for new or expanded space."
@@ -4469,7 +4841,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "Model your own PWP tiers month by month, not a single average rate."
       ]
     ],
-    sources: [
+    "sources": [
       {
         "label": "Pasadena Water and Power: Water & Electric Rates (residential electric, effective July 1, 2026)",
         "url": "https://pwp.cityofpasadena.net/water-and-electric-rates"
@@ -4487,7 +4859,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
       }
     ],
-    faq: [
+    "faq": [
       [
         "Who supplies electricity in Pasadena?",
         "Pasadena Water and Power, the City's municipal utility, serves nearly all of Pasadena on the Energy Commission's service-territory map. It sets its own rates and solar rules, so the CPUC's Net Billing Tariff for PG&E, SCE and SDG&E does not apply to a PWP account."
@@ -4499,10 +4871,18 @@ export const growthCities: Record<string, GrowthCity> = {
       [
         "Do I need PWP's approval before the City permit?",
         "Yes. PWP's eligibility rules say the customer must obtain PWP's initial review approval before applying for building permits."
+      ],
+      [
+        "What are electricity rates in Pasadena?",
+        "Pasadena Water and Power's residential rate, effective July 1, 2026, has a $11.00 customer charge and a $6.50 grid access charge each month ($17.50 together), an energy charge of 10.0825 cents per kWh, a transmission charge of 1.609 cents, and a tiered distribution charge of 3.505 cents for the first 350 kWh, 14.018 cents for the next 400 and 25.233 cents above that. Added together, a kWh costs about 15.2 cents in the first tier and about 36.9 cents above 750 kWh a month, before anything else on the bill."
+      ],
+      [
+        "Can I choose a different electricity supplier in Pasadena?",
+        "Not the way many Los Angeles County cities can. The California Energy Commission's map shows Pasadena Water and Power serving about 98% of the city, a small SCE area at the edge, and no community choice provider over the city, so there is no second generation supplier to compare. What you can compare is PWP's rate with the terms in each solar proposal."
       ]
     ],
-    answer: "In Pasadena the utility, not the City, is the first gate for any solar company: Pasadena Water and Power must approve the project through its PowerClerk system before a building permit can be issued, and it caps a system at 150% of your average annual use. PWP bills a tiered rate and sets its own solar rules, so compare at least three written bids that model your own PWP bills, not SCE's.",
-    keyFacts: [
+    "answer": "In Pasadena the utility, not the City, is the first gate for any solar company: Pasadena Water and Power must approve the project through its PowerClerk system before a building permit can be issued, and it caps a system at 150% of your average annual use. PWP bills a tiered rate and sets its own solar rules, so compare at least three written bids that model your own PWP bills, not SCE's.",
+    "keyFacts": [
       {
         "label": "Electric utility",
         "value": "Pasadena Water and Power",
@@ -4534,7 +4914,7 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "PWP's approval comes before the building permit",
         "paragraphs": [
@@ -4550,7 +4930,7 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23"
   },
   concord: {
     name: "Concord",
@@ -4664,14 +5044,14 @@ export const growthCities: Record<string, GrowthCity> = {
     contentModified: "2026-09-23",
   },
   "san-mateo": {
-    name: "San Mateo",
-    county: "San Mateo County",
-    utility: "pge",
-    bill: "A San Mateo installer will be designing around two companies: PG&E, which delivers the power and sends the statement, and WestLight Energy, the county's community choice provider, which renamed itself from Peninsula Clean Energy and supplies generation for most homes. Ask each bidder to build its design on your own account, with WestLight's generation side and PG&E's delivery side shown separately.",
-    local: "The City of San Mateo runs residential rooftop solar through SolarAPP+, with two local conditions before a contractor can use it: an active San Mateo business license and a request to be added to the City's SolarAPP+ eligibility list. After SolarAPP+ approves the plans, the contractor completes the SolarAPP+ inspection checklist, applies in the City's Online Permit Center, pays the permit fee and schedules the inspection.",
-    example: "Two San Mateo bidders can describe the same roof very differently. Ask both for the same deliverables: the module and inverter models, a roof layout with every obstruction marked, the monthly production estimate, the battery's usable kWh and backed-up circuits, and the name of the business that will hold the San Mateo business license and the permit. Compare those line by line before you look at anything else.",
-    sourceCheckedDate: "2026-09-23",
-    checks: [
+    "name": "San Mateo",
+    "county": "San Mateo County",
+    "utility": "pge",
+    "bill": "A San Mateo installer will be designing around two companies: PG&E, which delivers the power and sends the statement, and WestLight Energy, the county's community choice provider, which renamed itself from Peninsula Clean Energy and supplies generation for most homes. Ask each bidder to build its design on your own account, with WestLight's generation side and PG&E's delivery side shown separately.",
+    "local": "The City of San Mateo runs residential rooftop solar through SolarAPP+, with two local conditions before a contractor can use it: an active San Mateo business license and a request to be added to the City's SolarAPP+ eligibility list. After SolarAPP+ approves the plans, the contractor completes the SolarAPP+ inspection checklist, applies in the City's Online Permit Center, pays the permit fee and schedules the inspection.",
+    "example": "Two San Mateo bidders can describe the same roof very differently. Ask both for the same deliverables: the module and inverter models, a roof layout with every obstruction marked, the monthly production estimate, the battery's usable kWh and backed-up circuits, and the name of the business that will hold the San Mateo business license and the permit. Compare those line by line before you look at anything else.",
+    "sourceCheckedDate": "2026-09-23",
+    "checks": [
       [
         "City eligibility",
         "Confirm the company holds an active San Mateo business license and is on the City's SolarAPP+ eligibility list."
@@ -4689,7 +5069,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "Name the contracting business, its CSLB license, the installation crew and who handles service calls."
       ]
     ],
-    sources: [
+    "sources": [
       {
         "label": "City of San Mateo: SolarApp+ for Solar Installers",
         "url": "https://www.cityofsanmateo.org/4770/SolarApp-For-Solar-Installers"
@@ -4705,9 +5085,17 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
         "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "County of San Mateo: instant residential solar and energy storage permits (Symbium)",
+        "url": "https://www.smcgov.org/planning/instant-residential-solar-and-energy-storage-system-permits"
       }
     ],
-    faq: [
+    "faq": [
       [
         "Which solar companies can pull a permit in San Mateo?",
         "A company using the City's SolarAPP+ route needs an active San Mateo business license and must ask to be added to the City's SolarAPP+ eligibility list. It must also hold a California contractor license that covers solar, which you can check at the CSLB. This page does not rank or recommend installers."
@@ -4719,10 +5107,18 @@ export const growthCities: Record<string, GrowthCity> = {
       [
         "How do I compare solar installers in San Mateo?",
         "Get at least three written proposals for the same roof and the same account, then compare the equipment, the production estimate, the battery scope, the permit responsibilities and the service terms. The checklist on this page lists what each proposal should state."
+      ],
+      [
+        "How many solar permits does San Mateo issue?",
+        "The City reported 333 residential solar permits to the California Energy Commission for 2024, up from 73 in 2023. Of the 2024 permits, 158 included battery storage and 104, about 31%, were issued online; the rest went through the City's regular review. Ask each bidder which route your design will take."
+      ],
+      [
+        "Who handles solar permits outside the city limits?",
+        "Homes in unincorporated San Mateo County are permitted by the County of San Mateo, which issues residential solar and battery permits automatically through Symbium. The county-wide page linked below lists the permit office for each city."
       ]
     ],
-    answer: "Solar companies that install in San Mateo file residential rooftop jobs through SolarAPP+, and the City adds two local gates first: the contractor needs an active San Mateo business license and must ask to be put on the City's SolarAPP+ eligibility list. PG&E delivers your power and WestLight Energy, formerly Peninsula Clean Energy, supplies it. Compare at least three written proposals from companies that clear those gates.",
-    keyFacts: [
+    "answer": "Solar companies that install in San Mateo file residential rooftop jobs through SolarAPP+, and the City adds two local gates first: the contractor needs an active San Mateo business license and must ask to be put on the City's SolarAPP+ eligibility list. PG&E delivers your power and WestLight Energy, formerly Peninsula Clean Energy, supplies it. Compare at least three written proposals from companies that clear those gates.",
+    "keyFacts": [
       {
         "label": "Permit route",
         "value": "SolarAPP+, then Online Permit Center",
@@ -4752,9 +5148,19 @@ export const growthCities: Record<string, GrowthCity> = {
           "date": "2026-09-23",
           "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
         }
+      },
+      {
+        "label": "2024 solar permits",
+        "value": "333",
+        "note": "47% with storage, 31% issued online",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "What the City asks of a San Mateo installer",
         "paragraphs": [
@@ -4770,7 +5176,21 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23",
+    "projectLinks": [
+      {
+        "href": "/solar-companies/san-mateo-county",
+        "label": "Permit offices and 2024 permit counts across San Mateo County"
+      },
+      {
+        "href": "/blog/pge-time-of-use-rates-2026",
+        "label": "The PG&E time-of-use hours behind a solar estimate"
+      },
+      {
+        "href": "/blog/solar-panel-maintenance-cost",
+        "label": "What solar maintenance costs after installation"
+      }
+    ]
   },
   glendale: {
     name: "Glendale",
@@ -5550,14 +5970,14 @@ export const growthCities: Record<string, GrowthCity> = {
     contentModified: "2026-09-23",
   },
   "santa-ana": {
-    name: "Santa Ana",
-    county: "Orange County",
-    utility: "sce",
-    bill: "In Santa Ana, SCE sells and delivers the electricity: no community choice program is mapped over the city by the Energy Commission, and it is not among Orange County Power Authority's members. Every SCE residential bill now includes a fixed monthly Base Services Charge, $24.15 for most customers, which solar leaves in place, so a proposal should show what remains on your SCE bill, not just what it offsets.",
-    local: "Since June 1, 2026, the City of Santa Ana issues residential solar permits only after SolarAPP+ approval; projects without it are not processed. Only licensed contractors registered with SolarAPP+ may apply, permit runners may not, and ballasted systems and unpermitted structures are not eligible. SolarAPP+ charges $35, which covers up to three revisions, and the City's own permit fee is the same as for a regular solar permit.",
-    example: "If a Santa Ana bid includes a battery, ask where it will go before you sign. The Planning Division does not allow storage equipment where it can be seen from the street without approved screening, and a battery in a garage cannot push the equipment or its protective bollard into the required parking space. The Fire Department also requires smoke alarms, and in some rooms an interconnected heat alarm, where storage is installed.",
-    sourceCheckedDate: "2026-09-23",
-    checks: [
+    "name": "Santa Ana",
+    "county": "Orange County",
+    "utility": "sce",
+    "bill": "In Santa Ana, SCE sells and delivers the electricity: no community choice program is mapped over the city by the Energy Commission, and it is not among Orange County Power Authority's members. Every SCE residential bill now includes a fixed monthly Base Services Charge, $24.15 for most customers, which solar leaves in place, so a proposal should show what remains on your SCE bill, not just what it offsets.",
+    "local": "Since June 1, 2026, the City of Santa Ana issues residential solar permits only after SolarAPP+ approval; projects without it are not processed. Only licensed contractors registered with SolarAPP+ may apply, permit runners may not, and ballasted systems and unpermitted structures are not eligible. SolarAPP+ charges $35, which covers up to three revisions, and the City's own permit fee is the same as for a regular solar permit.",
+    "example": "If a Santa Ana bid includes a battery, ask where it will go before you sign. The Planning Division does not allow storage equipment where it can be seen from the street without approved screening, and a battery in a garage cannot push the equipment or its protective bollard into the required parking space. The Fire Department also requires smoke alarms, and in some rooms an interconnected heat alarm, where storage is installed.",
+    "sourceCheckedDate": "2026-09-23",
+    "checks": [
       [
         "SolarAPP+ approval",
         "Confirm the contractor is a licensed company registered with SolarAPP+ and will file the approval in the City's PBx portal."
@@ -5575,7 +5995,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "Model SCE's Solar Billing Plan and the fixed Base Services Charge from your own bill."
       ]
     ],
-    sources: [
+    "sources": [
       {
         "label": "City of Santa Ana: SolarAPP+ automated solar plan review (eligibility, fees, FAQ)",
         "url": "https://www.santa-ana.org/solarapp-automated-solar-plan-review/"
@@ -5601,7 +6021,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
       }
     ],
-    faq: [
+    "faq": [
       [
         "Do I need SolarAPP+ for a solar permit in Santa Ana?",
         "Yes. Since June 1, 2026 the City issues residential solar permits only after SolarAPP+ approval, and applications without it are not processed."
@@ -5615,8 +6035,8 @@ export const growthCities: Record<string, GrowthCity> = {
         "Not where it is visible from the public right-of-way unless it is screened with a design the Planning Division approves. In a garage, the battery and its protective bollard cannot encroach into the required parking space."
       ]
     ],
-    answer: "Every residential solar permit in Santa Ana now goes through SolarAPP+: since June 1, 2026 the City will not process an application without its approval, and only licensed contractors registered with SolarAPP+ can apply. Batteries face extra local rules on screening, parking space and alarms. SCE supplies and delivers Santa Ana's power. Compare at least three written bids that model your own SCE bill.",
-    keyFacts: [
+    "answer": "Every residential solar permit in Santa Ana now goes through SolarAPP+: since June 1, 2026 the City will not process an application without its approval, and only licensed contractors registered with SolarAPP+ can apply. Batteries face extra local rules on screening, parking space and alarms. SCE supplies and delivers Santa Ana's power. Compare at least three written bids that model your own SCE bill.",
+    "keyFacts": [
       {
         "label": "Permit route",
         "value": "SolarAPP+ only",
@@ -5648,7 +6068,7 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "Santa Ana's SolarAPP+ rules",
         "paragraphs": [
@@ -5664,17 +6084,23 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23",
+    "projectLinks": [
+      {
+        "href": "/solar-companies/orange-county",
+        "label": "Orange County solar companies, city by city"
+      }
+    ]
   },
   "san-bernardino": {
-    name: "San Bernardino",
-    county: "San Bernardino County",
-    utility: "sce",
-    bill: "San Bernardino has no community choice program on the Energy Commission's utility map; Southern California Edison supplies the generation, delivers it and bills for both. A new system goes on SCE's Solar Billing Plan, with exports credited monthly and a yearly settlement. SCE's fixed Base Services Charge stays on the bill whatever the system produces.",
-    local: "The City of San Bernardino sends residential solar and storage permits under 38.4 kilowatts to the Symbium portal for instantaneous plan review under Senate Bill 379, and says processing may take about one to three business days. An active City business license is required before the permit is issued, and a main panel upgrade needs its own electrical permit from the City's Solar Division of Community Development and Housing.",
-    example: "Ask each San Bernardino bidder whether the job will go through Symbium or the Building and Safety counter at Vanir Tower, and whether the price includes the separate electrical permit if your main panel needs upgrading. A bid that skips either answer may be assuming a timeline or a permit the City will not give.",
-    sourceCheckedDate: "2026-09-23",
-    checks: [
+    "name": "San Bernardino",
+    "county": "San Bernardino County",
+    "utility": "sce",
+    "bill": "San Bernardino has no community choice program on the Energy Commission's utility map; Southern California Edison supplies the generation, delivers it and bills for both. A new system goes on SCE's Solar Billing Plan, with exports credited monthly and a yearly settlement. SCE's fixed Base Services Charge stays on the bill whatever the system produces.",
+    "local": "The City of San Bernardino sends residential solar and storage permits under 38.4 kilowatts to the Symbium portal for instantaneous plan review under Senate Bill 379, and says processing may take about one to three business days. An active City business license is required before the permit is issued, and a main panel upgrade needs its own electrical permit from the City's Solar Division of Community Development and Housing.",
+    "example": "Ask each San Bernardino bidder whether the job will go through Symbium or the Building and Safety counter at Vanir Tower, and whether the price includes the separate electrical permit if your main panel needs upgrading. A bid that skips either answer may be assuming a timeline or a permit the City will not give.",
+    "sourceCheckedDate": "2026-09-23",
+    "checks": [
       [
         "Permit route",
         "Say whether the project uses Symbium or an in-person counter submittal, and why."
@@ -5692,7 +6118,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "If someone other than the license holder signs for the permit, ask for the notarized letter of authorization the City requires."
       ]
     ],
-    sources: [
+    "sources": [
       {
         "label": "City of San Bernardino: apply for residential solar permits (Symbium, SB 379)",
         "url": "https://www.sanbernardino.gov/1650/Apply-for-Residential-Solar-Permits"
@@ -5708,9 +6134,25 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
         "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California HCD: advisory for manufactured home roof-mounted solar systems (PDF)",
+        "url": "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
+      },
+      {
+        "label": "California HCD: modifications and alterations to manufactured homes",
+        "url": "https://www.hcd.ca.gov/manufactured-and-mobilehomes/modifying-mobilehome"
+      },
+      {
+        "label": "San Bernardino County EZ Online Permitting: Solar with SolarAPP+ (manufactured homes to HCD)",
+        "url": "https://wp.sbcounty.gov/ezop/permits/solar-with-solarapp/"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
       }
     ],
-    faq: [
+    "faq": [
       [
         "How long does a solar permit take in San Bernardino?",
         "The City says permits processed through its Symbium portal may take about one to three business days, depending on staff availability; missing documents can delay them."
@@ -5722,10 +6164,18 @@ export const growthCities: Record<string, GrowthCity> = {
       [
         "Does a panel upgrade need its own permit in San Bernardino?",
         "Yes. The City says electric panel upgrades require a separate electrical permit, which is obtained through the Solar Division of Community Development and Housing."
+      ],
+      [
+        "Can I put solar on a mobile home in San Bernardino County?",
+        "Yes, with a state permit. San Bernardino County says roof-mounted solar on a manufactured home must be permitted through the California Department of Housing and Community Development, and HCD requires its permit for any solar system on a manufactured home. Check the company's CSLB license and ask to see the HCD permit before work starts."
+      ],
+      [
+        "How many solar permits does San Bernardino issue?",
+        "The City reported 1,911 residential solar permits to the California Energy Commission for 2024, down from 2,879 in 2023. In 2024, 1,342 included battery storage and 1,004, about 53%, were issued online."
       ]
     ],
-    answer: "Solar companies in San Bernardino apply for residential solar and battery permits through the City's Symbium portal, which the City says may take about one to three business days, and need an active City business license before the permit is issued. A main panel upgrade needs a separate electrical permit. SCE supplies and delivers San Bernardino's power. Compare at least three written bids that model your own SCE bill.",
-    keyFacts: [
+    "answer": "Solar companies in San Bernardino apply for residential solar and battery permits through the City's Symbium portal, which the City says may take about one to three business days, and need an active City business license before the permit is issued. A main panel upgrade needs a separate electrical permit. SCE supplies and delivers San Bernardino's power. Compare at least three written bids that model your own SCE bill.",
+    "keyFacts": [
       {
         "label": "Permit platform",
         "value": "Symbium",
@@ -5755,9 +6205,19 @@ export const growthCities: Record<string, GrowthCity> = {
           "date": "2026-09-23",
           "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
         }
+      },
+      {
+        "label": "Manufactured homes",
+        "value": "HCD permit",
+        "note": "Not the City's Symbium route",
+        "source": {
+          "publisher": "California HCD",
+          "date": "2026-09-23",
+          "url": "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
+        }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "What San Bernardino asks for with a solar permit",
         "paragraphs": [
@@ -5771,9 +6231,26 @@ export const growthCities: Record<string, GrowthCity> = {
           "The City strongly encourages Symbium but keeps a counter route at Vanir Tower, 290 North D Street, for projects that are not eligible or applicants who prefer it. Those applications get standard plan review unless a system of 10 kW or less meets the City's Eligibility Checklist for Expedited Residential Solar Permitting. A counter submittal needs one hard-copy set of 11 by 17 inch plans with specification sheets, structural calculations, the application, the declaration, the expedited checklist and a valid business license.",
           "Once the system is running, SCE's Solar Billing Plan credits exports with Energy Export Credits that vary by hour, and a yearly settlement bill arrives in the month the system started service. SCE puts its Net Surplus Compensation Rate for any leftover surplus at about $0.02 per kWh, and says that storing your own energy for expensive hours is now worth more than exporting it. Ask each bidder how much of your output its model assumes you export."
         ]
+      },
+      {
+        "heading": "Mobile and manufactured homes in San Bernardino County",
+        "paragraphs": [
+          "Solar on a mobile or manufactured home follows state rules rather than the City's Symbium route. The California Department of Housing and Community Development says an HCD permit is required for any solar system installed on a manufactured home, and that a permit is needed before any alteration to one begins; San Bernardino County's own online permitting page says roof-mounted solar on a manufactured home must be permitted through HCD, and lists HCD's number, 951-782-4420. HCD's Southern Area Office is at 3737 Main Street in Riverside.",
+          "HCD's advisory warns that manufactured home roofs are not accessible, so damage from poor installation practices is not visible, and tells owners to make sure the solar company is licensed by the Contractors State License Board and has obtained a permit from HCD before signing. HCD's permit guidelines say when a job also needs form HCD MH 415, engineered plans, electrical load calculations or manufacturer specifications, so ask each bidder which of those your roof needs and who files them."
+        ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23",
+    "projectLinks": [
+      {
+        "href": "/solar-companies/high-desert",
+        "label": "High Desert solar companies and the County's permit route"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a battery is worth adding"
+      }
+    ]
   },
   lancaster: {
     name: "Lancaster",
@@ -6435,14 +6912,14 @@ export const growthCities: Record<string, GrowthCity> = {
     contentModified: "2026-09-23",
   },
   "huntington-beach": {
-    name: "Huntington Beach",
-    county: "Orange County",
-    utility: "sce",
-    bill: "Huntington Beach is a member city of Orange County Power Authority, so most homes get generation from OCPA and delivery from Southern California Edison, which sends the bill. OCPA reconciles generation charges monthly, runs its annual true-up in April and pays 10% more than SCE for yearly surplus. A proposal should model OCPA's rules, not SCE's generation rates.",
-    local: "Huntington Beach issues solar permits instantly through SolarAPP+. The contractor pays SolarAPP+'s $35 processing fee, downloads the approval documents, creates a Residential Photovoltaic System record in the City's HB ACA portal with the Permit and Asbestos Disclosure Form, pays the City's fees and requests inspections there. Homeowners installing their own systems cannot use SolarAPP+ unless they hold the appropriate contractor licenses.",
-    example: "For a Huntington Beach home with a 400-amp or smaller main service, ask each bidder whether its design stays within SolarAPP+'s equipment limits and whether it has completed the solar-plus-storage training if a battery is included. A bid that cannot use SolarAPP+ should say which route it will take instead.",
-    sourceCheckedDate: "2026-09-23",
-    checks: [
+    "name": "Huntington Beach",
+    "county": "Orange County",
+    "utility": "sce",
+    "bill": "Huntington Beach homes get both generation and delivery from Southern California Edison. The city was part of Orange County Power Authority from 2022, but the City Council voted to leave in May 2023 and OCPA returned its customers to SCE in 2024, solar customers first in April. A proposal written for Huntington Beach today should use SCE's Solar Billing Plan, not OCPA's April true-up or its surplus rate.",
+    "local": "Huntington Beach issues solar permits instantly through SolarAPP+. The contractor pays SolarAPP+'s $35 processing fee, downloads the approval documents, creates a Residential Photovoltaic System record in the City's HB ACA portal with the Permit and Asbestos Disclosure Form, pays the City's fees and requests inspections there. Homeowners installing their own systems cannot use SolarAPP+ unless they hold the appropriate contractor licenses.",
+    "example": "For a Huntington Beach home with a 400-amp or smaller main service, ask each bidder whether its design stays within SolarAPP+'s equipment limits and whether it has completed the solar-plus-storage training if a battery is included. A bid that cannot use SolarAPP+ should say which route it will take instead. For a manufactured home, the bid should name the state HCD permit instead.",
+    "sourceCheckedDate": "2026-09-23",
+    "checks": [
       [
         "SolarAPP+ limits",
         "Confirm the main service is 400 A or less and disconnects and busbars 225 A or less, and the system is 38.4 kW or smaller."
@@ -6456,29 +6933,59 @@ export const growthCities: Record<string, GrowthCity> = {
         "Say who creates the HB ACA record, uploads the Permit and Asbestos Disclosure Form and requests the inspection."
       ],
       [
-        "OCPA and SCE bill",
-        "Model OCPA generation with its April true-up and SCE delivery from your own bill."
+        "SCE billing",
+        "Model SCE's Solar Billing Plan from your own bill, with the nine-year export credit lock and the settlement month."
+      ],
+      [
+        "Manufactured home",
+        "On a mobile or manufactured home, show the HCD permit and a CSLB license before any work starts."
       ]
     ],
-    sources: [
+    "sources": [
       {
         "label": "City of Huntington Beach: SolarAPP+ instant solar permits",
         "url": "https://www.huntingtonbeachca.gov/departments/community_development/building___inspection/solar_app.php"
       },
       {
-        "label": "Orange County Power Authority: solar and net energy metering",
-        "url": "https://www.ocpower.org/energy-programs/solar-net-energy-metering/"
+        "label": "Orange County Power Authority: Huntington Beach customers return to SCE in 2024",
+        "url": "https://www.ocpower.org/huntington-beach-2/"
       },
       {
-        "label": "Orange County Power Authority: about and member cities",
-        "url": "https://www.ocpower.org/about-us/"
+        "label": "Orange County Power Authority: FAQ (current member cities)",
+        "url": "https://www.ocpower.org/faq/"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California HCD: advisory for manufactured home roof-mounted solar systems (PDF)",
+        "url": "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
+      },
+      {
+        "label": "California HCD: modifications and alterations to manufactured homes",
+        "url": "https://www.hcd.ca.gov/manufactured-and-mobilehomes/modifying-mobilehome"
       },
       {
         "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
         "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
       }
     ],
-    faq: [
+    "projectLinks": [
+      {
+        "href": "/solar-companies/orange-county",
+        "label": "Utilities, CCAs and permit offices across Orange County"
+      },
+      {
+        "href": "/blog/sce-settlement-bill",
+        "label": "What the SCE settlement bill reconciles once a year"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "Whether a battery pays for itself under net billing"
+      }
+    ],
+    "faq": [
       [
         "How do I get a solar permit in Huntington Beach?",
         "A licensed contractor submits the design in SolarAPP+, pays its $35 processing fee, then creates a Residential Photovoltaic System record in the City's HB ACA portal, uploads the SolarAPP+ approval and the Permit and Asbestos Disclosure Form, pays the City's fees and gets the permit."
@@ -6488,12 +6995,20 @@ export const growthCities: Record<string, GrowthCity> = {
         "Not unless the homeowner is a licensed contractor with the appropriate licenses. Owner-installed systems use the City's regular permit process."
       ],
       [
-        "What does OCPA pay for extra solar in Huntington Beach?",
-        "Orange County Power Authority pays 10% more than SCE for yearly surplus at its April true-up, reconciles generation charges monthly, and currently treats Solar Billing Plan customers' generation as if it were under NEM 2.0."
+        "Is Huntington Beach still served by Orange County Power Authority?",
+        "No. OCPA says the City Council voted to leave in May 2023. Solar customers were switched to SCE bundled service beginning in April 2024 and all other customers in June 2024, automatically and without fees. OCPA's current member cities are Buena Park, Fullerton and Irvine, with Fountain Valley joining."
+      ],
+      [
+        "I went solar under OCPA. What happened to my plan?",
+        "OCPA says the return to SCE did not change a customer's net metering type, whether NEM 1.0, NEM 2.0 or the Solar Billing Plan. OCPA trued up its solar accounts as of the April 2024 meter read, and generation charges and credits went back onto the SCE bill."
+      ],
+      [
+        "Can I put solar on a mobile home in Huntington Beach?",
+        "Yes, but the permit comes from the state. The California Department of Housing and Community Development says an HCD permit is required for any solar system installed on a manufactured home, and warns that roof damage from poor installation is not visible. Check the company's CSLB license and ask for the HCD permit before signing."
       ]
     ],
-    answer: "Huntington Beach issues rooftop solar permits instantly through SolarAPP+: a licensed contractor pays SolarAPP+'s $35 fee, then files and pays in the City's HB ACA portal. Orange County Power Authority supplies most of the city's generation and SCE delivers it; OCPA trues up in April, pays 10% more than SCE for surplus and treats new solar customers' generation as if it were under NEM 2.0. Compare at least three written bids.",
-    keyFacts: [
+    "answer": "Huntington Beach issues rooftop solar permits instantly through SolarAPP+: a licensed contractor pays SolarAPP+'s $35 fee, then files and pays in the City's HB ACA portal. SCE supplies both generation and delivery; the city left Orange County Power Authority, and OCPA returned its customers to SCE in 2024. Solar on a mobile or manufactured home needs a state HCD permit instead. Compare at least three written bids built on your own SCE bill.",
+    "keyFacts": [
       {
         "label": "SolarAPP+ fee",
         "value": "$35",
@@ -6505,27 +7020,27 @@ export const growthCities: Record<string, GrowthCity> = {
         }
       },
       {
-        "label": "Supplies the generation",
-        "value": "Orange County Power Authority",
-        "note": "Member city; SCE delivers and bills",
+        "label": "Electric provider",
+        "value": "SCE",
+        "note": "Back from OCPA in 2024; solar accounts moved in April",
         "source": {
           "publisher": "Orange County Power Authority",
           "date": "2026-09-23",
-          "url": "https://www.ocpower.org/about-us/"
+          "url": "https://www.ocpower.org/huntington-beach-2/"
         }
       },
       {
-        "label": "OCPA true-up",
-        "value": "April",
-        "note": "Surplus paid 10% above SCE's rate",
+        "label": "Manufactured homes",
+        "value": "HCD permit required",
+        "note": "State permit, not the City's SolarAPP+",
         "source": {
-          "publisher": "Orange County Power Authority",
+          "publisher": "California HCD",
           "date": "2026-09-23",
-          "url": "https://www.ocpower.org/energy-programs/solar-net-energy-metering/"
+          "url": "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
         }
       }
     ],
-    sections: [
+    "sections": [
       {
         "heading": "What SolarAPP+ checks in Huntington Beach",
         "paragraphs": [
@@ -6534,13 +7049,3293 @@ export const growthCities: Record<string, GrowthCity> = {
         ]
       },
       {
-        "heading": "Orange County Power Authority's solar terms",
+        "heading": "Huntington Beach's return to SCE",
         "paragraphs": [
-          "Orange County Power Authority names Huntington Beach among its member cities. On a solar account, SCE handles delivery charges and credits and OCPA handles the generation side, reconciling generation charges every month. OCPA holds its annual true-up in April, before summer, so that credits earned in the sunny months can be used at the retail rate rather than cashed out early at the lower surplus rate.",
-          "When credits do remain at the true-up, OCPA pays 10% more than SCE's Net Surplus Compensation rate. OCPA also says it currently treats customers on the Net Billing Tariff, the Solar Billing Plan that applies to new systems, as if their generation were under NEM 2.0. That makes OCPA's generation credit different from SCE's, so ask each bidder whether its model reflects OCPA's rules."
+          "Orange County Power Authority became the default generation provider for Huntington Beach businesses on April 1, 2022 and for homes on October 1, 2022. In May 2023 the City Council voted to leave. OCPA switched the city's net metering customers back to SCE bundled service beginning in April 2024 and everyone else in June 2024, on each account's regular meter read date, with no action needed and no fee to customers; OCPA says the City covered the costs. Customers cannot stay with OCPA from Huntington Beach, because service is limited to member communities.",
+          "For a new system, that means SCE's Solar Billing Plan. Exports earn Energy Export Credits that change by hour and season, SCE locks the values for nine years from the year you start, and customers who enroll before 2028 get an extra credit of about $0.04 per kWh, or about $0.09 if income-qualified. The credits cannot cover the Base Services Charge, and the settlement bill arrives once a year in the month the system started service. Older articles and some proposals still describe OCPA's April true-up and 10% surplus premium for Huntington Beach; those terms no longer apply here."
+        ]
+      },
+      {
+        "heading": "Solar on a mobile or manufactured home",
+        "paragraphs": [
+          "A manufactured home follows a different permit path from a house. The California Department of Housing and Community Development says an HCD permit is required for any solar system installed on a manufactured home, and that a permit is needed before any alteration to a mobilehome or manufactured home begins. HCD's advisory warns owners that manufactured home roofs are not accessible, so damage from poor installation practices is not visible, and tells them to confirm the solar company is licensed by the Contractors State License Board and has obtained a permit from HCD before signing.",
+          "HCD's permit guidelines (form HCD MH 604) say when a job also needs form HCD MH 415, engineered plans, electrical load calculations or manufacturer specifications. Its Southern Area Office is in Riverside. Ask each bidder whether its design needs engineered plans for your roof, and who files with HCD."
         ]
       }
     ],
-    contentModified: "2026-09-23",
+    "contentModified": "2026-09-23"
+  },
+  "corona": {
+    "name": "Corona",
+    "county": "Riverside County",
+    "utility": "other",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Find the utility's name on your bill before you compare any estimate. Most Corona homes are Southern California Edison customers, but the City of Corona runs its own electric utility in part of town, and the two have different prices and different solar rules. A proposal that uses SCE's numbers for a City of Corona account, or the reverse, is modeling a bill you do not have.",
+    "local": "Corona's Building Division takes solar permits through its eTRAKiT portal, either as an expedited plan check built on the City's own forms or as a Symbium solar permit. The City also warns that a separate application to, and approval from, the electric utility serving the address is required before any work starts, whether that is SCE or the City's Utilities Department.",
+    "example": "Ask two bidders to size the system from your last 12 months of kWh use and to show the monthly output next to it. On a City of Corona account the utility will not accept a system whose estimated annual output is larger than that usage, so a design sized for a future EV or pool may have to wait. On an SCE account, ask how much of the output the house uses directly, because SCE says export credits are worth less than the power you buy.",
+    "checks": [
+      [
+        "Which utility",
+        "Name the utility on your bill, SCE or the City of Corona, and use only that utility's rates and solar rules in the savings estimate."
+      ],
+      [
+        "Permit route",
+        "Say whether the permit goes through the City's expedited plan check or Symbium in eTRAKiT, and who pays the plan check fee."
+      ],
+      [
+        "Utility approval",
+        "Show the utility application for the address, and on a City account confirm when the bi-directional meter will be installed and tested."
+      ],
+      [
+        "System size",
+        "On a City of Corona account, show that estimated annual output does not exceed the last 12 months of use."
+      ],
+      [
+        "Backup switch",
+        "On a City of Corona meter, put any Tesla Backup Switch or similar device downstream in a separate panel, not on the meter."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Corona Building Division: expedited solar permits and Symbium",
+        "url": "https://www.coronaca.gov/departments/building-division/expedited-permits"
+      },
+      {
+        "label": "City of Corona: Permitting Guide for Symbium Solar (PDF)",
+        "url": "https://cdn.prod.website-files.com/65799af8ef225180fdf1ba2e/67f3e7ad6cd5d450969f193b_Permitting%20Guide%20for%20Symbium%20Solar.pdf"
+      },
+      {
+        "label": "Corona Utilities Department: solar interconnection process, NEM cap and ERG schedule",
+        "url": "https://www.coronaca.gov/departments/utilities/customer-care/services/solar-generator-interconnection-request-application-and-process"
+      },
+      {
+        "label": "Corona Utilities Department: Eligible Renewable Generation agreement (May 21, 2026, PDF)",
+        "url": "https://cdn.prod.website-files.com/65799af8ef225180fdf1ba2e/6a0f47bbf28d13cfa5c31621_Eligible%20Renewable%20Generation%20Agreement_20260521.pdf"
+      },
+      {
+        "label": "Corona Utilities Department: electric service",
+        "url": "https://www.coronaca.gov/departments/utilities/customer-care/services/electric-service"
+      },
+      {
+        "label": "Corona Utilities Department: electric rates",
+        "url": "https://www.coronaca.gov/departments/utilities/customer-care/services/electric-rates"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/blog/sce-settlement-bill",
+        "label": "How SCE's once-a-year solar settlement bill works"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a home battery earns its place"
+      },
+      {
+        "href": "/blog/solar-panel-repair-cost",
+        "label": "What solar repairs cost and who pays for them"
+      }
+    ],
+    "faq": [
+      [
+        "Who is my electric utility in Corona?",
+        "Most Corona addresses are SCE customers. Addresses inside the City's electric service area, which new developments join when capacity is available, are served by the City of Corona Utilities Department. Check the name on your bill; the rates, the solar rules and the approval step all depend on it."
+      ],
+      [
+        "Can I still get net metering from the City of Corona?",
+        "Not at first. The City says its net metering schedule reached its cap, 5 percent of aggregate customer peak demand, in March 2024. New systems go on the Eligible Renewable Generation (ERG) schedule and a waiting list, and move to net metering in order of their original permission-to-operate date if capacity opens."
+      ],
+      [
+        "How fast is a Symbium solar permit in Corona?",
+        "The City's Symbium guide says staff review the eTRAKiT submittal within one business day at the latest, and the permit is issued immediately if every application, document and fee is in. Verify first that the address is inside Corona city limits."
+      ],
+      [
+        "What does electricity cost from the City of Corona?",
+        "The City's residential rate has a $16.54 monthly fixed charge and three tiers: $0.10504 per kWh up to baseline, $0.11544 from 101 to 130 percent of baseline and $0.21840 above that, plus a $0.00405 per kWh public benefits charge. SCE customers pay SCE's rates instead."
+      ],
+      [
+        "Who repairs solar panels in Corona?",
+        "Start with the contract: the workmanship warranty names who handles repairs and for how long, and the equipment warranties name the panel and inverter makers. If the original company is gone, get the repair scope and price in writing, and check the repair company's license at cslb.ca.gov before work begins."
+      ]
+    ],
+    "answer": "Corona is split between two electric utilities: Southern California Edison serves most of the city, and the City's own Utilities Department serves its electric service area. Solar companies file the permit with the City through eTRAKiT, as an expedited plan check or a Symbium permit, and need the serving utility's approval before starting work. City of Corona customers no longer get net metering at first. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "Electric utility",
+        "value": "SCE or City of Corona",
+        "note": "About 97% of the city's area is SCE territory",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "City net metering",
+        "value": "Capped since March 2024",
+        "note": "New City customers go on the ERG schedule and a waiting list",
+        "source": {
+          "publisher": "Corona Utilities Department",
+          "date": "2026-09-23",
+          "url": "https://www.coronaca.gov/departments/utilities/customer-care/services/solar-generator-interconnection-request-application-and-process"
+        }
+      },
+      {
+        "label": "Permit filing",
+        "value": "eTRAKiT",
+        "note": "Expedited plan check or Symbium; Symbium review within one business day",
+        "source": {
+          "publisher": "City of Corona",
+          "date": "2026-09-23",
+          "url": "https://www.coronaca.gov/departments/building-division/expedited-permits"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Two utilities in one city",
+        "paragraphs": [
+          "Corona's electric utility dates to April 4, 2001, when the City Council created it by Resolution No. 2001-25 in response to the statewide rolling blackouts and electric price instability. It provides fully bundled service to homes and businesses within the City's electric service area, and new developments inside that area become its customers if capacity is available. The City puts its current peak demand at 25.8 MW. Everywhere else in Corona, SCE delivers the power and sends the bill. On the California Energy Commission's utility map, about 97% of the city's area lies in SCE territory and about 3% in the City's.",
+          "The City's residential rate is tiered: a $16.54 monthly fixed charge, then $0.10504 per kWh up to baseline, $0.11544 from 101% to 130% of baseline and $0.21840 above that, plus a public benefits charge of $0.00405 per kWh. Those are the City's prices, not SCE's. A proposal for an SCE address should use the SCE rate schedule printed on your bill."
+        ]
+      },
+      {
+        "heading": "The City's net metering cap and the ERG schedule",
+        "paragraphs": [
+          "The City of Corona offered net energy metering first come, first served, until the solar capacity on its system reached 5 percent of its aggregate customer peak demand. The City says total capacity, counting pending applications, reached that level in March 2024. New applications now go on the Eligible Renewable Generation (ERG) rate schedule, which the City Council approved on June 5, 2024, and onto a waiting list for net metering. The utility reviews its solar customers once a year, and if capacity opens, ERG customers move to net metering in order of their original permission-to-operate date. Under the ERG agreement, the City pays for power sent to the grid only if the customer assigns the system's renewable energy credits to the City.",
+          "The City's interconnection steps run in a fixed order. The utility needs a completed application, the solar review fee, a building permit pulled at the time of application and signed off before permission to operate, an electrical single-line diagram, a load schedule and a site plan. The load schedule compares 12 months of kWh use with the system's estimated monthly production: the estimated output may not exceed the previous year's use, and with less than 12 months of history the City applies a standard of 2 watts per square foot of the premises. Once the application is approved, the City drafts the agreement, installs and tests a bi-directional meter, and only then issues permission to operate."
+        ]
+      },
+      {
+        "heading": "Filing the permit in eTRAKiT",
+        "paragraphs": [
+          "For an expedited plan check, the City's package includes an application form, an eligibility checklist, a standard plan and a structural criteria form, with separate versions for central-inverter and microinverter systems. The submittal also needs a roof plan and installation or spec sheets for every component, as PDFs printed at no larger than 11 by 17 inches. Plan check processing does not begin until the fee is paid.",
+          "The Symbium route starts outside the City: the contractor gets Symbium's approval documents, then applies in eTRAKiT under the Symbium Solar permit type with those documents and the City's forms, and pays the fees. The City's guide says staff review the submittal within one business day at the latest and issue the permit immediately if nothing is missing. Both routes start by confirming the address is inside Corona city limits. On a City of Corona meter, the Utilities Department does not allow a Tesla Backup Switch or similar device on the meter itself; it has to go downstream in a separate panel or meter enclosure, with the utility's design approval first."
+        ]
+      },
+      {
+        "heading": "SCE's Solar Billing Plan for the rest of Corona",
+        "paragraphs": [
+          "On an SCE account, a new system goes on SCE's Solar Billing Plan. Power sent to the grid earns Energy Export Credits that change by hour and season, with higher values in June through September, and SCE locks the values for nine years based on the year a new customer starts. Customers who enroll before 2028 also get an Energy Export Bonus Credit of about $0.04 per kWh, or about $0.09 for income-qualified customers. The credits cannot pay the Base Services Charge, and the once-a-year settlement bill arrives in the month the system started service.",
+          "SCE itself says its export credits are worth less than what you pay for power from the grid, and that storing daytime output to use in the expensive evening hours is now worth more than exporting it. That is why a Corona bid for an SCE home should show how much of the output the house uses directly, and whether a battery changes the result."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "orange-county": {
+    "name": "Orange County",
+    "county": "Orange County",
+    "utility": "other",
+    "sourceCheckedDate": "2026-09-23",
+    "seo": {
+      "description": "Orange County solar companies: which utility and CCA serve each city (SCE, SDG&E, Anaheim, OCPA), how permits work, and what to compare in quotes."
+    },
+    "bill": "In Orange County the bill decides more than the zip code does. SCE delivers power to most of the county, SDG&E to the south end, and the City of Anaheim to Anaheim. In Buena Park, Fullerton and Irvine, Orange County Power Authority supplies the generation on an SCE bill. Each of those four sets its own solar credit rules, so a quote has to start from the provider names printed on your own statement.",
+    "local": "Every incorporated city in the county issues its own solar permit, and homes in unincorporated areas such as Ladera Ranch and Rossmoor are permitted by the County of Orange through OC Development Services. State law has required each city of more than 50,000 people to offer an online, automated permit such as SolarAPP+ since September 30, 2023, and most smaller cities since September 30, 2024, so ask each bidder which route your city uses.",
+    "example": "Ask every Orange County bidder to put two things at the top of the proposal: the utility and generation provider from your bill, and the permit office for your address. A bid that assumes SCE and OCPA for a Mission Viejo or Laguna Niguel home that SDG&E actually serves, or that prices an Anaheim home at SCE's rates, is working from the wrong numbers before it gets to the roof.",
+    "checks": [
+      [
+        "Utility and CCA",
+        "Name the delivery utility (SCE, SDG&E or Anaheim) and the generation provider (OCPA or the utility) from your bill."
+      ],
+      [
+        "Credit rules",
+        "Model that provider's export credits and true-up month, not a county average."
+      ],
+      [
+        "Permit office",
+        "Say whether your city or the County of Orange issues the permit, and whether the job uses SolarAPP+ or a standard plan check."
+      ],
+      [
+        "Split cities",
+        "In Mission Viejo, Aliso Viejo, Laguna Hills or Laguna Niguel, confirm which utility serves the address before comparing savings."
+      ]
+    ],
+    "region": {
+      "heading": "Who serves each Orange County city, and who issues the permit",
+      "intro": [
+        "The California Energy Commission's utility map shows three delivery utilities in the county. SCE covers most of it, SDG&E serves the southern end (SDG&E describes its territory as San Diego and southern Orange counties), and the City of Anaheim runs its own public utility. A few cities in the south straddle the SCE and SDG&E line, so the table marks them as split.",
+        "Generation is a second layer. Orange County Power Authority, the county's community choice aggregator, lists its current member cities as Buena Park, Fullerton and Irvine, with Fountain Valley beginning service soon. Huntington Beach was a member but left: OCPA says its customers there were returned to SCE in 2024."
+      ],
+      "places": [
+        {
+          "name": "Anaheim",
+          "slug": "anaheim",
+          "utility": "Anaheim Public Utilities",
+          "generation": "Anaheim Public Utilities",
+          "permit": "City of Anaheim"
+        },
+        {
+          "name": "Buena Park",
+          "utility": "SCE",
+          "generation": "Orange County Power Authority",
+          "permit": "City of Buena Park"
+        },
+        {
+          "name": "Fullerton",
+          "utility": "SCE",
+          "generation": "Orange County Power Authority",
+          "permit": "City of Fullerton"
+        },
+        {
+          "name": "Irvine",
+          "slug": "irvine",
+          "utility": "SCE",
+          "generation": "Orange County Power Authority",
+          "permit": "City of Irvine"
+        },
+        {
+          "name": "Fountain Valley",
+          "utility": "SCE",
+          "generation": "SCE; OCPA service beginning soon",
+          "permit": "City of Fountain Valley"
+        },
+        {
+          "name": "Huntington Beach",
+          "slug": "huntington-beach",
+          "utility": "SCE",
+          "generation": "SCE (returned from OCPA in 2024)",
+          "permit": "City of Huntington Beach"
+        },
+        {
+          "name": "Santa Ana",
+          "slug": "santa-ana",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Santa Ana"
+        },
+        {
+          "name": "Westminster",
+          "slug": "westminster",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Westminster"
+        },
+        {
+          "name": "Yorba Linda",
+          "slug": "yorba-linda",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Yorba Linda"
+        },
+        {
+          "name": "Costa Mesa, Garden Grove, Newport Beach, Orange, Tustin, Lake Forest",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "Each city's own building department"
+        },
+        {
+          "name": "Mission Viejo, Aliso Viejo, Laguna Hills, Laguna Niguel",
+          "utility": "Split: SCE or SDG&E by address",
+          "generation": "The delivery utility",
+          "permit": "Each city's own building department"
+        },
+        {
+          "name": "San Clemente",
+          "slug": "san-clemente",
+          "utility": "SDG&E",
+          "generation": "SDG&E",
+          "permit": "City of San Clemente"
+        },
+        {
+          "name": "San Juan Capistrano, Dana Point",
+          "utility": "SDG&E",
+          "generation": "SDG&E",
+          "permit": "Each city's own building department"
+        },
+        {
+          "name": "Unincorporated areas (Ladera Ranch, Rossmoor and others)",
+          "utility": "SDG&E in Ladera Ranch; SCE in Rossmoor",
+          "generation": "The delivery utility",
+          "permit": "County of Orange (OC Development Services)"
+        }
+      ],
+      "note": "Utility and generation rows come from the Energy Commission's map, queried September 23, 2026, and OCPA's own member list, which is newer than the map's community choice layer. The map can still shade Huntington Beach as OCPA; OCPA's page is the current word. For any split city, the bill is the only reliable answer for one address.",
+      "hub": {
+        "href": "/solar-savings/orange-county",
+        "label": "Orange County electric rates and bills by provider"
+      }
+    },
+    "sources": [
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "Orange County Power Authority: FAQ (current member cities)",
+        "url": "https://www.ocpower.org/faq/"
+      },
+      {
+        "label": "Orange County Power Authority: Huntington Beach customers return to SCE in 2024",
+        "url": "https://www.ocpower.org/huntington-beach-2/"
+      },
+      {
+        "label": "Orange County Power Authority: solar and net energy metering",
+        "url": "https://www.ocpower.org/energy-programs/solar-net-energy-metering/"
+      },
+      {
+        "label": "SDG&E: About us (service territory)",
+        "url": "https://www.sdge.com/more-information/our-company/about-us"
+      },
+      {
+        "label": "SDG&E: Solar Billing Plan",
+        "url": "https://www.sdge.com/solar/solar-billing-plan"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "OC Development Services: expedited solar PV permits and SolarAPP+ (unincorporated Orange County)",
+        "url": "https://pwds.oc.gov/service-areas/oc-development-services/building-safety/building-grading-information/solar-pv"
+      },
+      {
+        "label": "OC Public Works: SolarAPP+ launch notice (August 23, 2024)",
+        "url": "https://pw.oc.gov/news/new-solar-app-platform-offers-fast-automated-process-obtaining-permit-solar-equipment"
+      },
+      {
+        "label": "OC Development Services: permit FAQs (unincorporated private property)",
+        "url": "https://pwds.oc.gov/service-areas/oc-development-services/permitting-services/faqs"
+      },
+      {
+        "label": "California Government Code § 65850.52 (automated solar permitting, SB 379)",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/best-solar-companies-california",
+        "label": "How to judge a solar company anywhere in California"
+      },
+      {
+        "href": "/blog/why-is-my-sce-bill-so-high",
+        "label": "Reading an SCE bill before you compare quotes"
+      },
+      {
+        "href": "/solar-installers/how-to-verify-a-solar-contractor-california",
+        "label": "Checking a contractor's license and salesperson registration"
+      }
+    ],
+    "faq": [
+      [
+        "What are the best solar companies in Orange County?",
+        "This site does not rank them, and no public source does in a way that fits your roof. Narrow the field to companies that hold a CSLB license covering solar, confirm in writing that they serve your address, and get at least three written bids for the same system built on your own bill. The table above tells you which utility rules each bid should use."
+      ],
+      [
+        "Is Huntington Beach still part of Orange County Power Authority?",
+        "No. OCPA says the Huntington Beach City Council voted to leave in May 2023, solar customers there were switched back to SCE in April 2024 and all other customers in June 2024. SCE now supplies both generation and delivery in Huntington Beach."
+      ],
+      [
+        "What does OCPA pay solar customers?",
+        "OCPA says it reconciles generation charges monthly, runs its annual true-up in April, pays 10% more than SCE for excess generation, and currently treats Net Billing Tariff customers' generation as if it were under NEM 2.0. SCE still handles delivery charges and credits on the same bill."
+      ],
+      [
+        "Who issues solar permits in unincorporated Orange County?",
+        "The County of Orange, through OC Development Services. It accepts SolarAPP+ submittals from registered licensed contractors, launched in August 2024, and also offers an expedited plan check on its standard plans, with applications filed online in myOCeServices."
+      ],
+      [
+        "Does every Orange County city have instant solar permits?",
+        "Not necessarily instant, but state law requires an online, automated permit option such as SolarAPP+ in cities of more than 50,000 people since September 30, 2023 and in most smaller cities since September 30, 2024, for systems up to 38.4 kW that the platform can process. Designs it cannot process still go through regular plan check."
+      ]
+    ],
+    "answer": "Orange County solar companies work across three delivery utilities: SCE for most of the county, SDG&E in the south and Anaheim Public Utilities in Anaheim. In Buena Park, Fullerton and Irvine, Orange County Power Authority supplies the generation; Huntington Beach left OCPA in 2024. Each city issues its own permit, and the County of Orange permits unincorporated areas. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "Delivery utilities",
+        "value": "SCE, SDG&E, Anaheim",
+        "note": "SCE serves most of the county's area",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "OCPA member cities",
+        "value": "Buena Park, Fullerton, Irvine",
+        "note": "Fountain Valley beginning service soon",
+        "source": {
+          "publisher": "Orange County Power Authority",
+          "date": "2026-09-23",
+          "url": "https://www.ocpower.org/faq/"
+        }
+      },
+      {
+        "label": "Automated permits required",
+        "value": "Since Sept. 30, 2023",
+        "note": "Cities over 50,000; most smaller cities since 2024",
+        "source": {
+          "publisher": "California Legislature, Gov. Code § 65850.52",
+          "date": "2026-09-23",
+          "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Three solar credit rulebooks in one county",
+        "paragraphs": [
+          "On an SCE bill, a new system goes on SCE's Solar Billing Plan: exports earn Energy Export Credits that vary by hour and season, SCE locks the values for nine years from the year you start, and customers who enroll before 2028 get a bonus credit of about $0.04 per kWh, or about $0.09 if income-qualified. The settlement bill comes once a year, in the month the system started service.",
+          "In Buena Park, Fullerton and Irvine the generation half of that bill belongs to Orange County Power Authority. OCPA says SCE handles the delivery charges and credits while OCPA handles generation, reconciles generation charges monthly and holds its annual true-up in April, before summer, so that credits built up in sunny months can be used at the retail rate. It pays 10% more than SCE for surplus left at true-up.",
+          "In the SDG&E cities of the south county, the Solar Billing Plan runs on SDG&E's EV-TOU-5 time-of-use plan, with on-peak hours from 4 p.m. to 9 p.m. Export credits are priced by the hour, surplus credits roll forward month to month, and SDG&E says they cannot be applied to non-bypassable charges or the Base Services Charge. Anaheim Public Utilities, as a city utility, sets its own solar terms outside the CPUC's tariff."
+        ]
+      },
+      {
+        "heading": "How permits differ across the county",
+        "paragraphs": [
+          "Government Code section 65850.52, the law passed as SB 379, told every California city and county to offer an online, automated permitting platform such as SolarAPP+ for residential solar up to 38.4 kW, and for batteries paired with it. Cities of more than 50,000 people had to comply by September 30, 2023, and smaller cities by September 30, 2024, unless a city has fewer than 5,000 people or sits in a county of fewer than 150,000. Orange County is far larger than that, so the county exemption does not apply to its cities. The law also lets a jurisdiction send a design the platform cannot process through its regular review.",
+          "The County of Orange launched SolarAPP+ for unincorporated homes on August 23, 2024, for roof-mounted systems on existing homes, submitted by registered licensed contractors. It also keeps the expedited path that AB 2188 required every city and county to adopt by September 30, 2015: an eligibility checklist, standard plans for central-inverter and microinverter systems, structural criteria and an online application. The city pages linked in the table above describe each city's own steps where this site has checked them, such as Huntington Beach's SolarAPP+ record in its HB ACA portal."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "san-mateo-county": {
+    "name": "San Mateo County",
+    "county": "San Mateo County",
+    "utility": "pge",
+    "sourceCheckedDate": "2026-09-23",
+    "seo": {
+      "description": "Solar companies in San Mateo County: PG&E and WestLight Energy billing, which office permits your address, and 2024 permit counts by city."
+    },
+    "bill": "Almost every home in San Mateo County has the same two names on its bill: PG&E delivers the power and sends the statement, and WestLight Energy, the county's community choice provider that used to be called Peninsula Clean Energy, supplies the generation. WestLight tells readers that 97% of their neighbors in San Mateo County and Los Banos get electricity from it. A proposal should model WestLight's generation side and PG&E's delivery side separately, from your own account.",
+    "local": "The permit office depends on the address, not the county. Each of the county's cities and towns issues its own solar permits, and homes in unincorporated areas are permitted by the County of San Mateo, which issues residential solar and battery permits automatically through Symbium. The cities' own reports to the California Energy Commission show how differently they work: some issued every 2024 solar permit online, others almost none.",
+    "example": "Ask each bidder three questions before comparing prices: which office will issue your permit and through which system, whether the design includes a battery and how many kWh of it you can actually use, and how the estimate splits WestLight generation credits from PG&E delivery charges. A bid that cannot answer the first question has not looked at your address yet.",
+    "checks": [
+      [
+        "Permit office",
+        "Name the city, town or County of San Mateo office that will permit your address, and the online system it uses."
+      ],
+      [
+        "City conditions",
+        "Where the city requires it, confirm a local business license or a spot on its SolarAPP+ list (San Mateo requires both)."
+      ],
+      [
+        "WestLight and PG&E",
+        "Show WestLight generation and PG&E delivery separately, using your enrollment from the bill."
+      ],
+      [
+        "Battery scope",
+        "State usable battery kWh and backed-up circuits; about half of the County's 2025 solar permits included storage."
+      ]
+    ],
+    "region": {
+      "heading": "Permit offices and providers across San Mateo County",
+      "intro": [
+        "The utility map is simple here. On the California Energy Commission's layers, PG&E is the delivery utility across the county's inhabited area and WestLight Energy, still labeled Peninsula Clean Energy on the Commission's map, is the community choice provider over the same area. WestLight describes itself as the community electricity provider for San Mateo County and Los Banos.",
+        "Permitting is where the county divides. Under Government Code section 65850.52, cities with more than 50,000 people had to offer an online, automated solar permit such as SolarAPP+ by September 30, 2023, and smaller cities by September 30, 2024. The last column shows what each jurisdiction reported to the Energy Commission for 2024: residential solar permits issued, the share that included battery storage, and the share issued online."
+      ],
+      "places": [
+        {
+          "name": "San Mateo",
+          "slug": "san-mateo",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "City of San Mateo: 333 permits in 2024, 47% with storage, 31% online"
+        },
+        {
+          "name": "Redwood City",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "City of Redwood City: 301 permits in 2024, 49% with storage, 87% online"
+        },
+        {
+          "name": "Belmont",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "City of Belmont: 175 permits in 2024, 76% with storage, all online"
+        },
+        {
+          "name": "Pacifica",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "City of Pacifica: 172 permits in 2024, 44% with storage, all online"
+        },
+        {
+          "name": "San Carlos",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "City of San Carlos: 156 permits in 2024, 83% with storage, 40% online"
+        },
+        {
+          "name": "South San Francisco",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "City of South San Francisco: 147 permits in 2024, 71% with storage, all online"
+        },
+        {
+          "name": "Foster City",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "City of Foster City: 120 permits in 2024, 44% with storage, none online"
+        },
+        {
+          "name": "San Bruno",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "City of San Bruno: 87 permits in 2024, 41% with storage, all online"
+        },
+        {
+          "name": "Half Moon Bay",
+          "slug": "half-moon-bay",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "City of Half Moon Bay: 34 permits in 2024, 82% with storage, 82% online"
+        },
+        {
+          "name": "Atherton",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "Town of Atherton: 28 permits in 2024, 61% with storage, all online"
+        },
+        {
+          "name": "Burlingame",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "City of Burlingame: 26 permits in 2024, 65% with storage, 23% online"
+        },
+        {
+          "name": "Daly City, Menlo Park, Millbrae, Hillsborough, East Palo Alto and other cities",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "Each city's own building department; no 2024 report in the Commission's file"
+        },
+        {
+          "name": "Unincorporated areas (El Granada, Montara, North Fair Oaks and others)",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "County of San Mateo, instant permits through Symbium: 975 permits in 2025, 53% with storage, 61% online"
+        }
+      ],
+      "note": "Permit counts are each jurisdiction's own annual report under SB 379, from the Energy Commission's data file dated May 2026; a city that has not filed does not appear. A higher count reflects local demand and how many homes a city has, not how fast or friendly its process is.",
+      "hub": {
+        "href": "/solar-savings/bay-area",
+        "label": "Bay Area electric rates and community choice providers"
+      }
+    },
+    "sources": [
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Residential Solar Permit Reporting Program (SB 379)",
+        "url": "https://www.energy.ca.gov/programs-and-topics/programs/residential-solar-permit-reporting-program-sb-379/residential-solar-1"
+      },
+      {
+        "label": "WestLight Energy (formerly Peninsula Clean Energy): service area and name change",
+        "url": "https://www.westlightenergy.org/"
+      },
+      {
+        "label": "WestLight Energy: net energy metering for solar customers",
+        "url": "https://www.westlightenergy.org/residential/rates-billing/solar-rates/net-energy-metering/"
+      },
+      {
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+      },
+      {
+        "label": "County of San Mateo: instant residential solar and energy storage permits (Symbium)",
+        "url": "https://www.smcgov.org/planning/instant-residential-solar-and-energy-storage-system-permits"
+      },
+      {
+        "label": "City of San Mateo: SolarApp+ for solar installers",
+        "url": "https://www.cityofsanmateo.org/4770/SolarApp-For-Solar-Installers"
+      },
+      {
+        "label": "City of Daly City: SolarApp+",
+        "url": "https://www.dalycity.org/1157/SolarApp"
+      },
+      {
+        "label": "California Government Code § 65850.52 (automated solar permitting, SB 379)",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-savings/san-mateo",
+        "label": "San Mateo electric bills with WestLight and PG&E"
+      },
+      {
+        "href": "/blog/pge-time-of-use-rates-2026",
+        "label": "PG&E time-of-use hours a solar estimate should use"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a battery is worth adding in California"
+      }
+    ],
+    "faq": [
+      [
+        "Is solar worth it in San Mateo County?",
+        "It depends on your usage, your roof and how much of the output you use at home. PG&E says Solar Billing Plan customers save the most when they use the energy they produce on-site, because export credits vary by hour and season. That is one reason about half of the County of San Mateo's 2025 solar permits included battery storage. Get estimates built on your own 12 months of bills."
+      ],
+      [
+        "Who supplies electricity in San Mateo County?",
+        "PG&E delivers it and sends the bill. WestLight Energy, formerly Peninsula Clean Energy, supplies the generation for most homes by default. It serves San Mateo County and Los Banos, and its site says 97% of neighbors there get their electricity from WestLight."
+      ],
+      [
+        "Who issues solar permits in unincorporated San Mateo County?",
+        "The County of San Mateo. It issues residential solar and battery permits automatically through Symbium, which checks the design against state and local rules and verifies the contractor's and business licenses. Symbium only recognizes unincorporated addresses; a city address goes to that city."
+      ],
+      [
+        "Do Daly City solar permits go through SolarAPP+?",
+        "Yes, for residential systems up to 38.4 kW and paired batteries. Daly City says contractors must be registered with SolarAPP+, pay its processing fee separately from the City's permit fee, upload the approval to the City's portal and hold a Daly City business license, and that projects with multiple batteries spaced less than 3 feet apart go to regular plan review."
+      ],
+      [
+        "What does WestLight pay for extra solar?",
+        "On its net energy metering schedule, WestLight values net production at the customer's generation rate plus a $0.01 per kWh premium and settles generation charges monthly on the PG&E bill. After the April billing cycle it sends a check to customers with credit balances over $500, capped at $10,000 a year since the 2024-2025 NEM year."
+      ]
+    ],
+    "answer": "Solar companies working in San Mateo County design around PG&E, which delivers the power, and WestLight Energy, formerly Peninsula Clean Energy, which supplies it. The permit office depends on the address: each city issues its own permits, and the County of San Mateo permits unincorporated homes instantly through Symbium. The cities' 2024 reports to the Energy Commission show online permitting ranging from none to all. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "Providers",
+        "value": "PG&E and WestLight Energy",
+        "note": "WestLight was Peninsula Clean Energy",
+        "source": {
+          "publisher": "WestLight Energy",
+          "date": "2026-09-23",
+          "url": "https://www.westlightenergy.org/"
+        }
+      },
+      {
+        "label": "Unincorporated permits",
+        "value": "County of San Mateo, via Symbium",
+        "note": "Issued automatically without manual review",
+        "source": {
+          "publisher": "County of San Mateo",
+          "date": "2026-09-23",
+          "url": "https://www.smcgov.org/planning/instant-residential-solar-and-energy-storage-system-permits"
+        }
+      },
+      {
+        "label": "County permits with storage",
+        "value": "53% in 2025",
+        "note": "513 of 975 residential solar permits",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "How WestLight and PG&E split a solar bill",
+        "paragraphs": [
+          "Peninsula Clean Energy renamed itself WestLight Energy and says its service and rates did not change. WestLight's generation charges and credits appear on the monthly PG&E statement next to PG&E's delivery charges. On its net energy metering schedule, WestLight values a month of net production at the customer's generation rate plus a production premium of $0.01 per kWh, settles its generation charges monthly, and after the April billing cycle mails a check to customers whose credit balance is over $500. Since the 2024-2025 NEM year the annual cash-out is capped at $10,000, and anything above the cap is forfeited.",
+          "PG&E handles the delivery side under its own rules. A new system goes on PG&E's Solar Billing Plan, where export credits vary by time of day, day of the week and season, customers who start before 2028 get Energy Export Bonus Credits whose value is set at permission to operate, and a True-Up statement closes each 12-month cycle. PG&E says customers save the most when they use the energy they produce on-site. A proposal that shows one blended credit for all exports is hiding both of these schedules."
+        ]
+      },
+      {
+        "heading": "What the 2024 permit reports say about each city",
+        "paragraphs": [
+          "Every jurisdiction that adopted an automated permit platform must report its residential solar permits to the California Energy Commission each year. The 2024 numbers for San Mateo County's cities vary widely. Belmont, Pacifica, South San Francisco, San Bruno and Atherton reported every solar permit as issued online, while Foster City reported none online, Burlingame 23% and San Mateo 31%. Storage varied too: 83% of San Carlos's 2024 permits and 76% of Belmont's included a battery, compared with 41% in San Bruno.",
+          "For a homeowner, the online share is a practical signal. Where most permits are issued online, a qualifying design can be permitted the same day, and the schedule depends more on the installer than the city. Where most go through plan check, ask the bidder how long its last few permits in your city took. The City of San Mateo adds its own conditions to SolarAPP+: the contractor needs an active San Mateo business license and must ask to be put on the City's eligibility list."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "bay-area": {
+    "name": "Bay Area",
+    "county": "San Francisco Bay Area",
+    "utility": "other",
+    "sourceCheckedDate": "2026-09-23",
+    "seo": {
+      "title": "Bay Area Solar Companies: How to Compare Quotes (2026)",
+      "description": "Bay Area solar companies: which CCA or city utility prices your solar credits, which office permits your address, and 2024 permit counts by city.",
+      "h1": "Solar Companies in the Bay Area: How to Compare Solar Panel Quotes"
+    },
+    "bill": "Most Bay Area homes are on PG&E's wires, but PG&E is rarely the only name on the bill. In most cities a community choice provider such as Ava Community Energy, MCE, CleanPowerSF, San José Clean Energy, Silicon Valley Clean Energy, WestLight Energy or Sonoma Clean Power supplies the generation and sets its own solar credit rules. Three cities, Palo Alto, Santa Clara and Alameda, run their own electric utilities instead. Start every quote from the provider names on your own statement.",
+    "local": "There is no Bay Area permit. Each city issues its own solar permit, and each county permits its unincorporated areas. The cities' own 2024 reports to the California Energy Commission show how far apart they are: San Jose issued every one of its 3,698 residential solar permits online, San Francisco about 17% of 887, and Hayward none of 680. Ask each bidder how your city will permit your design and how long its last few permits there took.",
+    "example": "Two bids for the same Oakland roof can model different bills: one may credit exports at PG&E's rates, the other at Ava's. Ask every Bay Area bidder to state the generation provider, the delivery utility, the permit office and the battery's usable kWh at the top of the proposal, then compare the price and the remaining bill only after those four match.",
+    "checks": [
+      [
+        "Generation provider",
+        "Name the CCA or city utility on your bill and model its export credits, not PG&E's by default."
+      ],
+      [
+        "City utility",
+        "In Palo Alto, Santa Clara or Alameda, use that city utility's solar rules and interconnection steps, not PG&E's."
+      ],
+      [
+        "Permit route",
+        "Say which city or county office permits your address and whether the design qualifies for its online permit."
+      ],
+      [
+        "Battery",
+        "State usable kWh and backed-up circuits; in San Jose 79% of 2024 solar permits included storage."
+      ]
+    ],
+    "region": {
+      "heading": "Bay Area providers and permit offices by city",
+      "intro": [
+        "The California Energy Commission's utility map shows PG&E as the delivery utility across most of the region, with a patchwork of community choice aggregators supplying generation on top of it, and three cities outside PG&E altogether: Palo Alto (City of Palo Alto Utilities), Santa Clara (Silicon Valley Power) and Alameda (the City of Alameda's own utility, listed on the map as Alameda Power & Telecom). Each community choice provider names its own member communities: Ava lists 16 cities plus unincorporated Alameda and San Joaquin counties, Silicon Valley Clean Energy 12 cities plus unincorporated Santa Clara County, and Sonoma Clean Power Sonoma and Mendocino counties.",
+        "The permit column shows each city's own report to the Energy Commission under SB 379: residential solar permits issued, the share with battery storage, and the share issued online, for 2024 unless another year is named."
+      ],
+      "places": [
+        {
+          "name": "San Jose",
+          "slug": "san-jose",
+          "utility": "PG&E",
+          "generation": "San José Clean Energy",
+          "permit": "City of San José: 3,698 permits in 2024, 79% with storage, all online"
+        },
+        {
+          "name": "San Francisco",
+          "slug": "san-francisco",
+          "utility": "PG&E",
+          "generation": "CleanPowerSF",
+          "permit": "San Francisco DBI: 887 permits in 2024, 26% with storage, 17% online"
+        },
+        {
+          "name": "Oakland",
+          "slug": "oakland",
+          "utility": "PG&E",
+          "generation": "Ava Community Energy",
+          "permit": "City of Oakland: 1,548 permits in 2024 (6% online); 2,328 in 2025 (72% online)"
+        },
+        {
+          "name": "Fremont",
+          "slug": "fremont",
+          "utility": "PG&E",
+          "generation": "Ava Community Energy",
+          "permit": "City of Fremont: 1,756 permits in 2024, 74% with storage, 20% online"
+        },
+        {
+          "name": "Hayward",
+          "slug": "hayward",
+          "utility": "PG&E",
+          "generation": "Ava Community Energy",
+          "permit": "City of Hayward: 680 permits in 2024, 72% with storage, none online"
+        },
+        {
+          "name": "Berkeley",
+          "slug": "berkeley",
+          "utility": "PG&E",
+          "generation": "Ava Community Energy",
+          "permit": "City of Berkeley: 929 permits in 2023, 1% online"
+        },
+        {
+          "name": "Pleasanton",
+          "slug": "pleasanton",
+          "utility": "PG&E",
+          "generation": "Ava Community Energy",
+          "permit": "City of Pleasanton: 73 permits in 2024, 22% online"
+        },
+        {
+          "name": "Livermore",
+          "slug": "livermore",
+          "utility": "PG&E",
+          "generation": "Ava Community Energy",
+          "permit": "City of Livermore (no SB 379 report in the Commission's file)"
+        },
+        {
+          "name": "Richmond",
+          "slug": "richmond",
+          "utility": "PG&E",
+          "generation": "MCE",
+          "permit": "City of Richmond: 513 permits in 2024, 68% with storage, 30% online"
+        },
+        {
+          "name": "Concord",
+          "slug": "concord",
+          "utility": "PG&E",
+          "generation": "MCE",
+          "permit": "City of Concord: 127 permits in 2023, 26% online"
+        },
+        {
+          "name": "Walnut Creek",
+          "slug": "walnut-creek",
+          "utility": "PG&E",
+          "generation": "MCE",
+          "permit": "City of Walnut Creek (no SB 379 report in the Commission's file)"
+        },
+        {
+          "name": "San Ramon",
+          "slug": "san-ramon",
+          "utility": "PG&E",
+          "generation": "MCE",
+          "permit": "City of San Ramon: 694 permits in 2024, all online"
+        },
+        {
+          "name": "Sunnyvale",
+          "slug": "sunnyvale",
+          "utility": "PG&E",
+          "generation": "Silicon Valley Clean Energy",
+          "permit": "City of Sunnyvale: 929 permits in 2023, all online"
+        },
+        {
+          "name": "Mountain View",
+          "slug": "mountain-view",
+          "utility": "PG&E",
+          "generation": "Silicon Valley Clean Energy",
+          "permit": "City of Mountain View: 337 permits in 2025, 78% with storage, 49% online"
+        },
+        {
+          "name": "Cupertino",
+          "slug": "cupertino",
+          "utility": "PG&E",
+          "generation": "Silicon Valley Clean Energy",
+          "permit": "City of Cupertino: 504 permits in 2024, 57% with storage, 39% online"
+        },
+        {
+          "name": "Santa Clara",
+          "slug": "santa-clara",
+          "utility": "Silicon Valley Power (city utility)",
+          "generation": "Silicon Valley Power",
+          "permit": "City of Santa Clara: 97 permits in 2024, 30% online"
+        },
+        {
+          "name": "Palo Alto",
+          "slug": "palo-alto",
+          "utility": "City of Palo Alto Utilities",
+          "generation": "City of Palo Alto Utilities",
+          "permit": "City of Palo Alto: 155 permits in 2024, 36% online"
+        },
+        {
+          "name": "Alameda",
+          "utility": "City of Alameda utility (Alameda Power & Telecom on the CEC map)",
+          "generation": "The city utility",
+          "permit": "City of Alameda: 86 permits in 2023, 14% online"
+        },
+        {
+          "name": "San Mateo County cities",
+          "utility": "PG&E",
+          "generation": "WestLight Energy",
+          "permit": "Each city, or the County through Symbium (see the San Mateo County page)"
+        },
+        {
+          "name": "Santa Rosa",
+          "slug": "santa-rosa",
+          "utility": "PG&E",
+          "generation": "Sonoma Clean Power",
+          "permit": "City of Santa Rosa: 1,126 permits in 2025, 37% with storage, 72% online"
+        },
+        {
+          "name": "Petaluma",
+          "slug": "petaluma",
+          "utility": "PG&E",
+          "generation": "Sonoma Clean Power",
+          "permit": "City of Petaluma: 334 permits in 2024, 84% with storage, all online"
+        },
+        {
+          "name": "Marin County: San Rafael, Novato, Mill Valley and others",
+          "utility": "PG&E",
+          "generation": "MCE",
+          "permit": "Each town or city, or the County of Marin; San Rafael: 430 permits in 2023, all online"
+        },
+        {
+          "name": "Santa Cruz",
+          "slug": "santa-cruz",
+          "utility": "PG&E",
+          "generation": "Central Coast Community Energy",
+          "permit": "City of Santa Cruz: 192 permits in 2024, 33% with storage, 18% online"
+        },
+        {
+          "name": "Scotts Valley",
+          "slug": "scotts-valley",
+          "utility": "PG&E",
+          "generation": "Central Coast Community Energy",
+          "permit": "City of Scotts Valley"
+        }
+      ],
+      "note": "Utility and CCA rows are from the Energy Commission's map, queried September 23, 2026, and each provider's own list of communities where it publishes one. Permit counts are the jurisdictions' own SB 379 reports in the Commission's data file dated May 2026. A high count reflects demand and city size, not a faster process.",
+      "hub": {
+        "href": "/solar-savings/bay-area",
+        "label": "Bay Area electric rates and community choice providers"
+      }
+    },
+    "sources": [
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "Ava Community Energy: communities we serve",
+        "url": "https://avaenergy.org/community/who-we-serve/"
+      },
+      {
+        "label": "Silicon Valley Clean Energy: communities served",
+        "url": "https://www.svcleanenergy.org/"
+      },
+      {
+        "label": "Silicon Valley Clean Energy: rooftop solar and the Solar Billing Plan",
+        "url": "https://www.svcleanenergy.org/solar/"
+      },
+      {
+        "label": "San José Clean Energy: solar billing and net energy metering",
+        "url": "https://sanjosecleanenergy.org/solar-billing-nem/"
+      },
+      {
+        "label": "CleanPowerSF: understanding my bill",
+        "url": "https://cleanpowersf.org/understanding-my-bill"
+      },
+      {
+        "label": "WestLight Energy (formerly Peninsula Clean Energy)",
+        "url": "https://www.westlightenergy.org/"
+      },
+      {
+        "label": "Sonoma Clean Power: who we are",
+        "url": "https://sonomacleanpower.org/who-we-are"
+      },
+      {
+        "label": "Central Coast Community Energy: Implementation Plan Addendum No. 5 (May 2023, PDF)",
+        "url": "https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf"
+      },
+      {
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+      },
+      {
+        "label": "California Government Code § 65850.52 (automated solar permitting, SB 379)",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+      },
+      {
+        "label": "City of San Rafael: SolarAPP+ permits (OpenGov)",
+        "url": "https://www.cityofsanrafael.org/solarapp-permits/"
+      },
+      {
+        "label": "City of San Rafael: solar, battery and EV charger permit requirements",
+        "url": "https://www.cityofsanrafael.org/renewable-energy/"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/san-mateo-county",
+        "label": "San Mateo County permit offices and 2024 counts"
+      },
+      {
+        "href": "/blog/pge-time-of-use-rates-2026",
+        "label": "PG&E time-of-use hours a solar estimate should use"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a battery is worth adding under net billing"
+      }
+    ],
+    "faq": [
+      [
+        "What are the best solar companies in the Bay Area?",
+        "No public source ranks them in a way that fits one roof, and this site does not either. Narrow the list to companies with a CSLB license that covers solar, written confirmation that they serve your address, and experience with your city's permit office and your generation provider. Then compare at least three written bids for the same system built on your own bill."
+      ],
+      [
+        "Does it matter which community choice provider is on my bill?",
+        "Yes. PG&E delivers the power in most Bay Area cities, but the generation half of a solar bill, and the credit for exports, follows the provider on your statement. San José Clean Energy, for example, says it credits the generation part of the bill when your panels produce more than you use, while PG&E credits the delivery part."
+      ],
+      [
+        "Which Bay Area cities are not served by PG&E?",
+        "On the Energy Commission's map, Palo Alto is served by City of Palo Alto Utilities, Santa Clara by Silicon Valley Power and Alameda by the City of Alameda's own utility, listed on the map as Alameda Power & Telecom. Each is a city-owned utility that sets its own solar rules outside the CPUC's net billing tariff."
+      ],
+      [
+        "How long does a Bay Area solar permit take?",
+        "It depends on the city. San Jose reported all 3,698 of its 2024 residential solar permits as issued online, which for a qualifying design can mean a same-day permit, while San Francisco reported 17% and Hayward none. Ask the bidder how long its recent permits in your city took."
+      ],
+      [
+        "Why do so many Bay Area solar permits include batteries?",
+        "The permit data shows the trend: 79% of San Jose's 2024 residential solar permits and 74% of Fremont's included storage. PG&E says Solar Billing Plan customers save the most when they use the energy they produce on-site, because export credits vary by hour and season, and a battery moves daytime output into the evening."
+      ],
+      [
+        "Who are the solar providers in Marin County?",
+        "PG&E delivers the power and MCE supplies the generation across Marin's towns on the Energy Commission's map. For the installer, look for a CSLB license covering solar and experience with your town's permit office; San Rafael, for example, takes SolarAPP+ approvals through its OpenGov portal. Get at least three written bids for the same system."
+      ]
+    ],
+    "answer": "Solar companies in the Bay Area work across one delivery utility and many generation providers: PG&E's wires reach most homes, while Ava, MCE, CleanPowerSF, San José Clean Energy, Silicon Valley Clean Energy, WestLight and Sonoma Clean Power set the solar credits in their cities, and Palo Alto, Santa Clara and Alameda run their own utilities. Each city issues its own permit, some fully online and some not. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "City-owned utilities",
+        "value": "Palo Alto, Santa Clara, Alameda",
+        "note": "Outside PG&E and the CPUC net billing tariff",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "San Jose permits online",
+        "value": "All 3,698 in 2024",
+        "note": "San Francisco: 17% of 887",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      },
+      {
+        "label": "Ava member cities",
+        "value": "16, plus two counties' unincorporated areas",
+        "note": "Alameda and San Joaquin counties",
+        "source": {
+          "publisher": "Ava Community Energy",
+          "date": "2026-09-23",
+          "url": "https://avaenergy.org/community/who-we-serve/"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Why the generation provider changes a Bay Area quote",
+        "paragraphs": [
+          "On a PG&E account with a community choice provider, the bill has two halves. CleanPowerSF describes it plainly: it buys the electricity, PG&E delivers it, and you see a separate charge from each. San José Clean Energy says the same split applies to solar: when your panels produce more than you use, it credits the generation part of the bill and PG&E credits the delivery part. So a proposal that credits every exported kWh at PG&E's bundled value is modeling a bill most Bay Area homes do not have.",
+          "The providers also draw their dates differently. Silicon Valley Clean Energy says customers who applied for solar after April 14, 2023 are on the Solar Billing Plan, while those who applied between June 29, 2016 and that date stay on NEM 2.0 for 20 years from installation. PG&E's own Solar Billing Plan values exports by time of day, day of the week and season, gives Energy Export Bonus Credits to customers who start before 2028, and closes each 12-month cycle with a True-Up statement."
+        ]
+      },
+      {
+        "heading": "What the permit reports show across the region",
+        "paragraphs": [
+          "State law, Government Code section 65850.52, required cities of more than 50,000 people to offer an online, automated solar permit such as SolarAPP+ by September 30, 2023, and smaller cities by September 30, 2024. Each city that did must report its residential solar permits to the Energy Commission every year, and the 2024 reports show the law landed unevenly. San Jose, Petaluma and Danville issued nearly every permit online; Fremont issued 20% online, San Francisco 17%, Oakland 6% and Hayward none. Oakland's 2025 report shows the share jumping to 72%.",
+          "Storage is now the norm in much of the region. In 2024, 79% of San Jose's residential solar permits, 74% of Fremont's and 72% of Hayward's included a battery, against 26% in San Francisco. For a homeowner, that means a bid without a battery is now the unusual one in many South Bay and East Bay cities; ask each bidder to show the bill with and without it."
+        ]
+      },
+      {
+        "heading": "Marin County: MCE and town-by-town permits",
+        "paragraphs": [
+          "Every Marin town and census place checked on the Energy Commission's map, from Novato and San Rafael to Mill Valley, Sausalito, Fairfax and Point Reyes Station, sits in PG&E's delivery territory with MCE as the community choice provider. MCE's own site could not be reached for this page, so check its current solar terms there before relying on any proposal's generation credits.",
+          "Permits are local. San Rafael sends eligible rooftop solar and battery projects through SolarAPP+ first and then into its OpenGov portal with the SolarAPP+ ID, approved documents and inspection checklist; projects that do not qualify go through its standard permit process, where the plans need a site plan with panel locations and clearances, electrical details and manufacturer specs, and a battery or service panel upgrade done at the same time can go on the same permit. San Rafael reported all 430 of its 2023 residential solar permits as issued online, while Corte Madera reported none of its 9 in 2024 and San Anselmo one of 59."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "simi-valley": {
+    "name": "Simi Valley",
+    "county": "Ventura County",
+    "utility": "sce",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Simi Valley homes get delivery from Southern California Edison and, by default, generation from Clean Power Alliance, which has served the city since 2019 with Lean Power as its default plan. On a new solar system, CPA runs the Solar Billing Plan on the generation half of the bill and SCE on the delivery half, so a proposal should model both from your own statement.",
+    "local": "Since January 1, 2023, Simi Valley has required licensed contractors to run roof-mounted residential solar through SolarAPP+ for plan review before the City issues a permit. The contractor then applies in the City's self-service portal with the SolarAPP+ approval and a signed Construction Permit Declaration, pays the fees online, and the permit is issued automatically by email. Ground-mounted systems and additions to an existing array start with a call to Building and Safety instead.",
+    "example": "Simi Valley's SolarAPP+ permits come with one inspection, so the work has to be finished and match the approved scope before the inspector arrives. Ask each bidder whether its design fits SolarAPP+ (the City says up to 38 kW, with or without a panel upgrade), who books the inspection, and whether a battery is on the same permit. Then compare the price and the remaining CPA and SCE bill.",
+    "checks": [
+      [
+        "SolarAPP+ route",
+        "Confirm the roof-mounted design goes through SolarAPP+, and who pays its $25 per-project fee and the City's permit fee."
+      ],
+      [
+        "One inspection",
+        "Say when the single SolarAPP+ inspection will be booked and that all work, including any battery and panel upgrade, will be done by then."
+      ],
+      [
+        "Ground mount or add-on",
+        "For a ground mount or panels added to an existing system, show that Building and Safety was called first."
+      ],
+      [
+        "CPA and SCE bill",
+        "Model CPA's generation credits and April true-up alongside SCE's delivery credits, from your own bill."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Simi Valley Building and Safety: photovoltaic information (SolarAPP+ required since January 1, 2023)",
+        "url": "https://www.simivalley.org/departments/environmental-services/building-safety-division/photovoltaic-information"
+      },
+      {
+        "label": "Clean Power Alliance: partner communities (Simi Valley default plan and start year)",
+        "url": "https://cleanpoweralliance.org/"
+      },
+      {
+        "label": "Clean Power Alliance: solar, net energy metering and Solar Billing Plan",
+        "url": "https://cleanpoweralliance.org/solar/"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "Whether a battery earns its cost under net billing"
+      },
+      {
+        "href": "/blog/sce-settlement-bill",
+        "label": "How SCE's annual solar settlement works"
+      },
+      {
+        "href": "/blog/hoa-solar-rights-california",
+        "label": "What an HOA can and cannot require for solar"
+      }
+    ],
+    "faq": [
+      [
+        "How do I get a solar permit in Simi Valley?",
+        "A licensed contractor submits the roof-mounted design in SolarAPP+, pays its $25 administrative fee and downloads the approval. It then applies for the Building & Safety SolarAPP+ permit in the City's self-service portal, attaches the approval and a signed Construction Permit Declaration, and pays online; the permit is issued automatically by email."
+      ],
+      [
+        "Can a homeowner pull a solar permit in Simi Valley?",
+        "Owner-builders are handled separately: the City asks homeowners seeking owner-builder status to contact Building and Safety at (805) 583-6723 rather than use the SolarAPP+ route."
+      ],
+      [
+        "Do batteries and panel upgrades need separate permits in Simi Valley?",
+        "No. The City issues one combined permit covering the photovoltaic installation along with any associated storage and panel upgrades or change-outs. In 2024, 530 of the City's 601 residential solar permits included storage, according to its report to the California Energy Commission."
+      ],
+      [
+        "Who supplies electricity in Simi Valley?",
+        "SCE delivers it and sends the bill. Clean Power Alliance supplies the generation by default, on its Lean Power plan, and has served the city since 2019. CPA offers three energy options, and the one on your bill is the one a proposal should use."
+      ],
+      [
+        "What does Clean Power Alliance pay for solar exports?",
+        "For systems approved after August 31, 2023, CPA's Solar Billing Plan credits exports on the generation side at hourly values from the CPUC's Avoided Cost Calculator, trues up every solar customer in April, and pays net surplus at rates 10% higher than SCE's. Credits over $100 at true-up are paid by check."
+      ]
+    ],
+    "answer": "Solar companies in Simi Valley must send roof-mounted residential jobs through SolarAPP+ before the City issues a permit, a rule in force since January 1, 2023; the permit is then issued automatically from the City's portal, and there is one inspection. SCE delivers the power and Clean Power Alliance supplies it by default, with its own April true-up. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "Permit route",
+        "value": "SolarAPP+ required",
+        "note": "Since January 1, 2023, for roof-mounted residential solar",
+        "source": {
+          "publisher": "City of Simi Valley",
+          "date": "2026-09-23",
+          "url": "https://www.simivalley.org/departments/environmental-services/building-safety-division/photovoltaic-information"
+        }
+      },
+      {
+        "label": "Generation",
+        "value": "Clean Power Alliance",
+        "note": "Default plan Lean Power; serving since 2019",
+        "source": {
+          "publisher": "Clean Power Alliance",
+          "date": "2026-09-23",
+          "url": "https://cleanpoweralliance.org/"
+        }
+      },
+      {
+        "label": "2024 solar permits",
+        "value": "601",
+        "note": "88% with storage, 79% issued online",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Simi Valley's SolarAPP+ steps",
+        "paragraphs": [
+          "The City's process has two halves. In SolarAPP+, the contractor registers, submits the design, pays a $25 administrative fee per project and downloads the approval document; the City notes that SolarAPP+ registration can take longer than usual because of statewide demand. In the City's self-service portal, the contractor selects the Building & Safety SolarAPP+ permit, attaches the signed Construction Permit Declaration and the approval document, pays the permit fees online, and the permit is issued automatically by email.",
+          "SolarAPP+ permits in Simi Valley include only one inspection, so the City asks that all work be complete, and match the approved scope on the approval document and permit, before the inspection is requested. Inspection requests made in the portal by 4 p.m. may be scheduled for the next business day, and the inspector will want a set of plans along with the SolarAPP+ approval. Revisions go to Building and Safety, and ground-mounted systems or additions to an existing array need a call there before applying."
+        ]
+      },
+      {
+        "heading": "What the permit numbers show",
+        "paragraphs": [
+          "Simi Valley reported 1,357 residential solar permits to the California Energy Commission for 2023 and 601 for 2024. The storage share changed sharply: 446 of the 2023 permits included a battery, compared with 530 of the 2024 permits, about 88%. The share issued online rose from 70% to 79%.",
+          "That shift lines up with the billing rules. Clean Power Alliance moved new solar customers to its Solar Billing Plan for systems approved after August 31, 2023, crediting exports at hourly avoided-cost values, and SCE says its own export credits are worth less than the power you buy from the grid. A battery lets a home use its midday output in the evening instead of exporting it, so ask every bidder to show the bill with and without one."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "scotts-valley": {
+    "name": "Scotts Valley",
+    "county": "Santa Cruz County",
+    "utility": "pge",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "PG&E delivers power to Scotts Valley and sends the bill, and Central Coast Community Energy (3CE) supplies the generation by default; the city was one of 3CE's founding members when service began on March 1, 2018. On solar, that means two true-ups a year: one with PG&E for delivery and one with 3CE, in December, for generation. A proposal should model each from your own statement.",
+    "local": "Scotts Valley permits residential rooftop solar and battery systems through SolarAPP+ and its OpenGov portal. The contractor runs the design through SolarAPP+ and pays its processing fee, then applies for the building permit in the City's portal; once the fees are paid, the permit is issued electronically. Inspections are requested online, and commercial buildings cannot use this route.",
+    "example": "Ask each Scotts Valley bidder whether its design qualifies for SolarAPP+ as a roof-mounted retrofit, who files the City permit in OpenGov, and who handles a revision if the design changes. For the bill, have it show 3CE's December true-up separately from PG&E's, with any surplus valued at 3CE's net surplus rate rather than the retail price.",
+    "checks": [
+      [
+        "Permit route",
+        "Confirm the job is a roof-mounted residential retrofit that qualifies for SolarAPP+, and who files the City permit in OpenGov."
+      ],
+      [
+        "Revisions",
+        "Say who revises the design in SolarAPP+ and uploads the new inspection checklist to the City if anything changes."
+      ],
+      [
+        "Two true-ups",
+        "Show 3CE's December generation true-up separately from PG&E's delivery true-up."
+      ],
+      [
+        "Address",
+        "Confirm the address is inside Scotts Valley city limits; the County of Santa Cruz permits unincorporated homes."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Scotts Valley: SolarAPP+ automated solar and energy storage plan reviews (October 2024, PDF)",
+        "url": "https://scottsvalley.gov/DocumentCenter/View/5409/Solar-Permits-and-Energy-Storage-Systems-10-2024"
+      },
+      {
+        "label": "Central Coast Community Energy: Solar Billing Plan",
+        "url": "https://3cenergy.org/solar-billing-plan/"
+      },
+      {
+        "label": "Central Coast Community Energy: Implementation Plan Addendum No. 5 (May 2023, PDF; founding member agencies)",
+        "url": "https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf"
+      },
+      {
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/bay-area",
+        "label": "How generation providers and permits differ around the Bay Area"
+      },
+      {
+        "href": "/blog/pge-time-of-use-rates-2026",
+        "label": "The PG&E time-of-use hours behind a solar estimate"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When adding a battery makes sense"
+      }
+    ],
+    "faq": [
+      [
+        "How do I get a solar permit in Scotts Valley?",
+        "A licensed contractor registers with SolarAPP+, submits the design for automated review and pays SolarAPP+'s processing fee, then applies for the building permit in the City's OpenGov portal. Once all fees are paid the permit is issued immediately and electronically, and inspections are requested online."
+      ],
+      [
+        "How fast can I get a solar inspection in Scotts Valley?",
+        "The City says inspection requests made online by 4 p.m. may be scheduled for the following business day."
+      ],
+      [
+        "Who supplies electricity in Scotts Valley?",
+        "PG&E delivers it and sends the bill. Central Coast Community Energy (3CE) supplies the generation by default; Scotts Valley was among the cities 3CE began serving on March 1, 2018."
+      ],
+      [
+        "When is the solar true-up in Scotts Valley?",
+        "Twice a year, in effect. 3CE trues up all of its customers' generation charges in December, with true-up statements on January or February bills, while PG&E runs a separate true-up for delivery charges on your own 12-month cycle."
+      ],
+      [
+        "What does 3CE pay for extra solar?",
+        "On its Solar Billing Plan, 3CE credits exports at hourly Energy Export Credit rates based on the CPUC's Avoided Cost Calculator and uses them against generation charges. At the December true-up, net surplus is paid at 3CE's Net Surplus Compensation rate, the average market rate, and residential customers owed at least $200 can request a check within 45 days of the true-up statement."
+      ]
+    ],
+    "answer": "Solar companies installing in Scotts Valley file through SolarAPP+ and the City's OpenGov portal, which issues the permit electronically once fees are paid; inspections are booked online. PG&E delivers the power and Central Coast Community Energy supplies it, with 3CE's own true-up every December. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "Permit route",
+        "value": "SolarAPP+, then OpenGov",
+        "note": "Permit issued electronically once fees are paid",
+        "source": {
+          "publisher": "City of Scotts Valley",
+          "date": "2026-09-23",
+          "url": "https://scottsvalley.gov/DocumentCenter/View/5409/Solar-Permits-and-Energy-Storage-Systems-10-2024"
+        }
+      },
+      {
+        "label": "Generation",
+        "value": "Central Coast Community Energy",
+        "note": "Founding member city; service since March 1, 2018",
+        "source": {
+          "publisher": "Central Coast Community Energy",
+          "date": "2026-09-23",
+          "url": "https://3cenergy.org/wp-content/uploads/2023/05/Implementation-Plan-Addendum-No.-5.pdf"
+        }
+      },
+      {
+        "label": "3CE true-up",
+        "value": "December",
+        "note": "PG&E trues up delivery separately",
+        "source": {
+          "publisher": "Central Coast Community Energy",
+          "date": "2026-09-23",
+          "url": "https://3cenergy.org/solar-billing-plan/"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Scotts Valley's permit steps",
+        "paragraphs": [
+          "The City's SolarAPP+ handout, dated October 2024, covers residential roof-mounted retrofit solar systems and energy storage, installed by licensed contractors; commercial buildings are not eligible. The contractor registers with SolarAPP+, submits the design for automated review and pays SolarAPP+'s processing fee. If SolarAPP+ rejects the project, the City asks the contractor to work that out directly with SolarAPP+.",
+          "With an approval in hand, the contractor applies for the building permit in the City's OpenGov portal. Once every fee is paid the permit is issued immediately and electronically, and inspections are requested online, with requests received by 4 p.m. eligible for the next business day. A revision goes through SolarAPP+ first; the contractor then gives the City the new inspection checklist in the portal. Homes outside the city limits are permitted by the County of Santa Cruz, which reported 571 residential solar permits to the Energy Commission for 2024, 21% of them issued online."
+        ]
+      },
+      {
+        "heading": "How 3CE and PG&E credit a Scotts Valley system",
+        "paragraphs": [
+          "Central Coast Community Energy began serving its founding member agencies, Scotts Valley among them, on March 1, 2018. On a new system, 3CE credits exports at its hourly Energy Export Credit rates, which follow the CPUC's Avoided Cost Calculator, and applies them against generation charges in the current or later months. Customers enrolled in CARE or FERA get a flat low-income adder of $0.00396 per kWh on top of the export credit, for nine years.",
+          "3CE trues up every customer's generation account in December, and true-up statements appear on January or February bills. If a home produced more than it used over the period, the surplus is paid at 3CE's Net Surplus Compensation rate, which 3CE sets each December at the average market rate, as a bill credit; residential customers owed at least $200 can ask for a check within 45 days. PG&E's true-up for delivery charges follows its own 12-month cycle, so a Scotts Valley solar home sees two."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "sunnyvale": {
+    "name": "Sunnyvale",
+    "county": "Santa Clara County",
+    "utility": "pge",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Sunnyvale homes are PG&E delivery customers, and Silicon Valley Clean Energy, which is headquartered in the city, is the official generation provider unless a customer opted out. SVCE sets the generation half of a solar bill: systems applied for after April 14, 2023 go on its Solar Billing Plan, while earlier NEM 2.0 systems keep their terms for 20 years. A proposal should model SVCE's generation credits and PG&E's delivery charges separately, from your own statement.",
+    "local": "Sunnyvale permits rooftop residential solar through SolarAPP+, and every one of the 929 residential solar permits the City reported to the Energy Commission for 2023 was issued online. The contractor gets SolarAPP+ approval for a $25 fee, holds a Sunnyvale business license, applies for a Photovoltaic (SolarAPP+) permit in the City's E-OneStop online services, pays, and prints the permit card for inspections.",
+    "example": "SolarAPP+ in Sunnyvale includes three free revisions, so a design change after approval should not cost you a new plan review. Ask each bidder whether it already holds a Sunnyvale business license, whether its design qualifies for SolarAPP+, and how the estimate splits SVCE's generation credits from PG&E's delivery charges. Then compare prices on the same system.",
+    "checks": [
+      [
+        "Business license",
+        "Confirm the company holds a Sunnyvale business license; the City requires one for anyone doing business in Sunnyvale."
+      ],
+      [
+        "SolarAPP+ and E-OneStop",
+        "Say who submits to SolarAPP+, applies in E-OneStop, prints the permit card and requests the inspection."
+      ],
+      [
+        "SVCE vs PG&E",
+        "Model SVCE's Solar Billing Plan on generation and PG&E's on delivery, using the plan on your bill."
+      ],
+      [
+        "EV and battery load",
+        "Include any EV charger or heat pump in the usage the system is sized from, and state the battery's usable kWh."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Sunnyvale: SolarAPP+ for solar installers",
+        "url": "https://www.sunnyvale.ca.gov/business-and-development/planning-and-building/solarapp-for-solar-installers"
+      },
+      {
+        "label": "Silicon Valley Clean Energy: communities served and headquarters",
+        "url": "https://www.svcleanenergy.org/"
+      },
+      {
+        "label": "Silicon Valley Clean Energy: rooftop solar, NEM and Solar Billing Plan",
+        "url": "https://www.svcleanenergy.org/solar/"
+      },
+      {
+        "label": "Silicon Valley Clean Energy: residential rates and sample bill comparison",
+        "url": "https://www.svcleanenergy.org/residential-rates/"
+      },
+      {
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/bay-area",
+        "label": "How Bay Area cities differ on providers and permits"
+      },
+      {
+        "href": "/blog/pge-time-of-use-rates-2026",
+        "label": "PG&E time-of-use hours for a solar estimate"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "Whether a battery earns its place"
+      }
+    ],
+    "faq": [
+      [
+        "How do I get a solar permit in Sunnyvale?",
+        "A licensed contractor submits the design through SolarAPP+ for pre-approval and pays its $25 processing fee, then applies for a Photovoltaic (SolarAPP+) permit in the City's E-OneStop online services, uploads the approved plans, pays, and prints the permit card. The inspection is requested in the same E-OneStop account once the work is done."
+      ],
+      [
+        "Do solar companies need a Sunnyvale business license?",
+        "Yes. The City says anyone engaging in or carrying on any business in Sunnyvale must have a business license from the City, and its SolarAPP+ page lists the license as a step before applying for the permit."
+      ],
+      [
+        "Who supplies electricity for solar homes in Sunnyvale?",
+        "PG&E delivers it and sends the bill. Silicon Valley Clean Energy is the official generation provider for Sunnyvale and 12 other communities, and it handles the generation side of solar billing for its customers."
+      ],
+      [
+        "Which solar billing plan will a new Sunnyvale system be on?",
+        "SVCE says anyone who applied for solar after April 14, 2023 is, or will be, on the Solar Billing Plan. Customers who applied between June 29, 2016 and April 14, 2023 are on NEM 2.0, and NEM customers stay on it for 20 years after installation."
+      ]
+    ],
+    "answer": "Solar companies in Sunnyvale permit rooftop systems through SolarAPP+ and the City's E-OneStop online services, and the City reported all 929 of its 2023 residential solar permits as issued online. Each company needs a Sunnyvale business license. PG&E delivers the power and Silicon Valley Clean Energy supplies it, with its own Solar Billing Plan for systems applied for after April 14, 2023. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "Permit route",
+        "value": "SolarAPP+, then E-OneStop",
+        "note": "$25 SolarAPP+ fee; three free revisions",
+        "source": {
+          "publisher": "City of Sunnyvale",
+          "date": "2026-09-23",
+          "url": "https://www.sunnyvale.ca.gov/business-and-development/planning-and-building/solarapp-for-solar-installers"
+        }
+      },
+      {
+        "label": "2023 permits issued online",
+        "value": "929 of 929",
+        "note": "26% included storage",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      },
+      {
+        "label": "Generation",
+        "value": "Silicon Valley Clean Energy",
+        "note": "PG&E delivers and bills",
+        "source": {
+          "publisher": "Silicon Valley Clean Energy",
+          "date": "2026-09-23",
+          "url": "https://www.svcleanenergy.org/"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Sunnyvale's SolarAPP+ steps",
+        "paragraphs": [
+          "The City describes SolarAPP+ as instant permitting for new residential rooftop solar, without full plan drawings, and notes that the platform includes three free revisions. The contractor signs in or registers with SolarAPP+, submits the design for pre-approval, pays the $25 processing fee and downloads the approved plans. Before applying to the City, it needs a Sunnyvale business license.",
+          "The City permit is filed in E-OneStop Online Services as a Photovoltaic (SolarAPP+) permit, with the approved plans uploaded and the fee paid; the contractor then prints the permit card for the inspections and requests the inspection in the same account when the work is done. Sunnyvale's 2023 report to the Energy Commission shows how routine this has become: 929 residential solar permits, every one issued online, 238 of them with battery storage."
+        ]
+      },
+      {
+        "heading": "SVCE's solar rules in Sunnyvale",
+        "paragraphs": [
+          "Silicon Valley Clean Energy is a public, not-for-profit agency serving about 280,000 residential and business customers in 13 communities, and its office is on South Sunnyvale Avenue. It is the official generation provider for Sunnyvale; PG&E still delivers the power, maintains the lines and sends the bill. SVCE's solar programs are available only inside its service area.",
+          "Which solar plan applies depends on when the system was applied for. SVCE says systems installed before 2016 are likely on NEM 1.0, those applied for between June 29, 2016 and April 14, 2023 are on NEM 2.0, and anything applied for later is on the Solar Billing Plan, under which credits and charges are valued by when energy is sent to or taken from the grid. NEM contracts run 20 years from installation, so a home you buy with older panels may still be on the older terms; ask the seller for the interconnection date."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "cupertino": {
+    "name": "Cupertino",
+    "county": "Santa Clara County",
+    "utility": "pge",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Cupertino is a PG&E delivery city, and Silicon Valley Clean Energy is its official generation provider, so a Cupertino solar bill has two halves: SVCE's generation charges and credits, and PG&E's delivery charges and credits. Have each bidder model both from your own statement, with the solar plan that matches when your system is applied for.",
+    "local": "Cupertino normally issues an Instant Solar Permit through SolarAPP+ and its Citizen Access portal for roof-mounted systems, with or without batteries and a main service upgrade. As of September 23, 2026 the City's page says the instant permit is temporarily unavailable because of a business license system upgrade, and all permits must be emailed to the Permit Center instead. Ask each bidder how that changes its timeline.",
+    "example": "Cupertino homes put a battery on more than half of their 2024 solar permits, so expect most bids to include one. Ask each bidder for the battery's usable kWh and backed-up circuits, whether a main service upgrade is part of the same permit, and how many inspections its schedule assumes, since the City's inspection fee covers two visits for the same element and a third costs extra.",
+    "checks": [
+      [
+        "Permit route",
+        "Say whether the job goes through the Instant Solar Permit or, while that is paused, by email to the Permit Center, and the expected wait."
+      ],
+      [
+        "What to upload",
+        "List the SolarAPP+ approval documents, inspection checklist and equipment specifications the City requires."
+      ],
+      [
+        "Inspections",
+        "State how many inspections the schedule assumes; re-inspections beyond two for the same element carry a fee."
+      ],
+      [
+        "SVCE and PG&E",
+        "Model SVCE generation credits and PG&E delivery charges separately."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Cupertino: Instant Solar Permit (SolarAPP+)",
+        "url": "https://www.cupertino.gov/Your-City/Departments/Community-Development/Building/Permits/Instant-Solar-Permit-SolarAPP"
+      },
+      {
+        "label": "Silicon Valley Clean Energy: communities served",
+        "url": "https://www.svcleanenergy.org/"
+      },
+      {
+        "label": "Silicon Valley Clean Energy: rooftop solar, NEM and Solar Billing Plan",
+        "url": "https://www.svcleanenergy.org/solar/"
+      },
+      {
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/bay-area",
+        "label": "Providers and permit offices across the Bay Area"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a battery is worth the added cost"
+      },
+      {
+        "href": "/blog/pge-time-of-use-rates-2026",
+        "label": "PG&E time-of-use hours and your solar estimate"
+      }
+    ],
+    "faq": [
+      [
+        "How do I get an instant solar permit in Cupertino?",
+        "Normally, a licensed contractor registers with SolarAPP+, submits the project, pays the $25 processing fee and downloads the approval, then applies in the City's Citizen Access portal with the approval documents, inspection checklist and equipment specifications. Once fees are paid and forms signed, the permit issues automatically. The City says the instant permit is temporarily unavailable during a business license system upgrade, so permits are being emailed to permitcenter@cupertino.gov."
+      ],
+      [
+        "Does a battery need its own permit in Cupertino?",
+        "Not on the instant route. The City's Instant Solar Permit covers roof-mounted solar with or without energy storage, and a main electrical service upgrade can be included, as long as the system is on the SolarAPP+ eligibility checklists."
+      ],
+      [
+        "How many solar permits does Cupertino issue?",
+        "The City reported 504 residential solar permits to the California Energy Commission for 2024. Of those, 288 included battery storage and 197, about 39%, were issued online."
+      ],
+      [
+        "Who supplies electricity in Cupertino?",
+        "PG&E delivers it and sends the bill, and Silicon Valley Clean Energy is the official generation provider for Cupertino, one of the 13 communities it serves."
+      ]
+    ],
+    "answer": "Solar companies in Cupertino normally get an instant permit through SolarAPP+ and the City's Citizen Access portal, covering rooftop solar with or without a battery. As of September 23, 2026 the City has paused that route during a business license system upgrade and is taking permits by email. PG&E delivers the power and Silicon Valley Clean Energy supplies it. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "Instant Solar Permit",
+        "value": "Temporarily unavailable",
+        "note": "Permits by email to the Permit Center meanwhile",
+        "source": {
+          "publisher": "City of Cupertino",
+          "date": "2026-09-23",
+          "url": "https://www.cupertino.gov/Your-City/Departments/Community-Development/Building/Permits/Instant-Solar-Permit-SolarAPP"
+        }
+      },
+      {
+        "label": "2024 solar permits",
+        "value": "504",
+        "note": "57% with storage, 39% issued online",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      },
+      {
+        "label": "Generation",
+        "value": "Silicon Valley Clean Energy",
+        "note": "PG&E delivers and bills",
+        "source": {
+          "publisher": "Silicon Valley Clean Energy",
+          "date": "2026-09-23",
+          "url": "https://www.svcleanenergy.org/"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Cupertino's Instant Solar Permit, and the pause",
+        "paragraphs": [
+          "The City's Instant Solar Permit covers roof-mounted solar photovoltaic installations with or without energy storage, and a contractor may include a main electrical service upgrade; only systems on the SolarAPP+ eligibility checklists qualify. The route has four steps: register with SolarAPP+, submit the project and pay its processing fee, currently $25, then apply in Citizen Access with the SolarAPP+ approval documents, the SolarAPP+ inspection checklist and the equipment specifications. When the documents are uploaded, fees paid and forms signed, the permit issues automatically, and the inspection is scheduled from the record in Citizen Access.",
+          "On September 23, 2026 the City's page said the instant permit was temporarily unavailable because of a business license system upgrade, and that all permits had to be submitted by email to the Permit Center. Revisions already go that way: the City asks for a revised application, updated SolarAPP+ approval documents and a new inspection checklist by email. One inspection fee covers two inspections of the same element; further inspections carry re-inspection fees paid before the final."
+        ]
+      },
+      {
+        "heading": "What Cupertino's permits and bills look like",
+        "paragraphs": [
+          "Cupertino reported 504 residential solar permits to the Energy Commission for 2024, and 288 of them, about 57%, included battery storage. About 39% were issued online, which reflects how many projects took the instant route rather than regular review.",
+          "The bill behind those systems is split. Silicon Valley Clean Energy is the official electricity provider for Cupertino and supplies the generation, while PG&E delivers the power and sends the statement. SVCE says systems applied for after April 14, 2023 are on the Solar Billing Plan, and earlier NEM 2.0 systems keep their terms for 20 years from installation, so a proposal should state which plan it assumes for your home."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "santa-clara": {
+    "name": "Santa Clara",
+    "county": "Santa Clara County",
+    "utility": "other",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Santa Clara is not a PG&E city. Silicon Valley Power, the City of Santa Clara's own electric utility, delivers and supplies power to almost the whole city, so there is no community choice provider and the CPUC's Solar Billing Plan does not set the rules. A proposal copied from a San Jose or Sunnyvale job, built on PG&E's tariff, is modeling the wrong utility.",
+    "local": "Santa Clara's instant SolarAPP+ permit is narrower than most: the City limits it to systems up to 15 kW with no more than one battery of 20 kWh, and the contractor must upload Silicon Valley Power's Interconnection Agreement Pre-Approval Letter with the SolarAPP+ approval. Larger or otherwise ineligible projects go through the City's Permitting Online Portal instead.",
+    "example": "Before comparing prices, ask each bidder two things: has it applied to Silicon Valley Power for the pre-approval letter, and does the design fit the City's 15 kW and one-battery limit for the instant permit? A 16 kW design with two batteries may be the right system for your home, but it will take the regular review, and the bid should say so.",
+    "checks": [
+      [
+        "SVP pre-approval",
+        "Show Silicon Valley Power's Interconnection Agreement Pre-Approval Letter before the permit application."
+      ],
+      [
+        "Instant permit limits",
+        "Confirm the system is 15 kW or less with at most one battery of 20 kWh, or say it will use the Permitting Online Portal."
+      ],
+      [
+        "SVP's rules",
+        "Model SVP's Schedule NM: annual surplus at $0.05366 per kWh or rolled forward as credit, not PG&E's Solar Billing Plan."
+      ],
+      [
+        "Address",
+        "Confirm the address is in SVP territory; a small edge of the city maps to PG&E."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Santa Clara Building Division: SolarAPP+ (15 kW and one-battery limits, SVP pre-approval letter)",
+        "url": "https://www.santaclaraca.gov/our-city/departments-a-f/community-development/building-division/solarapp"
+      },
+      {
+        "label": "Silicon Valley Power: Rate Schedule NM, net energy metering (effective January 1, 2026)",
+        "url": "https://www.siliconvalleypower.com/home/showpublisheddocument/58854/638718507400200000"
+      },
+      {
+        "label": "Silicon Valley Power: solar incentives and financing",
+        "url": "https://www.siliconvalleypower.com/sustainability/solar/incentives-and-financing-options"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/bay-area",
+        "label": "Which Bay Area cities run their own utilities"
+      },
+      {
+        "href": "/solar-companies/san-jose",
+        "label": "Solar companies next door in San Jose (PG&E and SJCE)"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "Whether a home battery is worth it"
+      }
+    ],
+    "faq": [
+      [
+        "Who is the electric utility in Santa Clara?",
+        "Silicon Valley Power, owned by the City of Santa Clara. On the California Energy Commission's utility map it covers about 98% of the city's area, with a small edge in PG&E territory, and no community choice provider operates in its area."
+      ],
+      [
+        "What does Silicon Valley Power pay for extra solar?",
+        "Under SVP's Rate Schedule NM, effective January 1, 2026, a customer whose annual generation exceeds consumption can take payment for the excess at $0.05366 per kWh or roll it forward as a credit to the next annual cycle. Monthly statements track charges and credits, and an annual bill trues them up."
+      ],
+      [
+        "Can every Santa Clara solar project get an instant permit?",
+        "No. The City limits SolarAPP+ to systems up to 15 kW with no more than one battery of 20 kWh, and requires SVP's Interconnection Agreement Pre-Approval Letter. Other projects go through the City's Permitting Online Portal."
+      ],
+      [
+        "Does Silicon Valley Power offer solar rebates?",
+        "Not for residential solar panels: SVP says it no longer provides residential rebates for solar photovoltaic systems."
+      ],
+      [
+        "How many solar permits does Santa Clara issue?",
+        "The City reported 97 residential solar permits to the California Energy Commission for 2024, 13 of them with battery storage, and 29, about 30%, issued online."
+      ]
+    ],
+    "answer": "Solar companies in Santa Clara work with Silicon Valley Power, the City's own utility, not PG&E. The City's instant SolarAPP+ permit is limited to systems up to 15 kW with one battery of up to 20 kWh and needs SVP's interconnection pre-approval letter; larger projects use the City's Permitting Online Portal. SVP pays $0.05366 per kWh for annual surplus. Compare at least three written bids built on your own SVP bill.",
+    "keyFacts": [
+      {
+        "label": "Electric utility",
+        "value": "Silicon Valley Power",
+        "note": "City-owned; about 98% of the city's area",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "Instant permit limit",
+        "value": "15 kW, one battery ≤ 20 kWh",
+        "note": "SVP pre-approval letter required",
+        "source": {
+          "publisher": "City of Santa Clara",
+          "date": "2026-09-23",
+          "url": "https://www.santaclaraca.gov/our-city/departments-a-f/community-development/building-division/solarapp"
+        }
+      },
+      {
+        "label": "SVP annual surplus rate",
+        "value": "$0.05366 per kWh",
+        "note": "Or roll the credit forward; Schedule NM, Jan. 1, 2026",
+        "source": {
+          "publisher": "Silicon Valley Power",
+          "date": "2026-09-23",
+          "url": "https://www.siliconvalleypower.com/home/showpublisheddocument/58854/638718507400200000"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Silicon Valley Power's solar rules",
+        "paragraphs": [
+          "Silicon Valley Power's net energy metering schedule, Rate Schedule NM, took effect on January 1, 2026 under City Resolution No. 25-9516 and applies to all eligible customer-generators it serves. It is offered first come, first served until customer-generators reach 5% of SVP's peak distribution demand, so ask SVP whether space remains when you apply.",
+          "Under the schedule, customers get monthly statements showing accumulated charges and credits, and an annual bill trues them up. If a home generates more than it uses over the year, the owner can take payment for the excess at $0.05366 per kWh or apply it as a credit to the next annual cycle. SVP says it no longer offers residential solar rebates. None of this is PG&E's Solar Billing Plan, so a bid that quotes PG&E export values or bonus credits for a Santa Clara address has the wrong tariff."
+        ]
+      },
+      {
+        "heading": "Santa Clara's two permit routes",
+        "paragraphs": [
+          "The City's SolarAPP+ route is for licensed contractors only, and it is tighter than the platform's own limits: systems up to 15 kW, and energy storage of no more than one battery and 20 kWh. SolarAPP+ checks the design for code compliance, and the City then checks installation practice, workmanship and the approved design at inspection. The application needs the SolarAPP+ approval document and ID plus Silicon Valley Power's Interconnection Agreement Pre-Approval Letter, so the utility step comes first.",
+          "Projects outside those limits go through the City's Permitting Online Portal. The City's report to the Energy Commission shows the split: of 97 residential solar permits in 2024, 29 were issued online, and 13 of the 97 included battery storage, a far lower storage share than in neighboring PG&E cities."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "palo-alto": {
+    "name": "Palo Alto",
+    "county": "Santa Clara County",
+    "utility": "other",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Palo Alto runs its own electric utility, City of Palo Alto Utilities (CPAU), so PG&E's Solar Billing Plan and the community choice providers around it do not apply. New solar customers have been served by the City's NEM 2 program since January 1, 2018, which credits exported power at CPAU's Export Electricity Compensation rate. Ask each bidder to model CPAU's rules from your own utility bill.",
+    "local": "Palo Alto puts the utility first. For an instant SolarAPP+ permit, the contractor gets CPAU's interconnection approval through the Utilities tab of Accela Citizen Access, then runs the design through SolarAPP+ for a $25 fee, then applies for the Residential Solar Permit with SolarApp+ in the same portal. The Building Inspector issues permission to operate at the final inspection, after CPAU's meter inspection.",
+    "example": "Many Palo Alto projects do not qualify for the instant route: the City excludes historic properties, ground-mounted and building-integrated systems, standalone batteries, electrical panel upgrades and additions to an existing array. Ask each bidder which route its design takes, who files the CPAU interconnection application, and who books the utility's meter inspection before the final.",
+    "checks": [
+      [
+        "CPAU first",
+        "Show the CPAU interconnection application: site plan, elevation, three-line diagram, specifications and signed agreement."
+      ],
+      [
+        "Instant-permit fit",
+        "Confirm the design is a new roof-mounted single-family system with no panel upgrade, or name the traditional permit route."
+      ],
+      [
+        "Meter inspection",
+        "Say who schedules CPAU's electric meter inspection before the final building inspection."
+      ],
+      [
+        "CPAU's credit",
+        "Model exports at CPAU's current Export Electricity Compensation rate, not PG&E's."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Palo Alto: apply for a residential SolarAPP+ permit",
+        "url": "https://www.paloalto.gov/Departments/Planning-Development-Services/Development-Services/Apply-for-a-Permit/Apply-for-a-Residential-SolarAPP-Permit"
+      },
+      {
+        "label": "City of Palo Alto Utilities: net energy metering (NEM 1 cap, NEM 2, permission to operate)",
+        "url": "https://www.paloalto.gov/Departments/Utilities/Electrification/Electrify-My-Home/Consider-Solar/Net-Energy-Metering"
+      },
+      {
+        "label": "City of Palo Alto: Utility Rate Schedule E-EEC-1, Export Electricity Compensation (effective July 1, 2021, PDF)",
+        "url": "https://www.cityofpaloalto.org/files/assets/public/v/2/agendas-minutes-reports/reports/city-manager-reports-cmrs/attachments/06-21-2021-id-12240-attachment-a2-electric-rates.pdf"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/bay-area",
+        "label": "The Bay Area cities that run their own utilities"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a battery makes sense"
+      },
+      {
+        "href": "/solar-installers/how-to-verify-a-solar-contractor-california",
+        "label": "Checking a solar contractor's license"
+      }
+    ],
+    "faq": [
+      [
+        "Who is the electric utility in Palo Alto?",
+        "City of Palo Alto Utilities. On the California Energy Commission's utility map it serves about 92% of the city's area; PG&E and other providers appear only at the edges. CPAU sets its own solar rules outside the CPUC's net billing tariff."
+      ],
+      [
+        "What net metering program is Palo Alto on?",
+        "New solar customers have been served by the City's NEM 2 program since January 1, 2018, when CPAU's NEM 1 program had reached its 10.8 MW cap. NEM 2 customers are paid for exported electricity at the Export Electricity Compensation (EEC-1) rate; the version of that schedule effective July 1, 2021 set $0.107809 per kWh, so ask CPAU for the current figure."
+      ],
+      [
+        "How do I get a SolarAPP+ permit in Palo Alto?",
+        "Five steps: confirm the project qualifies, get CPAU's interconnection approval through the Utilities tab of Accela Citizen Access, run the design through SolarAPP+ and pay its $25 fee, apply for the Residential Solar Permit with SolarApp+ in Citizen Access with the approval, spec sheet and signed interconnection agreement, then download the issued permit from the record."
+      ],
+      [
+        "Who gives permission to operate in Palo Alto?",
+        "The City's Building Inspector, at the final inspection. CPAU asks customers to schedule its electric meter inspection before that final building inspection."
+      ],
+      [
+        "How many solar permits does Palo Alto issue?",
+        "The City reported 155 residential solar permits to the California Energy Commission for 2024, down from 232 in 2023. Of the 2024 permits, 55 included battery storage and 56, about 36%, were issued online."
+      ]
+    ],
+    "answer": "Solar companies in Palo Alto work with City of Palo Alto Utilities, not PG&E: CPAU's interconnection approval comes first, then SolarAPP+ and the City's Accela Citizen Access portal for an instant permit, and the Building Inspector grants permission to operate at the final inspection. New systems are on the City's NEM 2 program, which pays CPAU's export rate. Compare at least three written bids built on your own CPAU bill.",
+    "keyFacts": [
+      {
+        "label": "Electric utility",
+        "value": "City of Palo Alto Utilities",
+        "note": "About 92% of the city's area",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "Solar program",
+        "value": "CPAU NEM 2",
+        "note": "Since January 1, 2018; exports paid at the EEC-1 rate",
+        "source": {
+          "publisher": "City of Palo Alto Utilities",
+          "date": "2026-09-23",
+          "url": "https://www.paloalto.gov/Departments/Utilities/Electrification/Electrify-My-Home/Consider-Solar/Net-Energy-Metering"
+        }
+      },
+      {
+        "label": "Permission to operate",
+        "value": "At final inspection",
+        "note": "Issued by the Building Inspector",
+        "source": {
+          "publisher": "City of Palo Alto Utilities",
+          "date": "2026-09-23",
+          "url": "https://www.paloalto.gov/Departments/Utilities/Electrification/Electrify-My-Home/Consider-Solar/Net-Energy-Metering"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Palo Alto's instant permit, utility first",
+        "paragraphs": [
+          "The City's SolarAPP+ route is for single-family, roof-mounted new installations by CSLB-licensed contractors, with PV and storage each up to 38.4 kW, electric service up to 400 amps and a 225-amp service disconnect and busbars. It excludes historic properties, standalone storage, ground-mounted and building-integrated systems, electrical panel upgrades, upgrades or additions to existing systems, and multifamily or commercial work; those use a traditional building permit.",
+          "The order matters. The contractor first registers in Accela Citizen Access and applies under the Utilities tab for interconnection, with a site plan, an elevation plan, a three-line diagram, manufacturer specifications and a signed interconnection agreement. Then it submits the design in SolarAPP+ and pays the $25 administration fee, and finally applies under the Building tab for the Residential Solar Permit with SolarApp+, uploading the approval, the spec sheet and the signed interconnection agreement and paying City fees, which vary by system size. Inspections can be booked in the iRequest app, the portal or by phone."
+        ]
+      },
+      {
+        "heading": "How CPAU credits solar",
+        "paragraphs": [
+          "CPAU's original net metering program closed when it reached its cap of 10.8 MW of installed solar on December 31, 2017. NEM 1 customers are credited at retail rates for exports; everyone who went solar from January 1, 2018 on is on NEM 2 and paid for exports at the Export Electricity Compensation rate, Schedule E-EEC-1. The version of that schedule effective July 1, 2021 paid $0.107809 per kWh for all exported electricity. Rates change, so a proposal should cite the schedule in force when you sign.",
+          "In Palo Alto the utility and the building department finish the job together. CPAU asks customers to schedule its electric meter inspection before the final building inspection, and the Building Inspector issues interconnection approval, permission to operate, at that final inspection. The City reported 155 residential solar permits for 2024 to the Energy Commission, 36% of them issued online."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "chula-vista": {
+    "name": "Chula Vista",
+    "county": "San Diego County",
+    "utility": "sdge",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "SDG&E delivers power in Chula Vista and sends the bill, and San Diego Community Power supplies the generation for most homes; the California Energy Commission's map puts about 93% of the city's area in Community Power's service. For a new system, Community Power's Solar Billing Plan credits exports at hourly values and bills monthly with no annual true-up, while SDG&E handles the delivery side on its EV-TOU-5 plan.",
+    "local": "The City of Chula Vista issues the building permit, and its reports to the California Energy Commission show a busy and increasingly online process: 3,188 residential solar permits in 2023 and 1,554 in 2024, with the share issued online rising from 16% to 41%. Solar on a mobile or manufactured home is different: that permit comes from the state Department of Housing and Community Development, not the City.",
+    "example": "Most Chula Vista bids now include a battery: 898 of the City's 1,554 solar permits in 2024 did. Ask each bidder to show your bill with and without it, using SDG&E's 4 p.m. to 9 p.m. on-peak hours and Community Power's hourly export credits, and to say whether the permit will be issued online or through plan review.",
+    "checks": [
+      [
+        "Generation provider",
+        "Model San Diego Community Power's hourly export credits and monthly billing, not SDG&E's generation rates, if Community Power is on your bill."
+      ],
+      [
+        "Evening use",
+        "Show how much of the 4-to-9 p.m. on-peak use the system and any battery cover on EV-TOU-5."
+      ],
+      [
+        "Permit route",
+        "Say whether the City permit will be issued online or through plan review, and the expected wait."
+      ],
+      [
+        "Mobile home",
+        "On a mobile or manufactured home, show the HCD permit and the company's CSLB license before work starts."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "San Diego Community Power: net energy metering and Solar Billing Plan",
+        "url": "https://sdcommunitypower.org/net-energy-metering/"
+      },
+      {
+        "label": "SDG&E: Solar Billing Plan (EV-TOU-5, export credits, Base Services Charge)",
+        "url": "https://www.sdge.com/solar/solar-billing-plan"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California HCD: advisory for manufactured home roof-mounted solar systems (PDF)",
+        "url": "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
+      },
+      {
+        "label": "California HCD: modifications and alterations to manufactured homes",
+        "url": "https://www.hcd.ca.gov/manufactured-and-mobilehomes/modifying-mobilehome"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-savings/san-diego",
+        "label": "What SDG&E electricity costs in San Diego"
+      },
+      {
+        "href": "/blog/sdge-time-of-use-rates-2026",
+        "label": "SDG&E time-of-use hours and prices"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a battery pays under net billing"
+      }
+    ],
+    "faq": [
+      [
+        "Who supplies electricity for solar homes in Chula Vista?",
+        "SDG&E delivers the power and sends the bill. San Diego Community Power supplies the generation for most homes; on the Energy Commission's map it covers about 93% of the city's area. Community Power sets the generation import charges and export credits for its customers."
+      ],
+      [
+        "How does San Diego Community Power credit new solar systems?",
+        "Customers interconnected on or after April 15, 2023 are on its Solar Billing Plan, with export credits based on the CPUC's Avoided Cost Calculator, which vary by hour and month, for nine years from permission to operate. Solar Billing Plan customers are billed monthly and are not eligible for annual billing."
+      ],
+      [
+        "How many solar permits does Chula Vista issue?",
+        "The City reported 1,554 residential solar permits to the California Energy Commission for 2024, down from 3,188 in 2023. In 2024, 898 included battery storage and 634, about 41%, were issued online."
+      ],
+      [
+        "Can I put solar on a mobile home in Chula Vista?",
+        "Yes, with a state permit. The California Department of Housing and Community Development says an HCD permit is required for any solar system installed on a manufactured home, warns that damage from poor installation on those roofs is not visible, and tells owners to confirm the company's CSLB license and HCD permit before signing."
+      ],
+      [
+        "What are SDG&E's peak hours for a Chula Vista solar home?",
+        "On EV-TOU-5, the plan SDG&E's Solar Billing Plan uses, on-peak runs from 4 p.m. to 9 p.m. SDG&E suggests using a battery during those hours, when electricity is priced highest."
+      ]
+    ],
+    "answer": "Solar companies in Chula Vista design around two providers: SDG&E delivers the power and San Diego Community Power supplies most homes' generation, billing solar customers monthly with hourly export credits. The City issued 1,554 residential solar permits in 2024, 41% online and more than half with batteries. A mobile or manufactured home needs a state HCD permit instead. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "2024 solar permits",
+        "value": "1,554",
+        "note": "58% with storage, 41% issued online",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      },
+      {
+        "label": "Generation",
+        "value": "San Diego Community Power",
+        "note": "About 93% of the city's area; SDG&E delivers",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "Solar billing",
+        "value": "Monthly, no annual true-up",
+        "note": "Community Power's Solar Billing Plan",
+        "source": {
+          "publisher": "San Diego Community Power",
+          "date": "2026-09-23",
+          "url": "https://sdcommunitypower.org/net-energy-metering/"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "How Community Power and SDG&E bill a Chula Vista solar home",
+        "paragraphs": [
+          "San Diego Community Power closed net energy metering to new solar customers on April 15, 2023. Anyone interconnected since then is on its Solar Billing Plan: exports earn credits based on the CPUC's Avoided Cost Calculator, which vary by hour and month, for a legacy period of nine years from permission to operate, and the account is billed monthly rather than annually. SDG&E says that for Community Power customers, the CCA sets the generation import charges and export credits.",
+          "The delivery side stays with SDG&E. Its Solar Billing Plan runs on the EV-TOU-5 time-of-use plan, with on-peak hours from 4 p.m. to 9 p.m., and export credits roll over month to month but cannot be applied to non-bypassable charges or the Base Services Charge. A Chula Vista proposal should show both halves, and should show how much of the evening peak the system and any battery actually cover."
+        ]
+      },
+      {
+        "heading": "Permits: the City, or the state for manufactured homes",
+        "paragraphs": [
+          "The City of Chula Vista reported 3,188 residential solar permits to the California Energy Commission for 2023 and 1,554 for 2024. The storage share climbed from 16% to 58% over those two years, and the share issued online from 16% to 41%. Ask each bidder whether your design will be permitted online or go through plan review.",
+          "Many Chula Vista searches are about mobile and manufactured homes, and those follow state rules. The Department of Housing and Community Development requires an HCD permit for any solar system on a manufactured home and a permit before any alteration begins. Its advisory warns that manufactured home roofs are not accessible, so damage from poor installation is not visible, and HCD's guidelines say when engineered plans or electrical load calculations are needed. HCD's Southern Area Office is in Riverside."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "san-ramon": {
+    "name": "San Ramon",
+    "county": "Contra Costa County",
+    "utility": "pge",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "San Ramon homes are on PG&E's wires, and the California Energy Commission's map shows MCE as the community choice provider over the whole city, supplying generation by default while PG&E delivers the power and sends the bill. Check the generation lines on your own statement, then have each bidder model that provider's export credits and PG&E's delivery charges separately.",
+    "local": "San Ramon runs rooftop solar through SolarAPP+ with two local conditions: an active San Ramon business license, and a place on the City's SolarAPP+ eligibility list, which a contractor requests by email to the Permit Center. The permit itself is an Electrical Photovoltaic (SolarAPP) permit filed in the City's Citizen Self Service (CSS) portal, where inspections are also requested.",
+    "example": "San Ramon reported every one of its 694 residential solar permits for 2024 as issued online, and only 27 of them included a battery. If one bidder quotes panels only and another adds a battery, ask both to show your PG&E and MCE bill with and without storage, so you can see what the battery adds for your usage rather than for an average home.",
+    "checks": [
+      [
+        "City conditions",
+        "Confirm an active San Ramon business license and a spot on the City's SolarAPP+ eligibility list."
+      ],
+      [
+        "Zoning",
+        "Say whether the Planning Division was asked about zoning before the permit, as the City advises."
+      ],
+      [
+        "Roof weight",
+        "If panels weigh more than 5 pounds per square foot, show the structural calculations the City requires."
+      ],
+      [
+        "MCE and PG&E",
+        "Model the generation provider on your bill and PG&E delivery separately."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of San Ramon: SolarAPP+ (business license, eligibility list, CSS permit)",
+        "url": "https://www.sanramon.ca.gov/our_city/departments_and_divisions/community_development/building_and_safety_services/solar_a_p_p_"
+      },
+      {
+        "label": "City of San Ramon: residential solar photovoltaic submittal requirements",
+        "url": "https://www.sanramon.ca.gov/our_city/departments_and_divisions/community_development/building_and_safety_services/permit_and_plan_submittal_instructions/residential_solar_photovoltaic"
+      },
+      {
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/bay-area",
+        "label": "Bay Area providers and permit offices by city"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "Deciding whether to add a battery"
+      },
+      {
+        "href": "/blog/pge-time-of-use-rates-2026",
+        "label": "PG&E's time-of-use hours for a solar estimate"
+      }
+    ],
+    "faq": [
+      [
+        "How do I get a solar permit in San Ramon?",
+        "A licensed contractor submits the design to SolarAPP+ for automated review and pays its processing fee, then, with an active San Ramon business license and a place on the City's SolarAPP+ eligibility list, applies for an Electrical Photovoltaic (SolarAPP) permit in the City's CSS portal and requests the inspection there."
+      ],
+      [
+        "What if my San Ramon project doesn't qualify for SolarAPP+?",
+        "It goes through regular plan submittal. The City asks for a plot plan showing the panels, lot dimensions and setbacks, and installation details including panel weight, number and area, roofing type and weight and the attachment method. Structural calculations are required when the installation weighs more than 5 pounds per square foot."
+      ],
+      [
+        "How many solar permits does San Ramon issue?",
+        "The City reported 1,074 residential solar permits to the California Energy Commission for 2023 and 694 for 2024, all of them issued online. Only 27 of the 2024 permits included battery storage."
+      ],
+      [
+        "Who supplies electricity in San Ramon?",
+        "PG&E delivers it and sends the bill. On the Energy Commission's map, MCE is the community choice provider over San Ramon, supplying generation by default; the name on your bill's generation lines is the one a proposal should use."
+      ]
+    ],
+    "answer": "Solar companies installing in San Ramon use SolarAPP+ and the City's Citizen Self Service portal, and need an active San Ramon business license and a place on the City's SolarAPP+ eligibility list first. The City issued all 694 of its 2024 residential solar permits online. PG&E delivers the power, and the Energy Commission's map shows MCE as the generation provider. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "2024 permits issued online",
+        "value": "All 694",
+        "note": "Only 27 included battery storage",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      },
+      {
+        "label": "Contractor gates",
+        "value": "Business license + eligibility list",
+        "note": "Before the Electrical Photovoltaic (SolarAPP) permit",
+        "source": {
+          "publisher": "City of San Ramon",
+          "date": "2026-09-23",
+          "url": "https://www.sanramon.ca.gov/our_city/departments_and_divisions/community_development/building_and_safety_services/solar_a_p_p_"
+        }
+      },
+      {
+        "label": "Generation",
+        "value": "MCE",
+        "note": "PG&E delivers and bills",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "San Ramon's two permit paths",
+        "paragraphs": [
+          "For the automated path, the City's SolarAPP+ page follows a set order. The contractor registers with SolarAPP+, submits the design for automated review of a residential, roof-mounted retrofit system and pays SolarAPP+'s processing fee, then downloads the approved plans. Before applying to the City it needs an active San Ramon business license and must be added to the City's SolarAPP+ eligibility list by emailing the Permit Center. The City permit is an Electrical Photovoltaic (SolarAPP) permit filed in the CSS portal, and inspections are requested from the same CSS account.",
+          "Projects outside SolarAPP+ go through regular submittal. The plot plan must show the site to scale, lot dimensions, setbacks, driveways, adjacent streets and the panel locations. The installation details must give the panel weight, number of panels, area covered, UL listings, the existing roofing type and weight, and how the supports attach to the structure. When the installation weighs more than 5 pounds per square foot, structural calculations are required. The City also advises checking zoning with the Planning Division before any project starts."
+        ]
+      },
+      {
+        "heading": "Why San Ramon's permit numbers look different",
+        "paragraphs": [
+          "San Ramon reported 1,074 residential solar permits to the California Energy Commission for 2023 and 694 for 2024, and every one in both years was issued online. The storage share stayed low: 22 permits with a battery in 2023 and 27 in 2024, about 4%. In nearby Danville, by comparison, 78% of 2024 permits included storage.",
+          "That gap is worth a question. On PG&E's Solar Billing Plan, credits for exported power vary by time of day, day of the week and season, and PG&E says customers save the most when they use what they produce on-site. A system without storage exports more of its midday output, so a panels-only bid should show how much of your usage it covers directly and what the remaining PG&E and MCE bill would be."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "santa-monica": {
+    "name": "Santa Monica",
+    "county": "Los Angeles County",
+    "utility": "sce",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Santa Monica is SCE territory with Clean Power Alliance as the city's community choice provider since 2019, and CPA's default plan here is 100% Green Power. On a solar bill, CPA credits the generation side and SCE the delivery side, with CPA's own annual true-up in April. A proposal should model both halves from your own statement.",
+    "local": "Santa Monica issues express residential solar and battery permits through SolarAPP+: only licensed contractors registered with SolarAPP+ can apply, with no permit expeditors, and the building permit is filed online as a Solar Permit with Solar APP Plus. The City also requires every solar contractor to hold a valid Santa Monica business license, and says to switch the system on only after the City permit and SCE's interconnection are complete.",
+    "example": "Santa Monica's own guide suggests getting at least three bids and at least three references from each bidder. Use it: ask each company for its Santa Monica business license number, its CSLB license class, whether its design qualifies for the SolarAPP+ express permit, and how much of your usage the system covers directly under net billing.",
+    "checks": [
+      [
+        "Business license",
+        "Confirm a valid Santa Monica business license; the City says to hire only contractors that hold one."
+      ],
+      [
+        "License class",
+        "Check the CSLB license at cslb.ca.gov: the City lists C-10, C-46 or B as the classes for solar work."
+      ],
+      [
+        "Permit route",
+        "Say whether the job uses the SolarAPP+ express permit, which excludes permit expeditors, or regular review."
+      ],
+      [
+        "CPA and SCE",
+        "Model CPA's Solar Billing Plan with its April true-up and SCE's delivery credits from your own bill."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Santa Monica: how to submit for automated solar panel permits (SolarAPP+)",
+        "url": "https://www.santamonica.gov/process-explainers/how-to-submit-for-automated-solar-panel-permits"
+      },
+      {
+        "label": "City of Santa Monica: step-by-step guide to going solar",
+        "url": "https://www.santamonica.gov/process-explainers/step-by-step-guide-to-going-solar"
+      },
+      {
+        "label": "Clean Power Alliance: partner communities (Santa Monica default plan and start year)",
+        "url": "https://cleanpoweralliance.org/"
+      },
+      {
+        "label": "Clean Power Alliance: solar, net energy metering and Solar Billing Plan",
+        "url": "https://cleanpoweralliance.org/solar/"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/los-angeles",
+        "label": "Solar companies in Los Angeles, next door on LADWP"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a battery is worth adding"
+      },
+      {
+        "href": "/solar-installers/how-to-verify-a-solar-contractor-california",
+        "label": "How to check a solar contractor's license"
+      }
+    ],
+    "faq": [
+      [
+        "How do I get a solar permit in Santa Monica?",
+        "A licensed contractor registered with SolarAPP+ submits the design there and pays the $25 administrative fee SolarAPP+ collects, then creates a building permit application in the City's online portal as a Solar Permit with Solar APP Plus, enters the SolarAPP+ approval ID and document, pays the permit fees, and schedules the inspection at einspections.smgov.net."
+      ],
+      [
+        "Can a permit expediter file a SolarAPP+ permit in Santa Monica?",
+        "No. The City says only licensed contractors registered with SolarAPP+ may use the express route, with no permit expediters."
+      ],
+      [
+        "Who supplies electricity in Santa Monica?",
+        "SCE delivers the power and sends the bill. Clean Power Alliance has supplied the generation since 2019, and its default plan for Santa Monica is 100% Green Power."
+      ],
+      [
+        "Does Santa Monica help homeowners go solar?",
+        "The City runs a Solar Santa Monica program that offers individualized support from its solar experts through a request form, and its guide notes that both SCE and Clean Power Alliance offer help finding solar and storage contractors."
+      ],
+      [
+        "Where can I recycle old solar panels in Santa Monica?",
+        "The City says it piloted a first-in-the-state solar panel recycling project with the California Product Stewardship Council, funded by CalRecycle, and it publishes a list of universal waste haulers that handle solar modules."
+      ]
+    ],
+    "answer": "Solar companies in Santa Monica can get an express permit through SolarAPP+ and the City's online portal, but only licensed contractors registered with SolarAPP+ may apply, and every contractor needs a Santa Monica business license. SCE delivers the power and Clean Power Alliance supplies it, on a 100% Green Power default, with an April true-up for solar customers. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "Express permit",
+        "value": "SolarAPP+, contractors only",
+        "note": "No permit expeditors; $25 SolarAPP+ fee",
+        "source": {
+          "publisher": "City of Santa Monica",
+          "date": "2026-09-23",
+          "url": "https://www.santamonica.gov/process-explainers/how-to-submit-for-automated-solar-panel-permits"
+        }
+      },
+      {
+        "label": "Generation",
+        "value": "Clean Power Alliance",
+        "note": "Default 100% Green Power; serving since 2019",
+        "source": {
+          "publisher": "Clean Power Alliance",
+          "date": "2026-09-23",
+          "url": "https://cleanpoweralliance.org/"
+        }
+      },
+      {
+        "label": "Contractor requirement",
+        "value": "Santa Monica business license",
+        "note": "Plus a CSLB C-10, C-46 or B license",
+        "source": {
+          "publisher": "City of Santa Monica",
+          "date": "2026-09-23",
+          "url": "https://www.santamonica.gov/process-explainers/step-by-step-guide-to-going-solar"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Santa Monica's express solar permit",
+        "paragraphs": [
+          "The City's express route covers residential solar panel and energy storage systems. Qualifying projects complete every step online: SolarAPP+ runs the automated review and code check and collects a $25 administrative fee, and the contractor downloads the approval documents. In the City's portal, the contractor selects the Building tab, creates an application of the Solar Permit with Solar APP Plus type, provides the SolarAPP+ approval ID and document, and pays the permit fees at the end; confirmation of issuance follows payment. Inspections are scheduled through the City's e-inspections site.",
+          "Only licensed contractors who have completed SolarAPP+ training and been approved may apply, and the City rules out permit expediters. Its homeowner guide adds the local conditions: hire only CSLB-licensed contractors with a C-10 and C-46, or a B, license, hire only contractors with a valid Santa Monica business license, and turn the system on only after the City permits are complete and SCE's interconnection process is done."
+        ]
+      },
+      {
+        "heading": "How Clean Power Alliance credits a Santa Monica system",
+        "paragraphs": [
+          "Clean Power Alliance has served Santa Monica since 2019 with 100% Green Power as the default plan. For systems approved after August 31, 2023, CPA's Solar Billing Plan charges for imported power on your time-of-use schedule and credits exports on the generation side of the bill with Energy Export Credits based on the CPUC's hourly Avoided Cost Calculator prices; SCE handles the delivery side, and customers who install before 2028 get SCE's Energy Export Bonus Credit on delivery for the first nine years.",
+          "CPA trues up all solar customers once a year in April and pays Net Surplus Compensation at rates 10% higher than SCE's. Credits over $100 at the true-up are paid by check; smaller credits carry forward unless you ask for a check. The City's guide makes the practical point: under net billing, solar power used on site is worth more than power sent back, so shifting use into solar hours or adding storage improves the result."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "ontario": {
+    "name": "Ontario",
+    "county": "San Bernardino County",
+    "utility": "sce",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Ontario is Southern California Edison territory for both generation and delivery: the California Energy Commission's map shows no community choice provider over the city. A new system goes on SCE's Solar Billing Plan, so each proposal should use SCE's hourly export credits and your own SCE usage.",
+    "local": "Ontario takes residential solar permits through Symbium, which gives instant plan review for roof-mounted solar and energy storage systems under 38.4 kW once the address is confirmed to be inside city limits. The Ontario Fire Department adds its own rules: three-foot access pathways, panels at least three feet below the ridge, and a Fire Department plan review when the array covers more than half of a home's roof.",
+    "example": "Two Ontario bids can differ on roof coverage. Ask each bidder what share of your roof the array covers, since more than 50% triggers a Fire Department plan review, and how its layout keeps the required pathways from eave to ridge. Then compare the price and the remaining SCE bill on the same usage.",
+    "checks": [
+      [
+        "Symbium route",
+        "Confirm the address is inside Ontario city limits and the system qualifies for Symbium's instant review."
+      ],
+      [
+        "Roof coverage",
+        "State what share of the roof the array covers; over 50% needs Ontario Fire Department plan review."
+      ],
+      [
+        "Fire pathways",
+        "Show the three-foot eave-to-ridge pathways and the three-foot setback from the ridge on the layout."
+      ],
+      [
+        "SCE billing",
+        "Model SCE's Solar Billing Plan from your own bill."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Ontario: apply for residential reroof and solar permits (Symbium)",
+        "url": "https://www.ontarioca.gov/government/community-development/building/apply-residential-reroof-and-solar-permits"
+      },
+      {
+        "label": "Ontario Fire Department: Fire Protection Standard E-006, solar photovoltaic systems (rev. January 7, 2025, PDF)",
+        "url": "https://content.ontarioca.gov/sites/default/files/2025-01/Standard%20E-006%20Solar%20Photovoltaic%20Systems.pdf"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/blog/sce-settlement-bill",
+        "label": "How SCE's once-a-year solar settlement works"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a battery is worth the cost"
+      },
+      {
+        "href": "/blog/is-my-roof-good-for-solar-california",
+        "label": "Checking whether your roof is ready for solar"
+      }
+    ],
+    "faq": [
+      [
+        "How do I get a solar permit in Ontario, CA?",
+        "Through the City's Symbium portal. After confirming the address is inside Ontario city limits, the applicant gets instant solar plan review for roof-mounted solar and energy storage systems under 38.4 kW. Projects outside that scope need regular review."
+      ],
+      [
+        "What fire rules apply to rooftop solar in Ontario?",
+        "The Ontario Fire Department's standard calls for three-foot-wide access pathways from eave to ridge (one per roof slope with panels on hip roofs, two on single-ridge roofs), panels at least three feet below the ridge, 18 inches from a hip or valley when panels sit on both sides of it, and a Fire Department plan review when the system covers more than 50% of a residential roof."
+      ],
+      [
+        "Are solar panels worth it in Ontario, California?",
+        "It depends on how much of the output your home uses. Ontario is SCE territory, and SCE says its Solar Billing Plan export credits are worth less than what you pay for grid power, higher in June through September and lower the rest of the year. Ask for an estimate built on your own 12 months of SCE bills, with and without a battery."
+      ],
+      [
+        "How many solar permits does Ontario issue?",
+        "The City reported 661 residential solar permits to the California Energy Commission for 2023, 84 of them with battery storage and 25 issued online."
+      ]
+    ],
+    "answer": "Solar companies in Ontario apply through the City's Symbium portal, which gives instant plan review for roof-mounted solar and storage systems under 38.4 kW at addresses inside city limits. The Ontario Fire Department requires three-foot roof pathways and its own plan review when panels cover more than half the roof. SCE supplies and delivers the power. Compare at least three written bids built on your own SCE bill.",
+    "keyFacts": [
+      {
+        "label": "Permit portal",
+        "value": "Symbium",
+        "note": "Instant review for rooftop solar and storage under 38.4 kW",
+        "source": {
+          "publisher": "City of Ontario",
+          "date": "2026-09-23",
+          "url": "https://www.ontarioca.gov/government/community-development/building/apply-residential-reroof-and-solar-permits"
+        }
+      },
+      {
+        "label": "Fire plan review",
+        "value": "Over 50% of the roof",
+        "note": "Ontario Fire Department Standard E-006",
+        "source": {
+          "publisher": "Ontario Fire Department",
+          "date": "2026-09-23",
+          "url": "https://content.ontarioca.gov/sites/default/files/2025-01/Standard%20E-006%20Solar%20Photovoltaic%20Systems.pdf"
+        }
+      },
+      {
+        "label": "Utility",
+        "value": "SCE",
+        "note": "No community choice provider",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "The Ontario Fire Department's solar standard",
+        "paragraphs": [
+          "Ontario's fire standard for solar photovoltaic systems, based on the 2022 California Fire Code, applies to systems on homes and businesses, with or without batteries. It exists to keep roof access, pathways to specific areas of the roof, smoke ventilation and emergency egress open for firefighters, and it requires markings on conduit and junction boxes so crews know not to cut them.",
+          "For homes, a hip roof needs one three-foot clear pathway from eave to ridge on each slope that carries panels, and a single-ridge roof needs two. Panels stay at least three feet below the ridge, unless the Fire Department approves a method that allows two, and at least 18 inches from a hip or valley that has panels on both sides. When a system would cover more than 50% of a home's roof area, the Fire Department reviews the plans. The Department can grant exceptions, for example where there is access from an adjoining roof or ground-level access."
+        ]
+      },
+      {
+        "heading": "Symbium permits and SCE billing",
+        "paragraphs": [
+          "The City routes roof-mounted residential solar and energy storage systems under 38.4 kW, and detached single-family reroofs, through Symbium, which gives instant solar plan review once the address is verified to be inside city limits. The City's last report to the Energy Commission, for 2023, showed 661 residential solar permits with 25, about 4%, issued online. Ask each bidder which route your design will use.",
+          "On the utility side, a new system goes on SCE's Solar Billing Plan. SCE locks export credit values for nine years from the year you start, gives customers who enroll before 2028 a bonus of about $0.04 per kWh, or about $0.09 if income-qualified, and sends one settlement bill a year in the month the system started service. The Base Services Charge is not reduced by solar credits."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "riverside-county": {
+    "name": "Riverside County",
+    "county": "Riverside County",
+    "utility": "other",
+    "sourceCheckedDate": "2026-09-23",
+    "seo": {
+      "description": "Riverside County solar companies: which utility serves each city (SCE, Riverside Public Utilities, IID and others), permit data, and mobile home rules."
+    },
+    "bill": "Riverside County has more electric utilities than most California counties. SCE serves most of it, but the City of Riverside, Banning, part of Moreno Valley and part of Corona run their own utilities, the Imperial Irrigation District serves the eastern Coachella Valley, and the Anza Electric Cooperative serves the Anza area. Three cities add a community choice provider on top of SCE. Every solar proposal has to start from the utility named on your own bill.",
+    "local": "Each incorporated city issues its own solar permit, and the County of Riverside permits unincorporated areas such as Winchester, French Valley and Temescal Valley. The cities' reports to the California Energy Commission show how different they are: Banning, Canyon Lake, Cathedral City, Indio and La Quinta issued every 2024 residential solar permit online, while Calimesa and Palm Desert issued none online. Mobile and manufactured homes follow state rules instead, with an HCD permit.",
+    "example": "Before comparing prices, ask each bidder to name your utility and its solar rules. A system sized for SCE's Solar Billing Plan in Menifee is not the right design for a Riverside Public Utilities home, where exports earn the City's avoided-cost rate and the system can be built to 150% of past use, or for an IID home in Indio. Then compare the permit route and the price.",
+    "checks": [
+      [
+        "Which utility",
+        "Name the utility on your bill (SCE, Riverside Public Utilities, IID, Moreno Valley Utility, Banning, Corona or Anza) and model its solar rules."
+      ],
+      [
+        "Community choice",
+        "In San Jacinto, Palm Springs or Rancho Mirage, show the community choice provider's generation credits separately from SCE's delivery."
+      ],
+      [
+        "Permit office",
+        "Say whether your city or the County of Riverside issues the permit, and whether it will be issued online."
+      ],
+      [
+        "Manufactured home",
+        "On a mobile or manufactured home, show the HCD permit; HCD's Southern Area Office is in Riverside."
+      ]
+    ],
+    "region": {
+      "heading": "Utilities and permit activity across Riverside County",
+      "intro": [
+        "On the California Energy Commission's utility map, SCE covers about 72% of the county's area and the Imperial Irrigation District most of the rest. Inside that, several cities run their own utilities: the City of Riverside covers about 99.5% of its own city area, Banning all of its city, and Moreno Valley Utility and the City of Corona's utility serve parts of their cities alongside SCE. The Commission's community choice layer shows San Jacinto Power over San Jacinto, Desert Community Energy over most of Palm Springs and the Rancho Mirage Energy Authority over most of Rancho Mirage.",
+        "The permit column is each city's own report to the Energy Commission under SB 379: residential solar permits issued, the share with battery storage, and the share issued online, for 2024 unless another year is named."
+      ],
+      "places": [
+        {
+          "name": "Riverside",
+          "slug": "riverside",
+          "utility": "Riverside Public Utilities (city utility)",
+          "generation": "Riverside Public Utilities",
+          "permit": "City of Riverside"
+        },
+        {
+          "name": "Corona",
+          "slug": "corona",
+          "utility": "SCE, or the City of Corona's utility in its service area",
+          "generation": "The delivery utility",
+          "permit": "City of Corona: 895 permits, 29% with storage, 5% online"
+        },
+        {
+          "name": "Moreno Valley",
+          "slug": "moreno-valley",
+          "utility": "Split: Moreno Valley Utility or SCE",
+          "generation": "The delivery utility",
+          "permit": "City of Moreno Valley: 548 permits in 2023, 36% online"
+        },
+        {
+          "name": "Banning",
+          "utility": "City of Banning Electric Department",
+          "generation": "City of Banning",
+          "permit": "City of Banning: 225 permits, 1% with storage, all online"
+        },
+        {
+          "name": "Menifee",
+          "slug": "menifee",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Menifee: 1,140 permits, 88% with storage, 48% online"
+        },
+        {
+          "name": "Temecula",
+          "slug": "temecula",
+          "utility": "SCE (a small area is SDG&E)",
+          "generation": "The delivery utility",
+          "permit": "City of Temecula: 794 permits, 10% with storage, 41% online"
+        },
+        {
+          "name": "Murrieta",
+          "slug": "murrieta",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Murrieta"
+        },
+        {
+          "name": "Lake Elsinore",
+          "slug": "lake-elsinore",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Lake Elsinore: 1,125 permits in 2023, all online"
+        },
+        {
+          "name": "Beaumont",
+          "slug": "beaumont",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Beaumont: 697 permits, 63% with storage, 26% online"
+        },
+        {
+          "name": "San Jacinto",
+          "slug": "san-jacinto",
+          "utility": "SCE",
+          "generation": "San Jacinto Power",
+          "permit": "City of San Jacinto: 495 permits, 44% with storage, 20% online"
+        },
+        {
+          "name": "Hemet, Perris, Wildomar, Canyon Lake",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "Each city; Canyon Lake: 136 permits, 80% with storage, all online"
+        },
+        {
+          "name": "Palm Springs",
+          "slug": "palm-springs",
+          "utility": "SCE",
+          "generation": "Desert Community Energy",
+          "permit": "City of Palm Springs: 1,574 permits, 50% with storage, 82% online"
+        },
+        {
+          "name": "Rancho Mirage",
+          "utility": "SCE (a small area is IID)",
+          "generation": "Rancho Mirage Energy Authority",
+          "permit": "City of Rancho Mirage: 686 permits in 2023, 20% online"
+        },
+        {
+          "name": "Palm Desert",
+          "slug": "palm-desert",
+          "utility": "SCE (a small area is IID)",
+          "generation": "SCE",
+          "permit": "City of Palm Desert: 435 permits, 59% with storage, none online"
+        },
+        {
+          "name": "Cathedral City",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Cathedral City: 422 permits, 91% with storage, all online"
+        },
+        {
+          "name": "Indio, Coachella, La Quinta",
+          "utility": "Imperial Irrigation District",
+          "generation": "IID",
+          "permit": "Each city; Indio: 643 permits, all online; La Quinta: 325, all online"
+        },
+        {
+          "name": "Unincorporated areas (Winchester, French Valley, Temescal Valley, Anza)",
+          "slug": "winchester",
+          "utility": "SCE; Anza Electric Cooperative in the Anza area",
+          "generation": "The delivery utility",
+          "permit": "County of Riverside"
+        }
+      ],
+      "note": "Utility and community choice rows come from the Energy Commission's map, queried September 23, 2026; the shares are of city land area, not of homes. Permit counts are the cities' own SB 379 reports in the Commission's data file dated May 2026; cities with no report are shown without figures.",
+      "hub": {
+        "href": "/solar-savings/inland-empire",
+        "label": "Inland Empire electric rates and bills by utility"
+      }
+    },
+    "sources": [
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "Riverside Public Utilities: Self-Generation Program",
+        "url": "https://riversideca.gov/utilities/residents/solar-info/self-generation-program"
+      },
+      {
+        "label": "Riverside Public Utilities: Avoided Cost of Energy rate, effective July 1, 2026 (PDF)",
+        "url": "https://riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-electric/Electric-Rate-Schedule-ACOE-Attachment-1--Effective-07-01-26.pdf"
+      },
+      {
+        "label": "Desert Community Energy",
+        "url": "https://desertcommunityenergy.org/"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California HCD: advisory for manufactured home roof-mounted solar systems (PDF)",
+        "url": "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
+      },
+      {
+        "label": "California HCD: modifications and alterations to manufactured homes (Southern Area Office)",
+        "url": "https://www.hcd.ca.gov/manufactured-and-mobilehomes/modifying-mobilehome"
+      },
+      {
+        "label": "California Government Code § 65850.52 (automated solar permitting, SB 379)",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/commercial-solar/companies-california",
+        "label": "Commercial solar companies and what to ask them"
+      },
+      {
+        "href": "/blog/sce-settlement-bill",
+        "label": "How SCE's annual solar settlement works"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a home battery earns its place"
+      }
+    ],
+    "faq": [
+      [
+        "Which utilities serve Riverside County?",
+        "Mostly SCE. The City of Riverside, Banning, Moreno Valley (in part) and Corona (in part) run their own utilities, the Imperial Irrigation District serves Indio, Coachella, La Quinta and much of the eastern Coachella Valley, and the Anza Electric Cooperative serves the Anza area. San Jacinto Power, Desert Community Energy and the Rancho Mirage Energy Authority supply generation over SCE in their cities."
+      ],
+      [
+        "Can I put solar on a mobile home in Riverside County?",
+        "Yes, with a state permit. The California Department of Housing and Community Development says an HCD permit is required for any solar system installed on a manufactured home, and a permit is required before any alteration begins. HCD's Southern Area Office is at 3737 Main Street in Riverside. Confirm the company's CSLB license and HCD permit before signing."
+      ],
+      [
+        "How does Riverside Public Utilities credit solar?",
+        "New systems in the City of Riverside join RPU's Self-Generation Program: a system can be sized up to 150% of historic annual use, residential customers go on the Domestic Time of Use rate, and exported energy is credited at RPU's Avoided Cost of Energy rate, set at $0.0678 per kWh for July 1, 2026 through June 30, 2027, adjusted by time-of-delivery factors where they apply."
+      ],
+      [
+        "Who issues solar permits in unincorporated Riverside County?",
+        "The County of Riverside, for areas outside city limits such as Winchester, French Valley and Temescal Valley. Addresses inside a city go to that city's building department."
+      ],
+      [
+        "What about commercial solar in Riverside County?",
+        "The same utility map applies, but commercial projects follow different tariffs, sizes and permit paths than homes. The commercial solar guides on this site cover how to compare commercial installers and what a system costs per watt."
+      ]
+    ],
+    "answer": "Solar companies in Riverside County have to design for whichever utility serves the address: SCE across most of the county, but city-owned utilities in Riverside, Banning and parts of Moreno Valley and Corona, IID in the eastern Coachella Valley, and community choice providers in San Jacinto, Palm Springs and Rancho Mirage. Each city issues its own permit, the County permits unincorporated areas, and manufactured homes need a state HCD permit. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "SCE share of county area",
+        "value": "About 72%",
+        "note": "IID, city utilities and a co-op cover the rest",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "RPU export credit",
+        "value": "$0.0678 per kWh",
+        "note": "Avoided Cost of Energy, July 2026 to June 2027",
+        "source": {
+          "publisher": "Riverside Public Utilities",
+          "date": "2026-09-23",
+          "url": "https://riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-electric/Electric-Rate-Schedule-ACOE-Attachment-1--Effective-07-01-26.pdf"
+        }
+      },
+      {
+        "label": "Manufactured homes",
+        "value": "HCD permit required",
+        "note": "Southern Area Office in Riverside",
+        "source": {
+          "publisher": "California HCD",
+          "date": "2026-09-23",
+          "url": "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Why the utility decides the design here",
+        "paragraphs": [
+          "On an SCE account, a new system goes on the Solar Billing Plan: export credits vary by hour and season and are locked for nine years from the year you start, customers who enroll before 2028 get a bonus credit of about $0.04 per kWh, or about $0.09 if income-qualified, and the settlement bill comes once a year. SCE says those credits are worth less than the power you buy from the grid, so storage and self-use matter.",
+          "Riverside Public Utilities works differently. Its Self-Generation Program lets a home size a system up to 150% of its historic annual use, puts residential solar customers on the Domestic Time of Use rate and credits exported energy at the Avoided Cost of Energy rate, $0.0678 per kWh from July 1, 2026 through June 30, 2027, adjusted by time-of-delivery factors. RPU says more than 4,700 homes and businesses installed solar under its earlier net metering program, and existing NEM agreements are not affected. A bid for a Riverside address that quotes SCE's credits is modeling the wrong utility, and the same goes for Banning, IID, Moreno Valley Utility and Corona's own utility."
+        ]
+      },
+      {
+        "heading": "Permits, and the manufactured-home exception",
+        "paragraphs": [
+          "Government Code section 65850.52 required cities of more than 50,000 people to offer an online, automated solar permit such as SolarAPP+ by September 30, 2023, and smaller cities by September 30, 2024. The 2024 reports to the Energy Commission show the uneven result across the county: all online in Banning, Canyon Lake, Cathedral City, Indio and La Quinta; 82% in Palm Springs; 48% in Menifee; 5% in Corona; none in Calimesa or Palm Desert. Storage shares ranged from 1% of Banning's permits to 91% of Cathedral City's.",
+          "Searches for solar on mobile and manufactured homes in Riverside County are common, and those homes follow state rules. The Department of Housing and Community Development requires an HCD permit for any solar system on a manufactured home and a permit before any alteration begins; its advisory warns that damage from poor installation on those roofs is not visible and tells owners to check the contractor's CSLB license and HCD permit first. HCD's Southern Area Office is at 3737 Main Street in Riverside."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "high-desert": {
+    "name": "High Desert",
+    "county": "San Bernardino and Los Angeles counties",
+    "utility": "sce",
+    "sourceCheckedDate": "2026-09-23",
+    "seo": {
+      "title": "High Desert Solar Companies: How to Compare Quotes (2026)",
+      "description": "High Desert solar companies: SCE and the local CCAs (Apple Valley, Palmdale, Lancaster), who permits Helendale or Hesperia, and manufactured home rules.",
+      "h1": "Solar Companies in the High Desert: How to Compare Solar Panel Quotes"
+    },
+    "bill": "Almost the whole High Desert is Southern California Edison territory, from Barstow and Hesperia to Lancaster and Twentynine Palms. What changes is the generation provider: Apple Valley, Palmdale and Lancaster each have a community choice program on the SCE bill, unincorporated Antelope Valley areas such as Quartz Hill are served by Clean Power Alliance, and Victorville's own utility serves a small part of that city. Start every quote from the names on your bill.",
+    "local": "Each city and town issues its own solar permit, and the two counties permit everything else: San Bernardino County for places such as Helendale, Phelan, Oak Hills and Lucerne Valley, through its EZ Online Permitting portal and SolarAPP+, and Los Angeles County for unincorporated Antelope Valley. San Bernardino County is explicit that roof-mounted solar on a manufactured home must be permitted by the state Department of Housing and Community Development instead.",
+    "example": "In the High Desert, the permit office and the generation provider can change within a few miles. Ask each bidder to write both at the top of the proposal, then compare how much of the output your home uses directly, since SCE says its export credits are worth less than the power you buy. For a manufactured home, the bid should name the HCD permit.",
+    "checks": [
+      [
+        "Generation provider",
+        "Name SCE, Apple Valley Choice Energy, Palmdale's EPIC, Lancaster Energy or Clean Power Alliance from your bill, and model its solar credits."
+      ],
+      [
+        "Permit office",
+        "Say whether your city or town, San Bernardino County (EZOP) or Los Angeles County issues the permit."
+      ],
+      [
+        "Manufactured home",
+        "On a manufactured home, show the HCD permit; San Bernardino County will not issue one for roof-mounted solar."
+      ],
+      [
+        "County SolarAPP+ rules",
+        "In unincorporated San Bernardino County, confirm a C-10 or C-46 license and no ballasted or building-integrated panels."
+      ]
+    ],
+    "region": {
+      "heading": "Providers and permit offices across the High Desert",
+      "intro": [
+        "On the California Energy Commission's utility map, SCE delivers power across the Victor Valley, the Barstow area, the Morongo Basin and the Antelope Valley. The Victorville Municipal Utilities Services area covers about 2% of Victorville. The Commission's community choice layer shows Apple Valley Choice Energy over Apple Valley, Lancaster Energy over Lancaster and Energy for Palmdale's Independent Choice over Palmdale, and a point check places Quartz Hill in Clean Power Alliance's area.",
+        "The permit column is each jurisdiction's own report to the Energy Commission under SB 379: residential solar permits issued, the share with battery storage, and the share issued online, for 2024 unless another year is named."
+      ],
+      "places": [
+        {
+          "name": "Victorville",
+          "slug": "victorville",
+          "utility": "SCE (Victorville Municipal Utilities Services in part)",
+          "generation": "The delivery utility",
+          "permit": "City of Victorville: 1,000 permits, 77% with storage, all online"
+        },
+        {
+          "name": "Apple Valley",
+          "utility": "SCE",
+          "generation": "Apple Valley Choice Energy",
+          "permit": "Town of Apple Valley: 1,117 permits, 39% with storage, 95% online"
+        },
+        {
+          "name": "Hesperia",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Hesperia: 920 permits, 50% with storage, 16% online"
+        },
+        {
+          "name": "Adelanto",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Adelanto (no SB 379 report in the Commission's file)"
+        },
+        {
+          "name": "Barstow",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Barstow: 162 permits, 77% with storage, none online"
+        },
+        {
+          "name": "Helendale, Phelan, Oak Hills, Lucerne Valley",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "San Bernardino County, EZ Online Permitting with SolarAPP+"
+        },
+        {
+          "name": "Lancaster",
+          "slug": "lancaster",
+          "utility": "SCE",
+          "generation": "Lancaster Energy",
+          "permit": "City of Lancaster"
+        },
+        {
+          "name": "Palmdale",
+          "utility": "SCE",
+          "generation": "Palmdale EPIC Energy",
+          "permit": "City of Palmdale: 969 permits in 2023, 8% with storage, 15% online"
+        },
+        {
+          "name": "Quartz Hill and other unincorporated Antelope Valley",
+          "utility": "SCE",
+          "generation": "Clean Power Alliance",
+          "permit": "Los Angeles County: 1,663 permits countywide in 2023, 34% online"
+        },
+        {
+          "name": "Twentynine Palms, Yucca Valley",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "Each city or town; Twentynine Palms: 143 permits, all online"
+        }
+      ],
+      "note": "\"High Desert\" has no official boundary; this table covers the Victor Valley, the Barstow area, the Morongo Basin and the Antelope Valley. Utility and CCA rows are from the Energy Commission's map, queried September 23, 2026; permit counts are the jurisdictions' own SB 379 reports in the Commission's data file dated May 2026.",
+      "hub": {
+        "href": "/solar-savings/inland-empire",
+        "label": "Inland Empire electric rates and bills by utility"
+      }
+    },
+    "sources": [
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "San Bernardino County EZ Online Permitting: Solar with SolarAPP+ (manufactured homes to HCD)",
+        "url": "https://wp.sbcounty.gov/ezop/permits/solar-with-solarapp/"
+      },
+      {
+        "label": "Apple Valley Choice Energy: FAQs",
+        "url": "https://avchoiceenergy.com/faqs/"
+      },
+      {
+        "label": "Palmdale EPIC Energy: FAQs",
+        "url": "https://palmdaleepicenergy.com/about/faqs/"
+      },
+      {
+        "label": "Clean Power Alliance: solar, net energy metering and Solar Billing Plan",
+        "url": "https://cleanpoweralliance.org/solar/"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California HCD: advisory for manufactured home roof-mounted solar systems (PDF)",
+        "url": "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/palm-desert",
+        "label": "Palm Desert, for the low-desert Coachella Valley"
+      },
+      {
+        "href": "/solar-installers/option-one-solar-review",
+        "label": "Option One Solar, an Apple Valley installer, reviewed"
+      },
+      {
+        "href": "/blog/solar-battery-backup-california",
+        "label": "When a battery makes sense"
+      }
+    ],
+    "faq": [
+      [
+        "What is the best solar company in the High Desert?",
+        "This site does not rank them. Shortlist companies with a CSLB license covering solar, written confirmation that they serve your address, and experience with your permit office, whether that is your city, San Bernardino County's EZ Online Permitting or Los Angeles County. Then compare at least three written bids for the same system built on your own SCE bill."
+      ],
+      [
+        "Who issues solar permits in Helendale?",
+        "Helendale is unincorporated, so San Bernardino County does, through its EZ Online Permitting portal. For a SolarAPP+ permit the County requires a permitted residential structure, a contractor with a C-10 or C-46 license, the SolarAPP+ approval document and specification sheet at submittal, and a smoke and carbon monoxide certification before the final inspection."
+      ],
+      [
+        "Can I put solar on a manufactured home in the High Desert?",
+        "Yes, but not with a county or city permit in San Bernardino County: the County says roof-mounted solar on a manufactured home must be permitted by the state Department of Housing and Community Development. HCD requires its permit for any solar system on a manufactured home and warns that damage from poor installation on those roofs is not visible."
+      ],
+      [
+        "How does Apple Valley Choice Energy handle solar?",
+        "Apple Valley Choice Energy serves addresses in the Town of Apple Valley, with SCE delivering the power and sending one bill that includes AVCE's generation charges. Under its net energy metering program, a month with more production than use leaves a bill credit for future months, and customers can receive cash back for excess energy."
+      ],
+      [
+        "When does Palmdale's EPIC pay solar customers?",
+        "EPIC serves all customers within Palmdale city limits, and its EPIC Empowerment program credits months when production exceeds use. If a customer has a credit of $100 or more during the October billing cycle, EPIC sends a check for that amount."
+      ]
+    ],
+    "answer": "Solar companies in the High Desert work almost entirely on SCE's grid, but the generation provider and the permit office change from town to town: Apple Valley, Palmdale and Lancaster have their own community choice programs, San Bernardino County permits unincorporated places like Helendale through SolarAPP+ and its online portal, and manufactured homes need a state HCD permit. Compare at least three written bids built on your own SCE bill.",
+    "keyFacts": [
+      {
+        "label": "Delivery utility",
+        "value": "SCE",
+        "note": "Victorville's own utility serves about 2% of that city",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "Local CCAs",
+        "value": "Apple Valley, Palmdale, Lancaster",
+        "note": "Plus Clean Power Alliance in unincorporated LA County",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "Manufactured homes",
+        "value": "HCD permit",
+        "note": "San Bernardino County does not permit roof-mounted solar on them",
+        "source": {
+          "publisher": "San Bernardino County",
+          "date": "2026-09-23",
+          "url": "https://wp.sbcounty.gov/ezop/permits/solar-with-solarapp/"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Community choice programs in the High Desert",
+        "paragraphs": [
+          "Apple Valley Choice Energy is the default generation provider for service addresses in the Town of Apple Valley. SCE keeps delivering the power, maintaining the lines and sending one bill with AVCE's generation charges on it. Solar customers on AVCE's net energy metering program get a bill credit in months when they produce more than they use, and can receive cash back for excess energy. Customers can opt out within the first 60 days; AVCE says those who leave later may be barred by SCE from returning for a year.",
+          "Energy for Palmdale's Independent Choice, Palmdale EPIC Energy, covers everyone within Palmdale city limits and starts customers on EPIC Power. Its EPIC Empowerment solar program credits surplus months and mails a check to customers with a credit of $100 or more in the October billing cycle. In unincorporated Antelope Valley areas such as Quartz Hill, Clean Power Alliance supplies generation: its Solar Billing Plan credits exports at hourly avoided-cost values, trues up in April and pays net surplus 10% above SCE's rate. Lancaster Energy covers Lancaster on the Commission's map; ask the bidder to use its current solar terms from your bill."
+        ]
+      },
+      {
+        "heading": "San Bernardino County's SolarAPP+ route for unincorporated homes",
+        "paragraphs": [
+          "Helendale, Phelan, Oak Hills, Lucerne Valley and other unincorporated High Desert communities are permitted by San Bernardino County. Its SolarAPP+ path is limited to permitted residential structures, excludes building-integrated and ballasted systems, and is open only to contractors holding C-10 or C-46 licenses. The contractor submits the design to SolarAPP+ and pays its processing fee, then applies in the County's EZ Online Permitting portal under Solar with SolarApp+, uploading the SolarAPP+ approval document and specification sheet; a smoke and carbon monoxide certification is due before the final inspection. Inspections can be on-site, virtual or self-inspections, scheduled in the County's EZ Inspect app.",
+          "The cities report very different permit practices to the Energy Commission. In 2024, Victorville issued all 1,000 of its residential solar permits online and 77% included storage; Apple Valley issued 95% of 1,117 online; Hesperia issued 16% of 920 online; and Barstow issued none of 162 online. Ask each bidder how long its recent permits in your city took."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "kern-county": {
+    "name": "Kern County",
+    "county": "Kern County",
+    "utility": "other",
+    "sourceCheckedDate": "2026-09-23",
+    "seo": {
+      "description": "Kern County solar companies: PG&E in Bakersfield and the valley, SCE in Delano and the east, who permits your address, and 2024 permit data by city."
+    },
+    "bill": "Kern County is split between two utilities, and the line runs through the valley. PG&E serves Bakersfield and most of the western valley floor, including Shafter, Wasco, Arvin, Taft and Buttonwillow; SCE serves Delano and the eastern desert and mountain towns, including Tehachapi, Ridgecrest, California City and Rosamond, and McFarland is split between them. No community choice provider operates in the county, so the utility on your bill sets the solar rules.",
+    "local": "The City of Bakersfield and the other incorporated cities issue their own solar permits, and the County of Kern permits unincorporated communities such as Buttonwillow, Oildale, Rosedale, Lamont and Rosamond. The County reported to the California Energy Commission that all 461 of its 2024 residential solar permits were issued online, while Bakersfield, Shafter and Arvin reported none issued online that year.",
+    "example": "Ask each Kern County bidder two questions before comparing prices: which utility's Solar Billing Plan the estimate uses, PG&E's or SCE's, and whether the City or the County will issue your permit. A Delano bid built on PG&E's rules, or a Buttonwillow bid that assumes Bakersfield's permit office, has not looked at your address.",
+    "checks": [
+      [
+        "Which utility",
+        "Name PG&E or SCE from your bill and use that utility's Solar Billing Plan; in McFarland, confirm the address."
+      ],
+      [
+        "Permit office",
+        "Say whether your city or the County of Kern issues the permit, and whether it will be issued online."
+      ],
+      [
+        "Battery",
+        "State usable battery kWh; 79% of Bakersfield's 2024 solar permits and 86% of Arvin's included storage."
+      ],
+      [
+        "Settlement month",
+        "Show when the annual true-up or settlement bill will come under your utility's plan."
+      ]
+    ],
+    "region": {
+      "heading": "PG&E, SCE and permit offices across Kern County",
+      "intro": [
+        "On the California Energy Commission's utility map, SCE covers a little over half of Kern County's land area, mostly the eastern desert and mountains, and PG&E a little under half, including most of the valley floor where most people live. The Commission's community choice layer shows no provider anywhere in the county.",
+        "The permit column is each jurisdiction's own report to the Energy Commission under SB 379: residential solar permits issued, the share with battery storage, and the share issued online, for 2024 unless another year is named."
+      ],
+      "places": [
+        {
+          "name": "Bakersfield",
+          "slug": "bakersfield",
+          "utility": "PG&E",
+          "generation": "PG&E",
+          "permit": "City of Bakersfield: 1,160 permits, 79% with storage, none online (5,288 in 2023)"
+        },
+        {
+          "name": "Shafter",
+          "utility": "PG&E",
+          "generation": "PG&E",
+          "permit": "City of Shafter: 551 permits, 26% with storage, almost none online"
+        },
+        {
+          "name": "Arvin",
+          "utility": "PG&E",
+          "generation": "PG&E",
+          "permit": "City of Arvin: 258 permits, 86% with storage, none online"
+        },
+        {
+          "name": "Taft",
+          "utility": "PG&E",
+          "generation": "PG&E",
+          "permit": "City of Taft: 94 permits, 88% with storage, all online"
+        },
+        {
+          "name": "Wasco",
+          "utility": "PG&E",
+          "generation": "PG&E",
+          "permit": "City of Wasco"
+        },
+        {
+          "name": "Buttonwillow, Oildale, Rosedale, Lamont",
+          "utility": "PG&E",
+          "generation": "PG&E",
+          "permit": "County of Kern: 461 permits countywide, 49% with storage, all online"
+        },
+        {
+          "name": "Delano",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Delano (no SB 379 report in the Commission's file)"
+        },
+        {
+          "name": "McFarland",
+          "utility": "Split: PG&E or SCE by address",
+          "generation": "The delivery utility",
+          "permit": "City of McFarland"
+        },
+        {
+          "name": "Tehachapi",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "City of Tehachapi: 48 permits, 69% with storage, 29% online"
+        },
+        {
+          "name": "Ridgecrest, California City",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "Each city"
+        },
+        {
+          "name": "Rosamond, Mojave, Boron, Lake Isabella",
+          "utility": "SCE",
+          "generation": "SCE",
+          "permit": "County of Kern"
+        }
+      ],
+      "note": "Utility rows are from the Energy Commission's map, queried September 23, 2026; the county split is by land area, not by homes. Permit counts are the jurisdictions' own SB 379 reports in the Commission's data file dated May 2026.",
+      "hub": {
+        "href": "/solar-savings/central-valley",
+        "label": "Central Valley electric rates and bills"
+      }
+    },
+    "sources": [
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California Government Code § 65850.52 (automated solar permitting, SB 379)",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+      },
+      {
+        "label": "California HCD: advisory for manufactured home roof-mounted solar systems (PDF)",
+        "url": "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-cost/bakersfield",
+        "label": "What sets the price of solar in Bakersfield"
+      },
+      {
+        "href": "/blog/why-is-my-pge-bill-so-high",
+        "label": "Why a PG&E bill runs high"
+      },
+      {
+        "href": "/blog/why-is-my-sce-bill-so-high",
+        "label": "Why an SCE bill runs high"
+      }
+    ],
+    "faq": [
+      [
+        "Who are the solar installers in Kern County?",
+        "This site does not rank them. Shortlist companies with a CSLB license covering solar that confirm in writing they serve your address and know your permit office, whether that is Bakersfield, another city or the County of Kern. Then compare at least three written bids for the same system built on your own PG&E or SCE bill."
+      ],
+      [
+        "Is Kern County PG&E or SCE?",
+        "Both. On the Energy Commission's map, PG&E serves Bakersfield and most of the western valley floor, including Shafter, Wasco, Arvin, Taft and Buttonwillow, while SCE serves Delano, Tehachapi, Ridgecrest, California City, Rosamond and the eastern desert. McFarland is split. Your bill settles it for one address."
+      ],
+      [
+        "Which utility serves Delano?",
+        "SCE. The Energy Commission's map places all of Delano in SCE territory, even though nearby Wasco, Shafter and Bakersfield are PG&E. A Delano system goes on SCE's Solar Billing Plan, and the City of Delano issues the building permit."
+      ],
+      [
+        "Who issues solar permits in Buttonwillow?",
+        "Buttonwillow is unincorporated, so the County of Kern does. The County reported that all 461 residential solar permits it issued in 2024 were issued online. Buttonwillow is PG&E territory, so the system goes on PG&E's Solar Billing Plan."
+      ],
+      [
+        "Can I put solar on a manufactured home in Kern County?",
+        "Yes, with a state permit. The California Department of Housing and Community Development says an HCD permit is required for any solar system installed on a manufactured home, and warns that damage from poor installation on those roofs is not visible."
+      ]
+    ],
+    "answer": "Solar companies in Kern County have to start with the utility: PG&E serves Bakersfield and most of the western valley, including Buttonwillow, while SCE serves Delano and the eastern desert towns, and there is no community choice provider. Cities issue their own permits and the County of Kern permits unincorporated areas, which it reported issuing entirely online in 2024. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "Utility split by area",
+        "value": "About 53% SCE, 47% PG&E",
+        "note": "No community choice provider in the county",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "County permits online",
+        "value": "All 461 in 2024",
+        "note": "Unincorporated Kern County",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      },
+      {
+        "label": "Bakersfield permits with storage",
+        "value": "79% in 2024",
+        "note": "920 of 1,160 residential solar permits",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Two utilities, two Solar Billing Plans",
+        "paragraphs": [
+          "Both of Kern County's utilities put new solar systems on a Solar Billing Plan, but the details differ. PG&E values credits and charges by when energy moves to or from the grid, by time of day, day of the week and season; it gives Energy Export Bonus Credits to customers who start before 2028, with the value set at permission to operate; and it closes each 12-month cycle with a True-Up statement. PG&E says customers save the most when they use the energy they produce on-site.",
+          "SCE locks its export credit values for nine years from the year a customer starts, pays higher credits in June through September, adds a bonus of about $0.04 per kWh, or about $0.09 for income-qualified customers, for those who enroll before 2028, and sends one settlement bill a year in the month the system started service. SCE says its credits cannot pay the Base Services Charge. A proposal for a Delano home and one for a Bakersfield home should look different for these reasons alone."
+        ]
+      },
+      {
+        "heading": "What the permit reports show",
+        "paragraphs": [
+          "Government Code section 65850.52 required cities of more than 50,000 people to offer an online, automated solar permit by September 30, 2023 and smaller cities by September 30, 2024, and it exempts only cities of fewer than 5,000 people and counties of fewer than 150,000, with every city in them. Kern is not exempt. The 2024 reports to the Energy Commission show uneven adoption in Kern: the County and Taft issued every residential solar permit online, Tehachapi 29%, and Bakersfield, Shafter and Arvin none.",
+          "The same reports show how common batteries have become in the valley. In 2024, 79% of Bakersfield's 1,160 residential solar permits, 86% of Arvin's and 88% of Taft's included storage, and so did 49% of the County's. Bakersfield's own permit count fell from 5,288 in 2023 to 1,160 in 2024. Ask each bidder how long its recent permits took with your permit office, and to show your bill with and without a battery."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "bellflower": {
+    "name": "Bellflower",
+    "county": "Los Angeles County",
+    "utility": "sce",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Bellflower is Southern California Edison territory for both generation and delivery: the California Energy Commission's map shows no community choice provider over the city. A new system goes on SCE's Solar Billing Plan, so each proposal should use SCE's hourly export credits and your own twelve months of SCE usage.",
+    "local": "Since January 1, 2026, Bellflower has added roof requirements most cities do not have. Every solar permit needs the owner's written authorization and structural verification of the roof, and a C-39 roofing contractor must certify the roof's condition in writing at plan check and again before the final inspection, with at least a one-year warranty against leaks. Plans go through the City's Willdan Geocivix portal after a plan check number is issued by email.",
+    "example": "Because Bellflower requires a roofing contractor's sign-off before and after the install, ask every bidder who provides it: its own C-39 license, a roofing partner, or you. A bid that leaves the roof certification out, or that assumes a recent re-roof you do not have, is not comparable with one that includes it.",
+    "checks": [
+      [
+        "Roof certification",
+        "Name the C-39 roofing contractor who certifies the roof at plan check and after installation, and include the one-year leak warranty."
+      ],
+      [
+        "Structural verification",
+        "Show the existing roof framing and confirm it supports the array, with any strengthening details."
+      ],
+      [
+        "Owner authorization",
+        "Include the City's letter of authorization signed by the property owner."
+      ],
+      [
+        "SCE billing",
+        "Model SCE's Solar Billing Plan from your own bill, with the nine-year credit lock."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Bellflower Building and Safety: 2026 residential solar submittal instructions and PV requirements effective January 1, 2026 (PDF)",
+        "url": "https://bellflower.ca.gov/Document%20Center/Department/Planning/Building%20Division/Documents%20and%20Resources/2026%20Residential%20Solar%20Submittal%20Instructions.pdf"
+      },
+      {
+        "label": "City of Bellflower Building and Safety: documents and resources",
+        "url": "https://www.bellflower.org/departments/planning/building___safety_division/documents___resources.php"
+      },
+      {
+        "label": "SCE: how the Solar Billing Plan works",
+        "url": "https://www.sce.com/save-money/rates-financing/solar-billing-plan"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/blog/is-my-roof-good-for-solar-california",
+        "label": "Is your roof ready for solar?"
+      },
+      {
+        "href": "/solar-companies/lakewood",
+        "label": "Solar companies in neighboring Lakewood"
+      },
+      {
+        "href": "/blog/sce-settlement-bill",
+        "label": "How SCE's annual solar settlement works"
+      }
+    ],
+    "faq": [
+      [
+        "How do I get a solar permit in Bellflower?",
+        "The applicant emails the solar application to the City to get a plan check number, then uploads the plans in the Willdan Geocivix portal for review. After approval, the applicant prints two approved sets, makes an appointment with the Building Counter, pays the plan check and permit fees in person at City Hall, and receives the permit and job card."
+      ],
+      [
+        "Why does Bellflower require a roofer to certify my roof?",
+        "The City says its 2026 requirements address life-safety concerns from roof water leaks. A C-39 roofing contractor must confirm in writing at plan check that the roof covering is in good condition, and again before the final inspection that the roof was not compromised, with at least a one-year warranty against leaks. The first certification is waived if a complete re-roof permit was issued and finaled in the past five years."
+      ],
+      [
+        "How do I schedule a solar inspection in Bellflower?",
+        "By phone, at (562) 804-1424 extension 2230, once the permit is issued. Requests must be made by 3 p.m.; the City tries to schedule the inspection for the next business day but does not guarantee it."
+      ],
+      [
+        "Who supplies electricity in Bellflower?",
+        "SCE supplies and delivers it. The California Energy Commission's map shows no community choice provider over Bellflower, so SCE's Solar Billing Plan sets the solar credits."
+      ]
+    ],
+    "answer": "Solar companies in Bellflower face roof rules that took effect January 1, 2026: a C-39 roofing contractor must certify the roof before and after the install, with a one-year leak warranty, and the owner must authorize the permit in writing. Plans are reviewed through the City's Willdan Geocivix portal, and fees are paid in person. SCE supplies and delivers the power. Compare at least three written bids built on your own SCE bill.",
+    "keyFacts": [
+      {
+        "label": "Roof certification",
+        "value": "C-39 roofer, before and after",
+        "note": "At least a 1-year leak warranty; effective Jan. 1, 2026",
+        "source": {
+          "publisher": "City of Bellflower",
+          "date": "2026-09-23",
+          "url": "https://bellflower.ca.gov/Document%20Center/Department/Planning/Building%20Division/Documents%20and%20Resources/2026%20Residential%20Solar%20Submittal%20Instructions.pdf"
+        }
+      },
+      {
+        "label": "Plan review portal",
+        "value": "Willdan Geocivix",
+        "note": "Plan check number by email first; fees paid at City Hall",
+        "source": {
+          "publisher": "City of Bellflower",
+          "date": "2026-09-23",
+          "url": "https://bellflower.ca.gov/Document%20Center/Department/Planning/Building%20Division/Documents%20and%20Resources/2026%20Residential%20Solar%20Submittal%20Instructions.pdf"
+        }
+      },
+      {
+        "label": "Utility",
+        "value": "SCE",
+        "note": "No community choice provider",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Bellflower's 2026 roof and permit requirements",
+        "paragraphs": [
+          "The City's minimum additional requirements for solar PV permits took effect on January 1, 2026. Before the permit is issued, the property owner must authorize it in writing, and the plans must describe the existing roof framing, with member types, sizes, spans and spacing, and verify that the roof will carry the new system, adding framing plans for any strengthening. At plan check, a C-39 roofing contractor must confirm in writing that the roof covering shows no deterioration and is in good condition; that step is waived if a complete re-roof permit was issued and finaled within the past five years.",
+          "Before the final building inspection, a C-39 roofing contractor must confirm in writing that the whole roof is in acceptable condition after the installation and was not compromised, with at least a one-year warranty against leaks or product replacement. Any electrical work beyond the direct connection into the existing panel must be done by a licensed individual or electrical contractor, and any related gas or water plumbing by licensed plumbers. The Building Official can waive requirements only for cause."
+        ]
+      },
+      {
+        "heading": "Filing, fees and inspections",
+        "paragraphs": [
+          "The process starts by email: the applicant sends the solar application to the City's permit technicians and receives a plan check number. Plans are then uploaded to the Willdan Geocivix portal as multi-page PDFs by discipline, with calculations and specifications as separate files, and review comments come back by email for resubmittal through the same portal. Plan check and permit fees are paid after approval, in person at City Hall, at an appointment with the Building Counter, where the approved sets are stamped and the permit and job card are issued.",
+          "Inspections are requested by phone once the permit is issued, by 3 p.m. for a next-business-day attempt. On the utility side, a new system goes on SCE's Solar Billing Plan: export credits vary by hour and season, SCE locks their values for nine years from the year you start, and customers who enroll before 2028 get a bonus credit of about $0.04 per kWh, or about $0.09 if income-qualified."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
   },
 };

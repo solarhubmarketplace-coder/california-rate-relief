@@ -523,15 +523,18 @@ export function companiesPageSeo(slug: string): CitySeo | null {
     const utility = GROWTH_UTILITY_LABEL[growth.utility];
     const bill = utility ? `the ${utility} bill` : 'which utility bills you';
     const checked = shortDate(growth.sourceCheckedDate || GROWTH_DEFAULT_CHECKED);
+    // A county or region page (2026-09-23, Tier 2) writes its own
+    // description: "the permit route" is one office per city, not per region.
+    const own = growth.seo;
     return {
-      title,
-      description: fit(
+      title: own?.title ?? title,
+      description: own?.description ?? fit(
         DESCRIPTION_MAX,
         `Comparing solar companies in ${city}? Check ${bill}, ${possessive(city)} permit route and 6 quote items side by side. Sources checked ${checked}.`,
         `Comparing solar companies in ${city}? Check ${bill}, the permit route and 6 quote items side by side. Sources checked ${checked}.`,
         `Comparing solar companies in ${city}? Check ${bill}, the permit route and 6 quote items side by side.`,
       ),
-      h1: `Solar Companies in ${city}, CA: How to Compare Solar Panel Quotes`,
+      h1: own?.h1 ?? `Solar Companies in ${city}, CA: How to Compare Solar Panel Quotes`,
     };
   }
   const utility = legacyUtilityLabel(legacy!);
@@ -568,6 +571,21 @@ export const SAVINGS_BILLS_SEO: Readonly<Record<string, CitySeo & { modified: st
     description:
       'Sacramento electricity comes from SMUD, not PG&E: how SMUD bills a home, its Time-of-Day prices, the $27 fixed charge and its solar export credit.',
     h1: "Sacramento's Electricity Provider Is SMUD: Rates, Bills and Solar",
+    modified: '2026-09-23',
+  },
+  // 2026-09-23 (Tier 2, citycos)
+  riverside: {
+    title: 'Riverside Electricity Provider: RPU Rates & Bills (2026)',
+    description:
+      "Riverside's electricity comes from Riverside Public Utilities, not SCE: RPU's 2026 residential charges, tiered energy prices and what it pays for solar.",
+    h1: "Riverside's Electricity Provider Is Riverside Public Utilities: Rates and Bills",
+    modified: '2026-09-23',
+  },
+  sunnyvale: {
+    title: 'Sunnyvale Electricity Provider: SVCE & PG&E Bills',
+    description:
+      'Sunnyvale electricity: Silicon Valley Clean Energy generation and PG&E delivery on one bill, a typical $196 monthly bill, the $24 charge and solar rules.',
+    h1: "Sunnyvale's Electricity Providers: Silicon Valley Clean Energy and PG&E",
     modified: '2026-09-23',
   },
   'san-mateo': {

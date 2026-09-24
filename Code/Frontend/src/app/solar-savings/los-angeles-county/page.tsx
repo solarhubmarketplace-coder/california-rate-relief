@@ -367,6 +367,11 @@ export default function LosAngelesCountySolarPage() {
                 counties that this hub's own grid does not reach. */}
             <RegionalCostCities region='Los Angeles County' counties={['Los Angeles County']} />
 
+            {/* 2026-09-23 (Tier 2, citycos): companies-layer city pages in the county. */}
+            <p className="text-muted-foreground leading-relaxed mb-12">
+              Comparing installers rather than bills? The companies pages for <Link href="/solar-companies/santa-monica" className="text-primary underline">Santa Monica</Link> (SCE with Clean Power Alliance), <Link href="/solar-companies/bellflower" className="text-primary underline">Bellflower</Link> (new roof-certification rules since January 2026) and the <Link href="/solar-companies/high-desert" className="text-primary underline">High Desert</Link>, which covers Lancaster, Palmdale and the Antelope Valley, show each permit office&apos;s steps.
+            </p>
+
             <FaqJsonLd items={FAQS} />
             <FaqBlock items={FAQS} id="faq" schema={false} />
 

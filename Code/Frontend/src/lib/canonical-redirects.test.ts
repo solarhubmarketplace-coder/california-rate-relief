@@ -263,6 +263,33 @@ test('Tier 2 city-cost wave: each new cost page renders and its companies twin s
   }
 });
 
+// 2026-09-23, Tier 2 wave (citycos agent): /solar-companies pages this lane
+// created, or moved onto the sourced growth template, for installer-intent
+// clusters. Decision 15 keeps each one live. Some have a /solar-cost twin
+// today (ontario, corona, chula-vista) and the parallel citycost lane is
+// building twins for others, so every one is registered here rather than only
+// the ones with a twin on this branch. No redirect rows are added.
+const T2_CITYCOS_COMPANIES_SLUGS = new Set([
+  'corona', 'orange-county', 'huntington-beach', 'san-mateo-county', 'san-mateo',
+  'san-francisco', 'bay-area', 'simi-valley', 'scotts-valley', 'sunnyvale',
+  'cupertino', 'santa-clara', 'palo-alto', 'lake-elsinore', 'pasadena',
+  'chula-vista', 'san-ramon', 'santa-monica', 'ontario', 'riverside-county',
+  'temecula', 'murrieta', 'high-desert', 'kern-county', 'bakersfield', 'stockton',
+  'los-angeles', 'san-bernardino', 'irvine', 'anaheim', 'santa-ana', 'santa-cruz',
+  'san-jose', 'palm-desert', 'riverside', 'victorville', 'bellflower',
+]);
+for (const slug of T2_CITYCOS_COMPANIES_SLUGS) REINSTATED_COMPANIES_SLUGS.add(slug);
+
+test('Tier 2 wave (citycos): its companies pages render and are not redirected', () => {
+  for (const slug of T2_CITYCOS_COMPANIES_SLUGS) {
+    assert.ok(COMPANIES_ROUTE_SLUGS.has(slug), `${slug} must be in the /solar-companies/[city] static params`);
+    assert.ok(Object.prototype.hasOwnProperty.call(growthCities, slug), `${slug} must render from growthCities`);
+    assert.equal(canonicalRedirectFor(`/solar-companies/${slug}`), null, slug);
+    assert.equal(companiesCityHref(slug), `/solar-companies/${slug}`);
+    assert.equal(hasCompaniesCityPage(slug), true);
+  }
+});
+
 // ---------------------------------------------------------------------------
 // Cross-cutting checks. These read the registries above.
 // ---------------------------------------------------------------------------

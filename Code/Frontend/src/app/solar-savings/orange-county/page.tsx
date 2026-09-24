@@ -27,7 +27,11 @@ const CHECKED = 'September 23, 2026';
 const ANAHEIM_RATES_URL = 'https://www.anaheim.net/6335/Residential-Rates';
 const SDGE_ABOUT_URL = 'https://www.sdge.com/more-information/our-company/about-us';
 const OCPA_URL = 'https://www.ocpower.org/';
-const OCPA_ABOUT_URL = 'https://www.ocpower.org/about-us/';
+// 2026-09-23 (Tier 2, citycos): OCPA's FAQ lists its current members, and its
+// Huntington Beach page says those customers returned to SCE in 2024. The
+// Energy Commission's CCA layer still shades Huntington Beach as OCPA.
+const OCPA_FAQ_URL = 'https://www.ocpower.org/faq/';
+const OCPA_HB_URL = 'https://www.ocpower.org/huntington-beach-2/';
 const SCE_CCA_URL = 'https://www.sce.com/partners/partnerships/community-choice-aggregation';
 const SCE_BSC_URL = 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc';
 const CEC_URL =
@@ -63,7 +67,7 @@ const FAQS = [
   {
     question: 'Who is the electricity provider in Orange County, California?',
     answer:
-      'Southern California Edison serves most of the county, about 70% of its area on the California Energy Commission map. San Diego Gas & Electric serves the southern end, including San Clemente, and the City of Anaheim runs its own utility. In Irvine, Buena Park, Fullerton and Huntington Beach, Orange County Power Authority supplies the generation while SCE delivers it.',
+      'Southern California Edison serves most of the county, about 70% of its area on the California Energy Commission map. San Diego Gas & Electric serves the southern end, including San Clemente, and the City of Anaheim runs its own utility. In Irvine, Buena Park and Fullerton, Orange County Power Authority supplies the generation while SCE delivers it. Huntington Beach left OCPA, and its customers returned to SCE in 2024.',
   },
   {
     question: 'What is the average electric bill in Orange County?',
@@ -124,7 +128,7 @@ export default function OrangeCountySolarPage() {
                 Who Provides Electricity in Orange County
               </h1>
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
-                Southern California Edison delivers electricity to most of Orange County. The City of Anaheim runs its own utility, and the southern end of the county, including San Clemente, is San Diego Gas &amp; Electric territory. In four cities, Orange County Power Authority buys the power that SCE delivers. They price electricity very differently, so start with the name on your bill.
+                Southern California Edison delivers electricity to most of Orange County. The City of Anaheim runs its own utility, and the southern end of the county, including San Clemente, is San Diego Gas &amp; Electric territory. In three cities, Orange County Power Authority buys the power that SCE delivers. They price electricity very differently, so start with the name on your bill.
               </p>
               <p className='text-sm text-muted-foreground mt-3'>
                 Updated {CHECKED}. California Rate Relief is a referral service. We are not a licensed contractor.
@@ -136,10 +140,10 @@ export default function OrangeCountySolarPage() {
                 How the county splits between providers
               </h2>
               <p className='text-muted-foreground leading-relaxed mb-4'>
-                The California Energy Commission maps each utility&apos;s territory. Laid over the county boundary, its layers (queried {CHECKED}) put about 70% of Orange County&apos;s area in SCE territory, about 14% in SDG&amp;E&apos;s along the south, and about 6% in the City of Anaheim&apos;s own utility. Orange County Power Authority&apos;s community choice area covers about 13%: its site names Irvine, Buena Park, Fullerton and Huntington Beach as member cities and says Fountain Valley is joining. SCE still delivers the power and sends the bill in those cities.
+                The California Energy Commission maps each utility&apos;s territory. Laid over the county boundary, its layers (queried {CHECKED}) put about 70% of Orange County&apos;s area in SCE territory, about 14% in SDG&amp;E&apos;s along the south, and about 6% in the City of Anaheim&apos;s own utility. The Commission&apos;s community choice layer still shades Huntington Beach as Orange County Power Authority territory, but OCPA&apos;s own FAQ names only Buena Park, Fullerton and Irvine as current member cities, with Fountain Valley beginning service soon, and OCPA says its Huntington Beach customers returned to SCE in 2024. SCE still delivers the power and sends the bill in the member cities.
               </p>
               <p className='text-muted-foreground leading-relaxed'>
-                On bills, the Public Advocates Office&apos;s June 2026 estimates for SCE customers not on CARE were $152 a month in a cool climate zone where homes use about 385 kWh a month and $254 in a hot one using about 700 kWh; CARE customers averaged $81 and $165. Since November 2025 SCE has added a Base Services Charge of $24.15 a month for customers not on CARE or FERA ($12.08 on FERA, $6.00 on CARE) and lowered its per-kWh prices by about 10%. Current averages for every utility are on the <Link href={RATE_TRACKER_PATH} className='text-primary underline'>California utility rate tracker</Link>. Sources: <a href={CEC_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>California Energy Commission, Electric Load Serving Entities</a>; <a href={OCPA_ABOUT_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>Orange County Power Authority, About Us</a>; <a href={PAO_Q2_2026_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>CPUC Public Advocates Office, Q2 2026 Electric Rates Report</a>; <a href={SCE_BSC_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>SCE, Base Services Charge</a>; each fetched {CHECKED}.
+                On bills, the Public Advocates Office&apos;s June 2026 estimates for SCE customers not on CARE were $152 a month in a cool climate zone where homes use about 385 kWh a month and $254 in a hot one using about 700 kWh; CARE customers averaged $81 and $165. Since November 2025 SCE has added a Base Services Charge of $24.15 a month for customers not on CARE or FERA ($12.08 on FERA, $6.00 on CARE) and lowered its per-kWh prices by about 10%. Current averages for every utility are on the <Link href={RATE_TRACKER_PATH} className='text-primary underline'>California utility rate tracker</Link>. Sources: <a href={CEC_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>California Energy Commission, Electric Load Serving Entities</a>; <a href={OCPA_FAQ_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>Orange County Power Authority, FAQ</a>; <a href={OCPA_HB_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>OCPA, Huntington Beach customers return to SCE</a>; <a href={PAO_Q2_2026_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>CPUC Public Advocates Office, Q2 2026 Electric Rates Report</a>; <a href={SCE_BSC_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>SCE, Base Services Charge</a>; each fetched {CHECKED}.
               </p>
             </section>
 
@@ -169,10 +173,10 @@ export default function OrangeCountySolarPage() {
                 Where Orange County Power Authority fits
               </h2>
               <p className='text-muted-foreground leading-relaxed mb-4'>
-                Orange County Power Authority (OCPA) is a community choice aggregator. Its site names <Link href={savingsCityHref('irvine')} className='text-primary underline'>Irvine</Link>, Buena Park, Fullerton and <Link href={savingsCityHref('huntington-beach')} className='text-primary underline'>Huntington Beach</Link> as the cities it serves, with Fountain Valley joining. For solar customers, OCPA says it treats Net Billing Tariff customers&apos; generation as if it were under NEM 2.0, trues up in April and pays 10% more than SCE for excess generation. SCE lists OCPA among the CCAs in its territory and says it keeps providing CCA customers with meter reading, billing, maintenance and outage response.
+                Orange County Power Authority (OCPA) is a community choice aggregator. Its FAQ names Buena Park, Fullerton and <Link href={savingsCityHref('irvine')} className='text-primary underline'>Irvine</Link> as its current member cities, with Fountain Valley beginning service soon. <Link href={savingsCityHref('huntington-beach')} className='text-primary underline'>Huntington Beach</Link> joined in 2022 but voted to leave in May 2023, and OCPA returned those customers to SCE in 2024. For solar customers, OCPA says it treats Net Billing Tariff customers&apos; generation as if it were under NEM 2.0, trues up in April and pays 10% more than SCE for excess generation. SCE lists OCPA among the CCAs in its territory and says it keeps providing CCA customers with meter reading, billing, maintenance and outage response.
               </p>
               <p className='text-muted-foreground leading-relaxed mb-4'>
-                So an Irvine bill can carry OCPA generation charges next to SCE delivery charges. Ask each bidder which provider the estimate uses for generation, and have both portions modeled from your own bill.
+                So an Irvine bill can carry OCPA generation charges next to SCE delivery charges. Ask each bidder which provider the estimate uses for generation, and have both portions modeled from your own bill. For the permit office and generation provider in each city, and what to ask the solar companies bidding there, see <Link href='/solar-companies/orange-county' className='text-primary underline'>comparing solar companies across Orange County</Link>.
               </p>
               <p className='text-sm text-muted-foreground leading-relaxed'>
                 Sources, each checked {CHECKED}: <a href={ANAHEIM_RATES_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>Anaheim Public Utilities, Residential Rates</a>; <a href={SDGE_ABOUT_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>SDG&amp;E, About Us</a>; <a href={OCPA_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>Orange County Power Authority</a>; <a href='https://www.ocpower.org/energy-programs/solar-net-energy-metering/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>OCPA, Solar/Net Energy Metering</a>; <a href={SCE_CCA_URL} target='_blank' rel='noopener noreferrer' className='text-primary underline'>SCE, Community Choice Aggregation</a>.

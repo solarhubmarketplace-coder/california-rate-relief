@@ -10,6 +10,7 @@ import {
   CityLocalSections,
   CityPublishedProvider,
   CityQuestions,
+  CityRegionPlaces,
 } from "./CityLocalDetails";
 import { CitySiblingLinks, NearbyCityPages } from "./NearbyCostCities";
 import { cityPageDates, cityQuickCheckUtility, companiesPageSeo, growthUtilityForForm, isLiveCityPage } from "@/lib/city-pages";
@@ -71,6 +72,9 @@ export function CityComparison({ slug }: { slug: string }) {
       quickCheckUtility={cityQuickCheckUtility("companies", slug)}
     >
       <CitySiblingLinks slug={slug} type="companies" />
+      {/* 2026-09-23 (Tier 2): a county or region page lists each place's
+          utility, generation provider and permit office, linking city pages. */}
+      <CityRegionPlaces slug={slug} />
       {city.provider ? (
         <CityPublishedProvider slug={slug} />
       ) : (
@@ -147,7 +151,9 @@ export function CityComparison({ slug }: { slug: string }) {
       />
       {/* 2026-09-22: replaces the hand-picked CityRegionalLinks list (15 of 50
           cities had one) with the nearest live city pages, same county first. */}
-      <NearbyCityPages slug={slug} type="companies" />
+      {/* A county or region page already links every city page in it from
+          its table, and has no map point for the distance sort. */}
+      {city.region ? null : <NearbyCityPages slug={slug} type="companies" />}
       <HubSpokeLinks hub="city_installers" currentPath={path} max={6} title="Solar companies in other California cities" />
     </DecisionPage>
   );

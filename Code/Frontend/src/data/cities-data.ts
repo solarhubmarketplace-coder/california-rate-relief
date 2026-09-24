@@ -669,6 +669,16 @@ export const CITIES: CityData[] = [
       'Murrieta gets strong sunshine year-round, so what decides solar for your home is your roof, your usage and the terms of the quotes you compare. Start by checking your SCE rate plan and CARE/FERA eligibility, then evaluate your options.',
     faqs: [
       {
+        question: 'What solar rebates are available in Murrieta?',
+        answer:
+          'No federal credit applies to a system bought in 2026: the IRS says the Residential Clean Energy Credit is not available for any property placed in service after December 31, 2025. The programs left are state and utility ones. SCE customers who enroll in its Solar Billing Plan before 2028 get an Energy Export Bonus Credit of about $0.04 per kWh, or about $0.09 for income-qualified customers, and SCE locks export credit values for nine years. The CPUC\'s Self-Generation Incentive Program offers its Residential Solar and Storage Equity incentive, $3,100 per kW of solar and $1,100 per kWh of storage, to low-income residential customers who meet its eligibility rules.',
+      },
+      {
+        question: 'Does solar raise my property taxes in Murrieta?',
+        answer:
+          'Not under current law, if the system qualifies in time. California Revenue and Taxation Code section 73 keeps a new active solar energy system, including its storage devices, out of the \'newly constructed\' value that would otherwise be reassessed. The section is in effect until January 1, 2027, and systems that qualify before then stay excluded until the property changes ownership. Ask the Riverside County assessor how it applies to a system finished late in 2026.',
+      },
+      {
         question: 'How much does solar cost in Murrieta in 2026?',
         answer:
           'No primary source publishes a solar price for Murrieta. Your price depends on the system size your usage needs, the roof, the equipment and the installer. As a benchmark, Lawrence Berkeley National Laboratory\'s Tracking the Sun (October 2024) found that host-owned residential systems installed in 2023 were priced at $3.20–$5.50 per watt (20th to 80th percentile, national sample), with California near the middle. A system you buy in 2026 gets no federal residential credit: IRC § 25D does not apply to expenditures made after December 31, 2025. A lease or PPA is priced by its own contract, so compare its total payments.',
@@ -1348,6 +1358,61 @@ export const CITIES: CityData[] = [
     ogDescription: 'Confirm the serving utility, then compare Riverside solar quotes on the same usage, roof, equipment and contract scope.',
     googleSunroofUrl: 'https://sunroof.withgoogle.com',
     relatedArticles: ADDRESS_CHECK_RELATED_ARTICLES,
+    // 2026-09-23 (Tier 2, citycos; Decision 18): re-scoped to the city's
+    // provider and rate question ("electricity provider riverside california",
+    // "riverside public utilities electric rates").
+    bills: {
+      answer:
+        'Riverside Public Utilities, the City of Riverside\'s own utility, supplies and delivers electricity to almost the whole city; on the California Energy Commission\'s map it covers about 99.5% of the city\'s area, with a sliver in SCE territory. Its residential Schedule D for 2026 charges a $14.93 monthly customer charge, a reliability charge set by your electric panel size and a network access charge set by daily use, plus tiered energy prices from 13.64 to 24.62 cents per kWh.',
+      sections: [
+        {
+          heading: 'Who provides electricity in Riverside',
+          paragraphs: [
+            'Riverside Public Utilities is a city-owned utility, so its rates are set by the City rather than by the CPUC, and there is no community choice provider layered on top of it. On the Energy Commission\'s utility map, RPU\'s territory covers about 99.5% of the city\'s land area and SCE the rest, so a small number of addresses at the edges are SCE customers. The name on your bill settles it.',
+            'For SCE addresses, the SCE bill guides on this site apply. Everything below is RPU\'s own schedule.',
+          ],
+        },
+        {
+          heading: 'What RPU charges a home in 2026',
+          paragraphs: [
+            'RPU\'s Schedule D, Domestic Service, sets rates for each year from 2024 through 2028. For 2026 the flat charges are a $14.93 customer charge; a reliability charge of $10, $20, $40 or $60 a month depending on whether the home\'s service is up to 100 amps, 101 to 200, 201 to 400 or over 400; and a network access charge of $4.60, $10.38 or $19.64 a month depending on whether the home averages up to 12 kWh a day, 12 to 25, or more than 25.',
+            'Energy is then priced in three tiers: 13.64 cents per kWh for the first tier, 21.34 cents for the second and 24.62 cents above that. In the winter season the tiers break at 350 and 750 kWh a month; in summer, June 1 through September 30, they break at 750 and 1,500. The schedule already lists higher energy prices for 2027 and 2028.',
+          ],
+        },
+        {
+          heading: 'Solar on an RPU account',
+          paragraphs: [
+            'New solar customers join RPU\'s Self-Generation Program. A system may be built up to 150% of the home\'s historic annual use, residential customers go on the Domestic Time of Use rate, and exported energy earns a bill credit at RPU\'s Avoided Cost of Energy rate: $0.0678 per kWh for July 1, 2026 through June 30, 2027, adjusted by time-of-delivery factors where they apply. Existing net metering agreements are not affected; RPU says more than 4,700 homes and businesses installed solar under that earlier program.',
+            'Because the export credit is well below RPU\'s retail energy tiers, the value of solar on an RPU account comes mostly from power the home uses as it is produced. Ask any bidder to model RPU\'s time-of-use rate and avoided-cost credit, not SCE\'s Solar Billing Plan.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Who is the electricity provider in Riverside, California?',
+          answer: 'Riverside Public Utilities, the City of Riverside\'s own utility, for about 99.5% of the city\'s area on the Energy Commission\'s map. A few addresses at the edges are served by SCE; check the name on your bill.',
+        },
+        {
+          question: 'What are Riverside Public Utilities electric rates?',
+          answer: 'For 2026, RPU\'s residential Schedule D has a $14.93 customer charge, a reliability charge of $10 to $60 by panel size, a network access charge of $4.60 to $19.64 by daily use, and energy tiers of 13.64, 21.34 and 24.62 cents per kWh. Tier breaks are 350 and 750 kWh a month in winter and 750 and 1,500 in summer.',
+        },
+        {
+          question: 'What is the average electric bill in Riverside?',
+          answer: 'RPU does not publish one average, and its bill depends on panel size and daily use as well as kWh. Your last twelve bills are the figure to use; the schedule above shows how each charge is set.',
+        },
+        {
+          question: 'What does RPU pay for solar exports?',
+          answer: 'Under its Self-Generation Program, RPU credits exported energy at its Avoided Cost of Energy rate, $0.0678 per kWh for July 1, 2026 through June 30, 2027, adjusted by time-of-delivery factors where they apply.',
+        },
+      ],
+      sources: [
+        { label: 'Riverside Public Utilities: Electric Schedule D, Domestic Service (effective January 1, 2024, with 2025-2028 rates)', url: 'https://riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-electric/2024/Electric%20Schedule%20D%20-%20Effective%2001-1-24%20Final.pdf', fetchedAt: '2026-09-23' },
+        { label: 'Riverside Public Utilities: Self-Generation Program', url: 'https://riversideca.gov/utilities/residents/solar-info/self-generation-program', fetchedAt: '2026-09-23' },
+        { label: 'Riverside Public Utilities: Avoided Cost of Energy rate, effective July 1, 2026', url: 'https://riversideca.gov/utilities/sites/riversideca.gov.utilities/files/pdf/rates-electric/Electric-Rate-Schedule-ACOE-Attachment-1--Effective-07-01-26.pdf', fetchedAt: '2026-09-23' },
+        { label: 'Riverside Public Utilities: electric rules and rates', url: 'https://riversideca.gov/utilities/residents/rates/electric-rules-rates', fetchedAt: '2026-09-23' },
+        { label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU layer), queried 2026-09-23', url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about', fetchedAt: '2026-09-23' },
+      ],
+    },
     seoData: { primaryKeyword: 'solar panels riverside', volume: 210, kd: 3, verdict: 'PRIORITY BUILD' },
   },
 
@@ -2418,6 +2483,10 @@ export const CITIES: CityData[] = [
       ],
       faqs: [
         {
+          question: 'How much is electricity per kWh in San Diego?',
+          answer: 'SDG&E\'s residential average rate was 45.5 cents per kWh after its June 1, 2026 rate change, against 34.4 cents for SCE and 33.7 for PG&E (CPUC Public Advocates Office). What you pay per kWh depends on your plan and the hour: on SDG&E\'s EV-TOU-5 plan, which the Solar Billing Plan uses, on-peak runs from 4 p.m. to 9 p.m. For most homes San Diego Community Power prices the generation part of each kWh.',
+        },
+        {
           question: 'What is the average electric bill in San Diego?',
           answer: 'The CPUC Public Advocates Office estimated about $156 a month in June 2026 for a customer not on CARE in SDG&E\'s coastal climate zone, and $87 for a CARE customer there. In the desert zone the figures were $130 and $126. Your own twelve months of bills are the better guide for your home.',
         },
@@ -2438,6 +2507,7 @@ export const CITIES: CityData[] = [
         { label: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report (rates, bill estimates, drivers, arrears)', url: 'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf', fetchedAt: '2026-09-23' },
         { label: 'SDG&E: Base Services Charge', url: 'https://www.sdge.com/electric-billing', fetchedAt: '2026-09-23' },
         { label: 'San Diego Community Power: net energy metering and Solar Billing Plan', url: 'https://sdcommunitypower.org/net-energy-metering/', fetchedAt: '2026-09-23' },
+        { label: 'SDG&E: Solar Billing Plan (EV-TOU-5 on-peak hours)', url: 'https://www.sdge.com/solar/solar-billing-plan', fetchedAt: '2026-09-23' },
         { label: 'CPUC: CARE/FERA program', url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program', fetchedAt: '2026-09-23' },
         { label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers)', url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about', fetchedAt: '2026-09-23' },
       ],
@@ -4108,6 +4178,58 @@ export const CITIES: CityData[] = [
     'Solar + EV charger bundles are popular. Discover tech employer discounts and PPA options.',
   googleSunroofUrl: 'https://sunroof.withgoogle.com',
   relatedArticles: PGE_RELATED_ARTICLES,
+  // 2026-09-23 (Tier 2, citycos; Decision 18): re-scoped to the city's
+  // provider and bill question ("electricity provider sunnyvale california").
+  bills: {
+    answer:
+      'Sunnyvale gets its electricity from two providers on one bill: PG&E delivers it, maintains the lines and sends the statement, and Silicon Valley Clean Energy (SVCE) supplies the generation unless a household opted out. SVCE\'s own sample bill for a home using 491 kWh a month on the E-TOUC plan came to $196.38 on its default GreenStart service, against $196.95 with PG&E generation.',
+    sections: [
+      {
+        heading: 'Who provides electricity in Sunnyvale',
+        paragraphs: [
+          'Silicon Valley Clean Energy is the official electricity provider for Sunnyvale and 12 other communities, a public, not-for-profit agency serving about 280,000 residential and business customers, with its office at 298 South Sunnyvale Avenue. Homes are enrolled automatically; each household can choose SVCE GreenStart, SVCE GreenPrime or PG&E generation. On the California Energy Commission\'s utility map, SVCE\'s area covers the whole of Sunnyvale that PG&E serves.',
+          'PG&E still delivers the power, maintains the poles and wires, and sends the monthly statement, and SVCE says PG&E\'s delivery rates are the same for everyone. Payment help such as CARE, FERA and Medical Baseline is applied for through PG&E and keeps working with SVCE. SVCE\'s generation rates are set by its Board of Directors, local elected officials, after public comment.',
+        ],
+      },
+      {
+        heading: 'What a Sunnyvale electric bill is made of',
+        paragraphs: [
+          'SVCE publishes a sample residential bill built on typical usage of 491 kWh a month under the E-TOUC rate schedule, at current PG&E rates and SVCE rates effective January 2026. On GreenStart it comes to $196.38: $138.80 for PG&E delivery, $39.31 for SVCE generation and $18.27 in what SVCE labels PG&E added fees. With PG&E generation instead, the same home pays $196.95, and on SVCE\'s 100% renewable GreenPrime, $200.01. Your own twelve months of bills will differ with usage and rate plan.',
+          'Across PG&E\'s territory, the CPUC Public Advocates Office put the residential average rate at 33.7 cents per kWh in June 2026. Since March 2026 PG&E bills also carry a Base Services Charge of about $24 a month, about $6 on CARE and $12 on FERA, with lower per-kWh prices in exchange; PG&E says some customers\' totals fell and others rose slightly.',
+        ],
+      },
+      {
+        heading: 'Where solar fits',
+        paragraphs: [
+          'Solar lowers the kWh you buy from the grid, not the Base Services Charge. SVCE says systems applied for after April 14, 2023 are on the Solar Billing Plan, while those applied for between June 29, 2016 and that date stay on NEM 2.0 for 20 years from installation. SVCE handles the generation side of the solar bill and PG&E the delivery side, so a quote should show both.',
+          'On the permit side, Sunnyvale issues rooftop solar permits through SolarAPP+ and its E-OneStop online services, and the City reported all 929 of its 2023 residential solar permits as issued online. The Sunnyvale solar companies page covers what to ask installers.',
+        ],
+      },
+    ],
+    faqs: [
+      {
+        question: 'Who is the electricity provider in Sunnyvale, California?',
+        answer: 'Two providers share the bill. PG&E delivers the power and sends the statement; Silicon Valley Clean Energy supplies the generation by default. Customers can choose SVCE GreenStart, SVCE GreenPrime or PG&E generation.',
+      },
+      {
+        question: 'What is the average electric bill in Sunnyvale?',
+        answer: 'No source publishes an official Sunnyvale average. SVCE\'s sample bill for a typical home using 491 kWh a month on the E-TOUC plan came to $196.38 on GreenStart, at rates effective January 2026. Your own twelve months of bills are the better guide.',
+      },
+      {
+        question: 'Is SVCE cheaper than PG&E in Sunnyvale?',
+        answer: 'On SVCE\'s own sample bill the difference is small: $196.38 on GreenStart against $196.95 with PG&E generation for 491 kWh a month. In late 2025 SVCE\'s board was considering setting generation rates at a 1% discount to PG&E\'s. Compare the generation lines on your own bill.',
+      },
+    ],
+    sources: [
+      { label: 'Silicon Valley Clean Energy: communities served and headquarters', url: 'https://www.svcleanenergy.org/', fetchedAt: '2026-09-23' },
+      { label: 'Silicon Valley Clean Energy: residential rates and sample bill comparison', url: 'https://www.svcleanenergy.org/residential-rates/', fetchedAt: '2026-09-23' },
+      { label: 'Silicon Valley Clean Energy: rooftop solar and the Solar Billing Plan', url: 'https://www.svcleanenergy.org/solar/', fetchedAt: '2026-09-23' },
+      { label: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report', url: 'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf', fetchedAt: '2026-09-23' },
+      { label: 'PG&E: Base Services Charge', url: 'https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html', fetchedAt: '2026-09-23' },
+      { label: 'City of Sunnyvale: SolarAPP+ for solar installers', url: 'https://www.sunnyvale.ca.gov/business-and-development/planning-and-building/solarapp-for-solar-installers', fetchedAt: '2026-09-23' },
+      { label: 'California Energy Commission: SB 379 solar permit reports; Electric Load Serving Entities layers', url: 'https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx', fetchedAt: '2026-09-23' },
+    ],
+  },
   seoData: { primaryKeyword: 'solar panels sunnyvale', volume: 100, kd: 0, verdict: 'EASY BUILD' },
 },
 
