@@ -5,6 +5,13 @@ import { DecisionPage } from "./DecisionPage";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { HubSpokeLinks } from "./HubSpokeLinks";
 import {
+  IncentivesAnswer,
+  IncentivesTable,
+  IncentivesSpokeDirectory,
+  IncentivesHubFaq,
+  incentivesHubExtraSources,
+} from "./IncentivesHubExtras";
+import {
   GreenTariffDiscounts,
   SgipEquityStatus,
   DisclosurePackage,
@@ -62,14 +69,18 @@ const definitions = {
     metaDescription:
       "A new proposal needs to work with the incentives actually available. Start by removing any homeowner tax credit the project cannot claim, then compare cost.",
   },
+  // 2026-09-23 (topical-authority wave, agent costfin): retitled to carry the
+  // hub's head terms ("california solar tax credit", "california solar
+  // incentives"); the opening now answers the tax-credit question directly.
+  // Previous title: "California solar incentives in 2026: which program does what?"
   california: {
     path: "/blog/california-solar-tax-credit-2026",
-    title: "California solar incentives in 2026: which program does what?",
+    title: "California solar tax credit and incentives in 2026: what is left",
     intro:
-      "A federal tax credit, a battery rebate and an electric-bill discount solve different problems. Put each in the right column before you compare a solar offer.",
-    metaTitle: "California solar incentives 2026: which program does what?",
+      "California has no state solar tax credit, and the 30% federal credit is not available for systems placed in service after December 31, 2025. What remains is narrower: SGIP battery incentives by budget category, DAC-SASH for income-qualified homeowners, bill discounts, a property tax exclusion and a few local utility programs. Put each in the right column before you compare a solar offer.",
+    metaTitle: "California Solar Tax Credit and Incentives (2026 Guide)",
     metaDescription:
-      "A federal tax credit, a battery rebate and an electric-bill discount solve different problems. Put each in the right column before you compare a solar offer.",
+      "No state solar tax credit, and the 30% federal credit ended for systems installed after 2025. What California still offers: SGIP, DAC-SASH, CARE and more.",
   },
   records: {
     path: "/blog/solar-tax-credit-2026",
@@ -133,7 +144,9 @@ export function assistanceMetadata(kind: AssistanceKey): Metadata {
       type: "article",
       url: `https://ratereliefca.com${path}`,
       modifiedTime:
-        kind === "free" ? "2026-09-23T00:00:00Z" : "2026-09-10T00:00:00Z",
+        kind === "free" || kind === "california"
+          ? "2026-09-23T00:00:00Z"
+          : "2026-09-10T00:00:00Z",
       images: [CRR_SOCIAL_CARD],
     },
     twitter: crrTwitter(metaTitle, metaDescription),
@@ -345,7 +358,11 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
       title={d.title}
       intro={d.intro}
       path={d.path}
-      sourceCheckedDate={kind === "free" ? "2026-09-23" : "2026-09-10"}
+      sourceCheckedDate={
+        kind === "free" || kind === "california"
+          ? "2026-09-23"
+          : "2026-09-10"
+      }
       sources={[
         ...(kind === "options" || kind === "records" || kind === "california"
           ? [
@@ -372,6 +389,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
           url: tracker,
         },
         { label: "CPUC: Solar Consumer Protection Guide", url: guide },
+        ...(kind === "california" ? incentivesHubExtraSources : []),
         ...(kind === "free"
           ? [
               {
@@ -474,6 +492,8 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
       )}
       {kind === "california" && (
         <>
+          <IncentivesAnswer />
+          <IncentivesTable />
           <section>
             <h2>Start with the incentive&apos;s owner and purpose</h2>
             <p>
@@ -512,6 +532,9 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               alone does not establish availability.
             </p>
           </section>
+          <IncentivesSpokeDirectory />
+          <IncentivesHubFaq />
+          <HubSpokeLinks hub="incentives" currentPath={definitions.california.path} />
         </>
       )}
       {kind === "records" && (
