@@ -720,6 +720,7 @@ export const growthCities: Record<string, GrowthCity> = {
   "el-cajon": {
     name: "El Cajon",
     county: "San Diego County",
+    sourceCheckedDate: "2026-09-23",
     utility: "sdge",
     bill: "Start with the SDG&E schedule shown on the electric bill. Separate electricity bought from the grid, electricity used directly from the roof and electricity exported. Keep any generation provider shown on the account in the calculation; a neighboring city’s billing arrangement is not enough.",
     local:
@@ -749,6 +750,18 @@ export const growthCities: Record<string, GrowthCity> = {
     },
     sources: [
       {
+        "label": "City of El Cajon: residential photovoltaic permits through SolarAPP+",
+        "url": "https://www.elcajon.gov/your-government/departments/community-development/building-fire-safety/photovoltaic"
+      },
+      {
+        "label": "San Diego Community Power: net energy metering and Solar Billing Plan",
+        "url": "https://sdcommunitypower.org/net-energy-metering/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
         label: "El Cajon: residential solar and storage permit launch",
         url: "https://www.elcajon.gov/Home/Components/News/News/5754/18?arch=1&npage=4",
       },
@@ -764,6 +777,14 @@ export const growthCities: Record<string, GrowthCity> = {
     nearby: ["san-diego"],
     faq: [
       [
+        "How long does an El Cajon solar permit take?",
+        "The City says a conforming residential project can be permitted through its SolarAPP+ site in about 30 minutes, with no plans required. Batteries have been eligible for that route since January 2026. Projects that do not conform, and owner-builder projects, go through regular permitting."
+      ],
+      [
+        "Do El Cajon solar customers have to change rate plans?",
+        "Yes, for new systems. San Diego Community Power says Solar Billing Plan customers must be on the EV-TOU-5 time-of-use rate."
+      ],
+      [
         "Does a quick permit mean my El Cajon system can operate immediately?",
         "No. Have the installer identify the city completion steps and SDG&E interconnection approval separately. The contract schedule should cover both.",
       ],
@@ -772,6 +793,56 @@ export const growthCities: Record<string, GrowthCity> = {
         "Separate the equipment and installation prices. Ask which future cooling usage was assumed so the solar and HVAC projections do not both claim the same savings.",
       ],
     ],
+    answer: "El Cajon issues rooftop solar permits through SolarAPP+ in about 30 minutes, with no plans required, and since January 2026 the same instant route covers home batteries. Only licensed contractors can use it, which makes the permit a quick test of the company quoting your roof. SDG&E delivers the power and San Diego Community Power supplies it. Compare three written bids on the checks below.",
+    keyFacts: [
+      {
+        "label": "Permit route",
+        "value": "SolarAPP+, about 30 minutes",
+        "note": "Licensed contractors only; batteries eligible since January 2026",
+        "source": {
+          "publisher": "City of El Cajon",
+          "date": "2026-09-23",
+          "url": "https://www.elcajon.gov/your-government/departments/community-development/building-fire-safety/photovoltaic"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "San Diego Community Power",
+        "note": "SDG&E delivers and sends the one bill",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "New solar rate",
+        "value": "EV-TOU-5",
+        "note": "Required for San Diego Community Power Solar Billing Plan customers",
+        "source": {
+          "publisher": "San Diego Community Power",
+          "date": "2026-09-23",
+          "url": "https://sdcommunitypower.org/net-energy-metering/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "El Cajon's instant permit, and who can use it",
+        "paragraphs": [
+          "The City of El Cajon sends residential solar applicants to its SolarAPP+ online permit site. The City says a conforming project can be permitted in about 30 minutes with no plans required, that SolarAPP+ allows three free revisions, and that only projects matching the published eligibility list can use the automated route. Battery energy storage systems became eligible through SolarAPP+ in January 2026.",
+          "Two conditions matter when you compare bids. The route is for licensed contractors and installers only; an owner-builder applies through regular permitting. And once the installer completes SolarAPP+'s inspection declaration and final review, the City says no other City inspections are required. That puts more weight on the installer's own inspection work, so ask each bidder who performs and signs that inspection and what documentation you will receive. The Building and Fire Safety Division is at 619-441-1726 or Building@elcajon.gov."
+        ]
+      },
+      {
+        "heading": "San Diego Community Power's rules for a new El Cajon system",
+        "paragraphs": [
+          "El Cajon customers receive one SDG&E bill, with San Diego Community Power shown as a line item for generation. A new system goes on the Solar Billing Plan, which San Diego Community Power says requires the highly differentiated EV-TOU-5 time-of-use rate, prices exports from the state's Avoided Cost Calculator rather than retail rates, bills monthly with no annual billing option, and locks the plan for nine years. Legacy NEM customers keep their plan for 20 years from permission to operate.",
+          "At the annual true-up, San Diego Community Power adds a bonus of $0.0075 per kWh to SDG&E's surplus rate, sends a check when the surplus is over $100 and otherwise carries it forward. Ask each bidder to confirm it modeled EV-TOU-5 and the Solar Billing Plan export values, not a retail-rate credit."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   modesto: {
     name: "Modesto",
@@ -971,6 +1042,7 @@ export const growthCities: Record<string, GrowthCity> = {
   "palm-springs": {
     name: "Palm Springs",
     county: "Riverside County",
+    sourceCheckedDate: "2026-09-23",
     utility: "sce",
     bill: "If your SCE bill includes Desert Community Energy, show DCE generation and SCE delivery separately. DCE has parallel solar programs and its own annual generation true-up. Confirm the service plan and existing solar status; an export credit on one portion does not automatically pay charges on the other.",
     local:
@@ -1000,6 +1072,14 @@ export const growthCities: Record<string, GrowthCity> = {
     },
     sources: [
       {
+        "label": "City of Palm Springs Municipal Code ch. 8.100: small residential rooftop solar energy system permits",
+        "url": "https://ecode360.com/42997503"
+      },
+      {
+        "label": "City of Palm Springs Building and Safety: permit application forms",
+        "url": "https://www.palmspringsca.gov/government/departments/building/permit-applications-forms"
+      },
+      {
         label: "DCE: solar customers and billing",
         url: "https://desertcommunityenergy.org/your-options/solar-customers/",
       },
@@ -1019,6 +1099,14 @@ export const growthCities: Record<string, GrowthCity> = {
     nearby: ["palm-desert"],
     faq: [
       [
+        "How fast can I get a solar permit in Palm Springs?",
+        "For a small residential rooftop system (10 kW AC or less) that meets the City's checklist, Palm Springs Municipal Code chapter 8.100 requires the permit to be issued within three business days of a complete application."
+      ],
+      [
+        "When does Desert Community Energy true up solar accounts?",
+        "In May each year. DCE settles generation monthly, pays surplus at a rate matching SCE's, rolls credits under $100 to the next bill and cashes out $100 or more."
+      ],
+      [
         "Does solar pool heating reduce my electricity bill like PV panels?",
         "It is a different system and comparison. Ask what existing pool-heating equipment or fuel it replaces, then evaluate electric PV separately.",
       ],
@@ -1027,6 +1115,56 @@ export const growthCities: Record<string, GrowthCity> = {
         "DCE states its solar credits cannot be applied to SCE charges. Have both portions of your bill shown in the proposal.",
       ],
     ],
+    answer: "Palm Springs law gives a qualifying rooftop solar system a fast lane: the City must issue the permit within three business days for a system of 10 kW AC or less that meets its checklist. Every Palm Springs home was enrolled in Desert Community Energy for generation, with SCE delivering the power, and DCE runs its own solar true-up in May. Compare at least three written bids built on your DCE and SCE bill.",
+    keyFacts: [
+      {
+        "label": "Expedited permit",
+        "value": "3 business days",
+        "note": "Systems up to 10 kW AC under Municipal Code ch. 8.100",
+        "source": {
+          "publisher": "City of Palm Springs Municipal Code",
+          "date": "2026-09-23",
+          "url": "https://ecode360.com/42997503"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "Desert Community Energy",
+        "note": "Palm Springs enrolled every residential customer; SCE delivers",
+        "source": {
+          "publisher": "Desert Community Energy",
+          "date": "2026-09-23",
+          "url": "https://desertcommunityenergy.org/your-options/solar-customers/"
+        }
+      },
+      {
+        "label": "DCE solar true-up",
+        "value": "May",
+        "note": "Credits of $100 or more are cashed out",
+        "source": {
+          "publisher": "Desert Community Energy",
+          "date": "2026-09-23",
+          "url": "https://desertcommunityenergy.org/your-options/solar-customers/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Palm Springs' three-day rule for small rooftop systems",
+        "paragraphs": [
+          "Chapter 8.100 of the Palm Springs Municipal Code covers small residential rooftop solar systems: 10 kW AC nameplate or less (or 30 kW thermal) and no taller than the legal building height. For those, the City's review is limited to whether the application meets local, state and federal code, the application must substantially follow the checklist and standard plans in the current California Solar Permitting Guidebook, and the permit must be issued within three business days once the application is complete. Fees follow the state limits the chapter cites. The City's Building and Safety forms list an Eligibility Checklist for Photovoltaic.",
+          "A larger system, a ground mount or anything outside the checklist falls outside that guarantee. If one bidder's design is 11 kW and another's is 9.8 kW, ask whether the difference moves your permit off the three-day track, and what the smaller design gives up."
+        ]
+      },
+      {
+        "heading": "How Desert Community Energy settles a solar account",
+        "paragraphs": [
+          "Desert Community Energy says Palm Springs chose to enroll every residential and commercial customer automatically, so your SCE bill shows DCE for generation and SCE for transmission and delivery; DCE stresses that customers are not charged twice. Systems that received permission to operate before April 15, 2023 keep NEM 1.0 or 2.0 for the life of their term; newer systems are on SCE's Solar Billing Plan.",
+          "DCE settles generation charges and credits monthly and trues up every solar account in May. Surplus is paid at DCE's Net Surplus Compensation rate, which matches SCE's; credits under $100 roll to the next bill and $100 or more is cashed out. For a seasonal home, ask each bidder to model the months you are actually there: power exported while the house sits empty earns export credits, which SCE says are worth less than the power you buy."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   livermore: {
     name: "Livermore",
@@ -1664,6 +1802,7 @@ export const growthCities: Record<string, GrowthCity> = {
   rocklin: {
     name: "Rocklin",
     county: "Placer County",
+    sourceCheckedDate: "2026-09-23",
     utility: "pge",
     hasSavingsGuide: false,
     bill: "Rocklin’s electricity information identifies PG&E delivery and a choice of Pioneer Community Energy generation. Pioneer has separate guidance for legacy NEM and Solar Billing Plan customers. Read the enrollment and generation provider on your bill before comparing export credits.",
@@ -1694,6 +1833,14 @@ export const growthCities: Record<string, GrowthCity> = {
     },
     sources: [
       {
+        "label": "City of Rocklin: online solar permitting (SolarAPP+, eTRAKiT)",
+        "url": "https://www.rocklin.ca.us/online-solar-permitting"
+      },
+      {
+        "label": "Pioneer Community Energy: about Pioneer and member communities",
+        "url": "https://pioneercommunityenergy.org/about-us/"
+      },
+      {
         label: "Rocklin: electric utility and generation options",
         url: "https://www.rocklin.ca.us/post/electricity-options",
       },
@@ -1717,6 +1864,14 @@ export const growthCities: Record<string, GrowthCity> = {
     nearby: ["sacramento", "chico"],
     faq: [
       [
+        "Can a Rocklin solar permit with a battery go through SolarAPP+?",
+        "No, not at present. The City's online solar permitting page says projects that include energy storage systems, and owner-builder projects, are not eligible for SolarAPP+ and go through the City's standard review."
+      ],
+      [
+        "What does Pioneer pay for extra solar power in Rocklin?",
+        "Pioneer pays Net Surplus Compensation at an extra half cent per kWh above PG&E's rate after its March or April annual review, by check if the amount is over $50 and as a bill credit otherwise."
+      ],
+      [
         "Is Rocklin solar billed under SMUD’s rules?",
         "Rocklin’s city page identifies PG&E delivery and Pioneer generation as an option. Check your own meter’s account; a Sacramento-area label does not make SMUD assumptions applicable.",
       ],
@@ -1725,6 +1880,56 @@ export const growthCities: Record<string, GrowthCity> = {
         "No. Pioneer’s GridGen page describes separate ownership and transfer/buyout terms. Compare those written obligations with an outright purchase and other available contracts.",
       ],
     ],
+    answer: "In Rocklin, a solar company files a rooftop panel job through SolarAPP+ for an extra $25, then pulls the City permit and books inspections in eTRAKiT; any job that includes a battery, and any owner-builder job, takes the City's standard review instead. PG&E delivers your power and Pioneer Community Energy supplies it, with a small bonus on year-end surplus. Get three written bids and compare them on the checks below.",
+    keyFacts: [
+      {
+        "label": "Supplies the generation",
+        "value": "Pioneer Community Energy",
+        "note": "Rocklin is a Pioneer member city; PG&E delivers",
+        "source": {
+          "publisher": "Pioneer Community Energy",
+          "date": "2026-09-23",
+          "url": "https://pioneercommunityenergy.org/about-us/"
+        }
+      },
+      {
+        "label": "SolarAPP+ fee",
+        "value": "$25",
+        "note": "Paid to SolarAPP+; City permit fees apply on top",
+        "source": {
+          "publisher": "City of Rocklin",
+          "date": "2026-09-23",
+          "url": "https://www.rocklin.ca.us/online-solar-permitting"
+        }
+      },
+      {
+        "label": "Batteries on SolarAPP+",
+        "value": "Not eligible",
+        "note": "Solar with storage goes through standard review",
+        "source": {
+          "publisher": "City of Rocklin",
+          "date": "2026-09-23",
+          "url": "https://www.rocklin.ca.us/online-solar-permitting"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "Rocklin's online permit, and what it leaves out",
+        "paragraphs": [
+          "Rocklin's online solar page walks a contractor through six steps: create a SolarAPP+ account, submit the plans, pay SolarAPP+'s $25 fee, upload the approved plans to the City's eTRAKiT system, pay the City's own permit fees, and, once eTRAKiT issues the permit, install and schedule inspections through eTRAKiT or by calling the Building Division at (916) 625-5120. City permit fees and inspections apply in addition to the SolarAPP+ charge.",
+          "The page is explicit about two exclusions: owner-builder projects and projects that include an energy storage system are not eligible for SolarAPP+ at this time. So a Rocklin quote for panels alone and a quote for panels plus a battery follow different permit paths, and the second one takes longer. Ask each bidder which path it has assumed and whether its timeline allows for standard review if a battery is in the scope."
+        ]
+      },
+      {
+        "heading": "What Pioneer adds for a Rocklin solar home",
+        "paragraphs": [
+          "Pioneer Community Energy has served Rocklin since its 2018 launch alongside Auburn, Colfax, Lincoln, Loomis and most of unincorporated Placer County. A system installed since April 15, 2023 is on the Solar Billing Plan, where Pioneer values exports at a variable export rate and positive charges are paid monthly; older systems on net energy metering earn retail credits that roll forward month to month.",
+          "Pioneer reviews each solar account over the past twelve months during the March or April billing cycle and pays Net Surplus Compensation at half a cent per kWh more than PG&E's rate. A surplus worth more than $50 is paid by check; a smaller one becomes a bill credit. Because that bonus is small, the decision rests on how much of your own usage the system covers, so ask each bidder to show monthly production against your monthly use."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   camarillo: {
     name: "Camarillo",
@@ -1791,13 +1996,11 @@ export const growthCities: Record<string, GrowthCity> = {
     name: "Sonoma",
     county: "Sonoma County",
     utility: "pge",
-    sourceCheckedDate: "2026-09-12",
+    sourceCheckedDate: "2026-09-23",
     hasSavingsGuide: false,
-    bill: "Start with the electricity and generation providers printed on the actual account. A proposal should use the confirmed rate plan, solar-billing enrollment and full usage history for the address. A citywide price or a neighbor's bill is not a substitute for that record.",
-    local:
-      "Permit Sonoma publishes a City of Sonoma solar-PV standard plan that refers to current California building standards and local amendments. Ask the bidder to identify the permit route, the submitted system design, inspection responsibility and any roof or electrical work outside the solar price.",
-    example:
-      "Give each bidder the same year of bill history and roof layout. Then compare the system design, roof work, electrical work, permit scope, contract total and remaining utility-bill assumptions side by side. A lower monthly payment does not show the full agreement.",
+    bill: "Sonoma homes get delivery from PG&E and generation, by default, from Sonoma Clean Power, the community choice provider for Sonoma and Mendocino counties; the Energy Commission's map places the City of Sonoma inside both. Have each bidder model your actual Sonoma Clean Power and PG&E enrollment and show the two halves of the bill separately.",
+    local: "The City of Sonoma uses SolarAPP+ for residential, roof-mounted, retrofit solar and storage, with instant plan review and a processing fee charged by SolarAPP+; batteries also have a separate expedited energy storage permit. The City says permits usually take 2 to 5 business days and inspections can often happen the next business day, booked by phone at 707-938-3681. Homes outside city limits use Permit Sonoma, the county's process.",
+    example: "Give each bidder the same year of bill history and the same roof layout. Then compare the system design, roof and electrical work, the permit route (city SolarAPP+ or Permit Sonoma), the contract total and the remaining Sonoma Clean Power and PG&E charges side by side. A lower monthly payment does not show the full agreement.",
     checks: [
       [
         "Account details",
@@ -1814,28 +2017,90 @@ export const growthCities: Record<string, GrowthCity> = {
     ],
     sources: [
       {
-        label: "Permit Sonoma: City of Sonoma solar-PV standard plan",
-        url: "https://permitsonoma.org/Microsites/Permit%20Sonoma/Documents/Instructions%20and%20Forms/_BPC%20Building%20Plan%20Check/BPC-046-Microinverter-Plan-PV-Toolkit.pdf",
+        "label": "City of Sonoma: expedited solar permitting for one- and two-family dwellings (SolarAPP+)",
+        "url": "https://www.sonomacity.org/expedited-solar-permitting-one-two-family-dwellings/"
       },
       {
-        label: "PG&E: current residential rate plans and tariff resources",
-        url: "https://www.pge.com/en/account/rate-plans.html",
+        "label": "Permit Sonoma: solar permits (unincorporated Sonoma County)",
+        "url": "https://permitsonoma.org/divisions/engineeringandconstruction/building/solarpermits"
       },
       {
-        label: "CSLB: Solar Smart license and consumer information",
-        url: "https://www.cslb.ca.gov/solar",
+        "label": "Sonoma Clean Power: solar customers",
+        "url": "https://sonomacleanpower.org/solar-customers"
       },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "CSLB: Solar Smart license and consumer information",
+        "url": "https://www.cslb.ca.gov/solar"
+      }
     ],
     faq: [
       [
-        "Does a Sonoma solar proposal use one standard utility assumption?",
-        "No. Use the rate plan, providers and solar enrollment shown on the actual account. Ask the bidder to show the assumptions behind the remaining-bill estimate.",
+        "Who issues solar permits in Sonoma?",
+        "The City of Sonoma for addresses inside city limits, using SolarAPP+ for rooftop solar and storage; Permit Sonoma for unincorporated Sonoma County, using its own SolarAPP+ route for rooftop systems of 10 kW or less. Confirm which applies to your address."
+      ],
+      [
+        "What does Sonoma Clean Power pay for extra solar?",
+        "SCP pays surplus at the Net Surplus Compensation rate each spring, up to $5,000 a year, by check if over $200 and as a bill credit otherwise. Its net energy metering program is closed to new customers, who go on the Solar Billing Plan."
       ],
       [
         "Does the permit plan cover roof and electrical work automatically?",
-        "Only the written project scope can answer that. Have the bidder identify the permit route, submitted design, roof work, electrical work and exclusions before comparing totals.",
-      ],
+        "Only the written project scope can answer that. Have the bidder identify the permit route, submitted design, roof work, electrical work and exclusions before comparing totals."
+      ]
     ],
+    answer: "Solar companies in Sonoma pull permits from one of two offices, depending on the address: the City of Sonoma, which runs SolarAPP+ and usually issues permits in 2 to 5 business days, or Permit Sonoma for the unincorporated county. Either way, Sonoma Clean Power supplies the generation and PG&E delivers it. Get three written bids that name the right permit office and your actual bill, then compare them.",
+    keyFacts: [
+      {
+        "label": "Supplies the generation",
+        "value": "Sonoma Clean Power",
+        "note": "PG&E delivers the power",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "City permit time",
+        "value": "Usually 2 to 5 business days",
+        "note": "City of Sonoma, SolarAPP+ for rooftop solar and storage",
+        "source": {
+          "publisher": "City of Sonoma",
+          "date": "2026-09-23",
+          "url": "https://www.sonomacity.org/expedited-solar-permitting-one-two-family-dwellings/"
+        }
+      },
+      {
+        "label": "SCP surplus cap",
+        "value": "$5,000 a year",
+        "note": "Checks over $200; bill credit at $200 or less",
+        "source": {
+          "publisher": "Sonoma Clean Power",
+          "date": "2026-09-23",
+          "url": "https://sonomacleanpower.org/solar-customers"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "City of Sonoma or Permit Sonoma: which office issues your permit",
+        "paragraphs": [
+          "Inside city limits, the City of Sonoma uses SolarAPP+ for residential, roof-mounted, retrofit photovoltaic systems and storage, which gives an instant plan review; SolarAPP+ charges its own processing fee. The City runs a separate expedited permit for battery energy storage systems. It says approved permits usually issue in 2 to 5 business days and that inspections can often be done the next business day, requested by calling 707-938-3681 at least a business day ahead with the permit number, address and inspection type.",
+          "Outside city limits, Permit Sonoma handles the job. Its SolarAPP+ route covers rooftop systems of 10 kW or less on one- and two-family homes, is open to licensed contractors only (owner-builders use the regular process), and asks for the system's fire classification and label locations, since all roof-mounted systems must meet State Fire Marshal requirements. Inspection requests made before midnight are usually scheduled for the next business day. Ask each bidder which office your address belongs to before comparing timelines."
+        ]
+      },
+      {
+        "heading": "Sonoma Clean Power's rules for new solar",
+        "paragraphs": [
+          "Sonoma Clean Power's net energy metering program is closed to new customers, so a new system goes on its Solar Billing Plan. Each spring SCP pays customers for surplus energy sent to the grid at the Net Surplus Compensation rate, up to $5,000 a year: more than $200 arrives as a check, and $200 or less appears as a bill credit.",
+          "That cap and those thresholds only matter if a system overproduces for the year, which a system sized to your usage should not. The bigger question for a Sonoma bid is how much of your own daytime use it covers, so ask each bidder to show monthly production next to your monthly use."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   ventura: {
     name: "Ventura",
@@ -2170,10 +2435,9 @@ export const growthCities: Record<string, GrowthCity> = {
     name: "Thousand Oaks",
     county: "Ventura County",
     utility: "sce",
-    sourceCheckedDate: "2026-09-12",
+    sourceCheckedDate: "2026-09-23",
     bill: "Read both parts of the current electricity bill before comparing proposals. Clean Power Alliance may supply generation, while SCE delivers the electricity and issues the bill. The proposal should identify the account's actual provider, rate schedule and solar-billing enrollment instead of treating every Thousand Oaks account the same.",
-    local:
-      "Ask the bidder to identify the City of Thousand Oaks permit path for the actual design and property. The written scope should say who submits plans, handles corrections, schedules inspection and includes any roof, service-panel, storage or backup-circuit work.",
+    local: "Thousand Oaks issues a State Solar Permit through SolarAPP+: an instant, pre-approved permit for compliant residential roof-mounted systems from 1 to 38.4 kW AC, available to licensed contractors. Ballasted, ground-mounted and carport systems need the City's standard solar permit instead. SolarAPP+ charges its own fees, separate from the City's. Ask the bidder which permit its design uses and who keeps the work accessible for the inspector.",
     example:
       "Give each bidder the same twelve months of usage and roof layout. Compare monthly production, cash price, financing obligations and remaining SCE and generation-provider charges. Keep the battery and backup scope separate so one proposal does not look cheaper by omitting it.",
     checks: [
@@ -2191,6 +2455,18 @@ export const growthCities: Record<string, GrowthCity> = {
       ],
     ],
     sources: [
+      {
+        "label": "City of Thousand Oaks: solar systems permits (SolarAPP+ State Solar Permit)",
+        "url": "https://www.toaks.gov/solarsystems"
+      },
+      {
+        "label": "Clean Power Alliance: Thousand Oaks community page (default option, service start)",
+        "url": "https://cleanpoweralliance.org/place/thousand-oaks/"
+      },
+      {
+        "label": "Clean Power Alliance: net energy metering and Solar Billing Plan",
+        "url": "https://cleanpoweralliance.org/nem/"
+      },
       {
         label: "City of Thousand Oaks: Building Division and permit process",
         url: "https://www.toaks.org/departments/community-development/building",
@@ -2210,6 +2486,14 @@ export const growthCities: Record<string, GrowthCity> = {
     ],
     faq: [
       [
+        "Does every Thousand Oaks solar system get an instant permit?",
+        "No. The City's SolarAPP+ State Solar Permit covers roof-mounted residential systems from 1 to 38.4 kW AC. Ballasted, ground-mounted and carport systems need a standard solar permit."
+      ],
+      [
+        "What does Clean Power Alliance pay for extra solar in Thousand Oaks?",
+        "CPA says its Net Surplus Compensation rates are 10% higher than SCE's. It trues up Solar Billing Plan customers in April, mails a check for credits over $100 and keeps smaller amounts as a bill credit."
+      ],
+      [
         "Does Clean Power Alliance replace SCE in Thousand Oaks?",
         "No. Clean Power Alliance supplies generation for enrolled customers, while SCE provides delivery and billing. Confirm both on the current bill before comparing proposals.",
       ],
@@ -2218,6 +2502,56 @@ export const growthCities: Record<string, GrowthCity> = {
         "It should identify the legal contractor, equipment, roof and electrical scope, permit duties, monthly production inputs, total payment obligations and remaining utility charges.",
       ],
     ],
+    answer: "Thousand Oaks gives licensed solar contractors an instant permit through SolarAPP+ for roof-mounted home systems between 1 and 38.4 kW AC; ground mounts, ballasted racks and carports go through the City's standard permit. Clean Power Alliance supplies generation here at its 100% Green default, with SCE delivering the power. Get three written bids built on your own CPA and SCE bill and compare them on the checks below.",
+    keyFacts: [
+      {
+        "label": "Instant permit range",
+        "value": "1 to 38.4 kW AC",
+        "note": "Roof-mounted residential only, licensed contractors",
+        "source": {
+          "publisher": "City of Thousand Oaks",
+          "date": "2026-09-23",
+          "url": "https://www.toaks.gov/solarsystems"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "Clean Power Alliance",
+        "note": "Thousand Oaks default: 100% Green, serving since 2019",
+        "source": {
+          "publisher": "Clean Power Alliance",
+          "date": "2026-09-23",
+          "url": "https://cleanpoweralliance.org/place/thousand-oaks/"
+        }
+      },
+      {
+        "label": "CPA surplus rate",
+        "value": "10% above SCE's",
+        "note": "April true-up; checks for credits over $100",
+        "source": {
+          "publisher": "Clean Power Alliance",
+          "date": "2026-09-23",
+          "url": "https://cleanpoweralliance.org/nem/"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "The Thousand Oaks permit split: roof versus everything else",
+        "paragraphs": [
+          "The City of Thousand Oaks calls its SolarAPP+ route the State Solar Permit, a pre-approved or preauthorized solar inspection permit that issues instantly to licensed contractors for compliant systems. It is limited to roof-mounted systems on residential properties between 1 and 38.4 kW AC. Ballasted, ground-mounted and carport systems require a standard solar permit. Any fees for the SolarAPP+ web service are separate from the City's and are settled with SolarAPP+ directly.",
+          "The City also reminds owners that it is their duty, or their authorized agent's, to keep the work visible and accessible for inspection. On a hillside lot where a ground mount or a carport is tempting, that split matters: the same kilowatts can come with an instant permit on the roof or a full review off it. Ask each bidder which one it has priced and why."
+        ]
+      },
+      {
+        "heading": "Clean Power Alliance and SCE on a Thousand Oaks bill",
+        "paragraphs": [
+          "Clean Power Alliance has served Thousand Oaks since 2019, and the city's default option is 100% Green Power. CPA applies energy charges and credits on the generation side of your bill and SCE on the delivery side. Systems approved by SCE on or before August 31, 2023 stay on net energy metering; systems approved after that date are on the Solar Billing Plan.",
+          "CPA trues up Solar Billing Plan customers every April and pays Net Surplus Compensation at rates it describes as 10% higher than SCE's. A credit over $100 at true-up arrives as a check; under $100 it stays as a bill credit against future CPA charges. Because the city default is the 100% Green option, ask each bidder whether its savings figure uses that generation price or a cheaper CPA option you are not actually on."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
   },
   escondido: {
     name: "Escondido",
@@ -3424,6 +3758,122 @@ export const growthCities: Record<string, GrowthCity> = {
         "paragraphs": [
           "Peninsula Clean Energy now operates as WestLight Energy and says its service and rates have not changed; it serves San Mateo County and Los Banos. Your PG&E statement carries WestLight's generation charges alongside PG&E's delivery charges, and WestLight's solar customers see their accrued charges on that same monthly bill.",
           "A proposal that still names Peninsula Clean Energy is not wrong, just dated. One that models only PG&E generation is modeling a company that does not supply most San Mateo homes, so ask the bidder to rebuild it on your actual enrollment. For what you pay each month now and how solar changes it, see the San Mateo bills and rates page linked above."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
+  glendale: {
+    name: "Glendale",
+    county: "Los Angeles County",
+    utility: "gwp",
+    bill: "Glendale Water & Power, the City's own utility, serves almost all of Glendale on the Energy Commission's map, and it sets its own rates and solar rules. GWP credits excess solar generation to your account and applies the credit automatically when you need it. SCE rates and the CPUC Net Billing Tariff do not describe a GWP bill, so a proposal should be built on your own twelve months of GWP usage.",
+    local: "In Glendale the utility review comes first. The contractor applies to GWP through PowerClerk, GWP reviews the application in 3 to 5 business days, and only then does the contractor submit the plan set to Building and Safety through the Glendale Permits portal for building, electrical and fire review. Ask each bidder who handles each of those steps and who schedules the inspection.",
+    example: "Two Glendale bids for a 12 kW system and a 9.5 kW system are not only different sizes: under GWP's rules the larger one must be justified against 110% of your last 12 months of usage, while a system of 10 kW or less is exempt from that cap and self-certified. Ask each bidder to show which rule its design falls under and the usage figures it used.",
+    sourceCheckedDate: "2026-09-23",
+    checks: [
+      [
+        "GWP size rule",
+        "Say whether the system is 10 kW CEC-AC or less (self-certified) or larger and sized against 110% of your past-year usage."
+      ],
+      [
+        "Battery",
+        "State the usable storage and whether it stays within GWP's 30 kWh allowance for PV-paired storage on small systems."
+      ],
+      [
+        "Order of approvals",
+        "Show the GWP PowerClerk review, then the Glendale Permits submission, then inspection and GWP's meter reprogramming."
+      ],
+      [
+        "Interconnection agreement",
+        "Use GWP's current Interconnection Agreement dated January 1, 2026."
+      ]
+    ],
+    projectLinks: [
+      {
+        "href": "/solar-installers/solar-optimum-review",
+        "label": "Solar Optimum review",
+        "note": "what the company sells and what to check before signing"
+      }
+    ],
+    sources: [
+      {
+        "label": "Glendale Water & Power: Net Energy Metering (NEM) program and interconnection updates",
+        "url": "https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-interconnection"
+      },
+      {
+        "label": "Glendale Water & Power: guide for residential PV interconnection under 15 kW CEC-AC",
+        "url": "https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-pv-interconnection-and-nem-for-under-15-kw-cec-ac-residential-systems"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "Who supplies electricity in Glendale?",
+        "Glendale Water & Power, the City's municipal utility, serves nearly all of Glendale on the Energy Commission's service-territory map. It sets its own rates and net energy metering rules."
+      ],
+      [
+        "How big can a solar system be on a GWP account?",
+        "Since November 1, 2023, residential systems up to 10 kW CEC-AC are exempt from GWP's 110% historical-usage cap and may add up to 30 kWh of PV-paired storage. For larger systems, GWP compares estimated production with 110% of your usage over the past 12 months."
+      ],
+      [
+        "How long does GWP take to turn on a solar system?",
+        "GWP says it reviews a residential application in 3 to 5 business days. After the City's inspection is approved, its field crews reprogram the meter for net metering in 7 to 10 working days, and then the system receives permission to operate."
+      ],
+      [
+        "Where can I read about Solar Optimum?",
+        "Solar Optimum is one of the companies Glendale homeowners search for. Our Solar Optimum review covers what it sells and what to check; this page does not rank or recommend installers."
+      ]
+    ],
+    answer: "In Glendale, the utility approves a solar project before the City does: Glendale Water & Power reviews the contractor's PowerClerk application in 3 to 5 business days, then Building and Safety issues the permit, and after inspection GWP reprograms the meter in 7 to 10 working days. GWP sets its own net metering and sizing rules, so compare at least three written bids built on your own GWP bills.",
+    keyFacts: [
+      {
+        "label": "Electric utility",
+        "value": "Glendale Water & Power",
+        "note": "Municipal; about 99% of city land on the CEC map",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "Size cap exemption",
+        "value": "Up to 10 kW CEC-AC",
+        "note": "Exempt from the 110% usage cap since Nov. 1, 2023",
+        "source": {
+          "publisher": "Glendale Water & Power",
+          "date": "2026-09-23",
+          "url": "https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-interconnection"
+        }
+      },
+      {
+        "label": "GWP application review",
+        "value": "3 to 5 business days",
+        "note": "Before the City building permit",
+        "source": {
+          "publisher": "Glendale Water & Power",
+          "date": "2026-09-23",
+          "url": "https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-pv-interconnection-and-nem-for-under-15-kw-cec-ac-residential-systems"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "GWP's approval, then the City's permit",
+        "paragraphs": [
+          "Glendale Water & Power publishes the sequence for a residential system under 15 kW CEC-AC. The contractor submits the interconnection application, with storage if any, through PowerClerk, together with a signed Interconnection Agreement whose CEC-AC rating matches PowerClerk's calculation, an executed election form, a complete plan set with equipment data sheets and photos of the service panel, a spot drawing if the panel is being upgraded, and a shading report (waived for systems of 10 kW CEC-AC or less). Since January 19, 2026, GWP accepts only its Interconnection Agreement dated January 1, 2026.",
+          "GWP reviews the application in 3 to 5 business days and then directs the contractor to submit the plan set to Building and Safety through the Glendale Permits portal, where building, electrical and fire staff review it and the permit fees are paid; Building and Safety is at (818) 548-3200. The contractor schedules the inspection through Glendale Permits. After it passes, GWP Engineering sends a work order to its field crews to reprogram the meter for net metering, which takes 7 to 10 working days, and then the system gets permission to operate."
+        ]
+      },
+      {
+        "heading": "GWP's sizing and storage rules",
+        "paragraphs": [
+          "Since November 1, 2023, residential and commercial systems up to 10 kW CEC-AC are exempt from GWP's 110% historical-usage cap, and a system of that size may be paired with up to 30 kWh of storage. The contractor self-certifies the sizing need in PowerClerk. Above 10 kW, GWP estimates your annual load as 110% of your last 12 months of usage and compares it with the system's estimated production. GWP no longer requires a separate meter for home energy storage.",
+          "GWP credits excess solar generation to your account and applies the credit automatically when it is needed. Questions go to GWPSolarSolutions@glendaleca.gov or 818-548-2750. A bid that does not mention the 10 kW line, the 30 kWh storage allowance or the meter reprogramming step was probably written for SCE territory."
         ]
       }
     ],

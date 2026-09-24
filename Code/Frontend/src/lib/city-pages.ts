@@ -546,7 +546,7 @@ export const SAVINGS_BILLS_SEO: Readonly<Record<string, CitySeo & { modified: st
   'san-diego': {
     title: 'San Diego Electric Bills & SDG&E Rates (2026)',
     description:
-      'Why San Diego electricity costs what it does: SDG&E delivery, San Diego Community Power generation, the $24.15 fixed charge and the CPUC average rate.',
+      'San Diego bills: SDG&E delivery, San Diego Community Power generation, the $24 Base Services Charge, CARE/FERA and why SDG&E rates run highest.',
     h1: 'San Diego Electric Bills and SDG&E Rates: What You Pay and Why',
     modified: '2026-09-23',
   },
