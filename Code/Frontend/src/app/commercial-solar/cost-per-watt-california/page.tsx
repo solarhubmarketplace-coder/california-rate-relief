@@ -14,14 +14,21 @@ import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 import CommercialSolarCalculator from '@/components/landing/CommercialSolarCalculator';
+import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 
-const title = "Commercial Solar Panel Cost (2026): California $/W by Size";
+// D14 G01 (2026-09-23): title, H1 and intro are business-only (kW/MW sizes,
+// commercial, agricultural and tax-exempt sites) so the page stops competing
+// with /solar-panels-california for home-cost queries; home readers get one
+// link there. D14 G09: the quote checklist from
+// /blog/commercial-solar-installation-cost-california is folded in below.
+const title = 'Commercial Solar Cost per Watt in California: 100 kW to 1 MW';
 const description =
-  "LBNL's California medians for 2023 installs over 100 kW: $2.00/W agricultural, $2.30/W commercial, $4.10/W tax-exempt. After-tax cost and 2027 deadlines.";
-const h1 = 'Commercial Solar Panel Cost in California: What You Actually Pay';
+  'Business solar in California: LBNL 2023 medians over 100 kW of $2.30/W commercial, $2.00/W farm, $4.10/W tax-exempt, plus tax rules and a bid checklist.';
+const h1 = 'Commercial Solar Installation Cost in California: What a Business Pays, 100 kW to 1 MW';
 const canonicalUrl = 'https://ratereliefca.com/commercial-solar/cost-per-watt-california';
 const VERIFIED = 'September 22, 2026';
-const DATE_MODIFIED = '2026-09-22';
+const RECHECKED = 'September 23, 2026';
+const DATE_MODIFIED = '2026-09-23';
 const DATE_PUBLISHED = '2026-04-23';
 
 const trackingTheSunFull =
@@ -33,7 +40,13 @@ const lbnl2026Update =
 const nrel2024Benchmark = 'https://docs.nlr.gov/docs/fy25osti/92536.pdf';
 const nrel2022Benchmark = 'https://docs.nlr.gov/docs/fy22osti/83586.pdf';
 const seiaQ42025 = 'https://www.powermag.com/wp-content/uploads/2025/12/ussmi-q4-2025-es.pdf';
-const irc48e = 'https://www.law.cornell.edu/uscode/text/26/48E';
+const irc48e =
+  'https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim';
+const irc6417 =
+  'https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6417&num=0&edition=prelim';
+const irc6418 =
+  'https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6418&num=0&edition=prelim';
+const cpucSolarGuide = 'https://www.cpuc.ca.gov/solarguide/';
 const irsNotice202542 = 'https://www.irs.gov/pub/irs-drop/n-25-42.pdf';
 const irsNotice202615 = 'https://www.irs.gov/pub/irs-drop/n-26-15.pdf';
 const irc168 = 'https://uscode.house.gov/view.xhtml?req=(title:26%20section:168%20edition:prelim)';
@@ -115,12 +128,12 @@ const faqs = [
   {
     question: 'Is the federal solar tax credit still available for commercial projects in 2026?',
     answer:
-      'Yes, under IRC Section 48E, at 6% base or 30% for a facility under 1 MW net output or one meeting prevailing-wage and apprenticeship rules. But the credit is zero for a wind or solar facility placed in service after December 31, 2027, unless construction began on or before July 4, 2026. That date has passed, so a project starting construction today must be placed in service by December 31, 2027 to get any credit at all.',
+      'Yes, under 26 U.S.C. §48E, at 6% base or 30% for a facility with a maximum net output under 1 MW AC or one meeting prevailing-wage and apprenticeship rules. But the credit does not apply to solar property placed in service after December 31, 2027 when the facility began construction after July 4, 2026. That date has passed, so a project starting construction now must be placed in service by December 31, 2027 to get any credit at all. Confirm your project\'s construction-start facts with a tax professional.',
   },
   {
     question: 'What is MACRS bonus depreciation, and does California allow it?',
     answer:
-      "Commercial solar is 5-year MACRS property, and federal law currently allows 100% bonus depreciation in year one for property placed in service after January 19, 2025, with the depreciable basis reduced by only 50% of the ITC claimed. California does not conform to federal bonus depreciation. On the state return, the bonus is added back and the same basis is depreciated on the standard, non-bonus 5-year MACRS schedule instead.",
+      "Under 26 U.S.C. §168(e)(3)(B)(viii), §48E qualified property and energy storage technology are 5-year property, and §168(k) allows a 100% first-year allowance for qualified property acquired after January 19, 2025. Under §50(c)(3), the depreciable basis is reduced by 50% of the credit. California does not conform to §168(k), according to the FTB's 2025 Form 100 booklet, so the state deduction differs; have a tax professional compute the California side.",
   },
   {
     question: "Does installing commercial solar affect my property's taxes?",
@@ -172,7 +185,7 @@ export default function CommercialSolarCost() {
       <ArticleJsonLd
         variant="Article"
         domain="crr"
-        headline={title}
+        headline={h1}
         url={canonicalUrl}
         datePublished={DATE_PUBLISHED}
         dateModified={DATE_MODIFIED}
@@ -205,27 +218,38 @@ export default function CommercialSolarCost() {
                 <span>16 min read</span>
               </Byline>
               <p className="mt-4 text-lg text-muted-foreground">
-                Installed cost, the federal and state tax mechanics, what the system saves on
-                the utility bill, and what it does to a property&apos;s tax bill and value &mdash;
-                worked through with sourced, dated figures, not a sales estimate.
+                For businesses, farms, schools and public agencies: installed cost by system size,
+                the federal and state tax mechanics, what a commercial system saves on a business
+                tariff, and what it does to a property&apos;s tax bill and value, worked through
+                with sourced, dated figures rather than a sales estimate.
               </p>
             </header>
 
             <div id="cost-per-watt-body" className="prose prose-slate max-w-none [&_h2]:scroll-mt-24">
               <p>
-                California non-residential solar ran a median $2.0 to $4.1 per watt for systems
-                over 100 kW in 2023, split by customer type, and $2.5 to $4.3 per watt nationally
-                for systems 100 kW or less, per Lawrence Berkeley National Laboratory&apos;s{' '}
+                A California business, farm or public agency installing a commercial system over
+                100 kW paid a median $2.0 to $4.1 per watt in 2023, depending on customer type,
+                and commercial systems of 100 kW or less ran $2.5 to $4.3 per watt nationally
+                (20th to 80th percentile), per Lawrence Berkeley National Laboratory&apos;s{' '}
                 <a href={trackingTheSunSummary} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   Tracking the Sun 2024 Edition
                 </a>{' '}
                 (August 2024).{/* costs-20, costs-24, costs-25, costs-26 */} Two dates now drive
-                whether a project captures the federal credit and the state property-tax break at
-                all: construction must have started by <strong>July 4, 2026</strong> or the
-                system must be placed in service by <strong>December 31, 2027</strong> to get any
-                federal Section 48E credit,{/* fedtax-13, fedtax-14 */} and the California
-                property-tax exclusion for solar goes inoperative on{' '}
-                <strong>January 1, 2027</strong>.{/* catax-05 */} Verified {VERIFIED}.
+                whether a commercial project captures the federal credit and the state
+                property-tax break at all: a solar facility that began construction after{' '}
+                <strong>July 4, 2026</strong> must be placed in service by{' '}
+                <strong>December 31, 2027</strong> to get any federal Section 48E
+                credit,{/* fedtax-13, fedtax-14 */} and the California property-tax exclusion for
+                solar goes inoperative on <strong>January 1, 2027</strong>.{/* catax-05 */}{' '}
+                Verified {RECHECKED}.
+              </p>
+              <p>
+                This page covers commercial, agricultural and public-sector systems measured in
+                kilowatts and megawatts. Pricing a system for a house? See{' '}
+                <Link href="/solar-panels-california" className="text-primary underline">
+                  what a home rooftop solar system costs in California
+                </Link>{' '}
+                instead; residential prices, tariffs and incentives work differently.
               </p>
 
               {/* The two deadline cards sit before the first h2. Their titles stay
@@ -297,7 +321,7 @@ export default function CommercialSolarCost() {
                   <caption className="p-4 text-left text-sm text-muted-foreground">
                     Gross installed price, before incentives, by segment. California figures are
                     2023-installation medians; national figures are 2023 20th&ndash;80th
-                    percentile bands. Source: LBNL Tracking the Sun 2024 Edition. Verified {VERIFIED}.
+                    percentile bands. Source: LBNL Tracking the Sun 2024 Edition. Verified {RECHECKED}.
                   </caption>
                   <thead className="bg-muted">
                     <tr>
@@ -413,11 +437,11 @@ export default function CommercialSolarCost() {
                 </li>
               </ul>
               <p>
-                For a line-by-line quote checklist rather than a benchmark, see{' '}
-                <Link href="/blog/commercial-solar-installation-cost-california" className="text-primary underline">
-                  our commercial solar quote checklist
-                </Link>
-                , which walks through what to ask every bidder to itemize before comparing price.
+                For a line-by-line checklist rather than a benchmark, jump to{' '}
+                <a href="#quote-checklist" className="text-primary underline">
+                  what to ask every bidder to itemize
+                </a>{' '}
+                before comparing price.
               </p>
 
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
@@ -495,34 +519,34 @@ export default function CommercialSolarCost() {
                 What you actually pay: federal tax treatment
               </h2>
               <p>
-                A California business buying commercial solar in 2026 claims the credit under IRC{' '}
+                A California business buying commercial solar in 2026 claims the credit under{' '}
                 <a href={irc48e} target="_blank" rel="noopener noreferrer" className="text-primary underline">
-                  Section 48E
+                  26 U.S.C. §48E
                 </a>
-                , not the older Section 48. The base rate is 6%; it rises to 30% for a facility
-                under 1 MW net output, or one meeting prevailing-wage and apprenticeship rules
-                {' '}.{/* fedtax-01, fedtax-02, fedtax-03 */} Bonus adders exist for energy
-                communities, domestic content, and low-income siting, but each carries its own
-                eligibility test and a shrinking domestic-content cost-ratio schedule (50% in
-                2026, rising to 55% after December 31, 2026) {/* fedtax-05, fedtax-08 */} &mdash;
-                confirm any bonus with your tax advisor before counting on it. As the callouts
-                above state, the credit does not apply at all to a facility placed in service
-                after December 31, 2027 unless construction began on or before July 4, 2026, a
-                date that has already passed.{/* fedtax-13, fedtax-14 */}
+                , the clean electricity investment credit. The statute sets a 6% base rate and a
+                30% rate for a facility with a maximum net output under 1 MW AC or one meeting the
+                prevailing-wage and apprenticeship requirements.{/* fedtax-01, fedtax-02, fedtax-03 */}{' '}
+                Bonus amounts exist for energy communities, domestic content and certain low-income
+                sites, each with its own test; the domestic manufactured-products share the
+                statute requires is 50% for projects beginning construction in 2026 and 55% after
+                December 31, 2026.{/* fedtax-05, fedtax-08 */} As the callouts above state, the
+                credit does not apply to solar property placed in service after December 31, 2027
+                when the facility began construction after July 4, 2026.{/* fedtax-13, fedtax-14 */}{' '}
+                Confirm any rate or bonus with a tax professional before counting on it.
               </p>
               <p>
-                On depreciation, commercial solar is 5-year MACRS property, and 100% federal bonus
-                depreciation currently applies to property acquired and placed in service after
-                January 19, 2025.{/* fedtax-28, fedtax-30 */} The depreciable basis is reduced by
-                only 50% of the ITC claimed, not the full credit.{/* fedtax-33 */} Here is what
-                that looks like on a representative project, combining the credit with year-one
-                bonus depreciation at the federal level only:
+                On depreciation, 26 U.S.C. §168(e)(3)(B)(viii) classifies §48E qualified property
+                and energy storage technology as 5-year property, and §168(k)(1)(A) provides a 100%
+                first-year allowance for qualified property, which applies to property acquired
+                after January 19, 2025.{/* fedtax-28, fedtax-30 */} Under §50(c)(3), the
+                depreciable basis is reduced by 50% of the credit, not the full credit.{/* fedtax-33 */}{' '}
+                Here is the federal arithmetic on a representative project:
               </p>
               <div className="my-8 overflow-x-auto rounded-xl border border-border">
                 <table className="min-w-full text-sm">
                   <caption className="p-4 text-left text-sm text-muted-foreground">
-                    Illustrative arithmetic on sourced statutory rates, not a published LBNL/IRS
-                    figure. Federal treatment only; see California non-conformity below.
+                    Illustrative arithmetic on statutory rules, not a published LBNL/IRS figure and
+                    not tax advice. Federal treatment only; see California non-conformity below.
                   </caption>
                   <thead className="bg-muted">
                     <tr>
@@ -536,62 +560,58 @@ export default function CommercialSolarCost() {
                       <td className="px-4 py-3 text-foreground">$500,000</td>
                     </tr>
                     <tr className="border-t border-border">
-                      <td className="px-4 py-3 text-foreground">ITC at 30% (§48E(a)(2))</td>
+                      <td className="px-4 py-3 text-foreground">Credit at 30% (§48E(a)(2))</td>
                       <td className="px-4 py-3 text-foreground">$150,000{/* fedtax-01, fedtax-02 */}</td>
                     </tr>
                     <tr className="border-t border-border">
-                      <td className="px-4 py-3 text-foreground">Basis reduction, 50% of ITC (§50(c)(3)(A))</td>
+                      <td className="px-4 py-3 text-foreground">Basis reduction, 50% of the credit (§50(c)(3))</td>
                       <td className="px-4 py-3 text-foreground">$75,000{/* fedtax-33 */}</td>
                     </tr>
                     <tr className="border-t border-border">
                       <td className="px-4 py-3 text-foreground">Depreciable basis</td>
                       <td className="px-4 py-3 text-foreground">$425,000</td>
                     </tr>
-                    <tr className="border-t border-border">
-                      <td className="px-4 py-3 text-foreground">Year-1 federal bonus depreciation (100%, §168(k)(1))</td>
-                      <td className="px-4 py-3 text-foreground">$425,000{/* fedtax-30 */}</td>
-                    </tr>
-                    <tr className="border-t border-border">
-                      <td className="px-4 py-3 text-foreground">Year-1 depreciation&apos;s tax value at 21% federal corporate rate</td>
-                      <td className="px-4 py-3 text-foreground">&asymp;$89,250</td>
-                    </tr>
                     <tr className="border-t border-border bg-muted/40">
-                      <td className="px-4 py-3 font-bold text-foreground">Combined Year-1 federal benefit</td>
-                      <td className="px-4 py-3 font-bold text-foreground">&asymp;$239,250 (&asymp;48% of cost)</td>
+                      <td className="px-4 py-3 font-bold text-foreground">Year-1 federal depreciation deduction if the 100% allowance applies (§168(k))</td>
+                      <td className="px-4 py-3 font-bold text-foreground">$425,000{/* fedtax-30 */}</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p>
-                Read that last row carefully: the credit is a dollar-for-dollar reduction in tax
-                owed, while the depreciation figure is a deduction multiplied by a tax rate &mdash;
-                two different mechanisms, added here only to show the combined year-one federal
-                effect, not a single line item you will see on a return.
+                The credit and the deduction are different mechanisms. The credit reduces tax
+                owed dollar for dollar. The deduction reduces taxable income, so what it is worth
+                depends on your entity&apos;s tax rate and whether it has enough income to use it.
+                Ask your tax professional to run both on your own return.
               </p>
               <p>
-                California does not conform to federal bonus depreciation. Because the state&apos;s
-                general IRC conformity date is fixed at January 1, 2025, before the federal law
-                creating the current 100% bonus even existed, a California return must add back
-                the bonus and instead depreciate the same $425,000 basis on the standard,
-                non-bonus 5-year MACRS schedule.{/* fedtax-41, catax-29 */} California&apos;s
-                corporate tax rate is 8.84% for C corporations (1.5% for S corporations), plus an
-                $800 minimum franchise tax regardless of profitability,{/* fedtax-38, fedtax-39,
-                catax-26, catax-27, catax-28 */} and there is no California state solar tax
-                credit.{/* catax-30 */}
+                California does not conform to §168(k), and in general does not conform to the
+                2025 federal legislation that restored the 100% allowance, according to the{' '}
+                <a href={ftbForm100} target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                  FTB&apos;s 2025 Form 100 booklet
+                </a>
+                , so the state deduction differs from the federal one.{/* fedtax-41, catax-29 */}{' '}
+                The same booklet lists an 8.84% tax rate for corporations other than banks and
+                financial corporations and an $800 minimum franchise tax.{/* fedtax-38, fedtax-39 */}{' '}
+                Have a tax professional compute the California depreciation schedule and basis.
               </p>
               <p>
-                The credit also remains transferable under §6418 and eligible for elective (direct)
-                pay under §6417 for tax-exempt and governmental entities,{/* fedtax-22,
-                fedtax-24 */} though both are now subject to new foreign-entity restrictions
-                phased in mostly for construction beginning after December 31, 2025 or tax years
-                beginning after July 4, 2025;{/* fedtax-18, fedtax-19, fedtax-21 */} for an
-                ordinary California business with no foreign ownership or foreign-sourced
-                equipment financing, these are unlikely to bite, but panel, inverter and racking
-                sourcing should be checked against current guidance before relying on the full
-                credit amount. Recapture follows a five-year vesting schedule if the property is
-                sold or changes use before then: 100% of the credit is recaptured in year one,
-                declining 80/60/40/20% in years two through five, and zero after.{/* fedtax-34,
-                fedtax-35 */}
+                The credit can be transferred to an unrelated taxpayer under{' '}
+                <a href={irc6418} target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                  §6418
+                </a>
+                , though not to a specified foreign entity, and tax-exempt and governmental
+                entities can elect to receive it as a payment under{' '}
+                <a href={irc6417} target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                  §6417
+                </a>
+                .{/* fedtax-22, fedtax-24 */} For construction beginning after December 31, 2025,
+                §48E also denies the credit where a facility includes material assistance from a
+                prohibited foreign entity, so panel, inverter and racking sourcing should be
+                documented before relying on the full amount.{/* fedtax-18, fedtax-19, fedtax-21 */}{' '}
+                Under §50(a), the credit is recaptured if the property is disposed of or stops
+                qualifying within five years: 100% within the first full year after it is placed
+                in service, then 80%, 60%, 40% and 20% in each following year.{/* fedtax-34, fedtax-35 */}
               </p>
 
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
@@ -755,10 +775,7 @@ export default function CommercialSolarCost() {
                 it{' '}
                 <a href={boeAnnotation610} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   (Assessors&apos; Handbook annotation 610.0089)
-                </a>{' '}.{/* catax-13 */} Systems 20 MW or larger instead get a phased-down schedule
-                (Nonqualified Active Solar Energy Systems), starting at 100% exclusion and
-                stepping to roughly 80/60/50% at years 1, 4 and 7 {/* catax-14 */} &mdash; most
-                behind-the-meter C&amp;I systems are far under that threshold. Per{' '}
+                </a>{' '}.{/* catax-13 */} Per{' '}
                 <a href={boeLta2026034} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   BOE Letter to Assessors 2026/034
                 </a>{' '}
@@ -776,20 +793,18 @@ export default function CommercialSolarCost() {
                 <a href={cdtfaReg1521} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   Regulation 1521
                 </a>{' '}
-                treats a commercial solar install as a construction contract: most rack-mounted
-                rooftop and free-standing ground-mount arrays are &ldquo;fixtures,&rdquo; taxed to
-                the contractor as retailer on the full selling price, while true
-                building-integrated PV (roofing-integrated panels or PV skylights) is taxed as a
-                &ldquo;material&rdquo; on cost only;{/* catax-17 */} labor to affix a finished
-                panel to its racking is separately exempt.{/* catax-18 */} A partial exemption
-                under{' '}
+                covers construction contracts. It treats solar panels that are accessory to a
+                building or structure, such as rack-mounted panels on a roof, as
+                &ldquo;fixtures,&rdquo; and building-integrated PV that functions as roofing,
+                windows or walls as &ldquo;materials&rdquo;, a distinction that changes how sales
+                tax applies to the contract.{/* catax-17 */} It also says a charge for labor to
+                affix solar panels purchased in a completed condition to a mounting system is not
+                taxable.{/* catax-18 */} CDTFA also administers a partial exemption for certain
+                manufacturing, research and electric-generation equipment under{' '}
                 <a href={cdtfa6377} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   R&amp;T §6377.1
-                </a>{' '}
-                shaves 3.9375 percentage points off the combined rate,{/* catax-21 */} but it only
-                reaches a business that is itself a manufacturer, R&amp;D firm, or electric
-                utility/generator by NAICS code &mdash; a typical non-manufacturing business
-                installing solar on its own building generally does not qualify.{/* catax-23 */}
+                </a>
+                ; whether it reaches your business is a question for a tax professional.{/* catax-21, catax-23 */}
               </p>
               <p>
                 Permit fees are capped statewide by Government Code §66015 at $1,000 for a
@@ -811,14 +826,15 @@ export default function CommercialSolarCost() {
                 Incentives and mandates
               </h2>
               <p>
-                SGIP&apos;s general-market (non-equity) non-residential storage tier pays $0.25/Wh
-                at Step 5, but that Large-Scale Storage budget is currently shown{' '}
+                SGIP&apos;s general-market non-residential storage budget, Large-Scale Storage,
+                is at Step 5 ($0.25/Wh) and shown{' '}
                 <a href={sgipMetrics} target="_blank" rel="noopener noreferrer" className="text-primary underline">
                   Closed
                 </a>{' '}
-                in both PG&amp;E ($12.0M step) and SCE ($2.3M step) territory;{/* programs-01,
-                programs-02, programs-03 */} equity tiers ($0.85&ndash;$1.00/Wh) have narrower
-                site-eligibility rules.{/* programs-04, programs-05 */} See{' '}
+                for PG&amp;E, SCE, SoCalGas and the Center for Sustainable Energy as of September
+                23, 2026;{/* programs-01, programs-02, programs-03 */} the Non-Residential Storage
+                Equity ($0.85/Wh) and Equity Resiliency ($1.00/Wh) budgets are also shown
+                closed.{/* programs-04, programs-05 */} See{' '}
                 <Link href="/commercial-solar/sgip-battery-storage" className="text-primary underline">
                   our SGIP battery storage page
                 </Link>{' '}
@@ -909,6 +925,72 @@ export default function CommercialSolarCost() {
                 triggers this before pricing labor.
               </p>
 
+              <h2 id="quote-checklist" className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                Quote checklist: what every bidder should itemize
+              </h2>
+              <p>
+                A benchmark only helps if the bids you hold against it describe the same project.
+                Start from one written scope and ask every bidder to state the DC system size,
+                equipment, roof, ground-mount or canopy scope, electrical upgrades, storage,
+                interconnection work, permits, engineering and service responsibilities. If the
+                scopes differ, the totals do not describe the same system: a lower number can
+                leave out site work, roof work, storage or an obligation that arrives later in the
+                contract.
+              </p>
+              <div className="my-8 overflow-x-auto rounded-xl border border-border">
+                <table className="min-w-full text-sm">
+                  <caption className="p-4 text-left text-sm text-muted-foreground">
+                    Line items to receive in writing from every commercial solar bidder.
+                  </caption>
+                  <thead className="bg-muted">
+                    <tr>
+                      <th className="px-4 py-3 text-left font-bold text-foreground">Category</th>
+                      <th className="px-4 py-3 text-left font-bold text-foreground">What to receive in writing</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-t border-border">
+                      <td className="px-4 py-3 font-semibold text-foreground">System and site</td>
+                      <td className="px-4 py-3 text-foreground">DC size, equipment, layout, roof, canopy or ground scope, structural work, electrical upgrades and exclusions.</td>
+                    </tr>
+                    <tr className="border-t border-border">
+                      <td className="px-4 py-3 font-semibold text-foreground">Cash price</td>
+                      <td className="px-4 py-3 text-foreground">A line-item cash price, taxes, fees, allowances, change-order conditions and which costs sit outside the bid.</td>
+                    </tr>
+                    <tr className="border-t border-border">
+                      <td className="px-4 py-3 font-semibold text-foreground">Utility and production</td>
+                      <td className="px-4 py-3 text-foreground">Production assumptions, tariff and load inputs, grid imports and exports, demand assumptions, interconnection responsibilities and the remaining-bill estimate.</td>
+                    </tr>
+                    <tr className="border-t border-border">
+                      <td className="px-4 py-3 font-semibold text-foreground">Ownership and service</td>
+                      <td className="px-4 py-3 text-foreground">Owner, maintenance, monitoring, insurance, warranties, roof access, removal, transfer and end-of-term terms.</td>
+                    </tr>
+                    <tr className="border-t border-border">
+                      <td className="px-4 py-3 font-semibold text-foreground">Payment structure</td>
+                      <td className="px-4 py-3 text-foreground">Every payment, financing or PPA term, escalation, fee, security interest, default term and sale or refinancing condition.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p>
+                Compare the same cash price and physical scope first. Then put financing, lease,
+                PPA, tax and incentive assumptions on separate rows: a payment illustration does
+                not replace the cash price, and a claimed tax result is not a reduction that
+                applies to every owner. The CPUC&apos;s{' '}
+                <a href={cpucSolarGuide} target="_blank" rel="noopener noreferrer" className="text-primary underline">
+                  California Solar Consumer Protection Guide
+                </a>{' '}
+                is written for residential customers, but its core advice, to make sure everything
+                you were promised is written in the contract, applies to a commercial bid too.
+              </p>
+              <ol className="list-decimal space-y-2 pl-6">
+                <li>Request full proposals and every contract exhibit before deciding.</li>
+                <li>Match technical scope and cash price across bidders.</li>
+                <li>List production, tariff, incentive and remaining-bill assumptions beside their sources and dates.</li>
+                <li>Review ownership, service, finance and property-transfer terms separately.</li>
+                <li>Keep the final contract, change orders and supporting projections together.</li>
+              </ol>
+
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
                 Choosing a commercial solar installer
               </h2>
@@ -963,7 +1045,7 @@ export default function CommercialSolarCost() {
 
               <h2 id="sources" className="mb-4 mt-10 text-2xl font-bold text-foreground">Sources</h2>
               <p className="text-sm text-muted-foreground">
-                Every figure above traces to one of the primary sources below, checked {VERIFIED}.
+                Every figure above traces to one of the primary sources below, checked {VERIFIED}; the cost figures, tax statements and SGIP status were re-checked {RECHECKED}.
                 Rates, incentive budgets, and program status change; confirm anything you intend to
                 rely on directly with the source.
               </p>
@@ -972,9 +1054,10 @@ export default function CommercialSolarCost() {
                 <li>LBNL, <a href={lbnl2026Update} target="_blank" rel="noopener noreferrer" className="text-primary underline">U.S. Distributed Solar and Storage: 2025 Data Update</a> (Aug. 2026)</li>
                 <li>NREL, <a href={nrel2024Benchmark} target="_blank" rel="noopener noreferrer" className="text-primary underline">Documenting 15 Years of Reductions in U.S. Solar PV System Costs</a> (Jan. 2025) and <a href={nrel2022Benchmark} target="_blank" rel="noopener noreferrer" className="text-primary underline">U.S. Solar PV Cost Benchmark Q1 2022</a> (Sept. 2022)</li>
                 <li>SEIA / Wood Mackenzie, <a href={seiaQ42025} target="_blank" rel="noopener noreferrer" className="text-primary underline">U.S. Solar Market Insight, Q4 2025 executive summary</a> (Dec. 2025)</li>
-                <li>26 U.S.C. §48E (<a href={irc48e} target="_blank" rel="noopener noreferrer" className="text-primary underline">Cornell LII</a>); IRS <a href={irsNotice202542} target="_blank" rel="noopener noreferrer" className="text-primary underline">Notice 2025-42</a> (Sept. 2, 2025) and <a href={irsNotice202615} target="_blank" rel="noopener noreferrer" className="text-primary underline">Notice 2026-15</a> (Feb. 12, 2026)</li>
+                <li>26 U.S.C. <a href={irc48e} target="_blank" rel="noopener noreferrer" className="text-primary underline">§48E</a>, <a href={irc6417} target="_blank" rel="noopener noreferrer" className="text-primary underline">§6417</a> and <a href={irc6418} target="_blank" rel="noopener noreferrer" className="text-primary underline">§6418</a> (Office of the Law Revision Counsel, text in effect September 22, 2026); IRS <a href={irsNotice202542} target="_blank" rel="noopener noreferrer" className="text-primary underline">Notice 2025-42</a> (Sept. 2, 2025) and <a href={irsNotice202615} target="_blank" rel="noopener noreferrer" className="text-primary underline">Notice 2026-15</a> (Feb. 12, 2026)</li>
                 <li>26 U.S.C. §168 and §50 (<a href={irc168} target="_blank" rel="noopener noreferrer" className="text-primary underline">House OLRC</a>, <a href={irc50} target="_blank" rel="noopener noreferrer" className="text-primary underline">§50</a>)</li>
                 <li>California Franchise Tax Board, <a href={ftbForm100} target="_blank" rel="noopener noreferrer" className="text-primary underline">2025 Form 100 Booklet</a></li>
+                <li>CPUC, <a href={cpucSolarGuide} target="_blank" rel="noopener noreferrer" className="text-primary underline">California Solar Consumer Protection Guide</a> (version 4, 2025)</li>
                 <li>California State Board of Equalization, <a href={boeLta2026034} target="_blank" rel="noopener noreferrer" className="text-primary underline">Letter to Assessors 2026/034</a> (Sept. 1, 2026) and <a href={boeAnnotation610} target="_blank" rel="noopener noreferrer" className="text-primary underline">Assessors&apos; Handbook annotation 610.0089</a> (2012)</li>
                 <li>CDTFA, <a href={cdtfaReg1521} target="_blank" rel="noopener noreferrer" className="text-primary underline">Regulation 1521</a> and <a href={cdtfa6377} target="_blank" rel="noopener noreferrer" className="text-primary underline">manufacturing/R&amp;D/power equipment exemption guidance</a></li>
                 <li>Cal. Gov. Code §66015 (<a href={govCode66015} target="_blank" rel="noopener noreferrer" className="text-primary underline">statute</a>); City of San Diego, <a href={sanDiegoBulletin301} target="_blank" rel="noopener noreferrer" className="text-primary underline">Information Bulletin 301</a></li>
@@ -999,6 +1082,7 @@ export default function CommercialSolarCost() {
                 /commercial-assessment; the header button, the sticky bar and the
                 mid-page button below all scroll here. */}
             <CommercialReviewForm legacyAnchor className="mt-12" />
+            <HubSpokeLinks hub="commercial" currentPath="/commercial-solar/cost-per-watt-california" />
 
             <div className="mt-10">
               <Link href="/commercial-solar" className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline">

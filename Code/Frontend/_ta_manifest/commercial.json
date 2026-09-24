@@ -1,0 +1,346 @@
+{
+  "agent": "commercial",
+  "branch": "claude/ta-commercial-20260923",
+  "pages": [
+    {
+      "path": "/blog/solar-carport-california-guide",
+      "action": "UPGRADE",
+      "hub": "commercial",
+      "file": "src/app/blog/solar-carport-california-guide/page.tsx",
+      "title": "Solar Carports in California: Cost, Permits and Design",
+      "clusters": [
+        15,
+        253
+      ],
+      "sources": [
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://eta-publications.lbl.gov/sites/default/files/2024-08/tracking_the_sun_2024_executive_summary.pdf",
+        "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+        "https://www.nrel.gov/docs/fy23osti/87303.pdf",
+        "https://www.energy.ca.gov/residential-solar-permitting-program-dashboard",
+        "https://solarapp.nrel.gov/faq",
+        "https://www.dgs.ca.gov/BSC/Codes",
+        "https://www.dgs.ca.gov/-/media/Divisions/DSA/Publications/interpretations_of_regs/IR_16-8_2022-CBC.pdf",
+        "https://www.dgs.ca.gov/-/media/Divisions/DSA/Publications/interpretations_of_regs/IR_11B-9.pdf",
+        "https://permitsonoma.org/divisions/firepreventionandhazmat/servicesandfees/permitsandinspections/photovoltaicsystems",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section25D&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section30C&num=0&edition=prelim",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_BEV.pdf"
+      ],
+      "status": "done",
+      "note": "Retitled from 'Residential Solar Carports...' to the general 'solar carport' intent (residential + commercial). New: cost evidence (LBNL/NREL, no carport benchmark exists), DSA clearance/accessibility rules (answers the ADA, fire-lane, DSA-approved-canopy GSC queries), §25D/§48E/§30C tax limits, PG&E BEV rate, FAQ schema, breadcrumb parent = /commercial-solar, HubSpokeLinks. Links to the new commercial carport cost page."
+    },
+    {
+      "path": "/commercial-solar/commercial-solar-carport-cost",
+      "action": "CREATE_DEDICATED",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/commercial-solar-carport-cost/page.tsx",
+      "title": "Commercial Solar Carport Cost in California: What Drives It",
+      "clusters": [
+        229
+      ],
+      "sources": [
+        "https://eta-publications.lbl.gov/sites/default/files/2024-08/tracking_the_sun_2024_executive_summary.pdf",
+        "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://www.nrel.gov/docs/fy23osti/87303.pdf",
+        "https://www.dgs.ca.gov/-/media/Divisions/DSA/Publications/interpretations_of_regs/IR_16-8_2022-CBC.pdf",
+        "https://www.dgs.ca.gov/-/media/Divisions/DSA/Publications/interpretations_of_regs/IR_11B-9.pdf",
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=B",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section168&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6417&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section30C&num=0&edition=prelim",
+        "https://www.irs.gov/credits-deductions/elective-pay-and-transferability-frequently-asked-questions-elective-pay",
+        "https://www.ftb.ca.gov/forms/2025/2025-100-booklet.html",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_BEV.pdf"
+      ],
+      "status": "done",
+      "note": "Linked from the carport guide (the page that held the impressions), companies-california, dealership and REC pages. No carport-specific price exists in any primary source; the page says so and uses LBNL California medians as the solar baseline."
+    },
+    {
+      "path": "/commercial-solar/companies-california",
+      "action": "UPGRADE",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/companies-california/page.tsx",
+      "title": "Commercial Solar Companies & EPCs in California: 6 Checks",
+      "clusters": [
+        27,
+        89,
+        81,
+        49,
+        72,
+        230,
+        213,
+        264,
+        300,
+        440,
+        1799
+      ],
+      "sources": [
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C10",
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=B",
+        "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://eta-publications.lbl.gov/sites/default/files/2024-08/tracking_the_sun_2024_executive_summary.pdf",
+        "https://www.sce.com/business/rates-financing/rate-plans/business-time-of-use-rate-plans",
+        "https://www.cpuc.ca.gov/Rule21/",
+        "https://www.energy.ca.gov/programs-and-topics/topics/power-plants/opt-certification-program",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45&num=0&edition=prelim"
+      ],
+      "status": "done",
+      "note": "Moved off DecisionPage to PublicLayout + ArticleJsonLd + FaqJsonLd (fixes the pre-existing qc-gate-tsx SCHEMA fail without a second Article node). Kept metaTitle, H1, the #solar-inquiry legacy anchor and form copy used by scripts/test-commercial-growth.mjs. New sections: comparable quotes, top/largest lists, utility-scale EPC vs rooftop, system contents and sizes, panel cost, financing and 'is the ITC reduced by debt financing' (§48E(d)(2)/§45(b)(3)), O&M, license FAQ. Links to all four new commercial pages."
+    },
+    {
+      "path": "/commercial-solar/solar-developers",
+      "action": "CREATE_DEDICATED",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/solar-developers/page.tsx",
+      "title": "Solar Developers in California: Role, Pay and How to Vet",
+      "clusters": [
+        135
+      ],
+      "sources": [
+        "https://www.cpuc.ca.gov/Rule21/",
+        "https://www.energy.ca.gov/programs-and-topics/topics/power-plants/opt-certification-program",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://eta-publications.lbl.gov/sites/default/files/2024-08/tracking_the_sun_2024_executive_summary.pdf",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6418&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7701&num=0&edition=prelim",
+        "https://www.irs.gov/pub/irs-drop/n-25-42.pdf",
+        "https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/",
+        "https://www.boe.ca.gov/proptaxes/pdf/lta26034.pdf",
+        "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx"
+      ],
+      "status": "done",
+      "note": "Linked from companies-california (the page that held the impressions). Names no developer; no primary-source ranking exists."
+    },
+    {
+      "path": "/commercial-solar/commercial-solar-roofing",
+      "action": "CREATE_DEDICATED",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/commercial-solar-roofing/page.tsx",
+      "title": "Commercial Solar Roofing in California: What to Check",
+      "clusters": [
+        218
+      ],
+      "sources": [
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C39",
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C10",
+        "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=B",
+        "https://www.dgs.ca.gov/-/media/Divisions/DSA/Publications/interpretations_of_regs/IR_16-8_2022-CBC.pdf",
+        "https://permitsonoma.org/divisions/firepreventionandhazmat/servicesandfees/permitsandinspections/photovoltaicsystems",
+        "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-15",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://www.dgs.ca.gov/BSC/Codes",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim"
+      ],
+      "status": "done",
+      "note": "Linked from companies-california (the page that held the impressions), carport cost, dealership and REC pages. Fire-pathway numbers come from Permit Sonoma's page, which cites older CFC section numbers; the page tells readers to confirm the current CFC 1205 text (ICC/UpCodes could not be fetched)."
+    },
+    {
+      "path": "/commercial-solar/rec-commercial-solar-panels",
+      "action": "CREATE_DEDICATED",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/rec-commercial-solar-panels/page.tsx",
+      "title": "REC Commercial Solar Panels: Models, Specs and Fit",
+      "clusters": [
+        237
+      ],
+      "sources": [
+        "https://solarequipment.energy.ca.gov/Home/PVModuleList",
+        "https://www.energy.ca.gov/programs-and-topics/programs/solar-equipment-lists",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7701&num=0&edition=prelim",
+        "https://www.irs.gov/pub/irs-drop/n-26-15.pdf"
+      ],
+      "status": "partial",
+      "note": "Specs come from the CEC PV Module List full-data download (242 REC Group models, data unchanged since 2026-09-21); no manufacturer marketing used. Country of manufacture and recall status are not in any primary source fetched, so the page tells readers to request origin documentation. PARTIAL only because CREATE_DEDICATED also needs a link from the page holding the impressions, /panel-reviews/rec-solar-panels-review, which the reviews agent owns: see inbound_link_requests."
+    },
+    {
+      "path": "/commercial-solar/car-dealerships-going-solar-california",
+      "action": "CREATE",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/car-dealerships-going-solar-california/page.tsx",
+      "title": "Car Dealerships Going Solar in California: A 2026 Guide",
+      "clusters": [
+        1835
+      ],
+      "sources": [
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_BEV.pdf",
+        "https://www.sce.com/business/rates-financing/rate-plans/business-time-of-use-rate-plans",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-15",
+        "https://www.dgs.ca.gov/BSC/CALGreen",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section168&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section30C&num=0&edition=prelim",
+        "https://www.ftb.ca.gov/forms/2025/2025-100-booklet.html"
+      ],
+      "status": "done",
+      "note": "Names no dealership. Answers the 'cost of solar carports for auto dealerships' query that was landing on the carport guide."
+    },
+    {
+      "path": "/commercial-solar/church-solar-california",
+      "action": "UPGRADE",
+      "hub": "commercial",
+      "file": "src/data/article-pages.commercial.json",
+      "title": "Church Solar Projects in California: Elective Pay vs PPA",
+      "clusters": [
+        1837
+      ],
+      "sources": [
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6417&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45Y&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7701&num=0&edition=prelim",
+        "https://www.irs.gov/credits-deductions/elective-pay-and-transferability-frequently-asked-questions-elective-pay",
+        "https://www.irs.gov/credits-deductions/register-for-elective-payment-or-transfer-of-credits",
+        "https://www.irs.gov/pub/irs-drop/n-25-42.pdf",
+        "https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://eta-publications.lbl.gov/sites/default/files/2024-08/tracking_the_sun_2024_executive_summary.pdf",
+        "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-15",
+        "https://www.boe.ca.gov/proptaxes/religious_exemption.htm",
+        "https://www.boe.ca.gov/proptaxes/pdf/lta26034.pdf"
+      ],
+      "status": "done",
+      "note": "Stands in for the CSV row CREATE /commercial-solar/church-solar-projects-california (see skipped). Page rewritten: new 'What California church solar projects look like' section for the 'church solar projects' intent; every tax claim re-sourced to statute/IRS/court text (law-firm and vendor sources removed); unsourced Freedom Forever and 45-day-payment claims removed. reviewedAt 2026-09-23. JSON page, so no in-body links or HubSpokeLinks (ArticleRoute is shared code)."
+    },
+    {
+      "path": "/commercial-solar/cost-per-watt-california",
+      "action": "UPGRADE",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/cost-per-watt-california/page.tsx",
+      "title": "Commercial Solar Cost per Watt in California: 100 kW to 1 MW",
+      "clusters": [
+        120,
+        82
+      ],
+      "sources": [
+        "https://eta-publications.lbl.gov/sites/default/files/2024-08/tracking_the_sun_2024_executive_summary.pdf",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6417&num=0&edition=prelim",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section6418&num=0&edition=prelim",
+        "https://www.ftb.ca.gov/forms/2025/2025-100-booklet.html",
+        "https://cdtfa.ca.gov/lawguides/vol1/sutr/1521.html",
+        "https://www.boe.ca.gov/proptaxes/pdf/lta26034.pdf",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://www.cpuc.ca.gov/solarguide/"
+      ],
+      "status": "done",
+      "note": "Decision 14, separate D14 commit. G01: title/H1/intro/meta now business-only (kW/MW, commercial/agricultural/tax-exempt) and one link sends home-cost readers to /solar-panels-california. G09: the quote checklist from /blog/commercial-solar-installation-cost-california folded in as #quote-checklist; the old in-body link to that post replaced with the anchor. Decision 11: federal tax block rewritten to statute text; 21%-rate and California basis/S-corp/'no state credit' claims removed; 20 MW property-tax phase-down sentence and SGIP budget dollar figures removed; sales-tax paragraph re-checked against CDTFA Reg. 1521. Not re-verified this session: PG&E/SDG&E rate tables (still dated Sept 22), SEIA/WoodMac, CBRE/JLL, NREL 2022/2024 figures and C-PACE program names already on the page."
+    }
+  ],
+  "tax_pass": {
+    "decision": "Decision 11 (open): federal tax statements limited to 26 U.S.C. text (OLRC, text in effect 2026-09-22), IRS notices/FAQs and the D.D.C. opinion vacating Notice 2025-42; California tax to FTB/BOE/CDTFA primary text; everything else sends readers to a tax professional.",
+    "json_pages_edited": [
+      "commercial-battery-storage-california: storage phase-down corrected (was '30% through tax year 2033, 22.5% 2034, 15% 2035, contingent on grid emissions'; statute: phase-out by construction-start year with applicable year fixed at 2032, 100%/75%/50% for 2033/2034/2035 starts, zero after); 5-year class and §168(k) now sourced; unsourced 'most batteries use Chinese cells' removed",
+      "commercial-solar-cost-100kw-california, commercial-solar-cost-500kw-california, commercial-solar-cost-1mw-california, commercial-solar-ppa-vs-purchase-california, retail-solar-california, warehouse-solar-california, self-storage-solar-california, multifamily-solar-california, school-solar-california, agricultural-solar-california, church-solar-california",
+      "Removed across pages: 'continuity safe harbor to Dec 31, 2029/2030' deadlines, 'July 3 vs July 4' dispute, 'appeal expected' commentary, 'permanent' bonus framing, 55% FEOC figure for solar (statute: 40% in 2026), Davis-Bacon/15% apprentice figures, 'placed in service after Jan 19, 2025' bonus trigger (statute: acquired after), 48E(h) application window dates; commentary tax sources (McGuireWoods, RSM, Sidley, The Tax Adviser, ICS Tax, Novogradac, Holland & Knight, Foley Hoag, KPMG, Tax Notes, Mayfield, BuildWithBasis, Cox Castle) dropped and statute/IRS sources added",
+      "reviewedAt left unchanged on legacy JSON pages (only the tax statements were re-verified), except church-solar-california (fully rewritten, 2026-09-23)"
+    ],
+    "tsx_pages_edited": [
+      "/commercial-solar/financing-options: §48E/§168/§6417 statements linked to statute, deadline wording corrected, elective pay ownership and ≥1 MW domestic-content rule added",
+      "/commercial-solar/title-24-requirements: same statute links and deadline wording"
+    ]
+  },
+  "sitemap_add": [
+    "/commercial-solar/commercial-solar-carport-cost",
+    "/commercial-solar/solar-developers",
+    "/commercial-solar/commercial-solar-roofing",
+    "/commercial-solar/rec-commercial-solar-panels",
+    "/commercial-solar/car-dealerships-going-solar-california"
+  ],
+  "sitemap_note": "src/app/sitemap.ts hard-codes commercialSlugs (7 entries); add the five new slugs there.",
+  "blog_index_add": [],
+  "blog_index_update": [
+    {
+      "slug": "solar-carport-california-guide",
+      "title": "Solar Carports in California: Cost, Permits and Design",
+      "date": "2026-09-23",
+      "hub": "commercial"
+    }
+  ],
+  "redirect_requests": [
+    {
+      "from": "/blog/commercial-solar-installation-cost-california",
+      "to": "/commercial-solar/cost-per-watt-california",
+      "why": "D14 G09 301-merge (high confidence). Unique checklist content is now on the winner at #quote-checklist; the winner no longer links the loser. For the merges agent; not added here."
+    }
+  ],
+  "hub_links": [
+    {
+      "hub": "commercial",
+      "href": "/commercial-solar/commercial-solar-carport-cost",
+      "label": "Commercial solar carport cost"
+    },
+    {
+      "hub": "commercial",
+      "href": "/commercial-solar/solar-developers",
+      "label": "What commercial solar developers do"
+    },
+    {
+      "hub": "commercial",
+      "href": "/commercial-solar/commercial-solar-roofing",
+      "label": "Solar on commercial roofs"
+    },
+    {
+      "hub": "commercial",
+      "href": "/commercial-solar/rec-commercial-solar-panels",
+      "label": "REC panels for commercial projects"
+    },
+    {
+      "hub": "commercial",
+      "href": "/commercial-solar/car-dealerships-going-solar-california",
+      "label": "Solar for car dealerships"
+    },
+    {
+      "hub": "commercial",
+      "href": "/blog/solar-carport-california-guide",
+      "label": "Solar carports in California"
+    }
+  ],
+  "inbound_link_requests": [
+    {
+      "from": "/panel-reviews/rec-solar-panels-review",
+      "to": "/commercial-solar/rec-commercial-solar-panels",
+      "owner": "reviews",
+      "why": "CREATE_DEDICATED: that page holds the 'rec commercial solar panels' impressions; suggested anchor 'REC panel lines for commercial projects'."
+    },
+    {
+      "from": "src/components/growth/CommercialSolarGuide.tsx (WRITTEN_GUIDES on /commercial-solar)",
+      "to": "the five new /commercial-solar/* TSX pages",
+      "owner": "integration",
+      "why": "The hub auto-lists JSON pages only; hand-written pages must be added to WRITTEN_GUIDES to appear in the hub's crawlable list."
+    }
+  ],
+  "skipped": [
+    {
+      "url": "/commercial-solar/church-solar-projects-california",
+      "why": "Not created: /commercial-solar/church-solar-california already covers the same intent, and a second church page would split it. The existing page was upgraded for 'church solar projects in california' instead (needs Chad's OK; if he wants the separate URL, it should 301 to the existing page)."
+    },
+    {
+      "url": "/commercial-solar/financing-options vs /blog/commercial-solar-financing-california (G08)",
+      "why": "held: Decision 14 default"
+    }
+  ],
+  "gates": {
+    "tsc": "npx tsc --noEmit -p . clean (EXIT 0) after the last content commit",
+    "qc-gate.mjs": "PASS (45 pages) after the tax pass",
+    "qc-gate-tsx.mjs --only commercial-solar": "0 fails, 0 warns on this agent's pages; /commercial-solar hub (CommercialSolarGuide, not edited) still fails SCHEMA and LINKS as before this work",
+    "qc-gate-tsx.mjs --only blog/solar-carport": "PASS (0 fail, 0 warn)",
+    "assert:linkspine": "ok (cost-per-watt spine target 16 inbound)"
+  }
+}
