@@ -157,6 +157,31 @@ const WRITTEN_GUIDES: { href: string; anchor: string; blurb: string }[] = [
     blurb:
       "Which REC module lines are on the Energy Commission's equipment list, what that listing does and does not tell you, and where the modules were made.",
   },
+  // Added 2026-09-23 (Tier 2 wave).
+  {
+    href: "/commercial-solar/commercial-solar-tax-credit",
+    anchor: "The commercial solar tax credit in 2026 (Section 48E)",
+    blurb:
+      "The 6% and 30% rates, the bonus amounts, the December 31, 2027 cutoff for solar, depreciation, and selling the credit or taking it as a payment.",
+  },
+  {
+    href: "/commercial-solar/commercial-solar-lease-programs",
+    anchor: "Commercial solar leases: equipment leases and roof leases",
+    blurb:
+      "Leasing a system for your building versus renting your roof to a developer, how often each is used in California, and what to check before signing.",
+  },
+  {
+    href: "/commercial-solar/industrial-solar-california",
+    anchor: "Industrial solar in California: plants and manufacturers",
+    blurb:
+      "How large industrial systems run, why demand charges on schedules like PG&E B-19 and B-20 decide the economics, and what to put in a bid request.",
+  },
+  {
+    href: "/commercial-solar/average-wattage-of-a-commercial-solar-panel",
+    anchor: "Average wattage of a commercial solar panel",
+    blurb:
+      "What module sizes California business systems used in 2025, what new models on the state list are rated at, and what wattage means for a quote.",
+  },
 ];
 
 // Commercial-subject pages that live under /blog (topic hub "commercial").

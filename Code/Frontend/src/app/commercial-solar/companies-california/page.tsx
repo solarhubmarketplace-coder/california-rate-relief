@@ -31,6 +31,11 @@ const CHECKED = 'September 23, 2026';
 const link = 'text-primary underline underline-offset-2';
 
 const cslbLookup = 'https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx';
+const cslbExperience =
+  'https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/before_applying_for_license.aspx';
+const cslbBond =
+  'https://www.cslb.ca.gov/contractors/maintain_license/bond_information/bond_requirements.aspx';
+const dgStatsDownloads = 'https://www.californiadgstats.ca.gov/downloads/';
 const cslbC46 =
   'https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46';
 const cslbC10 =
@@ -86,6 +91,21 @@ const faqs = [
     question: 'Is a commercial solar tax credit reduced by debt financing?',
     answer:
       'Not by an ordinary loan, under the statute. Section 48E(d)(2) applies rules similar to section 45(b)(3), which reduces the credit when a facility is financed with tax-exempt bond proceeds, by up to 15%. Grants, subsidized programs and your own facts can raise other questions, so confirm the treatment with a tax professional.',
+  },
+  {
+    question: 'What does a solar EPC firm do on a commercial project?',
+    answer:
+      'It takes the project from design to a working system under one contract: engineering and permit drawings, buying the modules, inverters and racking, construction, testing and the paperwork for utility permission to operate. The contract should name the completion milestones, the performance test, the warranties and who pays for delays.',
+  },
+  {
+    question: 'Which companies offer design, installation and maintenance together?',
+    answer:
+      'Many commercial installers and EPCs sell a turnkey scope, but the pieces are often split across a developer, an EPC, subcontractors and a separate service provider. This page names no company. Ask each bidder to list, in the contract, which legal entity designs, builds, monitors and repairs the system, and for how long.',
+  },
+  {
+    question: 'How do you start a solar business in California?',
+    answer:
+      'Installing solar is contracting work, so it starts with a CSLB license. CSLB requires the qualifying individual to be 18 or older with at least four full years of journey-level, foreman, supervisor or contractor experience in the last ten years, and to pass the exam. An active license also needs a $25,000 contractor bond, the amount in effect since January 1, 2023.',
   },
   {
     question: 'What license does a solar company need in California?',
@@ -355,6 +375,50 @@ export default function CommercialSolarCompanies() {
                   or carport experience instead.
                 </p>
 
+                <h2 id="epc-contract" className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                  What a solar EPC firm&apos;s contract should cover
+                </h2>
+                <p>
+                  Whether you hire an EPC directly or a developer hires one for you, the EPC
+                  contract is where the project&apos;s risks land. Read it for these terms before
+                  comparing prices:
+                </p>
+                <ul className="list-disc space-y-2 pl-6">
+                  <li><strong>Scope and exclusions.</strong> What the fixed price includes, what is an allowance, and what is &ldquo;by owner.&rdquo;</li>
+                  <li><strong>Milestones.</strong> Mechanical completion, substantial completion and utility permission to operate, each with its own date and definition.</li>
+                  <li><strong>Performance test.</strong> How output is tested at handover, and the remedy if the system falls short.</li>
+                  <li><strong>Delay terms.</strong> Who pays if the project finishes late, including any liquidated damages, and which delays (utility, permits, weather) are excused.</li>
+                  <li><strong>Warranties.</strong> Workmanship, roof penetrations and equipment, with the entity that honors each one.</li>
+                  <li><strong>Changes and payment.</strong> How change orders are priced, the payment schedule, and lien releases from subcontractors and suppliers.</li>
+                </ul>
+                <p>
+                  A developer offering a PPA holds this contract itself; ask to see its warranty and
+                  performance terms anyway, because they decide how fast problems on your roof get
+                  fixed. The{' '}
+                  <Link href="/commercial-solar/solar-developers" className={link}>
+                    solar developers guide
+                  </Link>{' '}
+                  explains how the developer and EPC roles split.
+                </p>
+
+                <h2 id="project-steps" className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                  How a commercial solar project runs, start to finish
+                </h2>
+                <ol className="list-decimal space-y-2 pl-6">
+                  <li><strong>Site and bill review.</strong> Interval data, tariff, roof or site condition and electrical service.</li>
+                  <li><strong>Proposal and contract.</strong> Scope, price, ownership structure and the bill model.</li>
+                  <li><strong>Design and engineering.</strong> Layout, structural review and electrical single-line drawings.</li>
+                  <li><strong>Permits and interconnection.</strong> Local building and fire review, and the utility interconnection application under{' '}
+                    <a href={cpucRule21} className={link}>Rule 21</a> for PG&amp;E, SCE and SDG&amp;E customers.</li>
+                  <li><strong>Procurement and construction.</strong> Equipment orders, racking or canopy, wiring and switchgear work.</li>
+                  <li><strong>Inspection and permission to operate.</strong> Final local inspection, then the utility&apos;s approval to switch on.</li>
+                  <li><strong>Operations.</strong> Monitoring, maintenance and warranty service for the life of the system.</li>
+                </ol>
+                <p>
+                  Ask each bidder for a schedule built on those steps, with the utility and permit
+                  steps shown as dependencies the contractor does not control.
+                </p>
+
                 <h2 id="systems" className="mb-4 mt-10 text-2xl font-bold text-foreground">
                   What a commercial solar energy system includes
                 </h2>
@@ -369,6 +433,18 @@ export default function CommercialSolarCompanies() {
                   schools and industrial properties (over 100 kW) and an 85 kW median on
                   warehouses. Roughly half of 2025 non-residential installs were on commercial
                   buildings, a third on agricultural land and the rest at tax-exempt sites.
+                </p>
+                <p>
+                  In California, most business systems are rooftop systems. In CRR&apos;s count of
+                  the CPUC&apos;s{' '}
+                  <a href={dgStatsDownloads} className={link}>DGStats interconnection data</a>,
+                  2,583 of the 3,607 non-residential systems PG&amp;E, SCE and SDG&amp;E connected in
+                  2025 were on roofs, 854 on the ground and 138 mixed. Those systems used a median
+                  module of 438 W, larger than on homes; the{' '}
+                  <Link href="/commercial-solar/average-wattage-of-a-commercial-solar-panel" className={link}>
+                    commercial panel wattage data
+                  </Link>{' '}
+                  shows why.
                 </p>
                 <p>
                   The mounting decision changes who you hire. A{' '}
@@ -426,13 +502,30 @@ export default function CommercialSolarCompanies() {
                   shows how ownership moves the tax benefit.
                 </p>
                 <p>
+                  If you are looking for a company to own the system and sell you the power, that
+                  is a PPA provider, usually a developer or its financing partner. See{' '}
+                  <Link href="/commercial-solar/solar-developers#ppa-providers" className={link}>
+                    how to vet a commercial PPA provider
+                  </Link>
+                  . Leasing is a separate structure, and so is renting your roof to a developer;{' '}
+                  <Link href="/commercial-solar/commercial-solar-lease-programs" className={link}>
+                    commercial solar lease programs
+                  </Link>{' '}
+                  covers both. In 2025, 751 of the 3,607 non-residential systems connected in
+                  California were third-party owned, most of them under PPAs.
+                </p>
+                <p>
                   A common question is whether borrowing reduces the federal credit. Under{' '}
                   <a href={irc48e} className={link}>26 U.S.C. §48E(d)(2)</a>, rules similar to{' '}
                   <a href={irc45} className={link}>§45(b)(3)</a> apply, and §45(b)(3) reduces
                   the credit when a facility is financed with tax-exempt bond proceeds, by the
                   lesser of 15% or the bond-financed share. The statute does not reduce the
                   credit for an ordinary commercial loan. Confirm your own facts with a tax
-                  professional.
+                  professional. The{' '}
+                  <Link href="/commercial-solar/commercial-solar-tax-credit" className={link}>
+                    commercial solar tax credit guide
+                  </Link>{' '}
+                  sets out the rest of §48E, including the December 31, 2027 cutoff for solar.
                 </p>
 
                 <h2 id="business-bill" className="mb-4 mt-10 text-2xl font-bold text-foreground">
@@ -483,6 +576,49 @@ export default function CommercialSolarCompanies() {
                   limits, and define which loads need backup. Bill savings and outage operation
                   are different requirements.
                 </p>
+                <p>
+                  Industrial accounts are usually billed on demand-heavy schedules, and the plant
+                  systems connected in California in 2025 ran well above the business median. The{' '}
+                  <Link href="/commercial-solar/industrial-solar-california" className={link}>
+                    industrial solar guide
+                  </Link>{' '}
+                  covers the rates, sizing and Energy Code questions specific to plants and
+                  manufacturers.
+                </p>
+
+                <h2 id="turnkey-services" className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                  Turnkey commercial solar services: design, installation and maintenance
+                </h2>
+                <p>
+                  &ldquo;Full-service&rdquo; or &ldquo;turnkey&rdquo; commercial solar usually means
+                  one company sells you design, permitting, installation, utility paperwork and
+                  ongoing service under one relationship. That can be simpler to manage, but it
+                  does not mean one legal entity performs or guarantees every piece. Map each
+                  service to an entity before signing:
+                </p>
+                <div className="my-6 overflow-x-auto rounded-xl border border-border">
+                  <table className="w-full text-left text-sm">
+                    <caption className="sr-only">Turnkey commercial solar services and who provides them</caption>
+                    <thead className="bg-muted">
+                      <tr>
+                        <th className="p-4">Service</th>
+                        <th className="p-4">What to confirm</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-t"><th scope="row" className="p-4 align-top">Design and engineering</th><td className="p-4">Who stamps the structural and electrical drawings.</td></tr>
+                      <tr className="border-t"><th scope="row" className="p-4 align-top">Installation</th><td className="p-4">The CSLB-licensed entity that signs and pulls permits, and any subcontractors.</td></tr>
+                      <tr className="border-t"><th scope="row" className="p-4 align-top">Utility paperwork</th><td className="p-4">Who files the interconnection application and answers the utility.</td></tr>
+                      <tr className="border-t"><th scope="row" className="p-4 align-top">Monitoring and maintenance</th><td className="p-4">The service provider, the response times and how long the service contract runs.</td></tr>
+                      <tr className="border-t"><th scope="row" className="p-4 align-top">Financing</th><td className="p-4">The owner or lender, if you are not paying cash.</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p>
+                  &ldquo;Corporate solar&rdquo; programs that roll the same approach across many
+                  sites need the same map for each utility territory, because rates, tariffs and
+                  interconnection rules differ by utility.
+                </p>
 
                 <h2 id="operations" className="mb-4 mt-10 text-2xl font-bold text-foreground">
                   Operations and maintenance after installation
@@ -529,6 +665,8 @@ export default function CommercialSolarCompanies() {
                   <li>SCE, <a href={sceBusinessTou} className={link}>business time-of-use rate plans</a></li>
                   <li>CPUC, <a href={cpucRule21} className={link}>Electric Rule 21</a>; California Energy Commission, <a href={cecOptIn} className={link}>Opt-In Certification Program</a></li>
                   <li>26 U.S.C. <a href={irc48e} className={link}>§48E</a> and <a href={irc45} className={link}>§45</a>, Office of the Law Revision Counsel (text in effect September 22, 2026)</li>
+                  <li>California Public Utilities Commission, <a href={dgStatsDownloads} className={link}>DGStats Interconnected Applications Data Set</a> (data through May 31, 2026); CRR count of 2025 non-residential PV systems</li>
+                  <li>CSLB, <a href={cslbExperience} className={link}>before applying for the license exam</a> and <a href={cslbBond} className={link}>bond requirements</a></li>
                 </ul>
               </div>
               </div>
