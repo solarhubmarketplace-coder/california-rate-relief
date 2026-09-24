@@ -1,0 +1,676 @@
+{
+ "agent": "merges",
+ "branch": "claude/ta-merges-20260923",
+ "decisions": {
+  "prep": {
+   "commits": [
+    "1a8e270"
+   ],
+   "status": "done",
+   "file": "src/lib/canonical-redirects.test.ts",
+   "change": "decision-neutral test restructure (per-change registries) so each decision commit touches only its own lines; keep it whatever is dropped"
+  },
+  "D16": {
+   "commits": [
+    "6f4e75c"
+   ],
+   "status": "done",
+   "file": "next.config.js",
+   "change": "/blog/nem-3-california -> /blog/what-is-nem-3-california (was /blog/nem-2-vs-nem-3-california)"
+  },
+  "D15": {
+   "commits": [
+    "a2387e2"
+   ],
+   "status": "done",
+   "file": "src/lib/canonical-redirects.ts",
+   "change": "removed 18 /solar-companies/<city> -> /solar-cost/<city> rows whose page passes Rule 3 (hub_page_map.csv)",
+   "kept_redirected": [
+    "/solar-companies/vallejo"
+   ]
+  },
+  "D15-san-diego": {
+   "commits": [
+    "32d8d2c"
+   ],
+   "status": "done, needs Chad's confirmation",
+   "file": "src/lib/canonical-redirects.ts",
+   "change": "removed /solar-companies/san-diego -> /solar-cost/san-diego; passes Rule 3 (pass_gsc) but reverses the 2026-09-22 DR-25 keep. Drop this commit to keep it redirected."
+  },
+  "D14": {
+   "commits": [
+    "409b92d"
+   ],
+   "status": "done (redirects); link/index cleanup pending integration",
+   "file": "src/lib/canonical-redirects.ts",
+   "change": "301s: G03 /blog/solar-ppa-vs-lease-california -> /blog/ppa-loan-vs-solar-lease-vs-cash-california; G06 /solar-problems/free-solar-california-is-it-real -> /blog/free-solar-panels-california; G09 /blog/commercial-solar-installation-cost-california -> /commercial-solar/cost-per-watt-california",
+   "held": [
+    "G05",
+    "G08",
+    "G10",
+    "G11"
+   ]
+  }
+ },
+ "pages": [],
+ "reinstated_pages": [
+  {
+   "path": "/solar-companies/aptos",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "unassigned: renders the legacy template as-is"
+  },
+  {
+   "path": "/solar-companies/beaumont",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "cities (CREATE_DEDICATED in assign_cities.csv)"
+  },
+  {
+   "path": "/solar-companies/carlsbad",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "cities (CREATE_DEDICATED in assign_cities.csv)"
+  },
+  {
+   "path": "/solar-companies/chula-vista",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "unassigned: renders the legacy template as-is"
+  },
+  {
+   "path": "/solar-companies/corona",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "cities (CREATE_DEDICATED in assign_cities.csv)"
+  },
+  {
+   "path": "/solar-companies/el-dorado-hills",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "unassigned: renders the legacy template as-is"
+  },
+  {
+   "path": "/solar-companies/encinitas",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "cities (CREATE_DEDICATED in assign_cities.csv)"
+  },
+  {
+   "path": "/solar-companies/manteca",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "cities (CREATE_DEDICATED in assign_cities.csv)"
+  },
+  {
+   "path": "/solar-companies/marina",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "unassigned: renders the legacy template as-is"
+  },
+  {
+   "path": "/solar-companies/monterey",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "cities (CREATE_DEDICATED in assign_cities.csv)"
+  },
+  {
+   "path": "/solar-companies/oceanside",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "unassigned: renders the legacy template as-is"
+  },
+  {
+   "path": "/solar-companies/pacific-grove",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "unassigned: renders the legacy template as-is"
+  },
+  {
+   "path": "/solar-companies/rancho-cordova",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "unassigned: renders the legacy template as-is"
+  },
+  {
+   "path": "/solar-companies/salinas",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "unassigned: renders the legacy template as-is"
+  },
+  {
+   "path": "/solar-companies/seaside",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "unassigned: renders the legacy template as-is"
+  },
+  {
+   "path": "/solar-companies/walnut-creek",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "unassigned: renders the legacy template as-is"
+  },
+  {
+   "path": "/solar-companies/watsonville",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "unassigned: renders the legacy template as-is"
+  },
+  {
+   "path": "/solar-companies/winchester",
+   "decision": "D15",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "cities-data.ts legacy companies template",
+   "content_owner": "cities (CREATE_DEDICATED in assign_cities.csv)"
+  },
+  {
+   "path": "/solar-companies/san-diego",
+   "decision": "D15-san-diego",
+   "hub": "city_installers",
+   "file": "src/app/solar-companies/[city]/page.tsx",
+   "template": "growthCities CityComparison",
+   "content_owner": "cities (CREATE_DEDICATED in assign_cities.csv)"
+  }
+ ],
+ "sitemap_add": [],
+ "sitemap_add_note": "None needed. src/app/sitemap.ts builds /solar-companies/<slug> from getAllCitySlugs() (all 19 reinstated slugs are in cities-data.ts) and drops only paths isRedirectedPath() flags, so the 19 URLs return to the sitemap automatically. Vallejo stays filtered.",
+ "sitemap_remove": [
+  "/blog/solar-ppa-vs-lease-california",
+  "/solar-problems/free-solar-california-is-it-real",
+  "/blog/commercial-solar-installation-cost-california"
+ ],
+ "sitemap_remove_note": "Already filtered out automatically (sitemap.ts filters canonical-table sources). Cleanup only: blogSlugs entries at sitemap.ts lines 41, 180, 187; the article-pages.problems.json entry for free-solar-california-is-it-real (line 449) feeds the article sitemap and the /solar-problems hub.",
+ "blog_index_add": [],
+ "blog_index_remove": [
+  {
+   "slug": "commercial-solar-installation-cost-california",
+   "decision": "D14",
+   "where": "src/app/blog/page.tsx line 402",
+   "why": "301 to /commercial-solar/cost-per-watt-california (G09)"
+  },
+  {
+   "slug": "solar-ppa-vs-lease-california",
+   "decision": "D14",
+   "where": "not in src/app/blog/page.tsx at branch base; remove if another branch added it",
+   "why": "301 to /blog/ppa-loan-vs-solar-lease-vs-cash-california (G03)"
+  },
+  {
+   "slug": "solar-problems/free-solar-california-is-it-real",
+   "decision": "D14",
+   "where": "not a /blog post; remove its entry from src/data/article-pages.problems.json (line 449) so the /solar-problems hub and related-reading blocks stop listing it",
+   "why": "301 to /blog/free-solar-panels-california (G06)"
+  }
+ ],
+ "content_moves": [
+  {
+   "decision": "D14",
+   "group": "G03",
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "what": "the PPA price-per-kWh section: the loser ranks 11.8 on 'solar ppa price per kwh california' (32 impr) vs 34.0 for the winner",
+   "owner": "unassigned"
+  },
+  {
+   "decision": "D14",
+   "group": "G09",
+   "from": "/blog/commercial-solar-installation-cost-california",
+   "to": "/commercial-solar/cost-per-watt-california",
+   "what": "quote-checklist items not already on the winner",
+   "owner": "unassigned"
+  }
+ ],
+ "link_fixes": [
+  {
+   "decision": "D14",
+   "file": "src/components/growth/AssistanceGuides.tsx",
+   "line": 578,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/components/growth/AssistanceGuides.tsx",
+   "line": 601,
+   "from": "/solar-problems/free-solar-california-is-it-real",
+   "to": "/blog/free-solar-panels-california",
+   "action": "repoint",
+   "note": "remove instead where the guide kind is /blog/free-solar-panels-california (self-link)"
+  },
+  {
+   "decision": "D14",
+   "file": "src/components/growth/AssistanceGuides.tsx",
+   "line": 781,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/components/growth/AssistanceGuides.tsx",
+   "line": 1280,
+   "from": "/solar-problems/free-solar-california-is-it-real",
+   "to": "/blog/free-solar-panels-california",
+   "action": "repoint",
+   "note": "remove instead where the guide kind is /blog/free-solar-panels-california (self-link)"
+  },
+  {
+   "decision": "D14",
+   "file": "src/components/growth/AssistanceGuides.tsx",
+   "line": 1285,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": null,
+   "action": "remove",
+   "note": "the same list already links the winner two lines below"
+  },
+  {
+   "decision": "D14",
+   "file": "src/components/growth/AssistanceGuides.tsx",
+   "line": 1364,
+   "from": "/solar-problems/free-solar-california-is-it-real",
+   "to": "/blog/free-solar-panels-california",
+   "action": "repoint",
+   "note": "remove instead where the guide kind is /blog/free-solar-panels-california (self-link)"
+  },
+  {
+   "decision": "D14",
+   "file": "src/components/growth/Guides.tsx",
+   "line": 955,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint",
+   "note": "remove instead in the guide kind rendered on the winner itself"
+  },
+  {
+   "decision": "D14",
+   "file": "src/components/growth/Guides.tsx",
+   "line": 1127,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint",
+   "note": "remove instead in the guide kind rendered on the winner itself"
+  },
+  {
+   "decision": "D14",
+   "file": "src/components/growth/NetBillingGuides.tsx",
+   "line": 313,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/solar-installers/palmetto-solar-review/page.tsx",
+   "line": 143,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": null,
+   "action": "remove",
+   "note": "same sentence already links the winner; rewrite the sentence"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/solar-installers/palmetto-solar-review/page.tsx",
+   "line": 276,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/solar-installers/solar-optimum-review/page.tsx",
+   "line": 246,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/solar-installers/sunrun-review/page.tsx",
+   "line": 941,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/blog/prepaid-ppa-california-2026/page.tsx",
+   "line": 271,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/blog/do-solar-panels-increase-property-taxes-california/page.tsx",
+   "line": 202,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/blog/do-solar-panels-increase-property-taxes-california/page.tsx",
+   "line": 454,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/blog/solar-rebates-by-california-utility/page.tsx",
+   "line": 162,
+   "from": "/solar-problems/free-solar-california-is-it-real",
+   "to": "/blog/free-solar-panels-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/blog/is-it-better-to-buy-or-lease-solar-panels-california/page.tsx",
+   "line": 690,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/blog/solar-ppa-explained-california/page.tsx",
+   "line": 277,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": null,
+   "action": "remove",
+   "note": "same sentence already links the winner; rewrite the sentence"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/blog/does-solar-increase-home-value-california/page.tsx",
+   "line": 301,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/blog/does-solar-increase-home-value-california/page.tsx",
+   "line": 649,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/blog/how-much-does-it-cost-to-lease-solar-panels-california/page.tsx",
+   "line": 156,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint",
+   "note": "primaryResourceHref"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/blog/how-much-does-it-cost-to-lease-solar-panels-california/page.tsx",
+   "line": 709,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/blog/what-happens-to-solar-lease-when-i-sell-california/page.tsx",
+   "line": 167,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/blog/zero-down-solar-california/page.tsx",
+   "line": 482,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+   "action": "repoint"
+  },
+  {
+   "decision": "D14",
+   "file": "src/app/commercial-solar/cost-per-watt-california/page.tsx",
+   "line": 417,
+   "from": "/blog/commercial-solar-installation-cost-california",
+   "to": null,
+   "action": "remove",
+   "note": "this is the winner; the link would become a self-link. Carry the quote-checklist content in first (G09)"
+  },
+  {
+   "decision": "D14",
+   "file": "src/data/topic-hubs.ts",
+   "line": 725,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": null,
+   "action": "remove",
+   "note": "financing hub spoke; the winner is already the financing hubPage"
+  },
+  {
+   "decision": "D14",
+   "file": "src/lib/growth-routes.ts",
+   "line": 146,
+   "from": "/blog/solar-ppa-vs-lease-california",
+   "to": null,
+   "action": "remove",
+   "note": "GROWTH_ROUTES entry"
+  },
+  {
+   "decision": "D14",
+   "file": "src/lib/growth-routes.ts",
+   "line": 190,
+   "from": "/blog/commercial-solar-installation-cost-california",
+   "to": null,
+   "action": "remove",
+   "note": "LOCAL_RELEASE_REVIEW_ROUTES entry"
+  },
+  {
+   "decision": "D15-san-diego",
+   "file": "src/components/growth/Guides.tsx",
+   "line": 1972,
+   "from": "/solar-companies/san-diego (via companiesCityHref)",
+   "to": "/solar-companies/san-diego",
+   "action": "relabel",
+   "note": "label says 'San Diego solar cost and comparison guide' but the link now lands on the companies page; relabel (e.g. 'San Diego solar companies and permit checks') or point it at cityCostPath('san-diego'). Drop this item if the D15 (san-diego) commit is dropped."
+  }
+ ],
+ "link_fixes_note": "assert:citylinks reports 57 route-level links to D14 losers after D14 (shared guide components fan out to many routes). The entries above are the source lines. All are outside this lane, so none were edited here.",
+ "redirect_requests": [],
+ "redirect_requests_note": "Step 4: the intent audit's 7 high-severity mismatches are the Monterey Bay /solar-companies rules (monterey, salinas, seaside, pacific-grove, watsonville, aptos, marina). D15 removes all 7, so no further redirect request is needed.",
+ "hub_links": [
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/aptos",
+   "label": "Solar companies in Aptos",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/beaumont",
+   "label": "Solar companies in Beaumont",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/carlsbad",
+   "label": "Solar companies in Carlsbad",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/chula-vista",
+   "label": "Solar companies in Chula Vista",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/corona",
+   "label": "Solar companies in Corona",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/el-dorado-hills",
+   "label": "Solar companies in El Dorado Hills",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/encinitas",
+   "label": "Solar companies in Encinitas",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/manteca",
+   "label": "Solar companies in Manteca",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/marina",
+   "label": "Solar companies in Marina",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/monterey",
+   "label": "Solar companies in Monterey",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/oceanside",
+   "label": "Solar companies in Oceanside",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/pacific-grove",
+   "label": "Solar companies in Pacific Grove",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/rancho-cordova",
+   "label": "Solar companies in Rancho Cordova",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/salinas",
+   "label": "Solar companies in Salinas",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/seaside",
+   "label": "Solar companies in Seaside",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/walnut-creek",
+   "label": "Solar companies in Walnut Creek",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/watsonville",
+   "label": "Solar companies in Watsonville",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/winchester",
+   "label": "Solar companies in Winchester",
+   "decision": "D15"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/san-diego",
+   "label": "Solar companies in San Diego",
+   "decision": "D15-san-diego"
+  }
+ ],
+ "hub_links_remove": [
+  {
+   "hub": "financing",
+   "href": "/blog/solar-ppa-vs-lease-california",
+   "decision": "D14",
+   "why": "301 source; see link_fixes topic-hubs.ts:725"
+  }
+ ],
+ "skipped": [
+  {
+   "url": "/blog/how-much-does-it-cost-to-lease-solar-panels-california",
+   "why": "held: Decision 14 default (G05 301-merge, low confidence)"
+  },
+  {
+   "url": "/commercial-solar/financing-options",
+   "why": "held: Decision 14 default (G08 301-merge, medium confidence)"
+  },
+  {
+   "url": "/blog/nem-3-california-timeline",
+   "why": "held: Decision 14 default (G10 301-merge, low confidence)"
+  },
+  {
+   "url": "/blog/nem-3-california-still-worth-it",
+   "why": "held: Decision 14 default (G11 301-merge, medium confidence)"
+  },
+  {
+   "url": "/solar-companies/vallejo",
+   "why": "D15: fails Rule 3 (hub_page_map.csv rule3_gate no_serp); redirect to /solar-cost/vallejo kept"
+  },
+  {
+   "url": "/commercial-solar/cost-per-watt-california (G01) and /solar-savings/san-mateo (G13)",
+   "why": "Decision 14 differentiate items: content changes, no redirect, so not in the merges lane (G01 sits with the installers agent's /solar-panels-california upgrade; /solar-companies/san-mateo is in assign_cities.csv)"
+  }
+ ],
+ "side_effects": [
+  "D15: for each reinstated city the /solar-cost/<city> title moves from 'Solar Panels in <city>, CA: Cost & Installer Checks' to the cost-only variant, because primaryCityPageType() now picks the companies page (lib/city-pages.ts).",
+  "D15: companiesCityHref()/hasCompaniesCityPage() now return the companies URL for these cities, so existing city cross-links (CityCostPage 'Compare solar companies in <city>', CityLocalDetails, Guides) point at the reinstated pages. assert:citylinks and assert:linkspine pass after D15.",
+  "D15: /solar-savings/<city> rows are unchanged; they still point at /solar-cost (bill/rate vs cost SERP overlap 36%, vs installer 0%)."
+ ],
+ "drop_notes": [
+  "Each of D16 (6f4e75c), D15-san-diego (32d8d2c) and D14 (409b92d) reverts cleanly on its own; the redirect tests pass after each revert.",
+  "D15 (a2387e2) must be dropped together with D15-san-diego (32d8d2c): revert 32d8d2c then a2387e2 (clean). Reverting a2387e2 alone conflicts in canonical-redirects.ts because the san-diego row sits between rows D15 removes.",
+  "Manifest entries carry a 'decision' key; drop the entries of any decision that is dropped."
+ ]
+}
