@@ -250,7 +250,9 @@ const T2_CITYCOS_COMPANIES_SLUGS = new Set([
   'san-francisco', 'bay-area', 'simi-valley', 'scotts-valley', 'sunnyvale',
   'cupertino', 'santa-clara', 'palo-alto', 'lake-elsinore', 'pasadena',
   'chula-vista', 'san-ramon', 'santa-monica', 'ontario', 'riverside-county',
-  'temecula', 'murrieta',
+  'temecula', 'murrieta', 'high-desert', 'kern-county', 'bakersfield', 'stockton',
+  'los-angeles', 'san-bernardino', 'irvine', 'anaheim', 'santa-ana', 'santa-cruz',
+  'san-jose', 'palm-desert', 'riverside', 'victorville', 'bellflower',
 ]);
 for (const slug of T2_CITYCOS_COMPANIES_SLUGS) REINSTATED_COMPANIES_SLUGS.add(slug);
 

@@ -594,6 +594,439 @@
    ],
    "status": "done",
    "note": "Added a rebates FAQ (row /solar-savings/murrieta: impressions for solar rebates murrieta land here)."
+  },
+  {
+   "path": "/solar-companies/high-desert",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "High Desert Solar Companies: How to Compare Quotes (2026)",
+   "clusters": [
+    748
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://wp.sbcounty.gov/ezop/permits/solar-with-solarapp/",
+    "https://avchoiceenergy.com/faqs/",
+    "https://palmdaleepicenergy.com/about/faqs/",
+    "https://cleanpoweralliance.org/solar/",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
+   ],
+   "status": "done",
+   "note": "New region page (Victor Valley, Barstow, Morongo Basin, Antelope Valley): SCE plus AVCE, Palmdale EPIC, Lancaster Energy, CPA; San Bernardino County EZOP SolarAPP+ rules (manufactured homes to HCD); SB 379 counts by city. Carries rows /solar-savings/high-desert and /solar-companies/helendale."
+  },
+  {
+   "path": "/solar-savings/high-desert",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_bills",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    686
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "folded into /solar-companies/high-desert: the keyword (solar panel electric installation company high desert) is installer intent, the same page as row /solar-companies/high-desert; a second High Desert page would split it."
+  },
+  {
+   "path": "/solar-companies/helendale",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    736
+   ],
+   "sources": [
+    "https://wp.sbcounty.gov/ezop/permits/solar-with-solarapp/"
+   ],
+   "status": "skipped",
+   "note": "folded into /solar-companies/high-desert: Helendale is unincorporated San Bernardino County (SCE, County EZOP permits); the High Desert page names Helendale in its table and has a Who issues solar permits in Helendale FAQ. 11 impressions; a standalone page would repeat the County route."
+  },
+  {
+   "path": "/solar-companies/kern-county",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Kern County, CA (2026)",
+   "clusters": [
+    889
+   ],
+   "sources": [
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52",
+    "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
+   ],
+   "status": "done",
+   "note": "New county page: PG&E vs SCE split (about 47/53 by area; Delano SCE, Buttonwillow PG&E, McFarland split), no CCA, County vs city permit offices with SB 379 counts. /solar-companies/bakersfield (1,125 Kern impressions) now links here. Carries rows /solar-companies/delano and /solar-companies/buttonwillow."
+  },
+  {
+   "path": "/solar-companies/delano",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    862
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "folded into /solar-companies/kern-county: Delano (SCE, unlike its PG&E neighbors) has a row and a Which utility serves Delano FAQ there. City of Delano site unreachable this session (connection resets), so no sourced permit facts for a standalone page."
+  },
+  {
+   "path": "/solar-companies/buttonwillow",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    833
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "folded into /solar-companies/kern-county: Buttonwillow is unincorporated (County of Kern permits, PG&E); covered by a table row and a Who issues solar permits in Buttonwillow FAQ."
+  },
+  {
+   "path": "/solar-companies/bakersfield",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Bakersfield, CA (2026)",
+   "clusters": [
+    889
+   ],
+   "sources": [
+    "https://www.kernpublicworks.com/services/development/building-inspection/solarapp-streamlined-permitting-process",
+    "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "Extra (holds the Kern County impressions): thin entry expanded with SB 379 counts (5,288 in 2023, 1,160 in 2024, none online, 79% storage), PG&E billing, FAQs and a link to /solar-companies/kern-county."
+  },
+  {
+   "path": "/solar-companies/sherman-oaks",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    775
+   ],
+   "sources": [
+    "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer",
+    "https://dbs.lacity.gov/sites/default/files/efs/forms/pc17/ib-p-gi-2020-003-express-permits_rev-5-28-2024.pdf"
+   ],
+   "status": "skipped",
+   "note": "folded into /solar-companies/los-angeles: Sherman Oaks is inside the City of Los Angeles (Census boundary) and LADWP territory (CEC), so its utility and permit office are the Los Angeles page's; added a Sherman Oaks FAQ and LA's 2024 SB 379 count there."
+  },
+  {
+   "path": "/solar-companies/los-angeles",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Los Angeles, CA (2026)",
+   "clusters": [
+    775
+   ],
+   "sources": [
+    "https://www.ladwp.com/residential-services/solar-programs/solar-rooftops",
+    "https://dbs.lacity.gov/sites/default/files/efs/forms/pc17/ib-p-gi-2020-003-express-permits_rev-5-28-2024.pdf",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.ladwp.com/residential-services/solar-programs",
+    "https://webprod.ladwp.com/account/customer-service/electric-rates/ev-nem-reo-rates",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx",
+    "https://tigerweb.geo.census.gov/arcgis/rest/services/TIGERweb/Places_CouSub_ConCity_SubMCD/MapServer"
+   ],
+   "status": "done",
+   "note": "Fold target: Sherman Oaks FAQ, 2024 SB 379 count (11,600 permits, 61% online), link to Santa Monica."
+  },
+  {
+   "path": "/solar-savings/santa-fe-springs",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_bills",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    737
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Navigational brand query (baker electric santa fe springs) whose impressions land on /solar-installers/baker-electric-solar-review (reviews lane). No city bills page is warranted: Santa Fe Springs is plain SCE territory with no CCA (CEC), 2 impressions."
+  },
+  {
+   "path": "/solar-companies/central-california",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    799
+   ],
+   "sources": [
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+   ],
+   "status": "skipped",
+   "note": "folded into /solar-savings/central-valley: that hub already carries the region's utility content under a Central Valley Solar Companies title; added a Comparing solar companies across the Central Valley section with SB 379 permit figures and links to every Central Valley companies page, including the new Kern County page."
+  },
+  {
+   "path": "/solar-savings/central-valley",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/app/solar-savings/central-valley/page.tsx",
+   "title": "Central Valley Solar Companies: Fresno & Sacramento",
+   "clusters": [
+    799
+   ],
+   "sources": [
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+   ],
+   "status": "done",
+   "note": "Fold target for central california solar companies: new section with city permit data and companies-page links."
+  },
+  {
+   "path": "/solar-companies/southern-california",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    380
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Too broad for a region page: Southern California spans SCE, SDG&E, LADWP, a dozen city utilities and many CCAs. The statewide hub /best-solar-companies-california (installers lane) plus the new Orange County, Riverside County, High Desert and Kern County pages cover it; link request filed for the statewide hub."
+  },
+  {
+   "path": "/solar-companies/carmel-valley",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    729
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Ambiguous place (Carmel Valley in Monterey County is PG&E + 3CE; Carmel Valley in San Diego is SDG&E + SDCP; GSC impressions split between /solar-companies/monterey and /solar-companies/san-diego), 4 impressions, and the Monterey companies page is held under Decision 14 (G02)."
+  },
+  {
+   "path": "/solar-companies/highland",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    782
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "City of Highland site unreachable this session (connection resets and timeouts), so no sourced permit facts; SCE with no CCA alone is not a local difference from San Bernardino. 1 impression."
+  },
+  {
+   "path": "/solar-companies/stockton",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Stockton, CA (2026)",
+   "clusters": [
+    356
+   ],
+   "sources": [
+    "https://www.stocktonca.gov/business/building___life_safety/automated_solar_permitting.php",
+    "https://www.stocktonca.gov/government/city_manager/ava_community_engergy.php",
+    "https://avaenergy.org/news/electricity-provider-ava-community-energy-brings-savings-to-stockton-and-lathrop/",
+    "https://avaenergy.org/your-energy-options/plans-and-rates/rates/solar-billing-plan/",
+    "https://www.cslb.ca.gov/solar",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+   ],
+   "status": "done",
+   "note": "Tier 1 page kept; added FAQs for the question-style queries it ranks for (best company, which offer leases, permit count 4,362 in 2024) and links to the lease comparison and escalator pages."
+  },
+  {
+   "path": "/solar-companies/bellflower",
+   "action": "CREATE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in Bellflower, CA (2026)",
+   "clusters": [
+    514
+   ],
+   "sources": [
+    "https://bellflower.ca.gov/Document%20Center/Department/Planning/Building%20Division/Documents%20and%20Resources/2026%20Residential%20Solar%20Submittal%20Instructions.pdf",
+    "https://www.bellflower.org/departments/planning/building___safety_division/documents___resources.php",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "done",
+   "note": "New page: Bellflower's January 1 2026 PV requirements (C-39 roof pre- and post-certification with 1-year leak warranty, structural verification, owner authorization), Willdan Geocivix review, in-person fees, SCE."
+  },
+  {
+   "path": "/solar-companies/san-bernardino-county",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_installers",
+   "file": "-",
+   "title": "-",
+   "clusters": [
+    1559
+   ],
+   "sources": [
+    "https://wp.sbcounty.gov/ezop/permits/solar-with-solarapp/",
+    "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf"
+   ],
+   "status": "skipped",
+   "note": "folded into /solar-companies/san-bernardino, which holds the impressions (mobile home solar san bernardino county): added a manufactured-home section (County says roof-mounted solar on a manufactured home is permitted by HCD; HCD permit and advisory) and FAQ. The High Desert page covers the County's own SolarAPP+ route."
+  },
+  {
+   "path": "/solar-companies/san-bernardino",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "Solar Panels & Solar Companies in San Bernardino, CA (2026)",
+   "clusters": [
+    1559
+   ],
+   "sources": [
+    "https://www.sanbernardino.gov/1650/Apply-for-Residential-Solar-Permits",
+    "https://www.sce.com/save-money/rates-financing/solar-billing-plan",
+    "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
+    "https://www.hcd.ca.gov/sites/default/files/docs/manufactured-and-mobilehomes/solar-pv-advisory.pdf",
+    "https://www.hcd.ca.gov/manufactured-and-mobilehomes/modifying-mobilehome",
+    "https://wp.sbcounty.gov/ezop/permits/solar-with-solarapp/",
+    "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+   ],
+   "status": "done",
+   "note": "Fold target: manufactured-home section and FAQ, 2024 SB 379 count, link to High Desert page."
+  },
+  {
+   "path": "/solar-companies/irvine",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "(unchanged)",
+   "clusters": [],
+   "sources": [],
+   "status": "done",
+   "note": "Link only: added a project link to the new Tier 2 page that its queries belong to (CREATE_DEDICATED rule: link from the page that currently gets the impressions). No other content changed."
+  },
+  {
+   "path": "/solar-companies/anaheim",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "(unchanged)",
+   "clusters": [],
+   "sources": [],
+   "status": "done",
+   "note": "Link only: added a project link to the new Tier 2 page that its queries belong to (CREATE_DEDICATED rule: link from the page that currently gets the impressions). No other content changed."
+  },
+  {
+   "path": "/solar-companies/santa-ana",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "(unchanged)",
+   "clusters": [],
+   "sources": [],
+   "status": "done",
+   "note": "Link only: added a project link to the new Tier 2 page that its queries belong to (CREATE_DEDICATED rule: link from the page that currently gets the impressions). No other content changed."
+  },
+  {
+   "path": "/solar-companies/santa-cruz",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "(unchanged)",
+   "clusters": [],
+   "sources": [],
+   "status": "done",
+   "note": "Link only: added a project link to the new Tier 2 page that its queries belong to (CREATE_DEDICATED rule: link from the page that currently gets the impressions). No other content changed."
+  },
+  {
+   "path": "/solar-companies/san-jose",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "(unchanged)",
+   "clusters": [],
+   "sources": [],
+   "status": "done",
+   "note": "Link only: added a project link to the new Tier 2 page that its queries belong to (CREATE_DEDICATED rule: link from the page that currently gets the impressions). No other content changed."
+  },
+  {
+   "path": "/solar-companies/palm-desert",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "(unchanged)",
+   "clusters": [],
+   "sources": [],
+   "status": "done",
+   "note": "Link only: added a project link to the new Tier 2 page that its queries belong to (CREATE_DEDICATED rule: link from the page that currently gets the impressions). No other content changed."
+  },
+  {
+   "path": "/solar-companies/riverside",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "(unchanged)",
+   "clusters": [],
+   "sources": [],
+   "status": "done",
+   "note": "Link only: added a project link to the new Tier 2 page that its queries belong to (CREATE_DEDICATED rule: link from the page that currently gets the impressions). No other content changed."
+  },
+  {
+   "path": "/solar-companies/victorville",
+   "action": "UPGRADE",
+   "hub": "city_installers",
+   "file": "src/data/growth-cities.ts (rendered by src/app/solar-companies/[city]/page.tsx via CityComparison)",
+   "title": "(unchanged)",
+   "clusters": [],
+   "sources": [],
+   "status": "done",
+   "note": "Link only: added a project link to the new Tier 2 page that its queries belong to (CREATE_DEDICATED rule: link from the page that currently gets the impressions). No other content changed."
+  },
+  {
+   "path": "/solar-savings/inland-empire",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/app/solar-savings/inland-empire/page.tsx",
+   "title": "(unchanged)",
+   "clusters": [],
+   "sources": [],
+   "status": "done",
+   "note": "Link only: sentence linking the Riverside County, High Desert, Ontario, Corona and Lake Elsinore companies pages."
+  },
+  {
+   "path": "/solar-savings/los-angeles-county",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/app/solar-savings/los-angeles-county/page.tsx",
+   "title": "(unchanged)",
+   "clusters": [],
+   "sources": [],
+   "status": "done",
+   "note": "Link only: sentence linking the Santa Monica, Bellflower and High Desert companies pages."
+  },
+  {
+   "path": "/solar-savings/orange-county",
+   "action": "UPGRADE",
+   "hub": "city_bills",
+   "file": "src/app/solar-savings/orange-county/page.tsx",
+   "title": "Orange County Electricity Providers: SCE, Anaheim, SDG&E",
+   "clusters": [],
+   "sources": [
+    "https://www.ocpower.org/faq/",
+    "https://www.ocpower.org/huntington-beach-2/"
+   ],
+   "status": "done",
+   "note": "Correction: Huntington Beach removed from OCPA member cities (returned to SCE 2024 per OCPA); link to /solar-companies/orange-county."
   }
  ],
  "sitemap_add": [
@@ -607,7 +1040,10 @@
   "/solar-companies/san-ramon",
   "/solar-companies/santa-monica",
   "/solar-companies/ontario",
-  "/solar-companies/riverside-county"
+  "/solar-companies/riverside-county",
+  "/solar-companies/high-desert",
+  "/solar-companies/kern-county",
+  "/solar-companies/bellflower"
  ],
  "blog_index_add": [],
  "redirect_requests": [],
@@ -666,9 +1102,61 @@
    "hub": "city_installers",
    "href": "/solar-companies/riverside-county",
    "label": "Riverside County solar companies by utility"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/high-desert",
+   "label": "High Desert solar companies and permit offices"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/kern-county",
+   "label": "Kern County solar companies: PG&E and SCE areas"
+  },
+  {
+   "hub": "city_installers",
+   "href": "/solar-companies/bellflower",
+   "label": "Bellflower solar companies"
   }
  ],
- "link_requests": [],
+ "link_requests": [
+  {
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/orange-county",
+   "anchor": "Orange County solar companies by city",
+   "why": "New region page; the statewide hub is the natural parent. Today it would fall into the 'More California cities' group automatically; a 'Counties and regions' group would read better."
+  },
+  {
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/bay-area",
+   "anchor": "Bay Area solar companies",
+   "why": "New region page; 993 GSC impressions for bay-area installer queries currently land on /solar-companies/san-francisco."
+  },
+  {
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/riverside-county",
+   "anchor": "Riverside County, where the utility changes by city",
+   "why": "New county page; also answers part of the 'southern california solar company' cluster (row skipped as too broad)."
+  },
+  {
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/high-desert",
+   "anchor": "High Desert solar companies",
+   "why": "New region page for Victor Valley and Antelope Valley queries."
+  },
+  {
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/kern-county",
+   "anchor": "Kern County: PG&E and SCE areas",
+   "why": "New county page; 1,125 Kern installer impressions currently land on /solar-companies/bakersfield."
+  },
+  {
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/san-mateo-county",
+   "anchor": "San Mateo County solar companies",
+   "why": "New county page; 503 impressions for the county cluster land on /solar-companies/san-mateo."
+  }
+ ],
  "skipped": [
   {
    "url": "/solar-savings/corona",
@@ -681,6 +1169,50 @@
   {
    "url": "/solar-savings/pasadena",
    "why": "folded into /solar-companies/pasadena: /solar-savings/pasadena is a 301 source (canonical-redirects.ts -> /solar-companies/pasadena). Added FAQs there for electricity rates pasadena (PWP July 1 2026 residential components) and compare electricity suppliers (no CCA)."
+  },
+  {
+   "url": "/solar-savings/high-desert",
+   "why": "folded into /solar-companies/high-desert: the keyword (solar panel electric installation company high desert) is installer intent, the same page as row /solar-companies/high-desert; a second High Desert page would split it."
+  },
+  {
+   "url": "/solar-companies/helendale",
+   "why": "folded into /solar-companies/high-desert: Helendale is unincorporated San Bernardino County (SCE, County EZOP permits); the High Desert page names Helendale in its table and has a Who issues solar permits in Helendale FAQ. 11 impressions; a standalone page would repeat the County route."
+  },
+  {
+   "url": "/solar-companies/delano",
+   "why": "folded into /solar-companies/kern-county: Delano (SCE, unlike its PG&E neighbors) has a row and a Which utility serves Delano FAQ there. City of Delano site unreachable this session (connection resets), so no sourced permit facts for a standalone page."
+  },
+  {
+   "url": "/solar-companies/buttonwillow",
+   "why": "folded into /solar-companies/kern-county: Buttonwillow is unincorporated (County of Kern permits, PG&E); covered by a table row and a Who issues solar permits in Buttonwillow FAQ."
+  },
+  {
+   "url": "/solar-companies/sherman-oaks",
+   "why": "folded into /solar-companies/los-angeles: Sherman Oaks is inside the City of Los Angeles (Census boundary) and LADWP territory (CEC), so its utility and permit office are the Los Angeles page's; added a Sherman Oaks FAQ and LA's 2024 SB 379 count there."
+  },
+  {
+   "url": "/solar-savings/santa-fe-springs",
+   "why": "Navigational brand query (baker electric santa fe springs) whose impressions land on /solar-installers/baker-electric-solar-review (reviews lane). No city bills page is warranted: Santa Fe Springs is plain SCE territory with no CCA (CEC), 2 impressions."
+  },
+  {
+   "url": "/solar-companies/central-california",
+   "why": "folded into /solar-savings/central-valley: that hub already carries the region's utility content under a Central Valley Solar Companies title; added a Comparing solar companies across the Central Valley section with SB 379 permit figures and links to every Central Valley companies page, including the new Kern County page."
+  },
+  {
+   "url": "/solar-companies/southern-california",
+   "why": "Too broad for a region page: Southern California spans SCE, SDG&E, LADWP, a dozen city utilities and many CCAs. The statewide hub /best-solar-companies-california (installers lane) plus the new Orange County, Riverside County, High Desert and Kern County pages cover it; link request filed for the statewide hub."
+  },
+  {
+   "url": "/solar-companies/carmel-valley",
+   "why": "Ambiguous place (Carmel Valley in Monterey County is PG&E + 3CE; Carmel Valley in San Diego is SDG&E + SDCP; GSC impressions split between /solar-companies/monterey and /solar-companies/san-diego), 4 impressions, and the Monterey companies page is held under Decision 14 (G02)."
+  },
+  {
+   "url": "/solar-companies/highland",
+   "why": "City of Highland site unreachable this session (connection resets and timeouts), so no sourced permit facts; SCE with no CCA alone is not a local difference from San Bernardino. 1 impression."
+  },
+  {
+   "url": "/solar-companies/san-bernardino-county",
+   "why": "folded into /solar-companies/san-bernardino, which holds the impressions (mobile home solar san bernardino county): added a manufactured-home section (County says roof-mounted solar on a manufactured home is permitted by HCD; HCD permit and advisory) and FAQ. The High Desert page covers the County's own SolarAPP+ route."
   }
  ]
 }

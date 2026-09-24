@@ -176,7 +176,7 @@ export default function BayAreaSolarPage() {
                 <li className='flex gap-3'>
                   <span className='text-primary font-bold min-w-fit'>•</span>
                   <span>
-                    <strong>WestLight Energy</strong>, the new name of Peninsula Clean Energy, serves communities in San Mateo County and Los Banos. Its site names no member cities, so check the bill in <Link href={savingsCityHref('san-mateo')} className='text-primary underline'>San Mateo</Link> or <Link href={savingsCityHref('half-moon-bay')} className='text-primary underline'>Half Moon Bay</Link>.
+                    <strong>WestLight Energy</strong>, the new name of Peninsula Clean Energy, serves communities in San Mateo County and Los Banos. Its site names no member cities, so check the bill in <Link href={savingsCityHref('san-mateo')} className='text-primary underline'>San Mateo</Link> or <Link href={savingsCityHref('half-moon-bay')} className='text-primary underline'>Half Moon Bay</Link>; the <Link href='/solar-companies/san-mateo-county' className='text-primary underline'>San Mateo County solar companies page</Link> lists each city&apos;s permit office.
                   </span>
                 </li>
                 <li className='flex gap-3'>

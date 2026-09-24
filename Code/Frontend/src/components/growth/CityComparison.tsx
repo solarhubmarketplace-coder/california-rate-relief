@@ -151,7 +151,9 @@ export function CityComparison({ slug }: { slug: string }) {
       />
       {/* 2026-09-22: replaces the hand-picked CityRegionalLinks list (15 of 50
           cities had one) with the nearest live city pages, same county first. */}
-      <NearbyCityPages slug={slug} type="companies" />
+      {/* A county or region page already links every city page in it from
+          its table, and has no map point for the distance sort. */}
+      {city.region ? null : <NearbyCityPages slug={slug} type="companies" />}
       <HubSpokeLinks hub="city_installers" currentPath={path} max={6} title="Solar companies in other California cities" />
     </DecisionPage>
   );
