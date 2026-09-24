@@ -536,6 +536,36 @@
       "to": "/blog/how-to-lower-pge-bill",
       "anchor": "PG&E-specific steps to lower the bill",
       "why": "generic CA page (CaliforniaBillDecisionPage lower); utility-specific version is new"
+    },
+    {
+      "from": "/blog/why-is-my-smud-bill-so-high",
+      "to": "/blog/smud-peak-hours",
+      "anchor": "SMUD peak hours and summer rate dates",
+      "why": "Tier 1 bills page; the rates-side SMUD page is new"
+    },
+    {
+      "from": "/blog/why-is-my-pge-bill-so-high",
+      "to": "/blog/help-with-pge-bill",
+      "anchor": "help paying a past-due PG&E bill",
+      "why": "high-bill readers who are behind need the assistance page"
+    },
+    {
+      "from": "/blog/why-is-my-pge-bill-so-high",
+      "to": "/blog/how-to-lower-pge-bill",
+      "anchor": "steps to lower a PG&E bill",
+      "why": "diagnosis page should hand off to the action page"
+    },
+    {
+      "from": "/blog/income-qualified-bill-discount-pge",
+      "to": "/blog/help-with-pge-bill",
+      "anchor": "REACH, LIHEAP and debt forgiveness for past-due bills",
+      "why": "CARE/FERA page mentions arrears programs; the full detail now lives on help-with-pge-bill"
+    },
+    {
+      "from": "/blog/why-is-my-sce-bill-so-high",
+      "to": "/blog/sce-rate-increase-2026",
+      "anchor": "what changed on SCE bills since November 2025",
+      "why": "sce-electricity-bill-changes was folded into that section"
     }
   ],
   "skipped": [
