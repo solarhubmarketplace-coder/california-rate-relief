@@ -442,6 +442,90 @@
    ],
    "status": "partial",
    "note": "anaheim.net permit and fee pages were behind a bot check all session, so permit fields keep their 2026-09-18 verification (dated 2009-2010 fee schedule). Added APU NEM 2.0 (wholesale-based, not NEM 3.0) and CEC SB 379 custom platform. A current Anaheim solar permit fee still needs a readable source."
+  },
+  {
+   "path": "/solar-cost/vallejo",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Vallejo, CA: What Sets the Price (2026)",
+   "clusters": [
+    638
+   ],
+   "sources": [
+    "https://www.vallejo.gov/online_services/central_permit_center",
+    "https://www.cityofvallejo.net/common/pages/GetFile.ashx?key=LuI%2BAe8c",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.mcecleanenergy.org/about-us/",
+    "https://mcecleanenergy.org/solar-billing-plan/"
+   ],
+   "status": "done",
+   "note": "Fee now from the FY2025-26 master fee schedule ($138 plan review + $312 up to 15 kW; $54.28/kW above; $38 issuance); Symbium per CEC SB 379 data; MCE source and credits; Pittsburg split re-checked. The /solar-panels-california page that holds the query's impressions is not in this lane (link request)."
+  },
+  {
+   "path": "/solar-cost/long-beach",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Long Beach, CA: What Sets the Price (2026)",
+   "clusters": [
+    636
+   ],
+   "sources": [
+    "https://longbeach.gov/lbcd/building/permit-center/solar-permit/",
+    "https://longbeach.gov/globalassets/lbcd/media-library/documents/building--safety/information-bulletins/ib-023",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "New row: SCE, no CCA; IB-023 all-in express fees ($386.62 PV, $447.45 PV+ESS, $264.95 ESS), historic-district review, no fire review for houses. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/santa-ana",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in Santa Ana, CA: What Sets the Price (2026)",
+   "clusters": [
+    655
+   ],
+   "sources": [
+    "https://www.santa-ana.org/upcoming-changes-to-the-residential-solar-permit-requirement-effective-june-1st-2026/",
+    "https://santa-ana.gov/question/does-solarapp-collect-fees-and-will-the-city-be-charging-fees",
+    "https://santa-ana.gov/city-of-santa-ana-streamlined-residential-solar-plan-check-and-permitting",
+    "https://www.ocpower.org/"
+   ],
+   "status": "done",
+   "note": "New row: SCE, not OCPA; SolarAPP+ mandatory for residential permits since 2026-06-01; $35 SolarAPP+ fee, City fee same as a regular solar permit but not stated; owner authorization letter. Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/bay-area",
+   "action": "CREATE_DEDICATED",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "",
+   "clusters": [
+    519
+   ],
+   "sources": [],
+   "status": "skipped",
+   "note": "Not built: a region, not a city. The cost template needs one permit office and one utility, and the Bay Area cost pages now exist city by city (San Mateo, Oakland, Fremont, Pleasanton, Livermore, Walnut Creek, Santa Rosa, Santa Cruz, San Jose, Sunnyvale, Mountain View). Link request to citycos: render RegionalCostCities on /solar-savings/bay-area so the regional page lists them. Query volume is thin (10 impressions, position 62)."
+  },
+  {
+   "path": "/solar-cost/el-dorado-hills",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx)",
+   "title": "Solar Panel Cost in El Dorado Hills, CA: What Sets the Price (2026)",
+   "clusters": [
+    660
+   ],
+   "sources": [
+    "https://www.eldoradocounty.ca.gov/Land-Use/Building-Services/Building-Services-Hub/Residential-Solar-Permits",
+    "https://pioneercommunityenergy.org/about-us/",
+    "https://pioneercommunityenergy.org/going-solar-with-pioneer/"
+   ],
+   "status": "done",
+   "note": "County and CCA fields cleaned (they rendered whole sentences into a badge and the CCA sentence); County Symbium page (new URL) with exclusions and 1-3 day processing; Pioneer source and export terms. County fee ordinance is a draft with blank number, so no fee figure."
   }
  ],
  "sitemap_add": [],
@@ -492,9 +576,32 @@
    "hub": "city_cost",
    "href": "/solar-cost/santa-clarita",
    "label": "Solar panel cost in Santa Clarita"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/long-beach",
+   "label": "Solar panel cost in Long Beach"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/santa-ana",
+   "label": "Solar panel cost in Santa Ana"
   }
  ],
- "link_requests": [],
+ "link_requests": [
+  {
+   "from": "/solar-savings/bay-area",
+   "to": "/solar-cost/san-mateo (and the other Bay Area /solar-cost pages)",
+   "anchor": "Solar cost by Bay Area city",
+   "why": "Bay Area cost intent ('affordable home solar panels bay area') has no regional cost page; render <RegionalCostCities region='Bay Area' counties={[...Bay Area counties]} /> as the other five regional hubs do, so the regional guide lists each Bay Area /solar-cost page."
+  },
+  {
+   "from": "/solar-panels-california",
+   "to": "/solar-cost",
+   "anchor": "Solar cost in each California city we cover",
+   "why": "'solar panel cost vallejo' and 'solar panel cost manteca' impressions land on /solar-panels-california; one link to the city cost index (or to /solar-cost/vallejo and /solar-cost/manteca) sends those readers to the city page."
+  }
+ ],
  "shared_changes": [
   "src/components/growth/CityCostPage.tsx (all /solar-cost pages): corrected the 'Is solar worth it' FAQ to the October 2025 CPUC guide (no fixed 10 percent escalation cap; estimate may use at most the CPUC's calculated average); added a 'without paying upfront' FAQ sourced to the CPUC guide; added Gov. Code 66015 (residential permit fee limit) and 65850.52 (automated permitting) to the permit section; renders row ccaSource, permitSources and extraFaqs; links /blog/no-upfront-cost-solar-panels.",
   "src/data/city-cost-data.ts: optional gated fields ccaSource, permitSources, extraFaqs; CCA source constants; COST_TEMPLATE_CSLB_VERIFIED re-verified 2026-09-23 (so every cost page's dateModified is 2026-09-23).",
@@ -511,5 +618,10 @@
   "Several city sites (fremont.gov, oaklandca.gov) return 403 to direct requests from this environment; their pages and fee PDFs were read through the r.jina.ai reader, which returns the city's own document text. carlsbadca.gov and elcajon.gov fee pages could not be read at all."
  ],
  "decisions_for_chad": [],
- "skipped": []
+ "skipped": [
+  {
+   "url": "/solar-cost/bay-area",
+   "why": "Not built: a region, not a city. The cost template needs one permit office and one utility, and the Bay Area cost pages now exist city by city (San Mateo, Oakland, Fremont, Pleasanton, Livermore, Walnut Creek, Santa Rosa, Santa Cruz, San Jose, Sunnyvale, Mountain View). Link request to citycos: render RegionalCostCities on /solar-savings/bay-area so the regional page lists them. Query volume is thin (10 impressions, position 62)."
+  }
+ ]
 }

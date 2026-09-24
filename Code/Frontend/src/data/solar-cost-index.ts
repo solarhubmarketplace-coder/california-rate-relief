@@ -188,7 +188,7 @@ const FEES: Record<string, FeeEntry> = {
   },
   corona: { status: 'not-published', evidence: 'It publishes no specific dollar figure for a solar permit' },
   'el-cajon': { status: 'not-published', evidence: 'does not state a dollar figure' },
-  'el-dorado-hills': { status: 'not-retrievable', evidence: 'returned a 403/empty response on fetch' },
+  'el-dorado-hills': { status: 'not-published', evidence: "does not state it or the County's permit fee" },
   fresno: {
     status: 'published',
     components: [
@@ -346,7 +346,14 @@ const FEES: Record<string, FeeEntry> = {
   },
   seaside: { status: 'not-published', evidence: 'does not give a dollar amount' },
   tracy: { status: 'not-published', evidence: 'The page does not give a dollar figure' },
-  vallejo: { status: 'not-published', evidence: 'does not give a dollar figure' },
+  vallejo: {
+    status: 'published',
+    components: [
+      { label: 'residential solar plan review', usd: 138, quote: 'residential solar plan review at $138' },
+      { label: 'residential solar permit, 15 kW or less', usd: 312, quote: '15 kW or less at $312' },
+    ],
+    extra: 'Each kW above 15 kW adds $54.28; the City adds a $38 permit issuance fee.',
+  },
   windsor: { status: 'not-published', evidence: 'The page does not give a dollar figure' },
   'yuba-city': { status: 'not-published', evidence: 'does not specify the dollar amount' },
   'san-mateo': {
@@ -391,6 +398,16 @@ const FEES: Record<string, FeeEntry> = {
     status: 'published',
     components: [{ label: 'residential rooftop photovoltaic system', usd: 450, quote: 'residential rooftop photovoltaic system at $450' }],
     extra: 'A 10% record maintenance charge applies to related permit fees; a main panel upgrade is $44 plus staff charges.',
+  },
+  'long-beach': {
+    status: 'published',
+    components: [{ label: 'express permit, solar without battery, all surcharges and inspections', usd: 386.62, quote: '$386.62 for solar alone' }],
+    extra: 'With a battery: $447.45; battery alone: $264.95.',
+  },
+  'santa-ana': {
+    status: 'not-published',
+    extra: 'SolarAPP+ collects a one-time $35.00 fee.',
+    evidence: 'The City\'s solar pages do not state that amount',
   },
   oakland: {
     status: 'published',
@@ -460,7 +477,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     },
   },
   'el-cajon': { platform: 'solarapp', evidence: 'Licensed contractors get SolarAPP+ pre-approval' },
-  'el-dorado-hills': { platform: 'symbium', evidence: 'partnered with Symbium (NOT SolarAPP+)' },
+  'el-dorado-hills': { platform: 'symbium', evidence: 'through Symbium for residential parcels' },
   fresno: { platform: 'solarapp', evidence: 'Single-family and duplex projects can use SolarAPP+' },
   'grass-valley': { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
   hollister: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned' },
@@ -509,7 +526,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   rocklin: { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
   seaside: { platform: 'solarapp', evidence: 'submitted for automated review through SolarAPP+' },
   tracy: { platform: 'none-named', evidence: 'or whether SolarAPP+ is used' },
-  vallejo: { platform: 'none-named', evidence: 'or whether SolarAPP+ is used' },
+  vallejo: { platform: 'symbium', evidence: "lists Vallejo's platform as Symbium" },
   windsor: { platform: 'symbium', evidence: 'Windsor uses Symbium' },
   'yuba-city': { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
   'san-mateo': { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
@@ -524,6 +541,12 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     note: 'Express Permit Portal; the CEC SB 379 data (self-reported) lists a custom platform.',
   },
   'santa-clarita': { platform: 'symbium', evidence: 'instantly online through Symbium' },
+  'long-beach': {
+    platform: 'city-instant',
+    evidence: "lists Long Beach's platform as a custom one",
+    note: 'Express permit under IB-023; the CEC SB 379 data (self-reported) lists a custom platform.',
+  },
+  'santa-ana': { platform: 'solarapp', evidence: 'only after SolarAPP+ approval' },
   oakland: { platform: 'solarapp', evidence: 'eligible rooftop systems on a permitted main dwelling through SolarAPP+' },
 };
 
@@ -553,7 +576,6 @@ const ONLINE_EXCEPTIONS: Record<string, { value: Exclude<OnlineFiling, 'yes' | '
   yucaipa: { value: 'general-portal', evidence: 'Yes for permits generally' },
   ontario: { value: 'not-stated', evidence: 'Could not be determined' },
   tracy: { value: 'not-stated', evidence: 'The page does not say whether solar permits specifically can be filed online' },
-  vallejo: { value: 'not-stated', evidence: 'The page does not say whether solar permits specifically can be filed online' },
 };
 
 function isOnlineYes(row: CityCostRow): boolean {

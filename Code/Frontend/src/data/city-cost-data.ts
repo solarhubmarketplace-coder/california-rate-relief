@@ -490,16 +490,23 @@ export const CITY_COST_ROWS: CityCostRow[] = [
   {
     slug: "el-dorado-hills",
     city: "El Dorado Hills",
-    county: "El Dorado County \u2014 unincorporated community; permits are issued by El Dorado County, not a city",
+    // 2026-09-23: the county and CCA fields used to carry whole sentences,
+    // which the template drops into a badge and a sentence of its own.
+    county: "El Dorado County",
     utilityKey: "pge",
-    cca: "Pioneer Community Energy \u2014 a joint powers authority CCA serving El Dorado County (including El Dorado Hills) and Placer County; \"PG&E will continue to deliver the electricity and provide all other services\" while Pioneer handles \"electricity generation only\" and residents are automatically enrolled",
-    permitUrl: "https://www.eldoradocounty.ca.gov/Land-Use/Planning-and-Building/Building-Division/Symbium",
+    cca: "Pioneer Community Energy",
+    ccaSource: {
+      label: "Pioneer Community Energy, About Us (serves most of unincorporated El Dorado County)",
+      url: "https://pioneercommunityenergy.org/about-us/",
+      verifiedAt: "2026-09-23",
+    },
+    permitUrl: "https://www.eldoradocounty.ca.gov/Land-Use/Building-Services/Building-Services-Hub/Residential-Solar-Permits",
     permitFeeNote:
-      "Page states \"There will be a service charge for the use of this system\" (the Symbium instant-permitting platform) but gives no dollar figure. The Ordinance 5238 fee schedule PDF (executed-ord-5238.pdf) returned a 403/empty response on fetch, so an exact solar permit dollar amount could not be verified",
-    permitFeeSource: "El Dorado County Building Division Symbium page (Ordinance 5238 fee PDF blocked \u2014 403)",
+      "El Dorado Hills is an unincorporated community, so its solar permits come from El Dorado County, not a city. The County's instant residential solar permit page says the Symbium platform carries a service charge but does not state it or the County's permit fee.",
+    permitFeeSource: "County of El Dorado, Instantaneous Residential Solar Permits",
     permitOnline:
-      "yes \u2014 El Dorado County partnered with Symbium (NOT SolarAPP+) for SB 379 instantaneous plan review/permitting; traditional in-person submission remains available as an alternative",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. The County issues residential solar permits through Symbium for residential parcels in unincorporated El Dorado County, with processing of about one to three business days. Parcels in airport review zones or flood zones, or needing eligibility review, submit in person at one of the County's two offices.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "fresno",
@@ -1168,20 +1175,30 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     county: "Solano County",
     utilityKey: "pge",
     cca: "MCE (Marin Clean Energy)",
-    permitUrl: "https://www.vallejo.gov/our_city/departments_divisions/planning_development_services/building_division",
+    ccaSource: MCE_ABOUT,
+    permitUrl: "https://www.vallejo.gov/online_services/central_permit_center",
+    // 2026-09-23: fee now read from the City's own master fee schedule.
     permitFeeNote:
-      "The Building Division page does not give a dollar figure for solar permits; it points to the general permit process and the city's Master Fee Schedule for cost information rather than listing a solar-specific fee.",
-    permitFeeSource: "City of Vallejo Building Division page",
+      "Vallejo's Master Fee Schedule for fiscal year 2025-2026, effective July 1, 2025, lists residential solar plan review at $138 and a residential solar permit of 15 kW or less at $312, with $54.28 for each kW above 15 kW. The schedule says these solar fees comply with Government Code section 66015 and are capped at $450 for a residential system before the City's $38 permit issuance fee is added.",
+    permitFeeSource: "City of Vallejo, Central Permit Center",
+    permitSources: [
+      {
+        label: "City of Vallejo, Master Fee Schedule FY 2025-2026, fees effective July 1, 2025 (Residential Solar Permits, items 36-38)",
+        url: "https://www.cityofvallejo.net/common/pages/GetFile.ashx?key=LuI%2BAe8c",
+        verifiedAt: "2026-09-23",
+      },
+      CEC_SB379_DATA,
+    ],
     permitOnline:
-      "The page does not say whether solar permits specifically can be filed online or whether SolarAPP+ is used; general permits are tracked through the city's eTRAKiT system.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. The City takes permit applications online through eTRAKiT and embeds Symbium's permit tool on its Central Permit Center page, and the California Energy Commission's SB 379 data lists Vallejo's platform as Symbium. The City's pages do not describe the solar route in detail.",
+    sourcesFetchedAt: "2026-09-23",
     // Added 2026-09-22: the CEC layer places part of Vallejo in the City of
-    // Pittsburg's electric service territory.
+    // Pittsburg's electric service territory. Re-checked 2026-09-23.
     utilitySplit: {
       others: "City of Pittsburg",
       note:
         "The California Energy Commission's service-territory map places part of Vallejo inside the City of Pittsburg's electric service territory rather than PG&E's. Read the utility name on your bill before using a PG&E rate.",
-      sources: [CEC_SERVICE_TERRITORY_SOURCE],
+      sources: [CEC_SERVICE_TERRITORY_SOURCE_0923],
     },
   },
   {
@@ -1424,6 +1441,46 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     ],
     permitOnline:
       "Yes. Rooftop PV and energy storage systems are among the residential permits the City issues instantly online through Symbium, and inspections can be booked online or through the inspection hotline. Since May 1, 2026, the older PVA permits are being replaced by these Symbium permits.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'long-beach',
+    city: 'Long Beach',
+    county: 'Los Angeles County',
+    utilityKey: 'sce',
+    permitUrl: 'https://longbeach.gov/lbcd/building/permit-center/solar-permit/',
+    permitFeeNote:
+      "Long Beach's Information Bulletin IB-023 (revised July 17, 2024) sets the total express permit fee for a flush-mounted rooftop system of 38.4 kW or less, including all surcharges and filing fees and every required inspection, at $386.62 for solar alone, $447.45 for solar with a battery, and $264.95 for a battery alone. Extra fees apply if the project needs planning, electrical or building review.",
+    permitFeeSource: 'City of Long Beach, Solar Photovoltaic (PV) Process',
+    permitSources: [
+      {
+        label: 'City of Long Beach, Information Bulletin IB-023, Guideline for Express Permit of Rooftop Solar PV System 38.4kW (Rev. 07-17-2024)',
+        url: 'https://longbeach.gov/globalassets/lbcd/media-library/documents/building--safety/information-bulletins/ib-023',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      "Yes. Residential applications go through the City's online permitting portal (permitslicenses.longbeach.gov) with the express checklist, and fees are paid online. The California Energy Commission's SB 379 data lists Long Beach's platform as a custom one.",
+    sourcesFetchedAt: '2026-09-23',
+  },
+  {
+    slug: 'santa-ana',
+    city: 'Santa Ana',
+    county: 'Orange County',
+    utilityKey: 'sce',
+    permitUrl: 'https://www.santa-ana.org/upcoming-changes-to-the-residential-solar-permit-requirement-effective-june-1st-2026/',
+    permitFeeNote:
+      "Santa Ana says SolarAPP+ collects a one-time fee of $35.00, and that the City's application fee is separate and the same as for a regular solar permit. The City's solar pages do not state that amount.",
+    permitFeeSource: 'City of Santa Ana, Upcoming Changes to the Residential Solar Permit Requirement (June 1, 2026)',
+    permitSources: [
+      {
+        label: 'City of Santa Ana, Does SolarAPP+ collect fees and will the City be charging fees?',
+        url: 'https://santa-ana.gov/question/does-solarapp-collect-fees-and-will-the-city-be-charging-fees',
+        verifiedAt: '2026-09-23',
+      },
+    ],
+    permitOnline:
+      'Yes. Since June 1, 2026, Santa Ana issues residential solar permits only after SolarAPP+ approval, and projects without it are not processed.',
     sourcesFetchedAt: '2026-09-23',
   },
 ];

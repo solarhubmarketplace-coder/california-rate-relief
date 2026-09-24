@@ -629,6 +629,94 @@ const anaheimNem: LocalGuidanceSource = {
   scope: 'Anaheim is not moving to NEM 3.0; its current NEM 2.0 program, for solar billing accounts set up after January 1, 2021, is a wholesale-based rate program. Solar Program phone 714-765-4182.',
 };
 
+
+const vallejoFees: LocalGuidanceSource = {
+  label: 'City of Vallejo — Master Fee Schedule FY 2025-2026 (fees effective July 1, 2025)',
+  url: 'https://www.cityofvallejo.net/common/pages/GetFile.ashx?key=LuI%2BAe8c',
+  verifiedAt: verified20260923,
+  scope:
+    'Residential solar plan review $138; residential solar 15 kW or less $312; per kW above 15 kW $54.28; solar fees stated to comply with Gov. Code 66015 and capped at $450 residential before the $38 permit issuance fee.',
+};
+
+const vallejoPermitCenter: LocalGuidanceSource = {
+  label: 'City of Vallejo — Central Permit Center',
+  url: 'https://www.vallejo.gov/online_services/central_permit_center',
+  verifiedAt: verified20260923,
+  scope: 'Permit applications through eTRAKiT; a Symbium permit search is embedded on the page; no solar-specific route described.',
+};
+
+const longBeachSolar: LocalGuidanceSource = {
+  label: 'City of Long Beach — Solar Photovoltaic (PV) Process',
+  url: 'https://longbeach.gov/lbcd/building/permit-center/solar-permit/',
+  verifiedAt: verified20260923,
+  scope: 'Residential process: contact SCE for conceptual approval, review IB-023, apply and pay through the online permitting portal, then schedule inspections. More complex projects may need more review.',
+};
+
+const longBeachIb023: LocalGuidanceSource = {
+  label: 'City of Long Beach — Information Bulletin IB-023 (Rev. 07-17-2024)',
+  url: 'https://longbeach.gov/globalassets/lbcd/media-library/documents/building--safety/information-bulletins/ib-023',
+  verifiedAt: verified20260923,
+  scope:
+    'Express electrical permit for flush-mounted rooftop PV up to 38.4 kW; total fee including surcharges, filing fees and required inspections: PV and ESS $447.45, PV without ESS $386.62, ESS only $264.95; historic districts need a Planning Permit or Certificate of Appropriateness; no fire review for one- and two-family dwellings; SCE is the utility for Long Beach.',
+};
+
+const santaAnaJune2026: LocalGuidanceSource = {
+  label: 'City of Santa Ana — Upcoming Changes to the Residential Solar Permit Requirement (effective June 1, 2026)',
+  url: 'https://www.santa-ana.org/upcoming-changes-to-the-residential-solar-permit-requirement-effective-june-1st-2026/',
+  verifiedAt: verified20260923,
+  scope: 'From June 1, 2026 all residential solar projects are permitted only on SolarAPP+ approval; projects without it are not processed.',
+};
+
+const santaAnaFees: LocalGuidanceSource = {
+  label: 'City of Santa Ana — Does SolarAPP+ collect fees and will the City be charging fees?',
+  url: 'https://santa-ana.gov/question/does-solarapp-collect-fees-and-will-the-city-be-charging-fees',
+  verifiedAt: verified20260923,
+  scope: 'SolarAPP+ collects a one-time fee of $35.00; the City application fee is separate and the same as a regular solar permit.',
+};
+
+const santaAnaStreamlined: LocalGuidanceSource = {
+  label: 'City of Santa Ana — Streamlined Residential Solar Plan Check and Permitting',
+  url: 'https://santa-ana.gov/city-of-santa-ana-streamlined-residential-solar-plan-check-and-permitting',
+  verifiedAt: verified20260923,
+  scope: 'All solar applications require a homeowner letter of authorization (signed property owner approval per SB 1222 and AB 2188).',
+};
+
+const ocpaMembers: LocalGuidanceSource = {
+  label: 'Orange County Power Authority — home page (member communities)',
+  url: 'https://www.ocpower.org/',
+  verifiedAt: verified20260923,
+  scope: 'Lists Buena Park, Fullerton, Irvine and Fountain Valley as member communities.',
+};
+
+const cecCcaLayer: LocalGuidanceSource = {
+  label: 'California Energy Commission — Electric Load Serving Entities (Other) layer (CCA territories)',
+  url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-other/about',
+  verifiedAt: verified20260923,
+  scope: 'Queried against the Census place boundary; the layer data was last edited in August 2025 and is a map, not an enrollment record.',
+};
+
+const edcSolar: LocalGuidanceSource = {
+  label: 'County of El Dorado — Instantaneous Residential Solar Permits',
+  url: 'https://www.eldoradocounty.ca.gov/Land-Use/Building-Services/Building-Services-Hub/Residential-Solar-Permits',
+  verifiedAt: verified20260923,
+  scope:
+    'Symbium automated permits for residential parcels in unincorporated El Dorado County; excludes airport review zones, flood zones and parcels needing eligibility review (in-person submission at one of two offices); service charge not stated; processing about 1-3 business days.',
+};
+
+const pioneerAbout: LocalGuidanceSource = {
+  label: 'Pioneer Community Energy — About Us',
+  url: 'https://pioneercommunityenergy.org/about-us/',
+  verifiedAt: verified20260923,
+  scope: 'Serves Auburn, Colfax, Lincoln, Rocklin, Loomis, most of unincorporated Placer County, most of unincorporated El Dorado County, Placerville, and since 2024 Grass Valley and Nevada City.',
+};
+
+const pioneerSolar: LocalGuidanceSource = {
+  label: 'Pioneer Community Energy — Going Solar With Pioneer',
+  url: 'https://pioneercommunityenergy.org/going-solar-with-pioneer/',
+  verifiedAt: verified20260923,
+  scope: 'Pays $0.005 per kWh more than PG&E for over-production; monthly billing with credits rolling to the annual true-up; net surplus cashed out in the March/April billing cycle; check at $50 or more, bill credit below.',
+};
+
 export const LOCAL_PROJECT_GUIDANCE = {
   temecula: {
     city: 'Temecula',
@@ -1535,6 +1623,141 @@ export const LOCAL_PROJECT_GUIDANCE = {
       { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing and net metering differ' },
     ],
     sources: [anaheimNem, cecSb379],
+  },
+  vallejo: {
+    city: 'Vallejo',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      'Vallejo publishes its solar permit fees, and part of the city lies outside PG&E territory. Settle which utility serves the address before comparing any bill model.',
+    quoteQuestions: [
+      "Which utility bills the address? The CEC's map puts part of Vallejo in the City of Pittsburg's electric territory rather than PG&E's.",
+      'Is the system over 15 kW? Vallejo adds $54.28 for each kW above that.',
+      "Does the savings estimate include MCE's export and bonus credits along with PG&E's delivery charges?",
+    ],
+    localChecks: [
+      {
+        title: 'Published fees',
+        body: "Vallejo's 2025-2026 schedule lists $138 for residential solar plan review and $312 for a permit up to 15 kW, and says its solar fees stay within the state's $450 limit before the City's $38 permit issuance fee.",
+      },
+      {
+        title: 'Symbium, by the state’s record',
+        body: "The City takes permit applications through eTRAKiT and embeds Symbium's tool on its permit center page; the CEC's SB 379 data lists Vallejo's platform as Symbium. Ask the installer which route it will file.",
+      },
+      {
+        title: "MCE's bonus credits",
+        body: 'MCE adds 10 percent to each billing period’s export credits, pays qualifying CARE and FERA households $0.05 per kWh more, offers $10 to $20 a month for enrolled batteries, and cashes out surplus over $200 after each April-to-March year, up to $5,000.',
+      },
+    ],
+    related: [
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [vallejoFees, vallejoPermitCenter, cecSb379, mceSolarBilling, cecTerritory0923],
+  },
+  'long-beach': {
+    city: 'Long Beach',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      'Long Beach publishes one all-in express permit price for a standard rooftop system, inspections included, so the permit line in a quote is easy to check.',
+    quoteQuestions: [
+      'Is the system flush-mounted on the roof and 38.4 kW or smaller, so it qualifies for the express permit?',
+      'Is a battery included? The express fee is $447.45 with one and $386.62 without.',
+      "Has the installer asked SCE for conceptual approval, the first step on the City's list?",
+    ],
+    localChecks: [
+      {
+        title: 'One fee covers the inspections',
+        body: "Long Beach's IB-023 says the express permit fee includes all surcharges, filing fees and required inspections, and is collected when the permit issues. Extra fees apply only if the project needs planning, electrical or building review.",
+      },
+      {
+        title: 'Historic districts add a review',
+        body: 'A home in a historic district or on a qualified historical building also needs a Planning Permit or Certificate of Appropriateness, which brings planning review.',
+      },
+      {
+        title: 'No fire review for houses',
+        body: 'Fire review is not required for one- and two-family dwellings; the City requires it for multifamily and nonresidential buildings.',
+      },
+      {
+        title: 'SCE on both lines of the bill',
+        body: "The City's bulletin names SCE as the utility for Long Beach, and SCE's list of community choice aggregators does not include Long Beach, so SCE normally supplies generation as well as delivery.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/los-angeles-county', label: 'Los Angeles County bill guide' },
+      { href: '/blog/sce-time-of-use-rates-2026', label: 'Check SCE time-of-use periods' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+    ],
+    sources: [longBeachSolar, longBeachIb023, sceCcaList, cecSb379],
+  },
+  'santa-ana': {
+    city: 'Santa Ana',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      'Santa Ana now issues home solar permits only through SolarAPP+, and wants the owner’s signed authorization with every application.',
+    quoteQuestions: [
+      'Has the design been approved in SolarAPP+? Since June 1, 2026 Santa Ana does not process residential solar permits without it.',
+      "Does the application include your signed letter authorizing the installation, which the City requires?",
+      "Does the savings estimate use SCE's generation and delivery rates from your own bill?",
+    ],
+    localChecks: [
+      {
+        title: 'SolarAPP+ only, since June 2026',
+        body: 'From June 1, 2026, Santa Ana issues residential solar permits only after SolarAPP+ approval, and says projects without it will not be processed.',
+      },
+      {
+        title: 'Two fees, one of them unstated',
+        body: 'The City says SolarAPP+ collects a one-time $35.00 fee and that its own application fee is separate and the same as for a regular solar permit, but its solar pages do not state that amount.',
+      },
+      {
+        title: 'Owner authorization is required',
+        body: "The City's streamlined solar page requires a homeowner letter of authorization for the installation with every solar application.",
+      },
+      {
+        title: 'SCE supplies generation',
+        body: "Santa Ana is not on SCE's list of community choice aggregator cities, and Orange County Power Authority's member list names Buena Park, Fullerton, Irvine and Fountain Valley, so SCE normally supplies generation as well as delivery.",
+      },
+    ],
+    related: [
+      { href: '/solar-savings/orange-county', label: 'Orange County bill guide' },
+      { href: '/blog/sce-time-of-use-rates-2026', label: 'Check SCE time-of-use periods' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [santaAnaJune2026, santaAnaFees, santaAnaStreamlined, sceCcaList, ocpaMembers],
+  },
+  'el-dorado-hills': {
+    city: 'El Dorado Hills',
+    actionIds: ['T2-CITYCOST'],
+    intro:
+      'El Dorado Hills is unincorporated, so El Dorado County, not a city, permits its solar, and the County keeps some parcels off its instant permit.',
+    quoteQuestions: [
+      "Is the parcel in an airport review zone or a flood zone, or flagged for eligibility review? The County's instant permit excludes all three.",
+      "Does the quote include the Symbium service charge and the County's permit fee, neither of which the County's page states?",
+      "Does the savings estimate use Pioneer Community Energy's export credit and its spring cash-out?",
+    ],
+    localChecks: [
+      {
+        title: 'A County permit in one to three days',
+        body: 'El Dorado County issues residential solar permits through Symbium and says processing takes about one to three business days. Excluded parcels submit in person at one of its two offices.',
+      },
+      {
+        title: 'Pioneer pays a little more for exports',
+        body: 'Pioneer Community Energy says it pays half a cent per kWh more than PG&E for over-production, bills monthly with credits rolling to the annual true-up, cashes out net surplus in the March or April billing cycle, and mails a check at $50 or more.',
+      },
+      {
+        title: 'Most, not all, of the county',
+        body: "Pioneer says it serves most of unincorporated El Dorado County, and the CEC's service layers put nearly all of El Dorado Hills inside it. Check the generation line on your own bill.",
+      },
+    ],
+    related: [
+      { href: '/blog/pge-time-of-use-rates-2026', label: 'Check PG&E time-of-use periods' },
+      { href: '/blog/net-billing-vs-net-metering-california', label: 'How net billing credits exports' },
+      { href: '/blog/is-my-roof-good-for-solar-california', label: 'Check the roof before solar' },
+      { href: '/battery/home-battery-cost-california', label: 'Price battery scope separately' },
+    ],
+    sources: [edcSolar, pioneerAbout, pioneerSolar, cecCcaLayer],
   },
 } as const satisfies Record<string, LocalProjectGuidanceEntry>;
 
