@@ -493,7 +493,7 @@ export default function SolarRebatesByCAUtility() {
           </p>
           <ul className="mt-3 list-disc space-y-3 pl-5">
             <li>
-              <strong>Clean Power Alliance (Los Angeles and Ventura counties).</strong> The Sun
+              <strong>Clean Power Alliance.</strong> The Sun
               Storage Rebate pays $2,000 for an eligible battery, $1,250 more in Public Safety
               Power Shutoff areas, and $250 more for Medical Baseline or for CARE or FERA
               customers (not both), up to $3,500. It is &ldquo;first-come first-served&rdquo;

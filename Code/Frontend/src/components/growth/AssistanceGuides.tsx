@@ -66,6 +66,9 @@ const liwpFactSheet =
   "https://www.csd.ca.gov/Shared%20Documents/LIWP-Fact-Sheet.pdf";
 const liwpProgramPage =
   "https://www.csd.ca.gov/Pages/Low-Income-Weatherization-Program.aspx";
+// 2026-09-23 Tier 3 (claude/t3-misc-20260923): the CPUC's low-income solar
+// page, for the low-income FAQ entry on kind === 'free'.
+const cpucLowIncomeSolar = "https://www.cpuc.ca.gov/solarguide/lowincomesolar";
 const definitions = {
   options: {
     path: "/blog/solar-tax-credit-expired-2026-options",
@@ -452,6 +455,10 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               {
                 label: "CSD: Low-Income Weatherization Program page",
                 url: liwpProgramPage,
+              },
+              {
+                label: "CPUC: Low Income Solar Programs (checked 2026-09-23)",
+                url: cpucLowIncomeSolar,
               },
               {
                 label:
@@ -1296,6 +1303,30 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
                   requirement — you must be a PG&amp;E customer — to describe
                   a state program PG&amp;E does not run. (Verified
                   2026-09-22.)
+                </p>
+              </div>
+              <div>
+                <h3>Are there free solar panels for low-income families in California?</h3>
+                <p>
+                  A few, all run by government programs rather than companies.
+                  The CPUC&rsquo;s low-income solar page lists DAC-SASH, which
+                  gives income-qualified homeowners in disadvantaged communities
+                  &ldquo;no-cost rooftop solar installations&rdquo; and was
+                  &ldquo;currently accepting applications&rdquo;; a Farmworker
+                  Housing program that installs efficiency measures and solar
+                  &ldquo;at no cost&rdquo; for eligible farmworker households in
+                  the 18 counties with the most farmworkers; and SGIP incentives
+                  for low-income customers who pair solar with a battery (
+                  <a href={cpucLowIncomeSolar} className={link}>
+                    CPUC
+                  </a>
+                  , checked 2026-09-23). Households that cannot put panels on the
+                  roof may qualify for a 20% bill discount instead; see{" "}
+                  <Link href="/blog/solar-discount" className={link}>
+                    solar discount programs by utility
+                  </Link>
+                  . A company selling &ldquo;free solar for low-income
+                  families&rdquo; is not one of these programs.
                 </p>
               </div>
               <div>

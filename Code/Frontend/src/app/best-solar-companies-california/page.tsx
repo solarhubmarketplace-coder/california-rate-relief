@@ -18,6 +18,19 @@
 // section that hands off to /commercial-solar, and a SolarCity FAQ (SEC 8-K).
 // The "accredited solar installers" and "solar city california" rows fold in
 // here instead of getting their own URLs. All fetched 2026-09-23.
+//
+// Tier 3 (claude/t3-misc-20260923): 26 small rows were assigned to this hub as
+// FAQ entries. The ones a homeowner actually asks are answered in five FAQ
+// entries (what installation involves, who designs the system, the CPUC
+// consumer guide, the fees that come with solar, and what warranties to ask
+// about, which is the "garantia solar" query). Rows about other subjects went
+// to the page that owns them (duck curve, cancellation, net billing, ground
+// mounts, the PG&E calculator, buy vs lease); brand names of small installers,
+// outdoor-lighting products and "solar w" were skipped. The Tier 2 link requests
+// from the city-pages lane add a "Counties and regions" group to the directory
+// and a sentence linking each region page. Sources fetched 2026-09-23: CPUC
+// (consumer guide page and "questions to ask"), PG&E (solar bill), SCE (CARE and
+// FERA).
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
@@ -78,6 +91,10 @@ const CSLB_C39 =
 const NABCEP_CERTS = 'https://www.nabcep.org/certifications/nabcep-board-certifications/';
 const NABCEP_RECERT = 'https://www.nabcep.org/recertification-renewal/';
 const NABCEP_ACCREDITED = 'https://www.nabcep.org/accredited/';
+const CPUC_SOLARGUIDE_QUESTIONS = 'https://www.cpuc.ca.gov/solarguide/';
+const PGE_SOLAR_BILL =
+  'https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html';
+const SCE_CARE_FERA = 'https://www.sce.com/save-money/income-qualified-programs/care-fera';
 const BBB_STANDARDS = 'https://www.bbb.org/bbb-accreditation-standards';
 const CFPB_SOLAR =
   'https://www.consumerfinance.gov/data-research/research-reports/issue-spotlight-solar-financing/';
@@ -113,6 +130,9 @@ const sources: Source[] = [
   { label: 'CFPB: Issue Spotlight, Solar Financing (August 7, 2024)', url: CFPB_SOLAR },
   { label: 'SEC: SolarCity Corporation Form 8-K on completion of the Tesla merger (November 21, 2016)', url: SEC_SOLARCITY_8K },
   { label: 'Tesla support: account access for former SolarCity customers', url: TESLA_SOLARCITY_ACCOUNT },
+  { label: 'CPUC: Solar consumer guide hub and questions to ask a solar provider', url: CPUC_SOLARGUIDE_QUESTIONS },
+  { label: 'PG&E: how solar customers are billed (Base Services Charge)', url: PGE_SOLAR_BILL },
+  { label: 'SCE: CARE and FERA (discounts and Base Services Charge)', url: SCE_CARE_FERA },
 ];
 
 // ---------------------------------------------------------------------------
@@ -123,6 +143,19 @@ const sources: Source[] = [
 // ---------------------------------------------------------------------------
 type CityRef = [slug: string, name: string];
 const REGIONS: { heading: string; cities: CityRef[] }[] = [
+  {
+    // Tier 3: region and county pages (t2-citycos link requests). Listed first
+    // so they no longer fall into "More California cities".
+    heading: 'Counties and regions',
+    cities: [
+      ['bay-area', 'Bay Area'],
+      ['san-mateo-county', 'San Mateo County'],
+      ['orange-county', 'Orange County'],
+      ['riverside-county', 'Riverside County'],
+      ['high-desert', 'High Desert'],
+      ['kern-county', 'Kern County'],
+    ],
+  },
   {
     heading: 'Los Angeles County',
     cities: [
@@ -361,6 +394,31 @@ const faqs: FaqJsonLdItem[] = [
       'Tesla bought it. SolarCity’s SEC filing states that on November 21, 2016 it became a wholly owned subsidiary of Tesla. Tesla’s support pages tell former SolarCity customers to sign in with a Tesla Account, which lease and PPA customers use to pay their bills. For service, cost and warranty on a system sold today, read the Tesla Solar review. If you meant California City, the Kern County town, see its solar cost guide.',
   },
   {
+    question: 'What does getting solar installed in California involve?',
+    answer:
+      'Six steps, in order: compare at least three bids; sign a contract, which has to carry the solar disclosure document on its front page and gives you at least three business days to cancel (five if you are 65 or older); a site visit and final design; a building permit from your city or county; installation and inspection; and written approval from your electricity provider to turn the system on. The CPUC suggests asking each company when it will start and finish and roughly how long the utility’s approval will take after installation.',
+  },
+  {
+    question: 'Who designs a home solar system in California?',
+    answer:
+      'The contractor you sign with is responsible for the design, whether its own staff or an outside design firm draws the plans, and its license is on the contract. The design becomes the plan set your city or county reviews for the permit and the drawings the utility reviews before it approves the connection. Ask for the plan set and the production estimate it is based on, and check that the panel count and inverter match the contract.',
+  },
+  {
+    question: 'What is the California Solar Consumer Protection Guide?',
+    answer:
+      'A CPUC document that explains your rights and the questions to ask before you sign; version 4 was published in 2025. Solar providers applying to interconnect residential customers of PG&E, SCE, SDG&E, Bear Valley Electric Service, PacifiCorp and Liberty must collect the customer’s initials and signature on it, and the CPUC says customers must be given time to read it before signing.',
+  },
+  {
+    question: 'What fees come with going solar in California?',
+    answer:
+      'Beyond the system price, expect four kinds. Financing can carry a dealer fee built into the loan price. Permit fees and any utility interconnection charge should appear as their own lines in the bid. And the monthly utility bill does not go away: PG&E’s Base Services Charge, about $24 a month for most customers from March 2026, cannot be offset by solar generation credits, and SCE lists about $6 a month for CARE customers and about $12 for FERA. Ask every bidder to show these lines separately.',
+  },
+  {
+    question: 'What warranties should a solar system in California come with? (¿Qué garantía debe tener?)',
+    answer:
+      'Ask about three, as the CPUC’s questions for solar providers do: warranties on the panels and inverters, including how long they last and whom you contact for a replacement; a warranty on the labor and construction; and, for a lease or PPA, any minimum energy guarantee and how you are compensated if the system produces less than the contract promises. Also ask whether an insurance policy comes with the system or whether you need to add it to your homeowner’s policy. Get every warranty in writing, with the name of the company that stands behind it.',
+  },
+  {
     question: 'Is California Rate Relief a solar company?',
     answer:
       'No. California Rate Relief is a referral service. We are not a licensed contractor. The company that designs, sells and installs your system is the one whose license belongs on the contract, and that license is the one to check.',
@@ -449,6 +507,33 @@ export default function BestSolarCompaniesCalifornia() {
           ))}
         </div>
         <p className="mt-6">
+          Searching by county or region instead of a city? Start with{' '}
+          <Link href="/solar-companies/orange-county" className={link}>
+            Orange County solar companies by city
+          </Link>
+          ,{' '}
+          <Link href="/solar-companies/bay-area" className={link}>
+            Bay Area solar companies
+          </Link>
+          ,{' '}
+          <Link href="/solar-companies/san-mateo-county" className={link}>
+            San Mateo County solar companies
+          </Link>
+          ,{' '}
+          <Link href="/solar-companies/riverside-county" className={link}>
+            Riverside County, where the utility changes by city
+          </Link>
+          ,{' '}
+          <Link href="/solar-companies/high-desert" className={link}>
+            High Desert solar companies
+          </Link>{' '}
+          or{' '}
+          <Link href="/solar-companies/kern-county" className={link}>
+            Kern County: PG&amp;E and SCE areas
+          </Link>
+          .
+        </p>
+        <p className="mt-3">
           Want the price side first? The{' '}
           <Link href="/solar-cost" className={link}>
             solar cost guides by city

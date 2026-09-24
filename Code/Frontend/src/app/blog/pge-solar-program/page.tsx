@@ -33,6 +33,11 @@ const S = {
   cpucGuide:
     'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide',
   sgipTracker: 'https://www.selfgenca.com/home/program_metrics/',
+  // 2026-09-23 Tier 3 (claude/t3-misc-20260923): sources for the added FAQs.
+  pgeCalc: 'https://www.pge.com/en/clean-energy/clean-energy-calculator.html',
+  pgeFinancing:
+    'https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/financing-options-for-solar.html',
+  pgeAssistance: 'https://www.pge.com/en/account/billing-and-assistance/financial-assistance.html',
 } as const;
 
 const sources: Source[] = [
@@ -46,6 +51,9 @@ const sources: Source[] = [
   { label: 'CPUC: Solar in Disadvantaged Communities (DAC-SASH, DAC-GT, CSGT)', url: S.cpucDac },
   { label: 'CPUC: California Solar Consumer Protection Guide', url: S.cpucGuide },
   { label: 'SGIP program tracker (category status by administrator)', url: S.sgipTracker },
+  { label: 'PG&E: Clean Energy Calculator', url: S.pgeCalc },
+  { label: 'PG&E: Financing options for solar (estimate link)', url: S.pgeFinancing },
+  { label: 'PG&E: Financial assistance programs', url: S.pgeAssistance },
 ];
 
 const metaTitle = 'PG&E Solar Programs in 2026: What Is Open and What Is Not';
@@ -88,6 +96,22 @@ const faqs: FaqJsonLdItem[] = [
     question: 'Does PG&E have a solar battery program?',
     answer:
       'For home batteries, the state money is SGIP, which PG&E administers in its territory; most residential categories were closed or waitlisted on September 23, 2026. PG&E’s Generator and Battery Rebate is different: up to $300 toward a portable generator or a 290 to 1,000 Wh portable battery for customers in high fire-risk areas, plus up to $200 more for CARE or FERA customers.',
+  },
+  // 2026-09-23 Tier 3 (claude/t3-misc-20260923): three small PG&E questions.
+  {
+    question: 'Does PG&E have a solar estimator?',
+    answer:
+      'Yes, inside your account. PG&E’s Clean Energy Calculator uses your household’s past 12 months of energy usage to estimate product and installation costs, break-even points, available incentives and how your bill could change, for solar, battery storage and EV chargers among other upgrades. You need a PG&E online account; it is under the Usage and rates menu. Treat its result as a check on a quote, not a quote.',
+  },
+  {
+    question: 'Does PG&E own or rent rooftop solar on homes?',
+    answer:
+      'Not through any program on its solar pages. PG&E’s incentives page lists SOMAH, DAC-SASH and SGIP, all run under state rules, and its programs for customers without panels, Green Saver and Solar Choice, use solar built elsewhere. An offer described as a PG&E-owned system on your roof deserves a written explanation of who will own it.',
+  },
+  {
+    question: 'What PG&E programs help with the electric bill?',
+    answer:
+      'PG&E lists CARE (35% or more off electricity for income-qualified households), FERA (18%), Medical Baseline, and help with past-due bills: REACH, up to $800 if you have a disconnection notice; LIHEAP, up to $1,000; Match My Payment, up to $1,000; and the Arrearage Management Plan, up to $8,000 in debt forgiveness. It also offers payment arrangements, Budget Billing and Energy Savings Assistance home upgrades. None of these depends on having solar.',
   },
   {
     question: 'Can I keep my PG&E bill discounts if I go solar?',
@@ -270,6 +294,10 @@ export default function PgeSolarProgramPage() {
             <Link className={link} href="/blog/pge-solar-calculator">
               the PG&amp;E solar calculator guide
             </Link>
+            . If the bill itself is the problem, PG&amp;E&rsquo;s assistance programs are in{' '}
+            <Link className={link} href="/blog/help-with-pge-bill">
+              help paying your PG&amp;E bill
+            </Link>
             .
           </p>
         </section>
@@ -292,7 +320,12 @@ export default function PgeSolarProgramPage() {
               CPUC
             </a>
             ). PG&amp;E calls these Energy Export Bonus Credits and says the credit value is set
-            when your system receives permission to operate.
+            when your system receives permission to operate. How the monthly statements and the
+            True-Up fit together is in{' '}
+            <Link className={link} href="/blog/pge-solar-billing-plan">
+              how the Solar Billing Plan bills you
+            </Link>
+            .
           </p>
           <p className="mt-3">
             One charge solar cannot cancel: PG&amp;E&rsquo;s monthly Base Services Charge,
