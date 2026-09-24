@@ -1,5 +1,6 @@
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import type { Metadata } from 'next';
 import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import Link from 'next/link';
@@ -10,39 +11,117 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { KeyFacts } from '@/components/trust/KeyFacts';
+import { FaqBlock } from '@/components/trust/FaqBlock';
+import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
+import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
 
-const metaTitle = "Sunlux Solar Reviews (2026): 25-Year Warranty, CSLB Check";
+// 2026-09-23 (Tier 2): upgraded for "is sunlux legit". The old H1 called
+// Sunlux "one of SoCal's higher-rated regional installers" while the body said
+// no rating had been checked; it now reports the BBB file and the federal
+// docket search, both dated. Removed as unsourced: the county coverage list,
+// Panasonic / SolarEdge / LG equipment, the "3 to 6 months" timeline, the
+// "2-4 week" warranty response, and a complaint list with no source.
+// The "Our take" block is left as it was (an editorial decision for Chad).
+// No Review/Rating JSON-LD: Google's review-snippet rules require ratings for
+// a business to come from users, and this site collects none
+// (developers.google.com/search/docs/appearance/structured-data/review-snippet).
+
+const path = '/solar-installers/sunlux-solar-review';
+const checked = '2026-09-23';
+const sep22 = '2026-09-22';
+
+const metaTitle = 'Sunlux Solar Reviews (2026): Is Sunlux Legit? BBB, License';
 const metaDescription =
-  "Sunlux's warranty page covers panels, inverter and racking for 25 years. No CSLB number appears on its site (Sept. 2026). What to confirm before signing.";
+  'Is Sunlux legit? Sunlux of Corona has a BBB A+ with 7 complaints in 3 years and no federal court cases (Sept. 23, 2026). What to check before you sign.';
 
 export const metadata: Metadata = {
   title: metaTitle,
   description: metaDescription,
-  alternates: { canonical: '/solar-installers/sunlux-solar-review' },
+  alternates: { canonical: path },
   openGraph: {
     title: metaTitle,
     description: metaDescription,
     type: 'article',
-    url: 'https://ratereliefca.com/solar-installers/sunlux-solar-review',
+    url: `https://ratereliefca.com${path}`,
     images: [CRR_SOCIAL_CARD],
   },
   twitter: crrTwitter(metaTitle, metaDescription),
 };
 
 const articleSchema = {
-  '@context': 'https://schema.org', '@type': 'Article',
-  headline: "Sunlux Solar Review 2026: One of SoCal's Higher-Rated Regional Installers",
-  datePublished: '2026-04-24', dateModified: '2026-09-22',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/sunlux-solar-review' },
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Sunlux Solar Reviews (2026): Is Sunlux Legit?',
+  description: metaDescription,
+  datePublished: '2026-04-24',
+  dateModified: checked,
+  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'California Rate Relief Program',
+    url: 'https://ratereliefca.com',
+    logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
+  },
+  mainEntityOfPage: { '@type': 'WebPage', '@id': `https://ratereliefca.com${path}` },
 };
 
-// No Review/Rating JSON-LD here: Google's review-snippet rules require
-// ratings for a local business or organization to come directly from users,
-// not from editors, and this site does not collect user ratings
-// (developers.google.com/search/docs/appearance/structured-data/review-snippet,
-// fetched 2026-09-23).
+const SRC = {
+  bbb: 'https://www.bbb.org/us/ca/ontario/profile/solar-energy-design/sunlux-energy-1066-89087902',
+  bbbComplaints: 'https://www.bbb.org/us/ca/ontario/profile/solar-energy-design/sunlux-energy-1066-89087902/complaints',
+  cl: 'https://www.courtlistener.com/?type=r&party_name=Sunlux',
+  site: 'https://sunlux.com/',
+  warranty: 'https://sunlux.com/solar-warranty/',
+  cslb: 'https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx',
+  irs: 'https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb',
+};
+
+const sources: ReviewSource[] = [
+  { name: 'Better Business Bureau — Sunlux (Corona, CA) profile', url: SRC.bbb, supports: 'A+ rating; not accredited; business started January 29, 2015; corporation; 2410 Wardlow Rd, Corona', checked },
+  { name: 'Better Business Bureau — Sunlux complaints', url: SRC.bbbComplaints, supports: '7 complaints in three years (4 service or repair, 3 order); 6 answered, 1 resolved; the three most recent complaints, August 2024 to February 2025', checked },
+  { name: 'CourtListener — federal dockets, party name “Sunlux”', url: SRC.cl, supports: 'No dockets returned', checked },
+  { name: 'Sunlux — homepage', url: SRC.site, supports: 'Southern California and Central Texas; more than 7,000 installations claimed; Tesla Powerwall 3, EV charging and electrical work; financing and ownership options; testimonial saying no third-party installers', checked },
+  { name: 'Sunlux — Solar warranty', url: SRC.warranty, supports: '“Every hardware component — including the solar panels, inverter and racking — is completely covered for 25 years”; 24/7 monitoring; tech support line', checked: sep22 },
+  { name: 'CSLB — Check a license or HIS registration', url: SRC.cslb, supports: 'Where to search a contractor by name or license number', checked },
+  { name: 'IRS — FAQs on Public Law 119-21 changes to 25D', url: SRC.irs, supports: 'No residential clean energy credit for expenditures made after December 31, 2025', checked },
+];
+
+const faqs = [
+  {
+    question: 'Is Sunlux legit?',
+    answer:
+      'It is a real, operating installer. The Better Business Bureau lists Sunlux in Corona, California as a corporation in business since January 29, 2015, with an A+ rating and 7 complaints in three years, and a search of federal court dockets on September 23, 2026 returned no cases naming it. That makes it a legitimate business; whether it is the right one for you depends on its license, the contract and how its service works in your area.',
+  },
+  {
+    question: 'What do Sunlux complaints say?',
+    answer:
+      'Its BBB file had 7 complaints in three years: 4 service or repair issues and 3 order issues, with 6 answered and 1 resolved. The three most recent, from August 2024 to February 2025, describe a two-month wait for an inverter replacement, a production-guarantee payment the customer said was six months late, and a system that the customer said underproduced for over a year.',
+  },
+  {
+    question: 'Is Sunlux Energy Inc. the same as Sunlux solar?',
+    answer:
+      'The company’s site refers to itself as Sunlux and Sunlux Energy, and the BBB lists the business as Sunlux, a corporation at 2410 Wardlow Rd in Corona. Before you sign, match the exact business name on your contract to a license in the CSLB lookup.',
+  },
+  {
+    question: 'Where does Sunlux work?',
+    answer:
+      'Its homepage says it serves Southern California and Central Texas and mentions working with Southern California Edison and SDG&E customers. Confirm your ZIP code on the first call.',
+  },
+  {
+    question: 'Does Sunlux offer leases or only purchases?',
+    answer:
+      'Its homepage mentions ownership and financing options arranged with third-party partners, and testimonials describe both financed and cash purchases. No page we reached names a lender, rate or term. Ask whether your offer is a purchase, a loan or a lease, because that decides who owns the system and what happens when you sell.',
+  },
+  {
+    question: 'What panels and batteries does Sunlux install?',
+    answer:
+      'Its site does not name a panel brand; it features the Tesla Powerwall 3 for batteries, plus EV charging and electrical work such as panel upgrades. Require the make and model of every component in the contract.',
+  },
+];
+
+const h2 = 'text-2xl font-bold text-foreground mt-10 mb-4';
+const p = 'text-foreground/80 leading-relaxed mb-6';
+const a = 'text-primary underline';
 
 export default function SunluxReview() {
   return (
@@ -53,160 +132,187 @@ export default function SunluxReview() {
         <div className='container mx-auto px-4'>
           <article className='max-w-3xl mx-auto'>
             <nav className='mb-8 text-sm text-muted-foreground flex items-center gap-2 flex-wrap'>
-              <Link href='/' className='hover:text-primary'>Home</Link><span>/</span>
-              <Link href='/best-solar-companies-california' className='hover:text-primary'>Best Solar Companies in California</Link><span>/</span>
+              <Link href='/' className='hover:text-primary transition-colors'>Home</Link>
+              <span>/</span>
+              <Link href='/solar-installers' className='hover:text-primary transition-colors'>Solar company reviews</Link>
+              <span>/</span>
               <span className='text-foreground font-medium'>Sunlux Solar Review</span>
             </nav>
 
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Sunlux Solar Reviews (2026): One of SoCal&apos;s Higher-Rated Regional Installers
+                Sunlux Solar Reviews (2026): Is Sunlux Legit?
               </h1>
-              
-              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
-<div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-22'>Updated September 22, 2026</time></div>
-                <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>8 min read</span></div>
+              <LastReviewedStamp date={checked} variant='reviewed' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <div className='flex items-center gap-4 text-sm text-muted-foreground'>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime={checked}>Updated September 23, 2026</time></div>
+                <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>7 min read</span></div>
               </div>
             </header>
 
             <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p><p className='text-3xl font-extrabold text-foreground mt-1'>4.4 <span className='text-lg text-muted-foreground'>/ 5</span></p></div>
-              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p><p className='text-sm text-foreground font-medium mt-1'>SoCal cash or loan buyers who want a regional installer with a published 25-year hardware warranty</p></div>
-              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>You need a locked install-by date, permitting and activation delays are the main complaint</p></div>
+              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p><p className='text-sm text-foreground font-medium mt-1'>Southern California buyers who want a regional installer with a published 25-year hardware warranty</p></div>
+              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>You need fast warranty service: 4 of its 7 BBB complaints in three years were service or repair issues</p></div>
             </div>
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Sunlux is a Southern California solar installer that also works in Texas. It emphasizes cash and loan ownership, and its warranty page promises 25 years of coverage on panels, inverter and racking. We did not verify its install count or its Google, Yelp or BBB ratings for this update, so check those yourself. The sections below separate what Sunlux publishes from what you should confirm in writing.
+                Yes, Sunlux is a real, operating Southern California installer. The Better Business Bureau lists Sunlux
+                in Corona as a corporation in business since January 29, 2015, with an A+ rating and 7 complaints in three
+                years; it is not BBB accredited. A search of federal court dockets on September 23, 2026 returned no cases
+                naming it. Legit is the first test, not the last.
+              </p>
+              <p className={p}>
+                This review sets out what the BBB file and the court record show, what Sunlux publishes about itself, and
+                what to confirm in writing before you sign. It does not rank Sunlux against other installers.
               </p>
 
-              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
-              <div className='not-prose my-8'>
-                <HeroQuickCheck topic="Sunlux Solar review and quote comparison" />
+              <div className='not-prose'>
+                <KeyFacts
+                  sourcesHref='#sources'
+                  facts={[
+                    { label: 'BBB rating', value: 'A+', note: 'Not accredited; in business since Jan. 29, 2015', source: { url: SRC.bbb, date: checked } },
+                    { label: 'BBB complaints, last 3 years', value: '7', note: '4 service or repair, 3 order', source: { url: SRC.bbbComplaints, date: checked } },
+                    { label: 'Federal dockets naming Sunlux', value: '0', note: 'Party-name search, CourtListener', source: { url: SRC.cl, date: checked } },
+                    { label: 'Hardware warranty', value: '25 years', note: 'Panels, inverter and racking, per Sunlux', source: { url: SRC.warranty, date: sep22 } },
+                  ]}
+                />
               </div>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Footprint and Profile</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunlux is a privately held regional installer focused on Southern California and Texas. The company uses its own installation crews rather than subcontracting — one of the key differentiators from Palmetto and similar national dealer-network brands. California coverage is strongest in Orange County, LA, Inland Empire, and San Diego County; confirm serviceability for more remote parts of the state.
+              <div className='not-prose my-8'>
+                <HeroQuickCheck topic='Sunlux Solar review and quote comparison' />
+              </div>
+
+              <h2 className={h2}>Is Sunlux legit? What the record shows</h2>
+              <p className={p}>
+                The BBB profile lists the business as Sunlux, a corporation at 2410 Wardlow Road in Corona, started on
+                January 29, 2015, rated A+ and not BBB accredited. It shows no license number, and it reminds readers that
+                the trade may require licensing, which is a prompt to check CSLB yourself.<Cite href={SRC.bbb} date={checked} />
+              </p>
+              <p className={p}>
+                The complaint file is short. On September 23, 2026 it held 7 complaints in three years, 4 about service or
+                repairs and 3 about orders, with 6 answered and 1 resolved, and none closed in the last 12 months. The three
+                most recent describe a two-month wait for an inverter replacement after a system stopped reporting
+                (February 2025), a production-guarantee payment the customer said was more than six months late, to which
+                Sunlux replied that the check had been mailed (December 2024), and a system the customer said underproduced
+                for over a year (August 2024).<Cite href={SRC.bbbComplaints} date={checked} /> Seven complaints is a small
+                number, and the BBB does not adjust it for how many systems a company installs. The pattern, though, is
+                consistent: every one is about what happens after the system is on the roof.
+              </p>
+              <p className={p}>
+                A party-name search of federal court dockets on CourtListener returned no cases naming Sunlux.
+                <Cite href={SRC.cl} date={checked} /> That search does not cover California state courts or arbitration, so it
+                is a floor, not a clean bill.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Equipment and Installation</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunlux does not manufacture panels. The company installs quality Tier-1 options, Panasonic has been a frequent panel choice, with SolarEdge inverters and LG batteries mentioned in recent installs. Install-day is typically completed in one day. The full process from contract to Permission to Operate runs 3 to 6 months, in line with California industry average post-NEM 3.0.
+              <h2 className={h2}>What Sunlux says about itself</h2>
+              <p className={p}>
+                Sunlux’s homepage says it works in Southern California and Central Texas, claims more than 7,000
+                installations across its executive team’s experience, and lists Tesla Powerwall 3 batteries, EV charging and
+                electrical work such as panel upgrades and rewiring alongside solar. It mentions ownership and financing
+                options arranged with third-party partners, and one customer testimonial on the page says the company uses
+                no third-party installers.<Cite href={SRC.site} date={checked} /> Those are the company’s own statements and a
+                customer’s, not independent findings. Ask who will be on your roof, and get it in the contract.
+              </p>
+              <p className={p}>
+                People also search for “Sunlux Energy Inc.” The site uses both Sunlux and Sunlux Energy, and the BBB lists the
+                business simply as Sunlux. What matters is the exact business name on your contract and the license
+                behind it.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                We did not verify Sunlux&apos;s Google, Yelp or BBB ratings for this update. Ratings change, and a star average can hide the complaints that matter. Before you sign:
+              <h2 className={h2}>Warranty: the published terms</h2>
+              <p className={p}>
+                Sunlux’s warranty page states: “Every hardware component — including the solar panels, inverter and racking
+                — is completely covered for 25 years,” plus 24/7 system monitoring and a tech support line.
+                <Cite href={SRC.warranty} date={sep22} /> Not stated on the pages we reached: a numeric production guarantee,
+                a roof or leak warranty, a battery-specific term, or which purchase types the 25-year coverage applies to.
+                Given that every BBB complaint concerns service after installation, get the warranty document itself, not the
+                marketing page, and ask for the repair response commitment in writing.
+              </p>
+
+              <h2 className={h2}>Financing and selling the home</h2>
+              <p className={p}>
+                No page we reached names a lender, a rate, a term or a lease menu. Ask directly whether your offer is a cash
+                purchase, a loan or a lease, because that decides who owns the system, who can claim any tax credit and what
+                happens at resale. There is no federal residential credit on a system installed in 2026; the IRS says the credit
+                is not allowed for expenditures made after December 31, 2025.<Cite href={SRC.irs} date={checked} /> An owned system,
+                paid in cash, conveys with the house like any other improvement. A loan may have to be paid off or assumed
+                at closing, so ask the lender, and check whether it filed a UCC-1 notice. Our guide to{' '}
+                <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className={a}>cash, loan, lease and PPA</Link>{' '}
+                lays out the trade-offs, and{' '}
+                <Link href='/solar-problems/ucc-1-lien-solar-california' className={a}>what a UCC-1 filing means</Link>{' '}
+                covers the lien question.
+              </p>
+
+              <h2 className={h2}>CSLB license and questions to ask</h2>
+              <p className={p}>
+                No CSLB license number appears on Sunlux’s homepage or warranty page, and the BBB profile shows none. Search
+                “Sunlux” at CSLB’s{' '}
+                <a href={SRC.cslb} target='_blank' rel='noopener noreferrer' className={a}>license lookup</a> and confirm the
+                business name matches your contract; our guide to{' '}
+                <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className={a}>verifying a California solar contractor</Link>{' '}
+                walks through it.
               </p>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Read the newest low-star reviews on Google and Yelp for permitting, activation and service delays.</li>
-                <li>Open the BBB profile and read how recent complaints were answered, not just the letter grade.</li>
-                <li>Ask for two or three recent California customers you can call.</li>
+                <li>What is the CSLB license number, and does the business name match the contract?</li>
+                <li>Are you buying, financing or leasing, and if financing, what are the lender, rate, term and any UCC-1 filing?</li>
+                <li>Is there a production guarantee, and what percentage is written into the contract?</li>
+                <li>What is the written response time for a warranty repair, and who pays for lost production while you wait?</li>
+                <li>Which panel, inverter and battery models are proposed, and does the 25-year coverage apply to each?</li>
               </ul>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Common Complaints</h2>
-              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Permitting and activation delays — the most frequent theme. Typical for California in 2025–2026 but worth managing expectations around.</li>
-                <li>Occasional unexpected fees at install (adders for panel-upgrade, trenching, etc.). Get itemized pricing in writing.</li>
-                <li>Post-install service can be slower than the sales experience. Warranty claims have been reported as 2–4 week response times.</li>
-                <li>Minor HOA or permit coordination hiccups with tighter-regulation California cities.</li>
-              </ul>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunlux focuses on ownership — cash or loan financing through third-party partners. You own the system and don&apos;t carry a long-term PPA or lease obligation — but there is no longer a 30% federal credit to capture, since IRC § 25D does not apply to expenditures made after December 31, 2025. This review does not have a verified California price for Sunlux; compare its written cash price per watt with other quotes.
+              <h2 className={h2}>The same checks for any “is it legit” question</h2>
+              <p className={p}>
+                The steps above work for any installer: the BBB file and what the complaints are about, a federal docket
+                search, the CSLB license under the exact contract name, and whether the company sells in California at all.
+                We have run them for{' '}
+                <Link href='/solar-installers/momentum-solar-review' className={a}>Momentum Solar</Link>,{' '}
+                <Link href='/solar-installers/elevation-solar-review' className={a}>Elevation</Link>,{' '}
+                <Link href='/solar-installers/trinity-solar-review' className={a}>Trinity Solar</Link>,{' '}
+                <Link href='/solar-installers/palmetto-solar-review' className={a}>Palmetto and LightReach</Link>,{' '}
+                <Link href='/solar-installers/solar-optimum-review' className={a}>Solar Optimum</Link> and{' '}
+                <Link href='/solar-installers/la-solar-group-review' className={a}>LA Solar Group</Link>, and the{' '}
+                <Link href='/solar-installers' className={a}>solar company reviews index</Link> explains how to read each record.
               </p>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunlux provides standard 25-year equipment coverage and what the company describes as full component and workmanship guarantees. Specific terms vary by contract — get the warranty language in writing before signing, especially for workmanship length (10 years is common; 25 years is excellent).
-              </p>
+              <div className='not-prose'>
+                <FaqJsonLd items={faqs} />
+                <FaqBlock items={faqs} schema={false} />
+              </div>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Products: What Sunlux&apos;s Site Says</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunlux&apos;s own site doesn&apos;t name a specific panel brand — it cites &ldquo;world-leading solar manufacturers&rdquo; generically — but prominently features the Tesla Powerwall 3 as its battery, plus EV charging and electrical work (panel upgrades, subpanels, rewiring, outlets and breakers) alongside solar (<a href='https://sunlux.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>sunlux.com</a>, accessed September 22, 2026). The equipment section above instead names Panasonic panels, SolarEdge inverters, and LG batteries; we couldn&apos;t confirm those brands on Sunlux&apos;s reachable pages this session. Treat that as this page&apos;s own prior reporting rather than a current Sunlux claim, and confirm which brands are proposed with your rep before signing.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing: What Sunlux Doesn&apos;t Publish</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                A customer testimonial on <a href='https://sunlux.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>sunlux.com</a> mentions being offered &ldquo;a variety of financing options,&rdquo; and a separate testimonial mentions having &ldquo;bought the solar panels outright&rdquo; — but Sunlux does not publish a dedicated financing-terms page naming a lender, APR, term, or a formal cash/loan/lease menu on any page reached this session (accessed September 22, 2026). Combined with the note above that Sunlux focuses on cash and loan, ask directly whether your specific offer is a purchase (you own the system) or a use agreement (lease or PPA, someone else owns it) — that determines who can claim any tax credit and what happens at resale. For the tradeoffs in plain terms, see our guide to <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary underline'>compare cash, loan, lease, and PPA</Link>.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty and Guarantee: The Published Terms</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunlux&apos;s warranty page states: &ldquo;Every hardware component — including the solar panels, inverter and racking — is completely covered for 25 years,&rdquo; plus 24/7 system monitoring and access to Sunlux&apos;s Tech Support line (<a href='https://sunlux.com/solar-warranty/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>sunlux.com, Solar Warranty</a>, accessed September 22, 2026). Not stated on pages reached this session: a numeric production or output guarantee, a roof or leak warranty, a battery-specific term, or which purchase type the 25-year coverage applies to. Given the slow-response complaint pattern above, get the actual warranty document, not the marketing page, before signing.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Service Process and Selling the Home</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunlux runs separate service intake for new versus existing customers and lists repair coverage for panel, inverter, battery, EV charging, and racking equipment, with a main line and a separate service line (<a href='https://sunlux.com/' target='_blank' rel='noopener noreferrer' className='text-primary underline'>sunlux.com</a>, accessed September 22, 2026). No written response-time commitment was found; the &ldquo;2–4 week&rdquo; figure above is a customer complaint, not a Sunlux commitment. Because Sunlux&apos;s own site emphasizes cash and loan ownership over lease or PPA, a financed-or-owned Sunlux system typically transfers with the home like any other home improvement — no separate assignment to file. If yours is a loan, ask your lender (not Sunlux) whether it must be paid off or can be assumed at closing.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Sunlux Makes Sense</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Sunlux can fit Southern California cash or loan buyers who want a regional installer. Ask whether its own crews or a subcontractor will do your install, and get that in writing. The main caveat is timeline: permitting and activation delays are the most common complaint, so build margin into your plans.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>CSLB Number and Questions to Ask</h2>
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                No CSLB license number appears on Sunlux&apos;s homepage or warranty page, the two pages reached this session. Don&apos;t rely on a third-party site&apos;s number — search &ldquo;Sunlux&rdquo; yourself at CSLB&apos;s <a href='https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx' target='_blank' rel='noopener noreferrer' className='text-primary underline'>Check License tool</a> and confirm the entity name matches your contract — the same step our guide to <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>verify a California solar contractor</Link> walks through.
-              </p>
-              <p className='text-foreground/80 leading-relaxed mb-2 font-semibold'>Questions to ask before you sign:</p>
-              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>What is Sunlux&apos;s current CSLB license number, and does the business name match your contract?</li>
-                <li>Cash, loan, or lease/PPA — and if a loan, what&apos;s the APR, term, and is there a UCC-1 filing?</li>
-                <li>What&apos;s the exact production guarantee percentage, if any, written into the contract (not just marketing copy)?</li>
-                <li>What response-time commitment for a warranty repair is in writing?</li>
-                <li>Which panel, inverter, and battery models are proposed, and does the 25-year warranty cover all equally?</li>
-              </ul>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Frequently Asked Questions</h2>
-              <div className='space-y-6 mb-6'>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Is Sunlux Solar a reputable company?</h3><p className='text-foreground/80'>We did not verify its install count or its Google, Yelp or BBB ratings for this update. Check the CSLB license yourself, read recent reviews and the BBB complaint record, and get the warranty terms in writing.</p></div>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Sunlux offer PPAs or leases?</h3><p className='text-foreground/80'>Not as the primary offering. Sunlux focuses on cash and loan financing where you own the system.</p></div>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>What panels does Sunlux use?</h3><p className='text-foreground/80'>Tier-1 options — Panasonic has been a frequent panel brand with SolarEdge inverters and LG or other name-brand batteries. Sunlux does not manufacture its own panels.</p></div>
-                <div><h3 className='text-lg font-bold text-foreground mb-2'>Does Sunlux serve all of California?</h3><p className='text-foreground/80'>Strongest coverage is Southern California. Confirm serviceability for your specific zip code in the first call.</p></div>
+              <div className='not-prose'>
+                <SourceList sources={sources} />
               </div>
             </div>
 
             <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Sunlux With Other Written Quotes.</h3>
+              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight text-center'>Compare Sunlux With Other Written Quotes</h3>
               <p className='text-muted-foreground mb-6 max-w-lg mx-auto text-center leading-relaxed'>California Rate Relief is a private referral service. If you want a provider to review your project, send your details through the form on this page. A provider decides whether it can serve your address and what it can offer.</p>
-              <div className='flex justify-center'><Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md'>Request a solar review<ArrowRight className='h-4 w-4' /></Link></div>
+              <div className='flex justify-center'><Link href='#solar-inquiry' className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'>Request a solar review<ArrowRight className='h-4 w-4' /></Link></div>
               <p className='text-xs text-muted-foreground text-center mt-4'>California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.</p>
             </div>
 
             <div className='mt-8'>
-              <SolarInquiry topic="Sunlux Solar review and quote comparison" />
+              <SolarInquiry topic='Sunlux Solar review and quote comparison' />
             </div>
 
-            <div className='mt-10 pt-8 border-t border-border'>
-              <h3 className='text-lg font-bold text-foreground mb-4'>More California Installer Reviews</h3>
-              <div className='grid sm:grid-cols-2 gap-3'>
-                <Link href='/solar-installers/baker-electric-solar-review' className='p-4 border border-border rounded-lg hover:border-primary'><div className='flex items-center justify-between'><span className='font-medium'>Baker Electric Review</span><ArrowRight className='h-4 w-4 text-muted-foreground' /></div></Link>
-                <Link href='/solar-installers/solar-optimum-review' className='p-4 border border-border rounded-lg hover:border-primary'><div className='flex items-center justify-between'><span className='font-medium'>Solar Optimum Review</span><ArrowRight className='h-4 w-4 text-muted-foreground' /></div></Link>
-                <Link href='/solar-installers/ameco-solar-review' className='p-4 border border-border rounded-lg hover:border-primary'><div className='flex items-center justify-between'><span className='font-medium'>Ameco Solar Review</span><ArrowRight className='h-4 w-4 text-muted-foreground' /></div></Link>
-                <Link href='/solar-installers/new-day-solar-review' className='p-4 border border-border rounded-lg hover:border-primary'><div className='flex items-center justify-between'><span className='font-medium'>New Day Solar Review</span><ArrowRight className='h-4 w-4 text-muted-foreground' /></div></Link>
-              </div>
-            </div>
+            <HubSpokeLinks hub='installer_reviews' currentPath={path} />
 
             <div className='mt-10'>
-              <Link href='/best-solar-companies-california' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to Best Solar Companies in California</Link>
+              <Link href='/solar-installers' className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'><ArrowLeft className='h-4 w-4' />Back to California solar company reviews</Link>
             </div>
           </article>
         </div>
       </main>
       <Footer />
-      <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Sunlux" />
+      <div className='container mx-auto px-4 max-w-3xl'>
+        <VerifyInstallerBox installerName='Sunlux' bbbProfileUrl={SRC.bbb} />
       </div>
-      <div className="container mx-auto px-4 max-w-3xl">
-        <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
+      <div className='container mx-auto px-4 max-w-3xl'>
+        <AuthorBio domain='crr' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
       </div>
-
     </PublicLayout>
   );
 }
