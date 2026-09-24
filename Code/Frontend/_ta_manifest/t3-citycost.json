@@ -220,6 +220,113 @@
    ],
    "status": "done",
    "note": "New row: $372 residential PV permit (Stand Alone Permits chart updated 2026-01-08); utility split note (CEC layer: SCE, with ~6% of the city, in the north, in Victorville Municipal Utilities Services' territory); no CCA (Apple Valley Choice Energy serves Apple Valley only). Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/glendale",
+   "action": "CREATE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Glendale, CA: What Sets the Price (2026)",
+   "clusters": [
+    681
+   ],
+   "sources": [
+    "https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-pv-interconnection-and-nem-for-under-15-kw-cec-ac-residential-systems",
+    "https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-interconnection",
+    "https://www.glendaleca.gov/government/departments/glendale-water-and-power/rates",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "New row on a new tracker utility 'gwp' (Glendale Water & Power, ~99.5% of the city on the CEC layer). GWP still offers NEM (2025 compensation rate $0.05639/kWh; 10 kW CEC-AC systems exempt from the 110% usage cap) - extra FAQ. The City's fee is not published (Building and Safety invoices after GWP review). Index platform 'Could not confirm' (CEC says custom, City describes staff review). Companies twin registered."
+  },
+  {
+   "path": "/solar-cost/tulare",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panels in Tulare, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    677
+   ],
+   "sources": [
+    "https://www.tulare.ca.gov/government/departments/community-development/building/solar-app",
+    "https://www.tulare.ca.gov/home/showpublisheddocument/19310/637943585895770000",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "Upgraded the 2026-09-18 row: fee pages now load; the Master Fee Schedule the City links (adopted 2022-05-17) has no solar line, so no figure; SolarAPP+ permit number emailed within 24 business hours; SCE with no CCA; new guidance entry."
+  },
+  {
+   "path": "/solar-cost/napa",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panels in Napa, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    671
+   ],
+   "sources": [
+    "https://www.cityofnapa.org/1037/Solar-PV",
+    "https://www.cityofnapa.org/Archive.aspx?ADID=245",
+    "https://www.mcecleanenergy.org/service-area/",
+    "https://mcecleanenergy.org/solar-billing-plan/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded: fee now quoted from the Master Fee Schedule effective 2025-07-01 ($472 residential PV permit and inspection, 10 kW basis, $500 maximum noted; $85 Fire Prevention review); walk-in counter only, business license required; CEC lists Napa without a platform; MCE sourced to MCE's list."
+  },
+  {
+   "path": "/solar-cost/yucaipa",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panels in Yucaipa, CA: Cost & Installer Checks (2026)",
+   "clusters": [
+    712
+   ],
+   "sources": [
+    "https://yucaipa.gov/building-safety/",
+    "https://www.energy.ca.gov/media/9247",
+    "https://www.sce.com/customer-service-center/community-choice-aggregation"
+   ],
+   "status": "done",
+   "note": "Upgraded: no solar page or fee exists; the note now points to the Permit Exchange fee estimator; platform SolarAPP+ per CEC SB 379; SCE with no CCA; new guidance entry."
+  },
+  {
+   "path": "/solar-cost/rocklin",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Solar Panel Cost in Rocklin, CA: What Sets the Price (2026)",
+   "clusters": [
+    710
+   ],
+   "sources": [
+    "https://www.rocklin.ca.us/online-solar-permitting",
+    "https://pioneercommunityenergy.org/about-us/",
+    "https://pioneercommunityenergy.org/going-solar-with-pioneer/",
+    "https://www.energy.ca.gov/media/9247"
+   ],
+   "status": "done",
+   "note": "Upgraded: re-read (owner-builders and energy storage projects excluded from SolarAPP+; eTRAKiT or Permit Center); Pioneer sourced to its own list; Pioneer's monthly billing and +$0.005/kWh terms; City fee still unstated."
+  },
+  {
+   "path": "/solar-cost/grass-valley",
+   "action": "UPGRADE",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts",
+   "title": "Grass Valley Solar Panel Cost: What Sets the Price (2026)",
+   "clusters": [
+    722
+   ],
+   "sources": [
+    "https://www.grassvalleyca.gov/pod/solarapp-submittals",
+    "https://www.grassvalleyca.gov/sites/main/files/file-attachments/fee_schedule_21-22_0.pdf",
+    "https://pioneercommunityenergy.org/about-us/",
+    "https://pioneercommunityenergy.org/going-solar-with-pioneer/"
+   ],
+   "status": "done",
+   "note": "Upgraded: the fee schedule the City links (FY 2021/22) is quoted as dated ($373.00 residential solar; index status 'dated'); Express Permit in Accela; Pioneer since 2024."
   }
  ],
  "new_cost_slugs": [
@@ -232,7 +339,8 @@
   "lakewood",
   "elk-grove",
   "mission-viejo",
-  "victorville"
+  "victorville",
+  "glendale"
  ],
  "new_cost_slugs_with_live_companies_twin_registered": [
   "concord",
@@ -241,7 +349,8 @@
   "santa-clara",
   "san-clemente",
   "lakewood",
-  "victorville"
+  "victorville",
+  "glendale"
  ],
  "new_cost_slugs_for_citycos_to_reconcile": [
   "clovis",
@@ -301,6 +410,11 @@
    "hub": "city_cost",
    "href": "/solar-cost/victorville",
    "label": "Solar panel cost in Victorville"
+  },
+  {
+   "hub": "city_cost",
+   "href": "/solar-cost/glendale",
+   "label": "Solar panel cost in Glendale"
   }
  ],
  "link_requests": [],
@@ -311,7 +425,8 @@
   "src/data/solar-cost-index.ts: FEES/PLATFORMS entries for each new row; UTILITY_TYPE gains svp and reu (CEC layer names); CCAS membership additions. solar-cost-index.test.ts passes.",
   "src/data/city-coordinates.ts: Census TIGERweb internal points added for new slugs that had none (nearby-city ordering only).",
   "src/lib/canonical-redirects.test.ts: new dated registry section T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN; no redirect-table rows added.",
-  "src/data/city-cost-data.ts: the los-angeles row (not in this lane's assignment, not owned by any Tier 3 lane) gains two LA City Planning community-plan sources, the CEC layer source and one extra FAQ answering the van-nuys and wilmington topics. Its permit fields are unchanged."
+  "src/data/city-cost-data.ts: the los-angeles row (not in this lane's assignment, not owned by any Tier 3 lane) gains two LA City Planning community-plan sources, the CEC layer source and one extra FAQ answering the van-nuys and wilmington topics. Its permit fields are unchanged.",
+  "src/data/utility-rate-tracker.ts: 'gwp' (Glendale Water & Power) record added as well; UTILITY_TYPE in solar-cost-index.ts gains gwp."
  ],
  "integration_notes": [
   "/solar-cost/<city> pages enter the sitemap and the /solar-cost index automatically from getPublishableCityCostRows(); no sitemap_add needed.",

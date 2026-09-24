@@ -74,8 +74,10 @@ export type UtilityRateKey =
   | 'riverside'
   | 'pasadena'
   // 2026-09-23 (Tier 3 city-cost wave): more city-owned utilities, so
-  // /solar-cost/santa-clara and /solar-cost/redding name the right biller.
+  // /solar-cost/santa-clara, /solar-cost/glendale and /solar-cost/redding
+  // name the right biller.
   | 'svp'
+  | 'gwp'
   | 'reu';
 
 export interface UtilityRateRecord {
@@ -273,6 +275,19 @@ const RECORDS: Record<UtilityRateKey, UtilityRateRecord> = {
     sourceUrl: 'https://www.siliconvalleypower.com/residents/rates-and-fees',
     basisNote:
       "Silicon Valley Power is the City of Santa Clara's electric utility, whose net metering schedule the City Council adopted, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only",
+    fetchedAt: '2026-09-23',
+  },
+  gwp: {
+    key: 'gwp',
+    name: 'GWP',
+    longName: 'Glendale Water & Power',
+    averageResidentialRateCents: null,
+    averageResidentialRatePerKwh: null,
+    asOf: 'no CPUC average published; see the utility rate schedules',
+    sourceLabel: 'City of Glendale, Glendale Water & Power — Rates (GWP Electric Rates)',
+    sourceUrl: 'https://www.glendaleca.gov/government/departments/glendale-water-and-power/rates',
+    basisNote:
+      "Glendale Water & Power, a department of the City of Glendale, describes itself as a public power provider, and the CPUC Public Advocates Office rate reports cover the investor-owned utilities only",
     fetchedAt: '2026-09-23',
   },
   reu: {

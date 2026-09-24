@@ -235,6 +235,12 @@ export const CEC_SB379_DATA: CityCostRowSource = {
   url: 'https://www.energy.ca.gov/media/9247',
   verifiedAt: '2026-09-23',
 };
+// Added 2026-09-23 (Tier 3 city-cost wave).
+export const PIONEER_ABOUT: CityCostRowSource = {
+  label: 'Pioneer Community Energy, About Us (Auburn, Colfax, Lincoln, Rocklin, Loomis and most of unincorporated Placer County; Grass Valley and Nevada City since 2024)',
+  url: 'https://pioneercommunityenergy.org/about-us/',
+  verifiedAt: CCA_VERIFIED_0923,
+};
 export const OCPA_HOME: CityCostRowSource = {
   label: 'Orange County Power Authority, member communities (Buena Park, Fullerton, Irvine, Fountain Valley)',
   url: 'https://www.ocpower.org/',
@@ -539,14 +545,23 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Grass Valley",
     county: "Nevada County",
     utilityKey: "pge",
+    // 2026-09-23 (Tier 3): the linked fee schedule is now quoted, as dated.
     cca: "Pioneer Community Energy",
+    ccaSource: PIONEER_ABOUT,
     permitUrl: "https://www.grassvalleyca.gov/pod/solarapp-submittals",
     permitFeeNote:
-      "Names a specific dollar amount: a \"$25 administration fee to use SolarAPP+.\" Notes \"Separate City fees for a solar permit are charged through the building permit application process\" (amount not stated on this page).",
-    permitFeeSource: "City of Grass Valley SolarAPP+ Submittals page",
+      "Grass Valley's SolarAPP+ page says applicants pay a $25 administration fee to SolarAPP+ and that separate City fees for a solar permit are charged through the building permit application. The fee schedule the Building page links is for fiscal year 2021/22, effective August 5, 2021, and lists residential solar at $373.00 with plan review and one final inspection; confirm the current amount with the City.",
+    permitFeeSource: "City of Grass Valley, SolarAPP+ Submittals",
+    permitSources: [
+      {
+        label: 'City of Grass Valley, Fee Schedule Fiscal Year 2021/2022 (Resolutions 2021-39 and 2021-44, effective August 5, 2021), item 238 Residential Solar',
+        url: 'https://www.grassvalleyca.gov/sites/main/files/file-attachments/fee_schedule_21-22_0.pdf',
+        verifiedAt: '2026-09-23',
+      },
+    ],
     permitOnline:
-      "Yes, online. SolarAPP+ is explicitly named; after SolarAPP+ approval, apply for the city permit via Accela Citizen Access selecting 'Express Permit' and uploading SolarAPP+ documentation.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. After SolarAPP+ approval, the permit is applied for in Accela Citizen Access under Express Permit applications, with the SolarAPP+ approval ID and documents uploaded, and inspections are scheduled in the same portal.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "hollister",
@@ -712,14 +727,25 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Napa",
     county: "Napa County",
     utilityKey: "pge",
-    cca: "MCE (Marin Clean Energy)",
+    // 2026-09-23 (Tier 3): fee now quoted from the Master Fee Schedule
+    // effective July 1, 2025; CCA sourced to MCE's own member list.
+    cca: "MCE",
+    ccaSource: MCE_ABOUT,
     permitUrl: "https://www.cityofnapa.org/1037/Solar-PV",
     permitFeeNote:
-      "No dollar amount given on this page. States residential Solar & Battery Backup systems are handled \"over-the-counter by walk-in Monday-Thursday between 8:30am-3:30pm\"; the related Permits and Plan Review Information page notes rooftop PV under 10kW qualifies for expedited \"Express Review\" counter service and links to a separate Master Fee Schedule for actual fee amounts.",
-    permitFeeSource: "City of Napa Solar PV page and Permits and Plan Review Information page",
+      "Napa's Master Fee Schedule, effective July 1, 2025, lists a residential solar photovoltaic permit and inspection at $472, based on a 10 kW system and including the minimum electrical permit processing fee, and notes a maximum fee of $500. A Fire Prevention plan check review for a residential system, $85, is charged in addition.",
+    permitFeeSource: "City of Napa, Solar PV (Building Division)",
+    permitSources: [
+      {
+        label: 'City of Napa, Master Fee Schedule effective July 1, 2025 (2.2.47a Residential Solar Photovoltaic Permit & Inspection; 6.11.17 Fire Prevention plan check review)',
+        url: 'https://www.cityofnapa.org/Archive.aspx?ADID=245',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
     permitOnline:
-      "Not indicated as available online on the pages found; described as in-person/walk-in submission. SolarAPP+ is not mentioned.",
-    sourcesFetchedAt: "2026-09-18",
+      "No. Residential solar and battery backup permits are handled over the counter, by walk-in, Monday through Thursday from 8:30 a.m. to 3:30 p.m., and no permit is issued without an active City of Napa business license. The California Energy Commission's SB 379 data lists the City of Napa as without an automated solar permitting platform.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "oceanside",
@@ -1010,13 +1036,22 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Tulare",
     county: "Tulare County",
     utilityKey: "sce",
+    // 2026-09-23 (Tier 3): re-read. The City's fee pages now load; the Master
+    // Fee Schedule they link has no solar line, so the note says so.
     permitUrl: "https://www.tulare.ca.gov/government/departments/community-development/building/solar-app",
     permitFeeNote:
-      "Page states \"A processing fee from SolarAPP+ and City of Tulare permit fees will be charged\" but gives no dollar amount; page directs applicants to call (559) 684-4218 for a permit fee estimate. The City's separate Fee Schedule page (tulare.ca.gov/business/fee-schedule) returned a 403/access error on fetch, so the dollar figure could not be independently verified",
-    permitFeeSource: "City of Tulare Solar APP+ page (fee schedule PDF link blocked \u2014 403)",
+      "Tulare's SolarAPP+ page says a SolarAPP+ processing fee and City of Tulare permit fees will be charged but states neither amount, and the City's Master Fee Schedule adopted May 17, 2022, the one its fee page links, has no separate solar line. Ask the Building Division for the City's figure.",
+    permitFeeSource: "City of Tulare, Solar App+ for Solar Installers",
+    permitSources: [
+      {
+        label: 'City of Tulare, Master Fee Schedule adopted May 17, 2022 (2022-2023 schedule; no solar line)',
+        url: 'https://www.tulare.ca.gov/home/showpublisheddocument/19310/637943585895770000',
+        verifiedAt: '2026-09-23',
+      },
+    ],
     permitOnline:
-      "yes \u2014 SolarAPP+ named on page (\"SolarAPP+ is designed to provide a code-compliance check for... residential, roof-mounted, retrofit photovoltaic systems\"); applicant receives City permit number by email within 24 business hours",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Eligible residential, roof-mounted retrofit systems go through SolarAPP+, and the City emails its permit number within 24 business hours for scheduling inspections, which can be requested for a morning or afternoon slot but are not guaranteed for it.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "ventura",
@@ -1090,13 +1125,15 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Yucaipa",
     county: "San Bernardino County",
     utilityKey: "sce",
+    // 2026-09-23 (Tier 3): re-read; the platform is now sourced to the CEC.
     permitUrl: "https://yucaipa.gov/building-safety/",
     permitFeeNote:
-      "The City has no dedicated solar or SolarAPP+ page. Building & Safety points residents to the general Yucaipa Permit Exchange portal and its fee estimator, and the Comprehensive User Fee Schedule did not return the document when checked, so no photovoltaic line item could be confirmed. Use the City's own estimator, or ask Building & Safety, for the current figure.",
-    permitFeeSource: "City of Yucaipa Building & Safety page (yucaipa.gov); fee schedule PDF inaccessible",
+      "Yucaipa publishes no solar permit fee. Its Building & Safety page points to a permit fee estimator in the Yucaipa Permit Exchange portal rather than a fee schedule for solar, so use the estimator or ask Building & Safety for the City's figure. SolarAPP+, where used, charges its own processing fee.",
+    permitFeeSource: "City of Yucaipa, Building & Safety (Permit Center)",
+    permitSources: [CEC_SB379_DATA],
     permitOnline:
-      "Yes for permits generally, through the Yucaipa Permit Exchange portal. The City's pages do not state whether solar has a dedicated or automated path, and SolarAPP+ is not mentioned.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes for permits generally: the Yucaipa Permit Exchange portal takes applications, payments and inspection requests. The City's pages do not describe a solar-specific route; the California Energy Commission's SB 379 data, which each city reports itself, lists Yucaipa's platform as SolarAPP+.",
+    sourcesFetchedAt: "2026-09-23",
   },
   // Added 2026-09-18 from the re-screen pass: 5 AMBER cities that flipped GREEN
   // on an alternate phrasing, 5 confirmed AMBER, and the three cities whose
@@ -1254,14 +1291,17 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     city: "Rocklin",
     county: "Placer County",
     utilityKey: "pge",
+    // 2026-09-23 (Tier 3): re-read; CCA sourced to Pioneer's own list.
     cca: "Pioneer Community Energy",
+    ccaSource: PIONEER_ABOUT,
     permitUrl: "https://www.rocklin.ca.us/online-solar-permitting",
     permitFeeNote:
-      "The page states: \"SolarAPP+ is an additional $25.00 paid directly to SolarAPP+.\" This is the SolarAPP+ processing fee; the city's own building permit fee is separate and not quantified on this page.",
-    permitFeeSource: "City of Rocklin Online Solar Permitting page",
+      "Rocklin's Online Solar Permitting page says SolarAPP+ costs an additional $25.00, paid directly to SolarAPP+, and that City of Rocklin permit fees and inspections apply, without stating the City's amount.",
+    permitFeeSource: "City of Rocklin, Online Solar Permitting",
+    permitSources: [CEC_SB379_DATA],
     permitOnline:
-      "Yes: \"licensed contractors may complete an application first using SolarAPP+ in lieu of submitting construction plans and other required supplemental technical documentation.\" SolarAPP+ is explicitly named.",
-    sourcesFetchedAt: "2026-09-18",
+      "Yes. Licensed contractors can apply through SolarAPP+ in place of submitting plans, then file the permit application online through eTRAKiT or at the Permit Center and schedule inspections in eTRAKiT or by phone. Owner-builders and projects that include an energy storage system are not eligible for SolarAPP+.",
+    sourcesFetchedAt: "2026-09-23",
   },
   {
     slug: "seaside",
@@ -2006,6 +2046,35 @@ export const CITY_COST_ROWS: CityCostRow[] = [
         "The California Energy Commission's service-territory map places Victorville in Southern California Edison's territory and also shows about 6 percent of the city's area, in its northern part, in the territory of Victorville Municipal Utilities Services. Read the utility name on your bill before using an SCE rate.",
       sources: [CEC_SERVICE_TERRITORY_SOURCE_0923],
     },
+  },
+  {
+    slug: 'glendale',
+    city: 'Glendale',
+    county: 'Los Angeles County',
+    utilityKey: 'gwp',
+    permitUrl:
+      'https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-pv-interconnection-and-nem-for-under-15-kw-cec-ac-residential-systems',
+    permitFeeNote:
+      "Glendale does not publish its solar permit fee. Under the City's process, Building and Safety reviews the plans after Glendale Water & Power approves the interconnection application and then contacts the contractor for payment, so ask the installer what the City permit line in a quote covers.",
+    permitFeeSource: 'Glendale Water & Power, Guide for Applying for PV Interconnection and NEM (residential systems under 15 kW CEC-AC)',
+    permitSources: [
+      {
+        label: 'Glendale Water & Power, Net Energy Metering (NEM) Program (changes effective November 1, 2023 and January 19, 2026; historic NEM compensation rates)',
+        url: 'https://www.glendaleca.gov/government/departments/glendale-water-and-power/solar-education/guide-for-applying-for-interconnection',
+        verifiedAt: '2026-09-23',
+      },
+      CEC_SB379_DATA,
+    ],
+    permitOnline:
+      "Yes, in two steps. The customer or contractor first files the interconnection application in GWP's PowerClerk portal, which GWP says it typically reviews in 3-5 business days; the full plan set then goes to Building and Safety through the Glendale Permits portal for building, electrical and fire review. The California Energy Commission's SB 379 data lists Glendale's platform as a custom one.",
+    sourcesFetchedAt: '2026-09-23',
+    extraFaqs: [
+      {
+        question: 'Does Glendale Water & Power still offer net metering?',
+        answer:
+          "Yes. GWP says it continues to make net energy metering available and credits excess generation to the account, although it no longer offers solar incentives. Since November 1, 2023, a system up to 10 kW CEC-AC is exempt from GWP's cap of 110 percent of the past 12 months' usage and may be paired with up to 30 kWh of storage. GWP's published NEM compensation rate for 2025 was $0.05639 per kWh. PG&E's and SCE's Solar Billing Plans do not apply to a GWP account.",
+      },
+    ],
   },
 ];
 

@@ -197,10 +197,11 @@ const FEES: Record<string, FeeEntry> = {
     ],
     extra: 'Each additional kW adds $11.27 in inspection fees.',
   },
+  // 2026-09-23 (Tier 3): the linked FY 2021/22 schedule is now quoted.
   'grass-valley': {
-    status: 'not-published',
-    extra: 'The City states a $25 SolarAPP+ administration fee; its own permit fee is charged separately.',
-    evidence: 'Separate City fees for a solar permit are charged through the building permit application process',
+    status: 'dated',
+    extra: 'The linked FY 2021/22 schedule lists residential solar at $373.00; SolarAPP+ charges $25.',
+    evidence: 'is for fiscal year 2021/22',
   },
   hollister: { status: 'not-retrievable', evidence: 'the dollar figure was not reliably machine-readable' },
   lincoln: {
@@ -244,7 +245,12 @@ const FEES: Record<string, FeeEntry> = {
       quote: 'permit under 10 kW at $450',
     }],
   },
-  napa: { status: 'not-published', evidence: 'No dollar amount given on this page' },
+  // 2026-09-23 (Tier 3): quoted from the Master Fee Schedule effective July 1, 2025.
+  napa: {
+    status: 'published',
+    components: [{ label: 'residential solar PV permit and inspection (10 kW basis)', usd: 472, quote: 'inspection at $472' }],
+    extra: 'Fire Prevention plan check review adds $85; the schedule notes a $500 maximum fee.',
+  },
   oceanside: {
     status: 'not-published',
     extra: 'The City states a $25 SolarAPP+ processing fee; its own permit fee is not published on the page.',
@@ -324,7 +330,7 @@ const FEES: Record<string, FeeEntry> = {
     extra: 'Above 15 kW: $450 plus $15 per kW above 15 kW.',
   },
   'thousand-oaks': { status: 'not-published', evidence: "does not state the City's permit fee" },
-  tulare: { status: 'not-retrievable', evidence: 'returned a 403/access error on fetch' },
+  tulare: { status: 'not-published', evidence: 'has no separate solar line' },
   ventura: { status: 'not-published', evidence: 'no dollar fee amounts are published on this page' },
   'walnut-creek': {
     status: 'published',
@@ -344,7 +350,7 @@ const FEES: Record<string, FeeEntry> = {
     extra: 'Riverside County states a $35 SolarAPP+ processing fee; County permit fees are not stated.',
     evidence: 'whose exact amount is not stated on this page',
   },
-  yucaipa: { status: 'not-retrievable', evidence: 'did not return the document when checked' },
+  yucaipa: { status: 'not-published', evidence: 'Yucaipa publishes no solar permit fee' },
   auburn: { status: 'not-published', evidence: 'neither that document nor the Symbium Permits page gives an actual dollar amount' },
   beaumont: { status: 'not-published', evidence: 'does not give a dollar figure' },
   danville: { status: 'not-published', evidence: 'does not specify a dollar amount' },
@@ -364,7 +370,7 @@ const FEES: Record<string, FeeEntry> = {
   rocklin: {
     status: 'not-published',
     extra: 'The City states a $25 SolarAPP+ fee paid directly to SolarAPP+; its own permit fee is separate.',
-    evidence: "the city's own building permit fee is separate and not quantified",
+    evidence: "without stating the City's amount",
   },
   seaside: { status: 'not-published', evidence: 'does not give a dollar amount' },
   tracy: {
@@ -520,6 +526,7 @@ const FEES: Record<string, FeeEntry> = {
     status: 'published',
     components: [{ label: 'photovoltaic system, residential up to 15 kW', usd: 372, quote: 'at $372.00' }],
   },
+  glendale: { status: 'not-published', evidence: 'Glendale does not publish its solar permit fee' },
 };
 
 // -----------------------------------------------------------------------------
@@ -574,7 +581,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   'el-cajon': { platform: 'solarapp', evidence: 'Licensed contractors get SolarAPP+ pre-approval' },
   'el-dorado-hills': { platform: 'symbium', evidence: 'through Symbium for residential parcels' },
   fresno: { platform: 'solarapp', evidence: 'Single-family and duplex projects can use SolarAPP+' },
-  'grass-valley': { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
+  'grass-valley': { platform: 'solarapp', evidence: 'After SolarAPP+ approval' },
   hollister: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned' },
   lincoln: { platform: 'symbium', evidence: 'online filing via the Symbium portal' },
   livermore: { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
@@ -586,7 +593,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     note: 'Per the CEC SB 379 data (self-reported); the City pages checked do not describe the route.',
   },
   monterey: { platform: 'solarapp', evidence: "lists Monterey's platform as SolarAPP+" },
-  napa: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned' },
+  napa: { platform: 'none-named', evidence: 'as without an automated solar permitting platform' },
   oceanside: { platform: 'solarapp', evidence: 'registered with SolarAPP+ apply' },
   'pacific-grove': {
     platform: 'none-named',
@@ -609,12 +616,16 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   'santa-rosa': { platform: 'solarapp', evidence: 'through SolarAPP+ and then apply' },
   stockton: { platform: 'solarapp', evidence: 'SolarAPP+ named' },
   'thousand-oaks': { platform: 'solarapp', evidence: 'can use SolarAPP+' },
-  tulare: { platform: 'solarapp', evidence: 'SolarAPP+ named on page' },
+  tulare: { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
   ventura: { platform: 'symbium', evidence: 'Symbium (not SolarAPP+)' },
   'walnut-creek': { platform: 'none-named', evidence: 'does not say whether solar permits go through SolarAPP+' },
   watsonville: { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
   winchester: { platform: 'solarapp', evidence: 'SolarAPP+ named' },
-  yucaipa: { platform: 'none-named', evidence: 'SolarAPP+ is not mentioned' },
+  yucaipa: {
+    platform: 'solarapp',
+    evidence: "lists Yucaipa's platform as SolarAPP+",
+    note: 'Per the CEC SB 379 data (self-reported); the City pages checked do not describe a solar route.',
+  },
   auburn: { platform: 'symbium', evidence: 'Auburn uses Symbium instead' },
   beaumont: { platform: 'symbium', evidence: 'Beaumont uses Symbium instead' },
   danville: { platform: 'solarapp', evidence: 'SolarApp+ Submittals' },
@@ -626,7 +637,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   'los-angeles': { platform: 'none-named', evidence: 'SolarAPP+ is not named in this bulletin' },
   ontario: { platform: 'symbium', evidence: "through Symbium's real-time permitting platform" },
   'palm-springs': { platform: 'none-named', evidence: 'SolarAPP+ is not named on this page' },
-  rocklin: { platform: 'solarapp', evidence: 'SolarAPP+ is explicitly named' },
+  rocklin: { platform: 'solarapp', evidence: 'can apply through SolarAPP+' },
   seaside: { platform: 'solarapp', evidence: 'submitted for automated review through SolarAPP+' },
   tracy: {
     platform: 'none-named',
@@ -680,6 +691,11 @@ const PLATFORMS: Record<string, PlatformEntry> = {
     note: 'Per the CEC SB 379 data (self-reported); the City page checked does not describe a solar route.',
   },
   victorville: { platform: 'solarapp', evidence: 'Eligible residential rooftop systems go through SolarAPP+' },
+  glendale: {
+    platform: 'unconfirmed',
+    evidence: "lists Glendale's platform as a custom one",
+    note: 'The CEC SB 379 data (self-reported) lists a custom platform, but the City describes GWP review in PowerClerk followed by staff plan review, not an instant permit.',
+  },
 };
 
 export type OnlineFiling = 'yes' | 'general-portal' | 'not-yet' | 'in-person' | 'not-stated' | 'unclassified';
@@ -701,7 +717,7 @@ const ONLINE_EXCEPTIONS: Record<string, { value: Exclude<OnlineFiling, 'yes' | '
   hollister: { value: 'not-yet', evidence: 'Online Permitting (Coming Soon)' },
   chico: { value: 'general-portal', evidence: 'digitally through its eTRAKiT permit portal' },
   marina: { value: 'general-portal', evidence: 'Yes for general building permits' },
-  napa: { value: 'in-person', evidence: 'described as in-person/walk-in submission' },
+  napa: { value: 'in-person', evidence: 'handled over the counter, by walk-in' },
   // The row starts "No." about SolarAPP+, then names the City's own online portal.
   'pacific-grove': { value: 'yes', evidence: "online Solar Permit Application portal" },
   'walnut-creek': { value: 'general-portal', evidence: 'general online permit portal' },
@@ -745,6 +761,7 @@ const UTILITY_TYPE: Record<UtilityRateKey, { type: 'IOU' | 'POU'; cecName: strin
   // 2026-09-23 (Tier 3 city-cost wave): the CEC layer's own names, queried that day.
   svp: { type: 'POU', cecName: 'Silicon Valley Power' },
   reu: { type: 'POU', cecName: 'Redding Electric Utility' },
+  gwp: { type: 'POU', cecName: 'Glendale Water & Power' },
 };
 
 /**
