@@ -1,276 +1,313 @@
-import { SolarInquiry } from '@/components/growth/SolarInquiry';
-import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { SolarInquiry } from '@/components/growth/SolarInquiry';
+import { GuideShell, Cite } from '@/components/growth/GuideShell';
+import type { Source } from '@/components/growth/DecisionPage';
+import type { KeyFact } from '@/components/trust/KeyFacts';
+
+const PATH = '/blog/solar-panel-maintenance-cost';
+const UPDATED = '2026-09-23';
+const HUB = { label: 'Solar panel maintenance', href: '/solar-panel-maintenance-california' };
+const metaTitle = 'Solar Panel Maintenance & Cleaning Cost in California';
+const metaDescription =
+  'NREL’s $30 per kW a year upkeep benchmark, what cleaning, inspection and repair prices depend on, and how to tell if a cleaning pays for itself.';
+
+const NREL_ATB = 'https://atb.nrel.gov/electricity/2024/residential_pv';
+const NREL_OM = 'https://www.nrel.gov/docs/fy19osti/73822.pdf';
+const UCSD = 'https://jacobsschool.ucsd.edu/news/release/1393?id=1393';
+const CPUC_GUIDE = 'https://www.cpuc.ca.gov/solarguide/';
+const CSLB_SOLAR = 'https://www.cslb.ca.gov/solar';
+
+const sources: Source[] = [
+  { label: 'NREL: Annual Technology Baseline 2024, residential PV operation and maintenance costs', url: NREL_ATB },
+  { label: 'NREL: Best Practices for Operation and Maintenance of PV and Energy-Storage Systems, 3rd ed. (Dec. 2018)', url: NREL_OM },
+  { label: 'UC San Diego Jacobs School of Engineering: cleaning solar panels often not worth the cost (July 31, 2013)', url: UCSD },
+  { label: 'CPUC: California Solar Consumer Protection Guide and buyer questions', url: CPUC_GUIDE },
+  { label: 'CSLB: Solar Smart, license classes for solar work', url: CSLB_SOLAR },
+];
+
+const keyFacts: KeyFact[] = [
+  {
+    label: 'Upkeep benchmark (2023)',
+    value: '$30 per kW a year',
+    note: 'NREL’s residential estimate; $27 system costs plus $3 administration.',
+    source: { publisher: 'NREL ATB 2024', date: UPDATED, url: NREL_ATB },
+  },
+  {
+    label: 'Range NREL gives',
+    value: '$0 to $40 per kW',
+    note: 'Per year, depending on which upkeep practices a system gets.',
+    source: { publisher: 'NREL ATB 2024', date: UPDATED, url: NREL_ATB },
+  },
+  {
+    label: 'Value of a mid-summer wash',
+    value: 'About $20',
+    note: 'Typical 5 kW home system, California study of 186 sites.',
+    source: { publisher: 'UC San Diego', date: UPDATED, url: UCSD },
+  },
+  {
+    label: 'Who pays if you own it',
+    value: 'You',
+    note: 'Unless you bought a maintenance plan or the system came with one.',
+    source: { publisher: 'CPUC', date: UPDATED, url: CPUC_GUIDE },
+  },
+];
+
+const faqs = [
+  {
+    question: 'What is the maintenance cost of solar panels per year?',
+    answer:
+      'NREL’s 2024 Annual Technology Baseline uses $30 per kW of panels per year as its 2023 estimate for residential systems, within a range of $0 to $40 per kW. For a 5 kW system that is $150 a year on average, for 7 kW $210, and for 10 kW $300. It is an average across years: most years cost almost nothing and a year with an out-of-warranty repair costs more.',
+  },
+  {
+    question: 'Are solar panels expensive to maintain?',
+    answer:
+      'Not usually. The benchmark above is small next to the price of the system, and a UC San Diego study found that washing a typical California home system mid-summer was worth about $20 of electricity. The costs that hurt are the uneven ones: an inverter that fails after its warranty, or a roof replacement that needs the panels removed and reinstalled.',
+  },
+  {
+    question: 'How much does solar panel cleaning cost in California?',
+    answer:
+      'No government or research body publishes California cleaning prices, so treat any single figure you see online as one company’s rate. Quotes depend on panel count, the number of stories, roof pitch and material, how dirty the panels are and whether purified water is used. Get two written quotes and compare them with the electricity a cleaning would actually recover.',
+  },
+  {
+    question: 'How often should solar panels be cleaned in California?',
+    answer:
+      'Only as often as the lost output justifies. The UC San Diego study found that more than 0.1 inch of rain restored panels to clean output, so most of California’s cleaning happens in the wet season for free. Clean after a long dry spell only if monitoring shows the loss, and sooner for bird droppings, panels tilted under five degrees, or homes beside a highway, factory or farm.',
+  },
+  {
+    question: 'Is a solar maintenance plan worth it?',
+    answer:
+      'Compare it line by line with your warranties. The CPUC’s guide says owners are responsible for maintenance and repairs unless they buy a plan or the system includes one. A plan is worth pricing when it covers labor, roof penetrations or response times your warranties leave out, and not when it mostly repeats them.',
+  },
+];
 
 export const metadata: Metadata = {
-  title: "Solar Panel Maintenance Cost in California: What Drives It",
-  description: "What solar maintenance involves in California: cleaning, monitoring, inspections and inverter replacement, with NREL's benchmark for annual upkeep.",
-  alternates: {
-    canonical: '/blog/solar-panel-maintenance-cost',
-  },
+  title: metaTitle,
+  description: metaDescription,
+  alternates: { canonical: PATH },
   openGraph: {
-    title:
-      'Solar Panel Maintenance Cost: What to Expect in 2026',
-    description:
-      'How much does it cost to maintain solar panels? Here&apos;s the breakdown of cleaning, inspections, and repairs.',
+    title: metaTitle,
+    description: metaDescription,
     type: 'article',
+    url: `https://ratereliefca.com${PATH}`,
     publishedTime: '2026-04-16T00:00:00Z',
+    modifiedTime: `${UPDATED}T00:00:00Z`,
+    images: [CRR_SOCIAL_CARD],
   },
+  twitter: crrTwitter(metaTitle, metaDescription),
 };
 
-const articleSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Article',
-  headline:
-    'Solar Panel Maintenance Cost: What to Expect in 2026',
-  description:
-    'What solar maintenance involves, when DIY is okay, what NREL uses as an annual upkeep benchmark, and what PPA and lease customers should check in their contract.',
-  datePublished: '2026-04-16',
-  dateModified: '2026-04-16',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
-  publisher: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-    logo: {
-      '@type': 'ImageObject',
-      url: 'https://ratereliefca.com/img/logo.svg',
-    },
-  },
-  mainEntityOfPage: {
-    '@type': 'WebPage',
-    '@id': 'https://ratereliefca.com/blog/solar-panel-maintenance-cost',
-  },
-};
+const th = 'p-3 text-left align-top font-semibold';
+const td = 'p-3 align-top';
 
 export default function SolarPanelMaintenanceCost() {
   return (
-    <PublicLayout>
-      <Header />
-      <script
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+    <PublicLayout breadcrumbLabel="Maintenance and cleaning costs" breadcrumbParent={HUB}>
+      <ArticleJsonLd
+        variant="Article"
+        domain="crr"
+        headline="Solar panel maintenance and cleaning costs in California"
+        url="https://ratereliefca.com/blog/solar-panel-maintenance-cost"
+        datePublished="2026-04-16"
+        dateModified="2026-09-23"
+        description="What solar panel upkeep costs a year by NREL's benchmark, what cleaning, inspection and repair quotes depend on in California, and how to judge whether a cleaning pays."
       />
-      <main className='py-16 bg-background'>
-        <div className='container mx-auto px-4'>
-          <article className='max-w-3xl mx-auto'>
-            {/* Breadcrumb */}
-            <nav className='mb-8'>
-              <Link
-                href='/blog'
-                className='inline-flex items-center gap-2 text-primary font-medium text-sm hover:underline'
-              >
-                <ArrowLeft className='h-4 w-4' />
-                Back to Blog
-              </Link>
-            </nav>
+      <Header />
+      <GuideShell
+        title="Solar panel maintenance and cleaning costs in California"
+        eyebrow="Solar panel maintenance"
+        crumbs={[HUB]}
+        crumbLabel="Maintenance and cleaning costs"
+        updated={UPDATED}
+        sources={sources}
+        keyFacts={keyFacts}
+        faqs={faqs}
+        hub="maintenance"
+        path={PATH}
+        quickCheckTopic="Solar panel maintenance cost and comparison"
+        leadCount={2}
+        inquiry={<SolarInquiry topic="Solar panel maintenance cost and comparison" />}
+      >
+        <p>
+          Solar panel upkeep is cheap in most years. NREL’s 2024 benchmark for home systems is $30 per kW of
+          panels per year, or about $210 for a 7 kW system, within a range of $0 to $40 per kW. Cleaning is often the
+          smallest part: a 2013 UC San Diego study found a mid-summer wash was worth about $20 of power. Repairs and
+          roof work are where real money goes.
+        </p>
+        <p className="text-sm text-muted-foreground">
+          California Rate Relief is a referral service. We are not a licensed contractor. We do not sell
+          cleaning, repair or maintenance services. For the full picture of upkeep, see{' '}
+          <Link href="/solar-panel-maintenance-california">our solar panel maintenance guide</Link>.
+        </p>
 
-            {/* Article Header */}
-            <header className='mb-10'>
-              <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>
-                Maintenance &amp; Care
-              </span>
-              <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Solar Panel Maintenance Cost: What to Expect in 2026
-              </h1>
-              <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'>
-                  <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-04-16'>April 16, 2026</time>
-                </div>
-                <div className='flex items-center gap-1'>
-                  <Clock className='h-4 w-4' />
-                  <span>6 min read</span>
-                </div>
-              </div>
-            </header>
+        <section>
+          <h2>What the $30 per kW benchmark covers</h2>
+          <p>
+            The figure comes from the National Renewable Energy Laboratory’s Annual Technology Baseline, 2024
+            edition, which sets residential operation and maintenance at $30 per kW of direct-current capacity
+            per year for 2023, down from $34 in 2022. NREL splits the 2023 figure into $27 of system costs and
+            $3 of administration, and lists what it covers: “asset management (including compliance and
+            reporting for incentive payments), insurance products, cleaning, vegetation removal, and component
+            failure.” <Cite publisher="NREL" href={NREL_ATB} date={UPDATED} />
+          </p>
+          <div className="overflow-x-auto rounded-xl border">
+            <table className="w-full text-sm">
+              <caption className="sr-only">NREL upkeep benchmark applied to common home system sizes</caption>
+              <thead className="bg-muted">
+                <tr>
+                  <th className={th}>System size</th>
+                  <th className={th}>At $30 per kW a year</th>
+                  <th className={th}>At NREL’s $40 upper end</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t"><th scope="row" className={th}>5 kW</th><td className={td}>$150</td><td className={td}>$200</td></tr>
+                <tr className="border-t"><th scope="row" className={th}>7 kW</th><td className={td}>$210</td><td className={td}>$280</td></tr>
+                <tr className="border-t"><th scope="row" className={th}>10 kW</th><td className={td}>$300</td><td className={td}>$400</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Source: NREL Annual Technology Baseline 2024 benchmark multiplied by system size; checked September 2026.
+          </p>
+          <p>
+            Read these as long-run averages, not a yearly bill. Some items on NREL’s list, such as incentive
+            reporting, matter more to a company that owns many systems than to a homeowner. What an owner
+            actually pays arrives in lumps: nothing for several years, then an inverter or a remove-and-reinstall
+            job. Setting the benchmark aside each year is a simple way to be ready for that.
+          </p>
+        </section>
 
-            {/* Article Body */}
-            <div className='prose prose-slate max-w-none'>
-              <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Solar panels need little routine maintenance. The National Renewable Energy Laboratory&apos;s Annual Technology Baseline (2024 edition) uses $30 per kW of panels per year as its 2023 estimate for residential operation and maintenance, covering asset management, insurance products, cleaning, vegetation removal and component failure, and says the cost can range from $0 to $40 per kW a year depending on which of those practices a system gets. If you own your system, it&apos;s worth understanding what maintenance involves, when it&apos;s critical, and how to budget for it. PPA and lease contracts often assign maintenance to the system owner; check yours.
-              </p>
+        <section>
+          <h2>Solar panel cleaning prices: what sets the quote</h2>
+          <p>
+            Cleaning companies price per visit, per panel or with a minimum charge, and nobody publishes a
+            reliable California average. Instead of trusting a number from a cleaning company’s own website,
+            ask each bidder to price the same job and name these factors:
+          </p>
+          <ul>
+            <li><strong>Panel count and layout.</strong> One flat array is quicker than several small ones spread over hips and valleys.</li>
+            <li><strong>Height and pitch.</strong> A second story or steep roof means more safety equipment and time.</li>
+            <li><strong>Roof material.</strong> Tile needs careful footing, and a cracked tile is a repair of its own.</li>
+            <li><strong>How dirty the panels are.</strong> Bird droppings, wildfire ash and farm dust take longer than ordinary dust.</li>
+            <li><strong>Water and method.</strong> Whether they use purified water, soft brushes and low pressure. Check the answer against the care section of your panel maker’s manual.</li>
+            <li><strong>Extras.</strong> Bird-proofing mesh, a visual inspection or a before-and-after output report.</li>
+          </ul>
+          <p>
+            Anyone doing more than washing, such as touching wiring or moving panels, should hold a license for
+            solar work. The Contractors State License Board lists C-46 solar and C-10 electrical among the
+            classes allowed, and warns: “Do not use a contractor who is not licensed to perform solar work.”{' '}
+            <Cite publisher="CSLB" href={CSLB_SOLAR} date={UPDATED} />
+          </p>
+        </section>
 
-              {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
-              <div className='not-prose my-8'>
-                <HeroQuickCheck topic="Solar panel maintenance cost and comparison" />
-              </div>
+        <section>
+          <h2>Does a cleaning pay for itself?</h2>
+          <p>
+            Compare the quote with the electricity it would win back. A UC San Diego team studied 186 California
+            homes and businesses using 2010 data and found panels lost a little under 0.05 percent of
+            efficiency per day without rain, reaching 7.4 percent after a 145-day summer drought. For a typical
+            5 kW system, washing halfway through summer was worth about $20 of electricity before the rains
+            returned (UC San Diego, July 2013). <Cite publisher="UC San Diego" href={UCSD} date={UPDATED} />
+          </p>
+          <p>To check your own roof:</p>
+          <ol>
+            <li>In your monitoring app, compare a dry-season month with the same month last year.</li>
+            <li>Estimate the kWh a cleaning would recover before the next real rain.</li>
+            <li>Multiply by the price per kWh on your electric bill, or by your export credit value if that power would have gone to the grid.</li>
+            <li>If the result is smaller than the cleaning quote, wait for rain.</li>
+          </ol>
+          <p>
+            The exceptions the researchers named are real: bird droppings that rain won’t remove, panels tilted
+            under five degrees, and homes beside a highway, factory or agricultural operation. The methods and
+            warranty rules are in <Link href="/blog/solar-panel-cleaning-california">our guide to cleaning solar panels in California</Link>.
+          </p>
+        </section>
 
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                What Maintenance Actually Costs
-              </h2>
+        <section>
+          <h2>Inspection costs</h2>
+          <p>
+            An inspection is worth paying for when output falls without an obvious reason, after storm or fire
+            damage, when you buy a house that already has solar, or before roof work. Its price depends on
+            whether the inspector climbs the roof, tests each circuit, uses a thermal camera and writes a report.
+            What a good inspection covers is in{' '}
+            <Link href="/blog/solar-panel-inspection-california">our solar panel inspection guide</Link>.
+          </p>
+        </section>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Professional cleaning:</strong> priced per visit or per panel; get a written quote. How often you need it depends on dust, pollen, birds and rain where you live.
-              </p>
+        <section>
+          <h2>Repair and replacement costs</h2>
+          <p>
+            NREL’s operation and maintenance guide calls inverter failure “one of the most frequent causes of PV
+            system performance loss,” and noted in December 2018 that 10-year inverter warranties were then
+            commonly available. <Cite publisher="NREL" href={NREL_OM} date={UPDATED} /> Whether a repair costs
+            you anything depends on the warranty, whether it covers labor as well as parts, and whether panels
+            have to come off to reach the fault.{' '}
+            <Link href="/blog/solar-panel-repair-cost">How much solar panel repair costs</Link> goes through
+            inverters, microinverters, cracked panels, wiring and leaks one at a time. The largest one-off job,
+            taking the array off for a new roof, has its own guide:{' '}
+            <Link href="/blog/solar-panel-removal-reinstall-cost">solar panel removal and reinstall costs</Link>.
+          </p>
+        </section>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Inspections:</strong> covered in the solar panel inspection article. A system that is producing normally needs them less often than one showing problems in its monitoring data.
-              </p>
+        <section>
+          <h2>Maintenance plans versus warranties</h2>
+          <p>
+            The CPUC’s consumer guide says: “Unless you purchase a maintenance plan or your system comes with
+            one, you will be responsible for any maintenance and repairs.”{' '}
+            <Cite publisher="CPUC" href={CPUC_GUIDE} date={UPDATED} /> Before buying a plan, lay it next to the
+            warranties you already have.
+          </p>
+          <div className="overflow-x-auto rounded-xl border">
+            <table className="w-full text-sm">
+              <caption className="sr-only">Maintenance plan comparison checklist</caption>
+              <thead className="bg-muted">
+                <tr>
+                  <th className={th}>Question</th>
+                  <th className={th}>Why it matters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t"><th scope="row" className={th}>Does it cover labor?</th><td className={td}>Product warranties often replace a part without paying for the visit to install it.</td></tr>
+                <tr className="border-t"><th scope="row" className={th}>Does it cover roof penetrations?</th><td className={td}>Leaks at mounts are a workmanship issue; check whether the installer’s warranty already covers them.</td></tr>
+                <tr className="border-t"><th scope="row" className={th}>How many cleanings, and when?</th><td className={td}>A fixed schedule may clean panels that rain would have cleaned anyway.</td></tr>
+                <tr className="border-t"><th scope="row" className={th}>What is the response time?</th><td className={td}>The CPUC suggests asking for a typical response time by phone or email.</td></tr>
+                <tr className="border-t"><th scope="row" className={th}>Can you cancel, and does it transfer?</th><td className={td}>A plan tied to the house matters if you sell.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Monitoring and diagnostics:</strong> Most modern systems come with cloud-based monitoring (Enphase app, SolarEdge app, etc.); check whether yours carries a subscription fee. These apps alert you to performance drops or inverter errors.
-              </p>
+        <section>
+          <h2>Owned, leased or PPA: who pays</h2>
+          <p>
+            If you bought the system with cash or a loan, the costs above are yours. If a company owns it under a
+            lease or power purchase agreement, service is normally that company’s job, but the contract decides
+            the details, including whether cleaning falls to you and who pays for removal before a new roof.
+            Read those sections before calling anyone else; a third party working on a leased array can cause a
+            dispute. <Link href="/blog/rent-solar-panels-for-your-home-california">How solar leases and PPAs work</Link>{' '}
+            explains the contract types, and{' '}
+            <Link href="/blog/is-my-roof-good-for-solar-california">our roof suitability guide</Link> covers the
+            roof questions that drive the largest future costs.
+          </p>
+        </section>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Inverter replacement:</strong> Not annual, but plan ahead. String inverters usually carry shorter warranties than panels, and microinverters usually carry longer ones; the warranty sheet for your model gives the term. Price a replacement before the warranty runs out so the cost is not a surprise.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Annual budget:</strong> NREL&apos;s $30 per kW a year works out to about $210 a year for a 7 kW system; its $0 to $40 range covers systems that get no paid upkeep up to those that get all of it.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Cleaning: Is It Really Necessary?
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Dust, pollen, bird droppings and leaf debris reduce panel output; how much depends on local conditions and how long panels go without cleaning. In California&apos;s dry climate, soiling is slower than in humid regions, but it still matters.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>When cleaning makes sense:</strong> If your system is in a dusty area (near gravel roads, agricultural zones, or high-traffic roads), compare the cleaning price with the output your monitoring shows you are losing. If you&apos;re in an urban area with moderate soiling, 1 cleaning per year is usually enough. If your area gets regular rain and your panels have a steep tilt angle (&gt;25 degrees), rain cleans them naturally — you might skip professional cleaning altogether.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>DIY cleaning:</strong> You can clean panels yourself with a soft brush and water hose, but be cautious. Avoid high pressure washers (they can damage seals), and never walk on panels unsafely. If your system is on an easy-access roof and you&apos;re comfortable on ladders, DIY saves money. If your roof is steep or high, hire a professional.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Monitoring: Your Early-Warning System
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                Most modern solar systems include cloud-based monitoring. Check your app monthly to spot issues early. Look for unexpected drops in output, inverter error codes, or one panel consistently underperforming (sign of damage or shading).
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>What to watch for:</strong> A sudden drop in output that is not seasonal usually indicates soiling, inverter malfunction, or a large shaded tree. A gradual decline over months is normal degradation. Loss of output from just one panel while others produce normally suggests that panel is damaged or shaded.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Cost:</strong> usually included with the system; check whether yours has a subscription fee. Use it.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Common Issues and Repair Costs
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Inverter failure:</strong> replacement equipment plus installation labor. Check whether the inverter warranty covers labor as well as parts.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Cracked or damaged panel:</strong> replacement priced per panel. Rare unless there&apos;s physical damage (hail, accident, improper installation).
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Wiring or connector corrosion:</strong> More common in coastal areas (salt air) or very old systems. A professional inspection catches this.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Loose mounting hardware:</strong> Usually discovered during professional cleaning or inspection.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Bird damage/nesting:</strong> debris removal or bird proofing. Preventable with early bird-proofing (see article: Solar Panel Bird Proofing).
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Annual Maintenance Schedule
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Monthly:</strong> Check your monitoring app for unexpected output drops. Takes 30 seconds.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Quarterly:</strong> Walk around your roof and visually inspect panels for obvious debris, cracks, or nesting. From the ground is fine.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Annually (or as needed):</strong> Schedule professional cleaning, especially if you notice dust/soiling in quarterly checks.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Every few years:</strong> Professional inspection to catch wiring corrosion, loose hardware, and electrical issues before they become problems.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>Before the inverter warranty ends:</strong> Full inverter assessment, and a written price for a replacement.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                PPA and Lease Customers: Check Who Maintains the System
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                If you have a PPA or lease, the company that owns the panels is usually responsible for repairs and inverter replacement; cleaning is sometimes left to you. The contract says which. You pay the per-kWh price (PPA) or monthly payment (lease) set in the contract, which may rise each year under an escalator.
-              </p>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                When the contract assigns repairs to the provider, you are not paying for an inverter replacement yourself. The trade-off is that you don&apos;t own the system, and the provider&apos;s obligations last only as long as the contract and the provider do.
-              </p>
-
-              <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                The Bottom Line
-              </h2>
-
-              <p className='text-foreground/80 leading-relaxed mb-6'>
-                NREL&apos;s benchmark for residential upkeep is $30 per kW a year, within a $0 to $40 range, and most of the variation comes from cleaning and component failures. Monitoring is essential. An inverter replacement will eventually be necessary; the warranty term tells you roughly when to budget for it. If you have a PPA or lease, read which maintenance tasks the contract assigns to the provider. Regular monitoring, annual or bi-annual cleaning in dusty areas, and professional inspection every 3 to 5 years will keep your system running efficiently for decades.
-              </p>
-            </div>
-
-            {/* CTA */}
-            <div className='mt-12 bg-primary/5 rounded-2xl border border-primary/20 p-8 text-center'>
-              <h3 className='text-xl md:text-2xl font-bold text-foreground mb-3 tracking-tight'>
-                Want to Know Your Best Solar Option?
-              </h3>
-              <p className='text-muted-foreground mb-6 max-w-lg mx-auto'>
-                If you are weighing an owned system against a PPA or lease and want a provider to review your project, you can send your details through the form on this page. California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.
-              </p>
-              <Link
-                href='#solar-inquiry'
-                className='inline-flex items-center gap-2 bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-3 rounded-lg font-semibold shadow-md hover:shadow-lg transition-all'
-              >
-                Request a solar review
-                <ArrowRight className='h-4 w-4' />
-              </Link>
-            </div>
-
-            <div className='mt-8'>
-              <SolarInquiry topic="Solar panel maintenance cost and comparison" />
-            </div>
-
-            {/* Navigation */}
-            <div className='mt-10 pt-8 border-t border-border flex justify-between items-center'>
-              <Link
-                href='/blog'
-                className='text-primary hover:underline font-medium inline-flex items-center gap-2'
-              >
-                <ArrowLeft className='h-4 w-4' />
-                All Articles
-              </Link>
-              <Link
-                href='/blog/solar-panel-bird-proofing'
-                className='text-primary hover:underline font-medium inline-flex items-center gap-2'
-              >
-                Next Article
-                <ArrowRight className='h-4 w-4' />
-              </Link>
-            </div>
-          </article>
-        </div>
-      </main>
+        <section>
+          <h2>A simple yearly budget</h2>
+          <ol>
+            <li>Find the warranty end dates for panels, inverters and workmanship, and put them on a calendar.</li>
+            <li>Set aside NREL’s $30 per kW a year, or less if your warranties still cover labor.</li>
+            <li>Check monitoring monthly so a fault costs weeks of output, not months.</li>
+            <li>Price the inverter replacement before its warranty ends, so the bill is not a surprise.</li>
+            <li>Ask for a written remove-and-reinstall quote whenever a roofer gives you a roof estimate.</li>
+          </ol>
+        </section>
+      </GuideShell>
       <Footer />
     </PublicLayout>
   );

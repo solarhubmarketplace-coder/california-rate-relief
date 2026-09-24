@@ -1,0 +1,313 @@
+{
+  "agent": "maint",
+  "branch": "claude/ta-maint-20260923",
+  "pages": [
+    {
+      "path": "/solar-panel-maintenance-california",
+      "action": "CREATE",
+      "hub": "maintenance",
+      "file": "src/app/solar-panel-maintenance-california/page.tsx",
+      "title": "Solar Panel Maintenance in California: Complete Guide",
+      "clusters": [8, 2074, 2765, 3076],
+      "sources": [
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://atb.nrel.gov/electricity/2024/residential_pv",
+        "https://www.nrel.gov/docs/fy19osti/73822.pdf",
+        "https://jacobsschool.ucsd.edu/news/release/1393?id=1393",
+        "https://escholarship.org/uc/item/5kd297nm",
+        "https://www.cslb.ca.gov/solar",
+        "https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/",
+        "https://www.cslb.ca.gov/Consumers/Legal_Issues_For_Consumers/Small_Claims_Court.aspx",
+        "https://www.energy.gov/eere/solar/articles/replacing-your-roof-its-great-time-add-solar",
+        "https://www.ladwp.com/residential-services/solar-programs/solar-rooftops"
+      ],
+      "status": "done",
+      "note": "hub page for maintenance. New root pillar (hand-written pattern) answering 'solar panel maintenance' (7,460/mo; impressions currently land on /solar-installers/tesla-solar-review). Covers monitoring, cleaning, inspection, repair, removal/reinstall, warranties, leases, who-to-call table, NREL upkeep benchmark, and a grouped list linking every maintenance page. topic-hubs.ts needs hubPage='/solar-panel-maintenance-california' for maintenance. Not in qc-gate-tsx CRR_PREFIXES, so the gate does not cover it."
+    },
+    {
+      "path": "/blog/solar-panel-maintenance-cost",
+      "action": "UPGRADE",
+      "hub": "maintenance",
+      "file": "src/app/blog/solar-panel-maintenance-cost/page.tsx",
+      "title": "Solar Panel Maintenance & Cleaning Cost in California",
+      "clusters": [302, 488],
+      "sources": [
+        "https://atb.nrel.gov/electricity/2024/residential_pv",
+        "https://www.nrel.gov/docs/fy19osti/73822.pdf",
+        "https://jacobsschool.ucsd.edu/news/release/1393?id=1393",
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://www.cslb.ca.gov/solar"
+      ],
+      "status": "done",
+      "note": "Retitled to add cleaning cost (rows' primary_kw = 'solar panel cleaning prices' / 'cleaning cost california'). No primary source publishes CA cleaning prices, so cleaning is covered as cost drivers plus a worked 'does a cleaning pay' method. NREL ATB 2024 $30/kW-yr figure re-verified this session. Now links to the new /blog/solar-panel-repair-cost (CREATE_DEDICATED holder link)."
+    },
+    {
+      "path": "/blog/solar-panel-repair-cost",
+      "action": "CREATE_DEDICATED",
+      "hub": "maintenance",
+      "file": "src/app/blog/solar-panel-repair-cost/page.tsx",
+      "title": "Solar Panel Repair Cost in California: What Drives It",
+      "clusters": [340],
+      "sources": [
+        "https://www.nrel.gov/docs/fy19osti/73822.pdf",
+        "https://atb.nrel.gov/electricity/2024/residential_pv",
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://www.cslb.ca.gov/solar",
+        "https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/Complaint_Against_Licensed_Contractors.aspx",
+        "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx"
+      ],
+      "status": "done",
+      "note": "Holder /blog/solar-panel-maintenance-cost now links here in its repairs section. Only cost figure used is NREL's Dec 2018 flashing-repair order of magnitude, labelled with its date and 'not a current California price'."
+    },
+    {
+      "path": "/blog/solar-panel-removal-reinstall-cost",
+      "action": "UPGRADE",
+      "hub": "maintenance",
+      "file": "src/app/blog/solar-panel-removal-reinstall-cost/page.tsx",
+      "title": "Solar Panel Removal and Reinstall Cost in California",
+      "clusters": [52, 220],
+      "sources": [
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.cslb.ca.gov/solar",
+        "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+        "https://www.energy.gov/eere/solar/articles/replacing-your-roof-its-great-time-add-solar",
+        "https://www.ladwp.com/sites/default/files/2026-01/Revised%20SRP%20Guidelines%20(BES%2011-3-25%20v.2).pdf"
+      ],
+      "status": "done",
+      "note": "Retitled (old title 'Solar Panel Removal for Roof Replacement: CA Quote Checklist' missed 'cost'/'reinstall'). Moved from DecisionPage to the GuideShell pattern so qc-gate-tsx can see its schema and CTA. Adds who-can-remove (CSLB classes), cost-driver table, sequence, leases/LADWP, moving panels to a new house (new interconnection on net billing). No price figures: no primary source publishes them."
+    },
+    {
+      "path": "/blog/solar-panel-cleaning-california",
+      "action": "UPGRADE",
+      "hub": "maintenance",
+      "file": "src/app/blog/solar-panel-cleaning-california/page.tsx",
+      "title": "Solar Panel Cleaning in California: Is It Worth It?",
+      "clusters": [8, 2765, 3076, 2387],
+      "sources": [
+        "https://jacobsschool.ucsd.edu/news/release/1393?id=1393",
+        "https://escholarship.org/uc/item/5kd297nm",
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://www.cslb.ca.gov/solar",
+        "https://atb.nrel.gov/electricity/2024/residential_pv"
+      ],
+      "status": "done",
+      "note": "Tier 2 row's head 'solar panel maintenance' (cluster 8) now belongs to the new hub, per the assignment; this page keeps cleaning intent. Removed unsourced figures (price table, 2-7%, 41c/17c rates, '70% by rain', manufacturer-specific claims not re-verified). UC San Diego study figures re-verified. 'how much do solar panel cleaners make' (c2387) skipped: no primary wage source for this occupation."
+    },
+    {
+      "path": "/blog/adu-solar-requirements-california",
+      "action": "UPGRADE",
+      "hub": "rules_permits",
+      "file": "src/app/blog/adu-solar-requirements-california/page.tsx",
+      "title": "ADU Solar Requirements in California: 2025 Energy Code",
+      "clusters": [489, 324, 344],
+      "sources": [
+        "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-6/2025",
+        "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-12",
+        "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/2025-building-energy-efficiency",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit"
+      ],
+      "status": "done",
+      "note": "Rewritten from CEC 2025 Energy Code ADU and single-family PV FAQs. Removed the unsourced kW-by-square-foot table and two incorrect claims (attached ADUs 'deemed' covered by the main house's PV; municipal-utility exemption). Answers 'is solar required on new homes' and 'new solar law' sub-questions."
+    },
+    {
+      "path": "/solar-problems/attorney-to-sue-solar-company-california",
+      "action": "CREATE",
+      "hub": "rules_permits",
+      "file": "src/app/solar-problems/attorney-to-sue-solar-company-california/page.tsx",
+      "title": "Attorney to Sue a Solar Company in California: A Guide",
+      "clusters": [351, 2769],
+      "sources": [
+        "https://selfhelp.courts.ca.gov/small-claims-california",
+        "https://www.cslb.ca.gov/Consumers/Legal_Issues_For_Consumers/Small_Claims_Court.aspx",
+        "https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/Complaint_Against_Licensed_Contractors.aspx",
+        "https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/",
+        "https://www.calbar.ca.gov/public/find-legal-professionals/find-lawyer-referral-service",
+        "https://www.calbar.ca.gov/public/find-legal-professionals/find-lawyer-referral-service/what-certified-lawyer-referral-service-can-do-you",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=6147",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=6148",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7160",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7031",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7071.6",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1689.7",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=338",
+        "https://oag.ca.gov/contact/consumer-complaint-against-business-or-company",
+        "https://www.cpuc.ca.gov/solarguide/"
+      ],
+      "status": "done",
+      "note": "Hand-written under /solar-problems (like solar-homeowners-insurance) so it can carry HubSpokeLinks; the /solar-problems ArticleHub lists only JSON pages, so it needs a hub link at integration. States plainly it is general information, not legal advice, not a law firm, no referral to attorneys, no outcome promises. leginfo sections were fetched with curl (WebFetch is blocked by leginfo robots.txt)."
+    },
+    {
+      "path": "/solar-problems/solar-lawsuit-california",
+      "action": "CREATE",
+      "hub": "rules_permits",
+      "file": "src/app/solar-problems/solar-lawsuit-california/page.tsx",
+      "title": "Solar Lawsuits in California: Cases, Settlements, Options",
+      "clusters": [1924],
+      "sources": [
+        "https://sfdistrictattorney.org/district-attorney-brooke-jenkins-announces-settlement-with-vivint-solar/",
+        "https://www.cslb.ca.gov/solar",
+        "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+        "https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/Complaint_Against_Licensed_Contractors.aspx",
+        "https://www.courts.ca.gov/opinions/archive/S283614.PDF",
+        "https://www.courts.ca.gov/opinions/archive/A167721A.PDF",
+        "https://selfhelp.courts.ca.gov/small-claims-california",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7160",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7031",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=6125",
+        "https://consumer.ftc.gov/articles/solar-power-your-home"
+      ],
+      "status": "done",
+      "note": "Names Vivint Solar only as described in the SF District Attorney's Feb 19, 2026 announcement (stipulated judgment, no admission of liability); 'EverBright solar lawsuit' not covered: no primary source found. General information, not legal advice. Same /solar-problems hub-listing caveat as the attorney page."
+    },
+    {
+      "path": "/blog/free-roof-replacement-with-solar-panels-california",
+      "action": "UPGRADE",
+      "hub": "roof_structures",
+      "file": "src/app/blog/free-roof-replacement-with-solar-panels-california/page.tsx",
+      "title": "Is Free Roof Replacement With Solar Real? What to Check",
+      "clusters": [1866, 100, 105],
+      "sources": [
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+        "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+        "https://gridalternatives.org/what-we-do/program-administration/dac-sash",
+        "https://www.energy.gov/eere/solar/articles/replacing-your-roof-its-great-time-add-solar"
+      ],
+      "status": "done",
+      "note": "Title and H1 kept (G07 retitle/differentiate held by default). Fixed the link to redirect source /blog/is-solar-worth-it-california-2026 -> /blog/are-solar-panels-worth-it-california. Added 'Do solar companies replace your roof?' section, FAQ schema, links to roof-leak, removal and maintenance pages; moved to GuideShell so qc-gate-tsx passes. IRS and GRID quotes re-verified (GRID wording adjusted to the current page)."
+    },
+    {
+      "path": "/blog/ladwp-solar-rooftops-program",
+      "action": "CREATE",
+      "hub": "roof_structures",
+      "file": "src/app/blog/ladwp-solar-rooftops-program/page.tsx",
+      "title": "LADWP Solar Rooftops Program: Pay, Terms, Who Qualifies",
+      "clusters": [476],
+      "sources": [
+        "https://www.ladwp.com/residential-services/solar-programs/solar-rooftops",
+        "https://www.ladwp.com/sites/default/files/2026-01/Rev._1.2025.Solar_Fact_Sheet.pdf",
+        "https://www.ladwp.com/sites/default/files/2026-01/Revised%20SRP%20Guidelines%20(BES%2011-3-25%20v.2).pdf"
+      ],
+      "status": "done",
+      "note": "LADWP documents fetched with curl (WebFetch got 403). Payment table from the revised guidelines' Table 1; battery add-on flagged as pending (guidelines effective on City Council approval of the revised lease). Utility-owned program; no savings claims."
+    },
+    {
+      "path": "/blog/are-solar-panels-a-scam",
+      "action": "UPGRADE",
+      "hub": "rules_permits",
+      "file": "src/app/blog/are-solar-panels-a-scam/page.tsx",
+      "title": "Are Solar Panels a Scam? California Solar Scams to Avoid",
+      "clusters": [564],
+      "sources": [
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://www.cslb.ca.gov/solar",
+        "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1689.7",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7159.5",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7169",
+        "https://sfdistrictattorney.org/district-attorney-brooke-jenkins-announces-settlement-with-vivint-solar/",
+        "https://consumer.ftc.gov/articles/solar-power-your-home",
+        "https://oag.ca.gov/contact/consumer-complaint-against-business-or-company"
+      ],
+      "status": "done",
+      "note": "Retitled to carry 'California solar scams' (primary_kw 'solar panel scams california'). Removed unsourced figures (2.33M installs, 177 complaints/month, 34.5c rate, 9-12 yr payback, escalator arithmetic that was wrong). Uses the exact compensation-disclosure sentence already used on review pages."
+    },
+    {
+      "path": "/blog/roof-leak-after-solar-panel-install",
+      "action": "CREATE",
+      "hub": "roof_structures",
+      "file": "src/app/blog/roof-leak-after-solar-panel-install/page.tsx",
+      "title": "Roof Leak After Solar Panel Install? What to Do in CA",
+      "clusters": [590, 100],
+      "sources": [
+        "https://www.nrel.gov/docs/fy19osti/73822.pdf",
+        "https://www.cpuc.ca.gov/solarguide/",
+        "https://www.cslb.ca.gov/solar",
+        "https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/",
+        "https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/Complaint_Against_Licensed_Contractors.aspx",
+        "https://www.cslb.ca.gov/Consumers/Legal_Issues_For_Consumers/Small_Claims_Court.aspx",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CCP&sectionNum=337.15",
+        "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7071.5",
+        "https://www.ladwp.com/sites/default/files/2026-01/Revised%20SRP%20Guidelines%20(BES%2011-3-25%20v.2).pdf"
+      ],
+      "status": "done",
+      "note": "Answers the cluster-100 sub-questions ('do solar companies replace your roof', 'will a solar company pay for a new roof') as FAQ entries."
+    },
+    {
+      "path": "/blog/solar-panels-tile-roof-california",
+      "action": "UPGRADE",
+      "hub": "roof_structures",
+      "file": "src/app/blog/solar-panels-tile-roof-california/page.tsx",
+      "title": "Solar Roof Tiles vs Panels on a Tile Roof in California",
+      "clusters": [587, 63],
+      "sources": [
+        "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+        "https://www.energy.gov/eere/solar/articles/replacing-your-roof-its-great-time-add-solar",
+        "https://www.cslb.ca.gov/solar"
+      ],
+      "status": "done",
+      "note": "Targeted upgrade, title kept (G07 held). Added 'Solar roof tiles price: what drives the cost' (no price figures: no primary source), FAQ block with schema (clay tile, breakage, solar tile cost, tile premium, tax credit), later-leak/re-roof section, HubSpokeLinks, roof-hub breadcrumb, byline and compliance line. Existing manufacturer and TRI citations were left as they were (verified 2026-09-22 by the previous owner); DOE and IRS figures re-verified this session."
+    },
+    {
+      "path": "/blog/rooftop-solar-credits-ruling-california",
+      "action": "CREATE",
+      "hub": "nem",
+      "file": "src/app/blog/rooftop-solar-credits-ruling-california/page.tsx",
+      "title": "California Rooftop Solar Credits Ruling: What It Means",
+      "clusters": [568],
+      "sources": [
+        "https://www.courts.ca.gov/opinions/archive/S283614.PDF",
+        "https://www.courts.ca.gov/opinions/archive/A167721A.PDF",
+        "https://www.courts.ca.gov/opinions/archive/A167721M.PDF",
+        "https://supreme.courts.ca.gov/case/s283614-center-biological-diversity-v-public-utilities-commission-pacific-gas-and-electric",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing"
+      ],
+      "status": "done",
+      "note": "CSV files this under roof_structures; the content is the NEM 3.0 court case, so it is parented to the nem hub (breadcrumb + HubSpokeLinks). Override at integration if roof_structures is wanted. Court PDFs fetched with curl (WebFetch blocked by robots). A June 2026 Supreme Court denial of review is reported by trade press but could not be confirmed on the court's docket (Cloudflare-blocked), so the page says the March 9, 2026 Court of Appeal ruling is the latest confirmed and points readers to the docket."
+    }
+  ],
+  "sitemap_add": [
+    "/solar-panel-maintenance-california",
+    "/blog/solar-panel-repair-cost",
+    "/blog/ladwp-solar-rooftops-program",
+    "/blog/roof-leak-after-solar-panel-install",
+    "/blog/rooftop-solar-credits-ruling-california",
+    "/solar-problems/attorney-to-sue-solar-company-california",
+    "/solar-problems/solar-lawsuit-california"
+  ],
+  "blog_index_add": [
+    { "slug": "solar-panel-repair-cost", "title": "Solar Panel Repair Cost in California: What Drives It", "hub": "maintenance" },
+    { "slug": "solar-panel-removal-reinstall-cost", "title": "Solar Panel Removal and Reinstall Cost in California", "hub": "maintenance" },
+    { "slug": "ladwp-solar-rooftops-program", "title": "LADWP Solar Rooftops Program: Pay, Terms, Who Qualifies", "hub": "roof_structures" },
+    { "slug": "roof-leak-after-solar-panel-install", "title": "Roof Leak After Solar Panel Install? What to Do in CA", "hub": "roof_structures" },
+    { "slug": "solar-panels-tile-roof-california", "title": "Solar Roof Tiles vs Panels on a Tile Roof in California", "hub": "roof_structures" },
+    { "slug": "rooftop-solar-credits-ruling-california", "title": "California Rooftop Solar Credits Ruling: What It Means", "hub": "nem" }
+  ],
+  "redirect_requests": [],
+  "hub_links": [
+    { "hub": "maintenance", "href": "/solar-panel-maintenance-california", "label": "Solar panel maintenance in California", "note": "hub page for maintenance: set topic-hubs.ts maintenance.hubPage to this URL, hubPageLabel 'Solar Panel Maintenance in California: Complete Guide'" },
+    { "hub": "maintenance", "href": "/blog/solar-panel-repair-cost", "label": "What drives solar panel repair cost" },
+    { "hub": "maintenance", "href": "/blog/solar-panel-inspection-california", "label": "Solar panel inspections in California" },
+    { "hub": "maintenance", "href": "/solar-problems/solar-panels-not-producing-enough", "label": "Panels not producing enough" },
+    { "hub": "rules_permits", "href": "/solar-problems/attorney-to-sue-solar-company-california", "label": "Finding an attorney for a solar dispute" },
+    { "hub": "rules_permits", "href": "/solar-problems/solar-lawsuit-california", "label": "Solar lawsuits and settlements in California" },
+    { "hub": "rules_permits", "href": "/blog/are-solar-panels-a-scam", "label": "Solar scams and how to spot them" },
+    { "hub": "roof_structures", "href": "/blog/roof-leak-after-solar-panel-install", "label": "Roof leak after a solar install" },
+    { "hub": "roof_structures", "href": "/blog/ladwp-solar-rooftops-program", "label": "LADWP Solar Rooftops program" },
+    { "hub": "nem", "href": "/blog/rooftop-solar-credits-ruling-california", "label": "The NEM 3.0 court ruling explained" }
+  ],
+  "link_requests": [
+    { "from": "/solar-installers/tesla-solar-review", "to": "/solar-panel-maintenance-california", "why": "Tesla review holds 'solar panel maintenance' impressions (cluster 8); a contextual link hands the head query to the new hub. Not my file." },
+    { "from": "/solar-problems", "to": "/solar-problems/attorney-to-sue-solar-company-california and /solar-problems/solar-lawsuit-california", "why": "ArticleHub lists only JSON cluster pages; these two are hand-written, so the hub page needs them added (content prop or data)." },
+    { "from": "/blog/is-my-roof-good-for-solar-california", "to": "/blog/roof-leak-after-solar-panel-install and /blog/ladwp-solar-rooftops-program", "why": "roof_structures hub should list its new spokes. Not my file." }
+  ],
+  "shared_code": [
+    { "file": "src/components/growth/GuideShell.tsx", "why": "New body frame for hand-written sourced guides (breadcrumb, H1, Byline, KeyFacts, TocRail, FaqBlock with FAQPage schema, HubSpokeLinks, SourceList). PublicLayout, Header, ArticleJsonLd, the compliance sentence and SolarInquiry stay in each page.tsx so scripts/qc-gate-tsx.mjs (which reads only route source) can verify them; DecisionPage-based pages fail that gate for this reason." }
+  ],
+  "skipped": [
+    { "url": "/blog/free-roof-replacement-with-solar-panels-california (G07 differentiate/retitle vs tile-roof page)", "why": "held: Decision 14 default" },
+    { "url": "/blog/solar-panel-cleaning-california sub-question 'how much do solar panel cleaners make' (c2387)", "why": "no primary wage source for this occupation; left out rather than guessed" }
+  ]
+}
