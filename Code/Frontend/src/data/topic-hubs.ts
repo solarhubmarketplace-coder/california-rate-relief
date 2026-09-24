@@ -39,7 +39,7 @@ export const TOPIC_HUBS: TopicHub[] = [
     "spokes": [
       {
         "href": "/battery/tesla-powerwall-3-cost-california",
-        "label": "Tesla Powerwall 3 Cost in California (2026): Installed Price"
+        "label": "Tesla Powerwall 3 Cost in California (2026): Price, Rebates"
       },
       {
         "href": "/battery/battery-backup-vs-generator-california",
@@ -71,11 +71,11 @@ export const TOPIC_HUBS: TopicHub[] = [
       },
       {
         "href": "/blog/solar-battery-backup-california",
-        "label": "California Solar Batteries: Backup and Cost Comparison"
+        "label": "Solar battery backup and storage in California"
       },
       {
         "href": "/battery/sgip-battery-rebate-california",
-        "label": "SGIP Battery Rebate California: September 2026 Status"
+        "label": "SGIP status, eligibility and what it pays"
       },
       {
         "href": "/battery/powerwall-vs-enphase-vs-franklinwh",
@@ -139,7 +139,7 @@ export const TOPIC_HUBS: TopicHub[] = [
       },
       {
         "href": "/solar-savings/irvine",
-        "label": "Irvine Solar Savings: SCE Rates & Costs (2026)"
+        "label": "Irvine electricity: Orange County Power Authority and SCE (label update)"
       },
       {
         "href": "/solar-savings/orange-county",
@@ -151,7 +151,7 @@ export const TOPIC_HUBS: TopicHub[] = [
       },
       {
         "href": "/solar-savings/oakland",
-        "label": "Oakland Solar Savings: PG&E Rates & Costs (2026)"
+        "label": "Oakland electricity: Ava Community Energy and PG&E (label update)"
       },
       {
         "href": "/solar-savings/carlsbad",
@@ -352,6 +352,22 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-savings/winchester",
         "label": "Winchester electric rates and solar savings"
+      },
+      {
+        "href": "/solar-savings/lancaster",
+        "label": "Who provides electricity in Lancaster: SCE and Lancaster Energy"
+      },
+      {
+        "href": "/solar-savings/newport-beach",
+        "label": "Newport Beach electricity: SCE rates and bills"
+      },
+      {
+        "href": "/solar-savings/palo-alto",
+        "label": "Palo Alto electricity: City of Palo Alto Utilities rates"
+      },
+      {
+        "href": "/solar-savings/altadena",
+        "label": "The SCE bill increase in Altadena"
       }
     ]
   },
@@ -536,6 +552,158 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-cost/palm-springs",
         "label": "Solar panel cost in Palm Springs"
+      },
+      {
+        "href": "/solar-cost/san-mateo",
+        "label": "Solar panel cost in San Mateo"
+      },
+      {
+        "href": "/solar-cost/irvine",
+        "label": "Solar panel cost in Irvine"
+      },
+      {
+        "href": "/solar-cost/fremont",
+        "label": "Solar panel cost in Fremont"
+      },
+      {
+        "href": "/solar-cost/riverside",
+        "label": "Solar panel cost in Riverside"
+      },
+      {
+        "href": "/solar-cost/oakland",
+        "label": "Solar panel cost in Oakland"
+      },
+      {
+        "href": "/solar-cost/pleasanton",
+        "label": "Solar panel cost in Pleasanton"
+      },
+      {
+        "href": "/solar-cost/chico",
+        "label": "Solar panel cost in Chico"
+      },
+      {
+        "href": "/solar-cost/pasadena",
+        "label": "Solar panel cost in Pasadena"
+      },
+      {
+        "href": "/solar-cost/santa-clarita",
+        "label": "Solar panel cost in Santa Clarita"
+      },
+      {
+        "href": "/solar-cost/long-beach",
+        "label": "Solar panel cost in Long Beach"
+      },
+      {
+        "href": "/solar-cost/santa-ana",
+        "label": "Solar panel cost in Santa Ana"
+      },
+      {
+        "href": "/solar-cost/sacramento",
+        "label": "Solar panel cost in Sacramento"
+      },
+      {
+        "href": "/solar-cost/sunnyvale",
+        "label": "Solar panel cost in Sunnyvale"
+      },
+      {
+        "href": "/solar-cost/visalia",
+        "label": "Solar panel cost in Visalia"
+      },
+      {
+        "href": "/solar-cost/mountain-view",
+        "label": "Solar panel cost in Mountain View"
+      },
+      {
+        "href": "/solar-cost/huntington-beach",
+        "label": "Solar panel cost in Huntington Beach"
+      },
+      {
+        "href": "/solar-cost/arcata",
+        "label": "Solar panel cost in Arcata"
+      },
+      {
+        "href": "/solar-cost/concord",
+        "label": "Solar panel cost in Concord"
+      },
+      {
+        "href": "/solar-cost/richmond",
+        "label": "Solar panel cost in Richmond"
+      },
+      {
+        "href": "/solar-cost/berkeley",
+        "label": "Solar panel cost in Berkeley"
+      },
+      {
+        "href": "/solar-cost/santa-clara",
+        "label": "Solar panel cost in Santa Clara"
+      },
+      {
+        "href": "/solar-cost/san-clemente",
+        "label": "Solar panel cost in San Clemente"
+      },
+      {
+        "href": "/solar-cost/clovis",
+        "label": "Solar panel cost in Clovis"
+      },
+      {
+        "href": "/solar-cost/lakewood",
+        "label": "Solar panel cost in Lakewood"
+      },
+      {
+        "href": "/solar-cost/elk-grove",
+        "label": "Solar panel cost in Elk Grove"
+      },
+      {
+        "href": "/solar-cost/mission-viejo",
+        "label": "Solar panel cost in Mission Viejo"
+      },
+      {
+        "href": "/solar-cost/victorville",
+        "label": "Solar panel cost in Victorville"
+      },
+      {
+        "href": "/solar-cost/glendale",
+        "label": "Solar panel cost in Glendale"
+      },
+      {
+        "href": "/solar-cost/santa-barbara",
+        "label": "Solar panel cost in Santa Barbara"
+      },
+      {
+        "href": "/solar-cost/vacaville",
+        "label": "Solar panel cost in Vacaville"
+      },
+      {
+        "href": "/solar-cost/saratoga",
+        "label": "Solar panel cost in Saratoga"
+      },
+      {
+        "href": "/solar-cost/gilroy",
+        "label": "Solar panel cost in Gilroy"
+      },
+      {
+        "href": "/solar-cost/san-ramon",
+        "label": "Solar panel cost in San Ramon"
+      },
+      {
+        "href": "/solar-cost/redding",
+        "label": "Solar panel cost in Redding"
+      },
+      {
+        "href": "/solar-cost/redwood-city",
+        "label": "Solar panel cost in Redwood City"
+      },
+      {
+        "href": "/solar-cost/cupertino",
+        "label": "Solar panel cost in Cupertino"
+      },
+      {
+        "href": "/solar-cost/hollister",
+        "label": "Solar cost in Hollister"
+      },
+      {
+        "href": "/solar-cost/petaluma",
+        "label": "Solar cost in Petaluma"
       }
     ]
   },
@@ -852,6 +1020,230 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-companies/rancho-cucamonga",
         "label": "Solar companies in Rancho Cucamonga"
+      },
+      {
+        "href": "/solar-companies/orange-county",
+        "label": "Orange County solar companies by city utility and permit office"
+      },
+      {
+        "href": "/solar-companies/san-mateo-county",
+        "label": "San Mateo County solar companies and permit offices"
+      },
+      {
+        "href": "/solar-companies/bay-area",
+        "label": "Bay Area solar companies by generation provider and permit office"
+      },
+      {
+        "href": "/solar-companies/scotts-valley",
+        "label": "Scotts Valley solar companies"
+      },
+      {
+        "href": "/solar-companies/santa-clara",
+        "label": "Santa Clara solar companies (Silicon Valley Power)"
+      },
+      {
+        "href": "/solar-companies/cupertino",
+        "label": "Cupertino solar companies"
+      },
+      {
+        "href": "/solar-companies/palo-alto",
+        "label": "Palo Alto solar companies (City of Palo Alto Utilities)"
+      },
+      {
+        "href": "/solar-companies/san-ramon",
+        "label": "San Ramon solar companies"
+      },
+      {
+        "href": "/solar-companies/santa-monica",
+        "label": "Santa Monica solar companies"
+      },
+      {
+        "href": "/solar-companies/ontario",
+        "label": "Ontario solar companies"
+      },
+      {
+        "href": "/solar-companies/riverside-county",
+        "label": "Riverside County solar companies by utility"
+      },
+      {
+        "href": "/solar-companies/high-desert",
+        "label": "High Desert solar companies and permit offices"
+      },
+      {
+        "href": "/solar-companies/kern-county",
+        "label": "Kern County solar companies: PG&E and SCE areas"
+      },
+      {
+        "href": "/solar-companies/bellflower",
+        "label": "Bellflower solar companies"
+      },
+      {
+        "href": "/solar-companies/brentwood",
+        "label": "Solar companies in Brentwood"
+      },
+      {
+        "href": "/solar-companies/la-mesa",
+        "label": "Solar companies in La Mesa"
+      },
+      {
+        "href": "/solar-companies/elk-grove",
+        "label": "Solar companies in Elk Grove"
+      },
+      {
+        "href": "/solar-companies/clovis",
+        "label": "Solar companies in Clovis"
+      },
+      {
+        "href": "/solar-companies/yuba-city",
+        "label": "Solar companies in Yuba City"
+      },
+      {
+        "href": "/solar-companies/davis",
+        "label": "Solar companies in Davis"
+      },
+      {
+        "href": "/solar-companies/novato",
+        "label": "Solar companies in Novato"
+      },
+      {
+        "href": "/solar-companies/san-rafael",
+        "label": "Solar companies in San Rafael"
+      },
+      {
+        "href": "/solar-companies/tracy",
+        "label": "Solar companies in Tracy"
+      },
+      {
+        "href": "/solar-companies/antioch",
+        "label": "Solar companies in Antioch"
+      },
+      {
+        "href": "/solar-companies/napa",
+        "label": "Solar companies in Napa"
+      },
+      {
+        "href": "/solar-companies/fairfield",
+        "label": "Solar companies in Fairfield"
+      },
+      {
+        "href": "/solar-companies/poway",
+        "label": "Solar companies in Poway"
+      },
+      {
+        "href": "/solar-companies/hollister",
+        "label": "Solar companies in Hollister"
+      },
+      {
+        "href": "/solar-companies/burbank",
+        "label": "Solar companies in Burbank"
+      },
+      {
+        "href": "/solar-companies/la-habra",
+        "label": "Solar companies in La Habra"
+      },
+      {
+        "href": "/solar-companies/coachella-valley",
+        "label": "Solar companies in Coachella Valley"
+      },
+      {
+        "href": "/solar-companies/ventura-county",
+        "label": "Solar companies in Ventura County"
+      },
+      {
+        "href": "/solar-companies/palmdale",
+        "label": "Solar companies in Palmdale"
+      },
+      {
+        "href": "/solar-companies/hesperia",
+        "label": "Solar companies in Hesperia"
+      },
+      {
+        "href": "/solar-companies/fullerton",
+        "label": "Solar companies in Fullerton"
+      },
+      {
+        "href": "/solar-companies/diamond-bar",
+        "label": "Solar companies in Diamond Bar"
+      },
+      {
+        "href": "/solar-companies/downey",
+        "label": "Solar companies in Downey"
+      },
+      {
+        "href": "/solar-companies/newport-beach",
+        "label": "Solar companies in Newport Beach"
+      },
+      {
+        "href": "/solar-companies/aliso-viejo",
+        "label": "Solar companies in Aliso Viejo"
+      },
+      {
+        "href": "/solar-companies/mission-viejo",
+        "label": "Solar companies in Mission Viejo"
+      },
+      {
+        "href": "/solar-companies/galt",
+        "label": "Solar companies in Galt"
+      },
+      {
+        "href": "/solar-companies/lake-forest",
+        "label": "Solar companies in Lake Forest"
+      },
+      {
+        "href": "/solar-companies/tustin",
+        "label": "Solar companies in Tustin"
+      },
+      {
+        "href": "/solar-companies/santee",
+        "label": "Solar companies in Santee"
+      },
+      {
+        "href": "/solar-companies/fallbrook",
+        "label": "Solar companies in Fallbrook"
+      },
+      {
+        "href": "/solar-companies/lake-elsinore",
+        "label": "Solar companies in Lake Elsinore"
+      },
+      {
+        "href": "/solar-companies/merced",
+        "label": "Solar companies in Merced"
+      },
+      {
+        "href": "/solar-companies/moreno-valley",
+        "label": "Solar companies in Moreno Valley"
+      },
+      {
+        "href": "/solar-companies/petaluma",
+        "label": "Solar companies in Petaluma"
+      },
+      {
+        "href": "/solar-companies/santa-barbara",
+        "label": "Solar companies in Santa Barbara"
+      },
+      {
+        "href": "/solar-companies/santa-cruz",
+        "label": "Solar companies in Santa Cruz"
+      },
+      {
+        "href": "/solar-companies/sunnyvale",
+        "label": "Solar companies in Sunnyvale"
+      },
+      {
+        "href": "/solar-companies/vallejo",
+        "label": "Solar companies in Vallejo"
+      },
+      {
+        "href": "/solar-companies/victorville",
+        "label": "Solar companies in Victorville"
+      },
+      {
+        "href": "/solar-companies/westminster",
+        "label": "Solar companies in Westminster"
+      },
+      {
+        "href": "/solar-companies/wildomar",
+        "label": "Solar companies in Wildomar"
       }
     ]
   },
@@ -968,6 +1360,22 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/commercial-solar/sgip-battery-storage",
         "label": "SGIP status for commercial battery storage"
+      },
+      {
+        "href": "/commercial-solar/commercial-solar-tax-credit",
+        "label": "Commercial solar tax credit (§48E)"
+      },
+      {
+        "href": "/commercial-solar/commercial-solar-lease-programs",
+        "label": "Commercial solar leases and roof leases"
+      },
+      {
+        "href": "/commercial-solar/industrial-solar-california",
+        "label": "Industrial solar in California"
+      },
+      {
+        "href": "/commercial-solar/average-wattage-of-a-commercial-solar-panel",
+        "label": "Commercial solar panel wattage"
       }
     ]
   },
@@ -1088,6 +1496,10 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/california-solar-cost-index",
         "label": "Solar permit fees by city (cost index)"
+      },
+      {
+        "href": "/blog/10-kw-solar-system-cost",
+        "label": "What a 10 kW system costs in California"
       }
     ]
   },
@@ -1167,7 +1579,7 @@ export const TOPIC_HUBS: TopicHub[] = [
       },
       {
         "href": "/solar-problems/do-i-still-get-a-utility-bill-with-solar",
-        "label": "The utility bill you still get with solar"
+        "label": "Do you still get a bill with solar?"
       },
       {
         "href": "/solar-problems/does-solar-mean-free-electricity-california",
@@ -1184,6 +1596,34 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-problems/running-ac-with-solar-california",
         "label": "Running air conditioning on solar"
+      },
+      {
+        "href": "/blog/help-with-pge-bill",
+        "label": "Help paying a PG&E bill"
+      },
+      {
+        "href": "/blog/how-to-lower-pge-bill",
+        "label": "How to lower a PG&E bill"
+      },
+      {
+        "href": "/blog/how-to-read-pge-bill",
+        "label": "How to read a PG&E bill"
+      },
+      {
+        "href": "/blog/how-to-read-sdge-bill",
+        "label": "How to read an SDG&E bill"
+      },
+      {
+        "href": "/blog/how-much-does-it-cost-to-turn-on-electricity",
+        "label": "Cost to turn on electricity"
+      },
+      {
+        "href": "/blog/average-sdge-bill-2-bedroom-apartment",
+        "label": "SDG&E bill for a 2-bedroom apartment"
+      },
+      {
+        "href": "/blog/does-pool-pump-use-a-lot-of-electricity",
+        "label": "Pool pump electricity use"
       }
     ]
   },
@@ -1248,6 +1688,14 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-problems/ucc-1-lien-solar-california",
         "label": "UCC-1 filings on solar equipment"
+      },
+      {
+        "href": "/blog/solar-leasing-company",
+        "label": "Solar leasing companies: how to compare"
+      },
+      {
+        "href": "/blog/solar-ppa-companies",
+        "label": "Solar PPA companies: how to compare offers"
       }
     ]
   },
@@ -1304,6 +1752,22 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/blog/tech-clean-california-heat-pump-rebate",
         "label": "TECH Clean California heat pump rebates"
+      },
+      {
+        "href": "/blog/pge-solar-program",
+        "label": "PG&E solar programs"
+      },
+      {
+        "href": "/blog/smud-solar-program",
+        "label": "SMUD solar programs"
+      },
+      {
+        "href": "/blog/ladwp-solar-program",
+        "label": "LADWP solar programs"
+      },
+      {
+        "href": "/blog/solar-discount",
+        "label": "Solar discount programs (20% off, no panels)"
       }
     ]
   },
@@ -1339,11 +1803,11 @@ export const TOPIC_HUBS: TopicHub[] = [
       },
       {
         "href": "/battery/tesla-powerwall-3-cost-california",
-        "label": "Tesla Powerwall 3 Cost in California (2026): Installed Price"
+        "label": "Tesla Powerwall 3 Cost in California (2026): Price, Rebates"
       },
       {
         "href": "/solar-installers/palmetto-solar-review",
-        "label": "Palmetto Solar Reviews (2026): LightReach & Court Record"
+        "label": "Palmetto Solar and LightReach Reviews (2026): BBB, Contract"
       },
       {
         "href": "/solar-installers/sunrun-review",
@@ -1399,7 +1863,7 @@ export const TOPIC_HUBS: TopicHub[] = [
       },
       {
         "href": "/solar-installers/sunlux-solar-review",
-        "label": "Sunlux Solar Reviews (2026): 25-Year Warranty, CSLB Check"
+        "label": "Sunlux Solar Reviews (2026): Is Sunlux Legit? BBB, License"
       },
       {
         "href": "/solar-installers/enphase-vs-solaredge",
@@ -1547,7 +2011,7 @@ export const TOPIC_HUBS: TopicHub[] = [
       },
       {
         "href": "/blog/solar-system-quotes-california",
-        "label": "Solar System Quotes in California: Get 3 Real Quotes Fast"
+        "label": "Solar quotes in California: how to get and compare bids"
       },
       {
         "href": "/blog/free-solar-panels-california",
@@ -1627,7 +2091,7 @@ export const TOPIC_HUBS: TopicHub[] = [
       },
       {
         "href": "/blog/solar-panel-removal-reinstall-cost",
-        "label": "Solar Panel Removal for Roof Replacement: CA Quote Checklist"
+        "label": "Solar panel removal and reinstall cost"
       },
       {
         "href": "/blog/solar-panel-cleaning-california",
@@ -1723,7 +2187,7 @@ export const TOPIC_HUBS: TopicHub[] = [
       },
       {
         "href": "/commercial-solar/vnem-aggregation-multi-meter",
-        "label": "California VNEM vs NEM Aggregation: Multi-Meter Solar"
+        "label": "Virtual net metering and meter aggregation"
       },
       {
         "href": "/blog/nem-3-california-timeline",
@@ -1740,6 +2204,30 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-problems/true-up-bill-california-explained",
         "label": "California Solar True-Up Bill Explained"
+      },
+      {
+        "href": "/blog/pge-solar-billing-plan",
+        "label": "PG&E’s Solar Billing Plan, explained"
+      },
+      {
+        "href": "/blog/sce-solar-billing-plan",
+        "label": "SCE’s Solar Billing Plan and export rates"
+      },
+      {
+        "href": "/blog/sdge-net-metering",
+        "label": "SDG&E NEM 2.0 and the Solar Billing Plan"
+      },
+      {
+        "href": "/blog/ladwp-net-metering",
+        "label": "LADWP net metering (NEM 3.0 does not apply)"
+      },
+      {
+        "href": "/blog/solar-rate",
+        "label": "Which rate plan solar homes pay"
+      },
+      {
+        "href": "/blog/solar-duck-curve-california",
+        "label": "The California duck curve and curtailment"
       }
     ]
   },
@@ -1799,6 +2287,18 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-installers/baker-electric-solar-review",
         "label": "Baker Electric San Diego vs Baker Home Energy: Solar Review"
+      },
+      {
+        "href": "/blog/flat-roof-solar-panels",
+        "label": "Solar panels on a flat roof"
+      },
+      {
+        "href": "/blog/lease-roof-for-solar-panels",
+        "label": "Leasing your roof for solar"
+      },
+      {
+        "href": "/blog/solar-panels-over-canals-california",
+        "label": "California's solar canal projects"
       }
     ]
   },
@@ -1903,6 +2403,10 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-installers/solar-installer-bankruptcy-california",
         "label": "When a solar installer goes bankrupt"
+      },
+      {
+        "href": "/solar-problems/solar-cancellation-california",
+        "label": "How to get out of a solar contract"
       }
     ]
   },
@@ -1991,6 +2495,34 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/blog/what-is-demand-charge-california",
         "label": "Demand charges, explained"
+      },
+      {
+        "href": "/blog/smud-peak-hours",
+        "label": "SMUD peak hours and summer rates"
+      },
+      {
+        "href": "/blog/pge-ev-rates",
+        "label": "PG&E EV rate plans"
+      },
+      {
+        "href": "/blog/electricity-peak-hours-california",
+        "label": "California peak hours by utility"
+      },
+      {
+        "href": "/blog/sdge-and-solar",
+        "label": "SDG&E and solar: Solar Billing Plan"
+      },
+      {
+        "href": "/blog/solar-rate",
+        "label": "Solar rates and the solar tariff"
+      },
+      {
+        "href": "/blog/electricity-rates-by-zip-code",
+        "label": "Electricity rates by ZIP code"
+      },
+      {
+        "href": "/blog/pge-rate-schedules",
+        "label": "PG&E rate schedules"
       }
     ]
   }

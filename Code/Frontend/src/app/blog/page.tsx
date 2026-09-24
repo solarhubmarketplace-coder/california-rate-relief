@@ -40,6 +40,239 @@ interface BlogPost {
 }
 
 const blogPosts: BlogPost[] = [
+  // 2026-09-24 integration — Tier 2 and Tier 3 posts, 
+  {
+    slug: '10-kw-solar-system-cost',
+    title: '10 kW Solar System Cost in California: What 2025 Data Shows',
+    excerpt:
+      'At the 2025 California average for home systems of 10 kW or more ($4.26/W), 10 kW is about $42,600 before incentives. By utility, installer and size.',
+    date: '2026-09-23',
+    category: 'Solar Savings',
+  },
+  {
+    slug: 'average-sdge-bill-2-bedroom-apartment',
+    title: 'Average SDG&E Bill for a 2-Bedroom Apartment (2026)',
+    excerpt:
+      'No official average exists, so we priced apartment usage on SDG&E\'s August 2026 rates: about $225 to $331 a month for 470 to 663 kWh, before taxes.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'does-pool-pump-use-a-lot-of-electricity',
+    title: 'Does a Pool Pump Use a Lot of Electricity? (California)',
+    excerpt:
+      'A pool pump can be a home’s second-largest electric load. What each kilowatt costs a month on PG&E, SCE, SDG&E, SMUD and LADWP rates, and how to cut it.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'electricity-peak-hours-california',
+    title: 'Electricity Peak Hours in California by Utility (2026)',
+    excerpt:
+      'Peak hours are 4–9 p.m. on the main PG&E, SCE and SDG&E plans. SMUD peaks 5–8 p.m. weekdays; LADWP 1–5 p.m. See off-peak hours and the cheapest times.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'electricity-rates-by-zip-code',
+    title: 'Electricity Rates by ZIP Code in California (2026)',
+    excerpt:
+      'California rates follow your utility, CCA and plan, not your ZIP. Find who serves your address and compare 2026 prices for PG&E, SCE, SDG&E, SMUD, LADWP.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'flat-roof-solar-panels',
+    title: 'Flat Roof Solar Panels in California: Mounts and Permits',
+    excerpt:
+      'Solar panels on a flat or low-slope California roof: ballasted vs attached racks, tilt, weight, the membrane, permits and when to re-roof first.',
+    date: '2026-09-23',
+    category: 'Roof Suitability',
+  },
+  {
+    slug: 'help-with-pge-bill',
+    title: 'Help Paying Your PG&E Bill: 2026 Assistance Programs',
+    excerpt:
+      'Behind on PG&E? REACH pays up to $800 after a shutoff notice, LIHEAP up to $1,000 and AMP forgives up to $8,000. Who qualifies, and what to do first.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'how-much-does-it-cost-to-turn-on-electricity',
+    title: 'How Much Does It Cost to Turn On Electricity in California?',
+    excerpt:
+      'Starting electric service in California: no home deposit at PG&E, SCE or SDG&E, a $19 LADWP turn-on fee, SMUD deposit rules and first-bill charges.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'how-to-lower-pge-bill',
+    title: 'How to Lower Your PG&E Bill: Plans, Hours and Discounts',
+    excerpt:
+      'Lower a PG&E bill by moving use out of 4–9 p.m., picking the right plan, staying near baseline and claiming CARE, FERA or Medical Baseline. 2026 prices.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'how-to-read-pge-bill',
+    title: 'How to Read Your PG&E Bill: Every Page and Charge',
+    excerpt:
+      'A PG&E bill has five parts: account summary, service notes, electric, gas and a breakdown. What each line means, how to check the math, and solar bills.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'how-to-read-sdge-bill',
+    title: 'How to Read Your SDG&E Bill, With or Without Solar',
+    excerpt:
+      'Read an SDG&E bill line by line: the charges breakdown, usage by time period, the Base Services Charge, solar and NEM statements, and codes on a net meter.',
+    date: '2026-09-23',
+    category: 'Utility Bills',
+  },
+  {
+    slug: 'ladwp-net-metering',
+    title: 'LADWP Net Metering: Does NEM 3.0 Apply in Los Angeles?',
+    excerpt:
+      'NEM 3.0 does not apply to LADWP. How LADWP net metering credits your solar, what happens to leftover credit, who qualifies, leases, and interconnection.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'ladwp-solar-program',
+    title: 'LADWP Solar Programs 2026: Rooftops, Shared Solar, Rebates',
+    excerpt:
+      'LADWP lists no rebate on solar you buy. What it offers: Solar Rooftops ($360 to $900 a year), Shared Solar for apartments, SGIP and a feed-in tariff.',
+    date: '2026-09-23',
+    category: 'California Solar Incentives',
+  },
+  {
+    slug: 'lease-roof-for-solar-panels',
+    title: 'Leasing Your Roof for Solar in California: How It Works',
+    excerpt:
+      'Can you lease your roof for solar panels in California? Who pays homeowners for roof space, what LADWP pays, business roof deals and contract terms to check.',
+    date: '2026-09-23',
+    category: 'Roof Suitability',
+  },
+  {
+    slug: 'pge-ev-rates',
+    title: 'PG&E EV Rates 2026: EV2-A, EV-B and E-ELEC Prices',
+    excerpt:
+      'PG&E’s EV2-A off-peak rate is 22.558¢/kWh from midnight to 3 p.m. Compare EV2-A, the separately metered EV-B and E-ELEC, with 2024–2026 price history.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'pge-rate-schedules',
+    title: 'PG&E Rate Schedules 2026: Every Residential Tariff',
+    excerpt:
+      'Every PG&E residential rate schedule with its March 1, 2026 prices: E-1, E-TOU-C, E-TOU-D, E-ELEC, EV2-A, EV-B and multifamily plans, plus tariff PDFs.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'pge-solar-billing-plan',
+    title: 'PG&E Solar Billing Plan: How NEM 3.0 Billing Works (2026)',
+    excerpt:
+      'PG&E’s Solar Billing Plan is its name for NEM 3.0. Who is on it, the E-ELEC rate, how hourly export credits are priced, the bonus, and how the True-Up works.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'pge-solar-program',
+    title: 'PG&E Solar Programs in 2026: What Is Open and What Is Not',
+    excerpt:
+      'PG&E does not pay for rooftop panels. Its solar programs: Solar Billing Plan, Green Saver (full), Solar Choice (on hold), DAC-SASH, SOMAH and SGIP.',
+    date: '2026-09-23',
+    category: 'California Solar Incentives',
+  },
+  {
+    slug: 'sce-solar-billing-plan',
+    title: 'SCE Solar Billing Plan: NEM 3.0 Rates and How SCE Pays',
+    excerpt:
+      'How SCE’s Solar Billing Plan (NEM 3.0) works: TOU-D-PRIME prices, export credit rates by year and hour, the bonus, how to read the bill and the True-Up.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'sdge-and-solar',
+    title: 'SDG&E and Solar: Solar Billing Plan, EV-TOU-5 and Credits',
+    excerpt:
+      'New SDG&E solar goes on the Solar Billing Plan and EV-TOU-5 rate. See 2026 import prices, what exports earn by hour, and what stays on the monthly bill.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'sdge-net-metering',
+    title: 'SDG&E Net Metering: NEM 2.0 vs Solar Billing Plan (2026)',
+    excerpt:
+      'SDG&E NEM 2.0 vs the Solar Billing Plan (NEM 3.0): who is on each, the EV-TOU-5 rate, how export credits work, why there is no bonus, and the true-up.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'smud-peak-hours',
+    title: 'SMUD Peak Hours 2026: Summer and Time-of-Day Rates',
+    excerpt:
+      'SMUD peak hours are 5–8 p.m. on weekdays. Summer adds mid-peak noon–midnight from June 1 to Sept. 30. See 2026 prices, holidays and when summer ends.',
+    date: '2026-09-23',
+    category: 'Utility Rates',
+  },
+  {
+    slug: 'smud-solar-program',
+    title: 'SMUD Solar Program 2026: Export Rate, Rebates, SolarShares',
+    excerpt:
+      'SMUD has no solar panel rebate. It pays 9.6¢/kWh for exports, cut its battery incentive to $300/kWh on Sept. 23, 2026, and runs SolarShares.',
+    date: '2026-09-23',
+    category: 'California Solar Incentives',
+  },
+  {
+    slug: 'solar-discount',
+    title: 'Solar Discount Programs in California: 20% Off, No Panels',
+    excerpt:
+      'California’s solar discount programs cut an income-qualified bill 20% with no panels on your roof. Who runs yours: PG&E, SCE, your CCA or your city.',
+    date: '2026-09-23',
+    category: 'California Solar Incentives',
+  },
+  {
+    slug: 'solar-duck-curve-california',
+    title: 'California Solar Duck Curve: What It Is and Why It Matters',
+    excerpt:
+      'The duck curve is California’s midday dip in net demand as solar floods the grid, then the steep evening ramp. Curtailment, batteries and your bill.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
+  {
+    slug: 'solar-leasing-company',
+    title: 'Solar Leasing Companies in California: How to Compare Them',
+    excerpt:
+      'A solar leasing company owns the panels and bills you monthly for 20 to 25 years. How few Californians lease now, why tax law changed it, what to check.',
+    date: '2026-09-23',
+    category: 'Solar Financing',
+  },
+  {
+    slug: 'solar-panels-over-canals-california',
+    title: 'California Solar Panels Over Canals: Projects and Results',
+    excerpt:
+      'Is California covering its canals with solar panels? What Project Nexus built, the Delta-Mendota floating solar test, the research estimates and the limits.',
+    date: '2026-09-23',
+    category: 'Roof Suitability',
+  },
+  {
+    slug: 'solar-ppa-companies',
+    title: 'Solar PPA Companies in California: How to Compare Offers',
+    excerpt:
+      'A PPA company owns the system and sells you its power per kWh for 20 to 25 years. PPAs were 42% of new California home solar in 2025. What to compare.',
+    date: '2026-09-23',
+    category: 'Solar Financing',
+  },
+  {
+    slug: 'solar-rate',
+    title: 'Solar Rates in California: The Tariff and Rate Plan (2026)',
+    excerpt:
+      'California solar homes pay two rates: a required plan for grid power (E-ELEC, TOU-D-PRIME or EV-TOU-5) and hourly export credits. 2026 figures by utility.',
+    date: '2026-09-23',
+    category: 'California Solar Policy',
+  },
   // claude/ta-release-20260923 — topical-authority wave
   {
     slug: 'sce-nem-2',
