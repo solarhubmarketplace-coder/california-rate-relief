@@ -219,7 +219,13 @@ export default function LosAngelesCountySolarPage() {
                 November 2025 SCE has also charged a Base Services Charge of
                 $24.15 a month for customers not on CARE or FERA ($12.08 on FERA,
                 $6.00 on CARE), and says per-kWh prices fell about 10% to offset
-                it.
+                it.{' '}
+                <Link href="/solar-savings/altadena" className="text-primary underline">
+                  Altadena&apos;s SCE bill increase, explained
+                </Link>{' '}
+                shows what SCE&apos;s 2025 rate case and that charge added to bills
+                in one unincorporated community, where SCE delivers the power and
+                Clean Power Alliance supplies it by default.
               </p>
               <p className="text-muted-foreground leading-relaxed mb-4">
                 <strong className="text-foreground">Average bills.</strong> For
