@@ -90,12 +90,80 @@
    ],
    "status": "partial",
    "note": "Built as the all-programs LADWP page (the query covers more than Solar Rooftops, which keeps its own deep page and is linked). ladwp.com returns 403 to WebFetch; every LADWP page was fetched with curl on 2026-09-23 and read from its text. Covers: no rebate on owned systems, Solar Rooftops summary, Shared Solar with 2026 rates vs Tier 1 ($0.29624/$0.28124 vs $0.26408), SGIP through LADWP (RSSE cost-verification update, lottery is not an award), FiT prices and capacity, VNEM pilot. Partial only because the CREATE_DEDICATED holder link is needed from /solar-companies/los-angeles (not owned here; link requested). Net metering detail left to the battery lane's /blog/ladwp-net-metering (link requested once it exists)."
+  },
+  {
+   "path": "/blog/solar-leasing-company",
+   "action": "CREATE_DEDICATED",
+   "hub": "financing",
+   "file": "src/app/blog/solar-leasing-company/page.tsx",
+   "title": "Solar Leasing Companies in California: How to Compare Them",
+   "clusters": [
+    51
+   ],
+   "sources": [
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.californiadgstats.ca.gov/charts/nem/",
+    "https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A48E+edition%3Aprelim%29",
+    "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+    "https://www.epa.gov/green-power-markets/solar-power-purchase-agreements",
+    "https://www.sec.gov/Archives/edgar/data/1469367/000162828026012289/run-20251231.htm",
+    "https://www.sec.gov/Archives/edgar/data/1772695/000177269525000105/nova-20250608.htm",
+    "https://boe.ca.gov/proptaxes/active-solar-energy-system/frequently-asked-questions.htm",
+    "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf"
+   ],
+   "status": "partial",
+   "note": "What a leasing company is (EPA roles; contracts sold to investors per Sunrun 10-K), California ownership mix from CPUC-authorized DG Stats (2025: 54.5% owned, 41.7% PPA, 3.1% lease; 2026 YTD 58.7/35.1/4.6), the 2025 tax law's new 26 USC 48E(i) (no business credit on leased residential solar, taxable years beginning after 2025-07-04; PPAs not named), a CPUC-sourced comparison checklist, one provider's 10-K contract terms as a benchmark (not a recommendation), Sunnova Chapter 11 as the failure example. No ranking. Lease cost-per-month questions answered by linking the existing cost and rent pages rather than repeating them. Partial only because the holder link from /solar-companies/los-angeles is requested, not made (not owned)."
+  },
+  {
+   "path": "/blog/solar-ppa-companies",
+   "action": "CREATE_DEDICATED",
+   "hub": "financing",
+   "file": "src/app/blog/solar-ppa-companies/page.tsx",
+   "title": "Solar PPA Companies in California: How to Compare Offers",
+   "clusters": [
+    216
+   ],
+   "sources": [
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.cpuc.ca.gov/NEM/",
+    "https://www.californiadgstats.ca.gov/charts/nem/",
+    "https://www.epa.gov/green-power-markets/solar-power-purchase-agreements",
+    "https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A48E+edition%3Aprelim%29",
+    "https://www.sec.gov/Archives/edgar/data/1469367/000162828026012289/run-20251231.htm",
+    "https://www.sec.gov/Archives/edgar/data/1772695/000177269525000105/nova-20250608.htm"
+   ],
+   "status": "partial",
+   "note": "Kept distinct from the leasing page: PPA definition (CPUC, EPA four-party model), PPA share in California (DG Stats), the 48E(e)(4) solar cutoff (placed in service after 2027-12-31 for construction starting after 2026-07-04) and why a 2026-27 PPA price may depend on it, a 7-point comparison list (price per kWh test linked to the hub's #ppa-price-per-kwh), prepaid shortfall refunds and end-of-term options as one provider's 10-K terms, provider failure. Answers 'can you buy out a solar ppa' and 'what is a prepaid ppa' by linking. Partial only for the holder link request (/solar-companies/los-angeles)."
+  },
+  {
+   "path": "/blog/10-kw-solar-system-cost",
+   "action": "CREATE_DEDICATED",
+   "hub": "cost_value",
+   "file": "src/app/blog/10-kw-solar-system-cost/page.tsx",
+   "title": "10 kW Solar System Cost in California: What 2025 Data Shows",
+   "clusters": [
+    222
+   ],
+   "sources": [
+    "https://www.californiadgstats.ca.gov/charts/nem/",
+    "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+    "https://www.cpuc.ca.gov/NEM/",
+    "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
+    "https://www.smud.org/Going-Green/Solar-for-Your-Home",
+    "https://pvwatts.nrel.gov/"
+   ],
+   "status": "partial",
+   "note": "Cost basis is California DG Stats (CPUC-authorized per D.14-11-001), residential solar-only average cost per AC watt for systems >=10 kW, 2025 permission-to-operate year, pulled from the site's own chart endpoint (/api/v1.2/interconnection/cpw_over_time, sector=res, basis=nominal): all IOUs $4.26 (n=3,966), PG&E $4.08 (2,173), SCE $3.42 (664), SDG&E $5.11 (1,129); 2026 YTD $4.35 (772). Dollar figures for 10 kW are labeled as our arithmetic. Berkeley Lab 2026 update for installer spread ($2.4-$6.3/W medians), size distribution, storage premium (+$2.1/W) and loan premium, all quoted from its text. No production figure: NREL's PVWatts API was blocked by the proxy, so the page links PVWatts instead. Partial only because the CREATE_DEDICATED holder (/commercial-solar/cost-per-watt-california, commercial lane) needs the link; requested."
   }
  ],
  "sitemap_add": [
   "/blog/pge-solar-program",
   "/blog/smud-solar-program",
-  "/blog/ladwp-solar-program"
+  "/blog/ladwp-solar-program",
+  "/blog/solar-leasing-company",
+  "/blog/solar-ppa-companies",
+  "/blog/10-kw-solar-system-cost"
  ],
  "blog_index_add": [
   {
@@ -112,6 +180,21 @@
    "slug": "ladwp-solar-program",
    "title": "LADWP Solar Programs 2026: Rooftops, Shared Solar, Rebates",
    "hub": "incentives"
+  },
+  {
+   "slug": "solar-leasing-company",
+   "title": "Solar Leasing Companies in California: How to Compare Them",
+   "hub": "financing"
+  },
+  {
+   "slug": "solar-ppa-companies",
+   "title": "Solar PPA Companies in California: How to Compare Offers",
+   "hub": "financing"
+  },
+  {
+   "slug": "10-kw-solar-system-cost",
+   "title": "10 kW Solar System Cost in California: What 2025 Data Shows",
+   "hub": "cost_value"
   }
  ],
  "redirect_requests": [],
@@ -130,6 +213,21 @@
    "hub": "incentives",
    "href": "/blog/ladwp-solar-program",
    "label": "LADWP solar programs"
+  },
+  {
+   "hub": "financing",
+   "href": "/blog/solar-leasing-company",
+   "label": "Solar leasing companies: how to compare"
+  },
+  {
+   "hub": "financing",
+   "href": "/blog/solar-ppa-companies",
+   "label": "Solar PPA companies: how to compare offers"
+  },
+  {
+   "hub": "cost_value",
+   "href": "/blog/10-kw-solar-system-cost",
+   "label": "What a 10 kW system costs in California"
   }
  ],
  "link_requests": [
@@ -174,6 +272,36 @@
    "to": "/blog/smud-solar-program",
    "anchor": "SMUD's solar export rate and battery incentive",
    "why": "Rates lane's new SMUD page; solar customers' next question."
+  },
+  {
+   "from": "/solar-companies/los-angeles",
+   "to": "/blog/solar-ppa-companies",
+   "anchor": "how to compare solar PPA companies",
+   "why": "CREATE_DEDICATED holder: 'best solar ppa companies' (98 impr, pos 31) and 'solar ppa companies' land on the LA companies page."
+  },
+  {
+   "from": "/solar-companies/los-angeles",
+   "to": "/blog/solar-leasing-company",
+   "anchor": "what a solar leasing company does",
+   "why": "CREATE_DEDICATED holder: 'best solar lease company' (44 impr) and 'solar lease company' land on the LA companies page."
+  },
+  {
+   "from": "/commercial-solar/cost-per-watt-california",
+   "to": "/blog/10-kw-solar-system-cost",
+   "anchor": "cost of a 10 kW home system",
+   "why": "CREATE_DEDICATED holder: '10kw solar system cost california' lands on the commercial cost-per-watt page (pos 44). Commercial lane owns it."
+  },
+  {
+   "from": "/solar-panels-california",
+   "to": "/blog/10-kw-solar-system-cost",
+   "anchor": "what a 10 kW system costs",
+   "why": "Cost hub should list the new cost spoke in body copy; installers lane owns it."
+  },
+  {
+   "from": "/blog/how-much-does-it-cost-to-lease-solar-panels-california",
+   "to": "/blog/solar-leasing-company",
+   "anchor": "how to compare solar leasing companies",
+   "why": "Sibling financing page on lease cost; its readers' next question is which company. Not owned this wave."
   }
  ],
  "skipped": []
