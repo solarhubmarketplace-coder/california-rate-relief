@@ -410,6 +410,14 @@ export interface CityLocalTip {
   content: string;   // the tip text
 }
 
+export interface CityBillsContent {
+  /** Direct answer to the page's question, 2-3 sentences. */
+  answer: string;
+  sections: { heading: string; paragraphs: string[] }[];
+  faqs?: CityFAQ[];
+  sources: { label: string; url: string; fetchedAt: string }[];
+}
+
 export interface CityData {
   // Identity
   name: string;              // Display name (e.g. "Temecula")
@@ -463,6 +471,15 @@ export interface CityData {
 
   // Related blog posts (slugs)
   relatedArticles: { slug: string; title: string }[];
+
+  /**
+   * 2026-09-23 (Decision 18): a /solar-savings/<city> page re-scoped to the
+   * city's bills-and-rates question. When present, the savings template opens
+   * with this answer and these sections instead of the generic intro, and its
+   * title comes from SAVINGS_BILLS_SEO in src/lib/city-pages.ts. Every figure
+   * in it is in `sources`, each with the date it was fetched.
+   */
+  bills?: CityBillsContent;
 
   // Ahrefs data (for internal reference, not displayed)
   seoData?: {

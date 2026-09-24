@@ -16,6 +16,7 @@ import {
   CPUC_IOU_CODES,
   getCityBySlug,
   getAllCitySlugs,
+  utilityRateText,
   type CityData,
   type UtilityData,
 } from '@/data/cities-data';
@@ -26,6 +27,9 @@ import {
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { NearbyCities } from '@/components/shared/NearbyCities';
+import { CitySiblingLinks } from '@/components/growth/NearbyCostCities';
+import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { RATE_TRACKER_PATH } from '@/data/utility-rate-tracker';
 import { Byline } from '@/components/trust/Byline';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import {
@@ -35,6 +39,14 @@ import {
   regionalHubsFor,
   savingsPageSeo,
 } from '@/lib/city-pages';
+
+/** The utility's own high-bill explainer, where the site has one (Block 5 §4.2). */
+const HIGH_BILL_POST: Record<string, { href: string; label: string }> = {
+  pge: { href: '/blog/why-is-my-pge-bill-so-high', label: 'PG&E high-bill breakdown' },
+  sce: { href: '/blog/why-is-my-sce-bill-so-high', label: 'SCE high-bill breakdown' },
+  sdge: { href: '/blog/why-is-my-sdge-bill-so-high', label: 'SDG&E high-bill breakdown' },
+  ladwp: { href: '/blog/why-is-my-ladwp-bill-so-high', label: 'LADWP high-bill breakdown' },
+};
 
 // =============================================================================
 // STATIC PARAMS — Pre-renders all city pages at build time
@@ -77,7 +89,7 @@ function buildFAQSchema(city: CityData) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
-    mainEntity: city.faqs.map((faq) => ({
+    mainEntity: [...(city.bills?.faqs ?? []), ...city.faqs].map((faq) => ({
       '@type': 'Question',
       name: faq.question,
       acceptedAnswer: {
@@ -100,9 +112,13 @@ export default async function CityPage({ params }: PageProps) {
   const utility = UTILITY_DATA[city.utilityCode];
   const needsUtilityConfirmation = city.utilityConfirmationRequired === true;
   const utilityDisplayName = city.utilityDisplayName || utility.shortName;
+  // 2026-09-23: only a sourced average is shown. utilityRateText gives the
+  // CPUC Public Advocates Office figure for PG&E, SCE and SDG&E and nothing for
+  // a publicly owned utility, whose ratePerKwh in cities-data.ts is not sourced.
+  const sourcedRate = utilityRateText(utility);
   const rateDisplay = needsUtilityConfirmation
     ? 'Check bill'
-    : utility.rateDisplay || `${(utility.ratePerKwh * 100).toFixed(1)}¢`;
+    : sourcedRate.cents ?? utility.rateDisplay ?? 'See tariff';
   // CARE, FERA, DAC-SASH, SGIP and the Net Billing Tariff are CPUC programs for
   // PG&E, SCE and SDG&E customers. A city on SMUD, GWP or Lodi Electric was
   // being told about programs its utility does not run (2026-09-23 pass).
@@ -116,7 +132,7 @@ export default async function CityPage({ params }: PageProps) {
 
   return (
     <PublicLayout
-      breadcrumbLabel={`Solar savings in ${city.name}`}
+      breadcrumbLabel={city.bills ? `${city.name} bills and rates` : `Solar savings in ${city.name}`}
       breadcrumbParent={hub ? { label: `${hub.region} solar guide`, href: hub.href } : undefined}
     >
       <ArticleJsonLd
@@ -148,7 +164,7 @@ export default async function CityPage({ params }: PageProps) {
                   <span>/</span>
                 </>
               )}
-              <span className="text-foreground">Solar savings in {city.name}</span>
+              <span className="text-foreground">{city.bills ? `${city.name} bills and rates` : `Solar savings in ${city.name}`}</span>
             </nav>
 
             {/* Header */}
@@ -169,15 +185,29 @@ export default async function CityPage({ params }: PageProps) {
                 topic={`${city.name} solar savings and quote comparison`}
                 className="mb-6"
               />
-              <p className="text-lg text-muted-foreground">
-                A guide for {city.name} homeowners: your utility&apos;s rate
-                plans and assistance programs, what drives the cost of solar,
-                HOA rules, and the options for lowering your electric bill.
-              </p>
+              {city.bills ? (
+                <p className="text-lg text-foreground/85 leading-relaxed">{city.bills.answer}</p>
+              ) : (
+                <p className="text-lg text-muted-foreground">
+                  A guide for {city.name} homeowners: your utility&apos;s rate
+                  plans and assistance programs, what drives the cost of solar,
+                  HOA rules, and the options for lowering your electric bill.
+                </p>
+              )}
             </header>
+
+            {/* 2026-09-23: this city's other pages, one per question. */}
+            <CitySiblingLinks
+              slug={city.slug}
+              type="savings"
+              omitStatewide={[RATE_TRACKER_PATH]}
+              className="mb-10"
+            />
 
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+              {/* 2026-09-23: the "peak sun hours" and "population" cards were
+                  removed; neither figure had a source in cities-data.ts. */}
               <div className="bg-card rounded-xl border border-border p-4 text-center">
                 <Zap className="h-5 w-5 text-primary mx-auto mb-2" />
                 <div className="text-2xl font-bold text-foreground">
@@ -201,29 +231,49 @@ export default async function CityPage({ params }: PageProps) {
               <div className="bg-card rounded-xl border border-border p-4 text-center">
                 <Sun className="h-5 w-5 text-primary mx-auto mb-2" />
                 <div className="text-2xl font-bold text-foreground">
-                  {city.peakSunHours} hrs
+                  {needsUtilityConfirmation ? 'Confirm' : isCpucIou ? 'Net Billing' : 'Own rules'}
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  Peak sun hours/day
+                  {needsUtilityConfirmation
+                    ? 'Solar rules follow the utility on the bill'
+                    : isCpucIou
+                    ? 'CPUC solar tariff for new systems'
+                    : `${utility.shortName} sets its solar rules`}
                 </div>
               </div>
               <div className="bg-card rounded-xl border border-border p-4 text-center">
                 <Home className="h-5 w-5 text-primary mx-auto mb-2" />
                 <div className="text-2xl font-bold text-foreground">
-                  {city.population}
+                  {isCpucIou ? 'CARE / FERA' : 'Utility programs'}
                 </div>
                 <div className="text-xs text-muted-foreground">
-                  Population (2025)
+                  {isCpucIou ? 'Income-qualified bill discounts' : 'Check the utility for discounts'}
                 </div>
               </div>
             </div>
 
             {/* Article Body */}
             <div className="prose prose-slate max-w-none">
+              {/* Bills and rates first (Decision 18), when the city has them. */}
+              {city.bills?.sections.map((section) => (
+                <div key={section.heading}>
+                  <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
+                    {section.heading}
+                  </h2>
+                  {section.paragraphs.map((paragraph, i) => (
+                    <p key={i} className="text-foreground/80 leading-relaxed mb-6">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              ))}
+
               {/* Intro */}
-              <p className="text-lg text-foreground/80 leading-relaxed mb-6">
-                {city.introText}
-              </p>
+              {!city.bills && (
+                <p className="text-lg text-foreground/80 leading-relaxed mb-6">
+                  {city.introText}
+                </p>
+              )}
 
               {/* What Residents Pay */}
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
@@ -237,6 +287,26 @@ export default async function CityPage({ params }: PageProps) {
                   {paragraph}
                 </p>
               ))}
+              <p className="text-foreground/80 leading-relaxed mb-6">
+                For the current published averages and fixed charges side by
+                side, see the{' '}
+                <Link href={RATE_TRACKER_PATH} className="text-primary hover:underline">
+                  California utility rate tracker
+                </Link>
+                . If the bill itself is the problem, start with{' '}
+                <Link href="/blog/why-is-my-california-electric-bill-so-high" className="text-primary hover:underline">
+                  why California electric bills run high
+                </Link>
+                {HIGH_BILL_POST[city.utilityCode] && !needsUtilityConfirmation ? (
+                  <>
+                    {' '}and the{' '}
+                    <Link href={HIGH_BILL_POST[city.utilityCode].href} className="text-primary hover:underline">
+                      {HIGH_BILL_POST[city.utilityCode].label}
+                    </Link>
+                  </>
+                ) : null}
+                .
+              </p>
 
               {needsUtilityConfirmation ? (
                 <>
@@ -623,7 +693,7 @@ export default async function CityPage({ params }: PageProps) {
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">
                 Frequently Asked Questions
               </h2>
-              {city.faqs.map((faq, i) => (
+              {[...(city.bills?.faqs ?? []), ...city.faqs].map((faq, i) => (
                 <div key={i}>
                   <h3 className="text-lg font-bold text-foreground mt-6 mb-2">
                     {faq.question}
@@ -662,6 +732,24 @@ export default async function CityPage({ params }: PageProps) {
               <p className="text-foreground/80 leading-relaxed mb-6">
                 {city.bottomLine}
               </p>
+
+              {city.bills && (
+                <>
+                  <h2 id="sources" className="text-2xl font-bold text-foreground mt-10 mb-4">
+                    Sources for the bills and rates above
+                  </h2>
+                  <ul className="list-disc pl-6 space-y-2 text-sm [overflow-wrap:anywhere]">
+                    {city.bills.sources.map((source) => (
+                      <li key={source.url}>
+                        <a href={source.url} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                          {source.label}
+                        </a>{' '}
+                        (fetched {source.fetchedAt})
+                      </li>
+                    ))}
+                  </ul>
+                </>
+              )}
             </div>
 
             {/* Savings Calculator */}
@@ -704,6 +792,13 @@ export default async function CityPage({ params }: PageProps) {
 
             {/* Companion route + nearby cities (internal linking) */}
             <NearbyCities city={city} variant="savings" />
+
+            <HubSpokeLinks
+              hub="city_bills"
+              currentPath={`/solar-savings/${city.slug}`}
+              max={6}
+              title="Electric rates and bills in other California cities"
+            />
 
             {/* Related Content */}
             <div className="mt-10 pt-8 border-t border-border">

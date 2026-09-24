@@ -1,17 +1,43 @@
 import Link from "next/link";
 import { growthCities } from "@/data/growth-cities";
 import { hasSavingsCityPage } from "@/lib/canonical-redirects";
-import { RelatedGuides } from "@/components/shared/RelatedGuides";
+import { RelatedGuides, type RelatedGuideLink } from "@/components/shared/RelatedGuides";
+import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
 import { DecisionPage, QuoteChecklist } from "./DecisionPage";
 import { CityProviderOptions } from "./CityProviderOptions";
 import { cityCostPath, getPublishableCityCostSlugs } from "@/data/city-cost-data";
 import {
   CityLocalChecks,
+  CityLocalSections,
   CityPublishedProvider,
   CityQuestions,
 } from "./CityLocalDetails";
-import { NearbyCityPages } from "./NearbyCostCities";
-import { cityQuickCheckUtility, companiesPageSeo } from "@/lib/city-pages";
+import { CitySiblingLinks, NearbyCityPages } from "./NearbyCostCities";
+import { cityPageDates, cityQuickCheckUtility, companiesPageSeo } from "@/lib/city-pages";
+
+/**
+ * The contract-risk guides a reader comparing installers needs. Until
+ * 2026-09-23 every companies page linked the same seven (Block 5 §1.2 item 7:
+ * 123 city pages carried the identical block). Each page now links two, picked
+ * from the city slug so the pair varies across the family (Block 5 §4.2, §5.10).
+ */
+const CONTRACT_GUIDES: RelatedGuideLink[] = [
+  { href: "/solar-problems/solar-dealer-fees-explained", label: "How dealer fees pay for a low advertised rate" },
+  { href: "/solar-problems/solar-escalator-clause-explained", label: "The escalator clause, and what it does to year 15" },
+  { href: "/solar-problems/ucc-1-lien-solar-california", label: "UCC-1 liens and what they attach to" },
+  { href: "/solar-problems/solar-contract-red-flags-california", label: "Contract red flags in the California disclosure forms" },
+  { href: "/solar-problems/solar-door-to-door-sales-california", label: "What a door-to-door rep can and cannot legally do" },
+  { href: "/solar-problems/solar-sales-tactics-california", label: "Common sales tactics and what each one obscures" },
+];
+
+function contractGuidesFor(slug: string): RelatedGuideLink[] {
+  let h = 0;
+  for (let i = 0; i < slug.length; i++) h = (h * 31 + slug.charCodeAt(i)) >>> 0;
+  const first = h % CONTRACT_GUIDES.length;
+  const second = (first + 1 + (h % (CONTRACT_GUIDES.length - 1))) % CONTRACT_GUIDES.length;
+  return [CONTRACT_GUIDES[first], CONTRACT_GUIDES[second === first ? (first + 1) % CONTRACT_GUIDES.length : second]];
+}
+
 export function CityComparison({ slug }: { slug: string }) {
   const city = growthCities[slug];
   // 2026-09-22: link to the /solar-cost/<city> twin when one is actually
@@ -19,6 +45,8 @@ export function CityComparison({ slug }: { slug: string }) {
   // reasoning behind this route being live again instead of redirected.
   const hasCostTwin = getPublishableCityCostSlugs().includes(slug);
   const seo = companiesPageSeo(slug);
+  const path = `/solar-companies/${slug}`;
+  const modified = cityPageDates("companies", slug).modified;
   return (
     <DecisionPage
       title={seo?.h1 ?? `Compare solar companies in ${city.name}, California`}
@@ -28,16 +56,22 @@ export function CityComparison({ slug }: { slug: string }) {
       authorSchema="person"
       breadcrumbs={[{ label: "Solar companies in California", href: "/best-solar-companies-california" }]}
       breadcrumbLabel={`Solar companies in ${city.name}`}
-      intro={`A useful ${city.county} quote starts with the actual property, electric bill and scope of work. Compare the same system. Then compare the contract.`}
-      path={`/solar-companies/${slug}`}
+      intro={
+        city.answer ??
+        `A useful ${city.county} quote starts with the actual property, electric bill and scope of work. Compare the same system. Then compare the contract.`
+      }
+      path={path}
       sources={city.sources}
       utility={city.utility}
       sourceCheckedDate={city.sourceCheckedDate}
+      contentModifiedDate={modified}
+      keyStats={city.keyFacts}
       // Bill-first step right under the H1 and byline (a phone's first
       // screen); no utility pre-selected for a city split between utilities.
       quickCheck="afterByline"
       quickCheckUtility={cityQuickCheckUtility("companies", slug)}
     >
+      <CitySiblingLinks slug={slug} type="companies" />
       {city.provider ? (
         <CityPublishedProvider slug={slug} />
       ) : (
@@ -47,6 +81,7 @@ export function CityComparison({ slug }: { slug: string }) {
         <h2>Start with your {city.name} electricity bill</h2>
         <p>{city.bill}</p>
       </section>
+      <CityLocalSections slug={slug} />
       <section>
         <h2>Local permit and project checks</h2>
         <p>{city.local}</p>
@@ -76,13 +111,12 @@ export function CityComparison({ slug }: { slug: string }) {
           >
             CSLB license record
           </a>
-          . A brand appearing in search results is not proof that it currently
-          serves your home.
-        </p>
-        <p className="mt-3">
-          No company list establishes acceptance of your address. Use the
-          checklist to compare the bids you receive; ask for project references
-          you can check directly.
+          , and use our{" "}
+          <Link className="underline" href="/solar-installers/how-to-verify-a-solar-contractor-california">
+            step-by-step contractor check
+          </Link>{" "}
+          for the classification, bond and complaint history. A brand appearing
+          in search results is not proof that it currently serves your home.
         </p>
       </section>
       <section>
@@ -102,12 +136,12 @@ export function CityComparison({ slug }: { slug: string }) {
           {city.hasSavingsGuide !== false && hasSavingsCityPage(slug) && (
             <>
               {" "}
-              The existing{" "}
+              The{" "}
               <Link className="underline" href={`/solar-savings/${slug}`}>
-                {city.name} savings guide
+                {city.name} rates and bills guide
               </Link>{" "}
-              addresses the separate bill and system-sizing question; the
-              utility and proposal still need to be checked for your address.
+              addresses the separate question of what you pay the utility now;
+              the utility and proposal still need to be checked for your address.
             </>
           )}
         </p>
@@ -120,7 +154,7 @@ export function CityComparison({ slug }: { slug: string }) {
             property-tax rules that actually set the price for a project here are
             covered separately, with no company list involved. See{" "}
             <Link className="underline" href={cityCostPath(slug)}>
-              what solar costs in {city.name}
+              the {city.name} price factors
             </Link>
             .
           </p>
@@ -128,49 +162,18 @@ export function CityComparison({ slug }: { slug: string }) {
       )}
       <CityQuestions slug={slug} />
       {/*
-        Phase 1 of the 2026-09-17 California strategy. The /solar-companies city
-        layer earned 35,424 impressions in the 2026-08-12..2026-09-08 GSC window
-        while the 21 /solar-problems pages earned nothing and carried zero
-        inbound content links from outside their own subtree. This is the
-        matching reader: someone comparing named installers for one city.
+        Phase 1 of the 2026-09-17 California strategy linked every /solar-problems
+        guide from every companies page. Two per page now, varied by city.
       */}
       <RelatedGuides
         heading={`Before you sign anything in ${city.name}`}
-        intro="What the paperwork does, in the order it tends to cause trouble."
-        links={[
-          {
-            href: "/solar-problems/solar-dealer-fees-explained",
-            label: "How dealer fees pay for a low advertised rate",
-          },
-          {
-            href: "/solar-problems/solar-escalator-clause-explained",
-            label: "The escalator clause, and what it does to year 15",
-          },
-          {
-            href: "/solar-problems/ucc-1-lien-solar-california",
-            label: "UCC-1 liens and what they attach to",
-          },
-          {
-            href: "/solar-problems/solar-contract-red-flags-california",
-            label: "Contract red flags in the California disclosure forms",
-          },
-          {
-            href: "/solar-problems/solar-door-to-door-sales-california",
-            label: "What a door-to-door rep can and cannot legally do",
-          },
-          {
-            href: "/solar-problems/solar-sales-tactics-california",
-            label: "Common sales tactics and what each one obscures",
-          },
-          {
-            href: "/solar-problems",
-            label: "All California solar problem guides",
-          },
-        ]}
+        intro="Two of the contract terms that most often change what a quote really costs."
+        links={contractGuidesFor(slug)}
       />
       {/* 2026-09-22: replaces the hand-picked CityRegionalLinks list (15 of 50
           cities had one) with the nearest live city pages, same county first. */}
       <NearbyCityPages slug={slug} type="companies" />
+      <HubSpokeLinks hub="city_installers" currentPath={path} max={6} title="Solar companies in other California cities" />
     </DecisionPage>
   );
 }

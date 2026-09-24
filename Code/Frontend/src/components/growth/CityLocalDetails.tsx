@@ -40,6 +40,31 @@ export function CityLocalChecks({ slug }: { slug: string }) {
   );
 }
 
+/**
+ * The city's own sourced sections (2026-09-23): the utility and generation
+ * provider and how each bills a solar home, the city's permit path, and any
+ * local program. Plain paragraphs from growth-cities.ts; every fact in them is
+ * listed in the page's sources.
+ */
+export function CityLocalSections({ slug }: { slug: string }) {
+  const city = growthCities[slug];
+  if (!city.sections?.length) return null;
+  return (
+    <>
+      {city.sections.map((section) => (
+        <section key={section.heading}>
+          <h2>{section.heading}</h2>
+          {section.paragraphs.map((paragraph, index) => (
+            <p key={index} className={index > 0 ? "mt-3" : undefined}>
+              {paragraph}
+            </p>
+          ))}
+        </section>
+      ))}
+    </>
+  );
+}
+
 export function CityPublishedProvider({ slug }: { slug: string }) {
   const city = growthCities[slug];
   const provider = city.provider;

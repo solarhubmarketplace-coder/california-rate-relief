@@ -1,25 +1,56 @@
 // Reviewed local destinations. Existing city source remains intact for other routes.
 // Sources default to 2026-09-10; newer entries set sourceCheckedDate.
 // No provider endorsement, address coverage or rate implied.
-export const growthCities: Record<
-  string,
-  {
-    name: string;
-    county: string;
-    utility: string;
-    bill: string;
-    local: string;
-    example: string;
-    sources: { label: string; url: string }[];
-    sourceCheckedDate?: string;
-    hasSavingsGuide?: boolean;
-    checks?: [string, string][];
-    projectLinks?: { href: string; label: string; note?: string }[];
-    provider?: { name: string; url: string; detail: string; ask: string };
-    nearby?: string[];
-    faq?: [string, string][];
-  }
-> = {
+//
+// 2026-09-23 (topical-authority pass, cities agent). Four optional fields let a
+// city carry the local facts that make its /solar-companies page its own page
+// rather than a template with the city name swapped in:
+//   answer    the direct answer that opens the page (replaces the generic intro)
+//   keyFacts  the "Key facts" box: serving utility, generation provider (CCA),
+//             building department. Every value names its publisher.
+//   sections  extra H2 sections of local, sourced prose (utility/CCA billing,
+//             the city's own permit path, local programs)
+//   contentModified  the date the page copy last changed (dateModified)
+// Utility and CCA assignments added that day were read from the California
+// Energy Commission's Electric Load Serving Entities layers (IOU & POU, data
+// edited 2026-09-04; Other/CCA, data edited 2025-08-28) intersected with the
+// Census TIGERweb place boundary, then checked against the CCA's own list of
+// member communities, because the CCA layer is a year older than the utility
+// layer. Where the two disagreed, the CCA's own page wins and the copy says so.
+export interface GrowthCitySection {
+  heading: string;
+  paragraphs: string[];
+}
+
+export interface GrowthCityKeyFact {
+  label: string;
+  value: string;
+  note?: string;
+  source?: { publisher?: string; date?: string; url?: string };
+}
+
+export interface GrowthCity {
+  name: string;
+  county: string;
+  utility: string;
+  bill: string;
+  local: string;
+  example: string;
+  sources: { label: string; url: string }[];
+  sourceCheckedDate?: string;
+  hasSavingsGuide?: boolean;
+  checks?: [string, string][];
+  projectLinks?: { href: string; label: string; note?: string }[];
+  provider?: { name: string; url: string; detail: string; ask: string };
+  nearby?: string[];
+  faq?: [string, string][];
+  answer?: string;
+  keyFacts?: GrowthCityKeyFact[];
+  sections?: GrowthCitySection[];
+  contentModified?: string;
+}
+
+export const growthCities: Record<string, GrowthCity> = {
   "san-francisco": {
     name: "San Francisco",
     county: "San Francisco County",

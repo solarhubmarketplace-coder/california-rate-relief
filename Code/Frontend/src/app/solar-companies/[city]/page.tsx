@@ -31,10 +31,10 @@ import { RelatedInstallers } from "@/components/shared/RelatedInstallers";
 import { TrustedSources } from "@/components/shared/TrustedSources";
 import { NearbyCities } from "@/components/shared/NearbyCities";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
-import { hasSavingsCityPage } from "@/lib/canonical-redirects";
+import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
+import { CitySiblingLinks } from "@/components/growth/NearbyCostCities";
 import { growthCities } from "@/data/growth-cities";
 import { CityComparison } from "@/components/growth/CityComparison";
-import { cityCostPath, getPublishableCityCostSlugs } from "@/data/city-cost-data";
 import {
   cityPageDates,
   cityPageMetadata,
@@ -458,6 +458,9 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
               </p>
             </div>
 
+            {/* 2026-09-23: this city's other pages, one per question. */}
+            <CitySiblingLinks slug={city.slug} type="companies" className="mb-10" />
+
             {/* City-Specific Context — pulls in unique paragraphs from city data so
                 this page is meaningfully differentiated from the other 76 cities */}
             <div className="bg-card rounded-xl border border-border p-6 mb-10">
@@ -526,7 +529,14 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                     >
                       cslb.ca.gov
                     </a>{" "}
-                    before signing.
+                    before signing, then work through our{" "}
+                    <Link
+                      href="/solar-installers/how-to-verify-a-solar-contractor-california"
+                      className="text-primary underline"
+                    >
+                      contractor verification steps
+                    </Link>
+                    .
                   </span>
                 </div>
               </li>
@@ -684,37 +694,18 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
             */}
             <RelatedGuides
               heading={`Before you sign anything in ${city.name}`}
-              intro="What the paperwork does, in the order it tends to cause trouble."
-              links={[
-                {
-                  href: "/solar-problems/solar-dealer-fees-explained",
-                  label: "How dealer fees pay for a low advertised rate",
-                },
-                {
-                  href: "/solar-problems/solar-escalator-clause-explained",
-                  label: "The escalator clause, and what it does to year 15",
-                },
-                {
-                  href: "/solar-problems/ucc-1-lien-solar-california",
-                  label: "UCC-1 liens and what they attach to",
-                },
-                {
-                  href: "/solar-problems/solar-contract-red-flags-california",
-                  label: "Contract red flags in the California disclosure forms",
-                },
-                {
-                  href: "/solar-problems/solar-door-to-door-sales-california",
-                  label: "What a door-to-door rep can and cannot legally do",
-                },
-                {
-                  href: "/solar-problems/solar-sales-tactics-california",
-                  label: "Common sales tactics and what each one obscures",
-                },
-                {
-                  href: "/solar-problems",
-                  label: "All California solar problem guides",
-                },
-              ]}
+              intro="Two contract terms that often change what a quote really costs."
+              links={
+                city.slug.length % 2 === 0
+                  ? [
+                      { href: "/solar-problems/solar-dealer-fees-explained", label: "How dealer fees pay for a low advertised rate" },
+                      { href: "/solar-problems/ucc-1-lien-solar-california", label: "UCC-1 liens and what they attach to" },
+                    ]
+                  : [
+                      { href: "/solar-problems/solar-escalator-clause-explained", label: "The escalator clause, and what it does to year 15" },
+                      { href: "/solar-problems/solar-contract-red-flags-california", label: "Contract red flags in the California disclosure forms" },
+                    ]
+              }
             />
 
             {/* Companion route + nearby cities (internal linking) */}
@@ -725,40 +716,6 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
               Related Reading
             </h2>
             <ul className="space-y-2 mb-10">
-              {hasSavingsCityPage(city.slug) && (
-              <li>
-                <Link
-                  href={`/solar-savings/${city.slug}`}
-                  className="text-primary hover:underline"
-                >
-                  {city.name} Solar Savings Guide
-                </Link>
-                <span className="text-foreground/60">
-                  ; rates, system sizing, and incentive deep-dive.
-                </span>
-              </li>
-              )}
-              {getPublishableCityCostSlugs().includes(city.slug) && (
-              <li>
-                <Link
-                  href={cityCostPath(city.slug)}
-                  className="text-primary hover:underline"
-                >
-                  What Solar Costs in {city.name}
-                </Link>
-                <span className="text-foreground/60">
-                  ; the utility rate, permits, and ownership rules that set the price.
-                </span>
-              </li>
-              )}
-              <li>
-                <Link
-                  href="/best-solar-companies-california"
-                  className="text-primary hover:underline"
-                >
-                  Best Solar Companies in California (Statewide Rankings)
-                </Link>
-              </li>
               <li>
                 <Link
                   href="/blog/nem-3-california-still-worth-it"
@@ -776,6 +733,13 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
                 </Link>
               </li>
             </ul>
+
+            <HubSpokeLinks
+              hub="city_installers"
+              currentPath={`/solar-companies/${city.slug}`}
+              max={6}
+              title="Solar companies in other California cities"
+            />
 
             {/* FAQs */}
             <h2 className="text-2xl font-bold text-foreground mt-10 mb-6">

@@ -1,13 +1,84 @@
 import Link from 'next/link';
 import type { CityCostRow } from '@/data/city-cost-data';
 import {
+  CITY_TYPE_HUB,
   cityCounty,
   cityName,
+  citySiblingLinks,
   companionCityLinks,
   nearbyCityLinks,
   regionalHubsFor,
   type CityPageType,
 } from '@/lib/city-pages';
+
+const link =
+  'font-medium text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
+
+// =============================================================================
+// CitySiblingLinks — one city's pages, one per search intent (2026-09-23).
+//
+// "Solar companies <city>", "solar panel cost <city>" and "<city> electric
+// bill" are three different results pages (installer vs cost SERPs share 7% of
+// top-10 URLs, bill/rate vs installer 0%; Block 6 §4), so each lives on its own
+// URL. This row sits right after the intro so a reader who landed on the wrong
+// one can move to the page that answers their question, and each page points
+// up to the statewide hub for its type. Only live pages are listed.
+// =============================================================================
+
+const STATEWIDE: { href: string; label: string }[] = [
+  CITY_TYPE_HUB.companies,
+  CITY_TYPE_HUB.cost,
+  CITY_TYPE_HUB.savings,
+];
+
+export function CitySiblingLinks({
+  slug,
+  type,
+  omitStatewide = [],
+  className = '',
+}: {
+  slug: string;
+  type: CityPageType;
+  /** Statewide hrefs the page already links in its body (one link per target). */
+  omitStatewide?: string[];
+  className?: string;
+}) {
+  const siblings = citySiblingLinks(slug, type).filter((s) => !s.current);
+  const statewide = STATEWIDE.filter((hub) => !omitStatewide.includes(hub.href));
+  const name = cityName(slug);
+  return (
+    <nav
+      aria-label={`${name} solar pages by question`}
+      className={`not-prose rounded-xl border border-border bg-card p-4 text-sm sm:p-5 ${className}`}
+    >
+      {siblings.length > 0 && (
+        <ul className='grid gap-3 sm:grid-cols-2'>
+          {siblings.map((s) => (
+            <li key={s.href}>
+              <span className='block text-xs font-semibold uppercase tracking-wide text-muted-foreground'>
+                {s.intent}
+              </span>
+              <Link href={s.href} className={link}>
+                {s.label}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      )}
+      <p className={`${siblings.length > 0 ? 'mt-3 border-t border-border pt-3' : ''} text-foreground/75`}>
+        Statewide:{' '}
+        {statewide.map((hub, index) => (
+          <span key={hub.href}>
+            {index > 0 ? ' · ' : ''}
+            <Link href={hub.href} className={link}>
+              {hub.label}
+            </Link>
+          </span>
+        ))}
+      </p>
+    </nav>
+  );
+}
 
 // =============================================================================
 // NearbyCityPages — "Solar near <city>" for every city page type.
@@ -26,8 +97,6 @@ import {
 // own sources.
 // =============================================================================
 
-const link =
-  'font-medium text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
 
 export function NearbyCityPages({
   slug,
