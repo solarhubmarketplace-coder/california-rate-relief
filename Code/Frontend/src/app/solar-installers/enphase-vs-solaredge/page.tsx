@@ -18,14 +18,14 @@ const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', he
 
 export default function EnphaseVsSolarEdge() {
   return (
-    <PublicLayout>
+    <PublicLayout breadcrumbLabel="Enphase vs SolarEdge">
       <Header />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
             <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
-              <Link href="/" className="hover:text-primary">Home</Link><span>/</span><Link href="/best-solar-companies-california" className="hover:text-primary">Solar Companies CA</Link><span>/</span><span className="text-foreground">Enphase vs SolarEdge</span>
+              <Link href="/" className="hover:text-primary">Home</Link><span>/</span><Link href="/solar-installers" className="hover:text-primary">Solar company reviews</Link><span>/</span><span className="text-foreground">Enphase vs SolarEdge</span>
             </nav>
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Inverter Comparison</span>

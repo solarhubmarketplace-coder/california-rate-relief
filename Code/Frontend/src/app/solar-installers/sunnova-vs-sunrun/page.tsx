@@ -25,7 +25,7 @@ export default function SunnovaVsSunrun() {
         <div className="container mx-auto px-4">
           <article className="max-w-3xl mx-auto">
             <nav className="mb-6 text-sm text-muted-foreground flex items-center gap-2 flex-wrap">
-              <Link href="/" className="hover:text-primary">Home</Link><span>/</span><Link href="/best-solar-companies-california" className="hover:text-primary">Solar Companies CA</Link><span>/</span><span className="text-foreground">Sunnova vs Sunrun</span>
+              <Link href="/" className="hover:text-primary">Home</Link><span>/</span><Link href="/solar-installers" className="hover:text-primary">Solar company reviews</Link><span>/</span><span className="text-foreground">Sunnova vs Sunrun</span>
             </nav>
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Installer Comparison</span>
