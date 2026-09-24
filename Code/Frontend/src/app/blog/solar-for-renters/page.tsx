@@ -216,7 +216,11 @@ export default function SolarForRentersPage() {
           </ul>
           <p className="mt-3">
             A disadvantaged community is defined by census tract, not by city, so ask your
-            utility to check your exact address.
+            utility to check your exact address. To see{' '}
+            <Link className={link} href="/blog/solar-discount">
+              which utility or CCA runs the 20% solar discount for your address
+            </Link>
+            , and whether it is taking new customers, use the provider-by-provider list.
           </p>
           <p className="mt-3">
             At PG&amp;E the bill-discount program is called Green Saver. PG&amp;E says it gives

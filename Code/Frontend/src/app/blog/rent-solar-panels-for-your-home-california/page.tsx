@@ -415,7 +415,12 @@ export default function RentSolarPanels() {
               LADWP solar programs
             </Link>
             . If a private company offers to rent your roof, read the agreement for the term, removal
-            at the end, roof repairs and what happens when you sell, just as you would a lease.
+            at the end, roof repairs and what happens when you sell, just as you would a lease. What is
+            available outside Los Angeles, and the contract terms to check, are covered in{' '}
+            <Link className={link} href="/blog/lease-roof-for-solar-panels">
+              leasing your roof to a utility or developer instead
+            </Link>
+            .
           </p>
         </section>
 
