@@ -42,6 +42,7 @@ const oecVIrs =
   'https://www.courtlistener.com/opinion/10871573/oregon-environmental-council-v-internal-revenue-service/';
 const boeLta = 'https://www.boe.ca.gov/proptaxes/pdf/lta26034.pdf';
 const cslbLookup = 'https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx';
+const dgStatsDownloads = 'https://www.californiadgstats.ca.gov/downloads/';
 
 const faqs = [
   {
@@ -68,6 +69,11 @@ const faqs = [
     question: 'Can a developer still get the federal tax credit for a new solar project?',
     answer:
       'Under 26 U.S.C. §48E, a solar facility whose construction began after July 4, 2026 gets no credit for property placed in service after December 31, 2027. What counts as having begun construction was set out in IRS Notice 2025-42, which a federal court vacated on June 6, 2026. Ask the developer for its tax counsel\'s position in writing.',
+  },
+  {
+    question: 'Who are the commercial solar PPA providers in California?',
+    answer:
+      'Developers, independent power producers and the financing partners of commercial installers. This page names none, because no dated primary-source list exists. In the CPUC interconnection data, 420 of the 751 third-party-owned business systems connected in California in 2025 were PPAs, and PPAs made up about 86% of third-party-owned capacity.',
   },
   {
     question: 'Should a business sign a PPA with a developer?',
@@ -333,6 +339,60 @@ export default function SolarDevelopers() {
                 .
               </p>
 
+              <h2 id="ppa-providers" className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                Commercial solar PPA providers: who offers them and how to vet one
+              </h2>
+              <p>
+                A PPA provider owns the system on your property and sells you its output per
+                kilowatt-hour. The provider is usually a developer, an independent power producer
+                or a financing partner of the installer, and the company that sells you the PPA
+                is not always the one that will own it after construction.
+              </p>
+              <p>
+                PPAs are the main third-party structure for California business solar. In
+                CRR&apos;s count of the CPUC&apos;s{' '}
+                <a href={dgStatsDownloads} target="_blank" rel="noopener noreferrer" className={link}>
+                  DGStats interconnection data
+                </a>
+                , 420 of the 751 third-party-owned non-residential systems connected by PG&amp;E,
+                SCE and SDG&amp;E in 2025 were PPAs, with a median size of 121 kW DC, and PPAs were
+                about 86% of third-party-owned capacity. At schools, nonprofits and public agencies
+                the share was higher still: 116 of 124 third-party-owned systems.
+              </p>
+              <p>
+                There is a tax reason for that. Under{' '}
+                <a href={irc7701} target="_blank" rel="noopener noreferrer" className={link}>
+                  26 U.S.C. §7701(e)(3)
+                </a>
+                , a contract to sell you electricity from a solar facility is treated as a service
+                contract rather than a lease unless you operate the facility, bear a significant
+                financial burden if it underperforms, get a significant financial benefit if its
+                operating costs come in under the contract standards, or hold an option to buy it
+                at a fixed price other than fair market value. That is the background to how a
+                PPA&apos;s buyout price is defined, so read that clause closely and have your own
+                adviser review it.
+              </p>
+              <p>To vet a provider, get these in writing:</p>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>Operating systems it owns today, with contacts at host sites you can call.</li>
+                <li>Who will own and finance your system at completion, and whether that financing is committed.</li>
+                <li>Who monitors and repairs the system, the response times, and what you are owed if it is down.</li>
+                <li>The rate, escalator, term, any minimum purchase and the production estimate behind the price.</li>
+                <li>The buyout schedule and method, assignment rights, and what happens if the provider sells the project or fails.</li>
+                <li>Removal and roof-restoration duties at the end of the term.</li>
+              </ul>
+              <p>
+                If you are weighing a lease instead, see{' '}
+                <Link href="/commercial-solar/commercial-solar-lease-programs" className={link}>
+                  commercial solar lease programs
+                </Link>
+                , and for the credit the provider is pricing in, the{' '}
+                <Link href="/commercial-solar/commercial-solar-tax-credit" className={link}>
+                  commercial solar tax credit guide
+                </Link>
+                .
+              </p>
+
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
                 Utility-scale and community solar developers
               </h2>
@@ -385,7 +445,8 @@ export default function SolarDevelopers() {
                 <li>CPUC, <a href={cpucRule21} target="_blank" rel="noopener noreferrer" className={link}>Electric Rule 21</a></li>
                 <li>California Energy Commission, <a href={cecOptIn} target="_blank" rel="noopener noreferrer" className={link}>Opt-In Certification Program</a></li>
                 <li>LBNL, <a href={lbnl2026} target="_blank" rel="noopener noreferrer" className={link}>U.S. Distributed Solar and Storage: 2026 Data Update</a> (August 2026) and <a href={tts2024Summary} target="_blank" rel="noopener noreferrer" className={link}>Tracking the Sun 2024 executive summary</a> (August 2024)</li>
-                <li>26 U.S.C. <a href={irc48e} target="_blank" rel="noopener noreferrer" className={link}>§48E</a>, <a href={irc6418} target="_blank" rel="noopener noreferrer" className={link}>§6418</a> and <a href={irc7701} target="_blank" rel="noopener noreferrer" className={link}>§7701</a>, Office of the Law Revision Counsel (text in effect September 22, 2026)</li>
+                <li>26 U.S.C. <a href={irc48e} target="_blank" rel="noopener noreferrer" className={link}>§48E</a>, <a href={irc6418} target="_blank" rel="noopener noreferrer" className={link}>§6418</a> and <a href={irc7701} target="_blank" rel="noopener noreferrer" className={link}>§7701</a>, Office of the Law Revision Counsel (text in effect September 22, 2026; §7701(e) re-read September 23, 2026)</li>
+                <li>California Public Utilities Commission, <a href={dgStatsDownloads} target="_blank" rel="noopener noreferrer" className={link}>DGStats Interconnected Applications Data Set</a> (data through May 31, 2026); CRR count of 2025 non-residential PV systems</li>
                 <li>IRS, <a href={irsNotice202542} target="_blank" rel="noopener noreferrer" className={link}>Notice 2025-42</a>; U.S. District Court for the District of Columbia, <a href={oecVIrs} target="_blank" rel="noopener noreferrer" className={link}>Oregon Environmental Council v. IRS</a>, No. 25-cv-4400 (June 6, 2026)</li>
                 <li>California State Board of Equalization, <a href={boeLta} target="_blank" rel="noopener noreferrer" className={link}>Letter to Assessors 2026/034</a> (September 1, 2026)</li>
                 <li>CSLB, <a href={cslbLookup} target="_blank" rel="noopener noreferrer" className={link}>license lookup</a></li>

@@ -29,6 +29,8 @@ const sceBusinessTou =
   'https://www.sce.com/business/rates-financing/rate-plans/business-time-of-use-rate-plans';
 const cpucNbt =
   'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing';
+const tts2024Summary =
+  'https://eta-publications.lbl.gov/sites/default/files/2024-08/tracking_the_sun_2024_executive_summary.pdf';
 const lbnl2026 =
   'https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf';
 const cecNonresPv =
@@ -185,6 +187,18 @@ export default function DealershipSolar() {
                   commercial carport cost guide
                 </Link>{' '}
                 explains what a canopy adds and how to read a bid.
+              </p>
+              <p id="carport-cost">
+                <strong>What dealership carports cost.</strong> No public agency publishes a
+                dealership or carport price. The nearest benchmark is Berkeley Lab&apos;s{' '}
+                <a href={tts2024Summary} target="_blank" rel="noopener noreferrer" className={link}>
+                  Tracking the Sun 2024 summary
+                </a>
+                : large California commercial systems installed in 2023 had a median price of
+                $2.3 per watt before incentives, across all mounting types. A canopy sits on top
+                of that as steel, foundations, trenching and paving repair. Ask each bidder for
+                the solar priced per watt and the structure priced per covered parking space, so
+                you can compare canopy designs and hold the solar part against a roof quote.
               </p>
 
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
@@ -398,7 +412,7 @@ export default function DealershipSolar() {
                 <li>PG&amp;E, <a href={pgeBev} target="_blank" rel="noopener noreferrer" className={link}>Electric Schedule BEV, Business Electric Vehicles</a> (rates effective March 1, 2026)</li>
                 <li>SCE, <a href={sceBusinessTou} target="_blank" rel="noopener noreferrer" className={link}>business time-of-use rate plans</a></li>
                 <li>CPUC, <a href={cpucNbt} target="_blank" rel="noopener noreferrer" className={link}>net energy metering and net billing</a></li>
-                <li>LBNL, <a href={lbnl2026} target="_blank" rel="noopener noreferrer" className={link}>U.S. Distributed Solar and Storage: 2026 Data Update</a> (August 2026)</li>
+                <li>LBNL, <a href={lbnl2026} target="_blank" rel="noopener noreferrer" className={link}>U.S. Distributed Solar and Storage: 2026 Data Update</a> (August 2026) and <a href={tts2024Summary} target="_blank" rel="noopener noreferrer" className={link}>Tracking the Sun 2024 executive summary</a> (August 2024)</li>
                 <li>California Energy Commission, <a href={cecNonresPv} target="_blank" rel="noopener noreferrer" className={link}>2025 Nonresidential Solar PV</a>; California Building Standards Commission, <a href={bscCalgreen} target="_blank" rel="noopener noreferrer" className={link}>CALGreen</a></li>
                 <li>26 U.S.C. <a href={irc48e} target="_blank" rel="noopener noreferrer" className={link}>§48E</a>, <a href={irc168} target="_blank" rel="noopener noreferrer" className={link}>§168</a> and <a href={irc30c} target="_blank" rel="noopener noreferrer" className={link}>§30C</a>, Office of the Law Revision Counsel (text in effect September 22, 2026)</li>
                 <li>California Franchise Tax Board, <a href={ftb100} target="_blank" rel="noopener noreferrer" className={link}>2025 Form 100 booklet</a></li>

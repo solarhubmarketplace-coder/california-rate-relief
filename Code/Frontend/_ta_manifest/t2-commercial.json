@@ -94,6 +94,63 @@
       ],
       "status": "partial",
       "note": "No agency publishes this number; the page computes it from CPUC DGStats (watts per module = DC size / module count, 2025 interconnections) and the CEC PV Module List full data (models listed 2025-09-21 to 2026-09-21), with the method printed on the page. PARTIAL because CREATE_DEDICATED wants a link from the impressions holder, /commercial-solar/cost-per-watt-california, which no Tier 2 lane owns: see link_requests."
+    },
+    {
+      "path": "/commercial-solar/companies-california",
+      "action": "UPGRADE",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/companies-california/page.tsx",
+      "title": "Commercial Solar Companies & EPCs in California: 6 Checks",
+      "clusters": [
+        1777,
+        68,
+        98,
+        1799,
+        1899,
+        208,
+        1841,
+        1795
+      ],
+      "sources": [
+        "https://www.californiadgstats.ca.gov/downloads/",
+        "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/before_applying_for_license.aspx",
+        "https://www.cslb.ca.gov/contractors/maintain_license/bond_information/bond_requirements.aspx",
+        "https://www.cpuc.ca.gov/Rule21/"
+      ],
+      "status": "done",
+      "note": "Tier 2 rows 2,3,5,8,10,13,18 (commercial rooftop solar, solar business, commercial solar energy solutions/corporate solar, commercial solar EPC, commercial solar energy services, commercial solar projects, commercial solar for manufacturers) plus the fold of row 9 (solar EPC firms). Title/H1 kept (they already match the EPC/companies intent). Added: rooftop share and module size from CPUC DGStats (2025); 'What a solar EPC firm's contract should cover'; 'How a commercial solar project runs, start to finish'; 'Turnkey commercial solar services' table (answers the long 'design, installation and maintenance' GSC queries, names no company); links to the new industrial, lease, tax-credit, wattage and PPA-provider sections; FAQs on EPC firms, turnkey providers and starting a solar business (CSLB experience and $25,000 bond)."
+    },
+    {
+      "path": "/commercial-solar/solar-developers",
+      "action": "UPGRADE",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/solar-developers/page.tsx",
+      "title": "Solar Developers in California: Role, Pay and How to Vet",
+      "clusters": [
+        341,
+        2024
+      ],
+      "sources": [
+        "https://www.californiadgstats.ca.gov/downloads/",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section7701&num=0&edition=prelim"
+      ],
+      "status": "done",
+      "note": "Fold target for rows 19 (commercial solar PPA providers) and 22 (solar developers and EPCs). New section #ppa-providers: who offers commercial PPAs, 2025 CPUC DGStats counts (420 PPAs of 751 third-party-owned business systems, ~86% of TPO capacity; 116 of 124 at tax-exempt hosts), the 26 U.S.C. 7701(e)(3) service-contract rule, and a vetting checklist; FAQ 'Who are the commercial solar PPA providers in California?'. Names no provider. The developer/EPC distinction was already answered (role table + FAQ). Page not in any Tier 2 ownership list; edited because the lane instruction was to fold into the Tier 1 page that already answers the query."
+    },
+    {
+      "path": "/commercial-solar/car-dealerships-going-solar-california",
+      "action": "UPGRADE",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/car-dealerships-going-solar-california/page.tsx",
+      "title": "Car Dealerships Going Solar in California: A 2026 Guide",
+      "clusters": [
+        1818
+      ],
+      "sources": [
+        "https://eta-publications.lbl.gov/sites/default/files/2024-08/tracking_the_sun_2024_executive_summary.pdf"
+      ],
+      "status": "done",
+      "note": "Fold target for row 15 (cost of solar carports for auto dealerships): the FAQ already answered it; added a sourced body paragraph (#carport-cost) with the LBNL 2023 California commercial median and the per-watt / per-space pricing method, and added the missing LBNL Tracking the Sun source to the list. Not in any Tier 2 ownership list; edited per the lane's fold instruction."
     }
   ],
   "sitemap_add": [
@@ -135,5 +192,22 @@
       "why": "CREATE_DEDICATED: cost-per-watt holds the 'average wattage of a commercial solar panel' impressions. Suggested placement: the per-panel / cost-per-square-foot passage. Not in any Tier 2 lane's ownership list, so not edited here."
     }
   ],
-  "skipped": []
+  "skipped": [
+    {
+      "url": "/commercial-solar/solar-epc-firms",
+      "why": "folded into /commercial-solar/companies-california (#what-is-an-epc, new #epc-contract and FAQ 'What does a solar EPC firm do'); the companies page already holds 'solar epc firms/companies' impressions and a second EPC page would split them."
+    },
+    {
+      "url": "/commercial-solar/solar-developers-and-epcs",
+      "why": "folded into /commercial-solar/solar-developers (role table and developer-vs-EPC FAQ already answer it; companies-california links both)."
+    },
+    {
+      "url": "/commercial-solar/commercial-solar-ppa-providers",
+      "why": "folded into /commercial-solar/solar-developers#ppa-providers (developers are the PPA providers; the vetting questions were already there). CRR names no providers, so a separate 'providers' page would duplicate it. companies-california now links the section."
+    },
+    {
+      "url": "/commercial-solar/cost-of-solar-carports-for-auto-dealerships",
+      "why": "folded into /commercial-solar/car-dealerships-going-solar-california#carport-cost (Tier 1 page already answered it in an FAQ; body paragraph added)."
+    }
+  ]
 }
