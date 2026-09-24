@@ -81,13 +81,145 @@
    ],
    "status": "done",
    "note": "Statewide residential solar guide and cost_value hub. Retitled: the old title's '$3.30/W median' is not in LBNL's text (re-checked 2026-09-23), so the page now uses LBNL Tracking the Sun 2024's stated $3.20-$5.50/W band (same benchmark as src/data/solar-cost-benchmark.ts) plus the 2026 update's -$0.50/W change. Links cost, financing, incentives, NEM and battery hubs. topic-hubs.ts hubPageLabel for cost_value still says '$3.30/W Median Cost and Sizing' and should be updated at integration."
+  },
+  {
+   "path": "/solar-installers/licensed-solar-installer",
+   "action": "CREATE_DEDICATED",
+   "hub": "installers",
+   "file": "src/app/solar-installers/licensed-solar-installer/page.tsx",
+   "title": "How to Find a Licensed Solar Installer in California",
+   "sources": [
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C10",
+    "https://www.cslb.ca.gov/onlineservices/dataportal/ListByCounty",
+    "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+    "https://www.cslb.ca.gov/Media_Room/Industry_Bulletins/2020/January_9.aspx",
+    "https://www.cslb.ca.gov/Resources/PressReleases/2024/AB2622.FINAL.pdf",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/Issuing_My_License.aspx",
+    "https://www.cslb.ca.gov/Contractors/Applicants/Home_Improvement_Registration/Before_Applying_For_HIS.aspx",
+    "https://www2.cslb.ca.gov/Consumers/Hire_A_Contractor/What_Kind_Of_Contractor.aspx",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf"
+   ],
+   "status": "done",
+   "note": "Finding a licensed installer (CSLB data portal list by classification and county) and what 'licensed' means; the lookup walkthrough stays on how-to-verify. CREATE_DEDICATED holder /solar-companies/los-angeles is owned by the cities agent: link request in link_requests.",
+   "clusters": [
+    358
+   ]
+  },
+  {
+   "path": "/solar-installers/baker-electric-solar-review",
+   "action": "UPGRADE",
+   "hub": "installer_reviews",
+   "file": "src/app/solar-installers/baker-electric-solar-review/page.tsx",
+   "title": "Baker Electric San Diego vs Baker Home Energy: Solar Review",
+   "sources": [
+    "https://bakerhomeenergy.com/",
+    "https://www.baker-electric.com/",
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf"
+   ],
+   "status": "done",
+   "note": "Both Baker sites re-read 2026-09-23 and attributed as the companies' own statements. Removed unsourced claims (computed years, default equipment, install-day length, coverage beyond what the company states, 'light' complaint profile, mid-market pricing, unconfirmed 25-year workmanship warranty). Added FAQPage schema, 'baker solar' / 'baker electric california' answers, section breadcrumb (/solar-installers) and HubSpokeLinks. CSLB record lookups for #858088 and #161756 still return only the search form to automated fetches. No 'Our take' score on this page.",
+   "clusters": [
+    190,
+    308
+   ]
+  },
+  {
+   "path": "/blog/solar-broker",
+   "action": "CREATE_DEDICATED",
+   "hub": "installers",
+   "file": "src/app/blog/solar-broker/page.tsx",
+   "title": "Solar Broker in California: What They Can and Can't Do",
+   "sources": [
+    "https://www.cslb.ca.gov/Media_Room/Industry_Bulletins/2020/January_9.aspx",
+    "https://www.cslb.ca.gov/resources/industrybulletins/online_marketplace_fast_facts.pdf",
+    "https://www.cslb.ca.gov/Contractors/Applicants/Home_Improvement_Registration/Before_Applying_For_HIS.aspx",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf",
+    "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx",
+    "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide"
+   ],
+   "status": "done",
+   "note": "States plainly that CRR is a referral service and links /how-we-make-money. Holder /solar-companies/los-angeles (cities agent): link request in link_requests.",
+   "clusters": [
+    244
+   ]
+  },
+  {
+   "path": "/blog/solar-license-california",
+   "action": "CREATE",
+   "hub": "installers",
+   "file": "src/app/blog/solar-license-california/page.tsx",
+   "title": "Solar License in California: C-46, HIS and How to Get One",
+   "sources": [
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C46",
+    "https://www.cslb.ca.gov/about_us/library/licensing_classifications/Licensing_Classifications_Detail.aspx?Class=C10",
+    "https://web.cslb.ca.gov/contractors/applicants/contractors_license/Exam_Application/Before_Applying_For_License.aspx",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/experience_for_exam.aspx",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/applying_for_license.aspx",
+    "https://www.cslb.ca.gov/contractors/applicants/contractors_license/exam_application/Issuing_My_License.aspx",
+    "https://www.cslb.ca.gov/Contractors/Applicants/Home_Improvement_Registration/Before_Applying_For_HIS.aspx",
+    "https://cslb.ca.gov/Resources/FormsAndApplications/ApplicationForRegistrationAsAHomeImprovementSalesperson.pdf",
+    "https://www.cslb.ca.gov/Media_Room/Industry_Bulletins/2020/January_9.aspx",
+    "https://www.cslb.ca.gov/Resources/IndustryBulletins/2020/20-22_solar_contracts.pdf",
+    "https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx"
+   ],
+   "status": "done",
+   "note": "Also answers the hub's sub-questions 'how to become a solar contractor/installer' and 'how to start a solar company in california' (c2763, c2782).",
+   "clusters": [
+    531
+   ]
   }
  ],
- "sitemap_add": [],
- "blog_index_add": [],
+ "sitemap_add": [
+  "/blog/solar-broker",
+  "/blog/solar-license-california",
+  "/solar-installers/licensed-solar-installer"
+ ],
+ "blog_index_add": [
+  {
+   "slug": "solar-broker",
+   "title": "What a solar broker is, and what one can legally do in California",
+   "hub": "installers"
+  },
+  {
+   "slug": "solar-license-california",
+   "title": "California solar license requirements: installing and selling solar",
+   "hub": "installers"
+  }
+ ],
  "redirect_requests": [],
- "hub_links": [],
- "link_requests": [],
+ "hub_links": [
+  {
+   "hub": "installers",
+   "href": "/solar-installers/licensed-solar-installer",
+   "label": "How to find a licensed solar installer"
+  },
+  {
+   "hub": "installers",
+   "href": "/blog/solar-broker",
+   "label": "What a solar broker can and cannot do"
+  },
+  {
+   "hub": "installers",
+   "href": "/blog/solar-license-california",
+   "label": "California solar contractor license requirements"
+  }
+ ],
+ "link_requests": [
+  {
+   "from": "/solar-companies/los-angeles",
+   "to": "/solar-installers/licensed-solar-installer",
+   "anchor": "finding a licensed solar installer",
+   "why": "CREATE_DEDICATED: 'licensed solar installer' impressions land on the LA companies page (cities agent owns the template/data)"
+  },
+  {
+   "from": "/solar-companies/los-angeles",
+   "to": "/blog/solar-broker",
+   "anchor": "what a solar broker can legally do",
+   "why": "CREATE_DEDICATED: 'solar broker' impressions (62) land on the LA companies page"
+  }
+ ],
  "skipped": [],
  "decisions_for_chad": []
 }
