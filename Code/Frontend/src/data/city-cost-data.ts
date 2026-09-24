@@ -390,6 +390,36 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "Yes, for small residential rooftop solar through the City's own Accela-based Online Permit Center (Solar Permit Online). The City's page does not name SolarAPP+, and the California Energy Commission's SB 379 data lists Anaheim's platform as a custom one.",
     sourcesFetchedAt: "2026-09-18",
+    // 2026-09-24 (Tier 3): /solar-savings/anaheim 301s here, and "anaheim
+    // electric rates" passes Rule 3, so the page now answers it from Anaheim
+    // Public Utilities' own residential rates page.
+    localRates: {
+      heading: 'Electricity provider and rates in Anaheim',
+      paragraphs: [
+        "Anaheim runs its own electric utility. The California Energy Commission's service-territory map names it the City of Anaheim Public Utilities Department and places 98.7 percent of the city in its territory, so a home in that territory is billed on Anaheim Public Utilities' own schedules.",
+        "APU says most homes are on its Standard Domestic Rate: an $8.00 monthly charge, 14.00¢ per kWh for the first 10 kWh a day (the basic residential lifeline allowance, with medical allowance usage at the same 14.00¢), and 21.49¢ per kWh for everything above that. APU puts the average home at 29 kWh a day, so the extra energy a home adds, such as EV charging, is billed at 21.49¢.",
+        "The optional Domestic Time-of-Use Rate, APU's Schedule TOU-2, took effect May 1, 2024 under Resolution No. 2024-022. It keeps the $8.00 monthly charge and prices on-peak energy, 4 to 9 p.m. on weekdays except holidays, at 33.20¢ per kWh in summer (July 1 to October 31; APU's rates page shows 33.22¢) and 31.25¢ in winter (November 1 to June 30). Off-peak energy is 16.65¢ in summer and 16.15¢ in winter, and winter super off-peak energy, 8 a.m. to 4 p.m. on weekdays and every hour outside 4 to 9 p.m. on winter weekends and holidays, is 12.00¢.",
+        "APU's rates page does not print an effective date for the Standard Domestic Rate, and the Domestic Service schedule it links could not be read on September 24, 2026, so check the rate named on your own bill. A solar savings estimate for an Anaheim home should be built on these APU prices.",
+      ],
+      faq: {
+        question: 'What are electricity rates in Anaheim?',
+        answer:
+          "Anaheim Public Utilities, the City's own utility, supplies electricity to most of Anaheim. Its Standard Domestic Rate, which APU says most homes are on, is an $8.00 monthly charge plus 14.00¢ per kWh for the first 10 kWh a day and 21.49¢ per kWh above that. The optional time-of-use schedule, TOU-2, effective May 1, 2024, charges 33.20¢ on-peak (4 to 9 p.m. on weekdays) in summer and 31.25¢ in winter, with other hours from 12.00¢ to 16.65¢. APU's rates page and schedule were read September 24, 2026.",
+      },
+      sources: [
+        {
+          label: 'Anaheim Public Utilities, Residential Rates (Domestic Rate; Domestic Time-of-Use Rate)',
+          url: 'https://www.anaheim.net/6335/Residential-Rates',
+          verifiedAt: '2026-09-24',
+        },
+        {
+          label: 'Anaheim Public Utilities, Electric Rate Schedule TOU-2, Domestic Time-of-Use (page 2.10.1 effective May 1, 2024, Resolution No. 2024-022; page 2.10.2 effective March 1, 2022)',
+          url: 'https://www.anaheim.net/DocumentCenter/View/25947/Schedule-TOU-2-',
+          verifiedAt: '2026-09-24',
+        },
+        { ...CEC_SERVICE_TERRITORY_SOURCE, verifiedAt: '2026-09-24' },
+      ],
+    },
   },
   {
     slug: "aptos",
@@ -573,7 +603,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     // rates fresno" passes Rule 3, so the page now answers it from PG&E's
     // own tariffs.
     localRates: {
-      heading: 'Electricity rates in Fresno',
+      heading: 'Electricity provider and rates in Fresno',
       paragraphs: [
         "PG&E supplies both generation and delivery in Fresno. The California Energy Commission's service-territory map places the whole city in PG&E's territory, and PG&E's list of community choice aggregators names none serving Fresno, so the rates below are the bundled PG&E prices a Fresno bill uses.",
         "On E-1, PG&E's tiered residential schedule, energy costs $0.32561 per kWh up to the home's baseline allowance and $0.40702 per kWh above it. On E-TOU-C, which treats 4 to 9 p.m. every day as peak, summer energy (June 1 through September 30) is $0.52240 per kWh at peak and $0.39940 off-peak, and winter energy is $0.39757 and $0.36757, with a $0.08140 per kWh credit on baseline usage. Both schedules add a base services charge, $0.79343 a day for a household that does not qualify for the two lower income tiers. These rates took effect June 1, 2026.",

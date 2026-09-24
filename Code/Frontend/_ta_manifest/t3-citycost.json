@@ -610,7 +610,9 @@
    "path": "/solar-cost/fresno",
    "action": "UPGRADE",
    "title": "Solar Panel Cost in Fresno, CA: What Sets the Price (2026)",
-   "clusters": [],
+   "clusters": [
+    753
+   ],
    "sources": [
     "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-1.pdf",
     "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-TOU-C.pdf",
@@ -620,7 +622,24 @@
     "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
    ],
    "status": "done",
-   "note": "Extra row (lane note): /solar-savings/fresno 301s here and 'electricity rates fresno' passes Rule 3. New 'Electricity rates in Fresno' H2 plus FAQ from a new gated row field localRates: PG&E bundled (100% on the CEC layer; no CCA on PG&E's list); E-1 $0.32561/$0.40702 per kWh and E-TOU-C peak/off-peak by season, $0.79343/day base services charge (Income Tier 3), all effective 2026-06-01 (Advice 7921-E); baseline territory R (Fresno County under 3,500 ft; USGS ~310 ft at the city's Census point): 17.7/10.4 kWh/day basic, 19.9/26.7 all-electric. Permit fields unchanged (verified 2026-09-23).",
+   "note": "Extra row (lane note): /solar-savings/fresno 301s here and 'electricity rates fresno' passes Rule 3. New 'Electricity provider and rates in Fresno' H2 (cluster 753 'electricity provider fresno california') plus FAQ from a new gated row field localRates: PG&E bundled (100% on the CEC layer; no CCA on PG&E's list); E-1 $0.32561/$0.40702 per kWh and E-TOU-C peak/off-peak by season, $0.79343/day base services charge (Income Tier 3), all effective 2026-06-01 (Advice 7921-E); baseline territory R (Fresno County under 3,500 ft; USGS ~310 ft at the city's Census point): 17.7/10.4 kWh/day basic, 19.9/26.7 all-electric. Permit fields unchanged (verified 2026-09-23).",
+   "hub": "city_cost",
+   "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
+  },
+  {
+   "path": "/solar-cost/anaheim",
+   "action": "UPGRADE",
+   "title": "Solar Panel Cost in Anaheim, CA: What Sets the Price (2026)",
+   "clusters": [
+    783
+   ],
+   "sources": [
+    "https://www.anaheim.net/6335/Residential-Rates",
+    "https://www.anaheim.net/DocumentCenter/View/25947/Schedule-TOU-2-",
+    "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+   ],
+   "status": "partial",
+   "note": "Extra row (lane note): /solar-savings/anaheim 301s here and 'anaheim electric rates' (cluster 783) passes Rule 3. New 'Electricity provider and rates in Anaheim' H2 plus FAQ (localRates): APU (98.7% of the city on the CEC layer); Standard Domestic Rate $8.00/month, 14.00¢ first 10 kWh/day, 21.49¢ above (APU rates page); Schedule TOU-2 effective 2024-05-01 (Res. 2024-022): on-peak 4-9 p.m. weekdays 33.20¢ summer / 31.25¢ winter, off-peak 16.65¢/16.15¢, winter super off-peak 12.00¢. Partial: (1) the Domestic Service schedule PDF sat behind anaheim.net's bot check / 429 all session, so the Standard Domestic Rate carries no effective date and the page says so; (2) APU's rates page shows 33.22¢ for summer on-peak while the TOU-2 sheet prints 33.20¢ - the page states the schedule figure and notes the page's; (3) the permit fields keep their 2026-09-18 verification (not re-read).",
    "hub": "city_cost",
    "file": "src/data/city-cost-data.ts + src/data/local-project-guidance.ts (rendered by src/components/growth/CityCostPage.tsx via src/app/solar-cost/[city]/page.tsx); index row in src/data/solar-cost-index.ts"
   }
@@ -792,5 +811,73 @@
    "url": "/solar-cost/van-nuys",
    "why": "folded into /solar-cost/los-angeles (same FAQ). Van Nuys is a City of Los Angeles community plan area served by LADWP (CEC layer at a Census-geocoded Van Nuys address); its page-one SERP is mostly camper-van solar. A separate page would repeat the Los Angeles page."
   }
- ]
+ ],
+ "map_points": {
+  "note": "Lane rule: this lane must not edit src/data/city-coordinates.ts (the parallel citycos lane adds points). Earlier commits on this branch (d77e7c8, 33ce5db, 75a0515) had already added five points; a revert was attempted on 2026-09-24 and was refused by the session's permission check, so those five stay on the branch and integration should keep one copy of each key if citycos adds the same ones. Two further points (gilroy, san-ramon) exist only as uncommitted edits in this worktree and are NOT on the branch. Missing points only change the order of the 'nearby' links (city-pages.ts falls back to county order); nothing fails.",
+  "on_branch_possible_duplicates": {
+   "clovis": [
+    36.8308604,
+    -119.6838769,
+    "Census TIGERweb, GEOID 0614218"
+   ],
+   "elk-grove": [
+    38.4155297,
+    -121.383632,
+    "GEOID 0622020"
+   ],
+   "mission-viejo": [
+    33.6095503,
+    -117.6551443,
+    "GEOID 0648256"
+   ],
+   "santa-clara": [
+    37.3646205,
+    -121.9679735,
+    "GEOID 0669084"
+   ],
+   "saratoga": [
+    37.2683275,
+    -122.0262235,
+    "GEOID 0670280"
+   ]
+  },
+  "needed_not_on_branch": {
+   "gilroy": [
+    37.0046354,
+    -121.5854086,
+    "Census TIGERweb Places, GEOID 0629504, queried 2026-09-23"
+   ],
+   "san-ramon": [
+    37.7620479,
+    -121.9354251,
+    "GEOID 0668378, queried 2026-09-23"
+   ],
+   "redwood-city": [
+    37.5173859,
+    -122.211347,
+    "GEOID 0660102, queried 2026-09-24"
+   ],
+   "cupertino": [
+    37.3168277,
+    -122.046533,
+    "GEOID 0617610, queried 2026-09-24"
+   ]
+  }
+ },
+ "new_cost_slugs_pending_companies_twin_registered": [
+  "clovis",
+  "elk-grove",
+  "mission-viejo",
+  "saratoga",
+  "gilroy",
+  "redwood-city"
+ ],
+ "existing_cost_pages_citycos_is_twinning": {
+  "slugs": [
+   "yuba-city",
+   "napa",
+   "hollister"
+  ],
+  "note": "Citycos T3 is creating /solar-companies pages (CREATE_DEDICATED) for these existing cost cities; that lane registers them in canonical-redirects.test.ts. costPageSeo will switch each cost page's title to 'What Sets the Price' once its companies twin is live. (Petaluma's companies page is already live; citycos only upgrades it.)"
+ }
 }
