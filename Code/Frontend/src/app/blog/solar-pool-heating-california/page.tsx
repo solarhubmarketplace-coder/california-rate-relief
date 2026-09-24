@@ -13,6 +13,8 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
+import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
+import { FaqJsonLd, type FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
 const metaTitle = "Solar Pool Heating in California: Cost, Sizing and Payback";
 const metaDescription =
   "What DOE says a solar pool heater costs, how big the collectors should be and how fast it pays back, plus how solar compares with heat pump and gas heaters.";
@@ -31,10 +33,38 @@ export const metadata: Metadata = {
     type: 'article',
     url: 'https://ratereliefca.com/blog/solar-pool-heating-california',
     publishedTime: '2026-04-24T00:00:00Z',
+    modifiedTime: '2026-09-23T00:00:00Z',
     images: [CRR_SOCIAL_CARD],
   },
   twitter: crrTwitter(metaTitle, metaDescription),
 };
+
+// 2026-09-23 (topical-authority wave, agent costfin): lead now answers the
+// cost question directly; added inground-pool sizing arithmetic, a FAQ with
+// FAQPage schema, the cost hub link and HubSpokeLinks. DOE figures re-fetched
+// 2026-09-23. The permit paragraph no longer states a statute it did not cite.
+const poolFaqs: FaqJsonLdItem[] = [
+  {
+    question: "How much does solar pool heating cost in California?",
+    answer:
+      "The U.S. Department of Energy says a solar pool heating system usually costs between $2,500 and $4,000 to buy and install, with a payback of 1 to 7 years depending on local fuel costs and sun. That figure is national and undated, so get written bids for your pool.",
+  },
+  {
+    question: "How much does a solar pool heater cost for an inground pool?",
+    answer:
+      "Cost follows collector area, and DOE sizes collectors at 50% to 100% of the pool's surface area, or 60% to 70% for most northern California pools. A 15 by 30 foot inground pool (450 square feet) would need about 270 to 315 square feet of collector at the northern California ratio, or up to 450 at 100%. Ask each bidder to price by collector area so bids compare.",
+  },
+  {
+    question: "How long does a solar pool heater last?",
+    answer:
+      "DOE says solar pool heaters typically last longer than gas and heat pump pool heaters, and that proper maintenance keeps them running smoothly for 10 to 20 years.",
+  },
+  {
+    question: "Is a solar pool heater worth it in California?",
+    answer:
+      "It can be if you have a sunny, south-facing roof with enough area and want a longer swim season. DOE's 1 to 7 year payback range depends on what fuel it replaces and your sun, and a pool cover reduces the collector area you need. A heat pump heater works without sun but loses efficiency in cold air.",
+  },
+];
 
 export default function SolarPoolHeatingCA() {
   return (
@@ -58,7 +88,10 @@ export default function SolarPoolHeatingCA() {
                 Solar Pool Heating in California: Cost, Sizing and Payback
               </h1>
               <p className="text-lg text-muted-foreground">
-                A solar pool heater&apos;s cost and payback depend on your pool, your roof and your local sun and fuel prices. This page gives the U.S. Department of Energy&apos;s figures for cost, collector size and payback, and when a heat-pump pool heater may fit better. Then get written bids for your own pool.
+                A solar pool heating system usually costs $2,500 to $4,000 to buy and install, and pays back in 1 to 7 years, according to the U.S. Department of Energy. Where you land depends on your pool&apos;s size, your roof, your sun and the fuel it replaces. This page gives DOE&apos;s cost, sizing and payback figures, and when a heat-pump heater fits better.
+              </p>
+              <p className="mt-3 text-muted-foreground">
+                For solar electric panels rather than pool heating, see <Link href="/solar-panels-california" className="text-primary underline">California solar panel cost and sizing</Link>.
               </p>
             </header>
 
@@ -116,6 +149,14 @@ export default function SolarPoolHeatingCA() {
               </div>
               <p className="text-sm text-muted-foreground">Source: U.S. Department of Energy, Energy Saver, <a href={DOE_SOLAR_POOL} target="_blank" rel="noopener noreferrer" className="text-primary underline">Solar Swimming Pool Heaters</a> (checked {CHECKED}). DOE&apos;s cost figure is national and carries no date, so treat it as a starting point, not a 2026 California price.</p>
               <p>A bid&apos;s price also depends on roof access, whether an automated bypass valve is included, and whether a pool-pump upgrade is bundled in. Ask each bidder to list those items separately.</p>
+
+              <h3 className="text-xl font-bold text-foreground mt-8 mb-3">Solar pool heater cost for an inground pool</h3>
+              <p>
+                DOE does not price inground and above-ground pools separately. What drives the price is collector area, and DOE ties that to the pool: &ldquo;The surface area of your solar collector should equal 50%–100% of the surface area of your pool.&rdquo; In northern California, DOE says most people use outdoor pools six to eight months a year and size systems at 60% to 70% of the pool&apos;s surface area.
+              </p>
+              <p>
+                For a 15 × 30 foot inground pool (450 square feet), that works out to about 270 to 315 square feet of collector at the northern California ratio, or up to 450 square feet at 100%. Ask each bidder to state the collector area and price per square foot, so bids for different sizes compare. DOE also says solar pool heaters &ldquo;typically last longer than gas and heat pump pool heaters,&rdquo; and that proper maintenance keeps them running for 10 to 20 years (<a href={DOE_SOLAR_POOL} target="_blank" rel="noopener noreferrer" className="text-primary underline">DOE</a>, checked {CHECKED}).
+              </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How Much Swim Season It Adds</h2>
               <p>
@@ -175,24 +216,28 @@ export default function SolarPoolHeatingCA() {
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Permits and HOAs</h2>
-              <p>Solar thermal pool heating generally requires:</p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>A plumbing permit (not an electrical permit, since there&apos;s no PV electricity).</li>
-                <li>Sometimes a building permit for the roof attachment, depending on jurisdiction.</li>
-                <li>HOA approval under the same Civil Code § 714 Solar Rights Act protections that apply to PV.</li>
-              </ul>
-              <p>Permit fees vary by city. Ask whether the bid includes the permits and who pulls them.</p>
+              <p>Permit rules are set by your city or county, and a pool heater is plumbing work rather than electrical generation, so the permits differ from a solar electric system. Ask your building department which permits apply, and ask whether the bid includes them and who pulls them. City permit pages for solar electric systems are collected in the <Link href="/california-solar-cost-index" className="text-primary underline">California solar cost index</Link>. If you live in an HOA, read <Link href="/blog/hoa-solar-rights-california" className="text-primary underline">what an HOA can and cannot require for solar</Link> before you apply.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Does the Federal Tax Credit Apply?</h2>
               <p>
                 No. The IRS instructions for Form 5695 say you can&apos;t claim the residential clean energy credit for expenditures made after December 31, 2025. Even before that, the same instructions covered solar water heating only for water used in your home, and excluded costs allocable to &ldquo;a swimming pool, hot tub, or any other energy storage medium that has a function other than the function of such storage&rdquo; (<a href={IRS_5695} target="_blank" rel="noopener noreferrer" className="text-primary underline">IRS, Instructions for Form 5695</a>, revised April 30, 2026, checked {CHECKED}). Work with a tax professional if you paid for any solar equipment in 2025 or earlier.
               </p>
 
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Frequently Asked Questions</h2>
+              <FaqJsonLd items={poolFaqs} />
+              {poolFaqs.map((f) => (
+                <div key={f.question}>
+                  <h3 className="text-lg font-bold text-foreground mt-6 mb-2">{f.question}</h3>
+                  <p>{f.answer}</p>
+                </div>
+              ))}
+
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><Link href="/blog/is-my-roof-good-for-solar-california" className="text-primary underline">Is My Roof Good for Solar?</Link></li>
-                <li><Link href="/blog/solar-tax-credit-expired-2026-options" className="text-primary underline">Solar Tax Credit 2026 Options</Link></li>
-                <li><Link href="/best-solar-companies-california" className="text-primary underline">Best Solar Companies in California</Link></li>
+                <li><Link href="/blog/is-my-roof-good-for-solar-california" className="text-primary underline">Is your roof ready for solar collectors?</Link></li>
+                <li><Link href="/blog/solar-tax-credit-expired-2026-options" className="text-primary underline">What the ended federal credit leaves in 2026</Link></li>
+                <li><Link href="/blog/solar-payback-period-california" className="text-primary underline">Payback for solar electric panels in California</Link></li>
+                <li><Link href="/best-solar-companies-california" className="text-primary underline">Comparing California solar companies</Link></li>
               </ul>
             </div>
           <ArticleCTA />
@@ -206,6 +251,7 @@ export default function SolarPoolHeatingCA() {
                  { href: "/solar-problems/what-solar-doesnt-cover-california", label: "What a system does not cover" },
                ]}
              />
+             <HubSpokeLinks hub="cost_value" currentPath="/blog/solar-pool-heating-california" />
 
           </article>
         </div>

@@ -1,43 +1,43 @@
+// 2026-09-23 upgrade (topical-authority wave, agent costfin): opening answer
+// now defines a prepaid PPA; added "Can you buy out a solar PPA?", the
+// prepaid-lease distinction (the "prepaid lease" impressions now have their own
+// page at /blog/prepaid-lease-solar), a FAQ and the financing hub block.
+// Removed the installer-marketing citations (Sunrun, Palmetto, Tesla): installer
+// pages are not sources on this site. Every remaining figure was re-fetched on
+// 2026-09-23. The prior body is in git history.
 import type { Metadata } from "next";
 import { CRR_SOCIAL_CARD, crrTwitter } from "@/lib/crr-social";
 import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
+import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
+import { SolarInquiry } from "@/components/growth/SolarInquiry";
+import type { FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
+
+const CPUC_GUIDE =
+  "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide";
+const CPUC_NEM = "https://www.cpuc.ca.gov/NEM/";
+const IRS_25D = "https://www.irs.gov/credits-deductions/residential-clean-energy-credit";
+const SUNNOVA_8K =
+  "https://www.sec.gov/Archives/edgar/data/1772695/000177269525000105/nova-20250608.htm";
 
 const sources: Source[] = [
-  {
-    label: "CPUC: California Solar Consumer Protection Guide",
-    url: "https://www.cpuc.ca.gov/solarguide/",
-  },
+  { label: "CPUC: California Solar Consumer Protection Guide", url: CPUC_GUIDE },
   {
     label: "CPUC: CSLB solar disclosure documents",
     url: "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide/cslb-disclosure-documents",
   },
-  {
-    label: "IRS: Residential Clean Energy Credit",
-    url: "https://www.irs.gov/credits-deductions/residential-clean-energy-credit",
-  },
-  {
-    label: "Sunrun: What's a Solar Lease or PPA?",
-    url: "https://sunrun.com/go-solar-center/solar-faq/whats-a-solar-lease-or-ppa",
-  },
-  {
-    label: "Palmetto: LightReach",
-    url: "https://palmetto.com/lightreach",
-  },
-  {
-    label: "Tesla: Buying Out Your Tesla Solar Panel Lease",
-    url: "https://tesla.com/learn/tesla-solar-lease-buyout-guide",
-  },
+  { label: "CPUC: net energy metering and the Net Billing Tariff", url: CPUC_NEM },
+  { label: "IRS: Residential Clean Energy Credit", url: IRS_25D },
   {
     label: "Sunnova Energy International: Form 8-K (Item 1.03), filed 2025-06-09",
-    url: "https://sec.gov/Archives/edgar/data/1772695/000177269525000105/nova-20250608.htm",
+    url: SUNNOVA_8K,
   },
 ];
 
 const metaTitle = "Prepaid Solar PPA in California (2026): 5 Terms to Check";
 const metaDescription =
-  "A prepaid PPA still leaves the provider owning the system. Who owns it, what is still owed, buyout, home-sale transfer and the utility bill that remains.";
+  "A prepaid PPA pays upfront for a system's electricity; the provider still owns it. What is still owed, buyout, sale transfer and the utility bill left.";
 
 export const metadata: Metadata = {
   title: metaTitle,
@@ -48,63 +48,92 @@ export const metadata: Metadata = {
     description: metaDescription,
     type: "article",
     url: "https://ratereliefca.com/blog/prepaid-ppa-california-2026",
-    modifiedTime: "2026-09-22T00:00:00Z",
+    modifiedTime: "2026-09-23T00:00:00Z",
     images: [CRR_SOCIAL_CARD],
   },
   twitter: crrTwitter(metaTitle, metaDescription),
 };
 
+const faqs: FaqJsonLdItem[] = [
+  {
+    question: "What is a prepaid PPA?",
+    answer:
+      "It is a power purchase agreement where you pay upfront for electricity the system is expected to produce, instead of paying a per-kWh solar bill each month. The provider still owns the system. The CPUC's question list asks whether you can make a down payment to reduce the kilowatt-hour rate on a PPA; a prepaid PPA takes that to its end point.",
+  },
+  {
+    question: "Can you buy out a solar PPA?",
+    answer:
+      "Often, but only on the contract's terms. The CPUC warns that if you sell or end early you might have to buy out the contract, 'which could be thousands of dollars,' and suggests asking whether you would owe a balloon payment or an early termination fee. Get the buyout formula in writing before you sign or prepay.",
+  },
+  {
+    question: "Is a prepaid PPA better than a monthly PPA?",
+    answer:
+      "It removes the monthly solar bill and any escalator on it, but you pay the whole contract's worth of electricity before the system has produced any of it. Compare the prepaid price with the total of the monthly schedule, with a cash price for the same system, and with the utility bill that remains in each case.",
+  },
+  {
+    question: "Does a prepaid PPA qualify for the federal solar tax credit?",
+    answer:
+      "Not for you. The provider owns the system. The IRS says the homeowner Residential Clean Energy Credit is not available for any property placed in service after December 31, 2025, and it was never a credit for buying electricity.",
+  },
+];
+
 export default function PrepaidPpaCalifornia2026() {
   return (
     <DecisionPage
       title="Prepaid solar PPA in California: contract checklist for 2026"
-      intro="A prepaid solar PPA can involve a large upfront payment, but the name does not settle ownership, future payments, buyout, transfer or utility-bill results. Use the signed documents to compare it with other options."
+      intro="A prepaid PPA is a power purchase agreement where you pay upfront for the electricity the system is expected to make, instead of a per-kWh bill each month. The solar provider still owns the system. Paying first does not settle future charges, buyout, transfer at a sale or the utility bill you keep."
       path="/blog/prepaid-ppa-california-2026"
       sources={sources}
-      sourceCheckedDate="2026-09-22"
+      sourceCheckedDate="2026-09-23"
+      contentModifiedDate="2026-09-23"
       topic="Prepaid solar PPA comparison"
+      inquiry={<SolarInquiry utility="" topic="Prepaid solar PPA comparison" market="CA" />}
+      faqs={faqs}
+      breadcrumbs={[{ label: "Leases, PPAs and financing", href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california" }]}
+      breadcrumbLabel="Prepaid solar PPA"
     >
       <section>
-        <h2>Start with the actual contract, not the label</h2>
+        <h2>What prepaid solar power actually buys</h2>
         <p>
-          A power-purchase agreement is generally an arrangement in which a
-          provider owns the solar system and the customer pays for electricity
-          it produces. A proposal described as &ldquo;prepaid&rdquo; may include one
-          large payment, but the specific payment schedule, term and rights come
-          from that agreement and its attached disclosures.
+          The CPUC describes a PPA this way: &ldquo;you typically pay for all the
+          power the solar system generates (at a fixed per-kilowatt-hour
+          rate),&rdquo; and &ldquo;the solar provider owns the system on your
+          property.&rdquo; Its question list for PPA shoppers includes: &ldquo;Is
+          there an option to make a down payment to reduce my monthly payments (for a
+          lease) or kilowatt-hour rate (for a PPA)?&rdquo; (
+          <a className="underline" href={CPUC_GUIDE}>
+            CPUC, California Solar Consumer Protection Guide
+          </a>
+          , checked September 23, 2026.) A prepaid PPA is that option taken all the
+          way: you pay for the expected electricity at the start.
+        </p>
+        <p className="mt-3">
+          So &ldquo;prepaid solar power&rdquo; or &ldquo;prepaid solar energy&rdquo;
+          means electricity you have paid for before it is made, from equipment you do
+          not own. Where your payments sit within the four ways to pay for solar is
+          set out in{" "}
+          <Link className="underline" href="/blog/ppa-loan-vs-solar-lease-vs-cash-california">
+            the lease, PPA, loan and cash comparison
+          </Link>
+          .
         </p>
         <p className="mt-3">
           Do not assume that prepaid means no future payment, no escalator, no
-          transfer requirement or automatic ownership. Ask the provider to point
-          to the exact contract clause for each answer.
+          transfer requirement or ownership. Ask the provider to point to the exact
+          contract clause for each answer.
         </p>
       </section>
 
       <section>
-        <h2>How a prepaid PPA is actually structured</h2>
+        <h2>Prepaid PPA or prepaid lease?</h2>
         <p>
-          Many PPAs are sold with no down payment and a monthly payment; the
-          CPUC&apos;s solar consumer guide notes that lease and PPA customers
-          receive a monthly bill from the solar provider as well as their
-          utility bill. Prepaid is the alternative: Sunrun pays &ldquo;for the system equipment/energy
-          cost upfront,&rdquo; and the customer will &ldquo;forgo the annual
-          escalator and will not have a monthly solar bill&rdquo; (Sunrun,
-          &ldquo;What&apos;s a Solar Lease or PPA?,&rdquo; accessed
-          2026-09-22) — but Sunrun is explicit this is still &ldquo;without
-          the hassle of ownership&rdquo;: the customer is buying electricity,
-          not equipment. Upfront amounts across the options run from little or
-          nothing on a monthly PPA or lease to the full price for cash;
-          prepaid sits at the far end.
-        </p>
-        <p className="mt-3">
-          What transfers at a home sale is governed by ownership, not
-          payment timing — the same whether the customer paid monthly or
-          prepaid. See{" "}
-          <Link
-            className="underline"
-            href="/blog/what-happens-to-solar-lease-when-i-sell-california"
-          >
-            what happens to a solar lease when you sell in California
+          Both move the payments to the start and both leave the provider owning the
+          system. A prepaid lease pays ahead for scheduled lease payments. A prepaid
+          PPA pays ahead for electricity at a per-kWh price, so ask what happens if the
+          system produces more or less than the amount you prepaid for: is there a
+          true-up, a refund or a minimum energy guarantee? The lease version has{" "}
+          <Link className="underline" href="/blog/prepaid-lease-solar">
+            its own guide to prepaid solar leases
           </Link>
           .
         </p>
@@ -150,55 +179,67 @@ export default function PrepaidPpaCalifornia2026() {
       </section>
 
       <section>
-        <h2>Compare the full payment obligation, not the first number</h2>
+        <h2>Can you buy out a solar PPA?</h2>
         <p>
-          The CPUC consumer guide directs customers to review total and monthly
-          costs, financing terms and standardized bill-savings assumptions. For
-          a prepaid offer, ask for the full schedule even if a proposal emphasizes
-          the initial payment. Compare that schedule with the cash price and with
-          any loan, lease or monthly-PPA proposal on the same system design and
-          utility-use assumptions.
+          Usually there is a way out, but it is priced by the contract, not by law.
+          The CPUC warns that ending a lease or PPA early can mean you &ldquo;might
+          have to buy out the contract, which could be thousands of dollars,&rdquo;
+          and puts two questions on its list: &ldquo;What happens if I wish to end the
+          lease or PPA early?&rdquo; and &ldquo;If I end my agreement early, will I owe
+          a balloon payment and/or an early termination fee? If so, how much will I
+          owe?&rdquo;
         </p>
         <p className="mt-3">
-          A smaller payment or a claimed provider tax benefit does not establish
-          a lower lifetime cost. The proposal should identify the system, the
-          payment obligation and the bill assumptions separately.
+          On a prepaid PPA, ask two more: does a buyout credit the electricity you
+          already paid for but have not received, and is the buyout price a formula
+          you can calculate yourself for any year of the contract? Get both answers
+          in the contract, not in an email.
         </p>
       </section>
 
       <section>
-        <h2>Keep homeowner tax treatment separate</h2>
+        <h2>Compare the full payment obligation, not the first number</h2>
         <p>
-          The IRS states that the Residential Clean Energy Credit is unavailable
-          for property placed in service after December 31, 2025. A provider&apos;s
-          business tax position is not a homeowner credit or a guaranteed price
-          reduction. Ask a tax professional about personal tax treatment and do
-          not use a sales presentation as tax advice.
+          The CPUC&apos;s first two questions for any lease or PPA are &ldquo;What is
+          the total cost of the solar system or solar energy over the entire course of
+          the contract?&rdquo; and &ldquo;How much will I pay up front, how much over
+          time, and for how long?&rdquo; For a prepaid offer, ask for the full schedule
+          even if the proposal leads with one payment. Compare it with the cash price
+          and with any loan, lease or monthly-PPA proposal on the same system design
+          and utility-use assumptions.
+        </p>
+        <p className="mt-3">
+          Then add the utility bill that remains. On PG&amp;E, SCE and SDG&amp;E, new
+          solar customers take service on the Net Billing Tariff, which credits
+          exported electricity at values the CPUC says are &ldquo;usually lower than
+          import rates&rdquo; (
+          <a className="underline" href={CPUC_NEM}>
+            CPUC
+          </a>
+          , checked September 23, 2026). You have prepaid for every kWh the system
+          makes, including the ones you export for a smaller credit.
         </p>
       </section>
 
       <section>
-        <h2>Who actually claims the incentives</h2>
+        <h2>Who claims the tax benefits</h2>
         <p>
-          Prepaying doesn&apos;t change who owns the system, and ownership
-          decides who can claim a credit tied to it. Tesla says so directly
-          for its own lease/PPA: Tesla says it claims the Section 48E
-          investment tax credit on those systems (Tesla, accessed
-          2026-09-22). The homeowner-side credit, Section 25D, does not apply
-          to expenditures made after December 31, 2025 (IRS) — only relevant
-          if buying outright, since under a PPA it was never the
-          customer&apos;s credit: the IRS computes the Residential Clean
-          Energy Credit on property the taxpayer acquires, and that credit
-          is not allowed for expenditures made after December 31, 2025 (IRS,
-          accessed 2026-09-22). This page found no source stating
-          whether a prepaid PPA provider issues a 1099 or any other tax form
-          for the arrangement — don&apos;t assume either way; ask the
-          provider in writing what tax documents, if any, it sends for a
-          prepaid plan. A salesperson who suggests otherwise, or an LLC
-          workaround, is a red flag California&apos;s guide names directly —
-          see{" "}
-          <Link className="underline" href="/blog/free-solar-panels-california">
-            are free solar panels really free in California?
+          Prepaying does not change who owns the system, and ownership decides who
+          can claim a credit tied to it. The homeowner credit is gone for new
+          systems anyway: the IRS says the Residential Clean Energy Credit &ldquo;is
+          not available for any property placed in service after December 31,
+          2025&rdquo; (
+          <a className="underline" href={IRS_25D}>
+            IRS
+          </a>
+          , checked September 23, 2026). The provider may have its own business tax
+          position. That is not a credit you claim and not a promised price cut. This
+          page found no source stating whether a prepaid PPA provider issues a 1099 or
+          any other tax form for the arrangement; ask the provider in writing what tax
+          documents, if any, it sends, and ask a tax professional about your own
+          return. What California still offers is in{" "}
+          <Link className="underline" href="/blog/california-solar-tax-credit-2026">
+            California solar incentives in 2026
           </Link>
           .
         </p>
@@ -224,30 +265,28 @@ export default function PrepaidPpaCalifornia2026() {
       <section>
         <h2>What happens if the provider stops operating</h2>
         <p>
-          CPUC&apos;s consumer guide names this as a real risk to raise
-          before signing: a &ldquo;solar provider could go out of business
-          during the contract period&rdquo; (CPUC, California Solar
-          Consumer Protection Guide, accessed 2026-09-22) — flagged, not
-          resolved. California has already seen it: Sunnova Energy
-          International filed Chapter 11 on June 8, 2025, in the U.S.
-          Bankruptcy Court for the Southern District of Texas (Sunnova, Form
-          8-K, filed 2025-06-09, accessed 2026-09-22). Systems and contracts
-          moved through a court process to a new operator, not into limbo.
-          What that filing said, how Sunnova&apos;s dealer-based sales model
-          shaped it, and what the company now tells customers, is covered in
-          the{" "}
+          The CPUC names the risk in its guide: &ldquo;Solar provider could go out of
+          business during the contract period&rdquo; (CPUC, checked September 23,
+          2026). It has happened to a large residential provider: Sunnova Energy
+          International and two affiliates filed Chapter 11 petitions on June 8, 2025,
+          in the U.S. Bankruptcy Court for the Southern District of Texas, and said
+          they planned to keep operating while pursuing asset sales under the
+          court&apos;s supervision (
+          <a className="underline" href={SUNNOVA_8K}>
+            Sunnova, Form 8-K, filed June 9, 2025
+          </a>
+          ). What that filing means for customers is covered in the{" "}
           <Link className="underline" href="/solar-installers/sunnova-review">
             Sunnova review
           </Link>
           .
         </p>
         <p className="mt-3">
-          One point specific to prepaying: if a provider fails after the
-          customer has paid in full, that money is already spent — a
-          monthly customer&apos;s future payments simply stop. Get warranty,
-          maintenance and production-guarantee terms in writing before
-          prepaying, tied to what happens if the company is sold or shuts
-          down.
+          One point is specific to prepaying: if a provider fails after you have paid
+          in full, that money is already spent, while a monthly customer&apos;s future
+          payments simply stop. Get warranty, maintenance and production-guarantee
+          terms in writing before prepaying, including what happens if the company is
+          sold or shuts down.
         </p>
       </section>
 
@@ -259,22 +298,20 @@ export default function PrepaidPpaCalifornia2026() {
           promise a buyout, savings or provider availability. Review the written
           documents from any provider before choosing a payment structure.
         </p>
-        <p className="mt-3">
-          Use the <Link className="underline" href="/blog/ppa-loan-vs-solar-lease-vs-cash-california">California payment-option comparison</Link> to put cash, loan, lease and PPA terms side by side.
-        </p>
       </section>
       <RelatedGuides
         heading="Terms to price before prepaying"
         links={[
           { href: "/solar-problems/solar-escalator-clause-explained", label: "What an escalator does when it is not prepaid" },
           { href: "/solar-problems/solar-dealer-fees-explained", label: "Where the fee sits inside the price" },
-          { href: "/blog/solar-ppa-vs-lease-california", label: "How a PPA differs from a lease" },
+          { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california#lease-vs-ppa", label: "How a PPA differs from a lease" },
           { href: "/blog/what-happens-to-solar-lease-when-i-sell-california", label: "What happens to the agreement if the home is sold" },
           // claude/ca-financing-20260918
           { href: "/blog/is-it-better-to-buy-or-lease-solar-panels-california", label: "Buying versus a third-party structure in 2026" },
           { href: "/blog/how-much-does-it-cost-to-lease-solar-panels-california", label: "What determines a lease or PPA payment" },
         ]}
       />
+      <HubSpokeLinks hub="financing" currentPath="/blog/prepaid-ppa-california-2026" />
     </DecisionPage>
   );
 }
