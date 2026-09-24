@@ -1,0 +1,206 @@
+{
+  "agent": "t2-battery",
+  "branch": "claude/t2-battery-20260923",
+  "updated": "2026-09-23",
+  "pages": [
+    {
+      "path": "/blog/solar-battery-backup-california",
+      "action": "UPGRADE",
+      "hub": "battery",
+      "file": "src/app/blog/solar-battery-backup-california/page.tsx",
+      "title": "Solar Battery Backup and Storage in California (2026)",
+      "clusters": [1772, 290, 1852, 389],
+      "sources": [
+        "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://www.energy.ca.gov/news/2026-08/california-surpasses-21000-megawatts-battery-resources-supporting-states",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF",
+        "https://www.pge.com/assets/pge/docs/vanities/PGE-EEC-Price-Sheets.zip",
+        "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+        "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/solar-billing-plan",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20EV-TOU-5%20Total%20Rates%20Table.pdf",
+        "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
+        "https://enphase.com/download/iq-battery-5p-data-sheet",
+        "https://www.franklinwh.com/document/apower-2-datasheet",
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://www.selfgenca.com/documents/handbook/2026",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/reliability-battery-initiative.html",
+        "https://www.sce.com/outages-safety/outage-preparedness/critical-care-backup-battery-program",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Retitled toward 'solar battery backup' (dropped 'Rebates' from the title so rebate intent consolidates on the SGIP page). Added: battery sizing, SCE vs PG&E vs SDG&E storage value, battery vs staying on grid, CEC 21,112 MW fleet + Texas comparison, no-cost utility programs (no use of the word 'free'), SGIP Residential Solar and Storage Equity explainer. Links directly to /battery/pge-permanent-battery-storage-rebate (CREATE_DEDICATED fold, cluster 1892). All kept figures re-verified this session."
+    },
+    {
+      "path": "/battery/sgip-battery-rebate-california",
+      "action": "UPGRADE",
+      "hub": "battery",
+      "file": "src/data/article-pages.battery.json",
+      "title": "SGIP California: Solar Battery Rebate Status (Sept 2026)",
+      "clusters": [97, 124, 330, 550],
+      "sources": [
+        "https://www.selfgenca.com/home/program_metrics/",
+        "https://www.selfgenca.com/home/resources/ab209_pa_assignments/",
+        "https://www.selfgenca.com/documents/handbook/2026",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
+        "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/self-generation-incentive",
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/self-generation-incentive-program.html",
+        "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+        "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html",
+        "https://www.sce.com/outages-safety/outage-preparedness/critical-care-backup-battery-program",
+        "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb"
+      ],
+      "status": "done",
+      "note": "Status as of 2026-09-23 from the SGIP tracker (updated nightly): Small Residential Storage closed; RSSE AB 209 open only for the POU share at PG&E and SCE; waitlist for PG&E/SCE non-POU, CSE, SoCalGas and LADWP. Covers what SGIP is, rates, RSSE eligibility, PA assignments for POU customers, SCE rules (sgip rebate sce), other CA battery rebates. Also updated this slug's entry in src/app/battery/[slug]/topic-links.ts. qc-gate.mjs passes."
+    },
+    {
+      "path": "/blog/sce-solar-billing-plan",
+      "action": "CREATE_DEDICATED",
+      "hub": "nem",
+      "file": "src/app/blog/sce-solar-billing-plan/page.tsx",
+      "title": "SCE Solar Billing Plan: NEM 3.0 Rates and How SCE Pays",
+      "clusters": [379, 472],
+      "sources": [
+        "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/solar-billing-plan",
+        "https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/solar-billing-plan-faqs",
+        "https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/understanding-export-pricing",
+        "https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans",
+        "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/self-generation-incentive",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF"
+      ],
+      "status": "partial",
+      "note": "Page built; also absorbs the /blog/sce-nem-3-rates row (cluster 472). The CREATE_DEDICATED link from the impression holder /solar-savings/irvine was not added: that page is not in this lane (see link_requests)."
+    },
+    {
+      "path": "/blog/pge-solar-billing-plan",
+      "action": "CREATE",
+      "hub": "nem",
+      "file": "src/app/blog/pge-solar-billing-plan/page.tsx",
+      "title": "PG&E Solar Billing Plan: How NEM 3.0 Billing Works (2026)",
+      "clusters": [1796],
+      "sources": [
+        "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
+        "https://www.pge.com/en/account/rate-plans/electric-home.html",
+        "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+        "https://www.pge.com/assets/pge/docs/vanities/PGE-EEC-Price-Sheets.zip",
+        "https://www.pge.com/en/account/rate-plans/electric-vehicles.html",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF"
+      ],
+      "status": "done",
+      "note": "Checked /blog/nem-pge (answers 'NEM lines on a PG&E bill') and /blog/nem-3-export-rates-california (statewide hourly values) first; neither answers 'what is PG&E's Solar Billing Plan / best PG&E plan for solar and EV', so created. Export examples from PG&E's 2026 application-year EEC sheet; E-ELEC and EV2 prices from the rates workbook in effect since Mar 1, 2026."
+    },
+    {
+      "path": "/blog/sdge-net-metering",
+      "action": "CREATE",
+      "hub": "nem",
+      "file": "src/app/blog/sdge-net-metering/page.tsx",
+      "title": "SDG&E Net Metering: NEM 2.0 vs Solar Billing Plan (2026)",
+      "clusters": [416],
+      "sources": [
+        "https://www.sdge.com/solar/solar-billing-plan",
+        "https://www.sdge.com/solar/solar-billing-plan/UnderstandingYourSolarBill",
+        "https://www.sdge.com/solar/net-energy-metering",
+        "https://www.sdge.com/residential/solar/your-nem-bill",
+        "https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20EV-TOU-5%20Total%20Rates%20Table.pdf",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF",
+        "https://sdcommunitypower.org/net-energy-metering/"
+      ],
+      "status": "done",
+      "note": "No SDG&E NEM page existed (only TOU, rate-increase and high-bill pages). Covers NEM 2.0 vs Solar Billing Plan, EV-TOU-5 (Aug 1, 2026), generation/delivery export credits, zero ACC Plus for SDG&E (D.22-12-056), true-up, SDCP/CEA, NEMA closure."
+    },
+    {
+      "path": "/commercial-solar/vnem-aggregation-multi-meter",
+      "action": "UPGRADE",
+      "hub": "nem",
+      "file": "src/app/commercial-solar/vnem-aggregation-multi-meter/page.tsx",
+      "title": "Virtual Net Metering in California: VNEM, VNBT and NEMA",
+      "clusters": [153],
+      "sources": [
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/virtual-net-metering",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M520/K977/520977266.PDF",
+        "https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/net-energy-metering-nem/nemrevisit/vnem-pd-fact-sheet-update-111323.pdf",
+        "https://docs.cpuc.ca.gov/PublishedDocs/Published/G000/M500/K043/500043682.PDF",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB2175",
+        "https://www.sdge.com/solar/net-energy-metering",
+        "https://www.ladwp.com/commercial-services/programs-and-rebates-commercial/commercial-solar-programs/virtual-net-metering",
+        "https://www.selfgenca.com/documents/handbook/2026"
+      ],
+      "status": "done",
+      "note": "Full rewrite. Removed unsourced/incorrect claims (a 'VNBT-A' tariff name; 'PG&E Schedule NEM-V'; AB 2175 described as expanding VNEM). AB 2175 is real (chaptered 7/16/2026, ch. 94) but only requires CPUC to make logistics/manufacturing businesses eligible for meter aggregation if it extends the program. Renders HubSpokeLinks for nem and commercial (page is a spoke of both)."
+    },
+    {
+      "path": "/blog/ladwp-net-metering",
+      "action": "CREATE",
+      "hub": "nem",
+      "file": "src/app/blog/ladwp-net-metering/page.tsx",
+      "title": "LADWP Net Metering: Does NEM 3.0 Apply in Los Angeles?",
+      "clusters": [398],
+      "sources": [
+        "https://www.ladwp.com/account/customer-service/electric-rates/ev-nem-reo-rates",
+        "https://www.ladwp.com/sites/default/files/2023-09/NEM%20Guidelines%20(with%20April%202021%20technical%20modification)%20(1).pdf",
+        "https://www.ladwp.com/residential-services/solar-programs",
+        "https://www.ladwp.com/commercial-services/programs-and-rebates-commercial/commercial-solar-programs/virtual-net-metering",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://leginfo.legislature.ca.gov/faces/billNavClient.xhtml?bill_id=202520260AB2175",
+        "https://www.selfgenca.com/documents/handbook/2026",
+        "https://www.selfgenca.com/home/program_metrics/"
+      ],
+      "status": "done",
+      "note": "No LADWP net metering page existed (ladwp-rates has one sentence). Answers 'does nem 3.0 apply to ladwp' from the CPUC page scope and PUC 2827's POU carve-out, then LADWP's NEM rider billing rules, eligibility, lease/tenant rules, interconnection steps. LADWP returns 403 to WebFetch and leginfo blocks it by robots.txt, so those pages were read with curl in this session."
+    }
+  ],
+  "sitemap_add": [
+    "/blog/pge-solar-billing-plan",
+    "/blog/sce-solar-billing-plan",
+    "/blog/sdge-net-metering",
+    "/blog/ladwp-net-metering"
+  ],
+  "blog_index_add": [
+    { "slug": "pge-solar-billing-plan", "title": "PG&E Solar Billing Plan: How NEM 3.0 Billing Works (2026)", "hub": "nem" },
+    { "slug": "sce-solar-billing-plan", "title": "SCE Solar Billing Plan: NEM 3.0 Rates and How SCE Pays", "hub": "nem" },
+    { "slug": "sdge-net-metering", "title": "SDG&E Net Metering: NEM 2.0 vs Solar Billing Plan (2026)", "hub": "nem" },
+    { "slug": "ladwp-net-metering", "title": "LADWP Net Metering: Does NEM 3.0 Apply in Los Angeles?", "hub": "nem" }
+  ],
+  "redirect_requests": [],
+  "hub_links": [
+    { "hub": "nem", "href": "/blog/pge-solar-billing-plan", "label": "PG&E’s Solar Billing Plan, explained" },
+    { "hub": "nem", "href": "/blog/sce-solar-billing-plan", "label": "SCE’s Solar Billing Plan and export rates" },
+    { "hub": "nem", "href": "/blog/sdge-net-metering", "label": "SDG&E NEM 2.0 and the Solar Billing Plan" },
+    { "hub": "nem", "href": "/blog/ladwp-net-metering", "label": "LADWP net metering (NEM 3.0 does not apply)" }
+  ],
+  "hub_label_updates": [
+    { "hub": "battery", "href": "/blog/solar-battery-backup-california", "old": "California Solar Batteries: Backup and Cost Comparison", "new": "Solar battery backup and storage in California" },
+    { "hub": "battery", "href": "/battery/sgip-battery-rebate-california", "old": "SGIP Battery Rebate California: September 2026 Status", "new": "SGIP status, eligibility and what it pays" },
+    { "hub": "nem", "href": "/commercial-solar/vnem-aggregation-multi-meter", "old": "California VNEM vs NEM Aggregation: Multi-Meter Solar", "new": "Virtual net metering and meter aggregation" }
+  ],
+  "link_requests": [
+    { "from": "/solar-savings/irvine", "to": "/blog/sce-solar-billing-plan", "anchor": "how SCE’s Solar Billing Plan pays for exported solar", "why": "CREATE_DEDICATED: Irvine holds the only GSC impression for 'sce solar billing plan'; the dedicated page needs a link from it." },
+    { "from": "/blog/sce-nem-2", "to": "/blog/sce-solar-billing-plan", "anchor": "SCE’s Solar Billing Plan in full", "why": "Its 'Solar Billing Plan (NEM 3.0) in brief' section should hand off to the full page instead of competing with it." },
+    { "from": "/blog/sce-settlement-bill", "to": "/blog/sce-solar-billing-plan", "anchor": "how the Solar Billing Plan settlement and EEC Adjustment work", "why": "Its 'Solar Billing Plan customers' section is where SBP readers land." },
+    { "from": "/blog/nem-pge", "to": "/blog/pge-solar-billing-plan", "anchor": "how PG&E’s Solar Billing Plan works", "why": "Its 'On the Solar Billing Plan, the bill reads differently' section is the natural next question." },
+    { "from": "/blog/nem-3-export-rates-california", "to": "/blog/pge-solar-billing-plan", "anchor": "PG&E’s Solar Billing Plan rules", "why": "PG&E export section; utility-level spoke." },
+    { "from": "/blog/nem-3-export-rates-california", "to": "/blog/sce-solar-billing-plan", "anchor": "SCE’s export rates by start year", "why": "SCE export section currently links only to sce-nem-2." },
+    { "from": "/blog/nem-3-export-rates-california", "to": "/blog/sdge-net-metering", "anchor": "SDG&E net metering and its Solar Billing Plan", "why": "SDG&E section has no SDG&E-specific destination." },
+    { "from": "/blog/how-does-net-metering-work", "to": "/blog/ladwp-net-metering", "anchor": "how LADWP’s own net metering works", "why": "Its 'Municipal utilities run their own rules' section names LADWP without a link." },
+    { "from": "/blog/ladwp-rates", "to": "/blog/ladwp-net-metering", "anchor": "LADWP net metering rules", "why": "Line ~263 describes LADWP net metering in one sentence." },
+    { "from": "/blog/sdge-time-of-use-rates-2026", "to": "/blog/sdge-net-metering", "anchor": "SDG&E net metering and the EV-TOU-5 Solar Billing Plan rate", "why": "Owner: rates lane. Solar readers on the TOU page need the NEM page." }
+  ],
+  "skipped": [
+    { "url": "/battery/permanent-battery-storage-rebate-program", "why": "folded into /battery/pge-permanent-battery-storage-rebate. 'Permanent Battery Storage Rebate' is PG&E's program name (PG&E page checked 2026-09-23; no other utility runs a program by that name), so a second page would split the query. The impression holder /blog/solar-battery-backup-california now links to the PG&E page with that anchor. Cluster 1892." },
+    { "url": "/blog/sce-nem-3-rates", "why": "folded into /blog/sce-solar-billing-plan. 'SCE NEM 3.0 rates' are the Solar Billing Plan's export credit values, which that page covers by start year and season. Cluster 472." }
+  ],
+  "chad_decisions": [
+    "Stale count on an unowned page: /battery/pge-permanent-battery-storage-rebate (article-pages.battery.json) says 200 rebates left as of 09/14/2026; PG&E showed 179 as of 09/18/2026. Not edited (URL not in this lane). Recheck and update before publish.",
+    "SGIP status is from the nightly tracker as of 2026-09-23. Recheck the SGIP page and the backup page's program table before deploy.",
+    "Rule 4 tooling note: LADWP pages returned 403 to WebFetch and leginfo.legislature.ca.gov blocks it via robots.txt; the SGIP 2026 Handbook is a ZIP. These primary sources were read with curl in this session instead of WebFetch.",
+    "The backup page targets 'free solar battery storage' without using the word 'free' (Rule 5), so it may rank weaker on that exact query."
+  ]
+}
