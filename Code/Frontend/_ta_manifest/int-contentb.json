@@ -1,0 +1,584 @@
+{
+ "agent": "int-contentb",
+ "branch": "claude/int-contentb-20260924",
+ "updated": "2026-09-24",
+ "request_file": "out/topicmap/implement/int_links_contentb.json",
+ "counts": {
+  "done": 37,
+  "already_done": 12,
+  "skipped": 1
+ },
+ "commits": [
+  {
+   "sha": "4a0b68f",
+   "subject": "Link utility NEM pages to the new Solar Billing Plan pages"
+  },
+  {
+   "sha": "0507e89",
+   "subject": "Hand bill and rate pages off to the pages that answer the next question"
+  },
+  {
+   "sha": "256651c",
+   "subject": "Link incentive and grid pages to the new program and duck-curve pages"
+  },
+  {
+   "sha": "fcc9d3c",
+   "subject": "Point CARE eligibility readers to the site's CARE/FERA page"
+  },
+  {
+   "sha": "e66f959",
+   "subject": "Wire commercial, installer and hub pages to their new neighbors"
+  }
+ ],
+ "requests": [
+  {
+   "n": 0,
+   "from": "/blog/sce-nem-2",
+   "to": "/blog/sce-solar-billing-plan",
+   "agent": "t2-battery",
+   "status": "done",
+   "file": "src/app/blog/sce-nem-2/page.tsx",
+   "anchor_used": "SCE’s Solar Billing Plan in full",
+   "note": "End of the first paragraph of 'SCE’s Solar Billing Plan (NEM 3.0) in brief'."
+  },
+  {
+   "n": 1,
+   "from": "/blog/sce-settlement-bill",
+   "to": "/blog/sce-solar-billing-plan",
+   "agent": "t2-battery",
+   "status": "done",
+   "file": "src/app/blog/sce-settlement-bill/page.tsx",
+   "anchor_used": "how the Solar Billing Plan settlement and EEC Adjustment work",
+   "note": "'Solar Billing Plan customers: monthly, not annual' section."
+  },
+  {
+   "n": 2,
+   "from": "/blog/nem-pge",
+   "to": "/blog/pge-solar-billing-plan",
+   "agent": "t2-battery",
+   "status": "done",
+   "file": "src/app/blog/nem-pge/page.tsx",
+   "anchor_used": "how PG&E’s Solar Billing Plan works",
+   "note": "'On the Solar Billing Plan, the bill reads differently' section."
+  },
+  {
+   "n": 3,
+   "from": "/blog/nem-3-export-rates-california",
+   "to": "/blog/pge-solar-billing-plan",
+   "agent": "t2-battery",
+   "status": "done",
+   "file": "src/app/blog/nem-3-export-rates-california/page.tsx",
+   "anchor_used": "PG&E’s Solar Billing Plan rules",
+   "note": "PG&E export values section, after the patterns paragraph."
+  },
+  {
+   "n": 4,
+   "from": "/blog/nem-3-export-rates-california",
+   "to": "/blog/sce-solar-billing-plan",
+   "agent": "t2-battery",
+   "status": "done",
+   "file": "src/app/blog/nem-3-export-rates-california/page.tsx",
+   "anchor_used": "SCE’s export rates by start year",
+   "note": "SCE export values section; the existing sce-nem-2 link is kept for the older program."
+  },
+  {
+   "n": 5,
+   "from": "/blog/nem-3-export-rates-california",
+   "to": "/blog/sdge-net-metering",
+   "agent": "t2-battery",
+   "status": "done",
+   "file": "src/app/blog/nem-3-export-rates-california/page.tsx",
+   "anchor_used": "SDG&E net metering and its Solar Billing Plan",
+   "note": "'SDG&E: two kinds of credit' section."
+  },
+  {
+   "n": 6,
+   "from": "/blog/sdge-time-of-use-rates-2026",
+   "to": "/blog/sdge-net-metering",
+   "agent": "t2-battery",
+   "status": "done",
+   "file": "src/app/blog/sdge-time-of-use-rates-2026/page.tsx",
+   "anchor_used": "SDG&E net metering and the EV-TOU-5 Solar Billing Plan rate",
+   "note": "EV-TOU-5 paragraph, next to the existing sdge-and-solar link."
+  },
+  {
+   "n": 7,
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/orange-county",
+   "agent": "t2-citycos",
+   "status": "already_done",
+   "file": "src/app/best-solar-companies-california/page.tsx",
+   "note": "Already in the hub's 'Searching by county or region instead of a city?' paragraph (#city-directory) with the suggested anchor, and in the directory's 'Counties and regions' group."
+  },
+  {
+   "n": 8,
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/bay-area",
+   "agent": "t2-citycos",
+   "status": "already_done",
+   "file": "src/app/best-solar-companies-california/page.tsx",
+   "note": "Already in the hub's 'Searching by county or region instead of a city?' paragraph (#city-directory) with the suggested anchor, and in the directory's 'Counties and regions' group."
+  },
+  {
+   "n": 9,
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/riverside-county",
+   "agent": "t2-citycos",
+   "status": "already_done",
+   "file": "src/app/best-solar-companies-california/page.tsx",
+   "note": "Already in the hub's 'Searching by county or region instead of a city?' paragraph (#city-directory) with the suggested anchor, and in the directory's 'Counties and regions' group."
+  },
+  {
+   "n": 10,
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/high-desert",
+   "agent": "t2-citycos",
+   "status": "already_done",
+   "file": "src/app/best-solar-companies-california/page.tsx",
+   "note": "Already in the hub's 'Searching by county or region instead of a city?' paragraph (#city-directory) with the suggested anchor, and in the directory's 'Counties and regions' group."
+  },
+  {
+   "n": 11,
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/kern-county",
+   "agent": "t2-citycos",
+   "status": "already_done",
+   "file": "src/app/best-solar-companies-california/page.tsx",
+   "note": "Already in the hub's 'Searching by county or region instead of a city?' paragraph (#city-directory) with the suggested anchor, and in the directory's 'Counties and regions' group."
+  },
+  {
+   "n": 12,
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/san-mateo-county",
+   "agent": "t2-citycos",
+   "status": "already_done",
+   "file": "src/app/best-solar-companies-california/page.tsx",
+   "note": "Already in the hub's 'Searching by county or region instead of a city?' paragraph (#city-directory) with the suggested anchor, and in the directory's 'Counties and regions' group."
+  },
+  {
+   "n": 13,
+   "from": "/solar-panels-california",
+   "to": "/solar-cost",
+   "agent": "t2-citycost",
+   "status": "already_done",
+   "file": "src/app/solar-panels-california/page.tsx",
+   "note": "Body already links /solar-cost ('solar cost guides for 57 California cities'); /solar-cost/vallejo and /solar-cost/manteca are publishable and listed there."
+  },
+  {
+   "n": 14,
+   "from": "/commercial-solar/cost-per-watt-california",
+   "to": "/solar-cost (with /solar-cost/tracy and /solar-cost/arcata)",
+   "agent": "t2-citycost",
+   "status": "done",
+   "file": "src/app/commercial-solar/cost-per-watt-california/page.tsx",
+   "anchor_used": "home solar permit fees and utilities by California city (+ Tracy, Arcata)",
+   "note": "Homeowner hand-off paragraph near the top; links /solar-cost plus /solar-cost/tracy and /solar-cost/arcata (both publishable)."
+  },
+  {
+   "n": 15,
+   "from": "/commercial-solar/cost-per-watt-california",
+   "to": "/commercial-solar/average-wattage-of-a-commercial-solar-panel",
+   "agent": "t2-commercial",
+   "status": "done",
+   "file": "src/app/commercial-solar/cost-per-watt-california/page.tsx",
+   "anchor_used": "what wattage commercial panels are",
+   "note": "The page has no per-panel or cost-per-square-foot passage, so the link sits in the cost-breakdown intro above the Module row. With this link the wattage page's CREATE_DEDICATED holder link is complete."
+  },
+  {
+   "n": 16,
+   "from": "/commercial-solar/cost-per-watt-california",
+   "to": "/commercial-solar/commercial-solar-tax-credit",
+   "agent": "t2-commercial",
+   "status": "done",
+   "file": "src/app/commercial-solar/cost-per-watt-california/page.tsx",
+   "anchor_used": "what the §48E credit rules say in 2026",
+   "note": "End of the first paragraph of 'What you actually pay: federal tax treatment'."
+  },
+  {
+   "n": 17,
+   "from": "/blog/solar-rebates-by-california-utility",
+   "to": "/blog/ladwp-solar-program",
+   "agent": "t2-costfin",
+   "status": "done",
+   "file": "src/app/blog/solar-rebates-by-california-utility/page.tsx",
+   "anchor_used": "every LADWP solar program",
+   "note": "LADWP section. Also added: PG&E section -> /blog/pge-solar-program ('PG&E’s solar programs and their status'), SMUD section -> /blog/smud-solar-program ('the SMUD solar program guide')."
+  },
+  {
+   "n": 18,
+   "from": "/blog/pge-solar-program",
+   "to": "/blog/pge-solar-billing-plan",
+   "agent": "t2-costfin",
+   "status": "already_done",
+   "file": "src/app/blog/pge-solar-program/page.tsx",
+   "note": "Already links /blog/pge-solar-billing-plan in 'If you have solar: the Solar Billing Plan'."
+  },
+  {
+   "n": 19,
+   "from": "/blog/smud-peak-hours",
+   "to": "/blog/smud-solar-program",
+   "agent": "t2-costfin",
+   "status": "done",
+   "file": "src/app/blog/smud-peak-hours/page.tsx",
+   "anchor_used": "SMUD’s solar export rate and battery incentive",
+   "note": "'EV charging and solar on SMUD' section."
+  },
+  {
+   "n": 20,
+   "from": "/commercial-solar/cost-per-watt-california",
+   "to": "/blog/10-kw-solar-system-cost",
+   "agent": "t2-costfin",
+   "status": "done",
+   "file": "src/app/commercial-solar/cost-per-watt-california/page.tsx",
+   "anchor_used": "cost of a 10 kW home system",
+   "note": "Same homeowner hand-off paragraph as request 14."
+  },
+  {
+   "n": 21,
+   "from": "/solar-panels-california",
+   "to": "/blog/10-kw-solar-system-cost",
+   "agent": "t2-costfin",
+   "status": "already_done",
+   "file": "src/app/solar-panels-california/page.tsx",
+   "note": "Already links /blog/10-kw-solar-system-cost ('what a 10 kW system costs') in the cost section."
+  },
+  {
+   "n": 22,
+   "from": "any page linking /programs/care-california",
+   "to": "/blog/income-qualified-bill-discount-pge",
+   "agent": "t2-costfin",
+   "status": "done",
+   "file": "src/components/growth/CaliforniaBillDecisionPages.tsx; src/app/blog/california-24-dollar-fixed-charge-explained/page.tsx; src/app/blog/solar-rebates-by-california-utility/page.tsx",
+   "anchor_used": "CARE and FERA discounts / how CARE and FERA work on a PG&E bill",
+   "note": "Handled as task 2: see fixes. The /programs/care-california links had already been repointed to the CPUC page by the structure work."
+  },
+  {
+   "n": 23,
+   "from": "/commercial-solar/companies-california",
+   "to": "/best-solar-companies-california",
+   "agent": "t2-installers",
+   "status": "done",
+   "file": "src/app/commercial-solar/companies-california/page.tsx",
+   "anchor_used": "choosing a solar company for your home",
+   "note": "Second intro paragraph, as a visible homeowner hand-off."
+  },
+  {
+   "n": 24,
+   "from": "/solar-installers/licensed-solar-installer",
+   "to": "/best-solar-companies-california#accredited",
+   "agent": "t2-installers",
+   "status": "done",
+   "file": "src/app/solar-installers/licensed-solar-installer/page.tsx",
+   "anchor_used": "what licensed, NABCEP-certified and accredited mean",
+   "note": "'What “licensed” means' section. The page already linked the hub root and #city-directory, but not #accredited."
+  },
+  {
+   "n": 25,
+   "from": "/solar-installers/tesla-solar-review",
+   "to": "/best-solar-companies-california#company-reviews",
+   "agent": "t2-installers",
+   "status": "done",
+   "file": "src/app/solar-installers/tesla-solar-review/page.tsx",
+   "anchor_used": "other California solar company reviews",
+   "note": "Intro paragraph that says the review does not rank Tesla. The suggested SolarCity line already exists on the page (Tesla 8-K, Nov 21, 2016), so no fact was added."
+  },
+  {
+   "n": 26,
+   "from": "/blog/rent-solar-panels-for-your-home-california",
+   "to": "/blog/lease-roof-for-solar-panels",
+   "agent": "t2-maint",
+   "status": "done",
+   "file": "src/app/blog/rent-solar-panels-for-your-home-california/page.tsx",
+   "anchor_used": "leasing your roof to a utility or developer instead",
+   "note": "'The reverse deal: leasing your roof to a solar program' section (anchor varied: the section already covers LADWP)."
+  },
+  {
+   "n": 27,
+   "from": "/commercial-solar/commercial-solar-roofing",
+   "to": "/blog/flat-roof-solar-panels",
+   "agent": "t2-maint",
+   "status": "done",
+   "file": "src/app/commercial-solar/commercial-solar-roofing/page.tsx",
+   "anchor_used": "flat-roof solar on a home",
+   "note": "Low-slope membrane roofs paragraph."
+  },
+  {
+   "n": 28,
+   "from": "/blog/pge-care-program",
+   "to": "/blog/help-with-pge-bill",
+   "agent": "t2-rates",
+   "status": "skipped",
+   "note": "From page /blog/pge-care-program does not exist (folded into /blog/income-qualified-bill-discount-pge). The equivalent link (income-qualified-bill-discount-pge -> help-with-pge-bill) is in int_links_contenta.json, so it is left to that lane to avoid a conflicting edit on the same page."
+  },
+  {
+   "n": 29,
+   "from": "/blog/sdge-net-metering",
+   "to": "/blog/sdge-and-solar",
+   "agent": "t2-rates",
+   "status": "done",
+   "file": "src/app/blog/sdge-net-metering/page.tsx",
+   "anchor_used": "SDG&E Solar Billing Plan rate and 2026 export credits",
+   "note": "'How SDG&E credits what you export' paragraph about the Export Data and Pricing spreadsheet."
+  },
+  {
+   "n": 30,
+   "from": "/blog/sdge-and-solar",
+   "to": "/blog/sdge-net-metering",
+   "agent": "t2-rates",
+   "status": "done",
+   "file": "src/app/blog/sdge-and-solar/page.tsx",
+   "anchor_used": "SDG&E net metering (NEM 2.0) rules",
+   "note": "Legacy NEM paragraph in 'The monthly bill and the true-up'."
+  },
+  {
+   "n": 31,
+   "from": "/blog/pge-solar-billing-plan",
+   "to": "/blog/how-to-read-pge-bill",
+   "agent": "t2-rates",
+   "status": "done",
+   "file": "src/app/blog/pge-solar-billing-plan/page.tsx",
+   "anchor_used": "reading a PG&E solar statement",
+   "note": "'Monthly bills and the annual True-Up' section."
+  },
+  {
+   "n": 32,
+   "from": "/solar-panels-california",
+   "to": "/blog/solar-rate",
+   "agent": "t2-rates",
+   "status": "already_done",
+   "file": "src/app/solar-panels-california/page.tsx",
+   "note": "Already links /blog/solar-rate with the suggested anchor."
+  },
+  {
+   "n": 33,
+   "from": "/blog/pge-vs-sce-vs-sdge-rates-compared",
+   "to": "/blog/electricity-peak-hours-california",
+   "agent": "t2-rates",
+   "status": "done",
+   "file": "src/app/blog/pge-vs-sce-vs-sdge-rates-compared/page.tsx",
+   "anchor_used": "peak hours at each California utility",
+   "note": "'Average Rate Is Not Your Rate Plan' section."
+  },
+  {
+   "n": 34,
+   "from": "/blog/why-is-my-smud-bill-so-high",
+   "to": "/blog/smud-peak-hours",
+   "agent": "t2-rates",
+   "status": "done",
+   "file": "src/app/blog/why-is-my-smud-bill-so-high/page.tsx",
+   "anchor_used": "SMUD peak hours and summer rate dates",
+   "note": "Section 1 (summer Time-of-Day), holiday paragraph."
+  },
+  {
+   "n": 35,
+   "from": "/blog/why-is-my-pge-bill-so-high",
+   "to": "/blog/help-with-pge-bill",
+   "agent": "t2-rates",
+   "status": "done",
+   "file": "src/app/blog/why-is-my-pge-bill-so-high/page.tsx",
+   "anchor_used": "help paying a past-due PG&E bill",
+   "note": "New sentence after the 'What to Do, in Order' list."
+  },
+  {
+   "n": 36,
+   "from": "/blog/why-is-my-pge-bill-so-high",
+   "to": "/blog/how-to-lower-pge-bill",
+   "agent": "t2-rates",
+   "status": "done",
+   "file": "src/app/blog/why-is-my-pge-bill-so-high/page.tsx",
+   "anchor_used": "steps to lower a PG&E bill",
+   "note": "Same sentence after the 'What to Do, in Order' list."
+  },
+  {
+   "n": 37,
+   "from": "/blog/why-is-my-sce-bill-so-high",
+   "to": "/blog/sce-rate-increase-2026",
+   "agent": "t2-rates",
+   "status": "already_done",
+   "file": "src/app/blog/why-is-my-sce-bill-so-high/page.tsx",
+   "note": "Already links /blog/sce-rate-increase-2026 twice in the rate-change sections."
+  },
+  {
+   "n": 38,
+   "from": "/blog/solar-rebates-by-california-utility",
+   "to": "/battery/tesla-powerwall-3-cost-california",
+   "agent": "t2-reviews",
+   "status": "done",
+   "file": "src/app/blog/solar-rebates-by-california-utility/page.tsx",
+   "anchor_used": "Powerwall rebates, including Tesla’s own",
+   "note": "SGIP bullet. The owner note (SMUD $300/kWh, max $6,000 from 9/23/2026; 3CE closed 3/19/2026) is already reflected on the page (Tier 3 re-check), so no figure changed."
+  },
+  {
+   "n": 39,
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/coachella-valley",
+   "agent": "t3-citycos",
+   "status": "done",
+   "file": "src/app/best-solar-companies-california/page.tsx",
+   "anchor_used": "Coachella Valley solar companies: SCE or IID by city",
+   "note": "Added to the existing county/region paragraph and to the directory's 'Counties and regions' group."
+  },
+  {
+   "n": 40,
+   "from": "/best-solar-companies-california",
+   "to": "/solar-companies/ventura-county",
+   "agent": "t3-citycos",
+   "status": "done",
+   "file": "src/app/best-solar-companies-california/page.tsx",
+   "anchor_used": "Ventura County solar companies and permit offices",
+   "note": "Same paragraph and directory group as request 39."
+  },
+  {
+   "n": 41,
+   "from": "/blog/sce-rate-increase-2026",
+   "to": "/solar-savings/altadena",
+   "agent": "t3-citysav",
+   "status": "done",
+   "file": "src/app/blog/sce-rate-increase-2026/page.tsx",
+   "anchor_used": "what the October 2025 increase meant for Altadena",
+   "note": "'Why SCE rates jumped in October 2025' section."
+  },
+  {
+   "n": 42,
+   "from": "/blog/solar-for-renters",
+   "to": "/blog/solar-discount",
+   "agent": "t3-misc",
+   "status": "done",
+   "file": "src/app/blog/solar-for-renters/page.tsx",
+   "anchor_used": "which utility or CCA runs the 20% solar discount for your address",
+   "note": "DAC-GT/CSGT section, after the census-tract sentence."
+  },
+  {
+   "n": 43,
+   "from": "/blog/what-percentage-of-california-power-is-solar",
+   "to": "/blog/solar-duck-curve-california",
+   "agent": "t3-misc",
+   "status": "done",
+   "file": "src/app/blog/what-percentage-of-california-power-is-solar/page.tsx",
+   "anchor_used": "why midday solar gets curtailed (the duck curve)",
+   "note": "'What a solar-heavy grid means for your bill' section; curtailment wording follows the duck-curve page's CAISO quote (spring and fall)."
+  },
+  {
+   "n": 44,
+   "from": "/blog/nem-2-vs-nem-3-california",
+   "to": "/blog/solar-duck-curve-california",
+   "agent": "t3-misc",
+   "status": "done",
+   "file": "src/components/growth/NetBillingGuides.tsx (ComparisonContent only)",
+   "anchor_used": "the duck curve behind net billing",
+   "note": "'What the two tariff names describe' section; renders only on /blog/nem-2-vs-nem-3-california."
+  },
+  {
+   "n": 45,
+   "from": "/blog/sce-time-of-use-rates-2026",
+   "to": "(answer on page)",
+   "agent": "t3-misc",
+   "status": "already_done",
+   "file": "src/app/blog/sce-time-of-use-rates-2026/page.tsx",
+   "note": "Already answered on the page: the 10¢/kWh TOU-D-4-9PM baseline credit (rate table note and the TOU-D-4-9PM section) and the Base Services Charge that replaced the Basic Charge ($24.15/month; section \"The Base Services Charge sits on top of every plan\")."
+  },
+  {
+   "n": 46,
+   "from": "/blog/pge-tier-rates",
+   "to": "/blog/pge-rate-schedules",
+   "agent": "t3-rates",
+   "status": "done",
+   "file": "src/app/blog/pge-tier-rates/page.tsx",
+   "anchor_used": "every PG&E residential rate schedule",
+   "note": "'Tiers on time-of-use plans: the baseline credit' section."
+  },
+  {
+   "n": 47,
+   "from": "/blog/pge-vs-sce-vs-sdge-rates-compared",
+   "to": "/blog/electricity-rates-by-zip-code",
+   "agent": "t3-rates",
+   "status": "done",
+   "file": "src/app/blog/pge-vs-sce-vs-sdge-rates-compared/page.tsx",
+   "anchor_used": "find the rate for your address",
+   "note": "'Which Utility Has the Highest Rate' section, where it says the address sets the provider."
+  },
+  {
+   "n": 48,
+   "from": "/blog/solar-pool-heating-california",
+   "to": "/blog/does-pool-pump-use-a-lot-of-electricity",
+   "agent": "t3-rates",
+   "status": "done",
+   "file": "src/app/blog/solar-pool-heating-california/page.tsx",
+   "anchor_used": "what the pool pump itself adds to the bill",
+   "note": "'How Solar Pool Heating Works' section, where the existing pump is described."
+  },
+  {
+   "n": 49,
+   "from": "/blog/why-is-my-pge-bill-so-high",
+   "to": "/blog/pge-rate-schedules",
+   "agent": "t3-rates",
+   "status": "done",
+   "file": "src/app/blog/why-is-my-pge-bill-so-high/page.tsx",
+   "anchor_used": "PG&E rate schedules and prices",
+   "note": "Section 2 (peak-hour use and TOU plans)."
+  }
+ ],
+ "fixes": [
+  {
+   "task": "CARE link (task 2)",
+   "page": "/blog/how-to-lower-electric-bill-california",
+   "file": "src/components/growth/CaliforniaBillDecisionPages.tsx (LowerBillContent, CARE/FERA income-limit table)",
+   "status": "done",
+   "note": "Body now links /blog/income-qualified-bill-discount-pge ('CARE and FERA discounts') for PG&E customers; the CPUC CARE/FERA page stays as the cited source for the limits and for applying through each utility."
+  },
+  {
+   "task": "CARE link (task 2)",
+   "page": "/blog/california-24-dollar-fixed-charge-explained",
+   "file": "src/app/blog/california-24-dollar-fixed-charge-explained/page.tsx",
+   "status": "done",
+   "note": "Added the site's CARE/FERA page to the 'CARE or FERA enrollment' paragraph; the CPUC link in the AB 205 paragraph is kept as the source citation."
+  },
+  {
+   "task": "CARE link (task 2)",
+   "page": "/blog/solar-rebates-by-california-utility",
+   "file": "src/app/blog/solar-rebates-by-california-utility/page.tsx",
+   "status": "done",
+   "note": "CARE/FERA bullet cites the CPUC; added 'how CARE and FERA work on a PG&E bill' for PG&E customers."
+  },
+  {
+   "task": "CARE link (task 2)",
+   "page": "(none)",
+   "file": "src/components/growth/CaliforniaBillDecisionPages.tsx (HighBillContent, ~line 213)",
+   "status": "skipped",
+   "note": "HighBillContent is not rendered on any route: /blog/why-is-my-california-electric-bill-so-high is now hand-written and no route uses CaliforniaBillDecisionPage kind='high'."
+  },
+  {
+   "task": "Commercial hub (task 3)",
+   "page": "/commercial-solar/cost-per-watt-california",
+   "status": "done",
+   "note": "Links /commercial-solar/average-wattage-of-a-commercial-solar-panel and /commercial-solar/commercial-solar-tax-credit; the wattage page’s CREATE_DEDICATED holder link is complete."
+  },
+  {
+   "task": "Owner note on request 38 (SMUD and 3CE battery rebates)",
+   "page": "/blog/solar-rebates-by-california-utility",
+   "status": "already_done",
+   "note": "Page already states SMUD $300/kWh up to $6,000 for projects from 9/23/2026 and the 3CE closure on 3/19/2026 (both checked 2026-09-23 by t3-misc). No figure changed, so nothing was re-fetched."
+  },
+  {
+   "task": "Suggested SolarCity line on request 25",
+   "page": "/solar-installers/tesla-solar-review",
+   "status": "already_done",
+   "note": "The page already has a 'Tesla Solar and SolarCity' section citing Tesla's 8-K (acquisition completed November 21, 2016)."
+  }
+ ],
+ "checks": {
+  "tsc": "pass (flock /tmp/crr-tsc.lock, no errors)",
+  "canonical_redirects_test": "pass (20/20)",
+  "assert_citylinks": "pass (hub directory list changed; no city data files edited)"
+ },
+ "decisions_for_chad": [
+  "/blog/how-to-lower-electric-bill-california (CaliforniaBillDecisionPages.tsx, LowerBillContent) says CARE pays $6 and FERA $12 'instead of the standard $24.15'. $24.15 is SCE's monthly figure; PG&E's rate table gives about $23.80 per 30 days ($5.91 CARE, $11.91 FERA). Not changed here (outside this lane's requests); worth a one-line fix by whoever owns that page."
+ ],
+ "not_touched": [
+  "src/app/sitemap.ts",
+  "src/lib/growth-routes.ts",
+  "src/app/blog/page.tsx",
+  "src/data/topic-hubs.ts",
+  "src/data/json-article-links.ts (no JSON-page requests in this file)"
+ ]
+}
