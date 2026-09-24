@@ -131,7 +131,7 @@ export default function SolarPoolHeatingCA() {
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">How Solar Pool Heating Works</h2>
               <p>
-                Solar pool panels are unglazed black polypropylene mats mounted on your roof. Your existing pool pump pushes water through the mats, the water heats up in the sun, and flows back into the pool. That&apos;s the whole system — no electrical generation, no inverter, no utility interconnection. The water itself is the heat-transfer medium.
+                Solar pool panels are unglazed black polypropylene mats mounted on your roof. Your existing pool pump pushes water through the mats, the water heats up in the sun, and flows back into the pool. That&apos;s the whole system — no electrical generation, no inverter, no utility interconnection. The water itself is the heat-transfer medium. The pump still runs on electricity, so for <Link href="/blog/does-pool-pump-use-a-lot-of-electricity" className="text-primary underline">what the pool pump itself adds to the bill</Link> and when to run it, see the pool pump guide.
               </p>
               <p>
                 This is why solar pool heating is categorically different from solar electric (PV). You&apos;re not generating electricity you use elsewhere; you&apos;re capturing low-grade heat directly and dumping it into your pool. That makes it inexpensive, low-maintenance, and completely separate from your home&apos;s electricity system.

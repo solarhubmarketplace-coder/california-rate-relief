@@ -215,7 +215,12 @@ export default function PgeTierRatesPage() {
                 <Link href="/blog/pge-time-of-use-rates-2026" className={guideLink}>
                   PG&amp;E time-of-use plan guide
                 </Link>
-                , then check the result with PG&amp;E&apos;s rate comparison in My Account.
+                , then check the result with PG&amp;E&apos;s rate comparison in My Account. For the full list, including the
+                solar and EV schedules, see{' '}
+                <Link href="/blog/pge-rate-schedules" className={guideLink}>
+                  every PG&amp;E residential rate schedule
+                </Link>
+                .
               </p>
 
               <h2>Master-metered buildings and CCA customers</h2>

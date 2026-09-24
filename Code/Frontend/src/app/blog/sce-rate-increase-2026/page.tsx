@@ -229,7 +229,12 @@ export default function SceRateIncreasePage() {
               <p>
                 That is why the 2025 increase landed all at once: revenue approved for the whole year, including months already
                 past, arrived in a single step. The same filing set up SCE&apos;s income-graduated Base Services Charge, which
-                SCE says appeared on bills in November 2025; the office notes it had no effect on the class average.
+                SCE says appeared on bills in November 2025; the office notes it had no effect on the class average. For one
+                community&apos;s view of the same step, see{' '}
+                <Link href="/solar-savings/altadena" className={guideLink}>
+                  what the October 2025 increase meant for Altadena
+                </Link>
+                .
               </p>
 
               <h2>SCE electricity bill changes since November 2025</h2>
