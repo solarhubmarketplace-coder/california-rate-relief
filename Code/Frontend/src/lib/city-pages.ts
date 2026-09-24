@@ -305,9 +305,12 @@ export const REGIONAL_HUBS: readonly RegionalHub[] = [
   {
     href: '/solar-savings/bay-area',
     region: 'Bay Area',
+    // Marin, Napa and Solano added 2026-09-24 with the hub's own list, so the
+    // Napa, Vallejo and Vacaville cost pages are listed there too.
     counties: [
       'Santa Clara County', 'San Francisco County', 'Alameda County', 'Contra Costa County',
       'Santa Cruz County', 'Sonoma County', 'San Mateo County', 'Monterey County',
+      'Marin County', 'Napa County', 'Solano County',
     ],
   },
   {

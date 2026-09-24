@@ -71,7 +71,10 @@ export const metadata: Metadata = {
   },
 };
 
-// Bay Area counties: Santa Clara, San Francisco, Alameda, Contra Costa, Santa Cruz, Sonoma, San Mateo, Monterey, etc.
+// Bay Area counties: Santa Clara, San Francisco, Alameda, Contra Costa, Santa Cruz, Sonoma, San Mateo, Monterey,
+// and since 2026-09-24 Marin, Napa and Solano, so the grid and the cost list
+// below reach Vallejo, Napa and Vacaville. REGIONAL_HUBS in lib/city-pages.ts
+// mirrors this list.
 const bayAreaCounties = [
   'Santa Clara County',
   'San Francisco County',
@@ -81,6 +84,9 @@ const bayAreaCounties = [
   'Sonoma County',
   'San Mateo County',
   'Monterey County',
+  'Marin County',
+  'Napa County',
+  'Solano County',
 ];
 
 const bayAreaCities = CITIES.filter((city) =>
@@ -128,7 +134,7 @@ export default function BayAreaSolarPage() {
                 Solar Energy in the Bay Area
               </h1>
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
-                Every city in this guide is on PG&amp;E&apos;s grid, and in almost every one a community choice aggregator (CCA) supplies the electricity by default while PG&amp;E delivers it and sends the bill. {utilityRateText(pgeUtility).sentence} That is PG&amp;E&apos;s bundled figure. If a CCA supplies your power, part of your bill is priced by the CCA instead.
+                Nearly every city in this guide is on PG&amp;E&apos;s grid (Palo Alto runs its own utility), and in almost every one a community choice aggregator (CCA) supplies the electricity by default while PG&amp;E delivers it and sends the bill. {utilityRateText(pgeUtility).sentence} That is PG&amp;E&apos;s bundled figure. If a CCA supplies your power, part of your bill is priced by the CCA instead.
               </p>
             </div>
 
