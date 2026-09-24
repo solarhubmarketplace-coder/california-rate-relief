@@ -170,6 +170,18 @@ const WRITTEN_GUIDES: { href: string; anchor: string; blurb: string }[] = [
     blurb:
       "Leasing a system for your building versus renting your roof to a developer, how often each is used in California, and what to check before signing.",
   },
+  {
+    href: "/commercial-solar/industrial-solar-california",
+    anchor: "Industrial solar in California: plants and manufacturers",
+    blurb:
+      "How large industrial systems run, why demand charges on schedules like PG&E B-19 and B-20 decide the economics, and what to put in a bid request.",
+  },
+  {
+    href: "/commercial-solar/average-wattage-of-a-commercial-solar-panel",
+    anchor: "Average wattage of a commercial solar panel",
+    blurb:
+      "What module sizes California business systems used in 2025, what new models on the state list are rated at, and what wattage means for a quote.",
+  },
 ];
 
 // Commercial-subject pages that live under /blog (topic hub "commercial").

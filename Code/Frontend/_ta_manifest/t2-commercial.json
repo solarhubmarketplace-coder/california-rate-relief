@@ -8,7 +8,9 @@
       "hub": "commercial",
       "file": "src/app/commercial-solar/commercial-solar-lease-programs/page.tsx",
       "title": "Commercial Solar Lease Programs in California (2026)",
-      "clusters": [1783],
+      "clusters": [
+        1783
+      ],
       "sources": [
         "https://www.californiadgstats.ca.gov/downloads/",
         "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
@@ -28,7 +30,10 @@
       "hub": "commercial",
       "file": "src/app/commercial-solar/commercial-solar-tax-credit/page.tsx",
       "title": "Commercial Solar Tax Credit 2026 (§48E) for California",
-      "clusters": [1780, 2540],
+      "clusters": [
+        1780,
+        2540
+      ],
       "sources": [
         "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
         "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section45&num=0&edition=prelim",
@@ -46,19 +51,89 @@
       ],
       "status": "partial",
       "note": "Statute-only treatment (Decision 11), matching cost-per-watt and church: OLRC text in effect 2026-09-23; says what §48E/§45/§45Y/§50/§168/§6417/§6418/§7701 say, never what a business can claim. PARTIAL until the financing post (holder of the impressions) links it, later in this wave."
+    },
+    {
+      "path": "/commercial-solar/industrial-solar-california",
+      "action": "CREATE_DEDICATED",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/industrial-solar-california/page.tsx",
+      "title": "Industrial Solar in California: Rates, Sizing and Rules",
+      "clusters": [
+        1910,
+        2620
+      ],
+      "sources": [
+        "https://www.californiadgstats.ca.gov/downloads/",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_B-19.pdf",
+        "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_B-20.pdf",
+        "https://www.sce.com/business/rates-financing/rate-plans/business-time-of-use-rate-plans",
+        "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-15",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://eta-publications.lbl.gov/sites/default/files/2024-08/tracking_the_sun_2024_executive_summary.pdf",
+        "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim"
+      ],
+      "status": "partial",
+      "note": "Also the natural owner of 'commercial solar for manufacturers' (row 18) and 'solar canopy for industrial facility'. Industrial figures are CRR's tabulation of CPUC DGStats (2025, Industrial sector, 51 systems). PARTIAL until companies-california (the page holding the impressions) links it, later in this wave."
+    },
+    {
+      "path": "/commercial-solar/average-wattage-of-a-commercial-solar-panel",
+      "action": "CREATE_DEDICATED",
+      "hub": "commercial",
+      "file": "src/app/commercial-solar/average-wattage-of-a-commercial-solar-panel/page.tsx",
+      "title": "Average Wattage of a Commercial Solar Panel (2026 Data)",
+      "clusters": [
+        1790
+      ],
+      "sources": [
+        "https://www.californiadgstats.ca.gov/downloads/",
+        "https://solarequipment.energy.ca.gov/Home/PVModuleList",
+        "https://www.energy.ca.gov/programs-and-topics/programs/solar-equipment-lists",
+        "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf"
+      ],
+      "status": "partial",
+      "note": "No agency publishes this number; the page computes it from CPUC DGStats (watts per module = DC size / module count, 2025 interconnections) and the CEC PV Module List full data (models listed 2025-09-21 to 2026-09-21), with the method printed on the page. PARTIAL because CREATE_DEDICATED wants a link from the impressions holder, /commercial-solar/cost-per-watt-california, which no Tier 2 lane owns: see link_requests."
     }
   ],
   "sitemap_add": [
     "/commercial-solar/commercial-solar-lease-programs",
-    "/commercial-solar/commercial-solar-tax-credit"
+    "/commercial-solar/commercial-solar-tax-credit",
+    "/commercial-solar/industrial-solar-california",
+    "/commercial-solar/average-wattage-of-a-commercial-solar-panel"
   ],
   "sitemap_note": "src/app/sitemap.ts hard-codes commercialSlugs; add the new slugs there.",
   "blog_index_add": [],
   "redirect_requests": [],
   "hub_links": [
-    {"hub": "commercial", "href": "/commercial-solar/commercial-solar-tax-credit", "label": "Commercial solar tax credit (§48E)"},
-    {"hub": "commercial", "href": "/commercial-solar/commercial-solar-lease-programs", "label": "Commercial solar leases and roof leases"}
+    {
+      "hub": "commercial",
+      "href": "/commercial-solar/commercial-solar-tax-credit",
+      "label": "Commercial solar tax credit (§48E)"
+    },
+    {
+      "hub": "commercial",
+      "href": "/commercial-solar/commercial-solar-lease-programs",
+      "label": "Commercial solar leases and roof leases"
+    },
+    {
+      "hub": "commercial",
+      "href": "/commercial-solar/industrial-solar-california",
+      "label": "Industrial solar in California"
+    },
+    {
+      "hub": "commercial",
+      "href": "/commercial-solar/average-wattage-of-a-commercial-solar-panel",
+      "label": "Commercial solar panel wattage"
+    }
   ],
-  "link_requests": [],
+  "link_requests": [
+    {
+      "from": "/commercial-solar/cost-per-watt-california",
+      "to": "/commercial-solar/average-wattage-of-a-commercial-solar-panel",
+      "anchor": "what wattage commercial panels are",
+      "why": "CREATE_DEDICATED: cost-per-watt holds the 'average wattage of a commercial solar panel' impressions. Suggested placement: the per-panel / cost-per-square-foot passage. Not in any Tier 2 lane's ownership list, so not edited here."
+    }
+  ],
   "skipped": []
 }
