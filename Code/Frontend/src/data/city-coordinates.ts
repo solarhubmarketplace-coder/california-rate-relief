@@ -14,37 +14,56 @@
 // =============================================================================
 
 export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lon: number]>> = {
+  'aliso-viejo': [33.5792100, -117.7288978], // Aliso Viejo city, GEOID 0600947 (queried 2026-09-23)
   anaheim: [33.8389984, -117.8573937], // Anaheim city, GEOID 0602000
+  antioch: [37.9786917, -121.7959824], // Antioch city, GEOID 0602252 (queried 2026-09-23)
   aptos: [36.9911500, -121.8934565], // Aptos CDP, GEOID 0602378
+  arcata: [40.8616619, -124.0752237], // Arcata city, GEOID 0602476 (queried 2026-09-23)
   auburn: [38.8949136, -121.0777135], // Auburn city, GEOID 0603204
   bakersfield: [35.3528015, -119.0359555], // Bakersfield city, GEOID 0603526
   beaumont: [33.9083764, -116.9785403], // Beaumont city, GEOID 0604758
+  bellflower: [33.8880357, -118.1271134], // Bellflower city, GEOID 0604982 (queried 2026-09-23)
+  brentwood: [37.9355778, -121.7189698], // Brentwood city, GEOID 0608142 (queried 2026-09-23)
+  burbank: [34.1879077, -118.3234890], // Burbank city, GEOID 0608954 (queried 2026-09-23)
   'california-city': [35.1578139, -117.8722241], // California City city, GEOID 0609780
   berkeley: [37.8663942, -122.2989164], // Berkeley city, GEOID 0606000 (queried 2026-09-23)
   camarillo: [34.2229954, -119.0321552], // Camarillo city, GEOID 0610046
   carlsbad: [33.1246265, -117.2835437], // Carlsbad city, GEOID 0611194
   chico: [39.7571245, -121.8172296], // Chico city, GEOID 0613014
   'chula-vista': [32.6281388, -117.0143700], // Chula Vista city, GEOID 0613392
+  clovis: [36.8308604, -119.6838769], // Clovis city, GEOID 0614218 (queried 2026-09-23)
   concord: [37.9721841, -122.0015871], // Concord city, GEOID 0616000 (queried 2026-09-23)
   corona: [33.8615850, -117.5649056], // Corona city, GEOID 0616350
+  cupertino: [37.3168277, -122.0465330], // Cupertino city, GEOID 0617610 (queried 2026-09-23)
   danville: [37.8121416, -121.9698235], // Danville town, GEOID 0617988
+  davis: [38.5551036, -121.7370923], // Davis city, GEOID 0618100 (queried 2026-09-23)
+  'diamond-bar': [33.9991633, -117.8161331], // Diamond Bar city, GEOID 0619192 (queried 2026-09-23)
+  downey: [33.9378619, -118.1311449], // Downey city, GEOID 0619766 (queried 2026-09-23)
   'el-cajon': [32.8016733, -116.9604685], // El Cajon city, GEOID 0621712
   'el-dorado-hills': [38.6749746, -121.0489390], // El Dorado Hills CDP, GEOID 0621880
+  'elk-grove': [38.4155297, -121.3836320], // Elk Grove city, GEOID 0622020 (queried 2026-09-23)
   encinitas: [33.0490536, -117.2611729], // Encinitas city, GEOID 0622678
   escondido: [33.1347266, -117.0722438], // Escondido city, GEOID 0622804
+  fairfield: [38.2582894, -122.0334994], // Fairfield city, GEOID 0623182 (queried 2026-09-23)
   fallbrook: [33.3693279, -117.2258948], // Fallbrook CDP, GEOID 0623462
   fontana: [34.0971920, -117.4597869], // Fontana city, GEOID 0624680
   fremont: [37.5246203, -121.9950257], // Fremont city, GEOID 0626000
   fresno: [36.7829379, -119.7936074], // Fresno city, GEOID 0627000
+  fullerton: [33.8840692, -117.9278877], // Fullerton city, GEOID 0628000 (queried 2026-09-23)
+  galt: [38.2693310, -121.2994001], // Galt city, GEOID 0628112 (queried 2026-09-23)
   glendale: [34.1819184, -118.2467980], // Glendale city, GEOID 0630000
   'grass-valley': [39.2203048, -121.0526538], // Grass Valley city, GEOID 0630798
   'half-moon-bay': [37.4685155, -122.4380764], // Half Moon Bay city, GEOID 0631708
   hayward: [37.6273710, -122.1041832], // Hayward city, GEOID 0633000
   hemet: [33.7340679, -116.9968083], // Hemet city, GEOID 0633182
+  hesperia: [34.3975321, -117.3146607], // Hesperia city, GEOID 0633434 (queried 2026-09-23)
   hollister: [36.8556176, -121.3995445], // Hollister city, GEOID 0634120
   'huntington-beach': [33.6955110, -118.0023610], // Huntington Beach city, GEOID 0636000
   irvine: [33.6772013, -117.7738402], // Irvine city, GEOID 0636770
+  'la-habra': [33.9281980, -117.9515447], // La Habra city, GEOID 0639290 (queried 2026-09-23)
+  'la-mesa': [32.7703274, -117.0204271], // La Mesa city, GEOID 0640004 (queried 2026-09-23)
   'lake-elsinore': [33.6846868, -117.3344535], // Lake Elsinore city, GEOID 0639486
+  'lake-forest': [33.6604835, -117.6713776], // Lake Forest city, GEOID 0639496 (queried 2026-09-23)
   lakewood: [33.8470755, -118.1221583], // Lakewood city, GEOID 0639892
   lancaster: [34.6934638, -118.1753047], // Lancaster city, GEOID 0640130 (queried 2026-09-23)
   lincoln: [38.8774847, -121.3044800], // Lincoln city, GEOID 0641474
@@ -56,6 +75,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   marina: [36.6835160, -121.7916540], // Marina city, GEOID 0645778
   menifee: [33.6909262, -117.1848746], // Menifee city, GEOID 0646842
   merced: [37.3116235, -120.4706983], // Merced city, GEOID 0646898
+  'mission-viejo': [33.6095503, -117.6551443], // Mission Viejo city, GEOID 0648256 (queried 2026-09-23)
   modesto: [37.6377640, -121.0029887], // Modesto city, GEOID 0648354
   monterey: [36.6012840, -121.8830093], // Monterey city, GEOID 0648872
   'moreno-valley': [33.9243763, -117.2043332], // Moreno Valley city, GEOID 0649270
@@ -63,6 +83,7 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   murrieta: [33.5743760, -117.1906785], // Murrieta city, GEOID 0650076
   napa: [38.2974793, -122.3010855], // Napa city, GEOID 0650258
   'newport-beach': [33.6150110, -117.8671944], // Newport Beach city, GEOID 0651182 (queried 2026-09-23)
+  novato: [38.0914901, -122.5565467], // Novato city, GEOID 0652582 (queried 2026-09-23)
   oakland: [37.7695164, -122.2244858], // Oakland city, GEOID 0653000
   oceanside: [33.2246458, -117.3084145], // Oceanside city, GEOID 0653322
   ontario: [34.0392592, -117.6064073], // Ontario city, GEOID 0653896
@@ -70,16 +91,25 @@ export const CITY_COORDINATES: Readonly<Record<string, readonly [lat: number, lo
   'pacific-grove': [36.6224077, -121.9262315], // Pacific Grove city, GEOID 0654848
   'palm-desert': [33.7377747, -116.3695003], // Palm Desert city, GEOID 0655184
   'palm-springs': [33.8015805, -116.5380755], // Palm Springs city, GEOID 0655254
+  palmdale: [34.5944586, -118.1057190], // Palmdale city, GEOID 0655156 (queried 2026-09-23)
   'palo-alto': [37.3952288, -122.1429189], // Palo Alto city, GEOID 0655282 (queried 2026-09-23)
   pasadena: [34.1596757, -118.1388655], // Pasadena city, GEOID 0656000
   perris: [33.7898009, -117.2233475], // Perris city, GEOID 0656700
   petaluma: [38.2421637, -122.6266387], // Petaluma city, GEOID 0656784
   pleasanton: [37.6663228, -121.8804974], // Pleasanton city, GEOID 0657792
+  poway: [32.9871417, -117.0201186], // Poway city, GEOID 0658520 (queried 2026-09-23)
   'rancho-cordova': [38.5736650, -121.2527201], // Rancho Cordova city, GEOID 0659444
   'rancho-cucamonga': [34.1306095, -117.5621696], // Rancho Cucamonga city, GEOID 0659451
   redding: [40.5702465, -122.3655747], // Redding city, GEOID 0659920 (queried 2026-09-23)
   redlands: [34.0511294, -117.1711567], // Redlands city, GEOID 0659962
   richmond: [37.9517605, -122.3602500], // Richmond city, GEOID 0660620
+  'san-rafael': [37.9818008, -122.5072684], // San Rafael city, GEOID 0668364 (queried 2026-09-23)
+  'san-ramon': [37.7620479, -121.9354251], // San Ramon city, GEOID 0668378 (queried 2026-09-23)
+  'santa-clara': [37.3646205, -121.9679735], // Santa Clara city, GEOID 0669084 (queried 2026-09-23)
+  'santa-monica': [34.0090870, -118.5026057], // Santa Monica city, GEOID 0670000 (queried 2026-09-23)
+  santee: [32.8554240, -116.9851413], // Santee city, GEOID 0670224 (queried 2026-09-23)
+  'scotts-valley': [37.0554989, -122.0117689], // Scotts Valley city, GEOID 0670588 (queried 2026-09-23)
+  tustin: [33.7309206, -117.8105909], // Tustin city, GEOID 0680854 (queried 2026-09-23)
   vacaville: [38.3586717, -121.9673440], // Vacaville city, GEOID 0681554 (queried 2026-09-23)
   riverside: [33.9381301, -117.3949083], // Riverside city, GEOID 0662000
   rocklin: [38.8074883, -121.2487164], // Rocklin city, GEOID 0662364

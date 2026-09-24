@@ -435,6 +435,8 @@ const GROWTH_UTILITY_LABEL: Record<string, string> = {
   gwp: 'Glendale Water & Power',
   redding: 'Redding Electric Utility',
   cpau: 'City of Palo Alto Utilities',
+  // 2026-09-23 (Tier 3, citycos): Burbank's companies page.
+  bwp: 'Burbank Water and Power',
 };
 
 /**

@@ -98,6 +98,16 @@
  * a separate commit. Vallejo (no_serp) stays redirected. The
  * /solar-savings rows are unchanged: bill/rate queries share more of their
  * SERP with cost pages (36%) than with installer pages (0%).
+ *
+ * 2026-09-23 — fifth pass (Tier 3 wave, citycos lane): Vallejo reinstated
+ * ----------------------------------------------------------------------
+ * Vallejo was the one companies row kept above because it had no checked
+ * SERP (no_serp). The Tier 3 Rank Tracker pull checked "solar panels
+ * vallejo" (160/mo) and found a displaceable page-one result (DR 9), so the
+ * topic now passes Rule 3 (assign_t3_citycos.csv rule3_gate_new pass_serp).
+ * Its row is removed and /solar-companies/vallejo renders a sourced
+ * growthCities entry again; /solar-cost/vallejo keeps the cost intent. With
+ * this row gone the table holds no /solar-companies redirects at all.
  */
 
 /** Source path -> destination path. Both are absolute, no trailing slash. */
@@ -204,10 +214,10 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   //     same consolidation as the other 37.
   //     2026-09-22 — los-angeles and palm-springs reversed; see above.
   //     2026-09-23 — beaumont, encinitas and seaside reversed (Decision 15).
-  // Kept 2026-09-23: Vallejo is the one redirected companies page that does
-  // not pass Rule 3 (hub_page_map.csv rule3_gate = no_serp: no Search Console
-  // rows for its queries and no checked SERP).
-  '/solar-companies/vallejo': '/solar-cost/vallejo',
+  // Kept 2026-09-23 (Decision 15): Vallejo did not pass Rule 3 then
+  // (hub_page_map.csv rule3_gate = no_serp). Removed the same day in the
+  // Tier 3 wave: the new SERP check passes it (see the "fifth pass" comment
+  // at the top of this file).
   // Corrected 2026-09-20: Rocklin's growth-only route also has a cost twin.
   // Reversed 2026-09-22; see the file-level "third pass" comment above.
 };

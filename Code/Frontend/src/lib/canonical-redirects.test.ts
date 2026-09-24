@@ -170,8 +170,9 @@ test('Decision 15: the Rule 3 cities are reinstated and each one renders', () =>
   for (const slug of ['monterey', 'salinas', 'seaside', 'pacific-grove', 'watsonville', 'aptos', 'marina']) {
     assert.ok(RULE3_REINSTATED_CITY_SLUGS.has(slug), slug);
   }
-  // Vallejo does not pass Rule 3 (no_serp) and keeps its redirect.
-  assert.equal(canonicalRedirectFor('/solar-companies/vallejo'), '/solar-cost/vallejo');
+  // Vallejo did not pass Rule 3 here (no_serp) and kept its redirect. The
+  // Tier 3 wave reinstated it later the same day once a SERP check passed it;
+  // its own section below asserts that, so this test no longer pins it.
 });
 
 test('the /solar-companies hub path is not redirected', () => {
@@ -290,6 +291,56 @@ test('Tier 2 wave (citycos): its companies pages render and are not redirected',
   }
 });
 
+// 2026-09-23, Tier 3 wave (citycos agent): Vallejo reinstated. It was the one
+// /solar-companies row Decision 15 kept (no_serp). The Tier 3 SERP check
+// passes it (assign_t3_citycos.csv rule3_gate_new = pass_serp, a DR 9 result
+// on page one for "solar panels vallejo"), so its row is removed and the
+// sourced growthCities entry renders. The cost twin keeps the cost intent.
+const T3_REINSTATED_COMPANIES_SLUGS = new Set(['vallejo']);
+for (const slug of T3_REINSTATED_COMPANIES_SLUGS) REINSTATED_COMPANIES_SLUGS.add(slug);
+ROW_DELTAS.push(-T3_REINSTATED_COMPANIES_SLUGS.size);
+
+test('Tier 3 wave: vallejo is reinstated and renders from growthCities', () => {
+  const cost = new Set(getPublishableCityCostSlugs());
+  for (const slug of T3_REINSTATED_COMPANIES_SLUGS) {
+    assert.equal(canonicalRedirectFor(`/solar-companies/${slug}`), null, slug);
+    assert.equal(companiesCityHref(slug), `/solar-companies/${slug}`);
+    assert.equal(hasCompaniesCityPage(slug), true);
+    assert.ok(Object.prototype.hasOwnProperty.call(growthCities, slug), `${slug} must render from growthCities`);
+    assert.ok(cost.has(slug), `${slug} should keep its /solar-cost page`);
+    assert.equal(isRedirectedPath(`/solar-cost/${slug}`), false);
+  }
+  // No /solar-companies city page is redirected any more.
+  assert.deepEqual(sources.filter((path) => path.startsWith('/solar-companies/')), []);
+});
+
+// 2026-09-23, Tier 3 wave (citycos agent): /solar-companies pages this lane
+// created, or moved onto the sourced growth template, for installer-intent
+// clusters that pass Rule 3. Several have a /solar-cost twin today (tracy,
+// napa, yuba-city, hollister, petaluma, vallejo) and the parallel Tier 3
+// citycost lane is building twins for others (clovis, elk-grove,
+// mission-viejo), so every one is registered here, not only the ones with a
+// twin on this branch. No redirect rows are added.
+const T3_CITYCOS_COMPANIES_SLUGS = new Set([
+  'brentwood', 'antioch', 'novato', 'san-rafael', 'napa', 'fairfield', 'vallejo',
+  'tracy', 'davis', 'petaluma', 'elk-grove', 'galt', 'clovis', 'yuba-city', 'merced',
+  'hollister', 'la-mesa', 'poway', 'santee', 'fallbrook', 'westminster', 'la-habra',
+  'fullerton', 'newport-beach', 'aliso-viejo', 'mission-viejo', 'lake-forest', 'tustin',
+  'burbank', 'diamond-bar', 'downey', 'palmdale', 'hesperia', 'moreno-valley', 'wildomar',
+  'coachella-valley', 'ventura-county',
+]);
+for (const slug of T3_CITYCOS_COMPANIES_SLUGS) REINSTATED_COMPANIES_SLUGS.add(slug);
+
+test('Tier 3 wave (citycos): its companies pages render and are not redirected', () => {
+  for (const slug of T3_CITYCOS_COMPANIES_SLUGS) {
+    assert.ok(COMPANIES_ROUTE_SLUGS.has(slug), `${slug} must be in the /solar-companies/[city] static params`);
+    assert.ok(Object.prototype.hasOwnProperty.call(growthCities, slug), `${slug} must render from growthCities`);
+    assert.equal(canonicalRedirectFor(`/solar-companies/${slug}`), null, slug);
+    assert.equal(companiesCityHref(slug), `/solar-companies/${slug}`);
+    assert.equal(hasCompaniesCityPage(slug), true);
+  }
+});
+
 // ---------------------------------------------------------------------------
 // Cross-cutting checks. These read the registries above.
 // ---------------------------------------------------------------------------
@@ -298,7 +349,12 @@ test('every /solar-companies city page with a /solar-cost twin redirects there, 
   const twins = [...COMPANIES_ROUTE_SLUGS].filter(
     (slug) => cost.has(slug) && !REINSTATED_COMPANIES_SLUGS.has(slug),
   );
-  assert.ok(twins.length > 0, 'the twin-route check must not be vacuous');
+  // Until 2026-09-23 at least one twin (Vallejo) still redirected, and this
+  // asserted twins.length > 0. The Tier 3 wave reinstated Vallejo, the last
+  // /solar-companies row, so the list is now empty by design: every companies
+  // page with a cost twin is registered above as live on purpose. The check
+  // still bites: a new twin that no section registers lands here and fails.
+  assert.ok(REINSTATED_COMPANIES_SLUGS.size > 0, 'the reinstated registry must not be empty');
   for (const slug of twins) {
     assert.equal(
       canonicalRedirectFor(`/solar-companies/${slug}`),
