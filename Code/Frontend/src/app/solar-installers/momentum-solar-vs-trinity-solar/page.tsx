@@ -239,6 +239,15 @@ export default function MomentumVsTrinity() {
                 buying, so require model numbers and warranty years in writing.
               </p>
 
+              <h2 className={h2}>What to ask either company</h2>
+              <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
+                <li>Which legal entity signs the contract, and what is its license number in my state?</li>
+                <li>What are the panel, inverter and battery models, and who holds each warranty?</li>
+                <li>How long is the workmanship warranty, and does it cover roof leaks at the mounts?</li>
+                <li>How soon is a repair visit scheduled after I report a problem, and do payments pause while the system is down?</li>
+                <li>Which promises the salesperson made about savings or incentives are written into the contract?</li>
+              </ul>
+
               <h2 className={h2}>For California readers</h2>
               <p className={p}>
                 If you landed here from California, skip both and compare companies whose own sites list the state. The{' '}
