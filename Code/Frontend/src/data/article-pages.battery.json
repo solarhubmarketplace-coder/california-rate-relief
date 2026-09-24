@@ -1177,208 +1177,221 @@
   {
     "slug": "tesla-powerwall-3-cost-california",
     "cluster": "battery",
-    "metaTitle": "Tesla Powerwall 3 Cost California 2026: Full Breakdown",
-    "metaDescription": "What a Tesla Powerwall 3 costs to install in California in 2026: what drives the price, why the 25D credit no longer applies, and where SGIP stands.",
-    "h1": "Tesla Powerwall 3 Cost in California (2026): Hardware, Install, and What's Left of the Incentives",
-    "intro": "Tesla does not publish a consumer installed price for a Powerwall 3 in California, and the installer and aggregator estimates that circulate online are not a source this page relies on. The closest primary benchmark is national: LBNL’s Tracking the Sun (2024 Edition) estimates that storage added roughly $750 to $1,000 per kWh to the installed price of paired residential systems in 2023, a national figure, which puts the storage portion of a 13.5 kWh system at roughly $10,000 to $13,500. Labor, electrical work, a panel upgrade and permitting move the number from there, and the incentives that used to close the gap have mostly closed.\n\nThat leaves two honest paths for a California homeowner pricing this out. Buy the system and treat the gap between your utility's evening price and the export credit as the entire return — the CPUC Public Advocates Office put June 2026 residential averages at 45.5 cents per kWh at SDG&E, 34.4 cents at SCE and 33.7 cents at PG&E, and publicly owned utilities such as LADWP and SMUD set their own rates. Or lease/PPA it through a third party that may claim a separate commercial tax credit — standalone battery storage got a longer runway than solar and wind under the same law, but it comes with its own open question: battery-sourcing rules nobody has confirmed Tesla clears. This page walks through both, plus what Powerwall 3's redesigned inverter actually changes versus the Powerwall 2 you may have been quoted two years ago.",
+    "metaTitle": "Tesla Powerwall 3 Cost in California (2026): Installed Price",
+    "metaDescription": "What a Powerwall 3 costs installed in California in 2026: LBNL price data, what Tesla's quote covers, SGIP status on Sept. 23 and the NEM 3.0 math.",
+    "h1": "Tesla Powerwall 3 Cost in California (2026): Installed Price, Incentives and Sizing",
+    "intro": "A single Tesla Powerwall 3 is likely to cost somewhere around $10,000 to $13,500 installed in California before any panel upgrade, based on the only primary benchmark available: Lawrence Berkeley National Laboratory found that battery storage added roughly $750 to $1,000 per kWh to the price of paired residential systems installed in 2023, and a Powerwall 3 holds 13.5 kWh. Tesla itself does not print a price. Its Powerwall order page asks for your installation address before it shows anything, which we confirmed on September 23, 2026, so your number comes from a quote, not a price list.\n\nTwo things changed the math this year. The federal Residential Clean Energy Credit (Section 25D) no longer applies to a system installed after December 31, 2025, and most Self-Generation Incentive Program (SGIP) budgets for home batteries are closed. What is left is the reason most Californians buy a battery now: under the CPUC's net billing tariff, stored midday solar is worth more when you use it in the evening than when you export it. This page covers the price, the specs that move it, sizing, SGIP, the tax picture and what a battery can earn.",
     "keyStats": [
       {
-        "label": "Storage price premium, 2023 (national)",
+        "label": "Storage price premium (LBNL, 2023 installs)",
         "value": "$750–$1,000 per kWh",
-        "note": "LBNL Tracking the Sun 2024 Edition; Tesla publishes no California installed price"
+        "note": "National estimate; about $10,100–$13,500 for one 13.5 kWh Powerwall 3"
       },
       {
-        "label": "Federal residential credit (25D)",
+        "label": "Powerwall 3 energy and power",
+        "value": "13.5 kWh / 11.5 kW",
+        "note": "Tesla datasheet (2025); 10-year warranty"
+      },
+      {
+        "label": "Federal 25D credit on a 2026 install",
         "value": "$0",
-        "note": "IRS: Section 25D does not apply to expenditures made after December 31, 2025"
+        "note": "IRS: no credit for expenditures made after December 31, 2025"
       },
       {
-        "label": "SGIP general market",
-        "value": "Closed",
-        "note": "Small Residential Storage and the other non-AB 209 residential categories closed; AB 209 waitlisted for CSE, SoCalGas and LADWP (selfgenca.com, as of September 22, 2026)"
-      },
-      {
-        "label": "Max single-site storage (stacked)",
-        "value": "94.5 kWh / 46 kW",
-        "note": "4 Powerwall 3 + 3 Expansion units, per Tesla spec"
+        "label": "SGIP home-battery budgets",
+        "value": "Mostly closed",
+        "note": "AB 209 equity budgets open or waitlisted by administrator (selfgenca.com, data as of 9/23/2026)"
       }
     ],
     "sections": [
       {
-        "heading": "Hardware cost vs. installed cost",
-        "body": "Tesla does not publish a consumer installed price for a Powerwall 3 in California, and figures quoted on installer and aggregator sites are not a primary source, so this page does not repeat them. The closest primary benchmark is LBNL's Tracking the Sun (2024 Edition), which estimates that storage added roughly $750 to $1,000 per kWh to the price of paired residential systems installed nationally in 2023 — about $10,000 to $13,500 for 13.5 kWh.\n\nThe gap between hardware and installed price covers electrical work, mounting, and permitting under a normal scope. It grows if your panel needs an upgrade to handle the new equipment, if you're adding a dedicated backup-loads subpanel, if conduit runs are long, or if drywall or stucco repair is needed after the electrical work. Ask for an itemized quote that separates hardware, labor, and any panel or subpanel work, so you can see exactly what's driving the number instead of accepting a single lump-sum figure."
+        "heading": "What Tesla's quote shows, and what to ask it to separate",
+        "body": "Tesla sells Powerwall 3 through its own design tool and through certified installers. The design tool does not display a price until you enter the address where the battery will go, because the scope of work depends on your electrical panel, the wall or garage where the unit mounts, and whether you are adding solar at the same time. That is also why a price you read in a forum post or a sales flyer is not a number to budget around.\n\nWhen the quote arrives, ask for it broken into lines. You want the battery hardware, any Expansion unit, the backup switching equipment, electrical labor, any main-panel upgrade or backup-loads subpanel, trenching or long conduit runs, permit and inspection fees, and any roof or stucco repair. A lump-sum figure hides the part of the job that varies most from house to house, which is the electrical work, and it makes a second quote impossible to compare line for line."
       },
       {
-        "heading": "Single unit vs. multiple units",
-        "body": "Tesla's stacking spec allows up to 4 Powerwall 3 units plus 3 Expansion units at one site, for a combined maximum of 94.5 kWh of storage and 46 kW of continuous power — enough for large homes or properties that want multi-day backup, not just an evening's worth of peak-shaving.\n\nWe don't have a specific, sourced figure for what a second or third unit costs installed, and we're not going to invent one. What can be said with confidence: labor for the initial electrical work, the Backup Gateway, and permitting are largely fixed costs that don't scale linearly per unit, so the cost per kWh of storage should improve on a second or third unit relative to the first. If a contractor quotes you for multiple units, ask them to break out what's fixed (gateway, permitting, initial labor) versus what's incremental (each additional battery), so you can sanity-check the math yourself rather than taking a bundled number on faith."
+        "heading": "The installed-cost benchmark, and how to read your quote against it",
+        "body": "Lawrence Berkeley National Laboratory's Tracking the Sun report (2024 Edition) is the most careful public study of what homeowners actually paid. Its regression analysis implies a price premium of roughly $750 to $1,000 per kWh of storage for paired residential systems installed in 2023. For one 13.5 kWh Powerwall 3, that is about $10,100 to $13,500. It is a national estimate from 2023 installs, not a California quote, so treat it as a sanity check rather than a target.\n\nLBNL's August 2026 data update adds two useful facts. Among residential systems bought with cash in 2025, the median price of a solar-plus-storage system was $2.1 per watt higher than a solar-only system. And about 80% of the installed-price data for paired systems came from California, so the benchmark is mostly built from California jobs.\n\nTo use it, take the battery-related lines of your quote, leave out any panel upgrade, and divide by the usable kWh you are buying. A result far above $1,000 per kWh is worth a question. The answer may be a legitimate one, such as a service upgrade your utility requires, but you should hear it before you sign."
       },
       {
-        "heading": "What the integrated inverter actually changes vs. Powerwall 2",
-        "body": "Powerwall 2 is AC-coupled only. Solar panel DC output has to run through a separate, compatible solar inverter first, convert to AC, get converted back to DC by the Powerwall to charge, then convert to AC again when you actually use the stored power — four conversions total, each one bleeding a little efficiency.\n\nPowerwall 3 folds an inverter directly into the unit, with 6 MPPTs (maximum power point trackers) supporting up to 20 kW of solar input, and can run DC-coupled in most residential installs, skipping two of those four conversions. Tesla's datasheet lists 97.5% efficiency for solar going straight to the home or grid and 89% for solar that passes through the battery first. In practice that means less energy lost between what your panels generate and what you actually get to use at night or during an outage.\n\nIt also means fewer physical components in a typical install — often no separate solar inverter box, no separate transfer switch hardware — which is part of what keeps Powerwall 3 installs from costing dramatically more than Powerwall 2 did despite the added intelligence. Powerwall 3 can also start heavy inductive loads up to 185A locked-rotor amps, relevant if you're trying to run a well pump or an HVAC compressor during a grid outage, something older AC-coupled setups often couldn't handle cleanly."
+        "heading": "Powerwall 3 specs that move the price",
+        "body": "Tesla's 2025 datasheet lists 13.5 kWh of usable energy and on-grid output that can be configured at 5.8, 7.6, 10 or 11.5 kW. The unit has a built-in solar inverter with six maximum power point trackers and up to 20 kW of solar input. On a new solar-plus-battery job, that can remove the separate string inverter from the equipment list, which is part of why a combined Powerwall 3 job can cost less than the battery and inverter bought separately.\n\nTesla rates solar-to-home efficiency at 97.5% and solar-to-battery-to-home at 89%. The datasheet lists a 185 locked-rotor-amp load start rating, which matters if you want the battery to start a well pump or an air-conditioning compressor during an outage. The warranty is 10 years.\n\nA site can hold up to four Powerwall 3 units and up to three Expansion units, seven units in total. At 13.5 kWh each, that is 94.5 kWh at the upper limit. Most homes buy one. LBNL reports that the median residential battery installed in 2025 was 13.5 kWh, the size of a single Powerwall."
       },
       {
-        "heading": "SGIP eligibility in 2026: mostly a closed door",
-        "body": "The pathway still listed for residential storage is Residential Solar & Storage Equity under AB 209, which is limited by household income and other eligibility rules. The program administrators' tracker (selfgenca.com, as of September 22, 2026) shows that category at $1.10 per Wh with a waitlist for CSE, SoCalGas and LADWP customers; the ratepayer-funded equity category, Equity Resiliency, Small Residential Storage and the San Joaquin Valley category show closed. A waitlist does not promise a rebate. If you don't qualify under AB 209's income rules at all, there is currently no SGIP pathway for a Powerwall 3 purchase in California — and check your own administrator's status directly at selfgenca.com before budgeting around this program either way, since statuses change."
+        "heading": "How many Powerwalls do you need?",
+        "body": "Start from the job you want the battery to do. If the goal is lower bills under net billing, size the battery to the evening use you want to cover, which you can read off 12 months of hourly or 15-minute interval data in your utility account. A household that uses 10 to 12 kWh between late afternoon and bedtime is already close to what one Powerwall 3 stores.\n\nIf the goal is backup, list the circuits you need during an outage: refrigerator, internet, lights, a well pump, medical equipment, perhaps one air-conditioning zone. Power, not energy, is usually the limit. One unit can deliver up to 11.5 kW continuously on grid, and heavy motor loads need the start rating noted above.\n\nA second unit adds cost almost in proportion to the hardware, while the permit, the backup switching equipment and part of the electrical labor are paid once. Ask your installer to price one and two units on the same visit so you can see the real cost of the second 13.5 kWh."
       },
       {
-        "heading": "The federal credit is gone for owned systems",
-        "body": "IRS guidance issued under the One Big Beautiful Bill (Public Law 119-21) is unambiguous: Section 25D, the Residential Clean Energy Credit, cannot be claimed for property installed or constructed after December 31, 2025. Making a payment or placing an order before that date does not preserve eligibility — the installation itself had to be completed. Any unused credit from a system that actually finished before January 1, 2026 carries forward, but that's a narrow case that doesn't help anyone buying today.\n\nFor a homeowner who purchases or finances a Powerwall 3 in 2026, whether cash or loan, there is no federal tax credit available. That is a meaningful change from how this equipment was priced and pitched as recently as 2025, and any quote or pitch that still references a 30% federal credit for a cash or loan purchase in 2026 is describing a program that no longer exists."
+        "heading": "Powerwall 3 under NEM 3.0 net billing",
+        "body": "Customers of PG&E, SCE and SDG&E who applied to interconnect on or after April 15, 2023 take service on the CPUC's net billing tariff. The CPUC says the credit for exported solar is usually lower than the retail rate, though it can rise above it on late summer evenings, and that customers can maximize bill savings by pairing a battery so they use or export stored energy during those high-value hours. Nearly 70% of net-billing customers had paired a battery with solar by the end of 2024, according to the CPUC.\n\nThe spread you capture depends on your rate. The CPUC Public Advocates Office reported average residential rates of 33.7 cents per kWh at PG&E, 34.4 cents at SCE and 45.5 cents at SDG&E as of June 2026. Net-billing customers must take the rate the CPUC approved for them: E-ELEC at PG&E, TOU-D-PRIME at SCE and EV-TOU-5 at SDG&E. The original customer keeps the tariff for nine years, and residential PG&E and SCE customers who apply before the end of 2027 get slightly higher export credits for those nine years.\n\nNone of this applies to municipal utilities such as LADWP or SMUD, which set their own rates and export rules. If you are served by one, build the battery case from its tariff, not from NEM 3.0."
       },
       {
-        "heading": "Lease and PPA: the one place a federal credit still reaches a battery",
-        "body": "The remaining federal angle runs through third-party ownership. Under a lease or PPA, the company that owns the equipment — not you — claims the Section 48E commercial investment tax credit, and is structured to pass the value through as a lower monthly payment or a discounted per-kWh rate rather than a check to you.\n\nOne piece of good news buried in a bad law for storage specifically: standalone battery storage was carved out of the accelerated phase-out that hit solar and wind. The July 4, 2026 begin-construction deadline and the December 31, 2027 placed-in-service fallback — the tight clock you may have read about elsewhere in connection with the OBBBA — apply only to wind and solar facilities. A standalone storage project like a leased Powerwall 3 keeps the full, enhanced 48E rate for any project that begins construction through the end of 2033. Construction starting in 2034 drops to 75% of that rate, 2035 to 50%, and nothing at all for construction beginning in 2036 or later. In plain terms: a Powerwall lease signed in 2026 is not on a near-term federal deadline. Be skeptical of any pitch that manufactures urgency by telling you otherwise.\n\nThe real open question is sourcing, not timing. New Foreign Entity of Concern rules, detailed in Treasury Notice 2026-15 (issued February 12, 2026), require a rising share of a battery's 'material assistance cost' — 55% for projects beginning construction in 2026, climbing 5 points a year to 75% by 2030 — to come from non-prohibited-foreign-entity suppliers. Named restricted battery makers include CATL, BYD, Gotion, EVE Energy, Hithium, and Envision. Whether Powerwall 3 specifically clears that bar is not something we found confirmed anywhere by Tesla, the IRS, or Treasury. Tesla has announced a supply arrangement with South Korea's LG Energy Solution, which is not a restricted entity, but that does not settle the question for Powerwall 3's actual cell sourcing today. Before signing a lease or PPA on the strength of a federal credit the owner will claim, ask the provider in writing how they're satisfying FEOC sourcing requirements for the specific units going into your home."
+        "heading": "SGIP rebates in September 2026",
+        "body": "The Self-Generation Incentive Program tracker, with data as of September 23, 2026, shows the general residential category, Small Residential Storage, closed at Step 7 in the PG&E, SCE, SoCalGas and CSE budgets. The ratepayer-funded Residential Solar and Storage Equity category, Equity Resiliency, and the San Joaquin Valley residential category also show closed.\n\nThe remaining door is Residential Solar and Storage Equity under AB 209, which pays $1.10 per Wh for storage at Step 6 and is limited by income and other eligibility rules. The tracker shows its budgets waitlisted for CSE, SoCalGas and LADWP, waitlisted in the PG&E and SCE non-POU budgets, and open in the PG&E and SCE POU budgets. A column on a tracker is not an eligibility decision, and a waitlist is not a promise of money. Confirm with the program administrator before you count on it."
       },
       {
-        "heading": "Provider solvency is now part of the cost calculation",
-        "body": "A lease or PPA is a contract that runs for many years, and 2025-2026 has been rough on the companies that write them. Freedom Forever filed Chapter 11 in April 2026 and, after a sale process collapsed, its case was converted to Chapter 7 liquidation on August 7, 2026 — the company no longer operates, and its homeowners are now dealing with contracts and warranties from a business that has ceased to exist. Sunnova filed Chapter 11 in June 2025; its assets were sold and its existing portfolio is now administered by SunStrong Management rather than Sunnova originating new business. SunPower filed Chapter 11 in August 2024.\n\nThis matters directly to the 48E-credit math above: if the third-party owner in your lease goes under, the entity that was supposed to be passing that federal credit through to you via lower payments may not be the entity servicing your contract in year five or year fifteen. Before signing anything, ask who actually holds the lease paper, whether it's been sold or securitized, and what happens to your warranty and your monthly rate if that company files for bankruptcy. This is not a hypothetical risk in California's current solar market — it has already happened twice at scale in the last 18 months."
+        "heading": "Federal tax credits: buying versus leasing",
+        "body": "If you buy the battery, with cash or a loan, there is no federal credit on a 2026 installation. IRS guidance on Public Law 119-21 says the Section 25D credit is not allowed for expenditures made after December 31, 2025, and that an expenditure counts as made when the original installation is completed. A deposit paid in 2025 does not carry the credit into a 2026 install.\n\nUnder a lease or power purchase agreement, the company that owns the equipment may claim the commercial credit under Section 48E. The statute ends that credit for solar and wind property placed in service after December 31, 2027 unless construction began in time, but it states that the cut-off does not apply to energy storage. Whether any of the owner's credit reaches you depends on the contract, so compare the monthly payment and escalator against a cash quote rather than assuming a lease passes the credit through."
       },
       {
-        "heading": "What actually drives the economics now",
-        "body": "With 25D gone and general-market SGIP closed, the honest case for a Powerwall 3 in most of California isn't a rebate or a tax credit. It's the gap between your evening price and the export credit under NEM 3.0 net billing. The CPUC says export credits are usually lower than the retail rate; the CPUC Public Advocates Office put June 2026 residential averages at 45.5 cents per kWh at SDG&E, 34.4 cents at SCE and 33.7 cents at PG&E. Charging a battery off midday solar and discharging it during expensive peak hours is where the return comes from now, not from a check or a credit.\n\nThat math looks very different outside IOU territory. Publicly owned utilities — LADWP, SMUD, MID, Anaheim, Roseville, Lodi, Imperial ID, Turlock ID — are not subject to CPUC NEM 3.0 and set their own rates and net-metering terms. NEM 3.0 urgency messaging doesn't apply if you're a customer of one of these utilities. Model your specific utility's rate schedule and export terms before assuming a Powerwall 3 pencils out on savings alone."
+        "heading": "What a Powerwall can earn in a virtual power plant",
+        "body": "A battery can also be paid for helping the grid. Sunrun reported that on September 9, 2026, it and Tesla dispatched 580 MW from more than 140,000 home batteries across the PG&E, SCE and SDG&E service areas, including about 110,000 Tesla Powerwalls, under the California Energy Commission's Demand Side Grid Support program and the CPUC's Emergency Load Reduction Program.\n\nDSGS runs from May to October and pays for committed capacity and for measured load reduction during extreme events. The CPUC says the residential part of ELRP, Power Saver Rewards, sunset at the end of the 2025 program year. Payment terms depend on the program and the company enrolling you, so ask for them in writing, including how much charge the battery keeps in reserve for your own outages."
+      },
+      {
+        "heading": "Installer bankruptcies and your battery warranty",
+        "body": "The 10-year Powerwall warranty comes from Tesla. The workmanship warranty, the roof-penetration warranty and any lease or PPA come from whoever sold and installed the system, and several of those companies have filed for bankruptcy. Federal court dockets show Freedom Forever LLC filed Chapter 11 in Delaware on April 15, 2026 (No. 26-10522), and the court signed an order converting the case to Chapter 7 on August 7, 2026. Sunnova Energy International filed Chapter 11 in the Southern District of Texas on June 8, 2025 (No. 25-90160). SunPower Corporation filed Chapter 11 in Delaware on August 5, 2024 (No. 24-11649).\n\nBefore you sign, ask who holds the workmanship warranty, who holds the agreement if it is a lease or PPA, and whether either can be sold or assigned. Check the contractor's license yourself at the Contractors State License Board."
+      },
+      {
+        "heading": "Is Powerwall 3 worth it? A short review of the trade-offs",
+        "body": "On paper, Powerwall 3's strengths are the integrated solar inverter, the 11.5 kW continuous output and the motor-start rating, which together let one unit run more of a house than older AC-coupled batteries could. The weaker points are the ones a spec sheet cannot fix: a 10-year warranty on equipment you may want to run longer than that, a price you only learn from a site-specific quote, and savings that depend on your rate plan and your evening use.\n\nIt tends to make sense when you are adding solar and a battery together on a net-billing rate, when outages are a real problem where you live, or when you can enroll in a paid grid program. It makes less sense when your evening use is small, when you are on a municipal utility with generous export terms, or when a working battery would be replaced mainly for the efficiency gain."
       }
     ],
     "dataTable": {
-      "caption": "Powerwall 3 in California: what each ownership path costs and what still applies in 2026",
+      "caption": "Powerwall 3 in California: what each way of paying leaves you with in 2026",
       "columns": [
         "Path",
         "Who owns the battery",
-        "Federal incentive left",
-        "SGIP status",
-        "Typical upfront cost (1 unit)",
-        "Key 2026 risk"
+        "Federal credit",
+        "SGIP (Sept. 23, 2026)",
+        "What you pay",
+        "Main risk"
       ],
       "rows": [
         [
           "Cash purchase",
-          "Homeowner",
-          "None — Section 25D ended for installs completed after 12/31/2025",
-          "AB 209 only: waitlisted for CSE, SoCalGas and LADWP (income-qualified only); other residential categories closed",
-          "No published price; get an itemized quote",
-          "Full cost exposed, no tax offset; the return depends on your rate plan and usage"
+          "You",
+          "None for installs completed after 12/31/2025 (IRS)",
+          "Only AB 209 equity budgets, open or waitlisted by administrator; income limits apply",
+          "The quoted installed price",
+          "Savings depend on your rate plan and evening use"
         ],
         [
-          "Loan-financed purchase",
-          "Homeowner (lender holds lien)",
-          "None — same 25D expiration applies",
-          "Same AB 209 territory-by-territory limits as cash purchase",
-          "The quoted price, financed, plus interest",
-          "Same as cash, plus you're servicing debt on equipment with no credit behind it"
+          "Loan",
+          "You (lender may hold a lien)",
+          "None, same 25D rule",
+          "Same as cash",
+          "Quoted price plus interest",
+          "Debt on equipment with no federal credit behind it"
         ],
         [
-          "Lease / PPA (third-party owned)",
-          "Leasing/financing company",
-          "The owner may claim the Section 48E commercial credit; whether it lowers your payment is set by the contract. Storage is not on solar/wind's accelerated 2027 deadline; Powerwall 3's specific FEOC eligibility is unconfirmed",
-          "Not applicable — the TPO company claims its own incentives, not SGIP",
-          "Set by the contract; often little or nothing down",
-          "Provider solvency (Freedom Forever converted to Ch. 7 on 8/7/26; Sunnova sold in Ch. 11) and unresolved FEOC battery-sourcing compliance"
+          "Lease or PPA",
+          "The provider",
+          "The owner may claim Section 48E; storage is outside the 2027 solar/wind cut-off",
+          "Not claimed by you",
+          "Set by the contract, often little upfront",
+          "The provider's solvency and the escalator over the term"
         ]
       ]
     },
-    "whenThisIsWrong": "Skip Powerwall 3 (or at least slow down) if any of these apply. You're a customer of a publicly owned utility — LADWP, SMUD, MID, Anaheim, Roseville, Lodi, Imperial ID, or Turlock ID — which set their own rates and where NEM 3.0 doesn't apply; the arbitrage math built on PG&E, SCE or SDG&E rates doesn't carry over. You don't qualify for AB 209 (household income above 80% of Area Median Income and no CARE/FERA/ESA enrollment) and were counting on SGIP to offset the cost; that pathway shows a waitlist where it is listed, so budget the full installed price with no state rebate unless you've confirmed funds are actually available for your administrator. You're comparing this against your existing Powerwall 2 setup purely for the efficiency gain; the efficiency difference is real but modest, and replacing working equipment rarely pays for itself on efficiency alone. You're being pitched a lease or PPA on the promise of a flat 30% federal credit with an urgent 2026/2027 deadline attached; that deadline applies to solar and wind, not storage, so treat any such time pressure as a sales tactic — the real open question on a lease is FEOC battery sourcing, not timing, and that should be confirmed in writing before signing a long contract. You're being asked to sign with, or already hold a contract from, a company whose financial position you haven't checked; Freedom Forever, Sunnova, and SunPower all filed bankruptcy within the past two years, and a battery lease is only as good as the company standing behind it a decade from now.",
+    "whenThisIsWrong": "Slow down before buying a Powerwall 3 if any of these fit you. Your utility is municipal, such as LADWP or SMUD, so NEM 3.0 export credits and the IOU rate figures on this page do not apply and the case has to be rebuilt from your own tariff. Your evening use is small enough that most of a 13.5 kWh battery would sit unused on a normal day. You were counting on SGIP and have not confirmed with the program administrator that your household qualifies under AB 209 and that funds are available, not just waitlisted. You are replacing a working Powerwall 2 mainly for the efficiency gain. Or you are being pressed to sign a lease or PPA this week because a federal deadline is supposedly about to hit; the statute exempts storage from the 2027 solar and wind cut-off, so that pressure is a sales tactic.",
     "faqs": [
       {
-        "question": "Does Powerwall 3 still qualify for a federal tax credit in 2026 if I buy it outright?",
-        "answer": "No. The IRS confirmed in its OBBB guidance that Section 25D, the Residential Clean Energy Credit, cannot be claimed for any property installed or constructed after December 31, 2025. Paying a deposit before that date does not preserve eligibility; the installation had to be complete. If you own the Powerwall 3 (cash or loan), there is no federal credit available on a 2026 installation, and none is coming back under current law. Unused credit from a system that was actually completed before 1/1/2026 still carries forward, but that does not help a new 2026 purchase."
+        "question": "How much does a Tesla Powerwall 3 cost installed in California?",
+        "answer": "Tesla does not publish a price; its order page asks for your address first. The closest primary benchmark is LBNL's estimate that storage added roughly $750 to $1,000 per kWh to paired residential systems installed in 2023, which is about $10,100 to $13,500 for one 13.5 kWh Powerwall 3. A panel upgrade, a backup-loads subpanel or a long conduit run adds to that. Get an itemized quote and compare it line by line."
       },
       {
-        "question": "What does a single Powerwall 3 actually cost installed in California?",
-        "answer": "Tesla does not publish a consumer installed price for California, and this page does not repeat installer or aggregator estimates. The closest primary benchmark is national: LBNL's Tracking the Sun (2024 Edition) estimates that storage added roughly $750 to $1,000 per kWh to the price of paired residential systems in 2023, about $10,000 to $13,500 for 13.5 kWh. The price moves up if your project needs a main panel upgrade, a backup-loads subpanel, or a long conduit run — ask your contractor for an itemized quote, not just a lump sum, so you can see which add-ons are pushing the number up."
+        "question": "How much is a Powerwall without installation?",
+        "answer": "Tesla does not sell Powerwall 3 as a hardware-only retail product with a published price, and its design tool quotes installed systems by address. Treat any hardware-only figure you see online as unverified, and ask the installer to show the hardware line separately in the quote."
       },
       {
-        "question": "Is SGIP still a realistic way to offset Powerwall 3 cost?",
-        "answer": "Not for most buyers. As of September 22, 2026, the SGIP program-metrics page shows Small Residential Storage, the ratepayer-funded Residential Solar and Storage Equity category, Equity Resiliency and the San Joaquin Valley category closed. The remaining residential pathway, Residential Solar & Storage Equity under AB 209, is limited by income and other eligibility rules and shows a waitlist for CSE, SoCalGas and LADWP customers. For a typical homeowner anywhere in the state, SGIP is not a live incentive right now; check selfgenca.com/home/program_metrics for your own administrator before ruling it out entirely."
+        "question": "Is there a program that pays for most or all of a Powerwall?",
+        "answer": "Not for most households in 2026. The SGIP equity categories that used to cover much of a battery's cost pay $1.10 per Wh, about $14,850 for 13.5 kWh, but they are limited by income and other rules. As of September 23, 2026 the AB 209 equity budgets were waitlisted for CSE, SoCalGas and LADWP and in the PG&E and SCE non-POU budgets, and open in the PG&E and SCE POU budgets. Confirm eligibility with the administrator. Be wary of any offer that calls a battery costless; read who owns it and what you pay over the term."
       },
       {
-        "question": "Does a Tesla lease or PPA get around the 25D expiration?",
-        "answer": "Partially. Under a lease or PPA, the third-party owner — not you — may claim the Section 48E commercial investment tax credit; whether any of that value lowers your payment is set by the contract. Unlike solar and wind, standalone battery storage was not swept into OBBBA's accelerated phase-out: there is no July 2026/December 2027 deadline for a battery lease. Storage keeps the full 48E rate for projects beginning construction through 2033, phasing down gradually after that (75% in 2034, 50% in 2035, zero in 2036 or later). The real caveat is sourcing, not timing: new Foreign Entity of Concern rules require a rising share of the battery's material cost (55% in 2026, climbing to 75% by 2030) to come from non-restricted suppliers, and no source we found confirms whether Powerwall 3 cells specifically meet that bar. Ask the TPO provider directly, in writing, before signing."
+        "question": "Does Powerwall 3 qualify for the federal tax credit in 2026?",
+        "answer": "Not if you own it. The IRS says Section 25D is not allowed for expenditures made after December 31, 2025, and an expenditure is made when installation is completed. Under a lease or PPA the owner may claim Section 48E, and whether that lowers your payment depends on the contract."
       },
       {
-        "question": "What's actually different about Powerwall 3's inverter versus Powerwall 2?",
-        "answer": "Powerwall 2 is AC-coupled only: your solar panels' DC output has to pass through a separate solar inverter, then get converted again by the Powerwall, and converted a third time to power your home. Powerwall 3 has a built-in inverter with 6 MPPTs supporting up to 20 kW of solar input, so it can run DC-coupled and skip two of those conversion steps. The practical results are less conversion loss (Tesla's datasheet lists 97.5% for solar straight to the home or grid and 89% through the battery), fewer components in the install, and the ability to start heavy loads (up to 185A locked-rotor amps) during an outage."
+        "question": "How many Powerwall 3 units can one home have?",
+        "answer": "Tesla's datasheet allows up to four Powerwall 3 units and up to three Expansion units at one site, seven units in total, or 94.5 kWh at 13.5 kWh each. Most homes install one; LBNL reports the median residential battery installed in 2025 was 13.5 kWh."
       },
       {
-        "question": "Does adding a second Powerwall 3 roughly double the installed cost?",
-        "answer": "Not proportionally, but we don't have a specific per-unit figure to quote. Labor for wiring, the Backup Gateway, and permitting are largely one-time costs regardless of how many units you add, so the cost per kWh of storage should drop on a second or third unit compared to the first. Tesla's stacking spec allows up to 4 Powerwall 3 units plus 3 Expansion units per site, for a maximum of 94.5 kWh storage and 46 kW continuous power. Get an itemized quote for your specific unit count rather than assuming a flat multiple of the single-unit price."
+        "question": "Is Powerwall 3 worth it under NEM 3.0?",
+        "answer": "It can be, because the CPUC says export credits under net billing are usually below the retail rate, so solar you store and use in the evening is worth more than solar you export. How much more depends on your rate plan and how much you use after sunset. Run 12 months of your own interval data before you decide."
       },
       {
-        "question": "Is it risky to lease a battery through a company that might go bankrupt?",
-        "answer": "Yes, and this is not hypothetical in California's solar market right now. Freedom Forever filed Chapter 11 in April 2026 and, after a sale attempt collapsed, converted to Chapter 7 liquidation on August 7, 2026, leaving its homeowners with contracts from a company that no longer operates. Sunnova filed Chapter 11 in June 2025; its assets were sold and its legacy contracts are now administered by SunStrong Management, and it is not writing new business. SunPower filed Chapter 11 in August 2024. A PPA or lease is a long contract with a company you're trusting to still exist, honor warranties, and administer billing for its whole term. Check who actually services the contract, not just whose logo is on the panel."
+        "question": "Can a Powerwall earn money by sharing power with the grid?",
+        "answer": "Yes, through programs such as the California Energy Commission's Demand Side Grid Support, which runs May to October and pays for capacity and load reduction during extreme events. Sunrun reported a September 9, 2026 dispatch of 580 MW from more than 140,000 home batteries under DSGS and ELRP. Terms vary by program and by the company that enrolls you."
       }
     ],
-    "bottomLine": "Tesla publishes no California installed price for a Powerwall 3; LBNL's national 2023 benchmark of roughly $750 to $1,000 per kWh of storage is the closest primary reference, and the two incentives that used to soften the price are mostly gone. Section 25D does not apply to expenditures after December 31, 2025. SGIP's general-market category is closed, and the AB 209 equity pathway shows a waitlist where it is listed (selfgenca.com, as of September 22, 2026). That leaves two real paths: buy it outright and pay full price, relying on the gap between your evening price and the export credit to earn it back, or lease/PPA it through a third party that may claim a commercial credit — a credit that, unlike solar and wind, isn't on a near-term OBBBA deadline for storage, but whose Tesla-specific eligibility (foreign-sourced battery cell content under FEOC rules) nobody has confirmed in writing yet. Either way, verify the itemized price, any Tesla promotional rebate window, and your TPO provider's FEOC compliance and solvency before signing. Freedom Forever's liquidation and Sunnova's bankruptcy are recent proof that the company on your contract matters as much as the equipment.",
+    "bottomLine": "Budget roughly $10,000 to $13,500 for one installed Powerwall 3 before any panel upgrade, based on LBNL's $750 to $1,000 per kWh storage premium, and expect the real number to come only from an address-specific quote. The federal 25D credit is gone for systems installed after 2025, and SGIP is closed for most households outside the income-limited AB 209 budgets. The case for the battery in 2026 rests on net billing: stored solar used in the evening is worth more than solar exported at midday, plus backup during outages and, in some cases, payments from grid programs. Get two itemized quotes, confirm your rate plan, and check who stands behind the workmanship warranty.",
     "sources": [
       {
-        "name": "IRS.gov — FAQs for modification of sections 25C, 25D, 25E, 30C, 30D, 45L, 45W, and 179D under Public Law 119-21 (OBBB)",
-        "url": "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
-        "supports": "Confirms Section 25D residential credit cannot be claimed for property installed after 12/31/2025; no protection from a pre-deadline deposit; carryforward for pre-2026 completions"
+        "name": "Tesla — Powerwall design and order page",
+        "url": "https://www.tesla.com/powerwall/design",
+        "supports": "Tesla asks for an installation address before showing a Powerwall quote; no price displayed without one (checked September 23, 2026)"
       },
       {
-        "name": "Congress.gov — CRS product IN12611, \"Expiration and Carryforward Rules for the Residential Clean Energy Credit\"",
-        "url": "https://www.congress.gov/crs-product/IN12611",
-        "supports": "Corroborates 25D expiration and carryforward treatment under OBBBA"
-      },
-      {
-        "name": "Self-Generation Incentive Program — Program Metrics (selfgenca.com)",
-        "url": "https://www.selfgenca.com/home/program_metrics/",
-        "supports": "Residential storage category status as of September 22, 2026: Small Residential Storage closed at Step 7 ($0.15/Wh) for CSE, SCE, SoCalGas and PG&E; ratepayer Residential Solar and Storage Equity ($1.10/Wh) and Equity Resiliency ($1.00/Wh) closed; AB 209 Residential Solar and Storage Equity ($1.10/Wh) waitlisted for CSE, SoCalGas and LADWP"
-      },
-      {
-        "name": "Tesla Energy Library — Powerwall 3 datasheet",
-        "url": "https://energylibrary.tesla.com",
-        "supports": "Powerwall 3 specs: 13.5 kWh usable, 11.5 kW continuous, 6 MPPT, 20 kW solar input, 97.5% CEC efficiency, stacking limits"
-      },
-      {
-        "name": "The Tax Adviser (AICPA) — \"Navigating safe-harbor rules for solar and wind Sec. 48E facilities\"",
-        "url": "https://www.thetaxadviser.com/issues/2026/feb/navigating-safe-harbor-rules-for-solar-and-wind-sec-48e-facilities/",
-        "supports": "Confirms the July 4, 2026 begin-construction / Dec 31, 2027 placed-in-service deadlines apply to wind and solar facilities only — states explicitly that OBBBA's amendment does not affect related energy storage technology"
-      },
-      {
-        "name": "ICS Tax, LLC — \"48E Investment Tax Credit OBBBA Phaseout\"",
-        "url": "https://ics-tax.com/news/48e-investment-tax-credit-obba-phaseout/",
-        "supports": "Storage-specific Section 48E phase-down schedule: 100% of credit for construction beginning before 2034, 75% in 2034, 50% in 2035, 0% for construction beginning 2036 or later"
-      },
-      {
-        "name": "Utility Dive — \"Treasury issues FEOC guidance, clarifies material assistance cost ratio\"",
-        "url": "https://www.utilitydive.com/news/treasury-issues-feoc-guidance-clarifies-material-assistance-cost-ratio/812213/",
-        "supports": "Treasury Notice 2026-15 (issued 2/12/2026): material assistance cost ratio threshold of 55% for projects beginning construction in 2026, rising 5 points/year to 75% by 2030; named restricted battery manufacturers"
-      },
-      {
-        "name": "Bloomberg Law — \"Freedom Forever to Liquidate After Insider Sale Effort Collapse\"",
-        "url": "https://news.bloomberglaw.com/bankruptcy-law/freedom-forever-to-liquidate-after-insider-sale-effort-collapse",
-        "supports": "Freedom Forever Chapter 11 (filed 4/15/2026, Case No. 26-10522, D. Del.) converted to Chapter 7 liquidation on August 7, 2026, not July 31"
-      },
-      {
-        "name": "Utility Dive — \"Residential solar installer Sunnova files for bankruptcy, plans to sell and wind down operations\"",
-        "url": "https://www.utilitydive.com/news/residential-solar-installer-sunnova-files-for-bankruptcy-plans-to-sell-and/750387/",
-        "supports": "Sunnova Chapter 11 filing, June 2025"
-      },
-      {
-        "name": "Businesswire — \"Sunnova Receives Court Approval of Chapter 11 Plan\"",
-        "url": "https://www.businesswire.com/news/home/20251110916669/en/Sunnova-Receives-Court-Approval-of-Chapter-11-Plan",
-        "supports": "Sunnova asset sale and transition of legacy portfolio administration to SunStrong Management"
-      },
-      {
-        "name": "Bloomberg Law — \"SunPower Corp. Files for Chapter 11 Bankruptcy in Delaware\"",
-        "url": "https://news.bloomberglaw.com/bankruptcy-law/sunpower-corp-files-for-chapter-11-bankruptcy-in-delaware",
-        "supports": "SunPower Chapter 11 filing, August 2024"
+        "name": "Tesla Energy Library — Powerwall 3 datasheet (2025)",
+        "url": "https://energylibrary.tesla.com/docs/Public/EnergyStorage/Powerwall/3/Datasheet/en-us/Powerwall-3-Datasheet.pdf",
+        "supports": "13.5 kWh; 5.8/7.6/10/11.5 kW output; 20 kW solar input; 6 MPPTs; 97.5% and 89% efficiency; 185 LRA; 10-year warranty; up to 4 Powerwall 3 plus 3 Expansion units"
       },
       {
         "name": "Lawrence Berkeley National Laboratory — Tracking the Sun, 2024 Edition",
         "url": "https://emp.lbl.gov/sites/default/files/2024-10/Tracking%20the%20Sun%202024_Report.pdf",
-        "supports": "Residential storage price premium of roughly $750-1,000 per kWh for paired residential systems installed in 2023 (national regression estimate); California residential storage attachment rate of 14% in 2023"
+        "supports": "Storage price premium of roughly $750–$1,000 per kWh for paired residential systems installed in 2023 (p. 33)"
       },
       {
-        "name": "CPUC Public Advocates Office — Q2 2026 Electric Rates Report",
-        "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
-        "supports": "Residential average rates as of June 2026: PG&E 33.7 cents, SCE 34.4 cents, SDG&E 45.5 cents per kWh"
+        "name": "Lawrence Berkeley National Laboratory — U.S. Distributed Solar and Storage, 2026 Data Update (August 2026)",
+        "url": "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+        "supports": "2025 cash-purchase residential PV+storage median $2.1/W above PV-only; ~80% of paired price data from California; median residential storage 13.5 kWh in 2025"
+      },
+      {
+        "name": "Self-Generation Incentive Program — Program Metrics",
+        "url": "https://www.selfgenca.com/home/program_metrics/",
+        "supports": "Residential storage budget status, data as of 9/23/2026: Small Residential Storage closed (Step 7); ratepayer equity, Equity Resiliency and San Joaquin Valley closed; AB 209 equity at $1.10/Wh storage, waitlisted or open by administrator"
+      },
+      {
+        "name": "IRS — FAQs on modification of sections 25C, 25D and others under Public Law 119-21",
+        "url": "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
+        "supports": "No 25D credit for expenditures made after December 31, 2025; expenditure made when installation is completed"
+      },
+      {
+        "name": "U.S. Code — 26 U.S.C. § 48E (Office of the Law Revision Counsel)",
+        "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section48E&num=0&edition=prelim",
+        "supports": "Solar and wind property placed in service after December 31, 2027 excluded unless construction began in time; the exclusion does not apply to energy storage technology (§ 48E(e)(4)(C))"
       },
       {
         "name": "CPUC — Net Energy Metering and Net Billing",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
-        "supports": "Net Billing Tariff since April 15, 2023; export credits usually lower than the retail rate but can rise above it on late summer evenings; nine-year guarantee; early-adopter export adder for residential PG&E and SCE customers applying before the end of 2027; approved rates E-ELEC (PG&E), TOU-D-PRIME (SCE), EV-TOU-5 (SDG&E)"
+        "supports": "Net billing since April 15, 2023; export credit usually below retail; batteries maximize savings; nearly 70% battery pairing by end of 2024; nine-year tariff; E-ELEC, TOU-D-PRIME, EV-TOU-5; early-adopter adder before end of 2027"
+      },
+      {
+        "name": "CPUC Public Advocates Office — Q2 2026 Electric Rates Report",
+        "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+        "supports": "Average residential rates as of June 2026: PG&E 33.7, SCE 34.4, SDG&E 45.5 cents per kWh"
+      },
+      {
+        "name": "Sunrun — Sunrun and Tesla dispatch 580 megawatts to California's grid (September 21, 2026)",
+        "url": "https://investors.sunrun.com/news-events/press-releases/detail/381/sunrun-and-tesla-dispatch-580-megawatts-to-californias",
+        "supports": "September 9, 2026 dispatch of 580 MW from more than 140,000 batteries, about 110,000 Powerwalls, under DSGS and ELRP"
+      },
+      {
+        "name": "California Energy Commission — Demand Side Grid Support Program",
+        "url": "https://www.energy.ca.gov/programs-and-topics/programs/demand-side-grid-support-program",
+        "supports": "DSGS runs May to October; pays for capacity commitments and per-unit load reduction during extreme events"
+      },
+      {
+        "name": "CPUC — Emergency Load Reduction Program",
+        "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/demand-response-dr/emergency-load-reduction-program",
+        "supports": "Residential Power Saver Rewards sunset at the end of the 2025 ELRP program year"
+      },
+      {
+        "name": "CourtListener — In re Freedom Forever LLC, Bankr. D. Del. No. 26-10522",
+        "url": "https://www.courtlistener.com/docket/73192534/freedom-forever-llc/",
+        "supports": "Chapter 11 filed April 15, 2026; order converting to Chapter 7 signed August 7, 2026 (Doc. 533)"
+      },
+      {
+        "name": "CourtListener — In re Sunnova Energy International Inc., Bankr. S.D. Tex. No. 25-90160",
+        "url": "https://www.courtlistener.com/docket/70491405/sunnova-energy-international-inc/",
+        "supports": "Chapter 11 filed June 8, 2025"
+      },
+      {
+        "name": "CourtListener — In re SunPower Corporation, Bankr. D. Del. No. 24-11649",
+        "url": "https://www.courtlistener.com/docket/69017070/sunpower-corporation/",
+        "supports": "Chapter 11 filed August 5, 2024"
       }
     ],
-    "reviewedAt": "2026-09-05"
+    "reviewedAt": "2026-09-23"
   },
   {
     "slug": "tesla-powerwall-alternatives",
