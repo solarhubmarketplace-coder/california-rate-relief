@@ -7,6 +7,10 @@ import { Footer } from "@/components/landing/Footer";
 import { ArticleJsonLd } from "@/components/shared/ArticleJsonLd";
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
+import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
+import { SourceList } from "@/components/growth/DecisionPage";
+import { FaqBlock } from "@/components/trust/FaqBlock";
+import { RATE_SOURCES_CHECKED, rateSources } from "@/data/rate-sources";
 
 const title = "Why Is My LADWP Bill So High? Rates & Fees Explained";
 const description =
@@ -25,6 +29,46 @@ const sources = {
     "https://www.ladwp.com/account/customer-service/electric-rates/ev-nem-reo-rates",
 };
 
+// Tier 3 (2026-09-23): a worked two-month bill example, the California
+// context for a high bill, FaqBlock (FAQPage schema) and a checked source list.
+const checkedSources = rateSources(
+  "ladwpResRates",
+  "ladwpRateGuide",
+  "ladwpBillingFaq",
+  "ladwpServiceRules",
+  "laLifelineUut",
+  "smudCompare",
+  "eiaEpm56a",
+);
+
+const faqs = [
+  {
+    question: "What does an LADWP bill include?",
+    answer:
+      "Electricity and water charges from LADWP, plus the City's sewer service charge and trash fees, which LADWP bills for LA Sanitation, and any taxes and prior balance. Residential customers are billed every two months, so each statement covers about 60 days.",
+  },
+  {
+    question: "What does an example LADWP electric bill look like?",
+    answer:
+      "Take a Zone 2 home on the standard R-1A plan that uses 1,600 kWh over a two-month bill in July to September 2026. The first 1,000 kWh are Tier 1 at 26.408 cents ($264.08), the next 600 kWh are Tier 2 at 32.267 cents ($193.60), and a Tier 2 Power Access Charge adds $15.80 for the two months: about $473.48 before taxes, water and sanitation charges.",
+  },
+  {
+    question: "How much is a typical LADWP electric bill?",
+    answer:
+      "SMUD's comparison of nearby utilities puts an LADWP residential bill for 750 kWh a month at $217 as of June 1, 2026, below SCE at $283 and PG&E at $290. Your own bill depends on your zone, plan, season and usage, and arrives every two months.",
+  },
+  {
+    question: "Why is my electricity bill so high in California?",
+    answer:
+      "Mostly the price per kWh. The U.S. Energy Information Administration puts California's June 2026 residential average at 34.74 cents per kWh, against 18.34 cents nationally. On top of that, summer air conditioning pushes usage into higher tiers or peak hours. At 750 kWh a month, SMUD's comparison puts LADWP's bill below SCE's and PG&E's, but a two-month bill that includes water and sanitation can still look large.",
+  },
+  {
+    question: "What is the $19 charge on my first LADWP bill?",
+    answer:
+      "It is LADWP's one-time Turn On Service Charge for electric and/or water service, applied each time you turn on or transfer service. It appears on the opening bill and is not refundable.",
+  },
+];
+
 export const metadata: Metadata = {
   title,
   description,
@@ -34,7 +78,7 @@ export const metadata: Metadata = {
     description,
     type: "article",
     publishedTime: "2026-04-24T00:00:00Z",
-    modifiedTime: "2026-09-11T00:00:00Z",
+    modifiedTime: "2026-09-23T00:00:00Z",
     url: `https://ratereliefca.com${path}`,
   },
 };
@@ -48,7 +92,7 @@ export default function WhyIsMyLADWPBillSoHigh() {
         headline={title}
         url={`https://ratereliefca.com${path}`}
         datePublished="2026-04-24"
-        dateModified="2026-09-11"
+        dateModified="2026-09-23"
         description={description}
       />
       <Header />
@@ -84,7 +128,7 @@ export default function WhyIsMyLADWPBillSoHigh() {
                 By Chad Simpson
               </Link>{" "}
               · Sources checked{" "}
-              <time dateTime="2026-09-11">September 11, 2026</time>
+              <time dateTime="2026-09-23">September 23, 2026</time>
             </p>
           </header>
 
@@ -185,6 +229,72 @@ export default function WhyIsMyLADWPBillSoHigh() {
               .
             </p>
 
+            <h2>An LADWP bill example, worked through</h2>
+            <p>
+              An LADWP statement covers about two months and can carry four
+              services, so the total says little on its own. Here is the electric
+              part for one example home, using only LADWP&apos;s published 2026
+              prices: a Zone 2 home on the standard R-1A plan that uses 1,600 kWh
+              on a two-month bill falling in July to September 2026, and whose
+              highest month in the past year reached Tier 2.
+            </p>
+            <div className="overflow-x-auto">
+              <table>
+                <caption className="pb-3 text-left font-semibold">
+                  Example two-month LADWP electric charges, Zone 2, R-1A, July–September 2026
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Line</th>
+                    <th scope="col">Calculation</th>
+                    <th scope="col">Amount</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Tier 1 energy</th>
+                    <td>1,000 kWh × 26.408¢</td>
+                    <td>$264.08</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Tier 2 energy</th>
+                    <td>600 kWh × 32.267¢</td>
+                    <td>$193.60</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Power Access Charge</th>
+                    <td>Tier 2, $7.90 × 2 months</td>
+                    <td>$15.80</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Electric subtotal</th>
+                    <td>Before taxes</td>
+                    <td>$473.48</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-sm">
+              Our arithmetic from LADWP&apos;s residential rates table and tier
+              sizes, checked September 23, 2026. Zone 2&apos;s two-month Tier 1
+              block is the first 1,000 kWh; Zone 1&apos;s is 700 kWh.
+            </p>
+            <p>
+              The same 1,600 kWh in Zone 1 would cost about $491.06 before taxes,
+              because 300 more kWh land in Tier 2. From October 1 the tier prices
+              rise to 27.292 and 33.151 cents, but the high season ends, so a large
+              summer bill usually still shrinks. Below the electric section, the
+              statement adds water, the City sewer service charge and trash fees
+              that LADWP collects for LA Sanitation, the City&apos;s electricity users
+              tax, and any unpaid balance. Divide the kWh by the billing days first:
+              1,600 kWh over 60 days is about 27 kWh a day. Full tier and time-of-use
+              prices are on our{" "}
+              <Link href="/blog/ladwp-rates" className={linkStyle}>
+                LADWP rates page
+              </Link>
+              .
+            </p>
+
             <h2>4. On time-of-use service, check the clock</h2>
             <p>
               R-1B prices depend on when electricity is used. LADWP lists these
@@ -223,6 +333,22 @@ export default function WhyIsMyLADWPBillSoHigh() {
               current household rules with LADWP; the discount is not a
               universal percentage. Its assistance page also links payment
               arrangements and Level Pay.
+            </p>
+
+            <h2>Is a high LADWP bill part of a California-wide problem?</h2>
+            <p>
+              Partly. The U.S. Energy Information Administration puts
+              California&apos;s June 2026 residential electricity price at 34.74 cents
+              per kWh, almost twice the national 18.34 cents. LADWP sits below the
+              big investor-owned utilities on price: SMUD&apos;s comparison of a 750
+              kWh monthly bill as of June 1, 2026 shows $217 for LADWP, $283 for SCE
+              and $290 for PG&amp;E. So an LADWP bill that feels high is usually about
+              usage, the season and the non-electric lines rather than an unusually
+              high rate. For the statewide causes, see{" "}
+              <Link href="/blog/why-is-my-california-electric-bill-so-high" className={linkStyle}>
+                why California electric bills are high
+              </Link>
+              .
             </p>
 
             <h2>When a solar comparison is useful</h2>
@@ -276,6 +402,14 @@ export default function WhyIsMyLADWPBillSoHigh() {
             </ul>
           </div>
 
+          <div className="not-prose">
+            <FaqBlock items={faqs} />
+            <SourceList sources={checkedSources} sourceCheckedDate={RATE_SOURCES_CHECKED} />
+            <p className="mt-4 text-sm text-muted-foreground">
+              California Rate Relief is a referral service. We are not a licensed contractor.
+            </p>
+            <HubSpokeLinks hub="electric_bills" currentPath={path} />
+          </div>
           <div className="mt-10">
             <SolarInquiry
               utility="ladwp"

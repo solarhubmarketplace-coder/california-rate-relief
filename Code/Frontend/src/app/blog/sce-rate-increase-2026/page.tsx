@@ -39,6 +39,9 @@ const sources = rateSources(
   'cpucGrcProcess',
   'cpucCareFera',
   'cpucClimateCredit',
+  'sceEvPlan',
+  'sceRateCompare',
+  'sceTariffBooks',
 );
 
 /** Residential average rate, cents per kWh, as each CPUC Public Advocates Office report states it. */
@@ -84,6 +87,16 @@ const faqs = [
     question: 'What changed on my SCE electric bill?',
     answer:
       "Since November 2025, SCE bills a flat Base Services Charge under Delivery Charges, $24.15 a month for most customers ($12.08 FERA, $6.00 CARE), and charges about 10% less per kWh. The minimum charge is gone, the Public Purpose Programs charge moved into the flat charge, and NEM customers' monthly credits shrank with the lower kWh price. Separately, rates rose about 13.1% on October 1, 2025 and dipped slightly in 2026, and the 2026 Climate Credit arrives in August and September.",
+  },
+  {
+    question: 'What are the SCE TOU-D-PRIME rates in 2026?',
+    answer:
+      "SCE's plan page lists TOU-D-PRIME at 59 cents per kWh on summer weekdays from 4 to 9 p.m., 40 cents at those hours on summer weekends and 26 cents at all other summer hours. From October to May it is 56 cents from 4 to 9 p.m. and 24 cents the rest of the day. The plan adds the $0.79 daily Base Services Charge, has no baseline credit, and is for households with an EV, a home battery or an electric heat pump. The official schedule is in SCE's tariff books.",
+  },
+  {
+    question: 'Does SCE have a rate comparison tool?',
+    answer:
+      "Yes. SCE's Rate Plan Comparison, inside My Account, prices your own usage history on each residential plan you can choose. It works best with 12 months of usage; with at least eight months including two summer months, SCE runs the comparison on the months it has. You can also call SCE for a manual load-shift analysis.",
   },
   {
     question: 'What is the SCE Base Services Charge?',

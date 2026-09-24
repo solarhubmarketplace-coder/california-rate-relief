@@ -23,7 +23,7 @@ const description =
 const published = '2026-09-23';
 const updated = '2026-09-23';
 
-const sources = rateSources('ladwpResRates', 'ladwpAdjFactors', 'ladwpRateGuide', 'ladwpBillingFaq', 'ladwpEvNem', 'ladwpEv', 'smudResRates');
+const sources = rateSources('ladwpResRates', 'ladwpAdjFactors', 'ladwpRateGuide', 'ladwpBillingFaq', 'ladwpEvNem', 'ladwpEv', 'smudResRates', 'ladwpServiceRules', 'laLifelineUut');
 
 const faqs = [
   {
@@ -45,6 +45,21 @@ const faqs = [
     question: 'What are LADWP off-peak hours?',
     answer:
       "LADWP calls its lowest-priced time-of-use period the Base period: 8:00 p.m. to 9:59 a.m. on weekdays and all day on weekends. That is 118 of the week's 168 hours. LADWP names pool pumps, spas, central air conditioning and electric space heating as the loads worth moving into those hours.",
+  },
+  {
+    question: 'What were LADWP’s R-1B time-of-use rates in 2025?',
+    answer:
+      'Including adjustment factors, LADWP listed R-1B at 33.022 cents High Peak, 27.182 cents Low Peak and 24.438 cents Base for July to September 2025, and 27.480, 27.480 and 25.126 cents for October to December 2025. January to March 2025 was 25.172 cents for both peak periods and 22.818 cents Base. The $12 monthly service charge applied throughout.',
+  },
+  {
+    question: 'Does Zone 2 change LADWP’s time-of-use (R-1B) rates?',
+    answer:
+      'No. LADWP’s two climate zones set the size of the tiers on the standard R-1A plan, and the tier used for the Power Access Charge. R-1B has one price table for the whole city, set by the hour and season, so a Zone 2 home pays the same R-1B price per kWh as a Zone 1 home.',
+  },
+  {
+    question: 'What is the utility users tax on an LADWP bill?',
+    answer:
+      'It is the City of Los Angeles electricity users tax, which LADWP’s service rules describe as a tax the City imposes on the electricity user as a percentage of the total electric bill. It is not part of the rates on this page. Seniors 62 and older and people with disabilities whose household income is under $66,650 can apply to the City’s Office of Finance for the Lifeline exemption.',
   },
   {
     question: 'What is the Power Access Charge on an LADWP bill?',
@@ -199,6 +214,13 @@ export default function LadwpRatesPage() {
                 note={<>Source: LADWP Residential Rates, R-1B Total Consumption Charge table, checked September 23, 2026. R-1B adds a $12.00 monthly service charge.</>}
               />
               <p>
+                Those are 2026 prices. For the same periods of 2025, LADWP lists R-1B at 25.172 cents for both peak periods and
+                22.818 cents Base in January to March, 33.022, 27.182 and 24.438 cents in July to September, and 27.480, 27.480 and
+                25.126 cents in October to December. The climate zone makes no difference on R-1B: Zone 1 and Zone 2 matter only
+                for the size of R-1A&apos;s tiers and for the Power Access Charge, so a Zone 2 home on time-of-use pays the same
+                price per kWh as any other.
+              </p>
+              <p>
                 LADWP&apos;s own guidance is that R-1B tends to suit two kinds of households: those whose two-month bills keep
                 reaching Tier 3, and solar customers who keep banking credits. Notice how narrow the spread is. In the summer
                 quarter, Base is only about 8.6 cents below High Peak, a smaller gap than the evening premium on the main PG&amp;E,
@@ -209,6 +231,8 @@ export default function LadwpRatesPage() {
               <p>
                 Yes. LADWP posts both years side by side, and every 2026 figure is higher than the same months of 2025. Because
                 the increase sits in the per-kWh adjustment factors, it is the same number of cents in every tier and period.
+                LADWP is not regulated by the CPUC; its rates are set by City of Los Angeles ordinances, and the adjustment
+                factors are reset each January, April, July and October.
               </p>
               <DataTable
                 caption="How much each LADWP residential price rose, 2025 to 2026"
@@ -261,7 +285,11 @@ export default function LadwpRatesPage() {
               </p>
               <p>
                 For rooftop solar, LADWP still uses net energy metering: exports earn a credit at your rate schedule&apos;s
-                energy price, and leftover credits roll forward to later bills. Credits left when you close the account are
+                energy price, and leftover credits roll forward to later bills (the full{' '}
+                <Link href="/blog/ladwp-net-metering" className={guideLink}>
+                  LADWP net metering rules
+                </Link>{' '}
+                cover sizing and interconnection). Credits left when you close the account are
                 zeroed out, so a system sized far beyond your use does not pay you back in cash. That is different from the
                 net billing tariff at PG&amp;E, SCE and SDG&amp;E, where exports are credited at lower hourly values. The{' '}
                 <Link href="/solar-savings/los-angeles-county" className={guideLink}>

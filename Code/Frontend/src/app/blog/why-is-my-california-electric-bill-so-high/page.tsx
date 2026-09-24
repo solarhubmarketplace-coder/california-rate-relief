@@ -49,6 +49,12 @@ const sources = [
     'pgeResRatesCurrent',
     'sdgeWhenMatters',
     'cpucMedicalBaseline',
+    'eiaEpmFeb2026',
+    'paoQ2_2025',
+    'eiaGasPriceCa',
+    'eiaGasConsumersCa',
+    'eiaGasVolumesCa',
+    'smudCompare',
   ),
 ];
 
@@ -57,6 +63,31 @@ const faqs = [
     question: 'Why is electricity so expensive in California?',
     answer:
       "The CPUC Public Advocates Office names three main statewide drivers of rising rates: wildfire mitigation and liability costs, transmission and distribution investment, and rooftop solar incentives under net energy metering. Those costs are recovered from a residential base that uses little electricity per home, so each kWh carries more of them. California's average residential price was 34.74 cents per kWh in June 2026, second only to Hawaii, per EIA.",
+  },
+  {
+    question: "What was California's average residential electricity price in 2025?",
+    answer:
+      "32.54 cents per kWh for the full year, in the U.S. Energy Information Administration's preliminary 2025 figures, up from 31.97 cents in 2024 and second only to Hawaii. The U.S. average was 17.30 cents. By June 2026, EIA put California's monthly residential average at 34.74 cents.",
+  },
+  {
+    question: 'How much do California households pay for electricity each month?',
+    answer:
+      "EIA's most recent full-year figure is $160.86 a month in 2024, for 503 kWh at an average 31.97 cents per kWh. The U.S. average was $142.26, for much higher use of 863 kWh. At the utility level, SMUD's comparison puts a 750 kWh month at $290 on PG&E, $283 on SCE and $322 on SDG&E as of June 1, 2026.",
+  },
+  {
+    question: 'How much is heat and electricity a month in California?',
+    answer:
+      "For a home that heats with gas, roughly $220 a month on average: EIA's 2024 figures give $160.86 for electricity and, by our arithmetic from its gas data, about $59 for gas averaged over the year. Gas spending is concentrated in winter, so a January bill runs well above the average. An all-electric home's heating shows up on the electric bill instead.",
+  },
+  {
+    question: 'Are California electricity costs still rising?',
+    answer:
+      "Statewide, yes: EIA's residential average was 34.74 cents per kWh in June 2026, up from 33.59 cents in June 2025. By utility it is mixed. From June 2025 to June 2026 the Public Advocates Office shows PG&E's average falling from 38.6 to 33.7 cents, while SCE rose from 31.2 to 34.4 cents and SDG&E from 41.5 to 45.5 cents.",
+  },
+  {
+    question: 'How much does PG&E electricity cost?',
+    answer:
+      "The CPUC Public Advocates Office puts PG&E's residential average at 33.7 cents per kWh in June 2026. On PG&E's standard E-TOU-C plan, summer prices are 52.24 cents from 4 to 9 p.m. and 39.94 cents at other hours, plus a daily Base Services Charge of $0.79343 for most homes.",
   },
   {
     question: 'Why is my electric bill so high this month?',
@@ -98,6 +129,9 @@ const spokeGroups: { heading: string; links: { href: string; label: string; blur
       { href: '/blog/average-utility-bill-california', label: 'Average utility bill in California', blurb: 'Electric and gas averages from EIA, and bills by utility.' },
       { href: '/blog/average-kwh-per-day-california', label: 'Average kWh per day in California', blurb: 'Daily use, baseline allowances and the cheapest hours.' },
       { href: '/blog/average-pge-bill-for-1-bedroom-apartment', label: 'PG&E bill for a one-bedroom apartment', blurb: 'What apartment-sized usage costs on PG&E plans.' },
+      { href: '/blog/average-sdge-bill-2-bedroom-apartment', label: 'SDG&E bill for a two-bedroom apartment', blurb: 'Apartment usage priced on SDG&E’s August 2026 rates.' },
+      { href: '/blog/does-pool-pump-use-a-lot-of-electricity', label: 'What a pool pump adds to the bill', blurb: 'Cost per kilowatt of pump power at each utility, and when to run it.' },
+      { href: '/blog/how-much-does-it-cost-to-turn-on-electricity', label: 'What it costs to turn on electricity', blurb: 'Start fees, deposits and the first bill at each utility.' },
       { href: '/blog/where-does-california-get-its-electricity', label: 'Where California gets its electricity', blurb: 'The 2024 power mix, imports and how much the state uses per day.' },
     ],
   },
@@ -115,6 +149,8 @@ const spokeGroups: { heading: string; links: { href: string; label: string; blur
     heading: 'Rates behind the bill',
     links: [
       { href: '/blog/pge-vs-sce-vs-sdge-rates-compared', label: 'PG&E vs. SCE vs. SDG&E rates', blurb: 'Rates per kWh and sample bills side by side.' },
+      { href: '/blog/electricity-rates-by-zip-code', label: 'Electricity rates by ZIP code', blurb: 'How to find the utility, CCA and plan price for an address.' },
+      { href: '/blog/pge-rate-schedules', label: 'PG&E rate schedules', blurb: 'Every PG&E residential tariff and its 2026 price.' },
       { href: '/blog/sce-rate-increase-2026', label: 'SCE rate increases, 2024 to 2026', blurb: 'The October 2025 jump and every change since.' },
     ],
   },
@@ -239,6 +275,37 @@ export default function WhyIsMyCaliforniaElectricBillSoHigh() {
                 means fixed costs are spread over fewer kWh. More on how that plays out in the{' '}
                 <Link href="/blog/electricity-rates-highest-in-us-california" className={guideLink}>
                   national rate ranking
+                </Link>
+                .
+              </p>
+
+              <h2>What California households pay, and whether it is still rising</h2>
+              <p>
+                <strong>The price.</strong> EIA&apos;s preliminary figure for full-year 2025 is 32.54 cents per kWh for California
+                homes, up from 31.97 cents in 2024 and second only to Hawaii&apos;s 40.59 cents; the U.S. average was 17.30 cents.
+                Monthly data point the same way: 34.74 cents in June 2026 against 33.59 cents in June 2025, a rise of about 3.4%.
+              </p>
+              <p>
+                <strong>The trend by utility is mixed.</strong> Between June 2025 and June 2026, the Public Advocates Office shows
+                PG&amp;E&apos;s residential average falling from 38.6 to 33.7 cents per kWh, as wildfire-cost charges ended and the
+                Base Services Charge began, while SCE rose from 31.2 to 34.4 cents and SDG&amp;E from 41.5 to 45.5 cents. The{' '}
+                <Link href="/california-utility-rate-tracker" className={guideLink}>
+                  California utility rate tracker
+                </Link>{' '}
+                logs each change with its date.
+              </p>
+              <p>
+                <strong>The bill.</strong> EIA&apos;s latest full-year average is $160.86 a month in 2024. For a home that also
+                buys gas, EIA&apos;s 2024 gas data work out to about 36.7 thousand cubic feet a year at $19.14 per thousand, roughly
+                $59 a month over the year, so heat and electricity together average about $220 a month, with gas heaviest in
+                winter. At the utility level, SMUD&apos;s June 1, 2026 comparison of a 750 kWh month shows $290 on PG&amp;E, $283
+                on SCE and $322 on SDG&amp;E, against $149 at SMUD. The{' '}
+                <Link href="/blog/average-utility-bill-california" className={guideLink}>
+                  average California utility bill
+                </Link>{' '}
+                breaks these down further, and your own utility&apos;s price is easiest to find with the{' '}
+                <Link href="/blog/electricity-rates-by-zip-code" className={guideLink}>
+                  electricity rate lookup by address
                 </Link>
                 .
               </p>

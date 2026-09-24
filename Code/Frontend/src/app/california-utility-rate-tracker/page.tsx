@@ -8,6 +8,8 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { FaqBlock } from '@/components/trust/FaqBlock';
+import { SRC } from '@/data/rate-sources';
 import { Calendar, Clock } from 'lucide-react';
 import {
   Q2_2026_URL,
@@ -55,9 +57,12 @@ const description =
 const canonicalPath = '/california-utility-rate-tracker';
 const canonicalUrl = `https://ratereliefca.com${canonicalPath}`;
 const datePublished = '2026-09-18';
-const lastUpdated = '2026-09-22';
-const lastUpdatedDisplay = 'September 22, 2026';
+const lastUpdated = '2026-09-23';
+const lastUpdatedDisplay = 'September 23, 2026';
 const dataVerifiedDisplay = '22 Sep 2026';
+// Figures added on 2026-09-23 (LADWP row and the utility-by-utility answers)
+// were fetched and checked that day.
+const t3VerifiedDisplay = '23 Sep 2026';
 
 export const metadata: Metadata = {
   title,
@@ -68,7 +73,7 @@ export const metadata: Metadata = {
     description,
     type: 'article',
     publishedTime: '2026-09-18T00:00:00Z',
-    modifiedTime: '2026-09-22T00:00:00Z',
+    modifiedTime: '2026-09-23T00:00:00Z',
     url: canonicalUrl,
   },
 };
@@ -116,6 +121,78 @@ const datasetJsonLd = {
   dateModified: lastUpdated,
 };
 
+
+// The tracker's questions as data (2026-09-23): FaqBlock renders them and emits
+// FAQPage JSON-LD from the same strings. The first five are the original
+// methodology questions, unchanged in substance.
+const trackerFaqs = [
+  {
+    question: 'What does “residential average rate” mean?',
+    answer:
+      'It is total residential class revenue divided by total residential kilowatt-hours sold, a blended average across every residential rate plan, time-of-use period and customer type at a utility. It is not the rate on any one household’s specific tariff.',
+  },
+  {
+    question: 'Does this page include the California Climate Credit?',
+    answer:
+      'No. The figures on this page exclude the California Climate Credit, a twice-yearly bill credit funded by cap-and-trade allowance revenue, matching the convention the CPUC Public Advocates Office itself uses for these figures.',
+  },
+  {
+    question: 'Why is the 12-month change on this page not a CPUC-published figure?',
+    answer:
+      'The Public Advocates Office publishes 3-year, 5-year and 10-year change figures, not a 1-year figure. This page calculates its own 12-month change from two officially sourced quarterly snapshots and shows the arithmetic, so it stays auditable and is never mistaken for a CPUC-stated number.',
+  },
+  {
+    question: 'Why isn’t there a Q3 2026 row in the rate-history table yet?',
+    answer:
+      `As of ${dataVerifiedDisplay}, the CPUC Public Advocates Office had not yet published a Q3 2026 Electric Rates Report. Its cadence has been to publish roughly one month after quarter-end, so a Q3 2026 report (covering July to September 2026) is expected around late October to early November 2026.`,
+  },
+  {
+    question: 'Does this page estimate savings or compare solar options?',
+    answer:
+      'No. This is a reference page of sourced, dated rate figures. It does not estimate savings, compare solar proposals, or name any installer.',
+  },
+  {
+    question: 'How much did PG&E change its rates in 2026?',
+    answer:
+      "PG&E's residential average fell from 37.8 cents per kWh on October 1, 2025 to 35.0 cents on January 1, 2026 and 33.7 cents on March 1, 2026, with no change in the second quarter, per the CPUC Public Advocates Office. The office warns that PG&E's pending requests could raise the average bill 16% in 2027 if all are approved.",
+  },
+  {
+    question: 'Who approves PG&E rate increases?',
+    answer:
+      'The California Public Utilities Commission. PG&E files a general rate case every four years, most recently on May 15, 2025 for 2027 to 2030, plus separate requests for other costs; the CPUC reviews each one in a public proceeding before PG&E can change prices.',
+  },
+  {
+    question: 'What is PG&E’s E-ELEC rate?',
+    answer:
+      "E-ELEC, PG&E's Electric Home plan, is for homes with an EV, battery or heat pump and is required for new solar. From March 1, 2026 it charges 55.214 cents per kWh on summer peak (4 to 9 p.m.) and 33.358 cents off-peak (midnight to 3 p.m.), and 32.063 and 28.468 cents in winter, plus the daily Base Services Charge.",
+  },
+  {
+    question: 'When do SMUD summer rates start?',
+    answer:
+      "June 1. SMUD's summer season runs June 1 through September 30, when its Time-of-Day Rate adds a mid-peak period and a higher peak price, 37.65 cents per kWh from 5 to 8 p.m. on weekdays in 2026.",
+  },
+  {
+    question: 'Is SMUD cheaper than PG&E?',
+    answer:
+      "Yes, by SMUD's comparison: a 750 kWh month cost $149 at SMUD and $290 at PG&E as of June 1, 2026. You cannot choose between them, though; which one serves you depends on your address.",
+  },
+  {
+    question: 'What are SDG&E’s super off-peak hours?',
+    answer:
+      'Midnight to 6 a.m. and 10 a.m. to 2 p.m. on weekdays, and midnight to 2 p.m. on weekends and holidays. From August 1, 2026, TOU-DR1 charges 37.433 cents per kWh then in summer and 43.719 cents in winter.',
+  },
+  {
+    question: 'What is the difference between LADWP Tier 1 and Tier 2?',
+    answer:
+      'Tier 1 is the first block of use each bill (350 kWh a month in Zone 1, 500 in Zone 2) at the lowest price; Tier 2 is the next block at a higher price. For July to September 2026, LADWP lists Tier 1 at 26.408 cents per kWh and Tier 2 at 32.267 cents.',
+  },
+  {
+    question: 'How do I find out who my electricity provider is?',
+    answer:
+      "Check the name on your bill. Without a bill, enter a ZIP code, city or county in the CPUC's rate comparison tool, or look up the address on the California Energy Commission's electric utility service-area map, which includes city and district utilities.",
+  },
+];
+
 const TOC: Array<{ id: string; label: string }> = [
   { id: 'current-rates', label: 'Current Average Residential Rates by Utility' },
   { id: 'what-changed', label: 'What Changed This Month' },
@@ -126,6 +203,7 @@ const TOC: Array<{ id: string; label: string }> = [
   { id: 'pge-history', label: 'PG&E Rate History and Recent Changes' },
   { id: 'sce-history', label: 'SCE Rate History and Recent Changes' },
   { id: 'sdge-history', label: 'SDG&E Rate History and Recent Changes' },
+  { id: 'utility-questions', label: 'Rate Questions by Utility' },
   { id: 'methodology', label: 'How These Rates Are Calculated (Methodology)' },
   { id: 'faq', label: 'Frequently Asked Questions' },
   { id: 'sources', label: 'Sources and How We Update This Page' },
@@ -259,21 +337,21 @@ export default function CaliforniaUtilityRateTrackerPage() {
                     </tr>
                     <tr className='align-top'>
                       <td className='py-3 pr-3 font-semibold'>LADWP&sup2;</td>
-                      <td className='py-3 px-3'>Not sourced (see note 2 below)</td>
-                      <td className='py-3 px-3'>&mdash;</td>
-                      <td className='py-3 px-3'>Not sourced (see note 2 below)</td>
-                      <td className='py-3 px-3'>Not sourced (see note 2 below)</td>
-                      <td className='py-3 px-3'>Not sourced (see note 2 below)</td>
-                      <td className='py-3 px-3'>Not sourced (see note 2 below)</td>
-                      <td className='py-3 px-3'>No current LADWP tariff document could be retrieved; see note 2</td>
-                      <td className='py-3 pl-3'>Attempted {dataVerifiedDisplay}</td>
+                      <td className='py-3 px-3'>No blended average published. Standard R-1A plan: Tier 1 26.408&cent;/kWh, Tier 2 32.267&cent;/kWh (Jul&ndash;Sep 2026)</td>
+                      <td className='py-3 px-3'>July&ndash;September 2026 quarter</td>
+                      <td className='py-3 px-3'>Quarterly adjustment-factor step: Tier 1 rises to 27.292&cent;/kWh</td>
+                      <td className='py-3 px-3'>October 1, 2026</td>
+                      <td className='py-3 px-3'>Not sourced as a blended figure; R-1A Tier 1 was 24.306&cent; for Jul&ndash;Sep 2025</td>
+                      <td className='py-3 px-3'>Power Access Charge $2.30&ndash;$22.70/month (R-1A); $12.00/month service charge (R-1B)</td>
+                      <td className='py-3 px-3'><a href={SRC.ladwpResRates.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>LADWP Residential Rates</a></td>
+                      <td className='py-3 pl-3'>{t3VerifiedDisplay}</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p className='text-foreground/60 text-xs mb-2'>PG&amp;E, SCE and SDG&amp;E figures: CPUC Public Advocates Office, <a href={Q2_2026_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>Q2 2026 Electric Rates Report</a>, p.8, 20, 22, 24. Fetched {dataVerifiedDisplay}.</p>
               <p className='text-foreground/60 text-xs mb-2'><strong>Note 1 (SMUD):</strong> SMUD is a publicly owned utility and is not covered by the CPUC Public Advocates Office reports, and it does not publish a single blended, CPUC-style average rate, so no comparable 12-month change or &ldquo;most recent change&rdquo; percentage can be sourced for it. The figures above are for SMUD&apos;s Fixed Rate plan, an opt-in alternative &mdash; SMUD&apos;s actual default rate for smart-meter customers is the Time-of-Day (5&ndash;8 p.m.) Rate, not the flat rate shown here; see <a href={SMUD_RESIDENTIAL_RATES_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD&apos;s own rate page</a> for those figures. SMUD raised rates 3% effective January 1, 2026, superseding the $26.20/month + 13.31&cent;/21.26&cent; figures previously shown here, and its board has approved a further &asymp;3% adjustment effective January 1, 2027.</p>
-              <p className='text-foreground/60 text-xs mb-8'><strong>Note 2 (LADWP):</strong> LADWP is a municipal utility outside CPUC jurisdiction, and unlike PG&amp;E, SCE and SDG&amp;E it doesn&apos;t publish a single composite average-residential-rate figure. Its residential rate page uses zone- and tier-based pricing (Zone 1 vs. Zone 2, with usage tiers inside each) and points customers to Schedule R-1 for the actual per-kWh dollar figures rather than stating one blended number. The most recent full LADWP rate-summary document we could locate (<a href={LADWP_STALE_PDF_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>ladwp.com/.../LADWP_Electric_Rates.pdf</a>) was dated 2019, so we&apos;re not publishing a current LADWP cents/kWh figure until we can verify one against a current primary source. For your specific rate, use <a href={LADWP_RESIDENTIAL_RATES_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>LADWP&apos;s residential electric rates page</a>.</p>
+              <p className='text-foreground/60 text-xs mb-8'><strong>Note 2 (LADWP):</strong> LADWP is a municipal utility outside CPUC jurisdiction, and unlike PG&amp;E, SCE and SDG&amp;E it doesn&apos;t publish a single composite average-residential-rate figure, so no blended rate or 12-month percentage is shown. Its <a href={SRC.ladwpResRates.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>residential rates page</a> does publish current per-kWh prices by tier and quarter, including adjustment factors; the row above shows the standard R-1A plan from that page, checked {t3VerifiedDisplay}. Tier sizes depend on climate zone and billing cycle. The full tier and time-of-use tables are on our <Link href='/blog/ladwp-rates' className={sourceLink}>LADWP rates page</Link>. The older rate-summary PDF (<a href={LADWP_STALE_PDF_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>LADWP_Electric_Rates.pdf</a>) dates from 2019 and is not used.</p>
 
               <h3 className='text-lg font-bold text-foreground mt-8 mb-3'>Officially reported multi-year change (source-stated, not calculated)</h3>
               <div className='overflow-x-auto mb-3 not-prose'>
@@ -396,6 +474,37 @@ export default function CaliforniaUtilityRateTrackerPage() {
               <h2 id='sdge-history' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>SDG&amp;E Rate History and Recent Changes</h2>
               <p>SDG&amp;E&apos;s residential average rate was 45.5&cent;/kWh as of June 1, 2026 &mdash; the highest of the three utilities on this page &mdash; a roughly 2.0% decrease from April 1, 2026 rates (Advice Letter 4843-E) following a FERC-ordered reduction in its Base Transmission Revenue Requirement. Over the trailing five quarterly snapshots, SDG&amp;E&apos;s reported rate moved 41.5&cent; (June 2025) &rarr; 41.0&cent; (Oct 2025) &rarr; 45.7&cent; (Jan 2026) &rarr; 45.7&cent; (Mar 2026) &rarr; 45.5&cent; (Jun 2026). Over longer horizons, the Public Advocates Office reports SDG&amp;E&apos;s rate up 5% over three years, 42% over five years and 97% over ten years. SDG&amp;E&apos;s income-graduated Base Services Charge began October 1, 2025. See the current-rates and 12-month history tables above for full sourcing. None of this is the rate on any one household&apos;s bill, because SDG&amp;E bills residential customers on time-of-use plans: <Link href='/blog/sdge-time-of-use-rates-2026' className={sourceLink}>SDG&amp;E time-of-use rates</Link> sets out the peak windows and what changing plan does.</p>
 
+
+              <h2 id='utility-questions' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>Rate Questions by Utility</h2>
+              <p>The averages above answer &ldquo;how expensive is my utility?&rdquo; These are the next questions people ask about each one, answered from the utility&apos;s own rate pages and tariffs (checked {t3VerifiedDisplay}), with a link to the full guide.</p>
+
+              <h3 className='text-lg font-bold text-foreground mt-8 mb-3'>PG&amp;E</h3>
+              <p><strong>How much did PG&amp;E change rates this year?</strong> Down, so far. The Public Advocates Office figures in the history table above show PG&amp;E&apos;s residential average at 37.8&cent;/kWh on October 1, 2025, 35.0&cent; on January 1, 2026 and 33.7&cent; from March 1, 2026, with no change in the second quarter. Its 2025 averages were 38.6&cent; in June and 37.8&cent; from October 1. PG&amp;E says it has cut prices five times in two years. The Public Advocates Office warns that PG&amp;E&apos;s 2027 rate case and other expected requests could raise the average bill 16% in 2027 if all are approved.</p>
+              <p><strong>Who approves PG&amp;E rate increases?</strong> The CPUC. PG&amp;E&apos;s core costs go through a general rate case every four years; its 2027&ndash;2030 case was filed on May 15, 2025, and PG&amp;E does not expect related rate changes before January 2027. Fuel, transmission and public-program costs go through separate proceedings, and each approved change reaches prices through an advice letter. The CPUC&apos;s Public Advocates Office argues for customers in those cases.</p>
+              <p><strong>What are PG&amp;E&apos;s time-of-use plans?</strong> E-TOU-C (peak 4&ndash;9 p.m. every day, PG&amp;E&apos;s standard plan), E-TOU-D (peak 5&ndash;8 p.m. on non-holiday weekdays), EV2-A for home EV charging, E-ELEC for electric homes and the separately metered EV-B. Hours and March 1, 2026 prices are in <Link href='/blog/pge-time-of-use-rates-2026' className={sourceLink}>PG&amp;E time-of-use rates</Link>, and every schedule, including tiered E-1, is listed in <Link href='/blog/pge-rate-schedules' className={sourceLink}>PG&amp;E rate schedules</Link>.</p>
+              <p><strong>What is E-ELEC?</strong> PG&amp;E&apos;s Electric Home plan, for homes with an EV, battery storage or an electric heat pump, and the plan the CPUC requires for new solar on the net billing tariff. From March 1, 2026 it charges 55.214&cent;/kWh on summer peak (4&ndash;9 p.m.), 39.026&cent; part-peak and 33.358&cent; off-peak (midnight&ndash;3 p.m.), and 32.063&cent;, 29.854&cent; and 28.468&cent; in winter, plus the Base Services Charge.</p>
+              <p><strong>Do data centers get special rates from PG&amp;E?</strong> PG&amp;E&apos;s list of electric rate schedules has no data-center schedule; large customers are billed on its large commercial and industrial schedules. What is new is how they connect. PG&amp;E&apos;s Electric Rule 30, an interim rule effective December 4, 2025, covers transmission-level service at 50 to 230 kV for non-residential applicants, and PG&amp;E says it has developers pay for grid infrastructure upfront so other customers are protected if a project stalls. PG&amp;E estimates that each new gigawatt of data-center demand could lower the average household bill 1&ndash;2% over time by spreading fixed costs; that is PG&amp;E&apos;s estimate, not a CPUC finding.</p>
+              <p><strong>How do I start solar with PG&amp;E?</strong> PG&amp;E&apos;s steps: make the home efficient, choose a licensed contractor (PG&amp;E says an active A, B, C-10 or C-46 license), and have the contractor submit the interconnection application. PG&amp;E reviews it, runs an engineering review, completes any grid upgrades and then gives permission to operate. New systems go on the Solar Billing Plan; PG&amp;E says unfinished NEM2 applications moved to it on April 15, 2026. PG&amp;E also warns that surplus power is paid at only about 2&ndash;4&cent;/kWh, so an oversized system does not pay. See <Link href='/blog/pge-solar-program' className={sourceLink}>PG&amp;E&apos;s solar programs</Link>.</p>
+
+              <h3 className='text-lg font-bold text-foreground mt-8 mb-3'>SDG&amp;E</h3>
+              <p><strong>What are SDG&amp;E&apos;s super off-peak times?</strong> On weekdays, midnight to 6 a.m. and 10 a.m. to 2 p.m.; on weekends and holidays, midnight to 2 p.m. They apply on TOU-DR1, EV-TOU-5 and SDG&amp;E&apos;s other three-period plans. From August 1, 2026 the TOU-DR1 super off-peak price is 37.433&cent;/kWh in summer and 43.719&cent; in winter, and EV-TOU-5&apos;s is 13.090&cent; and 12.332&cent;. See <Link href='/blog/sdge-time-of-use-rates-2026' className={sourceLink}>SDG&amp;E time-of-use rates</Link>.</p>
+
+              <h3 className='text-lg font-bold text-foreground mt-8 mb-3'>SMUD</h3>
+              <p><strong>What did SMUD charge per kWh in 2025?</strong> On the standard Time-of-Day (5&ndash;8 p.m.) Rate from May 1, 2025: 36.55&cent; peak, 20.77&cent; mid-peak and 15.05&cent; off-peak in summer, and 17.24&cent; peak and 12.48&cent; off-peak the rest of the year, with a $26.20 monthly System Infrastructure Fixed Charge. From January 1, 2026 those became 37.65&cent;, 21.39&cent;, 15.50&cent;, 17.76&cent; and 12.85&cent;, with a $27.00 charge.</p>
+              <p><strong>SMUD rate increases.</strong> SMUD&apos;s board approved 3% increases on January 1, 2026 and January 1, 2027; SMUD estimated they add $4.35 and then $4.48 a month for the average residential customer. Its schedule already lists the 2027 prices: 38.78&cent; summer peak and 13.24&cent; non-summer off-peak, with a $27.80 fixed charge. The 2024 and 2025 increases were four steps of 2.75%.</p>
+              <p><strong>When do SMUD summer rates start?</strong> June 1, and they run through September 30. Peak is 5 to 8 p.m. on weekdays only; weekends and SMUD&apos;s 11 holidays are off-peak all day. See <Link href='/blog/smud-peak-hours' className={sourceLink}>SMUD peak hours</Link>.</p>
+              <p><strong>SMUD vs. PG&amp;E rates.</strong> SMUD&apos;s comparison of a 750 kWh month as of June 1, 2026 shows $149 at SMUD and $290 at PG&amp;E; SMUD says its rates average more than 50% below PG&amp;E&apos;s. Per kWh, SMUD&apos;s summer peak is 37.65&cent; against 52.24&cent; on PG&amp;E&apos;s E-TOU-C, and its off-peak is 15.50&cent; against 39.94&cent;. The fixed charges are similar: $27.00 a month at SMUD and about $24 on PG&amp;E&apos;s standard tier.</p>
+              <p><strong>SMUD&apos;s EV charging rate.</strong> SMUD has no separate EV plan. EV owners on the Time-of-Day Rate get 1.5&cent;/kWh off all use between midnight and 6 a.m., every day, once a plug-in vehicle registered with the DMV at the same address is on the account. That makes overnight power about 14.00&cent; in summer and 11.35&cent; the rest of the year.</p>
+              <p><strong>SMUD SolarShares.</strong> Residential SolarShares supplies your home from solar farms SMUD built in the Sacramento region, with no panels on your roof. It runs for 20 years: charges of $2.00 per kW a month in year one fall to $0 by year six, then turn into credits that grow to $2.25 per kW from year 12. Solar and Storage Rate customers cannot join, and it does not satisfy the Title 24 solar requirement for new homes.</p>
+
+              <h3 className='text-lg font-bold text-foreground mt-8 mb-3'>LADWP</h3>
+              <p><strong>LADWP Tier 1 vs. Tier 2.</strong> On the standard R-1A plan, Tier 1 is the first 350 kWh a month in Zone 1 or 500 kWh in Zone 2 (700 and 1,000 kWh on a two-month bill), and Tier 2 is the next block. For July to September 2026, Tier 1 costs 26.408&cent;/kWh and Tier 2 32.267&cent;; from October 1 they are 27.292&cent; and 33.151&cent;. From October to May, Tier 3 costs the same as Tier 2. See <Link href='/blog/ladwp-rates' className={sourceLink}>LADWP rates</Link>.</p>
+
+              <h3 className='text-lg font-bold text-foreground mt-8 mb-3'>Finding your provider and its rates</h3>
+              <p><strong>Who is the electricity provider in my area?</strong> Your bill names it. Otherwise, the CPUC&apos;s rate comparison tool takes a ZIP code, city or county and lists the investor-owned utility and community choice aggregators there; the California Energy Commission&apos;s service-area map covers city and district utilities too. The step-by-step lookup is in <Link href='/blog/electricity-rates-by-zip-code' className={sourceLink}>electricity rates by ZIP code</Link>.</p>
+              <p><strong>Electric supply rates near me.</strong> California has no open market for household electricity supply. If your city joined a CCA, the CCA sets the generation price and the utility still delivers the power; otherwise the utility supplies both. Buying from another supplier, Direct Access, is capped and allocated by lottery (see <Link href='/blog/direct-access-electricity-california' className={sourceLink}>Direct Access in California</Link>).</p>
+              <p className='text-foreground/60 text-xs mb-10'>Sources for this section, fetched {t3VerifiedDisplay}: <a href={SRC.pgeResRatesCurrent.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>PG&amp;E residential rates table</a>; <a href={SRC.pgeTariffIndex.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>PG&amp;E tariffs</a>; <a href={SRC.pgeRule30.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>PG&amp;E Electric Rule 30</a>; <a href={SRC.pgeDataCentersNews.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>PG&amp;E on data centers</a>; <a href={SRC.pgeGrc2027.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>PG&amp;E 2027 general rate case</a>; <a href={SRC.pgeBscNews.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>PG&amp;E on the March 2026 bill</a>; <a href={SRC.paoPgeRequests.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>Public Advocates Office PG&amp;E fact sheet</a>; <a href='https://www.pge.com/en/clean-energy/solar/getting-started-with-solar.html' target='_blank' rel='noopener noreferrer' className={sourceLink}>PG&amp;E getting started with solar</a>; <a href={SRC.sdgePricingPlans.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>SDG&amp;E pricing plans</a>; <a href={SRC.sdgeTouDr1Aug2026.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>SDG&amp;E TOU-DR1</a> and <a href={SRC.sdgeEvTou5Aug2026.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>EV-TOU-5</a> rate tables; <a href={SRC.smudRtod.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD Rate Schedule R-TOD</a>; <a href={SRC.smudRateArchive.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD rate archive</a>; <a href={SRC.smudTodDetails.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD Time-of-Day details</a>; <a href={SRC.smudCompare.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD rate comparison</a>; <a href={SRC.smudEvRate.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD EV rates</a>; <a href={SRC.smudSolarShares.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD SolarShares</a>; <a href={SRC.ladwpResRates.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>LADWP residential rates</a>; <a href={SRC.ladwpRateGuide.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>LADWP rate guide</a>; <a href={SRC.cpucRateComparison.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>CPUC rate comparison</a>; <a href={SRC.cecServiceAreas.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>CEC service-area map</a>; <a href={SRC.cpucNbt.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>CPUC net billing</a>.</p>
+
               <h2 id='methodology' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>How These Rates Are Calculated (Methodology)</h2>
               <p className='font-semibold text-foreground mb-2'>Primary sources used</p>
               <ol className='list-decimal pl-6 space-y-2'>
@@ -422,28 +531,8 @@ export default function CaliforniaUtilityRateTrackerPage() {
               <p className='font-semibold text-foreground mt-6 mb-2'>Update cadence</p>
               <p className='mb-10'>Monthly review; substantive rate-table updates only when a new CPUC Public Advocates Office quarterly report publishes (expect roughly: end of April, end of July, early November, mid-February) or when a utility files a rate-changing advice letter the Public Advocates Office has not yet rolled up.</p>
 
-              <h2 id='faq' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>Frequently Asked Questions</h2>
-              <div className='space-y-6'>
-                <div>
-                  <p className='font-semibold text-foreground mb-1'>What does &ldquo;residential average rate&rdquo; mean?</p>
-                  <p className='m-0'>It is total residential class revenue divided by total residential kilowatt-hours sold &mdash; a blended average across every residential rate plan, time-of-use period and customer type at a utility. It is not the rate on any one household&apos;s specific tariff.</p>
-                </div>
-                <div>
-                  <p className='font-semibold text-foreground mb-1'>Does this page include the California Climate Credit?</p>
-                  <p className='m-0'>No. The figures on this page exclude the California Climate Credit, a twice-yearly bill credit funded by cap-and-trade allowance revenue, matching the convention the CPUC Public Advocates Office itself uses for these figures.</p>
-                </div>
-                <div>
-                  <p className='font-semibold text-foreground mb-1'>Why is the 12-month change on this page not a CPUC-published figure?</p>
-                  <p className='m-0'>The Public Advocates Office publishes 3-year, 5-year and 10-year change figures, not a 1-year figure. This page calculates its own 12-month change from two officially sourced quarterly snapshots and shows the arithmetic (see the box above the &ldquo;What Changed This Month&rdquo; section), so it stays auditable and is never mistaken for a CPUC-stated number.</p>
-                </div>
-                <div>
-                  <p className='font-semibold text-foreground mb-1'>Why isn&apos;t there a Q3 2026 row in the rate-history table yet?</p>
-                  <p className='m-0'>As of {dataVerifiedDisplay}, the CPUC Public Advocates Office had not yet published a Q3 2026 Electric Rates Report. Its cadence has been to publish roughly one month after quarter-end, so a Q3 2026 report (covering July&ndash;September 2026) is expected around late October&ndash;early November 2026.</p>
-                </div>
-                <div>
-                  <p className='font-semibold text-foreground mb-1'>Does this page estimate savings or compare solar options?</p>
-                  <p className='m-0'>No. This is a reference page of sourced, dated rate figures. It does not estimate savings, compare solar proposals, or name any installer.</p>
-                </div>
+              <div className='not-prose'>
+                <FaqBlock items={trackerFaqs} id='faq' heading='Frequently Asked Questions' />
               </div>
 
               <h2 id='sources' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>Sources and How We Update This Page</h2>
@@ -478,6 +567,8 @@ export default function CaliforniaUtilityRateTrackerPage() {
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Related Reading</h2>
               <ul className='list-disc pl-6 space-y-2 mb-10'>
                 <li><Link href='/blog/why-is-my-california-electric-bill-so-high' className={sourceLink}>why your bill can run higher than the average rate suggests</Link></li>
+                <li><Link href='/blog/electricity-rates-by-zip-code' className={sourceLink}>finding the rate for your address</Link></li>
+                <li><Link href='/blog/pge-rate-schedules' className={sourceLink}>every PG&amp;E residential rate schedule</Link></li>
                 <li><Link href='/blog/net-billing-vs-net-metering-california' className={sourceLink}>how solar export credits are calculated</Link></li>
                 <li><Link href='/blog/nem-2-vs-nem-3-california' className={sourceLink}>NEM 2.0 vs. NEM 3.0</Link></li>
                 <li><Link href='/blog/how-to-lower-electric-bill-california' className={sourceLink}>ways to lower your bill</Link></li>

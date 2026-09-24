@@ -26,13 +26,18 @@ const published = '2026-04-24';
 const updated = '2026-09-23';
 const hub = { label: 'Why California electric bills are high', href: '/blog/why-is-my-california-electric-bill-so-high' };
 
-const sources = rateSources('sceTou', 'sceTiered', 'sceBsc', 'sceNemBill', 'sceRateOptions', 'sceRateCompare', 'dceSolar', 'paoQ2_2026', 'paoQ3_2025', 'cpucClimateCredit', 'cpucCareFera', 'cpucNbt', 'smudResRates');
+const sources = rateSources('sceTou', 'sceTiered', 'sceBsc', 'sceNemBill', 'sceRateOptions', 'sceRateCompare', 'dceSolar', 'paoQ2_2026', 'paoQ3_2025', 'cpucClimateCredit', 'cpucCareFera', 'cpucNbt', 'smudResRates', 'scePastBills');
 
 const faqs = [
   {
     question: 'Why is my SCE bill so high this month?',
     answer:
       "Compare kWh per day with the same month last year before anything else. If daily use is similar, look at the season and the hour: SCE's TOU-D-4-9PM plan charged about 58 cents per kWh on summer weekday evenings against 34 cents off-peak, per SCE's plan page. Also check whether the California Climate Credit, $36.00 on SCE bills in August and again in September 2026, is missing from the bill you are comparing.",
+  },
+  {
+    question: 'How do I get a copy of my SCE bill?',
+    answer:
+      "Log in to SCE's My Account, open the Billing & Payment Options card and choose Billing & Payment History, where you can view up to 36 months of charges and payments and download PDFs of past bills. SCE's Copy of Bill self-service form also returns PDF copies: up to three years of history, 12 bills at a time.",
   },
   {
     question: 'Did Edison raise rates recently?',
@@ -103,7 +108,9 @@ export default function WhyIsMySCEBillSoHigh() {
 
               <h2>Start with two bills from comparable periods</h2>
               <p>
-                Pull the current bill and the same season from last year if you have it. Record the billing days, total kWh,
+                Pull the current bill and the same season from last year if you have it. If you no longer have the paper
+                copy, SCE&apos;s My Account shows up to 36 months of bill history with PDFs, and its Copy of Bill form returns up
+                to three years of bills, 12 at a time. Record the billing days, total kWh,
                 electric charges, rate-plan name and any generation-provider line. A larger bill over more days is not the
                 same change as a larger bill over the same number of days.
               </p>
@@ -158,7 +165,12 @@ export default function WhyIsMySCEBillSoHigh() {
                 <strong>4. The Base Services Charge.</strong> In November 2025 SCE replaced its old Basic Charge with a Base
                 Services Charge, about $24 a month for most customers, $12 for FERA customers and qualifying affordable
                 housing, and $6 for CARE customers, and cut the per-kWh price by about 10%. SCE&apos;s own chart says low-use
-                homes may see a higher bill and high-use homes a lower one. Solar customers pay it too.
+                homes may see a higher bill and high-use homes a lower one. Solar customers pay it too. The full list of
+                what moved on SCE statements is in{' '}
+                <Link href="/blog/sce-rate-increase-2026" className={guideLink}>
+                  what changed on SCE bills since November 2025
+                </Link>
+                .
               </p>
               <p>
                 <strong>5. Rate changes.</strong> SCE&apos;s residential average rose about 13.1% on October 1, 2025, when its

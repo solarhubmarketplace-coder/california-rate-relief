@@ -35,6 +35,9 @@ const sources = rateSources(
   'smudResRates',
   'ladwpBillingFaq',
   'cpucCareFera',
+  'cpucRateComparison',
+  'pgeResRatesCurrent',
+  'pgeBillForecast',
 );
 
 const faqs = [
@@ -42,6 +45,11 @@ const faqs = [
     question: 'What is the average electric bill in California?',
     answer:
       'The U.S. Energy Information Administration puts the 2024 average at $160.86 a month for California residential customers, based on 503 kWh a month at an average 31.97 cents per kWh. It is the most recent full-year figure; EIA plans its 2025 update for October 2026.',
+  },
+  {
+    question: 'How do I estimate my electric bill?',
+    answer:
+      "Multiply the kWh you expect to use by your plan's price per kWh, then add the fixed charge. On PG&E's E-TOU-C plan from March 1, 2026, 500 kWh at the 39.940-cent summer off-peak price is $199.70, plus about $23.80 of Base Services Charge for a 30-day bill, before peak-hour use, the baseline credit and taxes. The CPUC's rate comparison tool lists the plans and prices for your ZIP code, and PG&E's Bill Forecast Alert warns you when a bill is on track to exceed an amount you set.",
   },
   {
     question: 'What is the average gas bill in California per month?',
