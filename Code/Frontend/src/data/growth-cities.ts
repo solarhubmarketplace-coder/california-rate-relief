@@ -4618,34 +4618,144 @@ export const growthCities: Record<string, GrowthCity> = {
     contentModified: "2026-09-23",
   },
 
-  merced: {
-    name: "Merced",
-    county: "Merced County",
-    // Corrected 2026-09-22: Merced is split between Merced Irrigation District
-    // and PG&E (mercedid.org/power; CEC load-serving-entity layer), so no single
-    // utility is pre-selected for the inquiry.
-    utility: "other",
-    sourceCheckedDate: "2026-09-22",
-    bill:
-      "Merced has two electric utilities. Merced Irrigation District says it provides electric service to customers in the cities of Livingston, Atwater and Merced, and the California Energy Commission's service-territory map shows both Merced Irrigation District and PG&E territory inside the city limits. Read the utility name on the current bill, then have every bidder use that utility's rate schedule and solar rules.",
-    local:
-      "Merced's Development Services Department issues residential building permits, including solar, but the city's own site returned an access error every time it was checked this session, so its current permit path could not be independently confirmed here. Ask the bidder to name the department's current process, required inspections and timeline directly, and confirm it against the department before signing. Merced's Central Valley location has hot, clear summers that favor solar production but also raise panel temperatures on the hottest afternoons, and winter tule fog can reduce output for stretches of December and January.",
-    example:
-      "Put the same roof layout, shading and twelve months of usage from the account's actual utility into every Merced bid. Then compare total price, financing terms, equipment, the Development Services permit scope and the bill that remains after the system is installed.",
-    sources: [
-      {
-        label: "Merced Irrigation District — MID Power (electric service area)",
-        url: "https://mercedid.org/power/",
-      },
-      {
-        label: "California Energy Commission — Electric Load Serving Entities (IOU & POU) service-territory map",
-        url: "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about",
-      },
-      {
-        label: "PG&E — official site",
-        url: "https://www.pge.com/",
-      },
+  "merced": {
+    "name": "Merced",
+    "county": "Merced County",
+    "utility": "other",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Merced has two electric utilities. Merced Irrigation District says it serves customers in the cities of Livingston, Atwater and Merced, and the California Energy Commission's service-territory map puts about 78% of Merced's area in MID territory and about 22% in PG&E's. The difference matters: MID's net metering and PG&E's Solar Billing Plan value exported power very differently. Read the utility name on your bill first.",
+    "local": "Merced told the Energy Commission that SolarAPP+ is its automated permit platform, and the SolarAPP+ program lists the City as accepting solar with battery storage and main panel upgrades but not main breaker derates. In 2025 every one of the City's 371 residential solar permits was issued online. Merced County, which permits unincorporated areas, also reported SolarAPP+.",
+    "example": "For an MID address, ask each bidder to model MID's NEM 2.0 rate and to include MID's $600 residential application fee; for a PG&E address, the Solar Billing Plan. A bidder who quotes the same savings for two Merced homes on different utilities has not checked either bill.",
+    "checks": [
+      [
+        "Which utility",
+        "Name MID or PG&E from your bill and model that utility's solar terms."
+      ],
+      [
+        "MID application",
+        "For MID, include the interconnection packet and the $600 residential application fee."
+      ],
+      [
+        "Meter and PTO",
+        "Say who schedules MID's inspection and meter, and when permission to operate is expected."
+      ],
+      [
+        "Permit route",
+        "Say whether the design fits SolarAPP+; a main breaker derate needs regular review."
+      ]
     ],
+    "sources": [
+      {
+        "label": "Merced Irrigation District: MID Power (electric service area)",
+        "url": "https://mercedid.org/power/"
+      },
+      {
+        "label": "Merced Irrigation District: solar power (NEM 2.0, interconnection steps, application fee)",
+        "url": "https://mercedid.org/power/solar-power/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Residential Solar Permitting Program data, SB 379 platform each jurisdiction reported (updated August 3, 2026)",
+        "url": "https://www.energy.ca.gov/media/9247"
+      },
+      {
+        "label": "SolarAPP+: where SolarAPP+ is available, with the project types each jurisdiction accepts",
+        "url": "https://www.gosolarapp.org/where-is-solarapp-available"
+      },
+      {
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/modesto",
+        "label": "Modesto, another irrigation-district utility city"
+      },
+      {
+        "href": "/solar-savings/central-valley",
+        "label": "Central Valley utilities and rates"
+      },
+      {
+        "href": "/blog/net-billing-vs-net-metering-california",
+        "label": "Net metering versus net billing"
+      }
+    ],
+    "faq": [
+      [
+        "What is the best solar company in Merced?",
+        "This site does not rank them. In Merced, shortlist companies with a CSLB license covering solar that know whether your address is MID or PG&E and have handled that utility's interconnection, then compare at least three written bids built on your own bill."
+      ],
+      [
+        "Does Merced Irrigation District still offer net metering?",
+        "Yes. MID lists its NEM 1.0 rate as closed to new applications and its NEM 2.0 rate as open to new applications, for systems up to one megawatt intended to offset part or all of the customer's own use."
+      ],
+      [
+        "How do I connect solar to MID?",
+        "The application packet goes to solar@mercedid.org or MID's Energy Resources office: the PV application, Net Metering Payment Agreement, Interconnection Agreement, single-line diagram, equipment specification sheet and the system contract, with a $600 fee for residential projects. MID issues approval to proceed, inspects and sets the meter, then issues permission to operate."
+      ],
+      [
+        "How many solar permits does Merced issue?",
+        "The City reported 2,188 residential solar permits to the California Energy Commission for 2024, about 40% with storage and 32% issued online, and 371 for 2025, about 79% with storage and all issued online."
+      ]
+    ],
+    "answer": "Solar companies in Merced first need to know which utility serves the address. Merced Irrigation District covers about four-fifths of the city on the Energy Commission's map and still offers net metering, NEM 2.0, to new solar customers, with a $600 residential application fee; PG&E serves the rest under its Solar Billing Plan. The City permits both through SolarAPP+. Compare at least three written bids built on your own bill.",
+    "keyFacts": [
+      {
+        "label": "Utility split",
+        "value": "MID about 78%, PG&E about 22%",
+        "note": "By area on the CEC map; check your bill",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "MID solar tariff",
+        "value": "NEM 2.0, open",
+        "note": "$600 residential application fee",
+        "source": {
+          "publisher": "Merced Irrigation District",
+          "date": "2026-09-23",
+          "url": "https://mercedid.org/power/solar-power/"
+        }
+      },
+      {
+        "label": "2025 solar permits",
+        "value": "371",
+        "note": "79% with storage, all issued online",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Connecting solar to Merced Irrigation District",
+        "paragraphs": [
+          "MID runs its own electric utility for eastern Merced County, including most of the City of Merced. Its NEM 1.0 rate is closed, but its NEM 2.0 rate is open to new applications, for customer-owned solar up to one megawatt that is meant to offset part or all of the customer's own electricity use. That is a different arrangement from PG&E's Solar Billing Plan, and a proposal should say which one it assumes.",
+          "MID's process has five steps. The customer or contractor sends the application packet, with the PV application, Net Metering Payment Agreement, Interconnection Agreement, single-line diagram, equipment specification sheet and system contract, to solar@mercedid.org or MID's Energy Resources office, with a $600 fee for a residential project. MID reviews it and issues approval to proceed with construction, then inspects the system and places the meter, issues permission to operate and sets up the account."
+        ]
+      },
+      {
+        "heading": "Merced's permits and PG&E addresses",
+        "paragraphs": [
+          "The City reported SolarAPP+ to the Energy Commission as its automated platform, and the SolarAPP+ program lists Merced as accepting solar with storage and main panel upgrades but not main breaker derates. The City's SB 379 reports show a very active market: 2,188 residential solar permits in 2024, about 40% with storage and 32% issued online, then 371 in 2025, about 79% with storage and every one issued online.",
+          "About a fifth of the city's area is PG&E territory on the Energy Commission's map. There, the Solar Billing Plan applies: monthly billing, an annual True-Up statement, and Energy Export Bonus Credits for customers who start before 2028. If your bill says PG&E, the MID steps above do not apply to you."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
   },
 
   "moreno-valley": {
@@ -11658,6 +11768,681 @@ export const growthCities: Record<string, GrowthCity> = {
         "paragraphs": [
           "Davis reported SolarAPP+ to the Energy Commission as its SB 379 platform, and the SolarAPP+ program lists the City as accepting solar with storage, main panel upgrades and main breaker derates, a broader scope than some nearby cities allow. The City has not filed an annual permit report in the Commission's data file, so ask each bidder for its own recent Davis timelines rather than relying on a regional average.",
           "VCE is candid about one limit of solar alone: during a PG&E Public Safety Power Shutoff, a solar home loses power too unless it has a battery, and most batteries cover a few hours depending on size. VCE says it mirrors PG&E's rates for energy storage. If backup matters to you, ask for the battery as a separate line and the circuits it will carry."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "elk-grove": {
+    "name": "Elk Grove",
+    "county": "Sacramento County",
+    "utility": "smud",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Elk Grove is entirely SMUD territory on the California Energy Commission's utility map, so neither PG&E's Solar Billing Plan nor a community choice provider applies. New systems go on SMUD's Solar and Storage Rate, which pays 9.6 cents per kWh for exported power at any hour or season, and SMUD caps system size at 110% of your last twelve months of use, or 120% with a battery. A proposal built on PG&E's export credits is modeling the wrong utility.",
+    "local": "Elk Grove requires an approval letter from SMUD before any residential solar application is submitted, and all residential solar submittals go through eTRAKiT, the City's online permit system. For the SolarAPP+ route the contractor also needs an approval letter from the CCSD Fire Department, and the CCSD Fire approval is required whenever a battery backup system is installed.",
+    "example": "Because SMUD limits the system to 110% of your past year's use, or 120% with a battery, two bids for the same Elk Grove home should land on similar sizes. If one is much larger, ask how it fits SMUD's limit. Then compare what each design exports at 9.6 cents against what it saves on power you would otherwise buy from SMUD.",
+    "checks": [
+      [
+        "SMUD first",
+        "Show SMUD's approval letter before the City application, and SMUD's interconnection fee in the price."
+      ],
+      [
+        "Fire approval",
+        "Include the CCSD Fire approval for a SolarAPP+ permit or any battery backup system."
+      ],
+      [
+        "System size",
+        "Size to SMUD's cap: 110% of the last 12 months' use, or 120% with a battery."
+      ],
+      [
+        "Panel limits",
+        "For SolarAPP+, stay within a 400 A main service and 225 A disconnect and busbar."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Elk Grove: streamlining solar permitting with SolarAPP+ (SMUD and CCSD Fire approval letters)",
+        "url": "https://elkgrove.gov/plan-review-and-permits/streamlining-solar-permitting-solarapp"
+      },
+      {
+        "label": "City of Elk Grove: residential solar photovoltaic permits (eTRAKiT, review times, battery approvals)",
+        "url": "https://elkgrove.gov/solar-and-electric-vehicle-ev-permits/residential-solar-photovoltaic-permits"
+      },
+      {
+        "label": "SMUD: solar for your home (Solar and Storage Rate, sizing, interconnection fee)",
+        "url": "https://www.smud.org/Going-Green/Solar-for-your-home"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California Energy Commission: Residential Solar Permitting Program data, SB 379 platform each jurisdiction reported (updated August 3, 2026)",
+        "url": "https://www.energy.ca.gov/media/9247"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/blog/smud-solar-program",
+        "label": "SMUD's solar program and what it pays"
+      },
+      {
+        "href": "/solar-companies/sacramento",
+        "label": "Sacramento, SMUD's home city"
+      },
+      {
+        "href": "/solar-companies/galt",
+        "label": "Galt, the next SMUD city south"
+      }
+    ],
+    "faq": [
+      [
+        "Who are the best solar companies in Elk Grove?",
+        "This site does not rank them. In Elk Grove, shortlist companies with a C-10 or C-46 license, the licenses SMUD says a solar contractor should hold, that have filed SMUD interconnection applications and Elk Grove permits before. Then compare at least three written bids built on your SMUD bill."
+      ],
+      [
+        "Does SMUD have to approve my solar before the City permit?",
+        "Yes. The City says an approval letter from SMUD is required before any residential solar application is submitted for review, and its SolarAPP+ steps list approval letters from both SMUD and the CCSD Fire Department."
+      ],
+      [
+        "How long does an Elk Grove solar permit take?",
+        "On the standard route the City asks you to allow at least three business days for the first plan review of a system up to 38.4 kW, and ten business days for a larger system. Eligible SolarAPP+ projects skip plan review; the contractor applies in eTRAKiT with the SolarAPP+ approval."
+      ],
+      [
+        "What does SMUD pay for extra solar?",
+        "On SMUD's Solar and Storage Rate, power you do not use or store is bought back at 9.6 cents per kWh, no matter the time of day or season. SMUD does not offer rebates for solar installations, but it offers battery storage incentives."
+      ]
+    ],
+    "answer": "Solar companies in Elk Grove work with SMUD, not PG&E, and need an approval letter from SMUD before the City will accept a solar application; the CCSD Fire Department also signs off before a SolarAPP+ permit and whenever a battery is installed. The City issues SolarAPP+ permits through eTRAKiT for rooftop systems up to 38.4 kW. SMUD buys exported power at 9.6 cents per kWh. Compare at least three written bids built on your SMUD bill.",
+    "keyFacts": [
+      {
+        "label": "Electric utility",
+        "value": "SMUD",
+        "note": "Approval letter required before the City application",
+        "source": {
+          "publisher": "City of Elk Grove",
+          "date": "2026-09-23",
+          "url": "https://elkgrove.gov/solar-and-electric-vehicle-ev-permits/residential-solar-photovoltaic-permits"
+        }
+      },
+      {
+        "label": "SMUD export rate",
+        "value": "9.6 cents per kWh",
+        "note": "Solar and Storage Rate, any hour or season",
+        "source": {
+          "publisher": "SMUD",
+          "date": "2026-09-23",
+          "url": "https://www.smud.org/Going-Green/Solar-for-your-home"
+        }
+      },
+      {
+        "label": "SolarAPP+ limit",
+        "value": "38.4 kW",
+        "note": "Rooftop, main dwelling; C-46, C-10 or B license",
+        "source": {
+          "publisher": "City of Elk Grove",
+          "date": "2026-09-23",
+          "url": "https://elkgrove.gov/plan-review-and-permits/streamlining-solar-permitting-solarapp"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "SMUD, CCSD Fire and the City: three sign-offs",
+        "paragraphs": [
+          "An Elk Grove solar job touches three agencies. SMUD comes first: the City will not take a residential solar application without SMUD's approval letter, and SMUD's solar team handles that step. For the automated SolarAPP+ route, the City's steps also call for an approval letter from the CCSD Fire Department, and CSD Fire approval is required any time a battery backup system is installed.",
+          "Only then does the permit itself come in. Every residential solar submittal goes through eTRAKiT. Eligible projects use SolarAPP+: main-dwelling rooftop systems up to 38.4 kilowatts, no ballasted or building-integrated panels, licensed C-46, C-10 or B contractors only, and service equipment up to a 400-amp main service with 225-amp disconnects and busbars. SolarAPP+ charges a $25 processing fee that covers up to three revisions. Other projects take plan review, which the City asks you to allow at least three business days for, or ten for a system over 38.4 kW."
+        ]
+      },
+      {
+        "heading": "How SMUD treats an Elk Grove solar home",
+        "paragraphs": [
+          "SMUD, the Sacramento Municipal Utility District, sets its own solar rules. New systems go on its Solar and Storage Rate, which buys exported power at 9.6 cents per kWh whatever the hour or season. SMUD lets a system be sized up to 110% of the last twelve months of consumption, or up to 120% on the Solar and Storage Rate if a battery is added, and it charges a one-time interconnection fee on every new solar, solar-plus-storage or storage-only system, applied since March 1, 2022 and collected with the application.",
+          "SMUD does not sell solar systems and offers no rebate for solar panels, but it does offer battery storage incentives. The contractor you choose files the interconnection application with SMUD; SMUD says the contractor should hold a C-10 electrician's license or a C-46 solar license. Elk Grove has not filed an annual SB 379 permit report in the Energy Commission's data file, so ask each bidder how many Elk Grove jobs it has taken through SMUD recently."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "galt": {
+    "name": "Galt",
+    "county": "Sacramento County",
+    "utility": "smud",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Galt sits at the southern edge of SMUD territory, and the California Energy Commission's utility map shows SMUD across the whole city, with no PG&E and no community choice provider. That puts a Galt solar home on SMUD's Solar and Storage Rate, which pays 9.6 cents per kWh for exported power at any hour, rather than PG&E's Solar Billing Plan. Ask each bidder to confirm which utility its savings figure uses.",
+    "local": "The City of Galt reported to the Energy Commission that it has no automated solar permitting platform, and its SB 379 report for 2024 counts 43 residential solar permits, 7 of them with battery storage and none issued online. Expect a staff plan review rather than an instant permit, and ask each bidder how long its recent Galt permits have taken.",
+    "example": "Many Galt searches are about solar roofing. If your roof needs replacing within the next several years, get the reroof and solar priced together or in sequence, and ask how the bid handles removing and reinstalling panels later. SMUD's size cap applies whichever way you do it: 110% of the last twelve months' use, or 120% with a battery.",
+    "checks": [
+      [
+        "SMUD rules",
+        "Model SMUD's Solar and Storage Rate and its 9.6-cent export price, not PG&E's plan."
+      ],
+      [
+        "System size",
+        "Keep the design within SMUD's cap: 110% of past-year use, or 120% with a battery."
+      ],
+      [
+        "Permit time",
+        "Plan for a staff review; Galt reports no automated platform."
+      ],
+      [
+        "Roof first",
+        "Say whether the roof will outlast the panels, and price a later removal and reinstall."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "SMUD: solar for your home (Solar and Storage Rate, sizing, interconnection fee)",
+        "url": "https://www.smud.org/Going-Green/Solar-for-your-home"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California Energy Commission: Residential Solar Permitting Program data, SB 379 platform each jurisdiction reported (updated August 3, 2026)",
+        "url": "https://www.energy.ca.gov/media/9247"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Government Code section 65850.52 (SB 379 automated solar permitting schedule)",
+        "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=65850.52"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/elk-grove",
+        "label": "Elk Grove, SMUD's permit route next door"
+      },
+      {
+        "href": "/blog/solar-panel-removal-reinstall-cost",
+        "label": "What removing and reinstalling panels costs for a reroof"
+      },
+      {
+        "href": "/blog/smud-peak-hours",
+        "label": "SMUD's peak hours and how they affect a solar home"
+      }
+    ],
+    "faq": [
+      [
+        "What are the best solar companies in Galt, CA?",
+        "This site does not rank them. Look for companies holding a C-10 or C-46 license, as SMUD recommends, that have filed SMUD interconnection applications and City of Galt permits recently, and compare at least three written bids built on your SMUD bill."
+      ],
+      [
+        "Is Galt served by PG&E or SMUD?",
+        "SMUD. The California Energy Commission's utility map places the whole city in SMUD territory, with no community choice provider. PG&E's Solar Billing Plan does not apply to a Galt home served by SMUD."
+      ],
+      [
+        "Can I get an instant solar permit in Galt?",
+        "Not on current figures. Galt reported to the Energy Commission that it has no automated solar permitting platform, and none of its 43 residential solar permits in 2024 was issued online. Ask each bidder for its recent Galt review times."
+      ],
+      [
+        "What does SMUD pay for solar I don't use?",
+        "On the Solar and Storage Rate, SMUD buys exported power at 9.6 cents per kWh regardless of time of day or season. SMUD offers no rebate for the solar panels themselves, but it does offer battery storage incentives."
+      ]
+    ],
+    "answer": "Solar companies in Galt connect a home system to SMUD, which serves the whole city, and pull the permit from the City of Galt, which reported no automated online solar permit platform to the Energy Commission and issued none of its 43 residential solar permits online in 2024. SMUD buys exported power at 9.6 cents per kWh and caps system size at your past year's use plus 10%. Compare at least three written bids built on your SMUD bill.",
+    "keyFacts": [
+      {
+        "label": "Electric utility",
+        "value": "SMUD",
+        "note": "Whole city on the CEC map; no PG&E",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "2024 solar permits",
+        "value": "43",
+        "note": "16% with storage, none issued online",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      },
+      {
+        "label": "Automated platform",
+        "value": "None reported",
+        "note": "Galt's SB 379 status with the Energy Commission",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/media/9247"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "What SMUD means for a Galt solar quote",
+        "paragraphs": [
+          "SMUD, the Sacramento Municipal Utility District, sets its own solar terms. On its Solar and Storage Rate, exported power earns 9.6 cents per kWh whatever the hour or season. That flat price makes the arithmetic simpler than PG&E's hourly export values, and it means a bid can show, line by line, how much of the output you use at home and how much you sell back at 9.6 cents.",
+          "SMUD enforces that with a sizing limit: up to 110% of your last twelve months of consumption, or 120% on the Solar and Storage Rate if a battery is added. It charges a one-time interconnection fee on new solar, solar-plus-storage and storage-only systems, and it offers no rebate on the panels themselves, though it does have battery storage incentives. The contractor files the interconnection application with SMUD."
+        ]
+      },
+      {
+        "heading": "Galt's permit office and permit numbers",
+        "paragraphs": [
+          "Galt has about 25,500 residents, and Government Code section 65850.52, the SB 379 statute, gave cities of 50,000 or fewer until September 30, 2024 to offer automated solar permitting. The City told the Energy Commission it has no automated platform, and its annual report shows the result: 43 residential solar permits in 2024, 7 with battery storage, none issued online. Elk Grove, a much larger SMUD city to the north, uses SolarAPP+.",
+          "A smaller permit volume is not necessarily a slower one, but it does mean fewer installers have recent Galt experience. Ask each bidder how many Galt permits it has pulled, how long the last one took from submittal to issue, and who will meet the inspector. If your roof is near the end of its life, ask whether reroofing first would avoid paying to remove and reinstall the panels later."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "clovis": {
+    "name": "Clovis",
+    "county": "Fresno County",
+    "utility": "pge",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Clovis is PG&E territory with no community choice provider on the California Energy Commission's maps, so PG&E supplies both generation and delivery and its Solar Billing Plan sets what your exports earn. PG&E bills that plan monthly, sends a True-Up statement each year, and adds Energy Export Bonus Credits for customers who start before 2028. Have each bidder model it from your own twelve months of usage.",
+    "local": "Since September 30, 2023, the Clovis Building Division has taken photovoltaic permits three ways: plans and applications in person, plans through the online Citizen Self Service portal for projects that meet the City's eligibility list, and SolarAPP+ applications through the same portal. SolarAPP+ is for contractors only; owner-builders use one of the first two routes.",
+    "example": "Clovis's monthly Photovoltaic Reports list each permit's contractor, system size, application date and issue date. Before you sign, look up the company in a recent report: it shows whether the bidder actually pulls permits in Clovis and how long its permits took to issue. A bid for a system far larger or smaller than similar homes in the report deserves a question.",
+    "checks": [
+      [
+        "Permit route",
+        "Say whether the job is filed in person, online through Citizen Self Service, or through SolarAPP+."
+      ],
+      [
+        "Panel work",
+        "SolarAPP+ in Clovis does not accept panel upgrades; say whether the design needs one."
+      ],
+      [
+        "Track record",
+        "Point to the bidder's recent permits in the City's monthly Photovoltaic Report."
+      ],
+      [
+        "PG&E plan",
+        "Model PG&E's Solar Billing Plan, including bonus credits for a pre-2028 start."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Clovis: Building Division solar permit submission methods",
+        "url": "https://www.clovisca.gov/services/planning_development/building/index.php"
+      },
+      {
+        "label": "City of Clovis: monthly Photovoltaic Reports (October 2025 report used here)",
+        "url": "https://www.clovisca.gov/services/planning_development/building/photovoltaic_reports.php"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Residential Solar Permitting Program data, SB 379 platform each jurisdiction reported (updated August 3, 2026)",
+        "url": "https://www.energy.ca.gov/media/9247"
+      },
+      {
+        "label": "SolarAPP+: where SolarAPP+ is available, with the project types each jurisdiction accepts",
+        "url": "https://www.gosolarapp.org/where-is-solarapp-available"
+      },
+      {
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/fresno",
+        "label": "Fresno next door, and its permit numbers"
+      },
+      {
+        "href": "/blog/pge-solar-billing-plan",
+        "label": "PG&E's Solar Billing Plan, explained"
+      },
+      {
+        "href": "/battery/how-many-batteries-do-i-need-california",
+        "label": "How much battery a Clovis home needs"
+      }
+    ],
+    "faq": [
+      [
+        "Who are the best solar installers in Clovis?",
+        "This site does not rank them. A practical filter in Clovis is the City's monthly Photovoltaic Report, which names the contractor on every permit: shortlist companies with a CSLB license covering solar that appear in recent reports and confirm your address in writing, then compare at least three written bids for the same system."
+      ],
+      [
+        "How fast are Clovis solar permits issued?",
+        "In the City's October 2025 Photovoltaic Report, 98 residential roof-mount permits were issued a median of seven days after application, and 10 permits the report classes as Real Time Solar were issued a median of zero days after application, most the same day."
+      ],
+      [
+        "Can a homeowner get a solar permit in Clovis?",
+        "Yes, but not through SolarAPP+, which the City restricts to contractors. Owner-builders can submit plans and an application in person, or online through Citizen Self Service if the project meets the City's eligibility list."
+      ],
+      [
+        "How many solar permits does Clovis issue?",
+        "Clovis reported 935 residential solar permits to the California Energy Commission for 2023. Of those, 694, about 74%, included battery storage, and 889, about 95%, were issued online."
+      ]
+    ],
+    "answer": "Solar installers in Clovis can file a residential solar permit in person, online through the City's Citizen Self Service portal, or, for contractors only, through SolarAPP+ in the same portal. The City publishes a monthly report of every photovoltaic permit, with the contractor, system size and dates, so you can see who is pulling Clovis permits. PG&E serves the whole city. Compare at least three written bids built on your own PG&E bill.",
+    "keyFacts": [
+      {
+        "label": "2023 solar permits",
+        "value": "935",
+        "note": "74% with storage, 95% issued online",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      },
+      {
+        "label": "Typical wait, Oct 2025",
+        "value": "7 days",
+        "note": "Median, application to issue, residential roof mounts",
+        "source": {
+          "publisher": "City of Clovis Photovoltaic Report",
+          "date": "2026-09-23",
+          "url": "https://www.clovisca.gov/services/planning_development/building/photovoltaic_reports.php"
+        }
+      },
+      {
+        "label": "Utility",
+        "value": "PG&E",
+        "note": "No community choice provider",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Three ways to file a Clovis solar permit",
+        "paragraphs": [
+          "The City opened its current solar routes on September 30, 2023. An applicant can bring plans and an application to the Building Division, submit plans online through the Citizen Self Service portal when the project meets the City's Photovoltaic System Eligibility List, or submit a SolarAPP+ application, under SB 379, through the same portal. The SolarAPP+ route is for contractors only, and the City says residential roof-mounted and ground-mounted photovoltaic permits have a new fee structure, posted on its Building page.",
+          "The SolarAPP+ program lists Clovis as accepting solar with battery storage but not main panel upgrades or main breaker derates. A design that needs new service equipment therefore goes through the online or in-person review, which a bid's schedule should allow for."
+        ]
+      },
+      {
+        "heading": "What Clovis's permit reports show",
+        "paragraphs": [
+          "Clovis is unusual in publishing a monthly Photovoltaic Report, going back to 2022, that lists every photovoltaic permit with its work class, application, issue and final dates, status, contractor, system size and a description of the work. The October 2025 report lists 110 permits issued that month: 98 residential roof mounts, 10 classed as Real Time Solar and 2 commercial roof mounts. The residential roof mounts were issued a median of seven days after application; the Real Time Solar permits, a median of zero days.",
+          "The City's SB 379 report to the Energy Commission gives the annual picture: 935 residential solar permits in 2023, about 74% with battery storage and about 95% issued online. Between the two, you can check whether a bidder's timeline is realistic and whether it actually works in Clovis, before you sign anything."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "yuba-city": {
+    "name": "Yuba City",
+    "county": "Sutter County",
+    "utility": "pge",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Yuba City is PG&E territory with no community choice provider on the California Energy Commission's maps, so PG&E supplies generation and delivery and its Solar Billing Plan values your exports. The plan bills monthly with an annual True-Up statement, and customers who start before 2028 receive Energy Export Bonus Credits set when the system gets permission to operate. Each bidder should model that plan from your own usage.",
+    "local": "Yuba City's SolarAPP+ route covers most residential, roof-mounted retrofit systems that conform to the SolarAPP+ eligibility list. The contractor submits the design to SolarAPP+ and pays its processing fee, then creates a building permit application in the City's online portal; the City reviews it, invoices the permit fees and issues the permit once they are paid. The SolarAPP+ program lists Yuba City as accepting solar with storage, but not panel upgrades or breaker derates.",
+    "example": "Ask each bidder whether its design fits Yuba City's SolarAPP+ list; a panel upgrade or breaker derate takes the job out of it. Then ask what the inspection day will need from you: the City wants signed access and smoke-alarm forms, the permit and plans left out by 8 a.m., and unlocked access that does not go through the house.",
+    "checks": [
+      [
+        "SolarAPP+ fit",
+        "Confirm the design is on the eligibility list; panel upgrades and breaker derates are not."
+      ],
+      [
+        "Inspection prep",
+        "List the forms and plans that must be left out by 8 a.m. on inspection day."
+      ],
+      [
+        "Inverter location",
+        "Say whether the inverter is in the garage, so interior access can be arranged."
+      ],
+      [
+        "PG&E plan",
+        "Model PG&E's Solar Billing Plan, including bonus credits for a pre-2028 start."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Yuba City: SolarAPP+ automated solar plan review and inspections",
+        "url": "https://www.yubacity.net/departments/development_services/solar_app.php"
+      },
+      {
+        "label": "City of Yuba City: Solar Permit Plan Submittals and inspection requirements (information bulletin, PDF)",
+        "url": "https://cdnsm5-hosted.civiclive.com/UserFiles/Servers/Server_239174/File/Development%20Services/Building/Information%20Bulletin/Solar%20Permit%20Submittals.pdf"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California Energy Commission: SB 379 Solar Permit Annual Reports data (file dated May 2026)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+      },
+      {
+        "label": "California Energy Commission: Residential Solar Permitting Program data, SB 379 platform each jurisdiction reported (updated August 3, 2026)",
+        "url": "https://www.energy.ca.gov/media/9247"
+      },
+      {
+        "label": "SolarAPP+: where SolarAPP+ is available, with the project types each jurisdiction accepts",
+        "url": "https://www.gosolarapp.org/where-is-solarapp-available"
+      },
+      {
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/chico",
+        "label": "Chico, the next PG&E city up Highway 99"
+      },
+      {
+        "href": "/blog/solar-panel-inspection-california",
+        "label": "What a solar inspection checks"
+      },
+      {
+        "href": "/blog/pge-solar-billing-plan",
+        "label": "How PG&E's Solar Billing Plan credits exports"
+      }
+    ],
+    "faq": [
+      [
+        "What are the best solar companies in Yuba City?",
+        "This site does not rank them. Shortlist companies with a CSLB license covering solar that are registered with SolarAPP+ and confirm your address in writing, then compare at least three written bids for the same system, each built on your own PG&E bill."
+      ],
+      [
+        "Do I need to be home for a Yuba City solar inspection?",
+        "Usually not. The City says it gives no inspection time or advance notice for inspections that only need exterior access, and you need not be present unless the inverter is inside the garage or another locked area. By 8 a.m. you must secure pets, leave the signed access and smoke and carbon monoxide alarm forms, the permit and the approved plans on the porch or by the main panel, and provide unlocked access that does not go through the house."
+      ],
+      [
+        "How do I schedule a solar inspection in Yuba City?",
+        "Online or by calling the inspection request line at (530) 822-4901 by 5 p.m. the business day before. Morning (8 a.m. to noon) or afternoon (noon to 3 p.m.) slots are available, and two-hour windows can be requested on the day by calling (530) 799-0549."
+      ],
+      [
+        "How many solar permits does Yuba City issue?",
+        "Yuba City reported 920 residential solar permits to the California Energy Commission for 2023. Of those, 184, about 20%, included battery storage, and 780, about 85%, were issued online."
+      ]
+    ],
+    "answer": "Solar companies in Yuba City run an eligible rooftop design through SolarAPP+, then apply for the building permit in the City's online portal, where the City invoices its fees and issues the permit once they are paid. Inspectors do not need you home for an exterior-only inspection. PG&E serves the city, with no community choice provider. Compare at least three written bids built on your own PG&E bill.",
+    "keyFacts": [
+      {
+        "label": "2023 solar permits",
+        "value": "920",
+        "note": "20% with storage, 85% issued online",
+        "source": {
+          "publisher": "California Energy Commission (SB 379 reports)",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/sites/default/files/2026-05/Solar_Permit_Annual_Reports_Table_Full_Data_data_ada.xlsx"
+        }
+      },
+      {
+        "label": "Automated permit",
+        "value": "SolarAPP+",
+        "note": "Storage accepted; no panel upgrades or derates",
+        "source": {
+          "publisher": "SolarAPP+",
+          "date": "2026-09-23",
+          "url": "https://www.gosolarapp.org/where-is-solarapp-available"
+        }
+      },
+      {
+        "label": "Utility",
+        "value": "PG&E",
+        "note": "No community choice provider",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Yuba City's SolarAPP+ permit, step by step",
+        "paragraphs": [
+          "The City uses SolarAPP+ for the majority of residential, roof-mounted retrofit systems, and only projects that match the SolarAPP+ eligibility list can use it. First the contractor submits the design through SolarAPP+ and pays its processing fee. Then it creates a building permit application in the City's online portal; the City reviews the application, invoices the building permit fees and issues the permit after they are paid. Permits can also be submitted and paid for at City Hall.",
+          "The City's reports to the Energy Commission show how common the online route has become: 920 residential solar permits in 2023, about 85% issued online and about 20% with battery storage. Sutter County is exempt from SB 379's automated permitting requirement, so a home outside the city limits may follow a different process."
+        ]
+      },
+      {
+        "heading": "Inspection day in Yuba City",
+        "paragraphs": [
+          "Inspections are requested online or by phone at (530) 822-4901 by 5 p.m. the business day before, in a morning or afternoon slot; on the day, a two-hour window can be requested at (530) 799-0549. You will need the Yuba City permit number, the inspection type and a contact name and phone number. The City does not give a time or advance notice for inspections that only need exterior yard access.",
+          "By 8 a.m. the homeowner or installer should have pets secured, the signed Permission for Inspection Access form and signed smoke and carbon monoxide alarm form, the permit and the approved plans left on the front porch or near the main electrical panel, unlocked access that does not go through the house or garage, and a ladder if needed. The inspector does not need to reach panels on a sloped roof that are visible from the ground. Results post to the City's website the next business day."
+        ]
+      }
+    ],
+    "contentModified": "2026-09-23"
+  },
+  "hollister": {
+    "name": "Hollister",
+    "county": "San Benito County",
+    "utility": "pge",
+    "sourceCheckedDate": "2026-09-23",
+    "bill": "Hollister is PG&E delivery territory and Central Coast Community Energy (3CE) generation territory across the whole city on the California Energy Commission's maps. A 3CE solar customer has two true-ups a year: one with PG&E for delivery and one with 3CE, every December, for generation. Have each bidder model both halves from your own bill, under the solar plan that matches your interconnection date.",
+    "local": "The City of Hollister reported to the Energy Commission that it has no automated solar permitting platform, and it has not filed an annual SB 379 permit report. Its solar permit page offers the building permit application and an EV charger checklist, and the Building Division at 339 Fifth Street takes appointments online. Ask each bidder how it will file your permit and how long its recent Hollister permits took.",
+    "example": "3CE settles generation credits in December, so a proposal that shows a year-end credit should say whether you would take it as a bill credit or, above the check threshold, as a check. Ask each bidder to separate 3CE's generation credits from PG&E's delivery charges in its estimate.",
+    "checks": [
+      [
+        "3CE and PG&E",
+        "Model 3CE's December generation true-up and PG&E's delivery true-up separately."
+      ],
+      [
+        "Permit filing",
+        "Say how the permit will be filed with the Building Division and the expected review time."
+      ],
+      [
+        "Roof and birds",
+        "Say whether bird-proofing mesh and roof repairs are included or priced separately."
+      ],
+      [
+        "Battery",
+        "Price the battery as its own line, with usable kWh and backed-up circuits."
+      ]
+    ],
+    "sources": [
+      {
+        "label": "City of Hollister: solar permits for photovoltaic systems and EV charging stations",
+        "url": "https://hollister.ca.gov/government/development_services/solar_permits_for_photovoltaic_(pv)_systems_and_ev_charging_stations.php"
+      },
+      {
+        "label": "City of Hollister: Building Division (appointments and contact)",
+        "url": "https://hollister.ca.gov/government/development_services/building.php"
+      },
+      {
+        "label": "Central Coast Community Energy: Net Energy Metering tariffs and true-up",
+        "url": "https://3cenergy.org/rates/nem/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      },
+      {
+        "label": "California Energy Commission: Residential Solar Permitting Program data, SB 379 platform each jurisdiction reported (updated August 3, 2026)",
+        "url": "https://www.energy.ca.gov/media/9247"
+      },
+      {
+        "label": "PG&E: Solar Billing Plan",
+        "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html"
+      }
+    ],
+    "projectLinks": [
+      {
+        "href": "/solar-companies/salinas",
+        "label": "Salinas, 3CE's largest city nearby"
+      },
+      {
+        "href": "/blog/solar-panel-bird-proofing",
+        "label": "Bird-proofing solar panels: what it costs and when it helps"
+      },
+      {
+        "href": "/blog/what-is-nem-true-up",
+        "label": "What happens at a solar true-up"
+      }
+    ],
+    "faq": [
+      [
+        "What are the best solar companies in Hollister?",
+        "This site does not rank them. Shortlist companies with a CSLB license covering solar that have filed Hollister permits recently and confirm your address in writing, then compare at least three written bids for the same system built on your 3CE and PG&E bill."
+      ],
+      [
+        "Who supplies electricity in Hollister?",
+        "PG&E delivers it and sends the bill, and Central Coast Community Energy supplies the generation by default; the Energy Commission's maps show both across the whole city."
+      ],
+      [
+        "When does 3CE pay for surplus solar?",
+        "For customers on 3CE's Net Energy Metering tariffs, 3CE trues up generation every December and pays Net Surplus Compensation as a bill credit, at $0.023 per kWh in the PG&E service area. Residential customers whose retail credits and surplus compensation total at least $200 can instead request a check within 45 days of the true-up statement."
+      ],
+      [
+        "Does Hollister have instant solar permits?",
+        "The City reported to the Energy Commission that it has no automated solar permitting platform, and it has not filed an annual permit report in the Commission's data file. Expect a regular permit review, and ask each bidder how long its recent Hollister permits took."
+      ]
+    ],
+    "answer": "Solar companies in Hollister connect a home system to PG&E, with Central Coast Community Energy supplying the generation and truing up solar credits every December. The City reported no automated online solar permit platform to the Energy Commission, so expect a regular permit through the Building Division, which works by appointment. Compare at least three written bids built on your own 3CE and PG&E bill.",
+    "keyFacts": [
+      {
+        "label": "Generation",
+        "value": "Central Coast Community Energy",
+        "note": "PG&E delivers and bills",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      },
+      {
+        "label": "3CE true-up",
+        "value": "December",
+        "note": "NSC $0.023/kWh in the PG&E area (NEM tariffs)",
+        "source": {
+          "publisher": "Central Coast Community Energy",
+          "date": "2026-09-23",
+          "url": "https://3cenergy.org/rates/nem/"
+        }
+      },
+      {
+        "label": "Automated platform",
+        "value": "None reported",
+        "note": "Hollister's SB 379 status with the Energy Commission",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://www.energy.ca.gov/media/9247"
+        }
+      }
+    ],
+    "sections": [
+      {
+        "heading": "How 3CE settles a Hollister solar account",
+        "paragraphs": [
+          "3CE handles generation and PG&E handles transmission and distribution, so a 3CE customer on a Net Energy Metering tariff sees PG&E's minimum monthly delivery charges and gets two true-ups each year. 3CE bills monthly for energy used beyond what the system produces, gives retail credits for extra generation within the true-up period, and trues up every December. At that point customers receive credit for earlier generation charges before retail credits accrue, and Net Surplus Compensation as a bill credit.",
+          "3CE's Net Surplus Compensation rate in the PG&E service area is $0.023 per kWh. A residential customer with at least $200 in retail credits and surplus compensation combined can ask for a check within 45 days of the true-up statement; otherwise the amount stays as bill credit. Customers whose interconnection agreement was approved after April 15, 2023 are on the Net Billing Tariff instead, so ask the bidder which one your system will be on."
+        ]
+      },
+      {
+        "heading": "Hollister's permit office",
+        "paragraphs": [
+          "The City told the Energy Commission it has no automated solar permitting platform, and it has not filed an annual SB 379 permit report, so there is no published count of Hollister solar permits or of how many were issued online. Its solar permit page provides the building permit application, and the Building Division, at 339 Fifth Street, takes appointments through an online booking link.",
+          "Homes outside the city limits are permitted by San Benito County, which the Energy Commission lists as exempt from the SB 379 requirement but as having a SolarAPP+ platform. Many Hollister searches also ask about roofs and bird-proofing; if pigeons nesting under panels are a concern, ask each bidder to price critter guards as a separate line rather than assuming they are included."
         ]
       }
     ],

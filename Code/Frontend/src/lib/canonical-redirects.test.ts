@@ -323,7 +323,8 @@ test('Tier 3 wave: vallejo is reinstated and renders from growthCities', () => {
 // twin on this branch. No redirect rows are added.
 const T3_CITYCOS_COMPANIES_SLUGS = new Set([
   'brentwood', 'antioch', 'novato', 'san-rafael', 'napa', 'fairfield', 'vallejo',
-  'tracy', 'davis', 'petaluma',
+  'tracy', 'davis', 'petaluma', 'elk-grove', 'galt', 'clovis', 'yuba-city', 'merced',
+  'hollister',
 ]);
 for (const slug of T3_CITYCOS_COMPANIES_SLUGS) REINSTATED_COMPANIES_SLUGS.add(slug);
 
