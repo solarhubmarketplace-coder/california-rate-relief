@@ -560,8 +560,8 @@ export const SAVINGS_BILLS_SEO: Readonly<Record<string, CitySeo & { modified: st
   'san-mateo': {
     title: 'San Mateo Electric Bills, Rates & Solar Savings (2026)',
     description:
-      'San Mateo bills: PG&E delivery plus Peninsula Clean Energy generation, the $24.15 fixed charge, CARE/FERA, and how solar changes what you still pay.',
-    h1: 'San Mateo Electric Bills and Rates: PG&E, Peninsula Clean Energy and Solar',
+      'San Mateo bills: PG&E delivery plus WestLight Energy (formerly Peninsula Clean Energy) generation, the $24 Base Services Charge, CARE/FERA and solar.',
+    h1: 'San Mateo Electric Bills and Rates: PG&E, WestLight Energy and Solar',
     modified: '2026-09-23',
   },
 };

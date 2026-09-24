@@ -3150,50 +3150,95 @@ export const CITIES: CityData[] = [
     systemSizeKw: 8.0,
     systemCostCash: 28000,
     introText:
-      'Solar in San Mateo comes with two factors a generic estimate misses: persistent coastal fog, which cuts into production, and PG&E\'s rates, which set the value of each kWh you avoid buying. The sections below cover both, before getting into city background. Compare your own roof and usage against these local factors rather than a statewide average.',
+      'San Mateo electric bills come from two providers on one PG&E statement: WestLight Energy (formerly Peninsula Clean Energy) supplies the generation for most homes, and PG&E charges for delivery. This page covers what each one charges, the discounts that apply, and how solar changes what you still pay.',
     electricitySection:
-      'No primary source publishes an average household electric bill for San Mateo, so this guide does not quote one. Your own last twelve bills are the better guide: they show your usage, your rate plan and the seasonal swing. PG&E\'s average residential rate was 33.7¢ per kWh as of June 2026, a bundled average across the whole residential class (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). On a time-of-use plan the price also changes by time of day, so when you use power matters as well as how much. The marine layer fog characteristic of the Peninsula reduces summer solar output compared to inland areas, so ask each bidder to model it for your roof. PG&E residential customers not on CARE or FERA also pay a $24.15 monthly fixed charge (about $6 on CARE and $12 on FERA) under CPUC Decision 24-05-028.',
+      'No primary source publishes an average household electric bill for San Mateo alone, so this page does not invent one. Your own last twelve bills are the better guide: they show your usage, your rate plan and the seasonal swing. PG&E\'s average residential rate was 33.7¢ per kWh as of June 2026, a bundled average across the whole residential class that has not changed since March 2026 (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). On a time-of-use plan the price also changes by hour, so when you use power matters as well as how much.',
     solarPotentialText:
-      'San Mateo averages approximately 2,950 hours of sunshine per year with 5.2 peak sun hours per day. The Peninsula location means persistent morning/midday fog June through August, reducing summer production. However, September through May offers excellent conditions. The city\'s dense housing (many condos and townhomes) means limited roof space — most systems range from 4-7 kW rather than 10+ kW in suburban areas.',
+      'How much a roof in San Mateo can produce depends on its orientation, pitch, shading from trees and neighboring buildings, and the local marine layer, and no public source gives a single figure for the city. Ask for a monthly production estimate made for your own roof, and compare it with your monthly usage rather than with a statewide average.',
     localTips: [
       {
-        title: 'Heavy fog corridors near coast — inland areas better:',
+        title: 'WestLight Energy is the old Peninsula Clean Energy:',
         content:
-          'San Mateo neighborhoods near Caltrain corridor and downtown experience heavier fog than inland Hillsdale area. Production varies by location. Always check Google Project Sunroof for your specific address before committing.',
+          'Peninsula Clean Energy now operates as WestLight Energy and says its service and rates did not change. If a letter or a proposal uses either name, it means the same generation provider on your PG&E bill.',
       },
       {
-        title: 'Peninsula Clean Energy:',
+        title: 'Read the two halves of the bill separately:',
         content:
-          'San Mateo customers can get their generation from Peninsula Clean Energy, a community choice aggregator, rather than PG&E. Check the generation charges on your bill and Peninsula Clean Energy\'s current terms for solar customers, which can differ from PG&E\'s, and make sure each proposal uses them.',
-      },
-      {
-        title: 'Dense housing + battery storage priority:',
-        content:
-          'Most San Mateo homes are condos or townhomes with limited roof space. Smaller 4-6 kW solar systems work well paired with 5-10 kWh battery storage to offset evening peak hours (4-9 PM) when rates are highest.',
+          'The generation charges (WestLight) and the delivery charges (PG&E) move for different reasons. A PG&E rate change shows up in the delivery half; a WestLight plan change shows up in the generation half.',
       },
     ],
     whenSolarDoesntWork:
-      'If your electric bill is already low, you are renting without landlord permission, your roof is heavily shaded by surrounding buildings or coastal hills, or you plan to sell within 1-2 years. Condos with shared roof space may face common area disputes — check CC&Rs carefully.',
+      'If your electric bill is already low, you are renting without landlord permission, your roof is heavily shaded, or you plan to sell within a year or two. Condominiums with shared roofs also need the association\'s approval process worked out first; check the CC&Rs.',
     bottomLine:
-      'San Mateo\'s fog and density make solar less straightforward than inland areas, so get a production estimate for your roof and check Peninsula Clean Energy\'s current terms before deciding. Pair solar with battery storage to maximize evening peak hour value. Fog is the challenge; energy management is the solution.',
+      'In San Mateo, the bill you are trying to lower has two parts: WestLight Energy\'s generation charges and PG&E\'s delivery charges, including a Base Services Charge of about $24 a month. Start from your own twelve months of usage, check CARE and FERA eligibility, and measure any solar offer against both halves of the bill.',
     faqs: [
       {
         question: 'How much does solar cost in San Mateo in 2026?',
-        answer: 'No primary source publishes a solar price for San Mateo. Your price depends on the system size your usage needs, the roof, the equipment and the installer. As a benchmark, Lawrence Berkeley National Laboratory\'s Tracking the Sun (October 2024) found that host-owned residential systems installed in 2023 were priced at $3.20–$5.50 per watt (20th to 80th percentile, national sample), with California near the middle. A system you buy in 2026 gets no federal residential credit: IRC § 25D does not apply to expenditures made after December 31, 2025. A lease or PPA is priced by its own contract, so compare its total payments.',
-      },
-      {
-        question: 'What is the average electric bill in San Mateo?',
-        answer: 'No primary source publishes an average electric bill for San Mateo, so this page does not quote one. PG&E\'s average residential rate was 33.7¢ per kWh as of June 2026, a bundled average across the whole residential class (CPUC Public Advocates Office, Q2 2026 Electric Rates Report). What you pay depends on your usage, rate plan and season, so use the totals on your last twelve bills.',
+        answer: 'No primary source publishes a solar price for San Mateo. Your price depends on the system size your usage needs, the roof, the equipment and the contract. As a benchmark, Lawrence Berkeley National Laboratory\'s Tracking the Sun (October 2024) found that host-owned residential systems installed in 2023 were priced at $3.20–$5.50 per watt (20th to 80th percentile, national sample), with California near the middle. A system you buy in 2026 gets no federal residential credit: IRC § 25D does not apply to expenditures made after December 31, 2025. A lease or PPA is priced by its own contract, so compare its total payments.',
       },
       {
         question: 'Can my HOA block solar panels in San Mateo?',
-        answer: 'No. California\'s Solar Rights Act protects your right. However, most San Mateo is condos or townhomes with shared roofs — check your CC&Rs and HOA approval process before planning.',
-      },
-      {
-        question: 'How much does fog affect solar in San Mateo?',
-        answer: 'Coastal fog reduces production in June-August compared to inland California, and a bidder\'s production estimate should account for it. September-May offers excellent conditions. Peninsula neighborhoods near downtown experience heavier fog; Hillsdale area receives more consistent sun. Check Google Project Sunroof for your address.',
+        answer: 'No. California\'s Solar Rights Act (Civil Code § 714) protects your right to install solar, though an association can apply reasonable restrictions. On a shared roof, check your CC&Rs and the association\'s approval process before planning.',
       },
     ],
+    // 2026-09-23 (Decision 14, G13): this page answers the bills-and-rates
+    // question; installer questions belong to /solar-companies/san-mateo.
+    bills: {
+      answer:
+        'A San Mateo home\'s electric bill comes from two companies on one PG&E statement. WestLight Energy, the county\'s community choice provider (formerly Peninsula Clean Energy), supplies the generation for most homes; PG&E delivers it and, since March 2026, adds a Base Services Charge of about $24 a month (about $12 on FERA, $6 on CARE). PG&E\'s average residential rate was 33.7 cents per kWh in June 2026.',
+      sections: [
+        {
+          heading: 'Who sends a San Mateo electric bill',
+          paragraphs: [
+            'Two providers share a San Mateo account. PG&E owns the wires and the meter, delivers the power and sends the statement. WestLight Energy, which announced that Peninsula Clean Energy is now WestLight Energy and that its service and rates stayed the same, buys the power for the account; it serves San Mateo County and Los Banos, and says 97% of its neighbors in those areas get their electricity from it. The California Energy Commission\'s service-territory map places San Mateo inside both PG&E\'s delivery area and WestLight\'s community choice area.',
+            'On the bill that means two sets of charges: WestLight\'s generation charges and PG&E\'s delivery charges, plus PG&E\'s fixed monthly line. When your total changes, check which half moved before deciding what to do about it.',
+          ],
+        },
+        {
+          heading: 'What PG&E charges San Mateo homes in 2026',
+          paragraphs: [
+            'The CPUC\'s Public Advocates Office put PG&E\'s residential average rate at $0.337 per kWh in its Q2 2026 report, unchanged since March 2026. Over longer periods it is up 8% in three years, 39% in five and 69% since January 2016. The same report names the main statewide drivers as wildfire mitigation and wildfire liability costs, transmission and distribution investment, and rooftop solar incentives under net energy metering.',
+            'Since March 2026 PG&E has split part of its costs into a Base Services Charge of around $24 a month for most customers, around $12 on FERA and around $6 on CARE, and lowered its per-kWh prices to match. PG&E stresses that this is a restructuring, not a new fee, and that lower per-kWh prices may or may not lower a given customer\'s total bill.',
+            'For a sense of scale, the Public Advocates Office estimated PG&E\'s average June 2026 monthly bill for a customer not on CARE at $125 in its sample cool climate zone and $168 in its hot one; CARE customers in the same zones averaged $69 and $124. Those are regional estimates, not a San Mateo average: your own twelve bills are the number that matters.',
+          ],
+        },
+        {
+          heading: 'Discounts: CARE and FERA',
+          paragraphs: [
+            'The CPUC\'s CARE program gives a 30–35% discount on the electric bill to households at or under 200% of the federal poverty guidelines; FERA gives 18% to households up to 250%. For June 1, 2026 through May 31, 2027, a household of four qualifies for CARE at $66,000 and for FERA at $82,500. The Public Advocates Office notes that, with cost exemptions and the lower Base Services Charge, CARE customers now see total discounts of about 40%.',
+          ],
+        },
+        {
+          heading: 'How solar changes what a San Mateo household still pays',
+          paragraphs: [
+            'Solar reduces the kWh you buy, not the fixed monthly line: the Base Services Charge stays on the bill whatever your panels produce. What your exported power earns depends on your plan and your provider. For customers on net energy metering, WestLight values net production at the otherwise applicable rate plus a $0.01 per kWh production premium, reviews accounts after the April billing cycle, sends a check to customers with a credit balance over $500, and caps annual cash-outs at $10,000.',
+            'So the useful comparison is your last twelve months of both halves of the bill against what a proposal says will remain. For the installer side of that decision, including San Mateo\'s SolarAPP+ requirements for contractors, see the San Mateo solar companies page linked above.',
+          ],
+        },
+      ],
+      faqs: [
+        {
+          question: 'Who is the electricity provider in San Mateo?',
+          answer: 'Two companies: PG&E delivers the power and sends the bill, and WestLight Energy (formerly Peninsula Clean Energy) supplies the generation for most San Mateo homes. Your PG&E statement shows both.',
+        },
+        {
+          question: 'What is the average electric bill in San Mateo?',
+          answer: 'No source publishes a San Mateo-only average. The CPUC Public Advocates Office estimated PG&E\'s average June 2026 bill for non-CARE customers at $125 a month in its sample cool climate zone and $168 in its hot zone. PG&E\'s residential average rate was 33.7 cents per kWh, and most customers also pay a Base Services Charge of about $24 a month.',
+        },
+        {
+          question: 'Why are PG&E bills so high?',
+          answer: 'The Public Advocates Office lists wildfire mitigation and liability costs, transmission and distribution investment, and rooftop solar incentives as the main statewide drivers. PG&E\'s residential average rate rose 69% between January 2016 and June 2026.',
+        },
+      ],
+      sources: [
+        { label: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report', url: 'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf', fetchedAt: '2026-09-23' },
+        { label: 'PG&E: Base Services Charge', url: 'https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html', fetchedAt: '2026-09-23' },
+        { label: 'CPUC: CARE/FERA program', url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program', fetchedAt: '2026-09-23' },
+        { label: 'WestLight Energy (formerly Peninsula Clean Energy): home page and service area', url: 'https://www.westlightenergy.org/', fetchedAt: '2026-09-23' },
+        { label: 'WestLight Energy: net energy metering', url: 'https://www.westlightenergy.org/residential/rates-billing/solar-rates/net-energy-metering/', fetchedAt: '2026-09-23' },
+        { label: 'California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers)', url: 'https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about', fetchedAt: '2026-09-23' },
+      ],
+    },
     metaTitle: 'Solar Panels in San Mateo: 2026 Cost, PG&E Rates',
     metaDescription: 'Battery options inside.',
     ogTitle: 'Solar Savings in San Mateo, CA: 2026 PG&E Rates & Options',

@@ -3320,4 +3320,113 @@ export const growthCities: Record<string, GrowthCity> = {
     ],
     contentModified: "2026-09-23",
   },
+  "san-mateo": {
+    name: "San Mateo",
+    county: "San Mateo County",
+    utility: "pge",
+    bill: "A San Mateo installer will be designing around two companies: PG&E, which delivers the power and sends the statement, and WestLight Energy, the county's community choice provider, which renamed itself from Peninsula Clean Energy and supplies generation for most homes. Ask each bidder to build its design on your own account, with WestLight's generation side and PG&E's delivery side shown separately.",
+    local: "The City of San Mateo runs residential rooftop solar through SolarAPP+, with two local conditions before a contractor can use it: an active San Mateo business license and a request to be added to the City's SolarAPP+ eligibility list. After SolarAPP+ approves the plans, the contractor completes the SolarAPP+ inspection checklist, applies in the City's Online Permit Center, pays the permit fee and schedules the inspection.",
+    example: "Two San Mateo bidders can describe the same roof very differently. Ask both for the same deliverables: the module and inverter models, a roof layout with every obstruction marked, the monthly production estimate, the battery's usable kWh and backed-up circuits, and the name of the business that will hold the San Mateo business license and the permit. Compare those line by line before you look at anything else.",
+    sourceCheckedDate: "2026-09-23",
+    checks: [
+      [
+        "City eligibility",
+        "Confirm the company holds an active San Mateo business license and is on the City's SolarAPP+ eligibility list."
+      ],
+      [
+        "Permit steps",
+        "Name who submits to SolarAPP+, completes the inspection checklist, applies in the Online Permit Center and meets the inspector."
+      ],
+      [
+        "Account modeling",
+        "Show WestLight Energy generation and PG&E delivery separately, using your enrollment."
+      ],
+      [
+        "Contract and service",
+        "Name the contracting business, its CSLB license, the installation crew and who handles service calls."
+      ]
+    ],
+    sources: [
+      {
+        "label": "City of San Mateo: SolarApp+ for Solar Installers",
+        "url": "https://www.cityofsanmateo.org/4770/SolarApp-For-Solar-Installers"
+      },
+      {
+        "label": "WestLight Energy (formerly Peninsula Clean Energy): name change and service area",
+        "url": "https://www.westlightenergy.org/"
+      },
+      {
+        "label": "WestLight Energy: net energy metering for solar customers",
+        "url": "https://www.westlightenergy.org/residential/rates-billing/solar-rates/net-energy-metering/"
+      },
+      {
+        "label": "California Energy Commission: Electric Load Serving Entities (IOU & POU and CCA layers), queried 2026-09-23",
+        "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+      }
+    ],
+    faq: [
+      [
+        "Which solar companies can pull a permit in San Mateo?",
+        "A company using the City's SolarAPP+ route needs an active San Mateo business license and must ask to be added to the City's SolarAPP+ eligibility list. It must also hold a California contractor license that covers solar, which you can check at the CSLB. This page does not rank or recommend installers."
+      ],
+      [
+        "Is Peninsula Clean Energy still the provider in San Mateo?",
+        "Peninsula Clean Energy is now called WestLight Energy. It says its service and rates stayed the same, and it serves San Mateo County and Los Banos."
+      ],
+      [
+        "How do I compare solar installers in San Mateo?",
+        "Get at least three written proposals for the same roof and the same account, then compare the equipment, the production estimate, the battery scope, the permit responsibilities and the service terms. The checklist on this page lists what each proposal should state."
+      ]
+    ],
+    answer: "Solar companies that install in San Mateo file residential rooftop jobs through SolarAPP+, and the City adds two local gates first: the contractor needs an active San Mateo business license and must ask to be put on the City's SolarAPP+ eligibility list. PG&E delivers your power and WestLight Energy, formerly Peninsula Clean Energy, supplies it. Compare at least three written proposals from companies that clear those gates.",
+    keyFacts: [
+      {
+        "label": "Permit route",
+        "value": "SolarAPP+, then Online Permit Center",
+        "note": "Contractor needs a San Mateo business license",
+        "source": {
+          "publisher": "City of San Mateo",
+          "date": "2026-09-23",
+          "url": "https://www.cityofsanmateo.org/4770/SolarApp-For-Solar-Installers"
+        }
+      },
+      {
+        "label": "Supplies the generation",
+        "value": "WestLight Energy",
+        "note": "Formerly Peninsula Clean Energy",
+        "source": {
+          "publisher": "WestLight Energy",
+          "date": "2026-09-23",
+          "url": "https://www.westlightenergy.org/"
+        }
+      },
+      {
+        "label": "Delivers the power",
+        "value": "PG&E",
+        "note": "Wires, meter and the monthly statement",
+        "source": {
+          "publisher": "California Energy Commission",
+          "date": "2026-09-23",
+          "url": "https://cecgis-caenergy.opendata.arcgis.com/datasets/CAEnergy::electric-load-serving-entities-iou-pou/about"
+        }
+      }
+    ],
+    sections: [
+      {
+        "heading": "What the City asks of a San Mateo installer",
+        "paragraphs": [
+          "San Mateo's SolarAPP+ page is written for installers, and it sets the order. The contractor registers with SolarAPP+ and submits the design; SolarAPP+ checks it for code compliance and returns approved plans, and SolarAPP+ charges its own processing fee. Before using that approval in San Mateo, the contractor must have an active City business license and must email the City to be added to its SolarAPP+ eligibility list. It then completes the SolarAPP+ approved inspection checklist, applies for the permit in the City's Online Permit Center, pays the City's permit fee and schedules the inspection.",
+          "Those two local gates are a quick way to tell a company that works in San Mateo from one that is only selling here. Ask each bidder for its San Mateo business license number and whether it is already on the City's SolarAPP+ list. A company that has to set both up for your job may still be a fine choice, but its timeline will be longer."
+        ]
+      },
+      {
+        "heading": "Why the WestLight Energy name matters on a proposal",
+        "paragraphs": [
+          "Peninsula Clean Energy now operates as WestLight Energy and says its service and rates have not changed; it serves San Mateo County and Los Banos. Your PG&E statement carries WestLight's generation charges alongside PG&E's delivery charges, and WestLight's solar customers see their accrued charges on that same monthly bill.",
+          "A proposal that still names Peninsula Clean Energy is not wrong, just dated. One that models only PG&E generation is modeling a company that does not supply most San Mateo homes, so ask the bidder to rebuild it on your actual enrollment. For what you pay each month now and how solar changes it, see the San Mateo bills and rates page linked above."
+        ]
+      }
+    ],
+    contentModified: "2026-09-23",
+  },
 };
