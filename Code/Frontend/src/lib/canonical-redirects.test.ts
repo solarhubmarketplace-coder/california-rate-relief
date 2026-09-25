@@ -420,6 +420,10 @@ const GS_MERGES: Readonly<Record<string, string>> = {
   '/blog/how-much-does-it-cost-to-lease-solar-panels-california':
     '/blog/rent-solar-panels-for-your-home-california',
   '/blog/nem-3-california-timeline': '/blog/what-is-nem-3-california',
+  // 6.2: comparisons with a company that does not serve California.
+  '/solar-installers/adt-solar-vs-momentum-solar': '/solar-installers/momentum-solar-review',
+  '/solar-installers/momentum-solar-vs-trinity-solar': '/solar-installers/momentum-solar-review',
+  '/solar-installers/sunrun-vs-trinity-solar': '/solar-installers/trinity-solar-review',
 };
 ROW_DELTAS.push(Object.keys(GS_MERGES).length);
 

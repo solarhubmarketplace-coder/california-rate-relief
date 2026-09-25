@@ -334,7 +334,9 @@ const REVIEWS: { href: string; name: string; note: string }[] = [
   { href: '/solar-installers/sunpower-review', name: 'SunPower', note: 'the Complete Solaria rebrand' },
   { href: '/solar-installers/sunrun-review', name: 'Sunrun', note: 'leases, PPAs and company status' },
   { href: '/solar-installers/tesla-solar-review', name: 'Tesla Solar', note: 'panels, Powerwall and service' },
-  { href: '/solar-installers/trinity-solar-review', name: 'Trinity Solar', note: 'a Northeast installer; the review found no California operations' },
+  // GS-MERGES 2026-09-24 (plan 6.2): Trinity Solar removed from this California
+  // comparison list: no California service area on its own site and no
+  // residential system under its name in the CPUC data since 2016.
 ];
 const COMPARISONS: { href: string; label: string }[] = [
   { href: '/solar-installers/sunrun-vs-sunpower', label: 'Sunrun vs SunPower' },

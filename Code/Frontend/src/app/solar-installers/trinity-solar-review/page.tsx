@@ -141,6 +141,23 @@ export default function TrinitySolarReview() {
                     </Link>{' '}
                     instead.
                   </p>
+                  {/* GS-MERGES 2026-09-24 (plan 6.2): Trinity has no California service
+                      area and no recent California installs, so the two comparison pages
+                      that paired it with a California option now 301 elsewhere. */}
+                  <p className='mt-2 text-foreground leading-relaxed'>
+                    The state&rsquo;s own record agrees: in the CPUC&rsquo;s interconnection data for PG&amp;E, SCE and
+                    SDG&amp;E territory, no residential solar system under the Trinity Solar name was approved from
+                    2017 through May 2026 (
+                    <a href='https://www.californiadgstats.ca.gov/downloads/' className='text-blue-200 underline hover:text-blue-100'>
+                      CPUC DG Stats
+                    </a>
+                    , checked September 24, 2026). Weighing Trinity against Sunrun? In California only Sunrun is on
+                    the table; see the{' '}
+                    <Link href='/solar-installers/sunrun-review' className='text-blue-200 underline hover:text-blue-100'>
+                      Sunrun review
+                    </Link>
+                    .
+                  </p>
                 </div>
               </div>
             </div>
@@ -304,9 +321,9 @@ export default function TrinitySolarReview() {
               <p className={p}>
                 Comparison searches pair Trinity with national names. For a California home, the difference
                 that matters is simple: Sunrun lists California on its own contractor-license page, and neither
-                Momentum nor Trinity lists California as a service state. See{' '}
-                <Link href='/solar-installers/sunrun-vs-trinity-solar' className={a}>Sunrun vs. Trinity Solar</Link>,{' '}
-                <Link href='/solar-installers/momentum-solar-vs-trinity-solar' className={a}>Momentum Solar vs. Trinity Solar</Link>{' '}
+                Momentum nor Trinity lists California as a service state. See the{' '}
+                <Link href='/solar-installers/sunrun-review' className={a}>Sunrun review</Link>,{' '}
+                <Link href='/solar-installers/momentum-solar-review' className={a}>Momentum Solar review</Link>{' '}
                 and the{' '}
                 <Link href='/solar-installers/tesla-solar-review' className={a}>Tesla Solar review</Link>. For
                 SunPower, which filed for bankruptcy in 2024, see the{' '}

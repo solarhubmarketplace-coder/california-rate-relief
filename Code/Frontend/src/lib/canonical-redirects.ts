@@ -275,6 +275,17 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   // /blog/nem-3-california redirect (Decision 16). Winner chosen on content;
   // the dated timeline is folded in at #nem-3-timeline.
   '/blog/nem-3-california-timeline': '/blog/what-is-nem-3-california',
+  // Plan item 6.2: comparisons with a company that does not serve California.
+  // Trinity Solar lists nine eastern states and no California, and the CPUC's
+  // interconnection data (PG&E, SCE, SDG&E; through May 2026) show no
+  // residential system under its name since 2016. ADT announced its exit from
+  // residential solar on January 24, 2024; its last 3 CPUC-recorded systems
+  // were approved in 2025. All three pages were new in the release (0
+  // impressions). Each goes to the review that the topic map assigns the
+  // comparison query to (clusters 136, 139, 258).
+  '/solar-installers/adt-solar-vs-momentum-solar': '/solar-installers/momentum-solar-review',
+  '/solar-installers/momentum-solar-vs-trinity-solar': '/solar-installers/momentum-solar-review',
+  '/solar-installers/sunrun-vs-trinity-solar': '/solar-installers/trinity-solar-review',
   // END GS-MERGES 2026-09-24 ------------------------------------------------
 };
 

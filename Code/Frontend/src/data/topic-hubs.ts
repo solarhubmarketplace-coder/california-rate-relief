@@ -1748,19 +1748,7 @@ export const TOPIC_HUBS: TopicHub[] = [
     "label": "Installer and panel brand reviews",
     "hubPage": "/solar-installers",
     "hubPageLabel": "California Solar Company Reviews and Comparisons",
-    "spokes": [
-      {
-        "href": "/solar-installers/momentum-solar-vs-trinity-solar",
-        "label": "Momentum Solar vs Trinity Solar (2026): Records Compared"
-      },
-      {
-        "href": "/solar-installers/adt-solar-vs-momentum-solar",
-        "label": "ADT Solar vs Momentum Solar: ADT Exited Solar in 2024"
-      },
-      {
-        "href": "/solar-installers/sunrun-vs-trinity-solar",
-        "label": "Sunrun vs Trinity Solar (2026): Service Area, BBB, Contracts"
-      },
+    "spokes": [,
       {
         "href": "/solar-installers/pge-and-sunrun",
         "label": "PG&E and Sunrun: Battery Programs, Payments, Who Qualifies"

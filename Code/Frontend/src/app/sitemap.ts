@@ -179,17 +179,14 @@ const CRR_TOPICAL_20260923 = new Set<string>([
   '/solar-companies/ventura',
   '/solar-companies/yorba-linda',
   '/solar-installers',
-  '/solar-installers/adt-solar-vs-momentum-solar',
   '/solar-installers/baker-electric-solar-review',
   '/solar-installers/elevation-solar-review',
   '/solar-installers/freedom-forever-review',
   '/solar-installers/licensed-solar-installer',
   '/solar-installers/momentum-solar-review',
-  '/solar-installers/momentum-solar-vs-trinity-solar',
   '/solar-installers/pge-and-sunrun',
   '/solar-installers/sunergy-solar-review',
   '/solar-installers/sunrun-review',
-  '/solar-installers/sunrun-vs-trinity-solar',
   '/solar-installers/tesla-solar-review',
   '/solar-installers/trinity-solar-review',
   '/solar-installers/vivint-review',
@@ -424,6 +421,8 @@ const GS_MERGES_20260924 = new Set<string>([
   '/blog/commercial-solar-financing-california',
   '/blog/rent-solar-panels-for-your-home-california',
   '/blog/what-is-nem-3-california',
+  '/solar-installers/momentum-solar-review',
+  '/solar-installers/trinity-solar-review',
 ]);
 // END GS-MERGES 2026-09-24
 
@@ -671,11 +670,8 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'sunnova-vs-sunrun', 'sunrun-vs-tesla-solar', 'sunrun-vs-sunpower',
     'enphase-vs-solaredge',
     // claude/ta-release-20260923
-    'adt-solar-vs-momentum-solar',
     'licensed-solar-installer',
-    'momentum-solar-vs-trinity-solar',
     'pge-and-sunrun',
-    'sunrun-vs-trinity-solar',
     'vivint-review',
     'worst-solar-companies-california',
   ];
