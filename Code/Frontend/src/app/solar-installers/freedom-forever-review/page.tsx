@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   title:
     "Freedom Forever Reviews (2026): Licenses & Financing",
   description:
-    "Freedom Forever filed Chapter 11 in April 2026. Here is what its own site says about financing, warranty terms, CSLB licenses, and court filings.",
+    "Freedom Forever filed Chapter 11 in April 2026; the court converted the case to Chapter 7 liquidation on August 7, 2026. What that means for customers.",
   alternates: {
     canonical: '/solar-installers/freedom-forever-review',
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title:
       'Freedom Forever Solar Reviews (2026): Licenses, Financing, and What Its Site Doesn’t Say',
     description:
-      'What the April 15 Chapter 11 filing means for existing Freedom Forever customers and anyone shopping for solar in California right now.',
+      'What the Chapter 7 conversion of August 7, 2026 means for existing Freedom Forever customers and anyone comparing solar quotes in California.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
     images: [CRR_SOCIAL_CARD],
@@ -52,9 +52,9 @@ const articleSchema = {
   headline:
     'Freedom Forever Solar Reviews (2026): Licenses, Financing, and What Its Site Doesn’t Say',
   description:
-    'Freedom Forever filed Chapter 11 on April 15, 2026. A plain-English review of what it means for customers and what Californians should do if they have a pending quote.',
+    'Freedom Forever filed Chapter 11 on April 15, 2026, and the court converted the case to Chapter 7 liquidation on August 7, 2026. What it means for customers in California.',
   datePublished: '2026-04-22',
-  dateModified: '2026-09-22',
+  dateModified: '2026-09-24',
   author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
@@ -149,11 +149,11 @@ export default function FreedomForeverReview() {
                 and What Its Site Doesn&apos;t Say
               </h1>
 
-              <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <LastReviewedStamp date="2026-09-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-09-22'>Updated September 22, 2026</time>
+                  <time dateTime='2026-09-24'>Updated September 24, 2026</time>
                 </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />
@@ -161,7 +161,7 @@ export default function FreedomForeverReview() {
                 </div>
               </div>
               <p className='text-foreground/80 leading-relaxed mt-6'>
-                Freedom Forever filed for Chapter 11 reorganization on April 15, 2026 (covered in detail below). Separately from that, its own site currently advertises three financing paths — Purchase, Lease, and PPA — a 25-year production guarantee, and three California contractor licenses. Below is what freedomforever.com says, what its site still doesn&apos;t publish (a transfer-on-sale process), and what federal court records — not review-site scores — show about the complaint pattern.
+                Freedom Forever filed for Chapter 11 on April 15, 2026, and the court converted the case to Chapter 7 liquidation on August 7, 2026 (covered in detail below). Separately, its own site, checked September 22, 2026, advertised three financing paths — Purchase, Lease, and PPA — a 25-year production guarantee, and three California contractor licenses. Below is what freedomforever.com says, what its site still doesn&apos;t publish (a transfer-on-sale process), and what federal court records — not review-site scores — show about the complaint pattern.
               </p>
               <HubUpLink path="/solar-installers/freedom-forever-review" />
             </header>
@@ -275,10 +275,11 @@ export default function FreedomForeverReview() {
                 protection. Chapter 11 is not liquidation. It is a legal
                 process that lets a company continue operating while it
                 restructures its debts under court supervision.</p>
-              <p className='text-foreground/80 leading-relaxed mb-6'>The company
-                has indicated publicly that it plans to keep installing
+              <p className='text-foreground/80 leading-relaxed mb-6'>At the time,
+                the company said publicly that it planned to keep installing
                 systems and servicing existing customers during
-                restructuring.</p>
+                restructuring. The court converted the case to Chapter 7
+                liquidation on August 7, 2026.</p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>The filing lists estimated liabilities of $500 million to $1
                 billion against assets of $100 million to $500 million. The
@@ -295,10 +296,8 @@ export default function FreedomForeverReview() {
                 2025, placing it in the top two for U.S. residential solar
                 volume. That is what makes the filing significant: this is
                 not a small regional installer going under.</p>
-              <p className='text-foreground/80 leading-relaxed mb-6'>It is one of
-                the most active installers in California going through
-                court-supervised restructuring with tens of thousands of
-                in-state customers on its books.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>It was one of
+                the most active installers in California.</p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 What It Means If You Already Have a Freedom Forever System
@@ -317,11 +316,11 @@ export default function FreedomForeverReview() {
                 post-install service. The production guarantee is Freedom
                 Forever&apos;s flagship promise: if your system under-produces
                 the modeled output, they cut you a check for the difference. That obligation is now subject to the bankruptcy case.</p>
-              <p className='text-foreground/80 leading-relaxed mb-6'>The
-                company has stated it intends to keep honoring the
-                guarantee during restructuring, but ultimately the court
-                and the reorganization plan will determine how service
-                obligations are treated going forward.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>During the
+                Chapter 11 period the company said it intended to keep
+                honoring the guarantee. Since the August 7, 2026 conversion
+                to Chapter 7 there is no reorganization plan; how service
+                obligations are treated is decided in the Chapter 7 case.</p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>Panel, inverter, and battery manufacturer warranties are a
                 separate matter. If Freedom Forever installed Qcells,
@@ -368,10 +367,10 @@ export default function FreedomForeverReview() {
                 and many installers offer a longer cancellation window
                 before material is ordered.</p>
               <p className='text-foreground/80 leading-relaxed mb-6'>If you&apos;re outside both
-                windows, consult an attorney before taking any action, a
-                Chapter 11 filing does not automatically void existing
-                contracts, and the company&apos;s intent during
-                restructuring is to keep building systems.</p>
+                windows, consult an attorney before taking any action. A
+                bankruptcy filing does not automatically void a contract,
+                and in Chapter 7 a trustee winds the company down, so ask
+                what happens to your deposit and an unfinished project.</p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 Freedom Forever&apos;s Business Model (And How It Led Here)
@@ -438,7 +437,7 @@ export default function FreedomForeverReview() {
                 <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary hover:underline font-medium'>
                   full contractor-verification walkthrough
                 </Link>
-                . Given the Chapter 11 case, confirming the specific entity name on your contract against one of these three numbers matters more than usual — a lease, PPA, or service agreement is with a specific LLC, not the &ldquo;Freedom Forever&rdquo; brand generally.</p>
+                . Given the bankruptcy case, confirming the specific entity name on your contract against one of these three numbers matters more than usual — a lease, PPA, or service agreement is with a specific LLC, not the &ldquo;Freedom Forever&rdquo; brand generally.</p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 How Freedom Forever Structures a Purchase
@@ -457,7 +456,7 @@ export default function FreedomForeverReview() {
 
               <p className='text-foreground/80 leading-relaxed mb-6'>Independent of the bankruptcy question above, here&apos;s how the guarantee is supposed to work day-to-day: your system is monitored continuously, and if it underproduces relative to the estimate, Freedom Forever says it will &ldquo;make it right through repairs, equipment replacement, or financial compensation&rdquo; (freedomforever.com/faq/, accessed September 22, 2026).</p>
               <p className='text-foreground/80 leading-relaxed mb-6'>Underneath that guarantee, equipment carries its own manufacturer terms — solar panels typically 25-year product-and-performance coverage, inverters typically 10 to 25 years &ldquo;depending on brand and model&rdquo; (same source) — and workmanship is covered under Freedom Forever&apos;s own installation warranty. The company&apos;s stated exclusions include &ldquo;major shading changes or natural disasters.&rdquo;</p>
-              <p className='text-foreground/80 leading-relaxed mb-6'>None of this changes what the bankruptcy risk section above already tells you: whether any of it is honored going forward depends on the Chapter 11 outcome, not on what the website currently promises.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>None of this changes what the bankruptcy risk section above already tells you: whether any of it is honored going forward depends on the Chapter 7 case and on whoever now holds your agreement, not on what the website promises.</p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 Requesting Service, and What Happens If You Sell
@@ -474,9 +473,9 @@ export default function FreedomForeverReview() {
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
                 <li>Which of the three licensed entities — Freedom Forever LLC, Northern California LLC, or Southern California LLC — is the actual counterparty on your contract, and does its CSLB number match one of the three above?</li>
                 <li>What&apos;s the written escalator rate and term length for a lease or PPA, and does &ldquo;Aura by Freedom Forever&rdquo; financing carry different terms than a third-party Mosaic loan?</li>
-                <li>In writing: what happens to your guarantee, service commitment, and any remaining financing balance if you sell the home before the Chapter 11 case resolves?</li>
+                <li>In writing: what happens to your guarantee, service commitment, and any remaining financing balance if you sell the home while the Chapter 7 case is open?</li>
                 <li>
-                  If you already have a signed contract or an open Chapter 11 claim question, see our{' '}
+                  If you already have a signed contract or an open bankruptcy claim question, see our{' '}
                   <Link href='/solar-problems/solar-company-took-my-money-california' className='text-primary hover:underline font-medium'>
                     solar company took my money guide
                   </Link>{' '}
@@ -523,23 +522,24 @@ export default function FreedomForeverReview() {
                 Should You Still Consider Freedom Forever in California?
               </h2>
 
-              <p className='text-foreground/80 leading-relaxed mb-6'>Honestly? No one can tell you with certainty how this
-                bankruptcy plays out. Chapter 11 cases can take anywhere
-                from several months to more than a year. The company may
-                emerge smaller and more focused. Its assets may be
-                acquired by another installer who takes on the service
-                obligations.</p>
-              <p className='text-foreground/80 leading-relaxed mb-6'>Or the reorganization plan may leave existing
-                customers dependent on manufacturer warranties and
-                goodwill.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>Not as a new customer. Since the August 7, 2026
+                conversion order, the case is a Chapter 7 liquidation: a
+                trustee gathers and sells the company&apos;s assets to pay
+                its creditors, and there is no reorganization plan that
+                keeps Freedom Forever installing and servicing systems.</p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>If you already have a system, the manufacturer
+                warranties still come from the manufacturers. For service,
+                the guarantee and any lease or PPA, ask in writing who now
+                holds your agreement; the docket records, for example, a
+                court-approved settlement with Sunrun that covers certain
+                agreements between the two companies.</p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For a California homeowner making a 20 to 25 year decision
-                today, that uncertainty is a real cost even if the final
-                outcome turns out fine. The sensible move is to get
-                comparable quotes from installers that are not currently
-                in bankruptcy, weigh the equipment and warranty terms side
-                by side, and make a decision based on full information.
+                For a California homeowner making a 20- to 25-year decision
+                today, the sensible move is to get comparable quotes from
+                installers that are not in bankruptcy, check each one&apos;s
+                CSLB license, and weigh the equipment and warranty terms side
+                by side.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -600,14 +600,15 @@ export default function FreedomForeverReview() {
                     Is Freedom Forever going out of business?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    As of the April 15, 2026 filing, Freedom Forever is in
-                    Chapter 11 reorganization, not liquidation. The
-                    company has stated it intends to continue operating
-                    and installing systems during restructuring. The
-                    final outcome, whether the company emerges
-                    reorganized, is acquired, or converts to Chapter 7
-                    liquidation, will be determined by the bankruptcy
-                    case.
+                    The company filed Chapter 11 on April 15, 2026, and
+                    the court signed an order converting the case to
+                    Chapter 7 liquidation on August 7, 2026 (Bankr. D. Del.
+                    No. 26-10522, Doc. 533). In Chapter 7 a trustee
+                    collects and sells the company&apos;s assets for its
+                    creditors; it is not a plan to keep the business
+                    running. Statements the company made during the
+                    Chapter 11 period about continuing to operate describe
+                    the case before that order.
                   </p>
                 </div>
 
@@ -616,13 +617,15 @@ export default function FreedomForeverReview() {
                     Will my Freedom Forever warranty still be honored?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    The company has stated it intends to honor its 25-year
-                    production guarantee during restructuring.
-                    Manufacturer warranties on your panels, inverters, and
-                    batteries are separate from Freedom Forever and
-                    remain in force regardless. How the workmanship and
-                    roof penetration warranties are treated long-term
-                    depends on the outcome of the Chapter 11 case.
+                    Don&apos;t count on it without written confirmation.
+                    During the Chapter 11 period the company said it
+                    intended to honor its 25-year production guarantee, but
+                    the case has since been converted to Chapter 7
+                    liquidation. Manufacturer warranties on your panels,
+                    inverters and batteries come from the manufacturers,
+                    not Freedom Forever. Ask whoever now holds or services
+                    your agreement, in writing, what happens to the
+                    workmanship and roof-penetration warranties.
                   </p>
                 </div>
 
@@ -645,7 +648,7 @@ export default function FreedomForeverReview() {
                     because of the bankruptcy?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    A Chapter 11 filing does not automatically void
+                    A bankruptcy filing does not automatically void
                     existing contracts. California has a 3-day right of
                     rescission on home solicitation contracts, and many
                     contracts have additional cancellation windows.
@@ -682,7 +685,7 @@ export default function FreedomForeverReview() {
                     Does Freedom Forever say what happens to my contract if I sell my home?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Not on its public site as of September 22, 2026. Get that answer in writing from your sales rep before signing, especially while the Chapter 11 case is open.
+                    Not on its public site as of September 22, 2026. Get that answer in writing from whoever holds or services your agreement, especially while the Chapter 7 case is open.
                   </p>
                 </div>
               </div>
