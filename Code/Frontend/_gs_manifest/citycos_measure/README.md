@@ -1,0 +1,5 @@
+# citycos overlap measure (2026-09-24)
+
+1. `node build.mjs <Code/Frontend> <out.cjs>` bundles the /solar-companies and /solar-savings `[city]` routes with esbuild (`@` aliased to `src`, `next/link`, `next/navigation`, `next/script`, `next/image` stubbed; React external). Put a `node_modules` symlink to `Code/Frontend/node_modules` beside the scripts.
+2. `node render.mjs <out.cjs> <dir>` awaits each page's default export for every `generateStaticParams` slug and writes `renderToStaticMarkup` HTML plus `_meta.json` (title, description).
+3. `python3 overlap.py <dir> solar-companies <live paths file> <out.csv>` (same for solar-savings) computes the gate numbers. Method in the script's docstring: prose blocks inside `<main>` (p, li, h1-h4, td, th, dt, dd; forms, nav, aside and `data-toc-ignore` blocks skipped), lowercase word tokens, 8-word shingles within a block; containment of the page's shingles in each live sibling of the same family, max over siblings. Gate: max containment < 0.5 and >= 3 named local data points.
