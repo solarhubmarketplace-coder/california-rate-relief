@@ -90,7 +90,7 @@ const faqs: FaqJsonLdItem[] = [
   {
     question: 'Do solar leasing companies get tax credits?',
     answer:
-      'They used to be able to claim the business credit on leased systems. Since the 2025 federal tax law, 26 U.S.C. § 48E(i) says no credit is determined for residential solar property “if the taxpayer rents or leases such property to a third party.” How that affects a given lease price is a question for the provider and a tax professional. You get no homeowner credit either way.',
+      'They can claim the business credit on systems they own and lease out, within the law’s limits. The 2025 federal tax law added 26 U.S.C. § 48E(i), which denies the credit for leased property described in paragraphs (1) and (4) of § 25D(d), solar water heating and small wind; rooftop solar electric property is paragraph (2), which it does not list. The same law ends the credit for solar placed in service after December 31, 2027 when construction begins after July 4, 2026 (§ 48E(e)(4)). How that affects a given lease price is a question for the provider and a tax professional. You get no homeowner credit either way.',
   },
 ];
 
@@ -263,13 +263,17 @@ export default function SolarLeasingCompanyPage() {
             how an offer with no money down is financed. The 2025 federal tax law
             (Public Law 119-21) added a new subsection to 26 U.S.C. § 48E: &ldquo;No credit shall be
             determined under this section for any qualified investment during the taxable year with
-            respect to&rdquo; residential solar electric property &ldquo;if the taxpayer rents or leases
-            such property to a third party during such taxable year.&rdquo; The Code&rsquo;s notes apply
-            it to taxable years beginning after July 4, 2025 (
+            respect to property described in paragraph (1) or (4) of section 25D(d) &hellip; if the
+            taxpayer rents or leases such property to a third party during such taxable year.&rdquo;
+            In § 25D(d), paragraph (1) is solar water heating and paragraph (4) is small wind energy.
+            Rooftop solar electric property is paragraph (2), which the subsection does not list. The
+            Code&rsquo;s notes apply it to taxable years beginning after July 4, 2025 (
             <a className={link} href={S.us48e}>
               26 U.S.C. § 48E(i)
             </a>
-            , checked September 23, 2026).
+            , checked September 24, 2026). The change that does reach rooftop solar is an end date:
+            for solar whose construction begins after July 4, 2026, § 48E(e)(4) allows no credit for
+            property placed in service after December 31, 2027.
           </p>
           <p className="mt-3">
             The subsection names renting and leasing; it does not mention selling electricity under a
