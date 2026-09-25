@@ -56,7 +56,7 @@ export default function HoaSolarRights() {
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-04-23'>April 23, 2026</time>
+                  <time dateTime='2026-04-24'>Updated April 24, 2026</time>
                 </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />

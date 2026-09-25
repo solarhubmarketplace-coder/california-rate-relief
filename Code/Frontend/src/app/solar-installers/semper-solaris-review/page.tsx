@@ -23,7 +23,7 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Semper Solaris Review 2026: Veteran-Owned California Solar, Honest Look',
   datePublished: '2026-04-22',
-  dateModified: '2026-04-22',
+  dateModified: '2026-04-24',
   author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/semper-solaris-review' },
@@ -59,7 +59,7 @@ export default function SemperSolarisReview() {
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-22'>Updated April 22, 2026</time></div>
+                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-24'>Updated April 24, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>9 min read</span></div>
               </div>
             </header>
