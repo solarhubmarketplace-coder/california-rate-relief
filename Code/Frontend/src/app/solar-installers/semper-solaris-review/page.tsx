@@ -106,6 +106,12 @@ export default function SemperSolarisReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 This review does not have a verified California price for Semper Solaris; get its written cash price per watt and compare it with other quotes for the same scope. Financing is all third-party partners — Semper does not own its own lease or PPA product. The bundled solar + roofing + HVAC option can be genuinely useful for homeowners who need multiple trades done at once, both for coordination and because roof penetrations get a single-contractor warranty rather than two contractors pointing fingers at each other if something leaks.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Utility records give you a check on any quote. For customer-owned systems without a battery, 1 to 25 kW, approved at PG&amp;E, SCE and SDG&amp;E from January 2025 through May 2026, Semper Solaris Construction (CSLB #978152) reported a median price of $6.13 per watt on 928 systems; the middle half ran $4.86 to $7.39. The statewide median on the same basis was $4.18 (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026).
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                The same records list Semper Solaris on 1,413 residential systems approved in 2025, 491 of them in San Diego County. About 9% were leases or PPAs and 37% included a battery. Reported prices are before incentives and are what the installer wrote on the utility application, so compare them with your own itemized quote.
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reputation and Complaint Data</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

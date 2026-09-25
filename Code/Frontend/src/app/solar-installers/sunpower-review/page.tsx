@@ -107,10 +107,19 @@ export default function SunPowerReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 This review does not have a verified California price for SunPower; compare its written cash price per watt with other quotes for the same system. Install-to-PTO timelines typically run 1 to 4 months depending on your utility&apos;s interconnection queue and whether the local crew is direct or dealer-installed.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Utility records give you a check on any quote. For customer-owned systems without a battery, 1 to 25 kW, approved at PG&amp;E, SCE and SDG&amp;E from January 2025 through May 2026, SunPower Corporation Systems (CSLB #890895) reported a median price of $4.58 per watt on 2,118 systems. The statewide median on the same basis was $4.18 (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026). These are the prices installers wrote on utility applications, before incentives.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                The same records show the name moving. SunPower Corporation Systems is the installer on 17,495 residential systems approved from January 2024 through May 2026, but on 148 in January to May 2026. Complete Solar Inc (CSLB #961988), some of whose applications list the installer as SunPower, is on 3,671 systems approved in 2025 and 988 in January to May 2026.
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What Happens to Legacy SunPower Customers?</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 This is the most commonly asked question about today&apos;s SunPower. If you bought from the pre-2024 SunPower Corporation, your warranty obligations and service contracts were part of the bankruptcy and the asset sale. Today&apos;s SunPower has continued to service many — but not all — of the legacy obligations that transferred in the asset purchase. Legacy complaints around warranty responsiveness and service delays have continued to appear in consumer review channels through 2025 and into 2026.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                The case record is public: <a href='https://www.courtlistener.com/docket/69017070/sunpower-corporation/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>SunPower Corporation, No. 24-11649 (Bankr. D. Del.)</a>, filed August 5, 2024 (CourtListener docket, checked September 24, 2026). Your contract names the company you signed with; match it to the docket before you assume who owes you service.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 If you&apos;re a legacy customer with pending warranty issues, the first step is to confirm in writing which entity is responsible for your specific contract. Separately, manufacturer warranties on your panels, inverter, and battery are from the equipment makers themselves (Maxeon, Enphase, etc.) and are not affected by the SunPower corporate restructuring.

@@ -121,6 +121,12 @@ export default function PowurReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Powur offers cash, loans, and leases through third-party lenders. No proprietary financing product. Pricing tends to run at or above California market because of the multi-layer consultant commission structure.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Utility records show where Powur sits on price and timing. Powur PBC (CSLB #1060243) is the installer on 741 residential systems approved at PG&amp;E, SCE and SDG&amp;E in 2025. For customer-owned systems without a battery, 1 to 25 kW, approved from January 2025 through May 2026, its reported median price was $5.81 per watt on 278 systems, against $4.18 statewide (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026).
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                For its 2025 approvals, the median time from the utility receiving the interconnection application to approving it was 116 days. The statewide median was 25 days. That measures only the utility step, not the months before an application is filed.
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Powur Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

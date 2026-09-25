@@ -285,6 +285,12 @@ export default function SunrunVsTeslaSolar() {
                 <Cite href={SRC.sunrunPowerwall} date={checked} /> So the comparison has to be built from two written quotes
                 for the same address.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Utility records give a check on either quote. For customer-owned systems without a battery, 1 to 25 kW, approved at PG&amp;E, SCE and SDG&amp;E from January 2025 through May 2026, Sunrun (CSLB #750184) reported a median of $2.85 per watt on 4,929 systems and Tesla (CSLB #888104) $4.48 on 1,159 systems (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026). These are prices the installers wrote on utility applications, before incentives, not quotes for your roof.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                The two sell differently. In 2025, Sunrun is listed on 37,367 residential systems at the three utilities, 88% of them leases or PPAs; Tesla on 7,056, under 1% leases or PPAs, and 86% with a battery.
+              </p>
               <p className={p}>
                 If both are purchases, compare the price per watt for the same system size and what each includes. If one
                 is a Sunrun subscription and the other a Tesla lease, compare the year-one payment, the escalator and the

@@ -61,6 +61,12 @@ export default function SunnovaVsSunrun() {
                   </tbody>
                 </table>
               </div>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                One major change: Sunnova filed Chapter 11 on June 8, 2025 (<a href='https://www.courtlistener.com/docket/70491405/sunnova-energy-international-inc/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>No. 25-90160, Bankr. S.D. Tex.</a>, CourtListener, checked September 24, 2026). Utility records list Sunnova Energy Corporation (CSLB #1003498) on 2,832 residential systems approved at PG&amp;E, SCE and SDG&amp;E in 2025 and 28 from January through May 2026.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Sunrun (CSLB #750184) is listed on 37,367 systems approved in 2025, 88% of them leases or PPAs (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026). Confirm who will service a Sunnova-era contract before you rely on the warranty rows above.
+              </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Where Sunnova Wins</h2>
               <ul className="list-disc pl-6 space-y-2">
