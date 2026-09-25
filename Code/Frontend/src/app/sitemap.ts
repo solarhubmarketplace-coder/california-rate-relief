@@ -38,7 +38,6 @@ const CRR_GREEN_20260918 = new Set([
   '/blog/do-solar-panels-increase-property-taxes-california',
   '/blog/can-you-cancel-solar-panel-contract-before-installation-california',
   '/blog/free-solar-panels-california',
-  '/blog/solar-ppa-vs-lease-california',
 ]);
 const CRR_NEW_QUESTION_20260920 = new Set([
   '/blog/adding-solar-panels-existing-system-california',

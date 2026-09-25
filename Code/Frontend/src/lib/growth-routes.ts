@@ -237,7 +237,6 @@ export const LOCAL_RELEASE_REVIEW_ROUTES = [
   '/blog/what-happens-to-solar-lease-when-i-sell-california',
   '/blog/commercial-solar-financing-california',
   '/blog/solar-panel-removal-reinstall-cost',
-  '/blog/commercial-solar-installation-cost-california',
 ] as const;
 
 export const PUBLIC_CRR_NO_SESSION_ROUTES = [
