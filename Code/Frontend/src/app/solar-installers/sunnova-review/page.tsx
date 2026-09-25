@@ -13,8 +13,13 @@ import {
   Calendar,
 } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const SUNNOVA_LICENSES: InstallerLicense[] = [
+  { number: '1003498', holder: 'Sunnova Energy Corporation', basis: DGSTATS_LICENSE_BASIS, status: 'revoked', checked: 'September 24, 2026' }
+];
 
 export const metadata: Metadata = {
   title: "Sunnova Reviews 2026: Is It Still in Business?",
@@ -716,7 +721,7 @@ export default function SunnovaReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Sunnova" />
+        <VerifyInstallerBox installerName="Sunnova" licenses={SUNNOVA_LICENSES} />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

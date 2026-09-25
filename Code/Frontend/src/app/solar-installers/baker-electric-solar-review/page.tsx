@@ -17,9 +17,14 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { FaqJsonLd, type FaqJsonLdItem } from '@/components/shared/FaqJsonLd';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const BAKER_LICENSES: InstallerLicense[] = [
+  { number: '858088', holder: 'NB Baker Electric Inc dba Baker Home Energy', basis: DGSTATS_LICENSE_BASIS, status: 'current and active', checked: 'September 24, 2026' }
+];
 
 const metaTitle = "Baker Electric San Diego vs Baker Home Energy: Solar Review";
 const metaDescription =
@@ -160,7 +165,7 @@ export default function BakerReview() {
                 So for a home solar project, the company you are most likely dealing with is <strong>Baker Home Energy</strong>. The two sites publish separate license numbers, which makes them separate licensed businesses rather than one name spelled two ways. Neither site says &ldquo;Baker Electric Solar&rdquo; was renamed, and neither uses the name &ldquo;NB Baker Electric Inc.&rdquo; Sources: <a href={BHE} target='_blank' rel='noopener noreferrer' className='text-primary underline'>bakerhomeenergy.com</a> and <a href={BE} target='_blank' rel='noopener noreferrer' className='text-primary underline'>baker-electric.com</a>, both read September 23, 2026.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Why this matters: your contract, your warranty and your license check all attach to one legal business. Confirm which entity is named on the proposal, then look its number up in the CSLB&apos;s <a href={CSLB_CHECK} target='_blank' rel='noopener noreferrer' className='text-primary underline'>Check a License</a> tool. Automated attempts to open the CSLB record for #858088 and #161756 on September 22 and 23, 2026 returned only the tool&apos;s blank search form, so this page cannot state either license&apos;s current status. That says nothing bad about either license. It means you should run the lookup yourself, in a browser, on the day you sign. The <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>contractor-verification walkthrough</Link> shows what to read on the record.
+                Why this matters: your contract, your warranty and your license check all attach to one legal business. Confirm which entity is named on the proposal, then look its number up in the CSLB&apos;s <a href={CSLB_CHECK} target='_blank' rel='noopener noreferrer' className='text-primary underline'>Check a License</a> tool. On that tool (checked September 24, 2026), #858088 belongs to NB Baker Electric Inc dba Baker Home Energy and #161756 to Baker Electric &amp; Renewables LLC dba Baker Electric; both were current and active. #858088 is also the number reported for Baker Home Energy on utility interconnection applications in California DG Stats (CPUC), data through May 31, 2026. Status can change, so run the lookup again on the day you sign. The <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>contractor-verification walkthrough</Link> shows what to read on the record.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What the license classes tell you</h2>
@@ -245,7 +250,7 @@ export default function BakerReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Baker Home Energy" cslbLicenseNumber="858088" />
+        <VerifyInstallerBox installerName="Baker Home Energy" licenses={BAKER_LICENSES} />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

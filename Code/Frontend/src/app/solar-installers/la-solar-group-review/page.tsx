@@ -188,7 +188,7 @@ export default function LASolarGroupReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="La Group" />
+        <VerifyInstallerBox installerName="LA Solar Group" />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

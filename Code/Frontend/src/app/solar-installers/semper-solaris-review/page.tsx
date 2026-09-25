@@ -5,10 +5,15 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const SEMPER_LICENSES: InstallerLicense[] = [
+  { number: '978152', holder: 'Semper Home dba Semper Solaris', basis: DGSTATS_LICENSE_BASIS, status: 'current and active', checked: 'September 24, 2026' }
+];
 
 export const metadata: Metadata = {
   title:
@@ -178,7 +183,7 @@ export default function SemperSolarisReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Semperis" cslbLicenseNumber="978152" />
+        <VerifyInstallerBox installerName="Semper Solaris" licenses={SEMPER_LICENSES} />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

@@ -8,8 +8,13 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const OPTION_ONE_LICENSES: InstallerLicense[] = [
+  { number: '985340', holder: 'Option One Corporation dba Option One Solar', basis: DGSTATS_LICENSE_BASIS, status: 'current and active', checked: 'September 24, 2026' }
+];
 
 const metaTitle = "Option One Solar Apple Valley Reviews (2026): 25-Yr Warranty";
 const metaDescription =
@@ -137,7 +142,7 @@ export default function OptionOneReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>License and Verification</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Option One Solar&apos;s own site lists CSLB license #985340, classifications C-10 (Electrical) and C-46 (Solar) (optiononesolar.com, accessed September 2026). We could not retrieve a status, expiration, or bond record for this number this session &mdash; CSLB&apos;s online lookup returned only its blank search form to an automated fetch, not a rendered license record. Don&apos;t treat this as &ldquo;active&rdquo; or &ldquo;in good standing&rdquo; from this page; verify it yourself using the CSLB lookup below before signing anything. For what else to check beyond the number itself, see our <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>full contractor-verification walkthrough</Link>.
+                Option One Solar&apos;s own site lists CSLB license #985340, classifications C-10 (Electrical) and C-46 (Solar) (optiononesolar.com, accessed September 2026). It is also the number reported for Option One Solar on utility interconnection applications in California DG Stats (CPUC), data through May 31, 2026. On CSLB&apos;s license lookup (checked September 24, 2026), #985340 belongs to Option One Corporation dba Option One Solar in Apple Valley and is current and active, expiring July 31, 2027. Status can change, so check it again using the CSLB lookup below before signing anything. For what else to check beyond the number itself, see our <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary underline'>full contractor-verification walkthrough</Link>.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>How a Repair or Service Call Works</h2>
@@ -188,7 +193,7 @@ export default function OptionOneReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Option One" cslbLicenseNumber="985340" />
+        <VerifyInstallerBox installerName="Option One Solar" licenses={OPTION_ONE_LICENSES} />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

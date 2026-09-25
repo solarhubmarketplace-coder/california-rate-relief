@@ -7,8 +7,13 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const NEW_DAY_LICENSES: InstallerLicense[] = [
+  { number: '812958', holder: 'New Day Solar', basis: DGSTATS_LICENSE_BASIS, status: 'current and active', checked: 'September 24, 2026' }
+];
 
 export const metadata: Metadata = {
   title: "New Day Solar Reviews (2026): Family-Owned, Murrieta, CA",
@@ -138,7 +143,7 @@ export default function NewDayReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="New Day" />
+        <VerifyInstallerBox installerName="New Day Solar" licenses={NEW_DAY_LICENSES} />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

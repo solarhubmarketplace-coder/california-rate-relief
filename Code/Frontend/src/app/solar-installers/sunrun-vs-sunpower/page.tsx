@@ -134,8 +134,8 @@ export default function SunrunVsSunPower() {
                     </tr>
                     <tr className="align-top">
                       <td className="py-3 pr-4 font-medium">CSLB license number(s), as published</td>
-                      <td className="py-3 px-3">#750184 and #969975 (no classification given). Status not independently verified — check directly at CSLB before signing.</td>
-                      <td className="py-3 px-3">#961988, held by &ldquo;Complete Solar, Inc. DBA SunPower,&rdquo; classifications C-10 (Electrical) and C-46 (Solar). Status not independently verified — check directly at CSLB before signing.</td>
+                      <td className="py-3 px-3">#750184 and #969975 (no classification given). Both current and active on CSLB&apos;s lookup, checked September 24, 2026 — check again before signing.</td>
+                      <td className="py-3 px-3">#961988, held by &ldquo;Complete Solar, Inc. DBA SunPower,&rdquo; classifications C-10 (Electrical) and C-46 (Solar). Current and active on CSLB&apos;s lookup, checked September 24, 2026, with a pending disciplinary action noted on the record — check again before signing.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -172,7 +172,7 @@ export default function SunrunVsSunPower() {
               <p>Neither company is a better fit for every California homeowner — what changes the answer is which of these applies to your situation:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li><strong>If $0-down lease or PPA financing is the deciding factor</strong>, that changes what you&apos;re actually comparing: Sunrun offers lease and PPA directly, and owns the system under either. SunPower&apos;s lease/PPA runs through a separate third-party financing provider, not SunPower Inc. itself, and availability varies by state.</li>
-                <li><strong>If you&apos;re weighing what happens to your contract when you sell</strong>, Sunrun publishes a specific transfer process for its lease/PPA customers (above). SunPower Inc. doesn&apos;t publish an equivalent process for a post-2024 lease/PPA on the pages checked this session — ask directly before signing if that matters to you.</li>
+                <li><strong>If you&apos;re weighing what happens to your contract when you sell</strong>, Sunrun publishes a specific transfer process for its lease/PPA customers (above). SunPower Inc. doesn&apos;t publish an equivalent process for a post-2024 lease/PPA on its site (checked September 22, 2026) — ask directly before signing if that matters to you.</li>
                 <li><strong>If you already own a pre-9/30/2024 SunPower Corporation system</strong>, your warranty situation is materially different from either company&apos;s new-install terms — see the table above and contact SunStrong Management or your financier directly.</li>
                 <li><strong>If you want a single guarantee document that covers production, repairs, roof and battery together</strong>, that&apos;s how Sunrun structures its Subscription/Protection Plus guarantee. SunPower Inc.&apos;s new-install coverage is split across a workmanship warranty, a 2-year support window, a production-shortfall formula and separate manufacturer warranties.</li>
               </ul>

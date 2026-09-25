@@ -9,12 +9,17 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const MOMENTUM_LICENSES: InstallerLicense[] = [
+  { number: '1026366', holder: 'Momentum Solar LLC', basis: DGSTATS_LICENSE_BASIS, status: 'expired May 31, 2025', checked: 'September 24, 2026' }
+];
 
 const path = '/solar-installers/momentum-solar-review';
 const checked = '2026-09-23';
@@ -341,14 +346,18 @@ export default function MomentumSolarReview() {
                 list California.
               </p>
 
-              <h2 className={h2}>CSLB license: attempted, unverified</h2>
+              <h2 className={h2}>CSLB license: expired</h2>
               <p className={p}>
-                This page cites CSLB license <strong>#997872</strong> in the verification box below. CSLB’s online
-                lookup was rate-limited on every attempt and returned no rendered record (
-                <a href='https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx?LicNum=997872' target='_blank' rel='noopener noreferrer' className={a}>cslb.ca.gov</a>,
-                attempted September 22, 2026), and no license page on momentumsolar.com confirms the number. Given
-                the open question about California service, check it yourself and confirm that the entity name on
-                the license matches the one on your contract. Our{' '}
+                The license number reported for Momentum Solar LLC on utility interconnection applications in
+                California DG Stats (CPUC), data through May 31, 2026, is <strong>#1026366</strong>. On{' '}
+                <a href='https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx' target='_blank' rel='noopener noreferrer' className={a}>CSLB’s license lookup</a>{' '}
+                (checked September 24, 2026), that license belongs to Momentum Solar LLC in Orange, California,
+                and it expired on May 31, 2025; CSLB says the license is not able to contract at this time. An earlier version of this
+                page cited #997872; CSLB shows that number belongs to an unrelated painting company.
+              </p>
+              <p className={p}>
+                If anyone offers you a Momentum contract in California, check the license number on it at CSLB
+                and confirm that the entity name matches the one on your contract. Our{' '}
                 <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className={a}>
                   contractor-verification walkthrough
                 </Link>{' '}
@@ -397,7 +406,7 @@ export default function MomentumSolarReview() {
       </main>
       <Footer />
       <div className='container mx-auto px-4 max-w-3xl'>
-        <VerifyInstallerBox installerName='Momentum' cslbLicenseNumber='997872' bbbProfileUrl='https://www.bbb.org/us/nj/south-plainfield/profile/solar-energy-design/momentum-solar-0221-90134444' />
+        <VerifyInstallerBox installerName='Momentum Solar' licenses={MOMENTUM_LICENSES} bbbProfileUrl='https://www.bbb.org/us/nj/south-plainfield/profile/solar-energy-design/momentum-solar-0221-90134444' />
       </div>
       <div className='container mx-auto px-4 max-w-3xl'>
         <AuthorBio domain='crr' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

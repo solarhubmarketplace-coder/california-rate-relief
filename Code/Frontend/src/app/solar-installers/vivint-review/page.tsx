@@ -9,12 +9,17 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const SUNRUN_LICENSES: InstallerLicense[] = [
+  { number: '750184', holder: 'Sunrun Installation Services Inc dba Sunrun', basis: DGSTATS_LICENSE_BASIS, status: 'current and active', checked: 'September 24, 2026' }
+];
 
 const path = '/solar-installers/vivint-review';
 const checked = '2026-09-23';
@@ -335,7 +340,7 @@ export default function VivintSolarReview() {
       </main>
       <Footer />
       <div className='container mx-auto px-4 max-w-3xl'>
-        <VerifyInstallerBox installerName='Sunrun' bbbProfileUrl='https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-equipment-dealers/sunrun-inc-1116-312886' />
+        <VerifyInstallerBox installerName='Sunrun' licenses={SUNRUN_LICENSES} bbbProfileUrl='https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-equipment-dealers/sunrun-inc-1116-312886' />
       </div>
       <div className='container mx-auto px-4 max-w-3xl'>
         <AuthorBio domain='crr' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

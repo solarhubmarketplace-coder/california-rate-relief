@@ -9,12 +9,18 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const TESLA_LICENSES: InstallerLicense[] = [
+  { number: '888104', holder: 'Tesla Energy Operations Inc', basis: DGSTATS_LICENSE_BASIS, status: 'current and active', checked: 'September 24, 2026' },
+  { number: '1127593', holder: 'Tesla Construction Inc', basis: 'listed on Tesla’s own contractor-license page', status: 'current and active', checked: 'September 24, 2026' }
+];
 
 const path = '/solar-installers/tesla-solar-review';
 const checked = '2026-09-23';
@@ -419,7 +425,7 @@ export default function TeslaSolarReview() {
       </main>
       <Footer />
       <div className='container mx-auto px-4 max-w-3xl'>
-        <VerifyInstallerBox installerName='Tesla' cslbLicenseNumber='888104' />
+        <VerifyInstallerBox installerName='Tesla' licenses={TESLA_LICENSES} />
       </div>
       <div className='container mx-auto px-4 max-w-3xl'>
         <AuthorBio domain='crr' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

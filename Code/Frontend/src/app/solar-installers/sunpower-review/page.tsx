@@ -7,8 +7,14 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const SUNPOWER_LICENSES: InstallerLicense[] = [
+  { number: '961988', holder: 'Complete Solar Inc dba SunPower', basis: 'the number reported for today’s SunPower on utility interconnection applications in California DG Stats (CPUC), data through May 31, 2026', status: 'current and active, with a pending disciplinary action (an accusation) noted on the record', checked: 'September 24, 2026' },
+  { number: '890895', holder: 'SunPower Corporation Systems', basis: 'the number reported for the pre-2024 SunPower Corporation in the same DG Stats data', status: 'revoked', checked: 'September 24, 2026' }
+];
 
 export const metadata: Metadata = {
   title: "SunPower Reviews (2026): Complete Solaria Rebrand Review",
@@ -186,7 +192,7 @@ export default function SunPowerReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Sunpower" cslbLicenseNumber="690444" />
+        <VerifyInstallerBox installerName="SunPower" licenses={SUNPOWER_LICENSES} />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

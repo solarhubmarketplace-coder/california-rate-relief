@@ -7,7 +7,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar, AlertTriangle } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
@@ -16,6 +16,11 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const PALMETTO_LICENSES: InstallerLicense[] = [
+  { number: '1048921', holder: 'Palmetto Solar LLC dba LightReach', basis: 'listed on Palmetto’s own license page', status: 'current and active, with a pending disciplinary action (an accusation) noted on the record', checked: 'September 24, 2026' }
+];
 
 // 2026-09-23 (Tier 2): upgraded for "lightreach solar reviews". The BBB file,
 // which could not be read on September 18, now lists LightReach as an
@@ -139,7 +144,7 @@ const faqs = [
   {
     question: 'What CSLB license number does Palmetto use in California?',
     answer:
-      'Palmetto’s license page lists #1048921, an Electrical Contractor license. Its current status was not checked at CSLB for this page. Verify it yourself, and verify the separate license of the partner company that will install your system.',
+      'Palmetto’s license page lists #1048921, an Electrical Contractor license. On CSLB’s lookup on September 24, 2026, it belonged to Palmetto Solar LLC dba LightReach and was current and active, with a pending disciplinary action (an accusation) noted on the record. Check it yourself, and check the separate license of the partner company that will install your system.',
   },
 ];
 
@@ -332,9 +337,10 @@ export default function PalmettoReview() {
               <h2 className={h2}>Palmetto’s California contractor license</h2>
               <p className={p}>
                 Palmetto’s license page lists California license <strong>#1048921</strong>, classified as an Electrical
-                Contractor.<Cite href={SRC.license} date={sep22} /> Its current status, bond and complaint history were not
-                confirmed at CSLB for this page, and the partner company that installs your system holds its own license.
-                Verify both before signing; our{' '}
+                Contractor.<Cite href={SRC.license} date={sep22} /> On CSLB’s license lookup (checked September
+                24, 2026), #1048921 belongs to Palmetto Solar LLC dba LightReach and is current and active, and the record
+                notes a pending disciplinary action in the form of an accusation, plus complaint disclosures. The partner
+                company that installs your system holds its own license. Check both before signing; our{' '}
                 <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className={a}>contractor-verification walkthrough</Link>{' '}
                 shows how.
               </p>
@@ -405,7 +411,7 @@ export default function PalmettoReview() {
       </main>
       <Footer />
       <div className='container mx-auto px-4 max-w-3xl'>
-        <VerifyInstallerBox installerName='Palmetto' cslbLicenseNumber='1048921' bbbProfileUrl={SRC.bbb} />
+        <VerifyInstallerBox installerName='Palmetto' licenses={PALMETTO_LICENSES} bbbProfileUrl={SRC.bbb} />
       </div>
       <div className='container mx-auto px-4 max-w-3xl'>
         <AuthorBio domain='crr' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />
