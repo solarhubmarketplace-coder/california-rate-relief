@@ -13,6 +13,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, QuickAnswer, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/blog/pge-ev-rates';
 const url = `https://ratereliefca.com${path}`;
@@ -111,6 +112,7 @@ export default function PgeEvRatesPage() {
                 kWh from midnight to 3 p.m. every day. EV-B puts the car on its own meter with different hours. E-ELEC is the
                 electric-home plan, required for new solar. For most people charging overnight at home, EV2-A has the lowest price.
               </p>
+              <HubUpLink path="/blog/pge-ev-rates" />
               <p>
                 Prices below are PG&amp;E&apos;s bundled rates from its residential rate table for March 1, 2026 onward (Advice
                 Letter 7846-E), checked September 23, 2026. PG&amp;E&apos;s EV2 tariff sheet, reissued June 1, 2026, carries the

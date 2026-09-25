@@ -13,6 +13,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, QuickAnswer, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/blog/smud-peak-hours';
 const url = `https://ratereliefca.com${path}`;
@@ -82,6 +83,7 @@ export default function SmudPeakHoursPage() {
                 September 30, weekdays also carry a mid-peak price from noon to 5 p.m. and from 8 p.m. to midnight, and the peak
                 price more than doubles to 37.65 cents per kWh. Summer pricing ends September 30.
               </p>
+              <HubUpLink path="/blog/smud-peak-hours" />
               <p>
                 These hours belong to the plan SMUD lists as its standard residential rate, Time-of-Day (5-8 p.m.). Prices below are SMUD&apos;s 2026 prices as posted on its
                 rate pages, checked September 23, 2026. SMUD is a community-owned utility, so its hours are shorter and its prices

@@ -9,6 +9,7 @@ import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "Solar Panel Bird Proofing Cost: $200-$500 in California",
@@ -99,6 +100,7 @@ export default function SolarPanelBirdProofing() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Birds love solar panels — pigeons, doves, and starlings nest underneath, peck at wiring, and leave droppings that reduce output. In California, bird proofing is increasingly important, especially in fire zones where nesting debris poses a genuine fire risk. Some California installers include basic protection; otherwise get a written price for it. This article covers the most effective methods, costs, whether you should DIY, and why fire-safety rules make bird proofing critical in high-risk zones.
               </p>
+              <HubUpLink path="/blog/solar-panel-bird-proofing" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

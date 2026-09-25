@@ -10,6 +10,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "Solar During a PSPS in California: Will My Panels Work?",
@@ -36,6 +37,7 @@ export default function SolarDuringPSPSCA() {
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Backup &amp; Outages · California</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Solar During a PSPS in California: The Honest Answer</h1>
               <p className="text-lg text-muted-foreground">If you have grid-tied solar and PG&amp;E cuts power during a Public Safety Power Shutoff, your panels will <em>not</em> keep your lights on. Here&apos;s why — and what it takes to actually keep the lights on.</p>
+              <HubUpLink path="/blog/solar-during-psps-california" />
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

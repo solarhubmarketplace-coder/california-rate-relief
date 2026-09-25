@@ -12,6 +12,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
+import { HubUpLink } from '@/components/growth/HubUpLink';
 export const metadata: Metadata = {
   title: "TECH Clean California: Heat Pump Rebate Amounts (2026)",
   description: "TECH Clean California pays $1,000-$2,000 for a heat pump water heater and $3,000-$4,000 for HVAC, with higher rebates for income-qualified households.",
@@ -37,6 +38,7 @@ export default function TECHCleanCAGuide() {
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Electrification Rebate · California</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">TECH Clean California: Heat Pump Rebate Program (2026)</h1>
               <p className="text-lg text-muted-foreground">TECH Clean California is the state&apos;s main incentive program for replacing gas heating with electric heat pumps. Rebates stack with federal tax credits and solar — here&apos;s how it all fits together.</p>
+              <HubUpLink path="/blog/tech-clean-california-heat-pump-rebate" />
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

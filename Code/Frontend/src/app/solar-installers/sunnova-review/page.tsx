@@ -15,6 +15,7 @@ import {
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "Sunnova Reviews 2026: Is It Still in Business?",
@@ -238,6 +239,7 @@ export default function SunnovaReview() {
                 customer&apos;s roof and selling the electricity back for a
                 fixed monthly rate.
               </p>
+              <HubUpLink path="/solar-installers/sunnova-review" />
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 In June 2025, Sunnova filed for Chapter 11 bankruptcy

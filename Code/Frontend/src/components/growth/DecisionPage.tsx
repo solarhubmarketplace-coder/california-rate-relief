@@ -5,6 +5,7 @@ import { Footer } from "@/components/landing/Footer";
 import { PublicLayout } from "@/components/layout/PublicLayout";
 import { SolarInquiry } from "./SolarInquiry";
 import { HeroQuickCheck } from "./HeroQuickCheck";
+import { HubUpLink } from "./HubUpLink";
 import { intakeHrefForPath } from "@/lib/intake-routing";
 import type { ServiceMarket } from "@/lib/service-market";
 import type { ArticleContentsItem } from "@/components/shared/ArticleContents";
@@ -289,6 +290,9 @@ export function DecisionPage({
               />
               {quickCheckAt === "afterByline" && quickCheckNode}
               <p className="mt-5 text-lg leading-relaxed text-foreground/80">{intro}</p>
+              {/* One in-prose link up to the page's hub (plan 7.4). Nothing on
+                  a hub page or a city page. */}
+              <HubUpLink path={path} />
               <p className="mt-3 text-sm text-muted-foreground">
                 California Rate Relief is a private solar referral service.
               </p>

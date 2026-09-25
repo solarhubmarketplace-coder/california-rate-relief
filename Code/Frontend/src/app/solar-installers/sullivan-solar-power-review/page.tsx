@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, AlertTriangle } from 'lucide-re
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "Sullivan Solar Power Reviews (2026): Defunct Installer",
@@ -70,6 +71,7 @@ export default function SullivanReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Sullivan Solar Power was founded in San Diego in 2004 and for more than 15 years was one of the most respected residential solar installers in Southern California. It was well known locally during its active years. That reputation is why the 2021 closure caught many customers off guard.
               </p>
+              <HubUpLink path="/solar-installers/sullivan-solar-power-review" />
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 In late 2021 Sullivan Solar Power abruptly ceased operations. Reports from former customers surfaced across Reddit, BBB, and San Diego local news covering the same themes:
               </p>

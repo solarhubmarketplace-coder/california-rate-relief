@@ -93,6 +93,7 @@ export function ArticleRenderer({
   quickCheck,
   midArticle,
   inquiry,
+  hubLink,
 }: {
   page: ArticlePage;
   related?: { href: string; title: string }[];
@@ -107,6 +108,11 @@ export function ArticleRenderer({
    * CtaCard at the end of the article, so the page keeps one closing ask.
    */
   inquiry?: ReactNode;
+  /**
+   * One sentence linking up to the page's hub, rendered right after the intro
+   * (plan 7.4). The JSON bodies are plain text and cannot carry the link.
+   */
+  hubLink?: ReactNode;
 }) {
   const midAfter = midArticle ? midArticleIndex(page.sections.length) : -1;
   const sectionIds = uniqueArticleAnchors(page.sections.map((section) => section.heading))
@@ -143,6 +149,7 @@ export function ArticleRenderer({
 
       <div className="prose-content">
         <Paragraphs text={page.intro} className="text-lg text-foreground/85 leading-relaxed mb-5" />
+        {hubLink && <div className="-mt-2 mb-5">{hubLink}</div>}
       </div>
 
       {quickCheck}

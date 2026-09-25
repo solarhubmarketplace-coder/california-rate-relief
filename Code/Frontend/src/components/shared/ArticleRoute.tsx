@@ -12,6 +12,7 @@ import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
 import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { IntentCTA } from '@/components/growth/IntentCTA';
+import { HubUpLink, hubUpLinkFor } from '@/components/growth/HubUpLink';
 import {
   CommercialReviewButton,
   CommercialReviewForm,
@@ -201,6 +202,7 @@ export function ArticleRoute({
           </div>
           <ArticleRenderer page={page} related={relatedArticles(page)}
             quickCheck={quickCheck} midArticle={midArticle} inquiry={inquiry}
+            hubLink={hubUpLinkFor(articleHref(page)) ? <HubUpLink path={articleHref(page)} className="leading-relaxed text-foreground/80" /> : undefined}
             tools={isSgip?<nav aria-label="SGIP decision tools" className="my-6 flex flex-wrap gap-4 text-sm font-semibold text-primary underline"><Link href="/tools/solar-panel-calculator">Check the quote without a rebate</Link><Link href="/blog/solar-battery-backup-california">Compare battery and backup needs</Link><Link href="#solar-inquiry">Optional solar inquiry</Link></nav>:undefined}/>
           {after && (
             <div className="mx-auto max-w-6xl">

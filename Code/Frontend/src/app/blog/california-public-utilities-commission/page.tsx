@@ -8,6 +8,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title:
@@ -100,6 +101,7 @@ export default function CaliforniaPublicUtilitiesCommission() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Every time your electricity rate goes up, a fixed charge appears on your bill, or net metering rules change, one agency is behind it: the California Public Utilities Commission (CPUC). If you pay an electric bill in California, the CPUC&apos;s decisions directly determine how much you pay. Here&apos;s what this agency actually does, who runs it, and what their recent rulings mean for your wallet.
               </p>
+              <HubUpLink path="/blog/california-public-utilities-commission" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

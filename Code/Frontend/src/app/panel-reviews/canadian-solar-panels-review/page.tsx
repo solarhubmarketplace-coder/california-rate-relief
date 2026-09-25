@@ -8,6 +8,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "Canadian Solar Panels Review 2026: HiKu Series for CA",
@@ -54,6 +55,7 @@ export default function CanadianSolarReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Canadian Solar is one of the largest publicly traded tier-1 panel manufacturers globally, headquartered in Guelph, Ontario, Canada, and listed on the NASDAQ under ticker CSIQ. The company has been producing panels at massive scale for over two decades and is a common choice on California residential and commercial installs when value is the priority over premium specs. Here&apos;s a plain review.
               </p>
+              <HubUpLink path="/panel-reviews/canadian-solar-panels-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

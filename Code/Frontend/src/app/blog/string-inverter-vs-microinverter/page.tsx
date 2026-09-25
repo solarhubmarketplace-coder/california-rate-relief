@@ -12,6 +12,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
+import { HubUpLink } from '@/components/growth/HubUpLink';
 export const metadata: Metadata = {
   title: "String Inverter vs Microinverter: Which Is Right for You?",
   description: "Head-to-head comparison of string inverter vs microinverter solar systems. Cost, performance under shade, warranty, rapid shutdown, and repairability.",
@@ -37,6 +38,7 @@ export default function StringVsMicro() {
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar Equipment</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">String Inverter vs Microinverter: Which Is Right for Your Solar System?</h1>
               <p className="text-lg text-muted-foreground">The single most consequential equipment choice in your solar install. Here&apos;s how each type works, what the real-world tradeoffs are, and when to pick which.</p>
+              <HubUpLink path="/blog/string-inverter-vs-microinverter" />
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

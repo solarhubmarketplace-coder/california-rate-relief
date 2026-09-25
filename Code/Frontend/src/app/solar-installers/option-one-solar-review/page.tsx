@@ -10,6 +10,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const metaTitle = "Option One Solar Apple Valley Reviews (2026): 25-Yr Warranty";
 const metaDescription =
@@ -81,6 +82,7 @@ export default function OptionOneReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Option One Solar is a smaller California regional installer serving the High Desert (Apple Valley area) and extending into the Inland Empire and parts of LA County. The company has a 50+ year electrical pedigree in the family that owns it. Customer reviews are consistently strong — Yelp runs 4.9/5 in several listings, and the company actively discourages PPAs and leases in favor of ownership. The 25-year bumper-to-bumper warranty including labor is unusually comprehensive.
               </p>
+              <HubUpLink path="/solar-installers/option-one-solar-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

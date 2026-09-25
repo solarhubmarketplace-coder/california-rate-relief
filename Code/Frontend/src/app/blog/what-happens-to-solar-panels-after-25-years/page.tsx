@@ -12,6 +12,7 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "What Happens to Solar Panels After 25 Years? CA Guide",
@@ -48,6 +49,7 @@ export default function WhatHappensAfter25Years() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 The 25-year solar panel warranty doesn&apos;t mean your panels die at 25 years. It means the manufacturer guarantees at least a certain output level at that 25-year mark; the percentage is on your panel&apos;s warranty sheet. Panels keep producing electricity for decades past warranty expiration — just at slightly reduced output. Here&apos;s what actually happens to California solar systems over time, and what homeowners do when warranties expire.
               </p>
+              <HubUpLink path="/blog/what-happens-to-solar-panels-after-25-years" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

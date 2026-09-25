@@ -13,6 +13,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, QuickAnswer, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/blog/how-to-read-sdge-bill';
 const url = `https://ratereliefca.com${path}`;
@@ -87,6 +88,7 @@ export default function HowToReadSdgeBillPage() {
                 the end). Solar customers get extra lines for imports, exports and credits, and a net meter that shows power
                 flowing both ways.
               </p>
+              <HubUpLink path="/blog/how-to-read-sdge-bill" />
               <p>
                 The layout and terms here come from SDG&amp;E&apos;s own bill guides, solar and NEM bill pages and net meter fact
                 sheet, and the prices from its TOU-DR1 rate table effective August 1, 2026, all checked September 23, 2026. If

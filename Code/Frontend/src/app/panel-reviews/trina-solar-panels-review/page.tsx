@@ -8,6 +8,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "Trina Solar Panels Review: Tier-1, 25-Year Warranty",
@@ -54,6 +55,7 @@ export default function TrinaSolarReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Trina Solar is one of the world&apos;s largest tier-1 solar panel manufacturers — publicly traded on the Shanghai Stock Exchange (688599), founded in 1997, and producing panels in high volume for residential, commercial, and utility-scale markets worldwide. If your California installer proposes Trina panels, you&apos;re getting mainstream tier-1 hardware from a company with meaningful financial scale. Here&apos;s the plain review for California homeowners.
               </p>
+              <HubUpLink path="/panel-reviews/trina-solar-panels-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

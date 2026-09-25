@@ -12,6 +12,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, QuickAnswer, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/blog/help-with-pge-bill';
 const url = `https://ratereliefca.com${path}`;
@@ -134,6 +135,7 @@ export default function HelpWithPgeBillPage() {
                 can credit up to $800, and LIHEAP, run by local agencies, can pay up to $1,000. CARE and FERA customers far behind
                 can have up to $8,000 forgiven through the Arrearage Management Plan.
               </p>
+              <HubUpLink path="/blog/help-with-pge-bill" />
               <p>
                 Every program below is from PG&amp;E&apos;s own assistance pages and the state agency that runs LIHEAP, checked
                 September 23, 2026. Amounts and rules change, and several programs are first-come, first-served, so apply early

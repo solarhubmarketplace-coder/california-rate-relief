@@ -14,6 +14,7 @@ import { SourceList, type Source } from '@/components/growth/DecisionPage';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 // 2026-09-23 (topical-authority wave, Tier 2): the SCE spoke of the NEM hub.
 // /blog/sce-nem-2 covers legacy NEM 2.0 accounts; this page owns "sce solar
@@ -132,6 +133,7 @@ export default function SceSolarBillingPlanPage() {
                 and SCE credits your exports at hourly values, about 6 cents per kWh on a summer day and about 21 cents
                 in the evening for newer customers, locked for nine years.
               </p>
+              <HubUpLink path="/blog/sce-solar-billing-plan" />
               <p>
                 This guide covers what SCE pays for exported solar in each year and season, the bonus, what you pay for
                 grid power, how to read the monthly bill and the annual settlement, and where a battery fits. Accounts

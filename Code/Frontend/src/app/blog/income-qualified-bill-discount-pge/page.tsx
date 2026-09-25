@@ -12,6 +12,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/blog/income-qualified-bill-discount-pge';
 const url = `https://ratereliefca.com${path}`;
@@ -72,6 +73,7 @@ export default function IncomeQualifiedBillDiscountPgePage() {
                 PG&amp;E&apos;s daily Base Services Charge. A family of four qualifies for CARE with income up to $66,000 a
                 year through May 31, 2027.
               </p>
+              <HubUpLink path="/blog/income-qualified-bill-discount-pge" />
               <p>
                 <strong>A note on the name.</strong> The program actually called the &ldquo;Income Qualified Bill
                 Discount&rdquo; belongs to Portland General Electric, a different utility in Oregon, which started it on April

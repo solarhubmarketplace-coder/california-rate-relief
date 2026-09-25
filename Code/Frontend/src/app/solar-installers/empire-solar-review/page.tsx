@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, AlertTriangle } from 'lucide-re
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "Empire Solar Reviews (2026): Verify Which Entity You Hire",
@@ -75,6 +76,7 @@ export default function EmpireReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 &ldquo;Empire Solar&rdquo; or &ldquo;Empire Solar Group&rdquo; is a name that has been used by several distinct solar companies across multiple states over the past decade. At least one namesake entity in Utah went through bankruptcy; others have pivoted or closed. The California operation, with mentions tied to the Pasadena area, has a mixed reputation with some older positive reviews and more recent complaints around delays and unfinished work. Before proceeding, homeowners should verify exactly which legal entity is quoting them.
               </p>
+              <HubUpLink path="/solar-installers/empire-solar-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

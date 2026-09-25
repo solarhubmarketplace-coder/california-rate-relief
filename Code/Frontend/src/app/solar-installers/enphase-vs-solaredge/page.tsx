@@ -7,6 +7,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "Enphase vs SolarEdge: Which Inverter Is Better in 2026?",
@@ -33,6 +34,7 @@ export default function EnphaseVsSolarEdge() {
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <p className="text-lg text-muted-foreground">The two dominant inverter platforms in American residential solar. Here&apos;s how they actually compare — technically, commercially, and in real-world reliability.</p>
+<HubUpLink path="/solar-installers/enphase-vs-solaredge" />
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

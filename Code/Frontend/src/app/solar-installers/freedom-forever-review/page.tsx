@@ -16,6 +16,7 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title:
@@ -157,6 +158,7 @@ export default function FreedomForeverReview() {
               <p className='text-foreground/80 leading-relaxed mt-6'>
                 Freedom Forever filed for Chapter 11 reorganization on April 15, 2026 (already covered in detail below on the live page). Separately from that, its own site currently advertises three financing paths — Purchase, Lease, and PPA — a 25-year production guarantee, and three California contractor licenses that don&apos;t match the single number this page previously cited. Below is what we could confirm on freedomforever.com this week, what its site still doesn&apos;t publish (a transfer-on-sale process), and what federal court records — not review-site scores — show about the complaint pattern.
               </p>
+              <HubUpLink path="/solar-installers/freedom-forever-review" />
             </header>
 
             {/* TL;DR */}

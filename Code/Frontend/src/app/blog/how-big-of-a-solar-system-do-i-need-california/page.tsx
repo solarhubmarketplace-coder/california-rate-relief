@@ -12,6 +12,7 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "How Big of a Solar System Do You Need in California?",
@@ -48,6 +49,7 @@ export default function HowBigSolarSystem() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 The right solar system size depends on three things: how much electricity your home actually uses, how much of it you want solar to cover, and how much roof space you have. For most California homes in 2026, the answer lands somewhere between 6 kW and 12 kW with one or two batteries. Here&apos;s how to figure out your specific number without relying on an installer&apos;s sales pitch.
               </p>
+              <HubUpLink path="/blog/how-big-of-a-solar-system-do-i-need-california" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

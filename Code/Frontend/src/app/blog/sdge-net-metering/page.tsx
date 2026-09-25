@@ -14,6 +14,7 @@ import { SourceList, type Source } from '@/components/growth/DecisionPage';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 // 2026-09-23 (topical-authority wave, Tier 2): the SDG&E spoke of the NEM hub.
 // Covers "sdge net metering", "sdge nem 2.0 (rates)" and "sdge nem 3.0".
@@ -128,6 +129,7 @@ export default function SdgeNetMeteringPage() {
                 systems are on the Solar Billing Plan, SDG&amp;E’s NEM 3.0, which uses the EV-TOU-5 rate and credits
                 exports at hourly avoided-cost values, with no export bonus in SDG&amp;E territory.
               </p>
+              <HubUpLink path="/blog/sdge-net-metering" />
               <p>
                 This guide covers who is on each plan, what you pay for grid power, how SDG&amp;E splits export credits
                 into generation and delivery, how the true-up works, and what changes if San Diego Community Power or

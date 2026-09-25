@@ -13,6 +13,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, QuickAnswer, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 // Tier 3 (2026-09-23): the tariff-book view of PG&E residential pricing. The
 // time-of-use page explains the hours; this page lists every residential
@@ -117,6 +118,7 @@ export default function PgeRateSchedulesPage() {
                 tiered E-1, E-ELEC for electric homes, EV2-A and EV-B for electric vehicles, and EM, ES, ET and ESR for shared
                 meters.
               </p>
+              <HubUpLink path="/blog/pge-rate-schedules" />
               <p>
                 Every price below is from PG&amp;E&apos;s residential rate table for March 1, 2026 to the present and the matching
                 tariff sheets, checked September 23, 2026. They are &quot;bundled&quot; prices, for customers who buy both

@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "Ameco Solar Reviews (2026): LA Installer, Roofing & Solar",
@@ -68,6 +69,7 @@ export default function AmecoReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Ameco Solar is a long-established California regional installer based in Paramount (LA area) that combines decades of electrical and roofing work with residential solar. That integration is the differentiator — Ameco can handle solar, roof replacement, and electrical panel upgrades under one contract, which matters for the common California scenario where a solar install triggers a roof or panel upgrade need. Customer reputation on Yelp runs mostly positive, BBB complaint volume is modest.
               </p>
+              <HubUpLink path="/solar-installers/ameco-solar-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

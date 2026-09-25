@@ -11,6 +11,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title:
@@ -79,6 +80,7 @@ export default function HoaSolarRights() {
                 solar. Here&apos;s what the law actually says and how to
                 handle an HOA that&apos;s pushing back.
               </p>
+              <HubUpLink path="/blog/hoa-solar-rights-california" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

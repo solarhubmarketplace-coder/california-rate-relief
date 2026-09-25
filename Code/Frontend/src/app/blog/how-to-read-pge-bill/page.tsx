@@ -13,6 +13,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, QuickAnswer, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/blog/how-to-read-pge-bill';
 const url = `https://ratereliefca.com${path}`;
@@ -86,6 +87,7 @@ export default function HowToReadPgeBillPage() {
                 charges into line items. To understand a bill, go straight to page 3: your rate plan, billing dates and kWh by
                 time period explain most of the total.
               </p>
+              <HubUpLink path="/blog/how-to-read-pge-bill" />
               <p>
                 The layout and definitions below are from PG&amp;E&apos;s Understand Your Bill and Solar Bill pages, and the prices
                 from its residential rate table for March 1, 2026 onward, all checked September 23, 2026. Since March 2026, every

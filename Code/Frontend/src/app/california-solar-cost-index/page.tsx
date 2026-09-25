@@ -27,6 +27,7 @@ import {
   getCostIndexSources,
   listJoin,
 } from '@/data/solar-cost-index';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 // =============================================================================
 // /california-solar-cost-index — the linkable data page for the cost layer.
@@ -235,6 +236,7 @@ export default function CaliforniaSolarCostIndexPage() {
                 which utility bills the address, and whether a community choice aggregator supplies
                 the power. Every cell links to the document it came from.
               </p>
+              <HubUpLink path="/california-solar-cost-index" />
               <p>
                 It does not print a price for a solar system in any city. No reliable public source
                 publishes one, and the number that governs your project is the one in your own

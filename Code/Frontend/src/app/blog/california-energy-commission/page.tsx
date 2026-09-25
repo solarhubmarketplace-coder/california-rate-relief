@@ -8,6 +8,7 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title:
@@ -100,6 +101,7 @@ export default function CaliforniaEnergyCommission() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Most California homeowners have heard of the CPUC — the agency that sets electricity rates. But there&apos;s another state agency that shapes your energy costs in less obvious ways: the California Energy Commission (CEC). The CEC doesn&apos;t set your utility rate, but it decides what goes into new buildings, which appliances can be sold, and how the state&apos;s energy future is planned. If you own a home or plan to buy one, the CEC&apos;s decisions affect you.
               </p>
+              <HubUpLink path="/blog/california-energy-commission" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

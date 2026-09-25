@@ -12,6 +12,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 // Tier 3 (2026-09-23). No utility or agency publishes an average bill by
 // apartment size, so this page prices federal apartment-usage figures on
@@ -99,6 +100,7 @@ export default function AverageSdgeBillTwoBedroomPage() {
                 on its tiered DR plan, before taxes. Where you land depends on your climate zone, the season and, on time-of-use
                 plans, the hour.
               </p>
+              <HubUpLink path="/blog/average-sdge-bill-2-bedroom-apartment" />
               <p>
                 The usage range comes from federal survey data for Western homes; the prices and baseline allowances come from
                 SDG&amp;E&apos;s own rate tables and calculator, checked September 23, 2026. It is our calculation, not an SDG&amp;E

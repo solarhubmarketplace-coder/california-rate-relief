@@ -14,6 +14,7 @@ import { SourceList, QuoteChecklist, type Source } from '@/components/growth/Dec
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 // 2026-09-23 (topical-authority wave): rebuilt as a self-contained page from
 // NetBillingGuide kind="decision" to answer "what is the best approach under
@@ -108,6 +109,7 @@ export default function Nem3StillWorthItPage() {
                 usage, run more of the house on it during the day or store it for the evening, and buy at a
                 price that works without the federal credit that ended in 2025.
               </p>
+              <HubUpLink path="/blog/nem-3-california-still-worth-it" />
               <p>
                 When it adopted net billing, the CPUC projected that average residential solar customers would
                 save about $100 a month and solar-plus-storage customers at least $136, with systems paying off in

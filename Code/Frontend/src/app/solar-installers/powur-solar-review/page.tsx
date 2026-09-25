@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, AlertTriangle } from 'lucide-re
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "Powur Solar Reviews (2026): 150+ BBB Complaints, MLM Model",
@@ -75,6 +76,7 @@ export default function PowurReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Powur Solar is a California-based company (headquartered in Del Mar) that operates an MLM-style (&ldquo;network marketing&rdquo;) sales model. Independent sales consultants recruit customers, earn commissions on solar sales, and in turn can recruit additional consultants and earn override commissions. This layered incentive structure is the core of the business and it is also the core of the complaint record.
               </p>
+              <HubUpLink path="/solar-installers/powur-solar-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

@@ -14,6 +14,7 @@ import { SourceList, type Source } from '@/components/growth/DecisionPage';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/blog/nem-3-lawsuit';
 const url = `https://ratereliefca.com${path}`;
@@ -112,6 +113,7 @@ export default function Nem3LawsuitPage() {
                 too much deference, and on March 9, 2026 the Court of Appeal looked again under the stricter
                 standard and affirmed the decision.
               </p>
+              <HubUpLink path="/blog/nem-3-lawsuit" />
               <p>
                 For a homeowner, that means the net billing tariff PG&amp;E, SCE and SDG&amp;E apply to new
                 solar is still the rule, and existing NEM 2.0 accounts were never part of the case. Here is

@@ -12,6 +12,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, QuickAnswer, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 // Tier 3 (2026-09-23). What it costs a California household to start
 // electric service: start fees, deposits, the fixed charge that begins on day
@@ -104,6 +105,7 @@ export default function CostToTurnOnElectricityPage() {
                 fee. LADWP charges a one-time $19 turn-on fee, and SMUD asks for a deposit only if your credit is poor. The
                 real cost is the first bill.
               </p>
+              <HubUpLink path="/blog/how-much-does-it-cost-to-turn-on-electricity" />
               <p>
                 That bill starts with a fixed daily charge from the day service begins, whatever you use. Below are the start
                 fees, deposit rules and fixed charges for California&apos;s five largest utilities, each taken from the

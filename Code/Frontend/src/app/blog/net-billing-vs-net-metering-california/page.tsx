@@ -14,6 +14,7 @@ import { SourceList, type Source } from '@/components/growth/DecisionPage';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 // 2026-09-23 (topical-authority wave): rebuilt as a self-contained page from
 // NetBillingGuide kind="billing" so it can own "california nem 3.0 decision":
@@ -125,6 +126,7 @@ export default function NetBillingVsNetMeteringPage() {
                 in the CPUC’s NEM 3.0 decision, Decision 22-12-056, adopted December 15, 2022, for interconnection
                 applications filed on or after April 15, 2023 with PG&amp;E, SCE and SDG&amp;E.
               </p>
+              <HubUpLink path="/blog/net-billing-vs-net-metering-california" />
               <p>
                 This page sorts out the names, lays out the CPUC’s own side-by-side, and explains what the decision
                 adopted, what an earlier proposal would have done that didn’t survive, and what it left alone.

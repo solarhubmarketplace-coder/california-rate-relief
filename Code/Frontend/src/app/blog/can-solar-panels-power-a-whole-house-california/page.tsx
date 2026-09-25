@@ -11,6 +11,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: 'Can Solar Panels Power a Whole House in California?',
@@ -47,6 +48,7 @@ export default function CanSolarPowerWholeHouse() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Yes, absolutely — a correctly sized solar + battery system can power a whole California home, day and night, year-round. But the specifics matter: how much electricity your home actually uses, whether you add a battery, what loads you prioritize, and whether you&apos;re connected to the grid as a backstop. Here&apos;s what it actually takes to run a California home entirely on solar in 2026.
               </p>
+              <HubUpLink path="/blog/can-solar-panels-power-a-whole-house-california" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>
