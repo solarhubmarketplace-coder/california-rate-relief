@@ -220,6 +220,77 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   // at the top of this file).
   // Corrected 2026-09-20: Rocklin's growth-only route also has a cost twin.
   // Reversed 2026-09-22; see the file-level "third pass" comment above.
+
+  // GS-ROUTING 2026-09-24
+  // Gold-standard plan items 0.7, 6.1 and 6.4 (out/seo_audit_20260924/
+  // 02_IMPLEMENTATION_PLAN.md). Evidence: technical_site_audit.md §2.3/§2.6,
+  // page_audit.csv and topicmap/gsc/Pages.csv (90 days to 2026-09-21).
+  // Every destination is a live California page that is not itself redirected
+  // or held; canonical-redirects.test.ts checks both.
+  //
+  // 0.7: two duplicate legal pages. They were live, indexable and
+  // self-canonical with text that differs from the pages the site links
+  // (T-24: 3-4% shared). 13 and 11 impressions.
+  '/terms-of-service': '/terms',
+  '/privacy-policy': '/privacy',
+  //
+  // 6.1 (Decision 41): the 24 out-of-state pages (page_audit.csv
+  // out_of_state = True). Each goes to the California page that answers the
+  // same question: state cost/quote guides -> the California solar guide
+  // (cost, incentives and paying for solar); state and city company guides ->
+  // the California installer comparison; state incentive guides -> incentives
+  // by California utility; the NJ commercial guide -> the California
+  // commercial guide; utility high-bill checks -> the California high-bill
+  // check; BGE rate components -> the California rate tracker; Pepco net
+  // metering and solar credits -> how net metering and export credits work.
+  // Impressions in 90 days in the comment.
+  '/new-jersey/solar-cost': '/solar-panels-california', // 12
+  '/maryland/solar-cost': '/solar-panels-california', // 16
+  '/virginia/solar-cost': '/solar-panels-california', // 16
+  '/delaware/solar-cost': '/solar-panels-california', // 22
+  '/washington-dc/solar': '/solar-panels-california', // 3; DC rooftop cost and quote review
+  '/new-jersey/solar-companies': '/best-solar-companies-california', // 0
+  '/maryland/solar-companies': '/best-solar-companies-california', // 0
+  '/virginia/solar-companies': '/best-solar-companies-california', // 0
+  '/delaware/solar-companies': '/best-solar-companies-california', // 0
+  '/washington-dc/solar-companies': '/best-solar-companies-california', // 0
+  '/virginia/richmond-solar-companies': '/best-solar-companies-california', // 0
+  '/virginia/virginia-beach-solar-companies': '/best-solar-companies-california', // 0
+  '/maryland/baltimore-solar-companies': '/best-solar-companies-california', // 0
+  '/new-jersey/solar-incentives': '/blog/solar-rebates-by-california-utility', // 28
+  '/maryland/solar-incentives': '/blog/solar-rebates-by-california-utility', // 16
+  '/virginia/solar-incentives': '/blog/solar-rebates-by-california-utility', // 18
+  '/delaware/solar-incentives': '/blog/solar-rebates-by-california-utility', // 20
+  '/washington-dc/solar-incentives': '/blog/solar-rebates-by-california-utility', // 25
+  '/new-jersey/commercial-solar': '/commercial-solar', // 0
+  '/maryland/bge-high-bill': '/blog/why-is-my-california-electric-bill-so-high', // 0
+  '/utilities/pepco/high-bill': '/blog/why-is-my-california-electric-bill-so-high', // 0
+  '/utilities/delmarva/high-bill': '/blog/why-is-my-california-electric-bill-so-high', // 0
+  '/maryland/bge-electricity-rates': '/california-utility-rate-tracker', // 73
+  '/utilities/pepco/solar-credits': '/blog/how-does-net-metering-work', // 0
+  //
+  // 6.4: the 11 URLs with Search Console impressions that returned 404 (12
+  // impressions, 1 click; technical_site_audit.md §2.6). Ten are mangled
+  // slugs of a live page and go to it; /san-mateo goes to the San Mateo page
+  // with the most impressions (1,509; topicmap G13 winner).
+  '/blog/why-is-pge-bill-so-high': '/blog/why-is-my-pge-bill-so-high',
+  '/blog/pge-vs-sce-sdge-rates-compared': '/blog/pge-vs-sce-vs-sdge-rates-compared',
+  '/blog/are-solar-panels-worth-it-in-california': '/blog/are-solar-panels-worth-it-california',
+  '/blog/do-solar-panels-work-at-night': '/blog/do-solar-panels-work-at-night-california',
+  '/blog/ppa-loan-vs-solar-lease-vs-california': '/blog/ppa-loan-vs-solar-lease-vs-cash-california',
+  '/blog/prepaid-solar-ppa-california-how-it-works-what-it-costs-and-who-its-best':
+    '/blog/prepaid-ppa-california-2026',
+  '/blog/what-happens-to-solar-lease-when-i-sales-california':
+    '/blog/what-happens-to-solar-lease-when-i-sell-california',
+  '/san-mateo': '/solar-companies/san-mateo',
+  '/solar-problems/true-up-bill-california-explainedED': '/solar-problems/true-up-bill-california-explained',
+  '/blog/nem-2-vs-net-3': '/blog/nem-2-vs-nem-3-california',
+  '/solar-companies/simi-valley-california-solar-companies/simi-valley': '/solar-companies/simi-valley',
+  // /programs/care-california was never published but three live pages
+  // linked it (T-21), so Google has seen it. The release already dropped
+  // those links; this sends the URL to the site's CARE/FERA page.
+  '/programs/care-california': '/blog/income-qualified-bill-discount-pge',
+  // END GS-ROUTING 2026-09-24
 };
 
 /**
@@ -244,14 +315,16 @@ export function isRedirectedPath(pathname: string): boolean {
 /** City slugs whose `/solar-savings` page is retired. */
 export const REDIRECTED_SAVINGS_CITY_SLUGS: ReadonlySet<string> = new Set(
   Object.keys(CRR_CANONICAL_REDIRECTS)
-    .filter((path) => path.startsWith('/solar-savings/'))
+    .filter((path) => /^\/solar-savings\/[^/]+$/.test(path))
     .map((path) => path.slice('/solar-savings/'.length)),
 );
 
 /** City slugs whose `/solar-companies` page is retired (2026-09-18). */
 export const REDIRECTED_COMPANIES_CITY_SLUGS: ReadonlySet<string> = new Set(
   Object.keys(CRR_CANONICAL_REDIRECTS)
-    .filter((path) => path.startsWith('/solar-companies/'))
+    // One path segment only: a mangled nested URL such as
+    // /solar-companies/<x>/<y> (GS-ROUTING 2026-09-24) is not a city.
+    .filter((path) => /^\/solar-companies\/[^/]+$/.test(path))
     .map((path) => path.slice('/solar-companies/'.length)),
 );
 

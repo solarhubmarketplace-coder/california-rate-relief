@@ -122,8 +122,8 @@ export default function HomePage() {
             CRR homepage 2026-09-22 (redesign D.5) — page.tsx renders only on
             the ratereliefca.com host (every other host's "/" is rewritten to
             its own home route in middleware.ts), so this is CRR-only and safe
-            to drop here. The component itself is left in place, restyled, in
-            case it is revived elsewhere. */}
+            to drop here. The component was deleted 2026-09-24: it linked the
+            out-of-state guides, which now 301 to California pages (plan 6.1). */}
 
         {/* Testimonials removed 2026-08-24. The eight entries here were
             fabricated placeholders with Unsplash stock portraits, presented as

@@ -310,8 +310,10 @@ test('Tier 3 wave: vallejo is reinstated and renders from growthCities', () => {
     assert.ok(cost.has(slug), `${slug} should keep its /solar-cost page`);
     assert.equal(isRedirectedPath(`/solar-cost/${slug}`), false);
   }
-  // No /solar-companies city page is redirected any more.
-  assert.deepEqual(sources.filter((path) => path.startsWith('/solar-companies/')), []);
+  // No /solar-companies city page is redirected any more. (A city page is one
+  // segment deep; GS-ROUTING 2026-09-24 redirects one mangled nested URL under
+  // /solar-companies/, which is not a city page.)
+  assert.deepEqual(sources.filter((path) => /^\/solar-companies\/[^/]+$/.test(path)), []);
 });
 
 // 2026-09-23, Tier 3 wave (citycos agent): /solar-companies pages this lane
@@ -388,6 +390,135 @@ test('Tier 3 city-cost wave: each new cost page without a companies twin renders
     assert.ok(!T3_COST_PAGES_WITH_LIVE_COMPANIES_TWIN.has(slug), `${slug} is registered twice`);
   }
 });
+
+// ---------------------------------------------------------------------------
+// GS-ROUTING 2026-09-24: plan items 0.7 (duplicate legal pages), 6.1 (the 24
+// out-of-state pages) and 6.4 (URLs with impressions that 404), plus the
+// never-published /programs/care-california that live pages linked. Every row
+// is listed here so the table and this registry can be compared line by line.
+// ---------------------------------------------------------------------------
+const GS_ROUTING_LEGAL: Readonly<Record<string, string>> = {
+  '/terms-of-service': '/terms',
+  '/privacy-policy': '/privacy',
+};
+const GS_ROUTING_OUT_OF_STATE: Readonly<Record<string, string>> = {
+  '/new-jersey/solar-cost': '/solar-panels-california',
+  '/maryland/solar-cost': '/solar-panels-california',
+  '/virginia/solar-cost': '/solar-panels-california',
+  '/delaware/solar-cost': '/solar-panels-california',
+  '/washington-dc/solar': '/solar-panels-california',
+  '/new-jersey/solar-companies': '/best-solar-companies-california',
+  '/maryland/solar-companies': '/best-solar-companies-california',
+  '/virginia/solar-companies': '/best-solar-companies-california',
+  '/delaware/solar-companies': '/best-solar-companies-california',
+  '/washington-dc/solar-companies': '/best-solar-companies-california',
+  '/virginia/richmond-solar-companies': '/best-solar-companies-california',
+  '/virginia/virginia-beach-solar-companies': '/best-solar-companies-california',
+  '/maryland/baltimore-solar-companies': '/best-solar-companies-california',
+  '/new-jersey/solar-incentives': '/blog/solar-rebates-by-california-utility',
+  '/maryland/solar-incentives': '/blog/solar-rebates-by-california-utility',
+  '/virginia/solar-incentives': '/blog/solar-rebates-by-california-utility',
+  '/delaware/solar-incentives': '/blog/solar-rebates-by-california-utility',
+  '/washington-dc/solar-incentives': '/blog/solar-rebates-by-california-utility',
+  '/new-jersey/commercial-solar': '/commercial-solar',
+  '/maryland/bge-high-bill': '/blog/why-is-my-california-electric-bill-so-high',
+  '/utilities/pepco/high-bill': '/blog/why-is-my-california-electric-bill-so-high',
+  '/utilities/delmarva/high-bill': '/blog/why-is-my-california-electric-bill-so-high',
+  '/maryland/bge-electricity-rates': '/california-utility-rate-tracker',
+  '/utilities/pepco/solar-credits': '/blog/how-does-net-metering-work',
+};
+const GS_ROUTING_404_WITH_IMPRESSIONS: Readonly<Record<string, string>> = {
+  '/blog/why-is-pge-bill-so-high': '/blog/why-is-my-pge-bill-so-high',
+  '/blog/pge-vs-sce-sdge-rates-compared': '/blog/pge-vs-sce-vs-sdge-rates-compared',
+  '/blog/are-solar-panels-worth-it-in-california': '/blog/are-solar-panels-worth-it-california',
+  '/blog/do-solar-panels-work-at-night': '/blog/do-solar-panels-work-at-night-california',
+  '/blog/ppa-loan-vs-solar-lease-vs-california': '/blog/ppa-loan-vs-solar-lease-vs-cash-california',
+  '/blog/prepaid-solar-ppa-california-how-it-works-what-it-costs-and-who-its-best': '/blog/prepaid-ppa-california-2026',
+  '/blog/what-happens-to-solar-lease-when-i-sales-california': '/blog/what-happens-to-solar-lease-when-i-sell-california',
+  '/san-mateo': '/solar-companies/san-mateo',
+  '/solar-problems/true-up-bill-california-explainedED': '/solar-problems/true-up-bill-california-explained',
+  '/blog/nem-2-vs-net-3': '/blog/nem-2-vs-nem-3-california',
+  '/solar-companies/simi-valley-california-solar-companies/simi-valley': '/solar-companies/simi-valley',
+};
+const GS_ROUTING_NEVER_PUBLISHED: Readonly<Record<string, string>> = {
+  '/programs/care-california': '/blog/income-qualified-bill-discount-pge',
+};
+const GS_ROUTING_ROWS: Readonly<Record<string, string>> = {
+  ...GS_ROUTING_LEGAL,
+  ...GS_ROUTING_OUT_OF_STATE,
+  ...GS_ROUTING_404_WITH_IMPRESSIONS,
+  ...GS_ROUTING_NEVER_PUBLISHED,
+};
+ROW_DELTAS.push(Object.keys(GS_ROUTING_ROWS).length);
+
+/** True when the destination renders: a page file, a city route slug, or a JSON article. */
+async function rendersPage(dest: string): Promise<boolean> {
+  const { existsSync, readFileSync } = await import('node:fs');
+  if (existsSync(new URL(`../app${dest}/page.tsx`, import.meta.url))) return true;
+  const m = /^\/solar-companies\/([^/]+)$/.exec(dest);
+  if (m) return COMPANIES_ROUTE_SLUGS.has(m[1]);
+  const art = /^\/(solar-problems|battery|commercial-solar|solar-installers)\/([^/]+)$/.exec(dest);
+  if (art) {
+    const cluster = { 'solar-problems': 'problems', battery: 'battery', 'commercial-solar': 'commercial', 'solar-installers': 'installer' }[art[1]];
+    const file = new URL(`../data/article-pages.${cluster}.json`, import.meta.url);
+    const pages = JSON.parse(readFileSync(file, 'utf8')) as { slug: string }[];
+    return pages.some((p) => p.slug === art[2]);
+  }
+  return false;
+}
+
+test('GS-ROUTING: every row is in the table exactly as registered, with and without a trailing slash', () => {
+  assert.equal(Object.keys(GS_ROUTING_LEGAL).length, 2);
+  assert.equal(Object.keys(GS_ROUTING_OUT_OF_STATE).length, 24);
+  assert.equal(Object.keys(GS_ROUTING_404_WITH_IMPRESSIONS).length, 11);
+  for (const [source, dest] of Object.entries(GS_ROUTING_ROWS)) {
+    assert.equal(canonicalRedirectFor(source), dest, source);
+    assert.equal(canonicalRedirectFor(`${source}/`), dest, `${source}/`);
+  }
+});
+
+test('GS-ROUTING: each destination is a live page, not redirected and not held', async () => {
+  const { isHeldPath } = await import('../data/held-pages.ts');
+  for (const [source, dest] of Object.entries(GS_ROUTING_ROWS)) {
+    assert.equal(isRedirectedPath(dest), false, `${source} -> ${dest} would chain`);
+    assert.equal(isHeldPath(dest), false, `${source} -> ${dest} is a held (noindex) page`);
+    assert.ok(await rendersPage(dest), `${source} -> ${dest} has no page`);
+  }
+});
+
+test('GS-ROUTING: every out-of-state page file is redirected, so none stays reachable', async () => {
+  const { readdirSync, statSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  const { fileURLToPath } = await import('node:url');
+  const app = fileURLToPath(new URL('../app', import.meta.url));
+  const found: string[] = [];
+  const walk = (dir: string) => {
+    for (const name of readdirSync(dir)) {
+      const full = join(dir, name);
+      if (statSync(full).isDirectory()) walk(full);
+      else if (name === 'page.tsx') found.push(full.slice(app.length).replace(/\/page\.tsx$/, ''));
+    }
+  };
+  for (const prefix of ['new-jersey', 'maryland', 'virginia', 'delaware', 'washington-dc', 'utilities']) {
+    walk(join(app, prefix));
+  }
+  assert.equal(found.length, 24, `expected the 24 audited out-of-state pages, found ${found.length}`);
+  for (const route of found) {
+    assert.ok(Object.prototype.hasOwnProperty.call(GS_ROUTING_OUT_OF_STATE, route), `${route} is not redirected`);
+  }
+  // Every destination is a California page.
+  for (const dest of Object.values(GS_ROUTING_OUT_OF_STATE)) {
+    assert.ok(!/^\/(new-jersey|maryland|virginia|delaware|washington-dc|utilities)\//.test(dest), dest);
+  }
+});
+
+test('GS-ROUTING: the duplicate legal pages go to the pages the site links', () => {
+  assert.equal(canonicalRedirectFor('/terms-of-service'), '/terms');
+  assert.equal(canonicalRedirectFor('/privacy-policy'), '/privacy');
+  assert.equal(canonicalRedirectFor('/terms'), null);
+  assert.equal(canonicalRedirectFor('/privacy'), null);
+});
+// END GS-ROUTING 2026-09-24
 
 // ---------------------------------------------------------------------------
 // Cross-cutting checks. These read the registries above.

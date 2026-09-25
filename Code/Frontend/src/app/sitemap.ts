@@ -718,15 +718,10 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  const stateDecisionPages: MetadataRoute.Sitemap = GROWTH_ROUTES
-    .filter((route) => ['/new-jersey/', '/maryland/', '/virginia/', '/delaware/', '/washington-dc/']
-      .some((prefix) => route.startsWith(prefix)) || route.startsWith('/utilities/'))
-    .map((route) => ({
-      url: `${base}${route}`,
-      lastModified: new Date('2026-09-12T00:00:00.000Z'),
-      changeFrequency: 'monthly' as const,
-      priority: 0.9,
-    }));
+  // The out-of-state decision pages (NJ, MD, VA, DE, DC and the Pepco,
+  // Delmarva and BGE utility pages) were listed here until 2026-09-24. Plan
+  // item 6.1 (Decision 41) 301s each one to a California page
+  // (canonical-redirects.ts, GS-ROUTING block), so they are no longer listed.
 
   // Regional hubs
   const regionalSlugs = [
@@ -805,7 +800,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
 
   return [
     ...staticPages, ...blogPages, ...installerPages, ...panelPages,
-    ...commercialPages, ...stateDecisionPages, ...regionalPages, ...citySavingsPages, ...cityCompaniesPages,
+    ...commercialPages, ...regionalPages, ...citySavingsPages, ...cityCompaniesPages,
     ...articlePages, ...articleHubs, ...cityCostPages,
   ]
     // One-per-intent canonicalisation (Phase 3, 2026-09-17): a URL that now
