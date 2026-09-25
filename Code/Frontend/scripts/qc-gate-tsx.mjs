@@ -33,6 +33,16 @@
  *   7  DUPLICATE    8-gram shingle overlap vs nearest sibling under the ceiling   [HARD]
  *   8  COMPLIANCE   the referral-service disclosure sentence is present
  *   9  AUTHOR       a named author signal (ArticleJsonLd or AuthorBio)
+ *  10  PROCESS-TEXT editor, research or AI-drafting text in rendered copy       [HARD]
+ *  11  STALE-STRING a string known to be out of date                          [HARD]
+ *
+ * Checks 10 and 11 come from scripts/editorial-lint.mjs. They scan every CRR
+ * route file AND every component, data and lib module those routes import
+ * (not only the route prefixes above), because most leaked text lives in
+ * shared components and data files. Rules live in
+ * scripts/process-text-phrases.json and scripts/stale-strings.json. They are
+ * printed in their own EDITORIAL LINT section; --no-editorial skips them, e.g.
+ * to compare checks 1-9 against a base branch.
  *
  * Checks 3, 8 and 9 are reported as REVIEW rather than FAIL where a machine
  * cannot honestly decide. A gate that claims to have verified something it has
@@ -44,6 +54,7 @@
  *   node scripts/qc-gate-tsx.mjs --changed           # only routes git reports modified
  *   node scripts/qc-gate-tsx.mjs --json out.json     # machine-readable report
  *   node scripts/qc-gate-tsx.mjs --warn-only         # never exit non-zero
+ *   node scripts/qc-gate-tsx.mjs --no-editorial      # skip checks 10-11
  *
  * Exits 1 if any HARD check fails. Wire into the release step before deploy.
  */
@@ -52,6 +63,7 @@ import { readFileSync, existsSync, readdirSync, statSync, writeFileSync } from '
 import { join, dirname, relative, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execSync } from 'node:child_process';
+import { lintTsxSources, printFindings } from './editorial-lint.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -141,6 +153,7 @@ const JSON_OUT = value('json');
 const WARN_ONLY = flag('warn-only');
 const CHANGED = flag('changed');
 const VERBOSE = flag('verbose');
+const NO_EDITORIAL = flag('no-editorial');
 
 // ---------------------------------------------------------------------------
 // discovery
@@ -1023,6 +1036,24 @@ function main() {
     if (!named) add(warns, p, 'AUTHOR', 'no named-author signal (ArticleJsonLd, AuthorBio or an author link)');
   }
 
+  // 10 PROCESS-TEXT and 11 STALE-STRING  [HARD]
+  // Scanned over the CRR source set (routes plus their imports). With --only or
+  // --changed, findings are limited to the route files being checked.
+  let editorial = [];
+  if (!NO_EDITORIAL) {
+    const checked = new Set(pages.map((p) => p.file));
+    editorial = lintTsxSources().findings.filter((f) => !(ONLY || CHANGED) || checked.has(f.file));
+    for (const f of editorial) {
+      fails.push({
+        route: f.route,
+        file: f.file,
+        check: f.check,
+        message: `[${f.rule}] "${f.match}" at ${f.where}`,
+        detail: f.context,
+      });
+    }
+  }
+
   // -------------------------------------------------------------------------
   // report
   // -------------------------------------------------------------------------
@@ -1059,6 +1090,11 @@ function main() {
   };
 
   show('FAIL (blocks release)', fails, 12);
+  if (NO_EDITORIAL) console.log('\nEDITORIAL LINT (checks 10-11): skipped (--no-editorial)');
+  else {
+    console.log('\nEDITORIAL LINT (checks 10-11, scripts/editorial-lint.mjs):');
+    printFindings(editorial, { cap: VERBOSE ? 1e9 : 6 });
+  }
   show('WARN', warns, 8);
   show('REVIEW (a human must decide)', reviews, 6);
 
@@ -1078,6 +1114,12 @@ function main() {
       thresholds: { MAX_OVERLAP, WARN_OVERLAP, SHINGLE, TITLE_MIN, TITLE_MAX },
       utility_table: utilities.source,
       link_graph: inbound.source,
+      editorial_lint: NO_EDITORIAL
+        ? 'skipped'
+        : {
+            process_text: editorial.filter((f) => f.check === 'PROCESS-TEXT').length,
+            stale_string: editorial.filter((f) => f.check === 'STALE-STRING').length,
+          },
       fails,
       warns,
       reviews,

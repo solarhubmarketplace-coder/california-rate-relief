@@ -1,0 +1,85 @@
+{
+  "about": "Editor, research and AI-drafting text that must never reach a published page. Read by scripts/editorial-lint.mjs (PROCESS-TEXT check), which qc-gate.mjs and qc-gate-tsx.mjs both run. Matching is case-insensitive and whitespace-tolerant, on the text a page renders (string literals and JSX text; code comments are ignored). Use `phrase` for a literal and `pattern` for a regular expression. Add a rule when a new leak is found; say where it was found in `reason`.",
+  "rules": [
+    {
+      "id": "this-session",
+      "phrase": "this session",
+      "reason": "Drafting-session language ('checked this session', 'fetched this session'). A reader has no session; say what was checked and the date. Found on 17 pages in the 2026-09-24 content review (content_quality_review.md 4.7, 4.10, 5.4 #6)."
+    },
+    {
+      "id": "fetched-live",
+      "phrase": "fetched live",
+      "reason": "Research-process language. Name the source and the date checked instead. Audit 2026-09-24, plan item 0.1."
+    },
+    {
+      "id": "page-instructs",
+      "phrase": "page instructs",
+      "reason": "Research-note voice about a source page ('Page instructs residents to...'), found on /solar-cost/california-city. Audit 4.5 #3."
+    },
+    {
+      "id": "the-query-brings",
+      "phrase": "the query brings",
+      "reason": "Search-intent note written for an editor ('Say so plainly, because the query brings renters.'), found on /blog/free-solar-panels-california. Audit 4.3 #4."
+    },
+    {
+      "id": "searches-are-about",
+      "pattern": "searches (?:behind this page )?are about",
+      "reason": "SEO phrasing about queries ('Many Coachella Valley searches are about systems...', 'A smaller share of the searches behind this page are about slate'). Audit 4.4 #4."
+    },
+    {
+      "id": "say-so-plainly",
+      "reason": "An instruction to the writer that shipped as copy ('Say so plainly, because the query brings renters.'). Audit 4.3 #4. Plain 'we say so plainly' in a sentence addressed to the reader is fine and does not match.",
+      "pattern": "Say so plainly,\\s+because"
+    },
+    {
+      "id": "existing-site-guidance",
+      "phrase": "existing site guidance applies",
+      "reason": "Editor note ('The existing site guidance applies unchanged:') on /blog/free-solar-panels-california. Audit 4.3 #4."
+    },
+    {
+      "id": "garbled-billed-usage-history",
+      "pattern": "utility named on your bill\\s+billed usage history",
+      "reason": "Garbled FAQ slot on 7 /solar-cost pages: 'Compare the utility named on your bill billed usage history'. Audit 4.5 #5."
+    },
+    {
+      "id": "pages-reached",
+      "pattern": "pages? (?:we )?reached did not",
+      "reason": "Research-note voice ('the City's building pages reached did not state a solar permit fee'), /solar-cost/saratoga. Audit 4.5 #3."
+    },
+    {
+      "id": "page-states-but",
+      "pattern": "\\bThe page states\\b[^.]{0,160}\\bbut does not\\b",
+      "reason": "Research-note voice about a city web page ('The page states ... but does not give a dollar figure'), /solar-cost Beaumont, Danville, Salinas, Seaside. Audit 4.5 #3."
+    },
+    {
+      "id": "live-page-is-right",
+      "phrase": "The live page is right",
+      "reason": "Editor comparing a draft with the live page; the reader never saw a 'live page'. Found in StopPayingSolarLeaseGuide."
+    },
+    {
+      "id": "not-changed-here",
+      "pattern": "(?:is not|isn't|isn’t|isn&apos;t) changed here",
+      "reason": "Editor note about what a revision left alone ('already covers this correctly and isn't changed here'). Found in StopPayingSolarLeaseGuide."
+    },
+    {
+      "id": "reachable-in-depth",
+      "phrase": "could not be reached in enough depth",
+      "reason": "Research-process note about crawling a city site; say what the reader should ask instead."
+    },
+    {
+      "id": "as-an-ai",
+      "pattern": "\\bas an AI\\b|\\bI am an AI\\b|\\blanguage model\\b",
+      "reason": "AI self-reference."
+    },
+    {
+      "id": "source-needed-marker",
+      "phrase": "[SOURCE NEEDED]",
+      "reason": "RULES.md Rule 4 placeholder. It marks a draft claim that still needs a source; it must be resolved or removed before publishing."
+    },
+    {
+      "id": "todo-marker",
+      "pattern": "\\bTKTK\\b|\\blorem ipsum\\b",
+      "reason": "Unfinished-draft filler in rendered text. (A bare TODO is not matched: city-cost-data.ts uses the string 'TODO' as an internal unsourced-field sentinel that never renders.)"
+    }
+  ]
+}
