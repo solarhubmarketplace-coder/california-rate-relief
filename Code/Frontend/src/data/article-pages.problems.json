@@ -387,7 +387,7 @@
           "Investor-owned (CPUC-regulated)",
           "$0.415",
           "Yes — new applicants since 4/15/2023",
-          "Non-bypassable charges on every imported kWh, minimum bill floor, income-graduated fixed charge, any import beyond what solar covers"
+          "Non-bypassable charges on every imported kWh, the Base Services Charge (about $24 a month; it replaced the minimum bill), any import beyond what solar covers"
         ],
         [
           "SCE",
@@ -434,7 +434,7 @@
       },
       {
         "question": "What are non-bypassable charges, exactly?",
-        "answer": "Four charges the CPUC names on every bundled IOU bill: the Department of Water Resources bond charge, the Public Purpose Programs surcharge, the Nuclear Decommissioning charge, and the Competition Transition Charge.\n\nThey fund statewide obligations — a bond from the 2001 energy crisis, low-income and efficiency programs, decommissioning reserves — and by design apply regardless of how much of your own power you generate.\n\nWe could not confirm the current per-kWh cent amount for each charge against a primary tariff sheet as of this writing; treat any specific number you see elsewhere as unverified until you check your own bill."
+        "answer": "Four charges the CPUC names on every bundled IOU bill: the Department of Water Resources bond charge, the Public Purpose Programs surcharge, the Nuclear Decommissioning charge, and the Competition Transition Charge.\n\nThey fund statewide obligations — a bond from the 2001 energy crisis, low-income and efficiency programs, decommissioning reserves — and by design apply regardless of how much of your own power you generate.\n\nThe cents-per-kWh amount of each charge is set in your utility's rate schedule and changes when rates change, so check the line items on your own bill."
       },
       {
         "question": "Is there a minimum bill even with solar?",

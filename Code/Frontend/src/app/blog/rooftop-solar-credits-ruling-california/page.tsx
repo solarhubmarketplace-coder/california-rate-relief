@@ -247,8 +247,9 @@ export default function RooftopSolarCreditsRuling() {
               see <Link href="/blog/california-24-dollar-fixed-charge-explained">the new fixed charge on California bills, explained</Link>.
             </li>
             <li>
-              <strong>Solar lease transfers when you sell</strong> are covered by a different law; see{' '}
-              <Link href="/blog/ab-942-california-solar">AB 942 and solar lease transfer rights</Link>.
+              <strong>Solar lease transfers when you sell</strong> depend on the terms of your lease or
+              PPA; see{' '}
+              <Link href="/blog/ab-942-california-solar">what AB 942 proposed, and why it is not law</Link>.
             </li>
             <li>
               <strong>Lawsuits against solar companies</strong> are about contracts and sales practices, not export

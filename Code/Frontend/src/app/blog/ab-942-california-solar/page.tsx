@@ -15,21 +15,21 @@ import { HubUpLink } from '@/components/growth/HubUpLink';
 import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
-  title: "AB 942 California: Solar Lease Transfer Rights (2026)",
-  description: "What AB 942 did for California solar homeowners: lease/PPA transfer rules, UCC lien relief, and disclosure requirements when you sell.",
+  title: "AB 942 California Solar Bill: What It Proposed (2026)",
+  description: "AB 942 is not law. Its 2025 version would have moved home buyers onto the current solar tariff; the Senate replaced that. What governs a lease transfer.",
   alternates: { canonical: '/blog/ab-942-california-solar' },
-  openGraph: { title: 'AB 942 California Solar', description: 'Solar lease transfer rights under California AB 942.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/ab-942-california-solar', images: [CRR_SOCIAL_CARD] },
+  openGraph: { title: 'AB 942 California Solar Bill: What It Proposed (2026)', description: 'AB 942 is not law. What the 2025 bill proposed for solar on a home sale, and what governs a lease or PPA transfer today.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/ab-942-california-solar', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
 // feeds both the visible trail and the BreadcrumbList schema.
 const CRUMBS = defaultCrumbs('/blog/ab-942-california-solar');
-const CRUMB_LABEL = 'AB 942 California Solar';
+const CRUMB_LABEL = 'AB 942 California Solar Bill';
 
 export default function AB942CASolar() {
   return (
     <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"AB 942 California: Solar Lease Transfer Rights Explained (2026)"} url="https://ratereliefca.com/blog/ab-942-california-solar" datePublished="2026-04-24" dateModified="2026-04-24" description={"What California AB 942 actually did for solar homeowners; lease/PPA transfer rules, UCC lien relief, disclosure requirements, and practical impact when you sell."} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"AB 942 and California Solar: What the Bill Proposed and Why It Is Not Law"} url="https://ratereliefca.com/blog/ab-942-california-solar" datePublished="2026-04-24" dateModified="2026-09-24" description={"AB 942 is not law. What the 2025 bill proposed for solar on a home sale, what the Senate replaced it with, and what governs a lease or PPA transfer today."} />
       <Header />
       <main className="py-16 bg-background">
         <div className="container mx-auto px-4">
@@ -37,9 +37,9 @@ export default function AB942CASolar() {
             <BreadcrumbTrail crumbs={CRUMBS} current={CRUMB_LABEL} className='mb-6 flex flex-wrap items-center gap-2 text-sm text-muted-foreground' />
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">California Solar Law</span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">AB 942: California&apos;s Solar Lease Transfer Rights Law, Explained</h1>
-              <Byline updated="2026-04-24" />
-              <p className="text-lg text-muted-foreground">AB 942 tackled one of the biggest real-world pain points in residential solar, what happens to a 20–25 year lease or PPA when the homeowner sells. Here&apos;s what the law actually did.</p>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">AB 942 and California Solar: What the Bill Proposed, and Why It Is Not Law</h1>
+              <Byline updated="2026-09-24" />
+              <p className="text-lg text-muted-foreground">AB 942 is a 2025 bill, not a law. Its Assembly version would have changed the solar tariff a home buyer gets; the Senate later replaced that text. Here is what it proposed, and what decides a solar lease or PPA transfer when you sell.</p>
               <HubUpLink path="/blog/ab-942-california-solar" />
             </header>
             <div className="prose prose-slate max-w-none">

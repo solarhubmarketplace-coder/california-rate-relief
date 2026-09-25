@@ -482,8 +482,8 @@ export default function CommercialSolarCalculator() {
                   : outputs?.installedCostPerWattSource === 'ca-small-nonres-midpoint-2023'
                     ? 'California-relevant small non-residential (≤100 kW) 2023 20th–80th percentile midpoint.'
                     : 'Your entered figure.'}{' '}
-                LBNL&rsquo;s August 2026 update publishes no size-class or California figure to replace this
-                2023 vintage (checked September 22, 2026) — see Methodology below <SourceTag id="lbnl-2026-update" />.
+                LBNL&rsquo;s August 2026 update reports 2025 California medians of $3.2/W (100 kW or less) and
+                $2.6/W (above 100 kW); enter either figure to use it (checked September 24, 2026) <SourceTag id="lbnl-2026-update" />.
               </FieldNote>
             </div>
           </div>

@@ -144,7 +144,7 @@ export const SOURCES: Record<string, Source> = {
   },
   'lbnl-2026-update': {
     label:
-      'LBNL "U.S. Distributed Solar and Storage 2026 Data Update" (Aug 2026) — publishes no size-class (≤100 kW / >100 kW) or California-specific $/W figures, so the 2023 Tracking the Sun figures (costs-20, costs-24) are used instead (checked 2026-09-22)',
+      'LBNL "U.S. Distributed Solar and Storage: 2026 Data Update" (Aug 2026) — median installed price of host-owned non-residential PV installed in 2025: $3.2/W in California for 100 kW DC or less and $2.6/W above 100 kW ($3.1/W and $2.4/W U.S.; slides 8 and 37). The calculator default still uses the 2023 Tracking the Sun figures (costs-20, costs-24) (checked 2026-09-24)',
     url: 'https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf',
     publisher: 'Lawrence Berkeley National Laboratory',
     date: '2026-08',
@@ -520,7 +520,7 @@ export function paoResidentialCagr(utility: Utility): number {
 
 export const DEFAULTS = {
   offsetTarget: 0.8, // A
-  /** S costs-20: LBNL Tracking the Sun 2024 Ed., small non-residential (≤100 kW) 2023 20th–80th percentile midpoint ((2.5+4.3)/2). LBNL's Aug 2026 update did not publish a size-class figure to replace this (see SOURCES['lbnl-2026-update']). */
+  /** S costs-20: LBNL Tracking the Sun 2024 Ed., small non-residential (≤100 kW) 2023 20th–80th percentile midpoint ((2.5+4.3)/2). LBNL's Aug 2026 update reports a 2025 California median of $3.2/W for this size class (see SOURCES['lbnl-2026-update']); the default has not been moved to it yet. */
   installedCostPerWattUnder100kW: 3.4,
   /** S costs-24: LBNL Tracking the Sun 2024 Ed., California large non-residential (>100 kW) commercial-customer 2023 median. */
   installedCostPerWattOver100kW: 2.3,

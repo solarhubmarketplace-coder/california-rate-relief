@@ -914,10 +914,10 @@ const blogPosts: BlogPost[] = [
   },
   {
     slug: 'ab-942-california-solar',
-    title: 'AB 942: California Solar Lease Transfer Rights',
+    title: 'AB 942 and California Solar: What the Bill Proposed',
     excerpt:
-      'What the law changed for a homeowner selling a house with a leased or financed solar system, and what has to be disclosed to the buyer.',
-    date: '2026-04-24',
+      'AB 942 is not law. What its 2025 version proposed for solar on a home sale, and what decides a lease or PPA transfer when you sell.',
+    date: '2026-09-24',
     category: 'California Solar Rights',
   },
   {

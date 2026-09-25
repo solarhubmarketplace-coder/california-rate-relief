@@ -28,7 +28,7 @@ const h1 = 'Commercial Solar Installation Cost in California: What a Business Pa
 const canonicalUrl = 'https://ratereliefca.com/commercial-solar/cost-per-watt-california';
 const VERIFIED = 'September 22, 2026';
 const RECHECKED = 'September 23, 2026';
-const DATE_MODIFIED = '2026-09-23';
+const DATE_MODIFIED = '2026-09-24';
 const DATE_PUBLISHED = '2026-04-23';
 
 const trackingTheSunFull =
@@ -328,9 +328,10 @@ export default function CommercialSolarCost() {
                 average mixes two different markets and, in California, three different customer
                 types. LBNL&apos;s newest update, published August 2026, reports non-residential
                 installed prices as &ldquo;essentially flat year-over-year&rdquo; from 2024 to
-                2025, but did not publish an extractable size-class or state-level $/W table this
-                cycle {/* costs-41 */} &mdash; so the 2023 California figures below remain the
-                most current size- and customer-specific numbers available.
+                2025 {/* costs-41 */}. Its medians for host-owned systems installed in 2025 are
+                $3.2/W in California for 100 kW or less and $2.6/W above 100 kW ($3.1/W and
+                $2.4/W nationally). The table below breaks the 2023 California figures down
+                further, by customer type.
               </p>
               <div className="my-8 overflow-x-auto rounded-xl border border-border">
                 <table className="min-w-full text-sm">

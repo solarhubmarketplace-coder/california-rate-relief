@@ -2346,7 +2346,7 @@ export const TOPIC_HUBS: TopicHub[] = [
       },
       {
         "href": "/blog/ab-942-california-solar",
-        "label": "AB 942 and solar lease transfers"
+        "label": "AB 942: what the solar bill proposed (not law)"
       },
       {
         "href": "/solar-installers/solar-installer-bankruptcy-california",

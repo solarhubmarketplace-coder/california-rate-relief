@@ -644,8 +644,8 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
           <div>
             <h3>Do homes with solar sell faster in California?</h3>
             <p>
-              No verified California-specific data on this exists as of this
-              session — the LBNL and Zillow studies on this page measured
+              We found no California-specific study that measures it. The
+              LBNL and Zillow studies on this page measured
               price, not days on market. Don’t rely on a “sells X days
               faster” figure unless it cites a study that actually measured
               time to sell.
