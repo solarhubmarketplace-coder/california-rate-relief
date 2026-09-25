@@ -16,6 +16,7 @@ import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 // License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
 const FREEDOM_FOREVER_LICENSES: InstallerLicense[] = [
@@ -51,11 +52,7 @@ const articleSchema = {
     'Freedom Forever filed Chapter 11 on April 15, 2026. A plain-English review of what it means for customers and what Californians should do if they have a pending quote.',
   datePublished: '2026-04-22',
   dateModified: '2026-09-22',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',

@@ -14,6 +14,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 const path = '/solar-installers/pge-and-sunrun';
 const checked = '2026-09-23';
@@ -44,7 +45,7 @@ const articleSchema = {
   description: metaDescription,
   datePublished: checked,
   dateModified: checked,
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',

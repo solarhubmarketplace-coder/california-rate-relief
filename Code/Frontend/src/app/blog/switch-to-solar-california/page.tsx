@@ -11,6 +11,7 @@ import { ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { Byline } from '@/components/trust/Byline';
 
 export const metadata: Metadata = {
   title: "Switch to Solar in California: The 2026 Complete Guide",
@@ -37,6 +38,7 @@ export default function SwitchToSolar() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Getting Started</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Switch to Solar in California: The 2026 Complete Guide</h1>
+              <Byline updated="2026-04-24" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-23'>April 23, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>10 min read</span></div>

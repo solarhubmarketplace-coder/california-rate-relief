@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, AlertTriangle } from 'lucide-re
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox, type InstallerLicense } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 // License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
 const SULLIVAN_LICENSES: InstallerLicense[] = [
@@ -25,7 +26,7 @@ const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: "Sullivan Solar Power Review 2026: The Company Is Defunct",
   datePublished: '2026-04-24', dateModified: '2026-04-24',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/sullivan-solar-power-review' },
 };

@@ -7,6 +7,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 export const metadata: Metadata = {
   title: "Sunnova vs Sunrun (2026): Dealer Network vs In-House Crews",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/solar-installers/sunnova-vs-sunrun' },
   openGraph: { title: 'Sunnova vs Sunrun (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunnova-vs-sunrun' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Sunnova vs Sunrun', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
+const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Sunnova vs Sunrun', datePublished: '2026-04-24', author: CRR_AUTHOR_PERSON, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function SunnovaVsSunrun() {
   return (

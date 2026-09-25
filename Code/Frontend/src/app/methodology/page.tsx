@@ -80,7 +80,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
       'Refusal to provide written contracts before deposit',
     ],
     freshness:
-      'Installer reviews are reviewed at least every 90 days, sooner if a CSLB action, BBB pattern shift, or major news event occurs. Each review carries a "Last reviewed" date stamp visible to readers.',
+      'Installer reviews are reviewed at least every 90 days, sooner if a CSLB action, BBB pattern shift, or major news event occurs. Each review carries a "Last updated" date stamp visible to readers.',
     conflictsBlurb:
       'California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement. We do not accept payment for placement; ratings reflect our research, not commercial relationships.',
   },
@@ -115,7 +115,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
       'Subscription-required core functionality without disclosure at point of sale',
     ],
     freshness:
-      'Round-up pages are reviewed every 60 days; single-product reviews every 90 days. Pricing and availability are spot-checked monthly. Each review carries a "Last reviewed" date stamp.',
+      'Round-up pages are reviewed every 60 days; single-product reviews every 90 days. Pricing and availability are spot-checked monthly. Each review carries a "Last updated" date stamp.',
     conflictsBlurb:
       'GreenReviewsHub earns affiliate commissions when readers buy through our links. We do not accept payment for placement, sponsored reviews, or rankings. Our recommendations are editorial: a product\'s ranking reflects our research — specifications, independent lab data, owner reports, and warranty terms — never a commercial relationship. A product that pays a higher commission does not outrank a better-value product that pays less. Where we have an affiliate partnership with a manufacturer or retailer, that relationship is disclosed and does not influence placement.',
   },
@@ -149,7 +149,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
       'Required subscription for core safety features (e.g. motion alerts) without clear point-of-sale disclosure',
     ],
     freshness:
-      'Camera and brand reviews are reviewed every 90 days, sooner if a CVE or major firmware change occurs. Each review carries a "Last reviewed" date stamp.',
+      'Camera and brand reviews are reviewed every 90 days, sooner if a CVE or major firmware change occurs. Each review carries a "Last updated" date stamp.',
     conflictsBlurb:
       'SecureHomeGear earns affiliate commissions when readers buy through our links. We do not accept payment for placement, sponsored reviews, or rankings. Where we are direct partners with a manufacturer\'s affiliate program (e.g., Eufy via Impact.com), the relationship is disclosed on the brand-hub page.',
   },

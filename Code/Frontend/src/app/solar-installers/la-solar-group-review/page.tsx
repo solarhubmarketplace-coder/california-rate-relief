@@ -10,6 +10,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar, AlertTriangle } from 'lucide-re
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 const metaTitle = "LA Solar Group Reviews (2026): In-House Panels, Court Check";
 const metaDescription =
@@ -33,7 +34,7 @@ const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: "LA Solar Group Review 2026",
   datePublished: '2026-04-24', dateModified: '2026-09-18',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
+  author: CRR_AUTHOR_PERSON,
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/la-solar-group-review' },
 };

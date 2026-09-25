@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { IntentCTA } from '@/components/growth/IntentCTA';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 export const metadata: Metadata = {
   title: "Solar EV Charging in California: The Complete 2026 Guide",
@@ -31,11 +32,7 @@ const articleSchema = {
     'How to size solar for EV charging in California, when to charge on a time-of-use plan, and how to work out your own cost per mile.',
   datePublished: '2026-04-16',
   dateModified: '2026-04-16',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',

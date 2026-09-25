@@ -15,6 +15,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 // License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
 const SUNRUN_LICENSES: InstallerLicense[] = [
@@ -50,7 +51,7 @@ const articleSchema = {
   description: metaDescription,
   datePublished: checked,
   dateModified: checked,
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',

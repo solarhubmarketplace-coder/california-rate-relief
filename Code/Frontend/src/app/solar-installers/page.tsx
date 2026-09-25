@@ -10,6 +10,7 @@ import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { Byline } from '@/components/trust/Byline';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 // =============================================================================
 // /solar-installers — hub of the installer review section.
@@ -156,8 +157,9 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Solar reviews for California homeowners: how to read them, and which companies still sell here',
   description: metaDescription,
+  datePublished: checked,
   dateModified: checked,
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',

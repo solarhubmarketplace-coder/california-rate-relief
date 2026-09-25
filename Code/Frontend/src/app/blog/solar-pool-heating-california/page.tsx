@@ -17,6 +17,7 @@ import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
 import { FaqJsonLd, type FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
+import { Byline } from '@/components/trust/Byline';
 const metaTitle = "Solar Pool Heating in California: Cost, Sizing and Payback";
 const metaDescription =
   "What DOE says a solar pool heater costs, how big the collectors should be and how fast it pays back, plus how solar compares with heat pump and gas heaters.";
@@ -112,6 +113,7 @@ export default function SolarPoolHeatingCA() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">
                 Solar Pool Heating in California: Cost, Sizing and Payback
               </h1>
+              <Byline updated="2026-09-23" />
               <p className="text-lg text-muted-foreground">
                 A solar pool heating system usually costs $2,500 to $4,000 to buy and install, and pays back in 1 to 7 years, according to the U.S. Department of Energy. Where you land depends on your pool&apos;s size, your roof, your sun and the fuel it replaces. This page gives DOE&apos;s cost, sizing and payback figures, and when a heat-pump heater fits better.
               </p>

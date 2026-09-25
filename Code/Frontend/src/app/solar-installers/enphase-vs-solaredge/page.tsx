@@ -7,6 +7,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 export const metadata: Metadata = {
   title: "Enphase vs SolarEdge: Which Inverter Is Better in 2026?",
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/solar-installers/enphase-vs-solaredge' },
   openGraph: { title: 'Enphase vs SolarEdge (2026)', description: 'Head-to-head inverter comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/enphase-vs-solaredge' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Enphase vs SolarEdge', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
+const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Enphase vs SolarEdge', datePublished: '2026-04-24', author: CRR_AUTHOR_PERSON, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function EnphaseVsSolarEdge() {
   return (

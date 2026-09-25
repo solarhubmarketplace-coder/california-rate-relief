@@ -11,6 +11,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { Byline } from '@/components/trust/Byline';
 
 export const metadata: Metadata = {
   title:
@@ -53,15 +54,11 @@ export default function HoaSolarRights() {
                 Can an HOA Ban Solar Panels in California? Your Solar
                 Rights, Explained
               </h1>
+              <Byline updated="2026-09-24" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
                   <time dateTime='2026-04-23'>April 23, 2026</time>
-                </div>
-                <div className='flex items-center gap-1'>
-                  <span>
-                    Updated <time dateTime='2026-09-24'>September 24, 2026</time>
-                  </span>
                 </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />

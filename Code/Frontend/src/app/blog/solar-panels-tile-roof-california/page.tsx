@@ -127,7 +127,7 @@ export default function SolarTileRoofCalifornia() {
                 The phrase “solar roof tiles” can mean two different projects. One places conventional solar panels over an existing tile roof. The other uses photovoltaic material as part of the roof covering. Start by separating those jobs. They are not the same scope.
               </p>
               <p className='mt-3 text-sm text-muted-foreground'>
-                Reviewed <time dateTime='2026-09-23'>September 23, 2026</time> · By <Link href='/author/chad-simpson' className='underline'>Chad Simpson</Link>
+                Updated <time dateTime='2026-09-23'>September 23, 2026</time> · By <Link href='/author/chad-simpson' className='underline'>Chad Simpson</Link>
               </p>
               <p className='mt-2 text-sm text-muted-foreground'>
                 California Rate Relief is a referral service. We are not a licensed contractor.

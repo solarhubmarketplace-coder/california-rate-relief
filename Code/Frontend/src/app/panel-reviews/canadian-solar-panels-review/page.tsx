@@ -8,6 +8,8 @@ import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+import { Byline } from '@/components/trust/Byline';
 
 export const metadata: Metadata = {
   title: "Canadian Solar Panels Review 2026: HiKu Series for CA",
@@ -20,7 +22,7 @@ const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: 'Canadian Solar Panels Review 2026',
   datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/panel-reviews/canadian-solar-panels-review' },
 };
@@ -44,6 +46,7 @@ export default function CanadianSolarReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Panel Brand Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Canadian Solar Panels Review 2026: HiKu Series for California</h1>
+              <Byline updated="2026-04-23" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-23'>April 23, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>6 min read</span></div>

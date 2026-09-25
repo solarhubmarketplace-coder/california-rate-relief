@@ -18,6 +18,7 @@ import { savingsCityHref } from '@/lib/canonical-redirects';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { Byline } from '@/components/trust/Byline';
 
 // Region-specific sources for the prose below, fetched 2026-09-23; see the
 // Sources line on the page. Which utility serves which city comes from
@@ -106,6 +107,7 @@ export default function CentralValleySolarPage() {
               <h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-4 tracking-tight'>
                 Solar Energy in the Central Valley
               </h1>
+              <Byline updated="2026-09-23" />
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
                 No single utility serves the cities in this guide. PG&amp;E, SCE and SMUD cover most of them, and city or irrigation-district utilities serve Lodi and parts of Modesto and Merced. The rate a quote should start from is the one on your own bill.
               </p>

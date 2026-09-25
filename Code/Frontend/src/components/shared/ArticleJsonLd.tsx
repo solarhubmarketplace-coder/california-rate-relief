@@ -1,15 +1,18 @@
 import type { ReactElement } from 'react';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 // =============================================================================
-// ArticleJsonLd — drop-in Article schema with author + reviewedBy + dates
+// ArticleJsonLd — drop-in Article schema with author + dates
 // =============================================================================
 // Emits a properly nested schema.org Article (or Review for review-style
 // content) JSON-LD with:
-//   - author Person (Chad Simpson)
-//   - reviewedBy Person (Chad Simpson) — same person, signals editorial review
+//   - author Person (Chad Simpson), the same person as the visible byline
 //   - publisher Organization (per-domain)
 //   - datePublished + dateModified for freshness
 //   - mainEntityOfPage hint
+//
+// No reviewedBy: the only reviewer would be the author himself, and a page
+// reviewed by its own author is not a review (2026-09-24, plan item 0.3).
 //
 // Use on:
 //   - CRR blog posts
@@ -30,10 +33,9 @@ export interface ArticleJsonLdProps {
   /** Canonical URL of this article */
   url: string;
   /**
-   * ISO-8601 publish date — e.g., '2026-04-22'. Optional: several pages carry a
-   * verified last-reviewed date but no recorded first-publish date, and
-   * schema.org does not require datePublished. Omitting it is honest; guessing
-   * one is not.
+   * ISO-8601 publish date — e.g., '2026-04-22'. When a page has no recorded
+   * first-publish date, datePublished falls back to its own dateModified (the
+   * earliest date the page itself vouches for) rather than a guessed date.
    */
   datePublished?: string;
   /** ISO-8601 last-modified date — e.g., '2026-04-24' */
@@ -77,25 +79,27 @@ export function ArticleJsonLd(props: ArticleJsonLdProps): ReactElement {
   const publisher = PUBLISHER[domain];
   const authorRef = `${publisher.url}/author/chad-simpson#person`;
 
-  const author = {
-    '@type': 'Person',
-    '@id': authorRef,
-    name: 'Chad Simpson',
-    url: `${publisher.url}/author/chad-simpson`,
-    jobTitle: `Editor at ${publisher.name}`,
-  };
+  const author =
+    domain === 'crr'
+      ? CRR_AUTHOR_PERSON
+      : {
+          '@type': 'Person',
+          '@id': authorRef,
+          name: 'Chad Simpson',
+          url: `${publisher.url}/author/chad-simpson`,
+          jobTitle: `Editor at ${publisher.name}`,
+        };
 
   const base: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': variant,
     headline,
     url,
-    ...(datePublished ? { datePublished } : {}),
+    datePublished: datePublished || dateModified,
     dateModified,
     inLanguage: 'en-US',
     author,
     creator: author,
-    reviewedBy: author,
     publisher: {
       '@type': 'Organization',
       name: publisher.name,

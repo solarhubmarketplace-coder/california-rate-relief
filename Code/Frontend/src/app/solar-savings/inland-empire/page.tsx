@@ -13,6 +13,7 @@ import { savingsCityHref } from '@/lib/canonical-redirects';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { Byline } from '@/components/trust/Byline';
 
 // Region-specific sources for the prose below, fetched 2026-09-23; see the
 // Sources line on the page. Which utility serves which city comes from
@@ -90,6 +91,7 @@ export default function InlandEmpireSolarPage() {
               <h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-4 tracking-tight'>
                 Solar Energy in the Inland Empire
               </h1>
+              <Byline updated="2026-09-23" />
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
                 Southern California Edison bills most of the Inland Empire cities in this guide. Four are different: Riverside, Corona and Moreno Valley have city utilities that serve some or all addresses, and Palm Desert sits where SCE and the Imperial Irrigation District meet. Check the name on your bill before you compare any estimate.
               </p>

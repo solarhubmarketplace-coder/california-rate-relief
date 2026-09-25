@@ -8,6 +8,8 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+import { Byline } from '@/components/trust/Byline';
 
 export const metadata: Metadata = {
   title: "Solar Panel Brand Reviews for California Homeowners (2026)",
@@ -19,7 +21,7 @@ const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: 'Solar Panel Brand Reviews for California Homeowners (2026)',
   datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/panel-reviews' },
 };
@@ -57,6 +59,7 @@ export default function PanelReviewsHub() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Panel Brand Reviews</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Solar Panel Brand Reviews for California Homeowners</h1>
+              <Byline updated="2026-04-23" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-23'>April 23, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>5 min read</span></div>

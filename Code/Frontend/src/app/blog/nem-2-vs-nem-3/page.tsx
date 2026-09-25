@@ -5,6 +5,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { IntentCTA } from '@/components/growth/IntentCTA';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 export const metadata: Metadata = {
   title:
@@ -33,11 +34,7 @@ const articleSchema = {
     'NEM 3.0 credits exports at values usually below the retail rate. Compare NEM 2.0 vs NEM 3.0 side by side: export credits, legacy periods, payback drivers and what to check in a proposal.',
   datePublished: '2026-04-16',
   dateModified: '2026-04-16',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',

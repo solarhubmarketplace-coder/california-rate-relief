@@ -16,6 +16,7 @@ import { FaqBlock } from "@/components/trust/FaqBlock";
 import { TocRail, RAIL_GRID } from "@/components/trust/TocRail";
 import { BreadcrumbTrail } from "@/components/shared/BreadcrumbTrail";
 import { defaultCrumbs } from "@/lib/breadcrumbs";
+import { CRR_AUTHOR_NAME, CRR_AUTHOR_PATH, CRR_AUTHOR_PERSON, CRR_ORIGIN } from "@/lib/crr-author";
 
 /**
  * Key-facts box entry. Same shape as ArticleRenderer's `keyStats`, plus an
@@ -121,7 +122,6 @@ export function DecisionPage({
   authorHref = "/author/chad-simpson",
   keyStats = [],
   toc = [],
-  authorSchema = "organization",
   breadcrumbs,
   breadcrumbLabel,
   quickCheck,
@@ -167,6 +167,7 @@ export function DecisionPage({
    * node the byline links to (and that ArticleJsonLd emits on the /solar-cost
    * pages). Defaults to the Organization author every other caller has.
    */
+  /** Deprecated and ignored: the schema author is always the byline Person. */
   authorSchema?: "organization" | "person";
   /**
    * Visible trail between Home and this page; the same list is the
@@ -206,13 +207,17 @@ export function DecisionPage({
       className={quickCheckAt === "afterByline" ? "mt-5" : "mt-6"}
     />
   ) : null;
-  const personAuthor = {
-    "@type": "Person",
-    "@id": "https://ratereliefca.com/author/chad-simpson#person",
-    name: author,
-    url: `https://ratereliefca.com${authorHref}`,
-    jobTitle: "Editor at California Rate Relief",
-  };
+  // The schema author is the visible byline, as a Person. There is no
+  // independent reviewer, so no reviewedBy (2026-09-24, plan item 0.3).
+  const personAuthor =
+    author === CRR_AUTHOR_NAME && authorHref === CRR_AUTHOR_PATH
+      ? CRR_AUTHOR_PERSON
+      : {
+          "@type": "Person",
+          name: author,
+          url: `${CRR_ORIGIN}${authorHref}`,
+        };
+  const modified = contentModifiedDate || sourceCheckedDate;
   const schema =
     path === "/tools/solar-panel-calculator"
       ? {
@@ -230,16 +235,11 @@ export function DecisionPage({
           "@context": "https://schema.org",
           "@type": "Article",
           headline: title,
-          dateModified: contentModifiedDate || sourceCheckedDate,
-          author:
-            authorSchema === "person"
-              ? personAuthor
-              : {
-                  "@type": "Organization",
-                  name: "California Rate Relief",
-                  url: "https://ratereliefca.com/about",
-                },
-          ...(authorSchema === "person" ? { reviewedBy: personAuthor } : {}),
+          // No first-publish date is recorded for these pages, so the
+          // earliest date the page vouches for is its own dateModified.
+          datePublished: modified,
+          dateModified: modified,
+          author: personAuthor,
           publisher: {
             "@type": "Organization",
             name: "California Rate Relief",

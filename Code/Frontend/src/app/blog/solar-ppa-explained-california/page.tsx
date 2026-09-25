@@ -8,6 +8,8 @@ import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+import { Byline } from '@/components/trust/Byline';
 
 export const metadata: Metadata = {
   title: "Solar PPA Explained: How California's $0-Down Solar Works",
@@ -34,11 +36,7 @@ const articleSchema = {
     'How a solar PPA works in California: the per-kWh price, the escalator, the term, and what the CPUC and CSLB require providers to disclose.',
   datePublished: '2026-04-16',
   dateModified: '2026-09-22',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',
@@ -81,6 +79,7 @@ export default function SolarPPAExplainedCalifornia() {
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
                 Solar PPA Explained: How California&apos;s $0-Down Solar Works (2026)
               </h1>
+              <Byline updated="2026-09-22" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />

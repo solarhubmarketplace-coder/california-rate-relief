@@ -10,6 +10,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
+import { Byline } from '@/components/trust/Byline';
 export const metadata: Metadata = {
   title: "What Is a Demand Charge? Do CA Residential Customers Pay?",
   description: "Demand charges explained in plain English: what they are, who pays them in California, and how solar/battery eliminates them.",
@@ -34,6 +35,7 @@ export default function WhatIsDemandChargeCA() {
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Electricity Basics · California</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">What Is a Demand Charge? (And Do California Residential Customers Pay One?)</h1>
+              <Byline updated="2026-04-24" />
               <p className="text-lg text-muted-foreground">Demand charges are why a commercial electric bill can be double what the kWh total suggests. Here&apos;s what they are, who pays them, and how to reduce them.</p>
             </header>
             <div className="prose prose-slate max-w-none">

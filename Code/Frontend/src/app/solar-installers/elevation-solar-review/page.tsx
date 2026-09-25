@@ -15,6 +15,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 const path = '/solar-installers/elevation-solar-review';
 const checked = '2026-09-23';
@@ -42,7 +43,7 @@ const articleSchema = {
   headline: 'Elevation Solar Reviews (2026): Is It Legit, What the BBB File Shows and What the Contract Says',
   description: metaDescription,
   datePublished: '2026-04-24', dateModified: checked,
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': `https://ratereliefca.com${path}` },
 };

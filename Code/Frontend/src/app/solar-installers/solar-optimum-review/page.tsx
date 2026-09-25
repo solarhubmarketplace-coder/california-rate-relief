@@ -11,6 +11,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 // License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
 const SOLAR_OPTIMUM_LICENSES: InstallerLicense[] = [
@@ -41,7 +42,7 @@ const articleSchema = {
   headline: "Solar Optimum Reviews: What's Verifiable (Warranty, Lawsuit Check, 2026)",
   datePublished: '2026-04-22',
   dateModified: '2026-09-18',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
   publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/solar-optimum-review' },
 };

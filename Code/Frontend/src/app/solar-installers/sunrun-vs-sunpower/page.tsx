@@ -9,6 +9,7 @@ import { Footer } from '@/components/landing/Footer';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 // 2026-09-23 (topical-authority program, Tier 2): added the business-status
 // answer ("did Sunrun go out of business", "has Sunrun filed for bankruptcy")
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
   },
   twitter: crrTwitter(metaTitle, metaDescription),
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: "Sunrun vs. SunPower: How They Compare After SunPower's 2024 Bankruptcy", datePublished: '2026-04-24', dateModified: '2026-09-23', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
+const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: "Sunrun vs. SunPower: How They Compare After SunPower's 2024 Bankruptcy", datePublished: '2026-04-24', dateModified: '2026-09-23', author: CRR_AUTHOR_PERSON, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 
 export default function SunrunVsSunPower() {
   return (

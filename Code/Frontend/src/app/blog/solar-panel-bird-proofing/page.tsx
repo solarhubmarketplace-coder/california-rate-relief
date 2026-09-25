@@ -9,6 +9,8 @@ import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+import { Byline } from '@/components/trust/Byline';
 
 export const metadata: Metadata = {
   title: "Solar Panel Bird Proofing Cost: $200-$500 in California",
@@ -35,11 +37,7 @@ const articleSchema = {
     'Solar bird proofing costs $200-$500. Learn which methods work, DIY vs. professional installation, and fire-safety implications in California.',
   datePublished: '2026-04-16',
   dateModified: '2026-04-16',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
     name: 'California Rate Relief Program',
@@ -82,6 +80,7 @@ export default function SolarPanelBirdProofing() {
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
                 Solar Panel Bird Proofing: Costs, Methods, and California Guide (2026)
               </h1>
+              <Byline updated="2026-04-16" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />

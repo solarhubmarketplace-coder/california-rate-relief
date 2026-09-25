@@ -13,6 +13,7 @@ import { savingsCityHref } from '@/lib/canonical-redirects';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { Byline } from '@/components/trust/Byline';
 
 // Region-specific sources for the prose below, fetched 2026-09-23; see the
 // Sources line on the page.
@@ -84,6 +85,7 @@ export default function SanDiegoCountySolarPage() {
               <h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-4 tracking-tight'>
                 Solar Energy in San Diego County
               </h1>
+              <Byline updated="2026-09-23" />
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
                 SDG&amp;E delivers electricity to every city in this guide, and its residential average is the highest of California&apos;s three large investor-owned utilities. {utilityRateText(sdgeUtility).sentence} The same report puts PG&amp;E at {utilityRateText(UTILITY_DATA['pge']).cents} and SCE at {utilityRateText(UTILITY_DATA['sce']).cents}. In most of these cities a community choice aggregator now supplies the power by default, so the bill has two parts.
               </p>

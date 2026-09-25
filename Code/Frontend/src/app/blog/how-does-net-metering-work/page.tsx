@@ -16,6 +16,7 @@ import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import { SourceList } from '@/components/growth/DecisionPage';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { RATE_SOURCES_CHECKED, rateSources } from '@/data/rate-sources';
+import { Byline } from '@/components/trust/Byline';
 
 // 2026-09-23 (Tier 3): the NEM generations table and true-up section now follow
 // the CPUC's own comparison, the net metering bill question is answered, and
@@ -69,6 +70,7 @@ export default function HowDoesNetMeteringWork() {
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar Basics</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">How Does Net Metering Work? (And Why It&apos;s Not the Same as Net Billing)</h1>
+              <Byline updated="2026-09-23" />
               <p className="text-lg text-muted-foreground">Net metering is the billing arrangement that makes residential solar economics work. Here&apos;s how it actually works, step by step.</p>
             </header>
             <div className="prose prose-slate max-w-none">
