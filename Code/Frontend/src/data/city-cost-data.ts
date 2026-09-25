@@ -71,6 +71,15 @@ import type { UtilityRateKey } from './utility-rate-tracker';
 //   - It does not relax anything above: still no city-specific price, no
 //     invented range for a city, no payback period, no savings promise.
 //
+// SUPERSEDED 2026-09-24 (Block 3 of the SEO plan): the "no city price" rule
+// above is retired. Each city page now states the median cost per watt that
+// owners reported to their utility in the CPUC's DG Stats interconnection
+// data, for the city when at least 30 reported and otherwise the county,
+// utility territory or state, always named, labeled as reported costs and not
+// a quote (src/data/dgstats, src/lib/city-cost-content.ts). The LBNL national
+// benchmark is no longer shown on this layer. Still no payback period and no
+// savings promise.
+//
 // SEED STATE NOTE, superseded 2026-09-18: all 44 rows below now carry sourced
 // values. The five that could not have an exact fee confirmed say what the
 // city's own page says instead of holding a TODO.
@@ -455,7 +464,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     utilityKey: "sce",
     permitUrl: "https://www.californiacity-ca.gov/CC/index.php/building/permit-applications-forms/solar-permits",
     permitFeeNote:
-      "The City's solar permits page tells residents to \"submit and obtain a solar or battery energy storage system (BESS) building permit for a residential building\" via SolarAPP+ but does not itemize a fee amount; the city's Master Fee Schedule (effective 5-11-2026) has no standalone PV/solar line item - solar permits fall under the general building-permit fee structure, calculated from \"the most recent edition of the ICC International Code Council Building Valuation Data.\"",
+      "The City's solar page tells residents to \"submit and obtain a solar or battery energy storage system (BESS) building permit for a residential building\" via SolarAPP+ but does not itemize a fee amount; the city's Master Fee Schedule (effective 5-11-2026) has no standalone PV/solar line item - solar permits fall under the general building-permit fee structure, calculated from \"the most recent edition of the ICC International Code Council Building Valuation Data.\"",
     permitFeeSource: "City of California City Solar Permits page and Master Fee Schedule (5-11-26)",
     permitOnline:
       "Yes, via SolarAPP+, explicitly named and linked on the page",
@@ -1300,7 +1309,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     utilityKey: "sce",
     permitUrl: "https://beaumontca.gov/1456/Photovoltaic-Permit-Streamlining",
     permitFeeNote:
-      "The City's Photovoltaic Permit Streamlining page says \"There will be additional fees charged by that vendor for the service\" (the Symbium automated-review vendor) but does not give a dollar figure for either the vendor fee or the city's own building permit fee.",
+      "Beaumont's Photovoltaic Permit Streamlining page says \"There will be additional fees charged by that vendor for the service\" (meaning the Symbium automated-review vendor) but does not give a dollar figure for either the vendor fee or the city's own building permit fee.",
     permitFeeSource: "City of Beaumont Photovoltaic Permit Streamlining page",
     permitOnline:
       "Yes, online: submittals and inspections go through the \"City of Beaumont Citizen Self Service (CSS) Portal,\" using Symbium's automated permitting platform for expedited review. SolarAPP+ is not named \u2014 Beaumont uses Symbium instead.",
@@ -1450,7 +1459,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     cca: "Central Coast Community Energy (3CE)",
     permitUrl: "https://ci.seaside.ca.us/852/Solar-App",
     permitFeeNote:
-      "The City's solar permit page says \"A processing fee will be charged by SolarAPP+\" for the automated review but does not give a dollar amount; it directs applicants to pay the separate city permit fee when applying through the City of Seaside Permitting System.",
+      "The City's Solar App+ page says \"A processing fee will be charged by SolarAPP+\" for the automated review but does not give a dollar amount; it directs applicants to pay the separate city permit fee when applying through the City of Seaside Permitting System.",
     permitFeeSource: "City of Seaside Solar App+ page (Building & Code Enforcement Department)",
     permitOnline:
       "Yes, explicitly: qualifying residential PV and PV+battery-storage projects are submitted for automated review through SolarAPP+, then the SolarAPP+ approval documents are uploaded to apply for the permit online via the City of Seaside Permitting System.",
@@ -2276,11 +2285,11 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     ccaSource: SVCE_ABOUT,
     permitUrl: 'https://www.saratoga.ca.us/building',
     permitFeeNote:
-      "Saratoga's Path to Permits guide lists fee assessment as a step after an application is filed in eTRAKiT, but the City's building pages do not state a solar permit fee. Ask the Building Division or the installer for the City's figure.",
+      "Saratoga's Path to Permits guide lists fee assessment as a step after an application is filed in eTRAKiT, but the City's building pages did not state a solar permit fee when checked. Ask the Building Division or the installer for the City's figure.",
     permitFeeSource: "City of Saratoga, Path to Permits (Community Development)",
     permitSources: [CEC_SB379_DATA],
     permitOnline:
-      "Yes. Saratoga's Path to Permits guide sends building applications through the City's eTRAKiT portal. The City's building pages do not describe a solar route; the California Energy Commission's SB 379 data, which each city reports itself, lists Saratoga's platform as Symbium.",
+      "Yes. Saratoga's Path to Permits guide sends building applications through the City's eTRAKiT portal. The City's pages do not describe a solar route; the California Energy Commission's SB 379 data, which each city reports itself, lists Saratoga's platform as Symbium.",
     sourcesFetchedAt: '2026-09-23',
   },
   {

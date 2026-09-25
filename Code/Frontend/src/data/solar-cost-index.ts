@@ -750,7 +750,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   saratoga: {
     platform: 'symbium',
     evidence: "lists Saratoga's platform as Symbium",
-    note: 'Per the CEC SB 379 data (self-reported); the City\'s building pages do not describe a solar route.',
+    note: "Per the CEC SB 379 data (self-reported); the City's pages do not describe a solar route.",
   },
   gilroy: { platform: 'solarapp', evidence: 'go through SolarAPP+ for instant permitting' },
   'san-ramon': { platform: 'solarapp', evidence: 'Electrical Photovoltaic (SolarAPP) permit' },

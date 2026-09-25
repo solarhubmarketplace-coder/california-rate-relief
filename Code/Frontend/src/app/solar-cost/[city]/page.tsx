@@ -8,14 +8,21 @@ import {
 import { cityPageMetadata } from '@/lib/city-pages';
 
 // =============================================================================
-// /solar-cost/[city] — "solar panel cost <city>" without a price on the page.
+// /solar-cost/[city] — "solar panel cost <city>", answered with the median cost
+// per watt owners reported (CPUC DG Stats), the city's permit fee against the
+// state limit and local install data. Copy: src/lib/city-cost-content.ts.
 //
-// THE GATE, ENFORCED TWICE
+// THE SOURCE GATE, ENFORCED TWICE
 //   1. generateStaticParams lists only rows that pass isPublishableCityCostRow,
 //      so a row with any TODO in a rendered field is never pre-rendered.
 //   2. dynamicParams = false means a slug outside that list is a 404 rather than
 //      an on-demand render. Combined, an unsourced city cannot ship even if a
 //      link to it exists, and the sitemap is built from the same list.
+//
+// THE CITY-PAGE GATE (indexing)
+// src/data/city-gate.ts decides whether a page has enough local data and is
+// distinct enough from its siblings to be indexed; failsCityGate() in
+// src/data/city-gate-results.ts is the committed result for the routing layer.
 // =============================================================================
 
 export const dynamicParams = false;

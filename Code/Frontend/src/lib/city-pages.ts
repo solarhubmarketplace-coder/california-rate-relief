@@ -36,6 +36,9 @@ import { CRUMB_LABELS, type Crumb } from './breadcrumb-sections.ts';
 import { utilityOptions } from './calculator-context.ts';
 import { MUNICIPAL_MAIN_UTILITY } from '../data/dgstats/municipal.ts';
 import { SAVINGS_GENERATION, SAVINGS_SPLIT } from '../data/savings-providers.ts';
+import { costBenchmark } from './city-cost-content.ts';
+import { buildCostIndexRow } from '../data/solar-cost-index.ts';
+import { DG_SOURCE, formatDollars, formatPerWatt } from '../data/dgstats/index.ts';
 
 export type CityPageType = 'cost' | 'companies' | 'savings';
 
@@ -389,6 +392,9 @@ export function costPageModified(row: CityCostRow): string {
   return maxIso(
     row.sourcesFetchedAt,
     COST_TEMPLATE_CSLB_VERIFIED,
+    // 2026-09-24: every cost page now states the CPUC DG Stats figures,
+    // checked that day.
+    DG_SOURCE.verifiedAt,
     ...(row.utilitySplit?.sources.map((s) => s.verifiedAt) ?? []),
   );
 }
@@ -487,63 +493,52 @@ export function growthUtilityForForm(code: string): string {
   return GROWTH_UTILITY_LABEL[code] ?? code;
 }
 
-/** /solar-cost/<city> */
+/**
+ * /solar-cost/<city>. 2026-09-24 (Block 3, items 7.1/7.3): the title and H1
+ * now carry the answer, the reported median cost per watt from CPUC DG Stats,
+ * and name the level it comes from when that is not the city itself. The H1 is
+ * the longest candidate; the title is the first candidate that fits 60
+ * characters, so the two read the same.
+ */
 export function costPageSeo(row: CityCostRow): CitySeo {
   const city = row.city;
-  const utility = getUtilityRate(row.utilityKey);
-  const leads = primaryCityPageType(row.slug) === 'cost';
-  const title = leads
-    ? fit(
-        TITLE_MAX,
-        `Solar Panels in ${city}, CA: Cost & Installer Checks (${YEAR})`,
-        `${city} Solar Panels: Cost & Installer Checks (${YEAR})`,
-        `Solar Panels in ${city}, CA: Cost Guide (${YEAR})`,
-      )
-    : fit(
-        TITLE_MAX,
-        `Solar Panel Cost in ${city}, CA: What Sets the Price (${YEAR})`,
-        `${city} Solar Panel Cost: What Sets the Price (${YEAR})`,
-        `Solar Panel Cost in ${city}, CA (${YEAR})`,
-      );
+  const b = costBenchmark(row);
+  const perWatt = `${formatPerWatt(b.perWatt.median)}/W`;
+  const tag =
+    b.cost.level === 'city'
+      ? 'Reported'
+      : b.cost.level === 'county'
+        ? 'County Median'
+        : b.cost.level === 'utility'
+          ? `${b.cost.label.replace(' territory', '')} Median`
+          : 'State Median';
+  const candidates = [
+    `Solar Panel Cost in ${city}, CA (${YEAR}): ${perWatt} ${tag}`,
+    `${city} Solar Panel Cost (${YEAR}): ${perWatt} ${tag}`,
+    `Solar Cost in ${city}, CA (${YEAR}): ${perWatt} ${tag}`,
+    `${city} Solar Cost (${YEAR}): ${perWatt} ${tag}`,
+    `${city} Solar Cost (${YEAR}): ${perWatt}`,
+  ];
+  const title = fit(TITLE_MAX, ...candidates);
 
-  const checked = shortDate(costPageModified(row));
-  let description: string;
-  if (row.slug === 'corona' || row.utilitySplit) {
-    const others = row.slug === 'corona' ? 'SCE' : row.utilitySplit!.others;
-    description = fit(
-      DESCRIPTION_MAX,
-      `${city} is split between ${utility.name} and ${others}. See which bills your address, ${possessive(city)} permit rules and what changes a solar quote. Sources checked ${checked}.`,
-      `${city} is split between ${utility.name} and ${others}. See which bills your address, the permit rules and what changes a solar quote.`,
-    );
-  } else if (utility.averageResidentialRateCents !== null) {
-    const rate = formatAverageRateCents(utility);
-    description = fit(
-      DESCRIPTION_MAX,
-      `No guessed price: ${utility.name}'s ${rate} average rate, ${possessive(city)} permit fee and filing rules, and what changes a solar quote. Sources checked ${checked}.`,
-      `No guessed price: ${utility.name}'s ${rate} average rate, ${possessive(city)} permit rules and what changes a solar quote. Sources checked ${checked}.`,
-      `${utility.name}'s ${rate} average rate, ${possessive(city)} permit rules and what changes a solar quote here, with every source linked.`,
-    );
-  } else {
-    const territory = utility.longName.replace(/^the /, '');
-    // LADWP has no retrievable current tariff on the tracker, so its pages
-    // point at no rate schedule and the description must not either.
-    description = utility.sourceUrl === null
-      ? fit(
-          DESCRIPTION_MAX,
-          `${city} is ${utility.name} territory, not PG&E or SCE. See ${possessive(city)} permit fee and filing rules and what changes a solar quote here, with sources linked.`,
-          `${city} is ${utility.name} territory. See the permit rules and what changes a solar quote here, with every source linked.`,
-        )
-      : fit(
-      DESCRIPTION_MAX,
-      `${city} is ${territory} territory, not PG&E or SCE. See where its rates are published, ${possessive(city)} permit rules and what changes a solar quote.`,
-      `${city} is ${territory} territory. See where its rates are published, the permit rules and what changes a solar quote here.`,
-      `${city} is ${utility.name} territory. See its rate schedule, the city's permit rules and what changes a solar quote here.`,
-    );
-  }
+  const fee = buildCostIndexRow(row).fee;
+  const where = b.cost.level === 'city' ? city : b.cost.label;
+  const price = `${where} owners reported ${perWatt} (median, ${b.perWatt.n.toLocaleString('en-US')} systems), about ${formatDollars(b.price.median)} for ${b.kw} kW.`;
+  const feeText =
+    fee.status === 'published' && fee.amountDisplay
+      ? ` ${possessive(city)} permit fee: ${fee.amountDisplay} vs the $450 state limit.`
+      : ` ${possessive(city)} permit rules vs the $450 state limit.`;
+  const description = fit(
+    DESCRIPTION_MAX,
+    `${price}${feeText} CPUC data.`,
+    `${price}${feeText}`,
+    `${price} Permit fee vs the state limit.`,
+    price,
+  );
   return {
     title,
     description,
-    h1: `How Much Do Solar Panels Cost in ${city}? What Sets the Price`,
+    h1: candidates[0],
   };
 }
 
