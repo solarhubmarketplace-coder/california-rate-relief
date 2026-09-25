@@ -15,6 +15,7 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header as CRRHeader } from '@/components/landing/Header';
 import { Footer as CRRFooter } from '@/components/landing/Footer';
 import { GLP1TrustPage } from '@/components/glp1/GLP1TrustPage';
+import { SiteIdentityBlock } from '@/components/trust/SiteIdentityBlock';
 
 // =============================================================================
 // HOST-AWARE /about PAGE
@@ -246,6 +247,7 @@ function CrrAbout() {
                 </Link>
                 .
               </p>
+              <SiteIdentityBlock linkClassName="text-primary underline" />
             </div>
           </article>
         </div>

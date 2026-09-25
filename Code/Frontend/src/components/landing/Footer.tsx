@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Mail, MapPin, Shield } from 'lucide-react';
 import { FloatingMobileCTA } from '@/components/landing/FloatingMobileCTA';
 import { FOOTER_TRUST_LINKS, TRUST_LINKS } from '@/components/trust/trust-links';
+import { SiteIdentityBlock } from '@/components/trust/SiteIdentityBlock';
 
 // =============================================================================
 // CRR footer (design pass 2, 2026-09-22)
@@ -159,6 +160,7 @@ export function Footer() {
                   </Link>
                 </li>
               </ul>
+              <SiteIdentityBlock className='mt-4 text-xs leading-relaxed text-white/80' linkClassName={linkClass} />
             </div>
           </div>
 

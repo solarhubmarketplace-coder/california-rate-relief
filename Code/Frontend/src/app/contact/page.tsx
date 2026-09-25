@@ -15,6 +15,7 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header as CRRHeader } from '@/components/landing/Header';
 import { Footer as CRRFooter } from '@/components/landing/Footer';
 import { GLP1TrustPage } from '@/components/glp1/GLP1TrustPage';
+import { SiteIdentityBlock } from '@/components/trust/SiteIdentityBlock';
 
 type Domain = 'crr' | 'grh' | 'shg' | 'ahb' | 'glp1';
 
@@ -253,6 +254,7 @@ export default async function ContactPage() {
                 <a href={`mailto:${cfg.email}`} className='text-primary underline'>{cfg.email}</a>
               </div>
             </div>
+            <SiteIdentityBlock className='mt-6 text-foreground/80' linkClassName='text-primary underline' />
           </article>
         </div>
       </main>
