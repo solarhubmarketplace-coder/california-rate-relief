@@ -333,7 +333,7 @@ export default function SolarPaybackPeriodCaliforniaPage() {
               lease, PPA, loan and cash compared
             </Link>{' '}
             and{' '}
-            <Link className={link} href="/blog/no-upfront-cost-solar-panels">
+            <Link className={link} href="/blog/free-solar-panels-california#no-money-down">
               what no-upfront-cost solar costs over the contract
             </Link>
             .

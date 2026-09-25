@@ -1406,10 +1406,6 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "Solar payback period in California"
       },
       {
-        "href": "/blog/no-upfront-cost-solar-panels",
-        "label": "No-upfront-cost solar: who pays"
-      },
-      {
         "href": "/blog/solar-pool-heating-california",
         "label": "Solar Pool Heating in California: Cost, Sizing and Payback"
       },
@@ -1664,10 +1660,6 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/blog/solar-ppa-explained-california",
         "label": "How a solar PPA works"
-      },
-      {
-        "href": "/blog/zero-down-solar-california",
-        "label": "Zero-down solar offers, explained"
       },
       {
         "href": "/blog/what-happens-if-stop-paying-solar-lease-california",

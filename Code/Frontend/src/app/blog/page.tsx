@@ -339,14 +339,6 @@ const blogPosts: BlogPost[] = [
     category: 'Solar Financing',
   },
   {
-    slug: 'no-upfront-cost-solar-panels',
-    title: 'No Upfront Cost Solar Panels in California: Who Pays',
-    excerpt:
-      'No-upfront-cost solar is paid later: a loan, a lease or a per-kWh PPA. How the company gets paid, the pros and cons, and the total-cost test to run first.',
-    date: '2026-09-23',
-    category: 'Solar Savings',
-  },
-  {
     slug: 'solar-payback-period-california',
     title: 'Solar Payback Period in California (2026): Work Out Yours',
     excerpt:
@@ -911,15 +903,6 @@ const blogPosts: BlogPost[] = [
       'No two lease quotes are built the same way. What determines the payment, which contract terms move it, and the disclosure document California requires to carry the total.',
     date: '2026-09-18',
     readTime: '10 min read',
-    category: 'Solar Financing',
-  },
-  {
-    slug: 'zero-down-solar-california',
-    title: 'What Does $0 Down Solar Mean in California?',
-    excerpt:
-      'A no-down-payment offer is a statement about the first payment, not the total. Where the cost actually sits in a loan, a lease and a PPA, and what California already caps.',
-    date: '2026-09-18',
-    readTime: '8 min read',
     category: 'Solar Financing',
   },
   // claude/audit-links-20260918 — fourteen posts that were published and then

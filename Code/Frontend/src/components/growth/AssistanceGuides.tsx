@@ -18,6 +18,7 @@ import {
   IncentivesHubFaq,
   incentivesHubExtraSources,
 } from "./IncentivesHubExtras";
+import { NoMoneyDownCost, noMoneyDownSources } from "./NoMoneyDownExtras";
 import {
   GreenTariffDiscounts,
   SgipEquityStatus,
@@ -540,6 +541,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
                 label: "Sunnova Energy International: Form 8-K (Item 1.03), filed 2025-06-09",
                 url: SUNNOVA_8K,
               },
+              ...noMoneyDownSources,
             ]
           : []),
       ]}
@@ -929,6 +931,9 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               .
             </p>
           </section>
+          {/* GS-MERGES 2026-09-24: /blog/zero-down-solar-california and
+              /blog/no-upfront-cost-solar-panels 301 here (plan 6.3). */}
+          <NoMoneyDownCost />
           <section id="dac-sash">
             <h2>
               The genuine no-cost route for a single-family homeowner: DAC-SASH
@@ -1434,6 +1439,17 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
                 </p>
               </div>
               <div>
+                <h3>How do solar companies make money if I pay nothing upfront?</h3>
+                <p>
+                  Someone pays the installer on day one and you pay them back over
+                  the contract: loan payments with interest and any fees, or lease
+                  or PPA payments that the CPUC says often rise 1 to 3 percent a
+                  year, over a lease term it puts at 20 to 25 years. The total over
+                  the contract is the number to compare, not the first payment.
+                  (Verified 2026-09-24.)
+                </p>
+              </div>
+              <div>
                 <h3>What about “free after the tax credit”?</h3>
                 <p>
                   26 U.S.C. §25D(h) provides the credit “shall not apply with
@@ -1451,7 +1467,6 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
           <RelatedGuides
             heading="What the offer turns out to be"
             links={[
-              { href: "/blog/no-upfront-cost-solar-panels", label: "What no-upfront-cost solar costs over the contract" },
               { href: "/solar-problems/does-solar-mean-free-electricity-california", label: "Does solar mean free electricity?" },
               { href: "/solar-problems/hidden-costs-of-solar-california", label: "The costs that arrive after the quote" },
               { href: "/solar-problems/solar-sales-tactics-california", label: "What each sales tactic obscures" },

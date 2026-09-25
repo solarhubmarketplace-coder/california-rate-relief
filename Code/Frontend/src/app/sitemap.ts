@@ -83,7 +83,6 @@ const CRR_TOPICAL_20260923 = new Set<string>([
   '/blog/nem-3-lawsuit',
   '/blog/nem-pge',
   '/blog/net-billing-vs-net-metering-california',
-  '/blog/no-upfront-cost-solar-panels',
   '/blog/pge-solar-calculator',
   '/blog/pge-tier-rates',
   '/blog/pge-time-of-use-rates-2026',
@@ -424,6 +423,7 @@ const CRR_TOPICAL_20260923 = new Set<string>([
 const GS_MERGES_20260924 = new Set<string>([
   '/blog/california-solar-tax-credit-2026',
   '/solar-panels-california',
+  '/blog/free-solar-panels-california',
 ]);
 // END GS-MERGES 2026-09-24
 
@@ -583,7 +583,6 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     // claude/ca-financing-20260918 — Tier A financing-decision cluster
     'is-it-better-to-buy-or-lease-solar-panels-california',
     'how-much-does-it-cost-to-lease-solar-panels-california',
-    'zero-down-solar-california',
     // claude/ta-release-20260923 — topical-authority wave (new posts)
     'average-kwh-per-day-california',
     'average-pge-bill-for-1-bedroom-apartment',
@@ -601,7 +600,6 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'nem-3-export-rates-california',
     'nem-3-lawsuit',
     'nem-pge',
-    'no-upfront-cost-solar-panels',
     'pge-solar-calculator',
     'pge-tier-rates',
     'prepaid-lease-solar',

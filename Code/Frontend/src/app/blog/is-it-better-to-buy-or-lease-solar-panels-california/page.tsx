@@ -692,7 +692,7 @@ export default function IsItBetterToBuyOrLeaseSolarPanelsCalifornia() {
             note: "one pays for equipment, the other for output",
           },
           {
-            href: "/blog/zero-down-solar-california",
+            href: "/blog/free-solar-panels-california#no-money-down",
             label: "What a no-down-payment solar offer means",
             note: "the first payment is not the total",
           },

@@ -240,6 +240,12 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   '/blog/are-solar-panels-worth-it-california': '/solar-panels-california',
   '/blog/nem-3-california-still-worth-it': '/solar-panels-california',
   '/blog/is-solar-worth-it-california-2026': '/solar-panels-california',
+  // No money down x4 -> the free-solar page (2,585 impressions; Search
+  // Console already shows it for "no upfront cost solar panels", and it holds
+  // topic-map cluster 266). The $0-down post had 8, the no-upfront post 0.
+  // /blog/solar-ppa-explained-california stays: its intent is what a PPA is.
+  '/blog/zero-down-solar-california': '/blog/free-solar-panels-california',
+  '/blog/no-upfront-cost-solar-panels': '/blog/free-solar-panels-california',
   // END GS-MERGES 2026-09-24 ------------------------------------------------
 };
 
