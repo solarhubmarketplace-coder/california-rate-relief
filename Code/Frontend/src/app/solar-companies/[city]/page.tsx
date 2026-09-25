@@ -718,7 +718,7 @@ export default async function SolarCompaniesCityPage({ params }: PageProps) {
             <ul className="space-y-2 mb-10">
               <li>
                 <Link
-                  href="/blog/nem-3-california-still-worth-it"
+                  href="/solar-panels-california#still-worth-it-nem-3"
                   className="text-primary hover:underline"
                 >
                   Is Solar Still Worth It Under NEM 3.0?
