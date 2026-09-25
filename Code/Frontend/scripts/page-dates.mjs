@@ -331,7 +331,12 @@ const DECISION_PAGE = join(SRC, 'components', 'growth', 'DecisionPage.tsx');
 const DECISION_DEFAULT = (() => {
   const m = /sourceCheckedDate\s*=\s*['"](\d{4}-\d{2}-\d{2})['"]/.exec(code(DECISION_PAGE));
   if (!m) throw new Error('page-dates: DecisionPage default sourceCheckedDate not found');
-  if (!/dateModified:\s*contentModifiedDate\s*\|\|\s*sourceCheckedDate/.test(code(DECISION_PAGE))) {
+  const dp = code(DECISION_PAGE);
+  const direct = /dateModified:\s*contentModifiedDate\s*\|\|\s*sourceCheckedDate/.test(dp);
+  // Also accept the form the trust lane left (2026-09-24):
+  //   const modified = contentModifiedDate || sourceCheckedDate; ... dateModified: modified
+  const viaLocal = /const\s+(\w+)\s*=\s*contentModifiedDate\s*\|\|\s*sourceCheckedDate/.exec(dp);
+  if (!direct && !(viaLocal && new RegExp(`dateModified:\\s*${viaLocal[1]}\\b`).test(dp))) {
     throw new Error('page-dates: DecisionPage no longer derives dateModified from contentModifiedDate || sourceCheckedDate; update rule 2');
   }
   return m[1];
