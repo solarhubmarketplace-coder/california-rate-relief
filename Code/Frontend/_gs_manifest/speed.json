@@ -1,0 +1,503 @@
+{
+  "lane": "speed",
+  "branch": "claude/gs-speed-20260924",
+  "base": "0355a03",
+  "date": "2026-09-24",
+  "commits": [
+    {
+      "sha": "1a0dc7d",
+      "item": "4.1",
+      "subject": "Load gtag.js after page load, with the queue created in the HTML"
+    },
+    {
+      "sha": "d3968dc",
+      "item": "4.2",
+      "subject": "Load Google Maps/Places on the address field's first focus, not with the home page"
+    },
+    {
+      "sha": "6a42ef4",
+      "item": "6.1 (form part)",
+      "subject": "Take the out-of-state utilities out of the CRR forms' utility select"
+    },
+    {
+      "sha": "5c213b9",
+      "item": "4.4",
+      "subject": "Show the sticky mobile bar only after the first answer has scrolled away"
+    }
+  ],
+  "items": {
+    "4.1": {
+      "status": "done",
+      "files": [
+        "src/components/GoogleAnalytics.tsx"
+      ],
+      "what": "gtag.js loads with next/script strategy='lazyOnload' (after the load event, in idle time) and is no longer preloaded in <head>. The dataLayer/gtag stub plus gtag('js') and gtag('config', id, {page_title, send_page_view:true}) now run from a plain inline <script> in the server HTML, so window.gtag exists before any client code and trackEvent() calls made before the library arrives are queued in dataLayer (before, a call that ran before the afterInteractive inline script was dropped). Measurement IDs per host, config options, event names and parameters unchanged. The site has no consent mode, before or after.",
+      "evidence": {
+        "browser_check_release_build": "/solar-cost/fresno, Pixel 5 emulation, GA collect intercepted and aborted: window.gtag is a function and dataLayer holds 2 entries (js, config) at DOMContentLoaded; no gtag preload in <head>; gtag.js requested 435 ms after navigation vs load event at 386 ms; a probe event fired at DOMContentLoaded (before gtag.js existed) was replayed when gtag.js loaded (collect en=lab_probe_before_gtag), alongside page_view and quick_check_view.",
+        "lab_effect": "gtag no longer moves lab LCP (after vs after_nogtag LCP within +-0.3 s on every template). Lab TBT still includes gtag's long tasks: after 234-409 ms vs 73-143 ms with gtag absent, because Lighthouse counts every long task before TTI however late the script starts."
+      },
+      "note": "GoogleAnalyticsClient.tsx: its default export (a second loader) is not rendered anywhere; left unchanged. Its trackEvent() (used by every form) now queues because window.gtag exists from the HTML."
+    },
+    "4.2": {
+      "status": "done",
+      "files": [
+        "src/components/landing/QualificationWizard.tsx",
+        "src/app/page.tsx",
+        "src/app/layout.tsx (comment only)"
+      ],
+      "what": "The <Script> for maps.googleapis.com/maps/api/js?key=...&libraries=places is removed from the home page. The wizard injects the same URL and key once, on the first focus or input of the address field, then initialises use-places-autocomplete as before (same polling, same gm_authFailure fallback, same 30 s stop). If Places becomes ready while the field is focused and has text, the hook gets that text once so suggestions show without another keystroke. Fields, validation, values, payload unchanged.",
+      "evidence": {
+        "browser_check_release_build": "Home, Pixel 5: 0 Maps requests after load + 4 s; 0 after clicking through steps 1-4 to the contact step; after focusing #address, exactly 1 script tag and 1 request to maps/api/js (+ Google's own gen_204). With the build's dummy key Google raised InvalidKeyMapError, the wizard fell back: typing '123 Main St' kept the value and the help text is the plain-input one.",
+        "lab": "Maps requested on 0 of 24 'after' runs (live home: Maps 377 KB on every run)."
+      }
+    },
+    "6.1_form": {
+      "status": "done",
+      "files": [
+        "src/lib/calculator-context.ts"
+      ],
+      "what": "utilityOptions (the utility <select> in SolarInquiry, HeroQuickCheck and SolarCalculator) no longer lists pseg (PSE&G), jcpl (JCP&L), ace (Atlantic City Electric), rockland (Rockland Electric), bge (BGE), pepco (Pepco), delmarva (Delmarva Power), potomac-edison (Potomac Edison), dominion (Dominion Energy Virginia), appalachian-power (Appalachian Power). Remaining values unchanged: pge, sce, sdge, ladwp, smud, mvu, other.",
+      "backend_check": "Code/Backend/src/controllers/intake.controller.js normalizeUtility maps pge, sce, sdge, ladwp, smud, mvu, other (and their long names) to canonical labels; the removed codes were never in its table and were stored as Other + the raw code. What it accepts and stores for the remaining values is unchanged.",
+      "scope": "Every user of utilityOptions is a CRR solar form or helper (quick-start.ts, city-pages.ts growthUtilityForForm); no other host uses it. A page that still passes a removed code (the out-of-state pages until their 301s land): SolarInquiry shows it as the 'other' text and sends the same utility_provider string; HeroQuickCheck leaves its select unset. QualificationWizard's own tiles were already California-only.",
+      "not_done": "The project-market <select> ('CA','NJ','DE','MD','VA','DC' from src/lib/service-market.ts) is still in SolarInquiry, QualificationWizard, CommercialAssessmentForm and email/OfferRequest; see needs_chad."
+    },
+    "4.3": {
+      "status": "partial",
+      "files": [],
+      "what": "Checked; nothing changed that could be shown to help.",
+      "evidence": {
+        "fonts": "layout.tsx next/font: Plus Jakarta Sans display:'swap', latin only, weights 400/500/600/700/800 are all used (font-normal in 23 files, medium 388, semibold 459, bold 507, extrabold 357) and all five resolve to one 27 KB latin variable woff2, the only preloaded font. DM Serif Display is display:'swap' and preload:false. No change needed.",
+        "render_blocking_css": "3 files, 1.2 + 23 + 0.9 KB gzipped. The only App Router way to inline it is experimental.inlineCss, which the Next.js docs call 'experimental ... not recommended for production' and which duplicates the CSS in the RSC payload. Emulated A/B through a local proxy (4 templates x 3 runs, gtag blocked): FCP -0.06 to +0.06 s, LCP -0.01 to +1.12 s, TBT higher on all 4. Not applied.",
+        "hero_images": "The LCP element is the H1 text on all 8 templates; no above-the-fold hero image. The wizard's five utility icons are 4-11 KB each via next/image.",
+        "remaining_lcp": "With no third-party JS the local lab LCP is 2.4-2.9 s while the observed paint is 0.25-0.3 s: Lighthouse's simulation counts the ~190 KB of framework and page JS (react-dom 54 KB, Next runtime 46 KB, page chunks) whose requests start before first paint. The audit's release home (LCP 1.39 s) had 13 requests before first paint, these runs 30, so this template metric is bimodal on this machine. Lowering it needs first-party JS cuts (shared client components, the root Toaster, RSC payload size), which touch forms, dashboard and auth code outside this lane."
+      }
+    },
+    "4.4": {
+      "status": "done",
+      "files": [
+        "src/components/landing/FloatingMobileCTA.tsx"
+      ],
+      "what": "The sticky bar stays off-screen (aria-hidden, not focusable) until the first section heading after the answer (first visible h2 in <main> not inside a form/ask; else the h1) reaches the top of the viewport, via one IntersectionObserver; it latches per path. It still hides while a form is on screen and can still be dismissed for the session; destination, label and events unchanged. Fixed-position, so no layout shift (CLS 0 on all 24 'after' runs).",
+      "evidence": "Scroll test on the release build (Pixel 5, half-screen steps): /blog/why-is-my-pge-bill-so-high first shown at y=2184 (boundary 'Compare two PG&E bills' at 1151), /solar-cost/fresno at y=2548, /solar-panels-california at y=1456; across 176 steps: shown before the boundary 0 times, shown while a form was on screen 0 times, hidden past the boundary with no form on screen 0 times."
+    },
+    "4.5_local": {
+      "status": "done (local); live re-measure pending the push",
+      "method": "Lighthouse 13.5.0, mobile, simulated throttling, performance only, headless Chromium 1194, 3 runs per template, medians. Every run blocked google-analytics.com, analytics.google.com, doubleclick.net and /g/collect so no lab hit reached GA; gtag.js itself loaded unless noted. Local runs went through a proxy on 127.0.0.1:8088 that sets Host: ratereliefca.com (as the audit did). One production build (flock), with the prescribed env plus NEXT_PUBLIC_GA_MEASUREMENT_ID_CRR set to the public live ID (so gtag loads, 'with analytics on') and a dummy NEXT_PUBLIC_GOOGLE_PLACES_API_KEY; .next deleted afterwards.",
+      "live_before_2026_09_24": {
+        "/battery/tesla-powerwall-3-cost-california": {
+          "perf": 60,
+          "fcp_s": 3.31,
+          "lcp_s": 5.46,
+          "tbt_ms": 439,
+          "cls": 0.0,
+          "lcp_runs": "5.5/5.9/5.4",
+          "tbt_runs": "439/319/497",
+          "js_kib": 384,
+          "requests": 38
+        },
+        "/blog/why-is-my-pge-bill-so-high": {
+          "perf": 61,
+          "fcp_s": 3.11,
+          "lcp_s": 5.32,
+          "tbt_ms": 460,
+          "cls": 0.0,
+          "lcp_runs": "5.2/5.3/5.4",
+          "tbt_runs": "407/598/460",
+          "js_kib": 378,
+          "requests": 35
+        },
+        "/california-utility-rate-tracker": {
+          "perf": 61,
+          "fcp_s": 3.38,
+          "lcp_s": 5.33,
+          "tbt_ms": 396,
+          "cls": 0.0,
+          "lcp_runs": "5.3/5.3/5.3",
+          "tbt_runs": "396/459/358",
+          "js_kib": 377,
+          "requests": 33
+        },
+        "/": {
+          "perf": 51,
+          "fcp_s": 5.28,
+          "lcp_s": 7.48,
+          "tbt_ms": 662,
+          "cls": 0.0,
+          "lcp_runs": "1.8/7.5/7.7",
+          "tbt_runs": "913/442/662",
+          "js_kib": 745,
+          "requests": 37
+        },
+        "/solar-companies/los-angeles": {
+          "perf": 61,
+          "fcp_s": 3.2,
+          "lcp_s": 5.01,
+          "tbt_ms": 476,
+          "cls": 0.0,
+          "lcp_runs": "5.0/5.0/5.0",
+          "tbt_runs": "476/480/449",
+          "js_kib": 386,
+          "requests": 38
+        },
+        "/solar-cost/fresno": {
+          "perf": 58,
+          "fcp_s": 3.17,
+          "lcp_s": 5.11,
+          "tbt_ms": 588,
+          "cls": 0.0,
+          "lcp_runs": "5.1/4.9/5.3",
+          "tbt_runs": "367/588/731",
+          "js_kib": 381,
+          "requests": 38
+        },
+        "/solar-installers/sunrun-review": {
+          "perf": 63,
+          "fcp_s": 3.34,
+          "lcp_s": 5.37,
+          "tbt_ms": 513,
+          "cls": 0.0,
+          "lcp_runs": "3.1/5.5/5.4",
+          "tbt_runs": "837/513/361",
+          "js_kib": 377,
+          "requests": 35
+        },
+        "/solar-panels-california": {
+          "perf": 61,
+          "fcp_s": 3.14,
+          "lcp_s": 4.94,
+          "tbt_ms": 519,
+          "cls": 0.0,
+          "lcp_runs": "4.9/5.0/4.9",
+          "tbt_runs": "519/556/365",
+          "js_kib": 385,
+          "requests": 37
+        }
+      },
+      "local_after_gtag_lazyOnload": {
+        "/battery/tesla-powerwall-3-cost-california": {
+          "perf": 84,
+          "fcp_s": 1.51,
+          "lcp_s": 3.14,
+          "tbt_ms": 392,
+          "cls": 0.0,
+          "lcp_runs": "3.1/2.8/3.4",
+          "tbt_runs": "392/237/424",
+          "js_kib": 369,
+          "requests": 37
+        },
+        "/blog/why-is-my-pge-bill-so-high": {
+          "perf": 92,
+          "fcp_s": 1.23,
+          "lcp_s": 2.41,
+          "tbt_ms": 286,
+          "cls": 0.0,
+          "lcp_runs": "2.4/2.4/2.4",
+          "tbt_runs": "287/286/263",
+          "js_kib": 363,
+          "requests": 34
+        },
+        "/california-utility-rate-tracker": {
+          "perf": 91,
+          "fcp_s": 1.54,
+          "lcp_s": 2.74,
+          "tbt_ms": 249,
+          "cls": 0.0,
+          "lcp_runs": "2.7/2.7/3.1",
+          "tbt_runs": "210/249/392",
+          "js_kib": 363,
+          "requests": 32
+        },
+        "/": {
+          "perf": 87,
+          "fcp_s": 1.28,
+          "lcp_s": 2.56,
+          "tbt_ms": 409,
+          "cls": 0.0,
+          "lcp_runs": "2.6/2.7/2.5",
+          "tbt_runs": "250/409/426",
+          "js_kib": 367,
+          "requests": 35
+        },
+        "/solar-companies/los-angeles": {
+          "perf": 91,
+          "fcp_s": 1.24,
+          "lcp_s": 2.6,
+          "tbt_ms": 273,
+          "cls": 0.0,
+          "lcp_runs": "2.8/2.6/2.5",
+          "tbt_runs": "338/273/265",
+          "js_kib": 371,
+          "requests": 37
+        },
+        "/solar-cost/fresno": {
+          "perf": 87,
+          "fcp_s": 1.38,
+          "lcp_s": 3.13,
+          "tbt_ms": 296,
+          "cls": 0.0,
+          "lcp_runs": "3.2/3.1/3.1",
+          "tbt_runs": "259/382/296",
+          "js_kib": 367,
+          "requests": 37
+        },
+        "/solar-installers/sunrun-review": {
+          "perf": 92,
+          "fcp_s": 1.39,
+          "lcp_s": 2.58,
+          "tbt_ms": 234,
+          "cls": 0.0,
+          "lcp_runs": "2.5/2.8/2.6",
+          "tbt_runs": "263/234/204",
+          "js_kib": 363,
+          "requests": 34
+        },
+        "/solar-panels-california": {
+          "perf": 92,
+          "fcp_s": 1.37,
+          "lcp_s": 2.56,
+          "tbt_ms": 313,
+          "cls": 0.0,
+          "lcp_runs": "1.6/2.6/2.6",
+          "tbt_runs": "314/313/238",
+          "js_kib": 366,
+          "requests": 35
+        }
+      },
+      "local_after_gtag_absent": {
+        "/battery/tesla-powerwall-3-cost-california": {
+          "perf": 94,
+          "fcp_s": 1.52,
+          "lcp_s": 2.86,
+          "tbt_ms": 104,
+          "cls": 0.0,
+          "lcp_runs": "2.9/2.8/3.0",
+          "tbt_runs": "104/59/114",
+          "js_kib": 197,
+          "requests": 35
+        },
+        "/blog/why-is-my-pge-bill-so-high": {
+          "perf": 97,
+          "fcp_s": 1.22,
+          "lcp_s": 2.4,
+          "tbt_ms": 98,
+          "cls": 0.0,
+          "lcp_runs": "2.6/2.4/2.3",
+          "tbt_runs": "69/98/119",
+          "js_kib": 191,
+          "requests": 32
+        },
+        "/california-utility-rate-tracker": {
+          "perf": 95,
+          "fcp_s": 1.57,
+          "lcp_s": 2.78,
+          "tbt_ms": 89,
+          "cls": 0.0,
+          "lcp_runs": "2.8/2.8/2.7",
+          "tbt_runs": "76/106/89",
+          "js_kib": 190,
+          "requests": 30
+        },
+        "/": {
+          "perf": 95,
+          "fcp_s": 1.21,
+          "lcp_s": 2.85,
+          "tbt_ms": 73,
+          "cls": 0.0,
+          "lcp_runs": "2.6/2.9/2.8",
+          "tbt_runs": "58/84/73",
+          "js_kib": 194,
+          "requests": 33
+        },
+        "/solar-companies/los-angeles": {
+          "perf": 95,
+          "fcp_s": 1.21,
+          "lcp_s": 2.72,
+          "tbt_ms": 143,
+          "cls": 0.0,
+          "lcp_runs": "2.7/2.9/2.5",
+          "tbt_runs": "143/91/149",
+          "js_kib": 199,
+          "requests": 35
+        },
+        "/solar-cost/fresno": {
+          "perf": 96,
+          "fcp_s": 1.37,
+          "lcp_s": 2.5,
+          "tbt_ms": 125,
+          "cls": 0.0,
+          "lcp_runs": "2.5/2.5/2.5",
+          "tbt_runs": "125/111/197",
+          "js_kib": 194,
+          "requests": 35
+        },
+        "/solar-installers/sunrun-review": {
+          "perf": 96,
+          "fcp_s": 1.37,
+          "lcp_s": 2.57,
+          "tbt_ms": 80,
+          "cls": 0.0,
+          "lcp_runs": "2.6/2.6/2.7",
+          "tbt_runs": "80/104/56",
+          "js_kib": 190,
+          "requests": 32
+        },
+        "/solar-panels-california": {
+          "perf": 96,
+          "fcp_s": 1.38,
+          "lcp_s": 2.57,
+          "tbt_ms": 110,
+          "cls": 0.0,
+          "lcp_runs": "2.6/2.5/2.7",
+          "tbt_runs": "110/58/134",
+          "js_kib": 193,
+          "requests": 33
+        }
+      },
+      "audit_reference": {
+        "live_2026_09_24_single_run": "perf 49-64, LCP 5.2-7.7 s, TBT 318-658 ms (lighthouse/summary.csv)",
+        "release_local_no_gtag_no_maps": {
+          "/": "99 / LCP 1.39 / TBT 104",
+          "/blog/why-is-my-pge-bill-so-high": "97 / 2.39 / 117",
+          "/solar-cost/fresno": "86 / 3.51 / 182"
+        }
+      },
+      "reading": "Live before, median of 3: perf 51-63, LCP 4.94-7.48 s, TBT 396-662 ms. Local after, gtag lazyOnload: perf 84-92, LCP 2.41-3.14 s, TBT 234-409 ms, CLS 0, Maps never requested. Local and live are not the same network (live adds real latency through this sandbox's TLS proxy), so the live re-measure after the push is the number that counts. Plan targets: CLS 0 met; TBT < 200 ms is met only with gtag absent (73-143 ms); LCP <= 2.5 s is met on 1 of 8 templates locally with gtag (2 of 8 without).",
+      "css_inline_ab": {
+        "buffered_links": {
+          "/blog/why-is-my-pge-bill-so-high": {
+            "perf": 96,
+            "fcp_s": 1.23,
+            "lcp_s": 2.67,
+            "tbt_ms": 52,
+            "cls": 0.0,
+            "lcp_runs": "2.7/2.4/3.0",
+            "tbt_runs": "34/52/66",
+            "js_kib": 191,
+            "requests": 32
+          },
+          "/california-utility-rate-tracker": {
+            "perf": 95,
+            "fcp_s": 1.37,
+            "lcp_s": 2.78,
+            "tbt_ms": 92,
+            "cls": 0.0,
+            "lcp_runs": "2.8/2.8/2.6",
+            "tbt_runs": "73/101/92",
+            "js_kib": 190,
+            "requests": 30
+          },
+          "/": {
+            "perf": 97,
+            "fcp_s": 1.23,
+            "lcp_s": 2.48,
+            "tbt_ms": 58,
+            "cls": 0.0,
+            "lcp_runs": "2.4/2.5/2.6",
+            "tbt_runs": "59/53/58",
+            "js_kib": 194,
+            "requests": 33
+          },
+          "/solar-cost/fresno": {
+            "perf": 96,
+            "fcp_s": 1.23,
+            "lcp_s": 2.56,
+            "tbt_ms": 91,
+            "cls": 0.0,
+            "lcp_runs": "3.0/2.4/2.6",
+            "tbt_runs": "61/91/115",
+            "js_kib": 194,
+            "requests": 35
+          }
+        },
+        "emulated_inline": {
+          "/blog/why-is-my-pge-bill-so-high": {
+            "perf": 94,
+            "fcp_s": 1.17,
+            "lcp_s": 2.66,
+            "tbt_ms": 128,
+            "cls": 0.0,
+            "lcp_runs": "1.2/2.7/3.0",
+            "tbt_runs": "128/368/39",
+            "js_kib": 191,
+            "requests": 32
+          },
+          "/california-utility-rate-tracker": {
+            "perf": 77,
+            "fcp_s": 1.43,
+            "lcp_s": 3.9,
+            "tbt_ms": 370,
+            "cls": 0.0,
+            "lcp_runs": "2.9/3.9/4.3",
+            "tbt_runs": "286/370/468",
+            "js_kib": 190,
+            "requests": 30
+          },
+          "/": {
+            "perf": 94,
+            "fcp_s": 1.17,
+            "lcp_s": 2.73,
+            "tbt_ms": 143,
+            "cls": 0.0,
+            "lcp_runs": "2.7/2.8/2.6",
+            "tbt_runs": "272/143/90",
+            "js_kib": 194,
+            "requests": 33
+          },
+          "/solar-cost/fresno": {
+            "perf": 87,
+            "fcp_s": 1.21,
+            "lcp_s": 2.88,
+            "tbt_ms": 195,
+            "cls": 0.0,
+            "lcp_runs": "2.9/3.8/2.6",
+            "tbt_runs": "367/195/181",
+            "js_kib": 194,
+            "requests": 35
+          }
+        }
+      }
+    }
+  },
+  "gates": {
+    "tsc": "pass (flock, NODE_OPTIONS=--max-old-space-size=4096 npx tsc --noEmit -p .)",
+    "test:growth": "53/53 pass",
+    "canonical-redirects, cta-intent, intake-routing, city-pages, solar-cost-index": "46/46 pass",
+    "quick-start, service-market": "12/12 pass",
+    "Header.test.mjs": "2/2 pass",
+    "qc-gate-tsx": "identical to base: fails 55/55, warns 148/148, 0 new, 0 gone (JSON reports compared)",
+    "assert:citylinks": "pass",
+    "next build": "pass (one run, local measurement only)",
+    "qc-gate.mjs": "not run: no JSON content page touched"
+  },
+  "sources_fetched": [
+    {
+      "url": "https://nextjs.org/docs/app/api-reference/config/next-config-js/inlineCss",
+      "checked": "2026-09-24",
+      "used_for": "4.3: inlineCss is experimental, not recommended for production, duplicates CSS in the RSC payload"
+    },
+    {
+      "url": "https://ratereliefca.com/ (8 templates, GET + Lighthouse)",
+      "checked": "2026-09-24",
+      "used_for": "live before numbers; first-h2 survey for 4.4"
+    }
+  ],
+  "requests_for_other_lanes": [
+    {
+      "to": "release/integration",
+      "request": "After the push, re-run Lighthouse mobile on the 8 templates live (3 runs, medians) with GA collect blocked, and record them in 01_STATE (plan 4.5). Compare with live_before_2026_09_24 in this manifest."
+    },
+    {
+      "to": "integration (merge note)",
+      "request": "This lane edits src/app/page.tsx (removes the Maps <Script> and the next/script import, 14 lines) and src/app/layout.tsx (one comment). Other lanes editing the home page or layout may need a trivial merge."
+    }
+  ],
+  "needs_chad": [
+    "Analytics timing vs the TBT target: with gtag lazyOnload the lab TBT is 234-409 ms; with gtag absent it is 73-143 ms. Lighthouse counts gtag's long tasks whenever they run before its idle point. Reaching TBT < 200 ms with analytics on needs gtag loaded on the first interaction (scroll, tap or key) instead of on load. Cost: a visit that leaves without any interaction sends no page_view. Keep lazyOnload (current) or switch to first-interaction?",
+    "Project-market select: the forms still offer New Jersey, Delaware, Maryland, Virginia and DC (src/lib/service-market.ts serviceMarkets, used by SolarInquiry, QualificationWizard, CommercialAssessmentForm and OfferRequest; the backend and service-market.test.ts accept all six). Decision 41 named utilities only, so they were left. Remove the five non-California markets from the forms too?",
+    "Critical CSS: not applied. Next's inlineCss is experimental and not recommended for production, and an emulated A/B showed no LCP gain. Further LCP gains need first-party JS reductions (a separate project)."
+  ],
+  "notes": [
+    "Before GA blocking was set up, one diagnostic Lighthouse run on live /solar-cost/fresno sent one page_view to the live GA property (the audit's own live runs did the same). All 90+ later runs blocked GA collect.",
+    "While running qc-gate-tsx the first time, its '--json <file>' argument (an output path) overwrote 4 source files in the working tree before they were committed. The branch was reset to the first good commit and the edits re-applied from base; tsc, tests, qc-gate-tsx and the build all ran on the corrected tree. Nothing was pushed."
+  ]
+}
