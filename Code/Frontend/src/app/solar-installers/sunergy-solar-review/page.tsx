@@ -113,11 +113,7 @@ export default function SunergyReview() {
               </div>
             </header>
 
-            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
-              <div>
-                <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p>
-                <p className='text-3xl font-extrabold text-foreground mt-1'>4.0 <span className='text-lg text-muted-foreground'>/ 5</span></p>
-              </div>
+            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-2 gap-6'>
               <div>
                 <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p>
                 <p className='text-sm text-foreground font-medium mt-1'>SoCal cash or loan buyers who want an Enphase-based system they own outright</p>

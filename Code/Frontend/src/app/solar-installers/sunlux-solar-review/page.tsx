@@ -23,7 +23,9 @@ import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 // docket search, both dated. Removed as unsourced: the county coverage list,
 // Panasonic / SolarEdge / LG equipment, the "3 to 6 months" timeline, the
 // "2-4 week" warranty response, and a complaint list with no source.
-// The "Our take" block is left as it was (an editorial decision for Chad).
+// 2026-09-24 (plan item 2.7): the numeric "Our take" score was removed; no
+// published scoring method backs it. The written Best for / Think twice
+// if lines stay.
 // No Review/Rating JSON-LD: Google's review-snippet rules require ratings for
 // a business to come from users, and this site collects none
 // (developers.google.com/search/docs/appearance/structured-data/review-snippet).
@@ -152,8 +154,7 @@ export default function SunluxReview() {
               </div>
             </header>
 
-            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
-              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p><p className='text-3xl font-extrabold text-foreground mt-1'>4.4 <span className='text-lg text-muted-foreground'>/ 5</span></p></div>
+            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-2 gap-6'>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p><p className='text-sm text-foreground font-medium mt-1'>Southern California buyers who want a regional installer with a published 25-year hardware warranty</p></div>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>You need fast warranty service: 4 of its 7 BBB complaints in three years were service or repair issues</p></div>
             </div>
