@@ -101,7 +101,7 @@ export default function CaliforniaEnergyCommission() {
             {/* Article Body */}
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Most California homeowners have heard of the CPUC — the agency that sets electricity rates. But there&apos;s another state agency that shapes your energy costs in less obvious ways: the California Energy Commission (CEC). The CEC doesn&apos;t set your utility rate, but it decides what goes into new buildings, which appliances can be sold, and how the state&apos;s energy future is planned. If you own a home or plan to buy one, the CEC&apos;s decisions affect you.
+                The California Energy Commission (CEC) is the state&apos;s energy policy and planning agency: it sets the Title 24 building energy standards that decide what goes into new homes, decides which appliances can be sold, and plans the state&apos;s energy future. It does not set your electricity rate; the CPUC does. If you own a home or plan to buy one, the CEC&apos;s decisions still shape your energy costs.
               </p>
               <HubUpLink path="/blog/california-energy-commission" />
 

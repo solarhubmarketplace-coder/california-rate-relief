@@ -62,7 +62,7 @@ export default function DoSolarPanelsIncreasePropertyTaxesCalifornia() {
   return (
     <DecisionPage
       title="Do solar panels increase property taxes in California?"
-      intro="California has a specific rule for this, and it is narrower than most summaries make it sound. It is an exclusion from reassessment, not an exemption; it is tied to the system, not to who owns it; and it has an end date."
+      intro="No, if the system qualifies and is finished before January 1, 2027. California excludes a qualifying active solar energy system from reassessment under Revenue and Taxation Code section 73, so your existing assessment does not go up. It is an exclusion, not an exemption, so it does not lower the bill either, and it applies whether the system is owned or leased."
       path="/blog/do-solar-panels-increase-property-taxes-california"
       sources={sources}
       sourceCheckedDate="2026-09-17"

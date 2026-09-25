@@ -91,7 +91,7 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
   return (
     <DecisionPage
       title="Does solar increase home value in California?"
-      intro="Two different questions get answered as one. California property tax law treats a qualifying solar system a particular way while you own the home, and separate sale-price research asks what buyers paid. Neither one produces a number for your address."
+      intro="On average, yes, for owned systems: sale-price studies found buyers paid more for homes with owned solar, but none of them gives a number for your address. Separately, California law keeps a qualifying system from raising your property tax assessment while you own the home."
       path="/blog/does-solar-increase-home-value-california"
       sources={sources}
       sourceCheckedDate="2026-09-22"
