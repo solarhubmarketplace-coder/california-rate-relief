@@ -25,6 +25,23 @@ import { trackEvent } from '@/components/GoogleAnalyticsClient';
 
 const DISMISS_KEY = 'crr_sticky_cta_dismissed_v1';
 
+// An ask that is already on screen: the hero quick check, an inquiry form, the
+// home wizard.
+const ASK_SELECTOR = 'main form, #qualify, #solar-inquiry, #commercial-review';
+
+/**
+ * The first section heading after the page's answer: the first visible h2 in
+ * <main> that is not part of an ask (the quick check's "Start with your bill"
+ * is an h2 inside its form). Falls back to the h1 when a page has no such h2.
+ */
+function firstAnswerBoundary(): Element | null {
+  const headings = Array.from(document.querySelectorAll('main h2'));
+  const boundary = headings.find(
+    (node) => !node.classList.contains('sr-only') && !node.closest(ASK_SELECTOR),
+  );
+  return boundary ?? document.querySelector('main h1');
+}
+
 export function FloatingMobileCTA({ variant }: { variant?: CtaVariant } = {}) {
   const pathname = usePathname() || '';
   const isCommercial = isCommercialIntentPath(pathname);
@@ -61,6 +78,36 @@ export function FloatingMobileCTA({ variant }: { variant?: CtaVariant } = {}) {
     }
   }, []);
 
+  // Show the bar only once the page's first answer has scrolled out of view
+  // (plan item 4.4; audit G-62/P-18): the reader gets the answer on the first
+  // screen without a sticky unit over it. "Out of view" means the first
+  // section heading after the answer has reached the top of the viewport.
+  // It latches per page: scrolling back up does not hide the bar again.
+  const [pastAnswerPath, setPastAnswerPath] = useState<string | null>(null);
+  const pastAnswer = pastAnswerPath === pathname;
+  useEffect(() => {
+    if (!mounted || dismissed || pastAnswer) return;
+    const boundary = firstAnswerBoundary();
+    if (!boundary || typeof IntersectionObserver === 'undefined') {
+      // Nothing to measure against: behave as the bar always did.
+      setPastAnswerPath(pathname);
+      return;
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries.some((entry) => entry.boundingClientRect.top <= 0)) {
+          setPastAnswerPath(pathname);
+          observer.disconnect();
+        }
+      },
+      // 0 and 1 fire as the heading enters from below and as it starts to
+      // leave at the top, so the top edge crossing is always reported.
+      { threshold: [0, 1] },
+    );
+    observer.observe(boundary);
+    return () => observer.disconnect();
+  }, [mounted, dismissed, pastAnswer, pathname]);
+
   // Hide the bar while an ask is already on screen (the hero quick check, an
   // inquiry form, the home wizard). Two asks on one screen compete, and on a
   // phone the bar sat over the quick check's Continue button.
@@ -81,7 +128,7 @@ export function FloatingMobileCTA({ variant }: { variant?: CtaVariant } = {}) {
     );
     const scan = () => {
       document
-        .querySelectorAll('main form, #qualify, #solar-inquiry, #commercial-review')
+        .querySelectorAll(ASK_SELECTOR)
         .forEach((node) => {
           if (observed.has(node)) return;
           observed.add(node);
@@ -101,22 +148,23 @@ export function FloatingMobileCTA({ variant }: { variant?: CtaVariant } = {}) {
   if (!mounted || dismissed) return null;
 
   const label = isCommercial ? 'Request Commercial Review' : copy.stickyAction;
+  const hidden = askInView || !pastAnswer;
 
   return (
     <>
       {/* Reserves the bar's height so the bar never covers the end of the page. */}
       <div aria-hidden="true" className="md:hidden h-[72px]" />
       <div
-        aria-hidden={askInView || undefined}
+        aria-hidden={hidden || undefined}
         className={`md:hidden fixed bottom-0 left-0 right-0 z-40 flex items-center gap-2 border-t border-border bg-card p-3 shadow-lg ${
           reducedMotion
             ? ''
             : 'transition-transform duration-200 motion-reduce:transition-none'
-        } ${askInView ? 'translate-y-full pointer-events-none' : ''}`}
+        } ${hidden ? 'translate-y-full pointer-events-none' : ''}`}
       >
         <Link
           href={href}
-          tabIndex={askInView ? -1 : undefined}
+          tabIndex={hidden ? -1 : undefined}
           onClick={() =>
             trackEvent('cta_click', {
               cta: 'sticky_mobile',
@@ -132,7 +180,7 @@ export function FloatingMobileCTA({ variant }: { variant?: CtaVariant } = {}) {
         </Link>
         <button
           type="button"
-          tabIndex={askInView ? -1 : undefined}
+          tabIndex={hidden ? -1 : undefined}
           aria-label="Dismiss this bar"
           onClick={() => {
             setDismissed(true);
