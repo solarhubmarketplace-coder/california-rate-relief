@@ -1650,10 +1650,6 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "Are Free Solar Panels Real in California? The CPUC Answer"
       },
       {
-        "href": "/blog/how-much-does-it-cost-to-lease-solar-panels-california",
-        "label": "What a solar lease costs"
-      },
-      {
         "href": "/blog/solar-ppa-explained-california",
         "label": "How a solar PPA works"
       },

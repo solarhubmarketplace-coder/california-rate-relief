@@ -424,6 +424,7 @@ const GS_MERGES_20260924 = new Set<string>([
   '/blog/free-solar-panels-california',
   '/blog/can-you-cancel-solar-panel-contract-before-installation-california',
   '/blog/commercial-solar-financing-california',
+  '/blog/rent-solar-panels-for-your-home-california',
 ]);
 // END GS-MERGES 2026-09-24
 
@@ -582,7 +583,6 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'can-you-cancel-solar-panel-contract-before-installation-california',
     // claude/ca-financing-20260918 — Tier A financing-decision cluster
     'is-it-better-to-buy-or-lease-solar-panels-california',
-    'how-much-does-it-cost-to-lease-solar-panels-california',
     // claude/ta-release-20260923 — topical-authority wave (new posts)
     'average-kwh-per-day-california',
     'average-pge-bill-for-1-bedroom-apartment',

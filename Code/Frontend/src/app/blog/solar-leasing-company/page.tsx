@@ -132,7 +132,7 @@ export default function SolarLeasingCompanyPage() {
             </p>
             <p className="mt-3">
               This page is about the company and the contract. What a lease costs each month is in{' '}
-              <Link className={link} href="/blog/how-much-does-it-cost-to-lease-solar-panels-california">
+              <Link className={link} href="/blog/rent-solar-panels-for-your-home-california#what-sets-the-payment">
                 what sets the price of a solar lease
               </Link>
               , and how leasing compares with buying is in{' '}

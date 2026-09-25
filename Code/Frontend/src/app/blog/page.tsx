@@ -888,15 +888,6 @@ const blogPosts: BlogPost[] = [
     readTime: '11 min read',
     category: 'Solar Financing',
   },
-  {
-    slug: 'how-much-does-it-cost-to-lease-solar-panels-california',
-    title: 'How Much Does It Cost to Lease Solar Panels in California?',
-    excerpt:
-      'No two lease quotes are built the same way. What determines the payment, which contract terms move it, and the disclosure document California requires to carry the total.',
-    date: '2026-09-18',
-    readTime: '10 min read',
-    category: 'Solar Financing',
-  },
   // claude/audit-links-20260918 — fourteen posts that were published and then
   // linked from nowhere. The 2026-09-18 link audit found them with zero inbound
   // internal links anywhere on the site: they were in the sitemap, and that was

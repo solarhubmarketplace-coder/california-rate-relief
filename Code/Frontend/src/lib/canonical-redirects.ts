@@ -261,6 +261,12 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   // financing guides in cluster 223. The blog guide has 1,524 impressions to
   // 175; its structure-fit and elective-pay material is carried over.
   '/commercial-solar/financing-options': '/blog/commercial-solar-financing-california',
+  // Topic-map G05 (held on 2026-09-23, applied here): the lease-cost page and
+  // the rent/lease page are both in SERP cluster 12 ("solar leasing"). The
+  // rent page has 1,368 impressions; the lease-cost page 0 in 90 days. Its
+  // disclosure, payment-input, escalator and contract-terms material moved.
+  '/blog/how-much-does-it-cost-to-lease-solar-panels-california':
+    '/blog/rent-solar-panels-for-your-home-california',
   // END GS-MERGES 2026-09-24 ------------------------------------------------
 };
 

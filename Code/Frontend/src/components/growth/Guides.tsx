@@ -996,7 +996,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             ,{' '}
             <Link
               className={link}
-              href="/blog/how-much-does-it-cost-to-lease-solar-panels-california"
+              href="/blog/rent-solar-panels-for-your-home-california#what-sets-the-payment"
             >
               what a solar lease costs in California
             </Link>
