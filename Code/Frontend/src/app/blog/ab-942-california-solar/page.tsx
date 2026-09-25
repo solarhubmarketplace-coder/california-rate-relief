@@ -11,12 +11,14 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "AB 942 California: Solar Lease Transfer Rights (2026)",
   description: "What AB 942 did for California solar homeowners: lease/PPA transfer rules, UCC lien relief, and disclosure requirements when you sell.",
   alternates: { canonical: '/blog/ab-942-california-solar' },
-  openGraph: { title: 'AB 942 California Solar', description: 'Solar lease transfer rights under California AB 942.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/ab-942-california-solar' },
+  openGraph: { title: 'AB 942 California Solar', description: 'Solar lease transfer rights under California AB 942.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/ab-942-california-solar', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
@@ -38,6 +40,7 @@ export default function AB942CASolar() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">AB 942: California&apos;s Solar Lease Transfer Rights Law, Explained</h1>
               <Byline updated="2026-04-24" />
               <p className="text-lg text-muted-foreground">AB 942 tackled one of the biggest real-world pain points in residential solar, what happens to a 20–25 year lease or PPA when the homeowner sells. Here&apos;s what the law actually did.</p>
+              <HubUpLink path="/blog/ab-942-california-solar" />
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

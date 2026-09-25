@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 // License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
@@ -73,6 +74,7 @@ export default function NewDayReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 New Day Solar is a family-owned California installer based in Murrieta. The company focuses on ownership (cash or loan) and steers customers away from PPAs and leases. This review does not report its Yelp, Google or BBB ratings or its years in business, so check its CSLB license record and recent reviews yourself. Get the install and Permission to Operate timeline in writing.
               </p>
+              <HubUpLink path="/solar-installers/new-day-solar-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

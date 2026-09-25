@@ -14,6 +14,7 @@ import { SourceList, type Source } from '@/components/growth/DecisionPage';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/blog/what-is-nem-true-up';
 const url = `https://ratereliefca.com${path}`;
@@ -109,6 +110,7 @@ export default function WhatIsNemTrueUpPage() {
                 low wholesale-based rate, and starts the count over. How much is left to settle depends on
                 whether you are on NEM 2.0 or the newer net billing tariff.
               </p>
+              <HubUpLink path="/blog/what-is-nem-true-up" />
               <p>
                 This page explains the mechanics at PG&amp;E, SCE and SDG&amp;E, what happens to leftover
                 credits, and how to keep the true-up from being a surprise. If your true-up is already high

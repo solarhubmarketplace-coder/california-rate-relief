@@ -18,7 +18,7 @@ import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
 import { FaqJsonLd, type FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
 import { Byline } from '@/components/trust/Byline';
-const metaTitle = "Solar Pool Heating in California: Cost, Sizing and Payback";
+const metaTitle = "Solar Pool Heater Cost in California: Sizing and Payback";
 const metaDescription =
   "What DOE says a solar pool heater costs, how big the collectors should be and how fast it pays back, plus how solar compares with heat pump and gas heaters.";
 const DOE_SOLAR_POOL = "https://www.energy.gov/energysaver/solar-swimming-pool-heaters";

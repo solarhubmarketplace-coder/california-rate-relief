@@ -16,6 +16,8 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
 const SUNNOVA_LICENSES: InstallerLicense[] = [
@@ -35,6 +37,7 @@ export const metadata: Metadata = {
       'What the 2025 Sunnova bankruptcy and SunStrong asset sale mean for the ~500,000 legacy customers and for California solar shoppers in 2026.',
     type: 'article',
     publishedTime: '2026-04-23T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 
@@ -231,6 +234,7 @@ export default function SunnovaReview() {
                 customer&apos;s roof and selling the electricity back for a
                 fixed monthly rate.
               </p>
+              <HubUpLink path="/solar-installers/sunnova-review" />
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 In June 2025, Sunnova filed for Chapter 11 bankruptcy

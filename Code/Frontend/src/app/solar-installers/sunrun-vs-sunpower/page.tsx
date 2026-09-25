@@ -10,6 +10,7 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 // 2026-09-23 (topical-authority program, Tier 2): added the business-status
 // answer ("did Sunrun go out of business", "has Sunrun filed for bankruptcy")
@@ -39,7 +40,7 @@ const statusFaqs = [
   },
 ];
 
-const metaTitle = "Sunrun vs SunPower (2026): After SunPower's Bankruptcy";
+const metaTitle = "Sunrun vs SunPower (2026): Bankruptcy, Warranty, Service";
 const metaDescription =
   "SunPower filed Chapter 11 in 2024; Complete Solaria now runs the brand. Sunrun vs SunPower on warranty, ownership, CSLB license and pre-2024 systems.";
 
@@ -77,6 +78,7 @@ export default function SunrunVsSunPower() {
 
               <LastReviewedStamp date="2026-09-23" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <p className="text-lg text-muted-foreground">SunPower filed for Chapter 11 bankruptcy in 2024; Complete Solaria acquired the business and now runs it under the SunPower brand for California customers. That ownership change is the main thing to know before comparing the two companies on price, equipment and service. Here&apos;s how Sunrun and SunPower actually stack up now.</p>
+<HubUpLink path="/solar-installers/sunrun-vs-sunpower" />
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

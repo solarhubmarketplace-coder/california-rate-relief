@@ -10,6 +10,8 @@ import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title:
@@ -26,6 +28,7 @@ export const metadata: Metadata = {
       'The CPUC controls your electricity rates, NEM policy, and the $24 fixed charge. Here\'s how it works and what it means for your bill.',
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 
@@ -99,6 +102,7 @@ export default function CaliforniaPublicUtilitiesCommission() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Every time your electricity rate goes up, a fixed charge appears on your bill, or net metering rules change, one agency is behind it: the California Public Utilities Commission (CPUC). If you pay an electric bill in California, the CPUC&apos;s decisions directly determine how much you pay. Here&apos;s what this agency actually does, who runs it, and what their recent rulings mean for your wallet.
               </p>
+              <HubUpLink path="/blog/california-public-utilities-commission" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

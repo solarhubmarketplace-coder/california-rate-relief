@@ -10,12 +10,14 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Canadian Solar Panels Review 2026: HiKu Series for CA",
   description: "Canadian Solar HiKu review for California homes: Tier-1 efficiency ratings, temperature performance, 25-year warranties, and value pricing.",
   alternates: { canonical: '/panel-reviews/canadian-solar-panels-review' },
-  openGraph: { title: 'Canadian Solar Panels Review 2026: HiKu Series for California', description: 'Canadian Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Canadian Solar Panels Review 2026: HiKu Series for California', description: 'Canadian Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 const articleSchema = {
@@ -57,6 +59,7 @@ export default function CanadianSolarReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Canadian Solar is one of the largest publicly traded tier-1 panel manufacturers globally, headquartered in Guelph, Ontario, Canada, and listed on the NASDAQ under ticker CSIQ. The company has been producing panels at massive scale for over two decades and is a common choice on California residential and commercial installs when value is the priority over premium specs. Here&apos;s a plain review.
               </p>
+              <HubUpLink path="/panel-reviews/canadian-solar-panels-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

@@ -13,8 +13,9 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { BillComparison } from '@/components/growth/BillComparison';
 import { Calendar, Clock } from 'lucide-react';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
-const title = "Why Is My PG&E Bill So High? 7 Causes to Check (2026)";
+const title = "Why Is My PG&E Bill So High This Month? 7 Causes to Check";
 const description =
   "Check kWh per day, billing days, TOU peak use and PG&E's Base Services Charge (about $24 a month for most customers, per PG&E). 7 causes, in order.";
 const sourceLink = 'text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';
@@ -45,6 +46,7 @@ export default function WhyIsMyPGEBillSoHigh() {
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>PG&amp;E · Billing</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Why Is My PG&amp;E Bill So High? 7 Causes to Check</h1>
               <p className='text-lg text-muted-foreground'>If your kilowatt-hour usage didn&apos;t go up, the increase usually comes from somewhere else on the bill: a rate plan change, a shifted billing period, or a new line-item charge. Check your usage line first, then compare it to the same period last year. The breakdown below walks through each of the usual causes in order.</p>
+              <HubUpLink path="/blog/why-is-my-pge-bill-so-high" />
               <div className='flex flex-wrap items-center gap-4 text-sm text-muted-foreground mt-4'>
                 <Link href='/author/chad-simpson' className='font-medium text-foreground hover:text-primary'>By Chad Simpson</Link>
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-09-18'>Updated September 18, 2026</time></div>

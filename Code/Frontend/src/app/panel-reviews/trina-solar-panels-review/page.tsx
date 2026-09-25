@@ -10,12 +10,14 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Trina Solar Panels Review: Tier-1, 25-Year Warranty",
   description: "Trina Solar is a tier-1 manufacturer with a 25-year product and power warranty. What the Vertex S series offers and what to ask a California installer.",
   alternates: { canonical: '/panel-reviews/trina-solar-panels-review' },
-  openGraph: { title: 'Trina Solar Panels Review 2026: California Homeowner Guide', description: 'Trina Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Trina Solar Panels Review 2026: California Homeowner Guide', description: 'Trina Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 const articleSchema = {
@@ -57,6 +59,7 @@ export default function TrinaSolarReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Trina Solar is one of the world&apos;s largest tier-1 solar panel manufacturers — publicly traded on the Shanghai Stock Exchange (688599), founded in 1997, and producing panels in high volume for residential, commercial, and utility-scale markets worldwide. If your California installer proposes Trina panels, you&apos;re getting mainstream tier-1 hardware from a company with meaningful financial scale. Here&apos;s the plain review for California homeowners.
               </p>
+              <HubUpLink path="/panel-reviews/trina-solar-panels-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

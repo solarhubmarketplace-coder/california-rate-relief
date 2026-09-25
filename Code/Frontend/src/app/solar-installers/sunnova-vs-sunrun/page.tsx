@@ -8,12 +8,14 @@ import { Footer } from '@/components/landing/Footer';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Sunnova vs Sunrun (2026): Dealer Network vs In-House Crews",
   description: "In major CA metros Sunrun often installs with its own W-2 crews; Sunnova works through dealers. Compare contracts, warranties, escalators, and batteries.",
   alternates: { canonical: '/solar-installers/sunnova-vs-sunrun' },
-  openGraph: { title: 'Sunnova vs Sunrun (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunnova-vs-sunrun' },
+  openGraph: { title: 'Sunnova vs Sunrun (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunnova-vs-sunrun', images: [CRR_SOCIAL_CARD] },
 };
 const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Sunnova vs Sunrun', datePublished: '2026-04-24', author: CRR_AUTHOR_PERSON, publisher: { '@type': 'Organization', name: 'California Rate Relief' } };
 
@@ -30,10 +32,11 @@ export default function SunnovaVsSunrun() {
             </nav>
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Installer Comparison</span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Sunnova vs Sunrun: Which Solar Installer Wins in California?</h1>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Sunnova vs Sunrun: Dealer Network vs In-House Crews in California</h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <p className="text-lg text-muted-foreground">The two biggest names in residential solar-as-a-service. Similar pricing, similar contracts — but meaningful differences in service model, equipment, and warranty structure.</p>
+<HubUpLink path="/solar-installers/sunnova-vs-sunrun" />
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

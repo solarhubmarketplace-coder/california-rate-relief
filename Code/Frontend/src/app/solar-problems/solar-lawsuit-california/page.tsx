@@ -122,7 +122,7 @@ export default function SolarLawsuitCalifornia() {
       <ArticleJsonLd
         variant="Article"
         domain="crr"
-        headline="Solar lawsuits in California: what has been filed and what it means for you"
+        headline="Solar lawsuits in California: cases, settlements and your options"
         url="https://ratereliefca.com/solar-problems/solar-lawsuit-california"
         datePublished="2026-09-23"
         dateModified="2026-09-23"
@@ -130,7 +130,7 @@ export default function SolarLawsuitCalifornia() {
       />
       <Header />
       <GuideShell
-        title="Solar lawsuits in California: what has been filed and what it means for you"
+        title="Solar lawsuits in California: cases, settlements and your options"
         eyebrow="Solar problems"
         crumbs={[HUB]}
         crumbLabel="Solar lawsuits in California"

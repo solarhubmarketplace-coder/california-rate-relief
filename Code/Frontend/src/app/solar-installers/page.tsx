@@ -11,6 +11,7 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { Byline } from '@/components/trust/Byline';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // =============================================================================
 // /solar-installers — hub of the installer review section.
@@ -50,6 +51,7 @@ export const metadata: Metadata = {
     description: metaDescription,
     type: 'article',
     url: `https://ratereliefca.com${path}`,
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

@@ -10,6 +10,7 @@ import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { FaqJsonLd } from "@/components/shared/FaqJsonLd";
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const sources: Source[] = [
   {
@@ -141,6 +142,7 @@ export const metadata: Metadata = {
     url:
       "https://ratereliefca.com/blog/is-it-better-to-buy-or-lease-solar-panels-california",
     modifiedTime: "2026-09-22T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
 };
 
@@ -148,7 +150,7 @@ export default function IsItBetterToBuyOrLeaseSolarPanelsCalifornia() {
   return (
     <DecisionPage
       title="Is it better to buy or lease solar panels in California?"
-      intro="One input to this decision changed for 2026: the federal residential clean energy credit no longer applies to expenditures made after 31 December 2025, and the statute dates the expenditure to completion of installation. That breaks comparisons built on subtracting a homeowner credit. It does not decide the question, and this page does not decide it for you."
+      intro="Neither is better in general. Buying, with cash or a loan, suits you if you want to own the equipment and can handle repairs once the workmanship warranty ends; a lease or PPA suits you if you want the provider responsible for upkeep for the whole term and accept a payment that can rise. For a 2026 installation there is no federal homeowner credit to subtract from the purchase price."
       path="/blog/is-it-better-to-buy-or-lease-solar-panels-california"
       sources={sources}
       sourceCheckedDate="2026-09-22"

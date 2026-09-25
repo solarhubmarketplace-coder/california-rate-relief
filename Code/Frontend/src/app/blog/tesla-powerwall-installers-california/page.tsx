@@ -13,12 +13,14 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Tesla Powerwall Installers in California: 2026 Guide",
   description: "Who can install a Tesla Powerwall in California, how Tesla's certified installer program works, and what drives the installed price.",
   alternates: { canonical: '/blog/tesla-powerwall-installers-california' },
-  openGraph: { title: 'Tesla Powerwall Installers in California: 2026 Guide', description: 'Guide to Tesla Powerwall installation in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Tesla Powerwall Installers in California: 2026 Guide', description: 'Guide to Tesla Powerwall installation in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
@@ -51,6 +53,7 @@ export default function TeslaPowerwallInstallers() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Tesla Powerwall is the most widely installed residential battery in California in 2026. Under NEM 3.0&apos;s net billing rules, battery storage is essentially mandatory for solid solar economics — and Powerwall is the default choice for most California installers. Here&apos;s how to find a certified Tesla Powerwall installer in California, what installation actually costs, and what to watch for in quotes.
               </p>
+              <HubUpLink path="/blog/tesla-powerwall-installers-california" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

@@ -13,10 +13,12 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, QuickAnswer, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const path = '/blog/sdge-time-of-use-rates-2026';
 const url = `https://ratereliefca.com${path}`;
-const title = 'SDG&E Peak Hours and TOU-DR1 Rates 2026: Every Plan';
+const title = 'SDG&E Time-of-Use Rates 2026: Peak Hours and TOU-DR1 Prices';
 const h1 = 'SDG&E Time-of-Use Rates in 2026: Peak Hours, Weekends and Prices for TOU-DR1, EV-TOU-5 and Every Plan';
 const description =
   'SDG&E peak is 4–9 p.m. every day, weekends included. See super off-peak hours and August 2026 prices for TOU-DR1, TOU-DR2, EV-TOU-5, TOU-ELEC and DR.';
@@ -77,7 +79,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: path },
-  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z` },
+  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z`, images: [CRR_SOCIAL_CARD] },
 };
 
 export default function SdgeTimeOfUseRates2026() {
@@ -96,6 +98,7 @@ export default function SdgeTimeOfUseRates2026() {
                 The cheapest hours are super off-peak: midnight to 6 a.m. and 10 a.m. to 2 p.m. on weekdays, and midnight to 2
                 p.m. on weekends. On the standard TOU-DR1 plan from August 1, 2026, a summer on-peak kWh costs 69.135 cents.
               </p>
+              <HubUpLink path="/blog/sdge-time-of-use-rates-2026" />
               <p>
                 SDG&amp;E says TOU-DR1 is its standard residential schedule and that a typical household is most likely on it.
                 Every price here is from SDG&amp;E&apos;s total rate tables effective August 1, 2026, the latest posted when we

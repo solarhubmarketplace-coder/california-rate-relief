@@ -17,6 +17,7 @@ import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 const SOLAR_OPTIMUM_LICENSES: InstallerLicense[] = [
   { number: '972228', holder: 'Solar Optimum Inc dba Solar Optimum Design & Electrical', basis: DGSTATS_LICENSE_BASIS, status: 'current and active', checked: 'September 24, 2026' }
 ];
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const metaTitle = "Solar Optimum Reviews (2026): Lawsuits, Ratings, Warranty";
 const metaDescription =
@@ -81,6 +82,7 @@ export default function SolarOptimumReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Solar Optimum is a Glendale, California solar contractor, and this page reports only what could be independently verified about the company as of <strong>September 18, 2026</strong>. It does not publish a star rating, review count or complaint count, because those figures could not be re-confirmed at their original sources. What follows is the equipment and warranty structure, plus a dated federal court-record check.
               </p>
+              <HubUpLink path="/solar-installers/solar-optimum-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

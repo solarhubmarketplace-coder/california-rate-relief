@@ -13,7 +13,7 @@ import type { KeyFact } from '@/components/trust/KeyFacts';
 const PATH = '/blog/free-roof-replacement-with-solar-panels-california';
 const UPDATED = '2026-09-23';
 const HUB = { label: 'Roofs and solar', href: '/blog/is-my-roof-good-for-solar-california' };
-const metaTitle = 'Is Free Roof Replacement With Solar Real? What to Check';
+const metaTitle = 'Free Roof Replacement With Solar Panels: What to Check';
 const metaDescription =
   'No California or federal program pays for a new roof because solar goes on it. How a “free roof” offer is paid for, and what to get in writing first.';
 

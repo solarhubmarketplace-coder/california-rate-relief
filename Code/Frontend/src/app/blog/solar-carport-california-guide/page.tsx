@@ -18,7 +18,7 @@ import { CommercialReviewButton, CommercialReviewForm } from '@/components/growt
 // residential permit question. Every figure below was re-fetched on
 // 2026-09-23 from the primary source it cites.
 
-const title = 'Solar Carports in California: Cost, Permits and Design';
+const title = 'Solar Carports in California: Residential Cost and Permits';
 const h1 = 'Solar Carports in California: Cost Drivers, Permits and Design';
 const description =
   'A California solar carport or canopy costs more than the same panels on a roof. Price drivers, installation steps, permits, and the fire and access rules.';

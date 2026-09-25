@@ -13,11 +13,13 @@ import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 export const metadata: Metadata = {
   title: "What Is a Solar Inverter? Types, Brands, and Lifespans",
   description: "A plain-English explanation of solar inverters: the main types, how long they last, which brands are reliable, and warranty realities.",
   alternates: { canonical: '/blog/what-is-a-solar-inverter' },
-  openGraph: { title: 'What Is a Solar Inverter?', description: 'Plain-English solar inverter guide.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-a-solar-inverter' },
+  openGraph: { title: 'What Is a Solar Inverter?', description: 'Plain-English solar inverter guide.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-a-solar-inverter', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
@@ -38,7 +40,8 @@ export default function WhatIsASolarInverter() {
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar Basics</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">What Is a Solar Inverter?</h1>
               <Byline updated="2026-04-24" />
-              <p className="text-lg text-muted-foreground">Solar panels produce DC electricity. Your home uses AC. The inverter is the device in the middle that makes it work, and it&apos;s the component most likely to need replacement during your system&apos;s lifetime.</p>
+              <p className="text-lg text-muted-foreground">A solar inverter converts the direct current (DC) your panels produce into the alternating current (AC) your home and the grid use. It also tracks each panel&apos;s best operating point, shuts the system off when the grid goes down, and is the component most likely to need replacement during your system&apos;s lifetime.</p>
+              <HubUpLink path="/blog/what-is-a-solar-inverter" />
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

@@ -13,11 +13,13 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, QuickAnswer, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const path = '/blog/how-to-read-pge-bill';
 const url = `https://ratereliefca.com${path}`;
 const title = 'How to Read Your PG&E Bill: Every Page and Charge';
-const h1 = 'How to Read a PG&E Bill in 2026: The Account Summary, Electric Charges, CCA Lines and Solar Statements';
+const h1 = 'How to Read Your PG&E Bill in 2026: Every Page and Charge, From the Account Summary to CCA Lines';
 const description =
   'A PG&E bill has five parts: account summary, service notes, electric, gas and a breakdown. What each line means, how to check the math, and solar bills.';
 const published = '2026-09-23';
@@ -66,7 +68,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: path },
-  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z` },
+  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z`, images: [CRR_SOCIAL_CARD] },
 };
 
 export default function HowToReadPgeBillPage() {
@@ -86,6 +88,7 @@ export default function HowToReadPgeBillPage() {
                 charges into line items. To understand a bill, go straight to page 3: your rate plan, billing dates and kWh by
                 time period explain most of the total.
               </p>
+              <HubUpLink path="/blog/how-to-read-pge-bill" />
               <p>
                 The layout and definitions below are from PG&amp;E&apos;s Understand Your Bill and Solar Bill pages, and the prices
                 from its residential rate table for March 1, 2026 onward, all checked September 23, 2026. Since March 2026, every

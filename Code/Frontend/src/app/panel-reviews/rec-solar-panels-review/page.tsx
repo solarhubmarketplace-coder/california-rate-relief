@@ -17,6 +17,7 @@ import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/panel-reviews/rec-solar-panels-review';
 const checked = '2026-09-23';
@@ -134,6 +135,7 @@ export default function RecSolarReview() {
                 470 watts and up to 22.6% efficiency, and REC guarantees at least 92% of its output in year 25. The base
                 product warranty is 20 years; the 25-year version needs a certified installer.
               </p>
+              <HubUpLink path="/panel-reviews/rec-solar-panels-review" />
               <p className={p}>
                 This review is for a California homeowner comparing a quote that names REC. It uses REC’s own product pages
                 and the Reliance acquisition release, checked on September 23, 2026, and compares REC with a U.S.-made

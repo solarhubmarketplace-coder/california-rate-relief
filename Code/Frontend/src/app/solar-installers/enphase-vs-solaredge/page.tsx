@@ -8,12 +8,14 @@ import { Footer } from '@/components/landing/Footer';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Enphase vs SolarEdge: Which Inverter Is Better in 2026?",
   description: "Enphase microinverters vs SolarEdge string-plus-optimizer inverters — cost, reliability, battery integration, app experience, and warranty compared.",
   alternates: { canonical: '/solar-installers/enphase-vs-solaredge' },
-  openGraph: { title: 'Enphase vs SolarEdge (2026)', description: 'Head-to-head inverter comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/enphase-vs-solaredge' },
+  openGraph: { title: 'Enphase vs SolarEdge (2026)', description: 'Head-to-head inverter comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/enphase-vs-solaredge', images: [CRR_SOCIAL_CARD] },
 };
 const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Enphase vs SolarEdge', datePublished: '2026-04-24', author: CRR_AUTHOR_PERSON, publisher: { '@type': 'Organization', name: 'California Rate Relief' } };
 
@@ -34,6 +36,7 @@ export default function EnphaseVsSolarEdge() {
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <p className="text-lg text-muted-foreground">The two dominant inverter platforms in American residential solar. Here&apos;s how they actually compare — technically, commercially, and in real-world reliability.</p>
+<HubUpLink path="/solar-installers/enphase-vs-solaredge" />
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

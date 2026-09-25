@@ -14,6 +14,7 @@ import { SourceList, type Source } from '@/components/growth/DecisionPage';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/blog/why-are-my-nem-charges-so-high';
 const url = `https://ratereliefca.com${path}`;
@@ -101,6 +102,7 @@ export default function WhyAreMyNemChargesSoHighPage() {
                 charges are the net of those, carried forward month by month until the annual true-up, so a
                 small monthly gap grows into a large year-to-date number.
               </p>
+              <HubUpLink path="/blog/why-are-my-nem-charges-so-high" />
               <p>
                 This page walks through seven causes in the order to check them, using PG&amp;E’s own
                 statements as the example. SCE and SDG&amp;E bills use different layouts but the same

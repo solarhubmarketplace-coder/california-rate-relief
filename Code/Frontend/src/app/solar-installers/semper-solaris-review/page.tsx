@@ -9,6 +9,7 @@ import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 // License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
@@ -85,6 +86,7 @@ export default function SemperSolarisReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Semper Solaris is a private, veteran-owned solar, roofing, and HVAC installer headquartered in El Cajon, near San Diego. The company was founded in 2012 by ex-Marine Kelly Shawhan and has built a strong local brand around its California-native, California-focused positioning. On paper, the offer is attractive: in-house installation crews, NABCEP-certified technicians, and the ability to do a roof replacement, HVAC upgrade, and solar installation as a single coordinated project. In practice, the customer experience data tells a more mixed story — and any prospective California buyer should weigh both sides.
               </p>
+              <HubUpLink path="/solar-installers/semper-solaris-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

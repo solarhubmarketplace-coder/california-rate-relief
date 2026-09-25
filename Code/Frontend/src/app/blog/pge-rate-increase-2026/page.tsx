@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const sources: Source[] = [
   {
@@ -15,6 +16,14 @@ const sources: Source[] = [
   {
     label: "PG&E: residential rate plans",
     url: "https://www.pge.com/en/account/rate-plans.html",
+  },
+  {
+    label: "CPUC Public Advocates Office: Q4 2025 Electric Rates Report (January 1, 2026 change)",
+    url: "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260210-public-advocates-office-q4-2025-rates-report.pdf",
+  },
+  {
+    label: "CPUC Public Advocates Office: Q2 2026 Electric Rates Report (July 2026)",
+    url: "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
   },
 ];
 
@@ -30,6 +39,7 @@ export const metadata: Metadata = {
     type: "article",
     url: "https://ratereliefca.com/blog/pge-rate-increase-2026",
     modifiedTime: "2026-09-12T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
 };
 
@@ -37,7 +47,7 @@ export default function PgeRateIncrease2026() {
   return (
     <DecisionPage
       title="PG&E rate changes in 2026: how to check your California bill"
-      intro="A rate-change headline does not determine an individual bill. Check the Pacific Gas and Electric bill, current rate schedule, usage and applicable program details together."
+      intro="PG&E's rates went down in 2026, not up: its residential average rate fell about 7.5% on January 1 and another 3.7% on March 1, to 33.7 cents per kWh, where it stood in June, according to the CPUC Public Advocates Office (Q4 2025 and Q2 2026 rates reports, checked September 24, 2026). Your own bill still turns on your rate plan, usage and billing days."
       path="/blog/pge-rate-increase-2026"
       sources={sources}
       sourceCheckedDate="2026-09-12"

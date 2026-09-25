@@ -12,12 +12,14 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Switch to Solar in California: The 2026 Complete Guide",
   description: "Complete guide to switching to solar in California: understanding NEM 3.0 rules, sizing with batteries, selecting contractors, and saving on bills.",
   alternates: { canonical: '/blog/switch-to-solar-california' },
-  openGraph: { title: 'Switch to Solar in California: The 2026 Complete Guide', description: 'A complete step-by-step guide to switching to solar in California in 2026.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Switch to Solar in California: The 2026 Complete Guide', description: 'A complete step-by-step guide to switching to solar in California in 2026.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
@@ -49,6 +51,7 @@ export default function SwitchToSolar() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Switching to solar in California in 2026 is a different process than it was three years ago. The NEM 3.0 tariff changed the math. Battery storage is now essentially mandatory for solid economics. The federal tax credit situation shifted. And the installer landscape has consolidated — Freedom Forever filed Chapter 11 last week, Sunnova went through Chapter 11 in June 2025. This guide walks through the complete process: deciding if solar is right for you, comparing installers and financing, getting through installation and interconnection, and what to expect on your first few utility bills.
               </p>
+              <HubUpLink path="/blog/switch-to-solar-california" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

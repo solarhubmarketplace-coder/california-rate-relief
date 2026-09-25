@@ -40,7 +40,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Sunrun vs. Trinity Solar (2026): Where Each Works, and How Their Records Compare',
+  headline: 'Sunrun vs Trinity Solar (2026): Service Area, BBB Records and Contracts',
   description: metaDescription,
   datePublished: checked,
   dateModified: checked,
@@ -140,7 +140,7 @@ export default function SunrunVsTrinity() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Installer Comparison</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Sunrun vs. Trinity Solar (2026): Where Each Works, and How Their Records Compare
+                Sunrun vs Trinity Solar (2026): Service Area, BBB Records and Contracts
               </h1>
               <LastReviewedStamp date={checked} variant='reviewed' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>

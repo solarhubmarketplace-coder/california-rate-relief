@@ -10,6 +10,7 @@ import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 export const metadata: Metadata = {
   title: "Solar Panel Brand Reviews for California Homeowners (2026)",
@@ -70,6 +71,7 @@ export default function PanelReviewsHub() {
               <p className='text-lg text-foreground/80 leading-relaxed'>
                 Your California installer will propose a specific solar panel brand — and that choice matters. Panel reliability, efficiency, warranty depth, and long-term company solvency all differ between tier-1 manufacturers. These reviews cover the panel brands most commonly installed in California in 2026, what makes each one distinct, and what to ask the installer quoting you.
               </p>
+              <HubUpLink path="/panel-reviews" />
               <p className='text-foreground/80 leading-relaxed'>
                 Short version: most tier-1 panels in the current market produce similar output and carry similar 25-year warranties. The bigger differences are the manufacturer&apos;s financial stability (will they exist in year 20 to honor the warranty?), their US manufacturing presence (matters for IRA domestic-content bonuses), and how they pair with specific inverter brands.
               </p>

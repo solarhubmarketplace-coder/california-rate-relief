@@ -14,6 +14,7 @@ import { SourceList, type Source } from '@/components/growth/DecisionPage';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/blog/nem-pge';
 const url = `https://ratereliefca.com${path}`;
@@ -106,6 +107,7 @@ export default function NemPgePage() {
                 credit, called your NEM charges, and on older NEM accounts those charges add up over 12 months
                 and settle at the annual True-Up.
               </p>
+              <HubUpLink path="/blog/nem-pge" />
               <p>
                 The rest of this page decodes the PG&amp;E statements line by line: which NEM program you are on,
                 why you receive two documents, what the year-to-date figure means, and which charges solar can’t

@@ -17,6 +17,7 @@ import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/panel-reviews/silfab-solar-panels-review';
 const checked = '2026-09-23';
@@ -138,6 +139,7 @@ export default function SilfabSolarReview() {
                 watts and 22.1% efficiency, with a 30-year performance warranty. The catch is in the product warranty:
                 the datasheet gives 12 years, extended to 25 only if the panels are registered.
               </p>
+              <HubUpLink path="/panel-reviews/silfab-solar-panels-review" />
               <p className={p}>
                 This review is for a California homeowner who has a quote that names Silfab, or wants one. It uses
                 Silfab’s own site, datasheet and warranty page, checked on September 23, 2026, and compares the panel with

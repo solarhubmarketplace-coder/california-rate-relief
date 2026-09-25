@@ -1,0 +1,666 @@
+{
+  "lane": "onpage",
+  "branch": "claude/gs-onpage-20260924",
+  "base": "0355a03",
+  "date": "2026-09-24",
+  "plan_block": "7 (items 7.1-7.6; 7.7 not in this lane's prompt)",
+  "commits": [
+    "7807568 Lead two more JSON guides with their answer instead of scene-setting",
+    "3531047 Chart the rate tracker's history and the cost index's permit fees",
+    "133184d Break up the longest paragraphs on the 23 worst pages for paragraph length",
+    "9590145 Put the answer in the first two sentences of 20 pages that opened with a hook",
+    "cdf4b5e Align H1s with titles on the 32 CRR pages where they shared almost no words",
+    "535318f Retitle the highest-impression non-city pages to the queries they rank for",
+    "763e4da Give the 144 CRR pages that had no og:image the site social card",
+    "f011ec1 Link every non-city spoke up to its hub page from the body text"
+  ],
+  "items": {
+    "7.1": {
+      "status": "partial",
+      "summary": "Shared templates already put the answer (intro) before any form: DecisionPage (quick check afterIntro; afterByline only on the two city templates), GuideShell, CostFinGuideShell and ArticleRenderer. Rendered-HTML read of all 278 non-city pages (release crawl cache) found 1 page with a form before the first paragraph (Sullivan review: the answer is in an alert box above it, so not a real failure) and about 30 openings that did not answer. 21 fixed by restating the page's own answer first.",
+      "fixed_pages": [
+        "/blog/what-is-demand-charge-california",
+        "/blog/how-does-net-metering-work",
+        "/blog/string-inverter-vs-microinverter",
+        "/blog/what-is-a-solar-inverter",
+        "/blog/california-energy-commission",
+        "/blog/do-solar-panels-increase-property-taxes-california",
+        "/blog/does-solar-increase-home-value-california",
+        "/blog/is-it-better-to-buy-or-lease-solar-panels-california",
+        "/blog/pge-rate-increase-2026 (new sourced figure: PAO Q4 2025 + Q2 2026)",
+        "/battery/battery-payback-nem-3-california",
+        "/solar-problems/ucc-1-lien-solar-california",
+        "/solar-problems/what-solar-doesnt-cover-california",
+        "/solar-problems/why-solar-reps-get-a-bad-name",
+        "/solar-problems/solar-door-to-door-sales-california",
+        "/solar-problems/solar-panel-degradation-california",
+        "/solar-problems/solar-dealer-fees-explained",
+        "/solar-problems/solar-bill-still-high-california",
+        "/solar-problems/solar-sales-tactics-california",
+        "/commercial-solar/commercial-solar-ppa-vs-purchase-california",
+        "/commercial-solar/school-solar-california",
+        "/commercial-solar/commercial-battery-storage-california"
+      ],
+      "not_fixed": {
+        "merge candidates, left for the merges lane winner": [
+          "/blog/are-solar-panels-worth-it-california",
+          "/blog/solar-tax-credit-2026",
+          "/blog/california-solar-tax-credit-2026",
+          "/blog/solar-tax-credit-expired-2026-options",
+          "/blog/can-you-cancel-solar-panel-contract-before-installation-california",
+          "/blog/how-much-does-it-cost-to-lease-solar-panels-california"
+        ],
+        "need a sourced number this lane could not fetch": [
+          "/battery/home-battery-cost-california (no price at all; LBNL Tracking the Sun is behind a bot check, not bypassed)",
+          "/blog/solar-installation-timeline-california (no duration; same LBNL source)"
+        ],
+        "factual problem, handed to accuracy": [
+          "/blog/ab-942-california-solar"
+        ],
+        "installer reviews": "Best-for / think-twice verdict box sits above the intro on ~12 hand-written reviews; it is not a form and the trust lane is editing the box (scores), so left as is."
+      },
+      "qc_gate_tsx_answer_warns": "23 before, 23 after. They are static-analysis artifacts: the gate strips JSX attributes, so an intro passed as a prop (DecisionPage intro=, shell components) is invisible to it. The rendered pages were checked instead."
+    },
+    "7.2": {
+      "status": "done",
+      "summary": "20 highest-impression non-city, in-state pages (page_audit.csv gsc_impressions_90d): 18 retitled to the query people searched (gsc_top_impr_query plus the 90-day query-page TSV), 2 kept because the title already is the top query or there is no query evidence. #22 (commercial financing) also retitled because its title said 4 options while the page lists 5. All new titles 45-60 chars; qc-gate-tsx TITLE check clean. Link labels in topic-hubs.ts and blog/page.tsx still show old titles (not this lane's files).",
+      "titles": [
+        {
+          "path": "/commercial-solar/companies-california",
+          "gsc_impressions_90d": 12711,
+          "queries_used": "solar epc companies / commercial solar companies",
+          "old": "Commercial Solar Companies & EPCs in California: 6 Checks",
+          "new": "California Commercial Solar Companies, EPCs and Developers",
+          "new_len": 58
+        },
+        {
+          "path": "/blog/sdge-time-of-use-rates-2026",
+          "gsc_impressions_90d": 10920,
+          "queries_used": "sdge summer rates 2026 / time of use rates sdge / tou-dr1",
+          "old": "SDG&E Peak Hours and TOU-DR1 Rates 2026: Every Plan",
+          "new": "SDG&E Time-of-Use Rates 2026: Peak Hours and TOU-DR1 Prices",
+          "new_len": 59
+        },
+        {
+          "path": "/commercial-solar/cost-per-watt-california",
+          "gsc_impressions_90d": 8813,
+          "queries_used": "commercial solar panel cost",
+          "old": "Commercial Solar Cost per Watt in California: 100 kW to 1 MW",
+          "new": "Commercial Solar Panel Cost in California: Price per Watt",
+          "new_len": 57
+        },
+        {
+          "path": "/blog/pge-vs-sce-vs-sdge-rates-compared",
+          "gsc_impressions_90d": 6585,
+          "queries_used": "is pg&e better or worse than sdg&e? / is pg&e the most expensive",
+          "old": "PG&E vs SCE vs SDG&E (2026): Rates per kWh and Sample Bills",
+          "new": "PG&E vs SCE vs SDG&E Rates (2026): Which Costs the Most?",
+          "new_len": 56
+        },
+        {
+          "path": "/solar-panels-california",
+          "gsc_impressions_90d": 3036,
+          "queries_used": "solar panels california / solar payback period california 2026",
+          "old": "Solar Panels in California (2026): Cost, Rules, Worth It",
+          "new": "Solar Panels in California (2026): Cost, Payback, Worth It",
+          "new_len": 58
+        },
+        {
+          "path": "/blog/solar-carport-california-guide",
+          "gsc_impressions_90d": 2764,
+          "queries_used": "solar carport / residential solar carports california",
+          "old": "Solar Carports in California: Cost, Permits and Design",
+          "new": "Solar Carports in California: Residential Cost and Permits",
+          "new_len": 58
+        },
+        {
+          "path": "/blog/why-is-my-pge-bill-so-high",
+          "gsc_impressions_90d": 2752,
+          "queries_used": "why is my pge bill so high (this month)",
+          "old": "Why Is My PG&E Bill So High? 7 Causes to Check (2026)",
+          "new": "Why Is My PG&E Bill So High This Month? 7 Causes to Check",
+          "new_len": 57
+        },
+        {
+          "path": "/blog/solar-pool-heating-california",
+          "gsc_impressions_90d": 2675,
+          "queries_used": "solar pool heater installation cost",
+          "old": "Solar Pool Heating in California: Cost, Sizing and Payback",
+          "new": "Solar Pool Heater Cost in California: Sizing and Payback",
+          "new_len": 56
+        },
+        {
+          "path": "/solar-installers/sunrun-vs-sunpower",
+          "gsc_impressions_90d": 2597,
+          "queries_used": "sunrun vs sunpower / has sunrun filed for bankruptcy",
+          "old": "Sunrun vs SunPower (2026): After SunPower's Bankruptcy",
+          "new": "Sunrun vs SunPower (2026): Bankruptcy, Warranty, Service",
+          "new_len": 56
+        },
+        {
+          "path": "/blog/free-solar-panels-california",
+          "gsc_impressions_90d": 2585,
+          "queries_used": "free solar panels california / what's the catch with free solar panels",
+          "old": "Are Free Solar Panels Real in California? The CPUC Answer",
+          "new": "Free Solar Panels in California: What's the Catch? (2026)",
+          "new_len": 57
+        },
+        {
+          "path": "/blog/free-roof-replacement-with-solar-panels-california",
+          "gsc_impressions_90d": 2574,
+          "queries_used": "free roof replacement with solar panels",
+          "old": "Is Free Roof Replacement With Solar Real? What to Check",
+          "new": "Free Roof Replacement With Solar Panels: What to Check",
+          "new_len": 54
+        },
+        {
+          "path": "/blog/prepaid-ppa-california-2026",
+          "gsc_impressions_90d": 2554,
+          "queries_used": "prepaid solar power / prepaid solar energy",
+          "old": "Prepaid Solar PPA in California (2026): 5 Terms to Check",
+          "new": "Prepaid Solar Power (PPA) in California: 5 Terms to Check",
+          "new_len": 57
+        },
+        {
+          "path": "/solar-installers/palmetto-solar-review",
+          "gsc_impressions_90d": 2397,
+          "queries_used": "palmetto solar reviews",
+          "old": "Palmetto Solar and LightReach Reviews (2026): BBB, Contract",
+          "new": "Palmetto Solar Reviews (2026): LightReach, BBB, Contract",
+          "new_len": 56
+        },
+        {
+          "path": "/solar-installers/sunrun-vs-tesla-solar",
+          "gsc_impressions_90d": 2147,
+          "queries_used": "sunrun vs tesla solar / sunrun vs tesla cost",
+          "old": "Sunrun vs Tesla Solar (2026): Warranty, Lease and Powerwall",
+          "new": "Sunrun vs Tesla Solar (2026): Cost, Warranty and Powerwall",
+          "new_len": 58
+        },
+        {
+          "path": "/solar-installers/tesla-solar-review",
+          "gsc_impressions_90d": 2066,
+          "queries_used": "tesla solar panels review",
+          "old": "Tesla Solar Reviews (2026): Are Tesla Solar Panels Good?",
+          "new": "Tesla Solar Panels Review (2026): Cost, Inverter, Service",
+          "new_len": 57
+        },
+        {
+          "path": "/blog/solar-panel-maintenance-cost",
+          "gsc_impressions_90d": 2007,
+          "queries_used": "solar panel maintenance cost (per year)",
+          "old": "Solar Panel Maintenance & Cleaning Cost in California",
+          "new": "Solar Panel Maintenance Cost per Year in California (2026)",
+          "new_len": 58
+        },
+        {
+          "path": "/blog/free-solar-for-seniors-california",
+          "gsc_impressions_90d": 1933,
+          "queries_used": "no cost solar program california / solar for seniors",
+          "old": "Free Solar for Seniors in California? What Actually Applies",
+          "new": "Free Solar for Seniors in California: Programs That Apply",
+          "new_len": 57
+        },
+        {
+          "path": "/blog/what-happens-to-solar-lease-when-i-sell-california",
+          "gsc_impressions_90d": 1887,
+          "queries_used": "selling a home with ppa solar panels / can you buy out a solar ppa",
+          "old": "Selling a CA Home With Solar Lease or PPA: Buyout Guide",
+          "new": "Selling a House With a Solar Lease or PPA in California",
+          "new_len": 55
+        },
+        {
+          "path": "/solar-installers/sunrun-review",
+          "gsc_impressions_90d": 1827,
+          "queries_used": "is sunrun going out of business 2026",
+          "old": "Sunrun Reviews (2026): Is Sunrun Going Out of Business?",
+          "new": "(kept: already the top query)",
+          "new_len": null
+        },
+        {
+          "path": "/blog/how-big-of-a-solar-system-do-i-need-california",
+          "gsc_impressions_90d": 1686,
+          "queries_used": "(long tail; no dominant query)",
+          "old": "How Big of a Solar System Do You Need in California?",
+          "new": "(kept: no query evidence for a change)",
+          "new_len": null
+        },
+        {
+          "path": "/blog/commercial-solar-financing-california",
+          "gsc_impressions_90d": 1524,
+          "queries_used": "commercial solar financing (#22; fixed because the title said 4 options, the page lists 5)",
+          "old": "Commercial Solar Financing in California: 4 Options Compared",
+          "new": "Commercial Solar Financing in California: 5 Options Compared",
+          "new_len": 60
+        }
+      ]
+    },
+    "7.3": {
+      "status": "done",
+      "summary": "36 pages had title/H1 overlap < 0.3; 3 are city pages (city lanes) and 1 is out of state (Richmond VA, 301 pending), leaving 32. All 32 aligned: 31 H1 rewrites (13 in JSON h1 fields, 18 in page or component files; the schema headline was kept equal to the H1 where it repeated it) and the home page by a title change; /solar-problems and the self-storage page also got a better title. Every pair now overlaps 0.33-1.0 by the audit's own formula. /best-solar-companies-california meta said 66 cities; it now reads the count from the same data the region list renders (140 today).",
+      "h1": [
+        {
+          "path": "/methodology",
+          "title": "How We Evaluate California Solar Installers",
+          "old_h1": "Our Methodology",
+          "new_h1": "Our Methodology: How We Evaluate California Solar Installers",
+          "overlap_before_audit": null,
+          "overlap_after": 0.71
+        },
+        {
+          "path": "/solar-installers/sunrun-buyout-cost",
+          "title": "Sunrun Buyout Cost: How the Payoff Is Calculated",
+          "old_h1": "What It Actually Costs to Buy Out a Sunrun Lease or PPA",
+          "new_h1": "Sunrun Buyout Cost: How the Payoff on a Lease or PPA Is Calculated",
+          "overlap_before_audit": null,
+          "overlap_after": 0.64
+        },
+        {
+          "path": "/solar-problems",
+          "title": "Solar Problems and Scams in California: What Goes Wrong",
+          "old_h1": "What goes wrong with solar, and why",
+          "new_h1": "Solar problems and scams in California: what goes wrong, and why",
+          "overlap_before_audit": null,
+          "overlap_after": 0.86
+        },
+        {
+          "path": "/commercial-solar/warehouse-solar-california",
+          "title": "Warehouse Solar California: Cost, Sizing, and 2026 Rules",
+          "old_h1": "Solar for California Warehouses and Distribution Centers",
+          "new_h1": "Warehouse Solar in California: Cost, Sizing and Rules for Distribution Centers",
+          "overlap_before_audit": null,
+          "overlap_after": 0.71
+        },
+        {
+          "path": "/commercial-solar/school-solar-california",
+          "title": "School Solar in California: DSA, CUPCCAA, Financing",
+          "old_h1": "Solar for California Schools and Districts",
+          "new_h1": "School Solar in California: DSA Review, CUPCCAA and Financing for Districts",
+          "overlap_before_audit": null,
+          "overlap_after": 0.71
+        },
+        {
+          "path": "/solar-panels-california",
+          "title": "Solar Panels in California (2026): Cost, Payback, Worth It",
+          "old_h1": "Home solar in California: what it costs, how it works now, and whether it pays",
+          "new_h1": "Solar panels in California: cost, payback, and whether they are worth it",
+          "overlap_before_audit": null,
+          "overlap_after": 0.67
+        },
+        {
+          "path": "/solar-problems/running-ac-with-solar-california",
+          "title": "Running AC With Solar in California (NEM 3.0)",
+          "old_h1": "Can You Run the AC All Day Once You Have Solar?",
+          "new_h1": "Running AC With Solar in California: Can You Run It All Day on NEM 3.0?",
+          "overlap_before_audit": null,
+          "overlap_after": 0.5
+        },
+        {
+          "path": "/solar-problems/solar-production-winter-california",
+          "title": "Winter Solar Drop in California: Normal or Not",
+          "old_h1": "Why California Solar Output Drops in Winter, and When It's Actually a Problem",
+          "new_h1": "Winter Solar Drop in California: Normal or Not, and When It Is a Problem",
+          "overlap_before_audit": null,
+          "overlap_after": 0.6
+        },
+        {
+          "path": "/blog/smud-peak-hours",
+          "title": "SMUD Peak Hours 2026: Summer and Time-of-Day Rates",
+          "old_h1": "SMUD Peak Hours in 2026: 5 to 8 p.m. on Weekdays, and What Changes June 1 to September 30",
+          "new_h1": "SMUD Peak Hours in 2026: 5 to 8 p.m. Weekdays, and Summer Time-of-Day Rates",
+          "overlap_before_audit": null,
+          "overlap_after": 0.58
+        },
+        {
+          "path": "/",
+          "changed": "title",
+          "old_title": "California Solar Project Review | California Rate Relief",
+          "new_title": "Compare California Solar Options | California Rate Relief",
+          "h1": "Compare California solar options against your actual bill and utility rate.",
+          "overlap_before": 0.17,
+          "overlap_after": 0.4
+        },
+        {
+          "path": "/solar-problems/solar-lawsuit-california",
+          "title": "Solar Lawsuits in California: Cases, Settlements, Options",
+          "old_h1": "Solar lawsuits in California: what has been filed and what it means for you",
+          "new_h1": "Solar lawsuits in California: cases, settlements and your options",
+          "overlap_before_audit": null,
+          "overlap_after": 0.83
+        },
+        {
+          "path": "/blog/solar-license-california",
+          "title": "Solar License in California: C-46, HIS and How to Get One",
+          "old_h1": "California solar license requirements: installing and selling solar",
+          "new_h1": "Solar license in California: C-46, HIS registration and how to get one",
+          "overlap_before_audit": null,
+          "overlap_after": 0.89
+        },
+        {
+          "path": "/blog/electricity-peak-hours-california",
+          "title": "Electricity Peak Hours in California by Utility (2026)",
+          "old_h1": "Electricity Peak Hours in California: 4 to 9 p.m. at Most Utilities, and the Cheapest Time to Use Power",
+          "new_h1": "Electricity Peak Hours in California by Utility, and the Cheapest Time to Use Power",
+          "overlap_before_audit": null,
+          "overlap_after": 0.56
+        },
+        {
+          "path": "/battery/battery-storage-capacity-california",
+          "title": "California Battery Storage Capacity: 21,112 MW in 2026",
+          "old_h1": "How Much Battery Storage Does California Have?",
+          "new_h1": "California Battery Storage Capacity: How Many MW the Grid Has",
+          "overlap_before_audit": null,
+          "overlap_after": 0.4
+        },
+        {
+          "path": "/commercial-solar/industrial-solar-california",
+          "title": "Industrial Solar in California: Rates, Sizing and Rules",
+          "old_h1": "Industrial Solar in California: What Plants and Manufacturers Should Check",
+          "new_h1": "Industrial Solar in California: Rates, Sizing and Rules for Plants and Manufacturers",
+          "overlap_before_audit": null,
+          "overlap_after": 0.71
+        },
+        {
+          "path": "/commercial-solar/retail-solar-california",
+          "title": "Retail Solar in California: Costs, Rules, Ownership",
+          "old_h1": "Solar for California Retail: Shopping Centers, Strip Malls, and Restaurants",
+          "new_h1": "Retail Solar in California: Costs, Rules and Ownership for Shopping Centers and Restaurants",
+          "overlap_before_audit": null,
+          "overlap_after": 0.62
+        },
+        {
+          "path": "/solar-installers/sunrun-ppa-explained",
+          "title": "Sunrun PPA Explained: Terms From the 10-K",
+          "old_h1": "How a Sunrun PPA Actually Works",
+          "new_h1": "Sunrun PPA Explained: How the Contract Works, From the 10-K",
+          "overlap_before_audit": null,
+          "overlap_after": 0.6
+        },
+        {
+          "path": "/blog/do-solar-panels-work-during-power-outage-california",
+          "title": "Do Solar Panels Work During a Power Outage in California?",
+          "old_h1": "Will My Solar Panels Work in a Blackout? Check the Backup Design",
+          "new_h1": "Do Solar Panels Work During a Power Outage? Check the Backup Design",
+          "overlap_before_audit": null,
+          "overlap_after": 0.7
+        },
+        {
+          "path": "/solar-problems/solar-dealer-fees-explained",
+          "title": "Solar Dealer Fees: What They Really Cost You",
+          "old_h1": "Solar Dealer Fees: How the Low Rate Gets Paid For",
+          "new_h1": "Solar Dealer Fees: What They Cost You and How the Low Rate Gets Paid For",
+          "overlap_before_audit": null,
+          "overlap_after": 0.54
+        },
+        {
+          "path": "/solar-installers/freedom-forever-bankruptcy-what-to-do",
+          "title": "Freedom Forever Bankruptcy: What Customers Should Do",
+          "old_h1": "Freedom Forever Went Into Chapter 7 Liquidation. Here's What to Do About Your System.",
+          "new_h1": "Freedom Forever Bankruptcy: What Customers Should Do Now That It Is in Chapter 7",
+          "overlap_before_audit": null,
+          "overlap_after": 0.54
+        },
+        {
+          "path": "/blog/ladwp-solar-program",
+          "title": "LADWP Solar Programs 2026: Rooftops, Shared Solar, Rebates",
+          "old_h1": "LADWP solar programs in 2026: what Los Angeles offers owners and renters",
+          "new_h1": "LADWP solar programs in 2026: Solar Rooftops, Shared Solar and rebates for owners and renters",
+          "overlap_before_audit": null,
+          "overlap_after": 0.75
+        },
+        {
+          "path": "/solar-problems/solar-door-to-door-sales-california",
+          "title": "California Door-to-Door Solar Sales: Know Your Rights",
+          "old_h1": "Door-to-Door Solar Sales in California: What the Rep Can Legally Do, and What to Ask",
+          "new_h1": "Door-to-Door Solar Sales in California: Your Rights, and What the Rep Can Legally Do",
+          "overlap_before_audit": null,
+          "overlap_after": 0.45
+        },
+        {
+          "path": "/blog/commercial-solar-financing-california",
+          "title": "Commercial Solar Financing in California: 5 Options Compared",
+          "old_h1": "Commercial Solar Financing in California: Loans, SBA, Leases, PPAs and PACE",
+          "new_h1": "Commercial Solar Financing in California: 5 Options Compared, From SBA Loans to PACE",
+          "overlap_before_audit": null,
+          "overlap_after": 0.6
+        },
+        {
+          "path": "/commercial-solar/commercial-solar-roofing",
+          "title": "Commercial Solar Roofing in California: What to Check",
+          "old_h1": "Commercial Solar Roofing in California: Roof Condition, Mounting and Who Does the Work",
+          "new_h1": "Commercial Solar Roofing in California: What to Check, From Roof Condition to Mounting",
+          "overlap_before_audit": null,
+          "overlap_after": 0.56
+        },
+        {
+          "path": "/commercial-solar/self-storage-solar-california",
+          "title": "Self-Storage Solar in California: Roof Space vs Load (2026)",
+          "old_h1": "Solar for California Self-Storage Facilities: Why the Roof-to-Load Math Works Differently",
+          "new_h1": "Self-Storage Solar in California: Why the Roof-to-Load Math Works Differently",
+          "overlap_before_audit": null,
+          "overlap_after": 0.45
+        },
+        {
+          "path": "/solar-installers/solar-installer-bankruptcy-california",
+          "title": "Solar Installer Bankruptcy: What Survives in California",
+          "old_h1": "What Happens to Your Solar System When the Installer Goes Bankrupt in California",
+          "new_h1": "Solar Installer Bankruptcy in California: What Happens to Your System and What Survives",
+          "overlap_before_audit": null,
+          "overlap_after": 0.62
+        },
+        {
+          "path": "/solar-installers/sunnova-vs-sunrun",
+          "title": "Sunnova vs Sunrun (2026): Dealer Network vs In-House Crews",
+          "old_h1": "Sunnova vs Sunrun: Which Solar Installer Wins in California?",
+          "new_h1": "Sunnova vs Sunrun: Dealer Network vs In-House Crews in California",
+          "overlap_before_audit": null,
+          "overlap_after": 1.0
+        },
+        {
+          "path": "/solar-installers/sunrun-review",
+          "title": "Sunrun Reviews (2026): Is Sunrun Going Out of Business?",
+          "old_h1": "Sunrun Reviews (2026): Business Status, Complaints, Contracts and Vivint Solar",
+          "new_h1": "Sunrun Reviews (2026): Is Sunrun Going Out of Business? Status, Complaints, Contracts",
+          "overlap_before_audit": null,
+          "overlap_after": 0.67
+        },
+        {
+          "path": "/solar-installers/sunrun-vs-trinity-solar",
+          "title": "Sunrun vs Trinity Solar (2026): Service Area, BBB, Contracts",
+          "old_h1": "Sunrun vs. Trinity Solar (2026): Where Each Works, and How Their Records Compare",
+          "new_h1": "Sunrun vs Trinity Solar (2026): Service Area, BBB Records and Contracts",
+          "overlap_before_audit": null,
+          "overlap_after": 0.89
+        },
+        {
+          "path": "/blog/help-with-pge-bill",
+          "title": "Help Paying Your PG&E Bill: 2026 Assistance Programs",
+          "old_h1": "Help With a PG&E Bill in 2026: Past-Due Help, Payment Plans and Discounts",
+          "new_h1": "Help Paying Your PG&E Bill in 2026: Assistance Programs, Payment Plans and Discounts",
+          "overlap_before_audit": null,
+          "overlap_after": 0.73
+        },
+        {
+          "path": "/blog/how-to-read-pge-bill",
+          "title": "How to Read Your PG&E Bill: Every Page and Charge",
+          "old_h1": "How to Read a PG&E Bill in 2026: The Account Summary, Electric Charges, CCA Lines and Solar Statements",
+          "new_h1": "How to Read Your PG&E Bill in 2026: Every Page and Charge, From the Account Summary to CCA Lines",
+          "overlap_before_audit": null,
+          "overlap_after": 0.64
+        },
+        {
+          "path": "/solar-installers/option-one-solar-review",
+          "title": "Option One Solar Apple Valley Reviews (2026): 25-Yr Warranty",
+          "old_h1": "Option One Solar Reviews (2026): Cleanest Service Profile in the High Desert",
+          "new_h1": "Option One Solar Reviews (2026): Apple Valley Installer With a 25-Year Warranty",
+          "overlap_before_audit": null,
+          "overlap_after": 0.67
+        }
+      ],
+      "title_changes_under_7_3": [
+        {
+          "path": "/solar-problems",
+          "old": "Solar Problems & Scams in California: Honest Guides",
+          "new": "Solar Problems and Scams in California: What Goes Wrong"
+        },
+        {
+          "path": "/commercial-solar/self-storage-solar-california",
+          "old": "California Self-Storage Solar: 2026 Guide",
+          "new": "Self-Storage Solar in California: Roof Space vs Load (2026)"
+        },
+        {
+          "path": "/",
+          "old": "California Solar Project Review | California Rate Relief",
+          "new": "Compare California Solar Options | California Rate Relief"
+        }
+      ]
+    },
+    "7.4": {
+      "status": "done",
+      "summary": "page_audit.csv: 352 spokes with links_to_hub_page_main=false; 219 are /solar-cost, /solar-companies or /solar-savings (city lanes), 133 are this lane's. New HubUpLink component: one sentence after the opening answer, three anchor phrasings per hub chosen by a stable path hash, hub from hubForPath/PRIMARY_HUB. All 133 now render it: 49 JSON pages via ArticleRoute/ArticleRenderer, 15 via DecisionPage (and every other DecisionPage spoke), 4 via GuideShell, 65 hand-written pages by a one-line insert after the intro. Returns null on hub pages and city paths. hubForPath resolves all 133 to the same hub the audit expected.",
+      "files": [
+        "src/components/growth/HubUpLink.tsx",
+        "src/components/growth/DecisionPage.tsx",
+        "src/components/growth/GuideShell.tsx",
+        "src/components/shared/ArticleRenderer.tsx",
+        "src/components/shared/ArticleRoute.tsx",
+        "65 page.tsx files"
+      ]
+    },
+    "7.5": {
+      "status": "partial",
+      "summary": "Template text: the only paragraph over 60 words repeated across 5+ non-city pages is the AuthorBio blurb (79 words, trust lane). Worst 20 pages by mean paragraph length (19 JSON guides + Freedom Forever review) plus 3 hand-written pages just below them: every paragraph over 60 words split at sentence boundaries, no wording changed (abbreviation-safe splitter; never splits inside a link or citation). JSON pages go from 80-122 to 39-45 words mean. Plain answer before statute detail done on the property-tax page (7.1). Moving long legal citations into a notes block was not done: it needs per-page editing beyond \"don't rewrite whole articles\".",
+      "pages": [
+        "/commercial-solar/warehouse-solar-california",
+        "/solar-problems/solar-panel-degradation-california",
+        "/solar-problems/solar-sales-tactics-california",
+        "/commercial-solar/multifamily-solar-california",
+        "/solar-problems/solar-production-winter-california",
+        "/commercial-solar/agricultural-solar-california",
+        "/solar-installers/sunrun-lease-vs-ppa",
+        "/commercial-solar/self-storage-solar-california",
+        "/solar-installers/solar-installer-bankruptcy-california",
+        "/battery/how-many-batteries-do-i-need-california",
+        "/commercial-solar/school-solar-california",
+        "/commercial-solar/retail-solar-california",
+        "/commercial-solar/commercial-solar-ppa-vs-purchase-california",
+        "/solar-installers/sunrun-ppa-explained",
+        "/solar-installers/freedom-forever-review",
+        "/commercial-solar/commercial-solar-cost-100kw-california",
+        "/commercial-solar/commercial-solar-cost-500kw-california",
+        "/solar-problems/solar-panels-not-producing-enough",
+        "/solar-problems/does-solar-mean-free-electricity-california",
+        "/solar-problems/do-i-still-get-a-utility-bill-with-solar",
+        "/solar-installers/momentum-solar-review",
+        "/solar-installers/sunrun-review",
+        "/blog/do-solar-panels-work-at-night-california"
+      ]
+    },
+    "7.6": {
+      "status": "partial",
+      "summary": "og:image: a page-level openGraph replaces the root one (Next shallow merge), so 155 pages lost the root image. 144 now carry the existing /crr-social-card (86 page files, 9 shared guide metadata objects, the JSON article metadata for 49 pages, which also get a page-specific twitter card). No per-page image generation. Remaining 11: /solar-cost, /solar-savings/altadena and 6 regional /solar-savings hubs (city lanes), 2 out-of-state pages (301 pending), and none else. Charts: RateHistoryChart on /california-utility-rate-tracker (PG&E/SCE/SDG&E residential average rate, 5 PAO snapshots, values moved once into RATE_HISTORY_SNAPSHOTS and re-read in all five reports today) and PermitFeeChart on /california-solar-cost-index (50 published city fees vs the Gov. Code 66015 $450 limit, computed from the index rows). Both server-rendered SVG with title, desc, legend, direct labels, per-point hover titles and a table; colors validated with the dataviz palette script; rendered to PNG and checked for collisions. Annotated sample bill: not built (needs an explicitly illustrative bill from public tariff data; left for a later pass).",
+      "files": [
+        "src/components/growth/RateHistoryChart.tsx",
+        "src/components/growth/PermitFeeChart.tsx",
+        "src/data/utility-rate-tracker.ts (RATE_HISTORY_SNAPSHOTS appended)",
+        "src/app/california-utility-rate-tracker/page.tsx",
+        "src/app/california-solar-cost-index/page.tsx"
+      ]
+    }
+  },
+  "sources_fetched": [
+    {
+      "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf",
+      "date": "2026-09-24",
+      "used_for": "PG&E/SCE/SDG&E RAR June 2026; PG&E -3.7% March 1, 2026"
+    },
+    {
+      "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260430-public-advocates-office-q1-2026-electric-rates-report.pdf",
+      "date": "2026-09-24",
+      "used_for": "RAR March 2026"
+    },
+    {
+      "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260210-public-advocates-office-q4-2025-rates-report.pdf",
+      "date": "2026-09-24",
+      "used_for": "RAR Jan 1, 2026; PG&E -7.5% Jan 1, 2026"
+    },
+    {
+      "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/251106-public-advocates-office-q3-2025-rates-report.pdf",
+      "date": "2026-09-24",
+      "used_for": "RAR Oct 1, 2025"
+    },
+    {
+      "url": "https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/250827-public-advocates-office-q2-2025-rates-report.pdf",
+      "date": "2026-09-24",
+      "used_for": "RAR June 2025"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=GOV&sectionNum=66015",
+      "date": "2026-09-24",
+      "used_for": "$450 + $15/kW residential PV permit fee limit and the (a)(2) written-finding exception"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB942",
+      "date": "2026-09-24",
+      "used_for": "AB 942 (2025-26) is now \"Electricity: climate credits\" (amended 7/17/25)"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billHistoryClient.xhtml?bill_id=202520260AB942",
+      "date": "2026-09-24",
+      "used_for": "AB 942 last action 8/29/25, re-referred to Senate Rules; not enacted"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202320240AB942",
+      "date": "2026-09-24",
+      "used_for": "AB 942 (2023-24) is a postsecondary education bill"
+    },
+    {
+      "url": "https://emp.lbl.gov/tracking-the-sun",
+      "date": "2026-09-24",
+      "used_for": "BLOCKED by a bot-check page; not bypassed, no LBNL figure added"
+    }
+  ],
+  "requests_for_other_lanes": [
+    {
+      "lane": "accuracy",
+      "request": "/blog/ab-942-california-solar presents AB 942 as an enacted \"Solar Lease Transfer Rights Law\" codified in Civil Code 1689.12. leginfo (2026-09-24): AB 942 (2025-26, Calderon) was amended 7/17/25 into \"Electricity: climate credits\" and has sat in Senate Rules since 8/29/25; AB 942 (2023-24) is a postsecondary education bill. The page needs a fact check and likely a rewrite, merge or 301."
+    },
+    {
+      "lane": "accuracy",
+      "request": "/battery/home-battery-cost-california gives no price and /blog/solar-installation-timeline-california gives no duration. Both need a sourced figure (LBNL Tracking the Sun has both; its site is behind a bot check from this container)."
+    },
+    {
+      "lane": "citycost / citycos",
+      "request": "og:image is still missing on /solar-cost, /solar-savings/altadena and the 6 regional /solar-savings hubs: add images: [CRR_SOCIAL_CARD] to their openGraph. HubUpLink returns null on city paths on purpose; call it (or remove the guard) if the city templates want the same in-body hub sentence."
+    },
+    {
+      "lane": "trust",
+      "request": "AuthorBio blurb is 79 words on 11 pages, the only template paragraph over 60 words; keep the rewritten bio under ~60. DecisionPage: this lane added one line after the intro (HubUpLink); schema edits there are yours. Installer-review verdict boxes: the intro paragraph follows the box, and HubUpLink sits after that intro."
+    },
+    {
+      "lane": "merges",
+      "request": "Whichever page wins the tax credit x3, worth-it x4, cancellation x2 and lease-cost merges still needs an answer-first intro (7.1 skipped those pages). Titles were changed on two \"differentiate\" pages (free solar for seniors, free roof replacement) and on /commercial-solar/cost-per-watt-california; see the 7.2 table."
+    },
+    {
+      "lane": "integration / release",
+      "request": "topic-hubs.ts spoke labels and blog/page.tsx entry labels still carry the old titles for the retitled pages (link text only). Visible content changed today without a dateModified bump on most non-city pages (the one-sentence hub link) and on about 60 pages' text (answers, H1s, paragraph breaks); decide under 11.5 whether today counts as a modified date for them."
+    }
+  ],
+  "needs_chad": [
+    "Title changes on 19 pages (7.2) plus 3 under 7.3 (home, /solar-problems, self-storage). Old titles are in this file; each is a one-line revert. Compare 28-day CTR after the push.",
+    "Home page title is now \"Compare California Solar Options | California Rate Relief\" (was \"California Solar Project Review | ...\"), to match its H1."
+  ],
+  "gates": {
+    "tsc": "clean",
+    "test:growth": "53/53",
+    "redirect_city_cta_intake_costindex_tests": "46/46",
+    "Header.test": "2/2",
+    "ArticleRenderer.test": "9/9",
+    "qc-gate (JSON)": "PASSED",
+    "qc-gate-tsx": "55 fail / 148 warn / 669 review, identical to base 0355a03; 0 new fails, 0 new warns",
+    "assert:citylinks": "ok",
+    "assert:linkspine": "ok",
+    "eslint (changed shared files)": "0 errors (1 pre-existing warning on the tracker page)",
+    "next build": "not run (integration only)"
+  }
+}

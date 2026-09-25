@@ -13,11 +13,13 @@ import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 export const metadata: Metadata = {
   title: "String Inverter vs Microinverter: Which Is Right for You?",
   description: "Head-to-head comparison of string inverter vs microinverter solar systems. Cost, performance under shade, warranty, rapid shutdown, and repairability.",
   alternates: { canonical: '/blog/string-inverter-vs-microinverter' },
-  openGraph: { title: 'String Inverter vs Microinverter', description: 'Technical and real-world comparison for California solar installs.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/string-inverter-vs-microinverter' },
+  openGraph: { title: 'String Inverter vs Microinverter', description: 'Technical and real-world comparison for California solar installs.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/string-inverter-vs-microinverter', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
@@ -38,7 +40,8 @@ export default function StringVsMicro() {
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar Equipment</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">String Inverter vs Microinverter: Which Is Right for Your Solar System?</h1>
               <Byline updated="2026-04-24" />
-              <p className="text-lg text-muted-foreground">The single most consequential equipment choice in your solar install. Here&apos;s how each type works, what the real-world tradeoffs are, and when to pick which.</p>
+              <p className="text-lg text-muted-foreground">A string inverter is one central unit that converts power for a whole string of panels wired together; microinverters sit under each panel, so every panel works on its own. String inverters usually cost less up front, while microinverters cope better with shade and include per-panel monitoring.</p>
+              <HubUpLink path="/blog/string-inverter-vs-microinverter" />
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

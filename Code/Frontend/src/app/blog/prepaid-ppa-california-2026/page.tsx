@@ -50,7 +50,7 @@ const sources: Source[] = [
   },
 ];
 
-const metaTitle = "Prepaid Solar PPA in California (2026): 5 Terms to Check";
+const metaTitle = "Prepaid Solar Power (PPA) in California: 5 Terms to Check";
 const metaDescription =
   "Prepaid solar power, or a prepaid PPA, pays upfront for a system's power while the provider owns it. What is still owed, buyout, sale and the bill left.";
 

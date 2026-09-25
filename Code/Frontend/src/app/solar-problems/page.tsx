@@ -38,7 +38,7 @@ const hubFaqs: FaqJsonLdItem[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Solar Problems & Scams in California: Honest Guides",
+  title: "Solar Problems and Scams in California: What Goes Wrong",
   description: "How solar sales tactics work, what a true-up bill is, why your bill stays high after solar, and what to do if a contractor took your money. Sourced.",
   alternates: { canonical: '/solar-problems' },
 };
@@ -62,7 +62,7 @@ export default function Page() {
   return (
     <ArticleHub
       cluster="problems"
-      title="What goes wrong with solar, and why"
+      title="Solar problems and scams in California: what goes wrong, and why"
       intro="Most complaints about solar are not about the panels. They come from how it was sold, what the contract actually said, and expectations nobody corrected. We do not install anything, so we have no reason to soften any of it."
       after={
         <>

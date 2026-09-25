@@ -13,6 +13,8 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, QuickAnswer, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const path = '/blog/how-to-lower-pge-bill';
 const url = `https://ratereliefca.com${path}`;
@@ -69,7 +71,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: path },
-  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z` },
+  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z`, images: [CRR_SOCIAL_CARD] },
 };
 
 export default function HowToLowerPgeBillPage() {
@@ -89,6 +91,7 @@ export default function HowToLowerPgeBillPage() {
                 by more than half on EV2-A. CARE takes 35% or more off electricity for income-qualified homes, and FERA takes
                 18%.
               </p>
+              <HubUpLink path="/blog/how-to-lower-pge-bill" />
               <p>
                 This page is specific to PG&amp;E: its plans, its baseline allowances and its programs, with prices from PG&amp;E&apos;s
                 residential rate table for March 1, 2026 onward, checked September 23, 2026. For advice that applies to every

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionPage, type Source } from "./DecisionPage";
+import { CRR_SOCIAL_CARD } from "@/lib/crr-social";
 
 const path = "/blog/what-happens-if-stop-paying-solar-lease-california";
 const title = "What Happens If You Stop Paying a Solar Lease? Read the Default Section";
@@ -40,6 +41,7 @@ export const stopPayingSolarLeaseMetadata: Metadata = {
     type: "article",
     url: `https://ratereliefca.com${path}`,
     modifiedTime: "2026-09-22T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

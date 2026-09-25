@@ -44,8 +44,14 @@ import { growthCities } from '@/data/growth-cities';
 const PATH = '/best-solar-companies-california';
 const UPDATED = '2026-09-23';
 const metaTitle = 'Solar Installers in California: Compare and Verify (2026)';
+// Counted from the same data the region list below renders (every city with a
+// live /solar-companies page), so the description cannot drift from the body
+// again: it said 66 while the page listed 140 (plan 7.3).
+const COMPANY_CITY_COUNT = [...new Set([...getAllCitySlugs(), ...Object.keys(growthCities)])].filter((slug) =>
+  hasCompaniesCityPage(slug),
+).length;
 const metaDescription =
-  'Find solar companies in 66 California cities, check a license with the CSLB, and compare quotes on the same basis. Unranked, sourced to state agencies.';
+  `Find solar companies in ${COMPANY_CITY_COUNT} California cities, check a license with the CSLB, and compare quotes on the same basis. Unranked, sourced to state agencies.`;
 
 export const metadata: Metadata = {
   title: metaTitle,

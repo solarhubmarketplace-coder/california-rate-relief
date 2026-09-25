@@ -12,12 +12,14 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: 'Can Solar Panels Power a Whole House in California?',
   description: "Yes — a correctly sized solar + battery system can run a typical California home for the full day, evening, and most outages. Here is exactly what it takes.",
   alternates: { canonical: '/blog/can-solar-panels-power-a-whole-house-california' },
-  openGraph: { title: 'Can Solar Panels Power a Whole House in California?', description: 'What it takes to run a whole California home on solar + battery.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Can Solar Panels Power a Whole House in California?', description: 'What it takes to run a whole California home on solar + battery.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
@@ -49,6 +51,7 @@ export default function CanSolarPowerWholeHouse() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Yes, absolutely — a correctly sized solar + battery system can power a whole California home, day and night, year-round. But the specifics matter: how much electricity your home actually uses, whether you add a battery, what loads you prioritize, and whether you&apos;re connected to the grid as a backstop. Here&apos;s what it actually takes to run a California home entirely on solar in 2026.
               </p>
+              <HubUpLink path="/blog/can-solar-panels-power-a-whole-house-california" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

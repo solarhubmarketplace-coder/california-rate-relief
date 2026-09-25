@@ -39,7 +39,7 @@ import type { FaqJsonLdItem } from '@/components/shared/FaqJsonLd';
 
 const PATH = '/solar-panels-california';
 const UPDATED = '2026-09-23';
-const metaTitle = 'Solar Panels in California (2026): Cost, Rules, Worth It';
+const metaTitle = 'Solar Panels in California (2026): Cost, Payback, Worth It';
 const metaDescription =
   'What home solar costs in California, how net billing credits your exports, which incentives still apply in 2026, and how to judge whether it pays.';
 
@@ -186,7 +186,7 @@ const link = 'text-primary underline underline-offset-2';
 export default function SolarPanelsCalifornia() {
   return (
     <DecisionPage
-      title="Home solar in California: what it costs, how it works now, and whether it pays"
+      title="Solar panels in California: cost, payback, and whether they are worth it"
       breadcrumbLabel="Solar panels in California"
       intro="Rooftop solar still works in California, but the math changed. PG&E, SCE and SDG&E customers who applied to connect on or after April 15, 2023 earn an export credit that is usually lower than the price they pay for grid power, so most of the value now comes from using your own solar at home. Price, roof, rate plan and how you pay decide whether it pays for you."
       path={PATH}

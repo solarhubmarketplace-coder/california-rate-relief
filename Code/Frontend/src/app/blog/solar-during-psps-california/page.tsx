@@ -11,12 +11,14 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Solar During a PSPS in California: Will My Panels Work?",
   description: "Does solar work during a PG&E PSPS outage? Why grid-tied solar shuts off, how batteries change that, and what you need to survive a blackout.",
   alternates: { canonical: '/blog/solar-during-psps-california' },
-  openGraph: { title: 'Solar During PSPS California', description: 'The honest answer on solar during PSPS outages.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/solar-during-psps-california' },
+  openGraph: { title: 'Solar During PSPS California', description: 'The honest answer on solar during PSPS outages.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/solar-during-psps-california', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
@@ -38,6 +40,7 @@ export default function SolarDuringPSPSCA() {
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Solar During a PSPS in California: The Honest Answer</h1>
               <Byline updated="2026-04-24" />
               <p className="text-lg text-muted-foreground">If you have grid-tied solar and PG&amp;E cuts power during a Public Safety Power Shutoff, your panels will <em>not</em> keep your lights on. Here&apos;s why — and what it takes to actually keep the lights on.</p>
+              <HubUpLink path="/blog/solar-during-psps-california" />
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

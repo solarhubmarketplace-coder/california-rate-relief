@@ -14,7 +14,7 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { Calendar, Clock } from 'lucide-react';
 
-const title = "PG&E vs SCE vs SDG&E (2026): Rates per kWh and Sample Bills";
+const title = "PG&E vs SCE vs SDG&E Rates (2026): Which Costs the Most?";
 const description =
   "Is PG&E the most expensive? No: SDG&E's June 2026 average is highest, and PG&E and SCE sit within a cent. Public Advocates data, sample bills, CCA effects.";
 

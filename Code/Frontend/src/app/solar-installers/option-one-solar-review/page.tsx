@@ -16,6 +16,7 @@ import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 const OPTION_ONE_LICENSES: InstallerLicense[] = [
   { number: '985340', holder: 'Option One Corporation dba Option One Solar', basis: DGSTATS_LICENSE_BASIS, status: 'current and active', checked: 'September 24, 2026' }
 ];
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const metaTitle = "Option One Solar Apple Valley Reviews (2026): 25-Yr Warranty";
 const metaDescription =
@@ -67,7 +68,7 @@ export default function OptionOneReview() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Installer Review</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Option One Solar Reviews (2026): Cleanest Service Profile in the High Desert
+                Option One Solar Reviews (2026): Apple Valley Installer With a 25-Year Warranty
               </h1>
               
               <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
@@ -86,6 +87,7 @@ export default function OptionOneReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 Option One Solar is a smaller California regional installer serving the High Desert (Apple Valley area) and extending into the Inland Empire and parts of LA County. The company has a 50+ year electrical pedigree in the family that owns it. Customer reviews are consistently strong — Yelp runs 4.9/5 in several listings, and the company actively discourages PPAs and leases in favor of ownership. The 25-year bumper-to-bumper warranty including labor is unusually comprehensive.
               </p>
+              <HubUpLink path="/solar-installers/option-one-solar-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

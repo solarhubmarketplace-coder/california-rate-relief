@@ -28,7 +28,7 @@ const path = '/solar-installers/sunrun-vs-tesla-solar';
 const checked = '2026-09-23';
 const priorCheck = '2026-09-22';
 
-const metaTitle = 'Sunrun vs Tesla Solar (2026): Warranty, Lease and Powerwall';
+const metaTitle = 'Sunrun vs Tesla Solar (2026): Cost, Warranty and Powerwall';
 const metaDescription =
   "Sunrun vs Tesla in California: Sunrun's subscription and guarantee vs Tesla's 25-year lease or purchase, who installs Powerwall, and how they partner.";
 

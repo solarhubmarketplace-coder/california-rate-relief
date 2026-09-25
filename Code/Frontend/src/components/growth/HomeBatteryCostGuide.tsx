@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionPage, type Source } from "./DecisionPage";
+import { CRR_SOCIAL_CARD } from "@/lib/crr-social";
 
 const path = "/battery/home-battery-cost-california";
 const title = "How Much Does a Solar Battery Cost? Build the Installed Price";
@@ -53,6 +54,7 @@ export const homeBatteryCostMetadata: Metadata = {
     type: "article",
     url: `https://ratereliefca.com${path}`,
     modifiedTime: "2026-09-20T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

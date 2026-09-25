@@ -12,6 +12,8 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "California's New $24 Fixed Charge, Explained",
@@ -26,6 +28,7 @@ export const metadata: Metadata = {
       'Everything you need to know about California\'s new monthly fixed charge — what it is, who pays it, and how it changes the math on solar.',
     type: 'article',
     publishedTime: '2026-04-14T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 
@@ -77,6 +80,7 @@ export default function FixedChargeExplained() {
                 it is, why it exists, whether you can reduce it, and how it
                 changes the math on solar.
               </p>
+              <HubUpLink path="/blog/california-24-dollar-fixed-charge-explained" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

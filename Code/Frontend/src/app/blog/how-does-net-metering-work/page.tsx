@@ -17,6 +17,7 @@ import { SourceList } from '@/components/growth/DecisionPage';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { RATE_SOURCES_CHECKED, rateSources } from '@/data/rate-sources';
 import { Byline } from '@/components/trust/Byline';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // 2026-09-23 (Tier 3): the NEM generations table and true-up section now follow
 // the CPUC's own comparison, the net metering bill question is answered, and
@@ -50,7 +51,7 @@ export const metadata: Metadata = {
   title: "How Does Net Metering Work? Plain-English Guide (2026)",
   description: "Net metering explained in plain English: how export credits and the true-up work, what a California net metering bill shows, and NEM 1.0, 2.0 and 3.0.",
   alternates: { canonical: '/blog/how-does-net-metering-work' },
-  openGraph: { title: 'How Does Net Metering Work?', description: 'Plain-English net metering guide for 2026.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', modifiedTime: '2026-09-23T00:00:00Z', url: 'https://ratereliefca.com/blog/how-does-net-metering-work' },
+  openGraph: { title: 'How Does Net Metering Work?', description: 'Plain-English net metering guide for 2026.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', modifiedTime: '2026-09-23T00:00:00Z', url: 'https://ratereliefca.com/blog/how-does-net-metering-work', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
@@ -71,7 +72,7 @@ export default function HowDoesNetMeteringWork() {
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar Basics</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">How Does Net Metering Work? (And Why It&apos;s Not the Same as Net Billing)</h1>
               <Byline updated="2026-09-23" />
-              <p className="text-lg text-muted-foreground">Net metering is the billing arrangement that makes residential solar economics work. Here&apos;s how it actually works, step by step.</p>
+              <p className="text-lg text-muted-foreground">Net metering credits the solar you send to the grid at the same retail rate you pay for power you import, then nets the two at the end of each billing period. It is not the same as net billing (NEM 3.0), which credits exports at hourly avoided-cost values the CPUC says are usually lower than the retail rate.</p>
             </header>
             <div className="prose prose-slate max-w-none">
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

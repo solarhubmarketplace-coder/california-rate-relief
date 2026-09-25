@@ -9,12 +9,13 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 import { Byline } from '@/components/trust/Byline';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "CPACE Financing California: How Commercial PACE Works",
   description: "CPACE lets California commercial property owners finance solar and repay it through the property tax bill. How CSCDA Open PACE works and what to ask.",
   alternates: { canonical: '/commercial-solar/cpace-financing-california' },
-  openGraph: { title: 'CPACE Financing California: How Commercial PACE Works for Solar', description: 'CPACE solar financing in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'CPACE Financing California: How Commercial PACE Works for Solar', description: 'CPACE solar financing in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 const articleSchema = {

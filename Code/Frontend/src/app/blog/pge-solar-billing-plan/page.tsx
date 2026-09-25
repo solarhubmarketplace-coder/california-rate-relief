@@ -14,6 +14,7 @@ import { SourceList, type Source } from '@/components/growth/DecisionPage';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 // 2026-09-23 (topical-authority wave, Tier 2): the PG&E spoke of the NEM hub.
 // /blog/nem-pge answers "what do the NEM lines on my bill mean"; this page
@@ -129,6 +130,7 @@ export default function PgeSolarBillingPlanPage() {
                 it. PG&amp;E puts you on the Electric Home (E-ELEC) rate, bills you monthly, and credits exports at
                 hourly values that stay fixed for nine years instead of at the retail price.
               </p>
+              <HubUpLink path="/blog/pge-solar-billing-plan" />
               <p>
                 This guide covers who is on the plan, the rate you pay for grid power, how exports are priced, the
                 export bonus, and how the monthly bills and annual True-Up fit together. If you are trying to read the

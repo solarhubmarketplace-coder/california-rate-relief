@@ -14,6 +14,7 @@ import { SourceList, type Source } from '@/components/growth/DecisionPage';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const path = '/blog/when-does-nem-2-expire';
 const url = `https://ratereliefca.com${path}`;
@@ -101,6 +102,7 @@ export default function WhenDoesNem2ExpirePage() {
                 mid-2030s. The last ones, from applications filed just before the April 2023 cutoff, run into
                 the mid-2040s.
               </p>
+              <HubUpLink path="/blog/when-does-nem-2-expire" />
               <p>
                 Your exact date depends on when your system got Permission to Operate. Here is how to find
                 it, what can end NEM 2.0 early, what doesn’t, and what to plan before your account moves to

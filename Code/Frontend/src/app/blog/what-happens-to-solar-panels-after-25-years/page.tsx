@@ -13,12 +13,14 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "What Happens to Solar Panels After 25 Years? CA Guide",
   description: "What happens when solar panels reach 25 years: expected power degradation, inverter replacement cycles, warranty expiration, and system upgrade options.",
   alternates: { canonical: '/blog/what-happens-to-solar-panels-after-25-years' },
-  openGraph: { title: 'What Happens to Solar Panels After 25 Years? California Guide', description: 'Solar panel lifespan and what happens past the warranty.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'What Happens to Solar Panels After 25 Years? California Guide', description: 'Solar panel lifespan and what happens past the warranty.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
@@ -50,6 +52,7 @@ export default function WhatHappensAfter25Years() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 The 25-year solar panel warranty doesn&apos;t mean your panels die at 25 years. It means the manufacturer guarantees at least a certain output level at that 25-year mark; the percentage is on your panel&apos;s warranty sheet. Panels keep producing electricity for decades past warranty expiration — just at slightly reduced output. Here&apos;s what actually happens to California solar systems over time, and what homeowners do when warranties expire.
               </p>
+              <HubUpLink path="/blog/what-happens-to-solar-panels-after-25-years" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

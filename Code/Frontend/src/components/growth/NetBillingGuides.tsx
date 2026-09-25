@@ -5,6 +5,7 @@ import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
 import { DecisionPage, QuoteChecklist, type Source } from "./DecisionPage";
 import type { FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
 import { SRC } from "@/data/rate-sources";
+import { CRR_SOCIAL_CARD } from "@/lib/crr-social";
 
 const cpucNem: Source = {
   label: "CPUC: Net Energy Metering and Net Billing",
@@ -106,6 +107,7 @@ export function netBillingMetadata(kind: NetBillingGuideKind): Metadata {
           : kind === "billing"
             ? "2026-09-22T00:00:00Z"
             : "2026-09-12T00:00:00Z",
+      images: [CRR_SOCIAL_CARD],
     },
   };
 }

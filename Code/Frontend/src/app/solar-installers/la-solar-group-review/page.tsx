@@ -11,6 +11,7 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 
 const metaTitle = "LA Solar Group Reviews (2026): In-House Panels, Court Check";
 const metaDescription =
@@ -71,6 +72,7 @@ export default function LASolarGroupReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 LA Solar Group is genuinely unusual in California residential solar: the company manufactures its own black-on-black panels in addition to performing the installations. Most installers in our comparison (Palmetto, Sunrun, Sunnova, Solar Optimum, Baker Electric, etc.) all use Tier-1 third-party panels. LA Solar Group is the only one that is vertically integrated; one vendor owns panel manufacture, install, warranty, and ongoing service.
               </p>
+              <HubUpLink path="/solar-installers/la-solar-group-review" />
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 This page states no star rating and no complaint count. The figures previously shown here could not be re-verified at their own sources when the page was checked on <strong>September 18, 2026</strong>, so they were removed rather than carried forward with a stale date. What the page does carry is a dated search of the federal court record, set out below, and the structural consequence of the vertical-integration model for your warranty.

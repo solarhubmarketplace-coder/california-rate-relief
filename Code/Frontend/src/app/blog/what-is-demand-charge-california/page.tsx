@@ -11,11 +11,13 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 import { Byline } from '@/components/trust/Byline';
+import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 export const metadata: Metadata = {
   title: "What Is a Demand Charge? Do CA Residential Customers Pay?",
   description: "Demand charges explained in plain English: what they are, who pays them in California, and how solar/battery eliminates them.",
   alternates: { canonical: '/blog/what-is-demand-charge-california' },
-  openGraph: { title: 'What Is a Demand Charge?', description: 'Plain-English explanation of electric demand charges.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-demand-charge-california' },
+  openGraph: { title: 'What Is a Demand Charge?', description: 'Plain-English explanation of electric demand charges.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-demand-charge-california', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list
@@ -36,7 +38,8 @@ export default function WhatIsDemandChargeCA() {
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Electricity Basics · California</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">What Is a Demand Charge? (And Do California Residential Customers Pay One?)</h1>
               <Byline updated="2026-04-24" />
-              <p className="text-lg text-muted-foreground">Demand charges are why a commercial electric bill can be double what the kWh total suggests. Here&apos;s what they are, who pays them, and how to reduce them.</p>
+              <p className="text-lg text-muted-foreground">A demand charge bills you for the highest load, in kW, you drew during the billing period, usually measured as a 15-minute peak, on top of your per-kWh energy charges. Most California residential customers do not pay one directly; commercial and industrial customers almost always do, which is why a business bill can run far above its kWh total.</p>
+              <HubUpLink path="/blog/what-is-demand-charge-california" />
             </header>
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Simple Definition</h2>

@@ -21,7 +21,7 @@ import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 // with /solar-panels-california for home-cost queries; home readers get one
 // link there. D14 G09: the quote checklist from
 // /blog/commercial-solar-installation-cost-california is folded in below.
-const title = 'Commercial Solar Cost per Watt in California: 100 kW to 1 MW';
+const title = 'Commercial Solar Panel Cost in California: Price per Watt';
 const description =
   'Business solar in California: LBNL 2023 medians over 100 kW of $2.30/W commercial, $2.00/W farm, $4.10/W tax-exempt, plus tax rules and a bid checklist.';
 const h1 = 'Commercial Solar Installation Cost in California: What a Business Pays, 100 kW to 1 MW';

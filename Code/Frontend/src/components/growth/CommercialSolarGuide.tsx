@@ -4,6 +4,7 @@ import { DecisionPage, type Source } from "./DecisionPage";
 import type { FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
 import { articleHref, articlesInCluster } from "@/data/article-pages";
 import { CommercialReviewButton, CommercialReviewForm } from "./CommercialReview";
+import { CRR_SOCIAL_CARD } from "@/lib/crr-social";
 
 const path = "/commercial-solar";
 const title = "Commercial Solar in California: Build a Quote You Can Actually Compare";
@@ -90,6 +91,7 @@ export const commercialSolarMetadata: Metadata = {
     type: "article",
     url: `https://ratereliefca.com${path}`,
     modifiedTime: "2026-09-23T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

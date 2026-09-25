@@ -17,6 +17,7 @@ import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, guideLink } from '@/components/growth/RateGuideParts';
 import { Byline } from '@/components/trust/Byline';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // =============================================================================
 // Electric-bills hub (topical-authority wave, 2026-09-23). Hand-written so the
@@ -169,7 +170,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: path },
-  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z` },
+  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z`, images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb (Block 5 section 5.6): this is the electric_bills hub page, so it

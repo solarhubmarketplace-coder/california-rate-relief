@@ -102,7 +102,7 @@ export default function LadwpSolarProgramPage() {
       <ArticleJsonLd
         variant="Article"
         domain="crr"
-        headline="LADWP solar programs in 2026: what Los Angeles offers owners and renters"
+        headline="LADWP solar programs in 2026: Solar Rooftops, Shared Solar and rebates for owners and renters"
         url={URL}
         datePublished={UPDATED}
         dateModified={UPDATED}
@@ -111,7 +111,7 @@ export default function LadwpSolarProgramPage() {
       <FaqJsonLd items={faqs} />
       <CostFinGuideShell
         eyebrow="Utility programs"
-        title="LADWP solar programs in 2026: what Los Angeles offers owners and renters"
+        title="LADWP solar programs in 2026: Solar Rooftops, Shared Solar and rebates for owners and renters"
         crumbs={[{ label: 'Solar incentives', href: '/blog/california-solar-tax-credit-2026' }]}
         crumbLabel="LADWP solar programs"
         updated={UPDATED}

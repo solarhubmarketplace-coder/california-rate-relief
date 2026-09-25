@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox, type InstallerLicense } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 // License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
@@ -84,6 +85,7 @@ export default function SunPowerReview() {
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
                 The SunPower name is one of the most recognizable in U.S. residential solar — but the SunPower you&apos;d hire today is not the same legal entity that existed two years ago. In August 2024, the original SunPower Corporation filed Chapter 11 bankruptcy. In early 2025, Complete Solaria acquired the key operating assets for approximately $45 million, then rebranded itself to SunPower in April 2025 and reclaimed the SPWR ticker on Nasdaq. Here&apos;s what that means for California buyers in 2026.
               </p>
+              <HubUpLink path="/solar-installers/sunpower-review" />
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
               <div className='not-prose my-8'>

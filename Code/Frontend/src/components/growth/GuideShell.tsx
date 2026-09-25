@@ -8,6 +8,7 @@ import { TocRail, RAIL_GRID } from '@/components/trust/TocRail';
 import { SourceList, type Source } from '@/components/growth/DecisionPage';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { HubUpLink } from '@/components/growth/HubUpLink';
 import type { TopicHubId } from '@/data/topic-hubs';
 
 /**
@@ -88,6 +89,7 @@ export function GuideShell({
             <Byline updated={updated} sourceCount={sources.length} sourcesHref="#sources" />
             <div className="mt-5 space-y-3 [&>p:first-child]:text-lg [&>p:first-child]:leading-relaxed [&>p:first-child]:text-foreground/80 [&_a:not([class])]:text-primary [&_a:not([class])]:underline [&_a:not([class])]:underline-offset-2">
               {lead}
+              <HubUpLink path={path} hub={hub} className="leading-relaxed text-foreground/80" />
             </div>
             {quickCheckTopic && <HeroQuickCheck topic={quickCheckTopic} className="mt-6" />}
           </header>
