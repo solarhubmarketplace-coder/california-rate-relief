@@ -2142,10 +2142,6 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "NEM on a PG&E bill"
       },
       {
-        "href": "/blog/what-is-nem-true-up",
-        "label": "What a NEM true-up is"
-      },
-      {
         "href": "/blog/why-are-my-nem-charges-so-high",
         "label": "Why NEM charges run high"
       },

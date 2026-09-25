@@ -213,7 +213,7 @@ export default function NemPgePage() {
               </p>
               <p>
                 The full mechanics, including how SCE and SDG&amp;E handle the same settlement, are in{' '}
-                <Link href="/blog/what-is-nem-true-up" className={link}>what a NEM true-up is</Link>.
+                <Link href="/solar-problems/true-up-bill-california-explained" className={link}>what a NEM true-up is</Link>.
               </p>
 
               <h2>If a community choice aggregator supplies your power</h2>

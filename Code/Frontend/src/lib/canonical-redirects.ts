@@ -246,6 +246,10 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   // /blog/solar-ppa-explained-california stays: its intent is what a PPA is.
   '/blog/zero-down-solar-california': '/blog/free-solar-panels-california',
   '/blog/no-upfront-cost-solar-panels': '/blog/free-solar-panels-california',
+  // True-up x2 -> the JSON explainer (93 impressions vs 0; the blog post is
+  // new in the release). Its NEM 2.0 vs net billing settlement, surplus
+  // compensation and fixed-charge material is now in the winner.
+  '/blog/what-is-nem-true-up': '/solar-problems/true-up-bill-california-explained',
   // END GS-MERGES 2026-09-24 ------------------------------------------------
 };
 

@@ -245,7 +245,7 @@ export default function SceNem2Page() {
                 links={[
                   { href: '/blog/sce-time-of-use-rates-2026', label: 'SCE time-of-use plans and peak hours' },
                   { href: '/blog/nem-3-export-rates-california', label: 'Export credit values under NEM 3.0' },
-                  { href: '/blog/what-is-nem-true-up', label: 'How the annual true-up settles' },
+                  { href: '/solar-problems/true-up-bill-california-explained', label: 'How the annual true-up settles' },
                   { href: '/blog/why-is-my-sce-bill-so-high', label: 'A bill-first checklist for high SCE bills' },
                   { href: '/battery/battery-payback-nem-3-california', label: 'Whether a battery pays back on net billing' },
                 ]}

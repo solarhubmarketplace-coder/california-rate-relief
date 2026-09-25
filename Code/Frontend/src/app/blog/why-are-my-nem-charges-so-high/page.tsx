@@ -230,7 +230,7 @@ export default function WhyAreMyNemChargesSoHighPage() {
               </ol>
               <p>
                 For how the annual reconciliation itself works, see{' '}
-                <Link href="/blog/what-is-nem-true-up" className={link}>what a NEM true-up is</Link>. For
+                <Link href="/solar-problems/true-up-bill-california-explained" className={link}>what a NEM true-up is</Link>. For
                 non-solar causes of a high bill, PG&amp;E customers can work through{' '}
                 <Link href="/blog/why-is-my-pge-bill-so-high" className={link}>the PG&amp;E high-bill checklist</Link>.
               </p>

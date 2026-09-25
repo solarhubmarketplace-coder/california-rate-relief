@@ -323,7 +323,7 @@ export default function SdgeNetMeteringPage() {
                   { href: '/blog/sdge-rate-increase-2026', label: 'SDG&E rate changes in 2026' },
                   { href: '/blog/pge-vs-sce-vs-sdge-rates-compared', label: 'PG&E, SCE and SDG&E rates compared' },
                   { href: '/blog/sce-solar-billing-plan', label: 'How SCE’s Solar Billing Plan differs' },
-                  { href: '/blog/what-is-nem-true-up', label: 'How an annual true-up settles' },
+                  { href: '/solar-problems/true-up-bill-california-explained', label: 'How an annual true-up settles' },
                   { href: '/battery/battery-payback-nem-3-california', label: 'Whether a battery pays back on net billing' },
                 ]}
               />

@@ -333,7 +333,7 @@ export default function SceSolarBillingPlanPage() {
                 links={[
                   { href: '/blog/why-is-my-sce-bill-so-high', label: 'A bill-first checklist for high SCE bills' },
                   { href: '/blog/pge-solar-billing-plan', label: 'How PG&E runs the same plan' },
-                  { href: '/blog/what-is-nem-true-up', label: 'How an annual true-up settles' },
+                  { href: '/solar-problems/true-up-bill-california-explained', label: 'How an annual true-up settles' },
                   { href: '/blog/sce-rate-schedules', label: 'Every SCE residential rate schedule' },
                   { href: '/blog/solar-battery-backup-california', label: 'What a backup battery runs and costs' },
                 ]}

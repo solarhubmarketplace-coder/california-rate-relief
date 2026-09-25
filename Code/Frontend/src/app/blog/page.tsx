@@ -307,14 +307,6 @@ const blogPosts: BlogPost[] = [
     category: 'California Solar Policy',
   },
   {
-    slug: 'what-is-nem-true-up',
-    title: 'What Is a NEM True-Up? How the Annual Solar Bill Works',
-    excerpt:
-      'A NEM true-up is the yearly bill that settles a solar account’s charges and credits. How it works on NEM 2.0 and NEM 3.0, and what happens to extra credit.',
-    date: '2026-09-23',
-    category: 'California Solar Policy',
-  },
-  {
     slug: 'when-does-nem-2-expire',
     title: 'When Does NEM 2.0 Expire? The 20-Year Clock Explained',
     excerpt:

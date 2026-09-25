@@ -2959,6 +2959,22 @@
       {
         "heading": "If the true-up bill looks wrong",
         "body": "Call your utility's solar or NEM billing line first with your account number and the specific line item you're questioning, and ask for a re-review. Keep your own export and import totals from your monitoring app as your side of the record. If the utility's customer service can't resolve it, the CPUC accepts a complaint once you've tried that first — its own guidance states that if you cannot resolve the problem after talking with the utility's customer service, you may file an informal complaint with the Commission. That path covers PG&E, SCE, and SDG&E, which the CPUC regulates; LADWP and other municipal utilities run their own separate dispute process. A payment arrangement is a different option from a dispute: it's for a balance you agree is correct but can't pay all at once."
+      },
+      {
+        "heading": "NEM 2.0 and net billing settle different things at true-up",
+        "body": "The CPUC describes NEM 1.0 and NEM 2.0 as annual billing with an annual true-up: both charges and credits roll over for 12 months, so a winter shortfall can wait on the account until the settlement. That is why a NEM 2.0 true-up can be large. Watch the year-to-date energy charges on each monthly statement to see where it is heading.\n\nNet billing, the tariff for PG&E, SCE and SDG&E applications since April 15, 2023, bills monthly. The CPUC says payment is due each month so customers are not surprised by a large annual bill after their true-up date. Extra credits in a sunny month roll forward until the annual true-up, which then settles what is left."
+      },
+      {
+        "heading": "What leftover solar credit is worth at true-up",
+        "body": "If you exported more than you used over the 12 months, the surplus is paid at net surplus compensation. The CPUC says that rate is based on the recent market price of energy, was set in Decision 11-06-016 under AB 920, and is about $0.02 to $0.03 per kWh. PG&E puts its current rate at about $0.02 to $0.04, works out eligibility automatically, and resets any remaining credits to zero before the next 12-month cycle.\n\nSCE lists two groups as ineligible for its net surplus compensation: Community Choice Aggregation customers and Direct Access customers. If a CCA supplies your power, read its own solar page for how it settles the generation side.\n\nThe lesson for sizing: a kilowatt-hour you bank to the true-up is paid far less than one you use at home, so a system built to pile up credits does not pay."
+      },
+      {
+        "heading": "Charges a true-up cannot wipe out",
+        "body": "Some lines sit outside the netting. PG&E says its Base Services Charge, about $24 a month for most residential customers since March 2026, is not eligible to be offset by monthly generation credits; CARE, FERA and deed-restricted affordable housing customers pay a reduced charge. SCE says its solar credits can reduce certain charges, but fixed fees, non-bypassable charges and taxes are not eligible for reduction. Budget for those lines every month, whatever the credit balance."
+      },
+      {
+        "heading": "Keep the next true-up predictable",
+        "body": "Find your true-up month on the statement and mark it. Each month, compare the year-to-date energy charges with the same point last year. Check production against the installer's estimate before winter, not after the bill. Move flexible use, such as laundry, pool pumps and EV charging, into sunny hours, because on a time-of-use rate the hour matters as much as the kilowatt-hour. If the balance keeps rising, work through the causes above before adding panels or a battery."
       }
     ],
     "dataTable": {
@@ -3037,10 +3053,27 @@
       {
         "question": "Can I dispute a true-up bill I think is wrong?",
         "answer": "Yes. Contact your utility's billing department first with your account number and the specific charge. If that doesn't resolve it, you can file an informal complaint with the CPUC for PG&E, SCE, or SDG&E accounts."
+      },
+      {
+        "question": "What happens to extra solar credits at true-up?",
+        "answer": "A surplus over the 12 months is paid at net surplus compensation, which the CPUC puts at about $0.02 to $0.03 per kWh and PG&E at about $0.02 to $0.04. PG&E then resets any remaining credits to zero before the next cycle."
+      },
+      {
+        "question": "Do CCA customers get net surplus compensation?",
+        "answer": "Not from SCE: it lists Community Choice Aggregation and Direct Access customers as ineligible for its net surplus compensation. A CCA settles the generation side under its own rules, so check its solar page."
+      },
+      {
+        "question": "Why is a NEM 2.0 true-up bigger than a net billing one?",
+        "answer": "On NEM 1.0 and NEM 2.0, the CPUC says both charges and credits roll over for 12 months, so a year of energy charges can come due at once. Under net billing you pay charges monthly and only leftover credits wait for the true-up."
       }
     ],
     "bottomLine": "Use the bill's provider, generation supplier, program, billing period, amount due, imports, exports and production record before diagnosing a settlement balance. Ask the provider responsible for an unexplained line item to review it; do not treat the total alone as proof of an error or a system problem.",
     "sources": [
+      {
+        "name": "CPUC — Net Energy Metering and Net Billing",
+        "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+        "supports": "NEM 1.0/2.0 annual billing with both charges and credits rolling over 12 months; net billing charges due monthly with credits rolling to the annual true-up; net surplus compensation about $0.02-$0.03/kWh, set in D.11-06-016 under AB 920 — verified 2026-09-24"
+      },
       {
         "name": "SCE — Understanding Your NEM Bill",
         "url": "https://www.sce.com/customer-service-center/help-center/solar/net-energy-metering/understanding-nem-bill",
@@ -3064,7 +3097,7 @@
       {
         "name": "PG&E — Understand Your Bill: Solar Bill",
         "url": "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
-        "supports": "True-Up Statement reconciles charges/credits at the 12th month; Net Surplus Compensation rate set by CPUC at approximately $0.02-0.04/kWh — verified 2026-09-22"
+        "supports": "True-Up Statement at the end of the 12th month; Net Surplus Compensation set by the CPUC at approximately $0.02-$0.04/kWh, eligibility determined automatically; remaining credits reset to zero by law; Base Services Charge about $24 a month from March 2026, not eligible to be offset by generation credits — verified 2026-09-24"
       },
       {
         "name": "PG&E — Understand Your Bill (glossary)",
@@ -3074,7 +3107,7 @@
       {
         "name": "SCE — Solar Billing Plan FAQs",
         "url": "https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/solar-billing-plan-faqs",
-        "supports": "SCE terminology: settlement statement/settlement bill for the Relevant Period; credit roll-forward and Net Surplus Compensation mechanics — verified 2026-09-22"
+        "supports": "Settlement statement at the end of the 12-month Relevant Period; Direct Access and CCA customers ineligible for Net Surplus Compensation; fixed fees, non-bypassable charges and taxes not eligible for reduction by solar credits — verified 2026-09-24"
       },
       {
         "name": "SDG&E — Understanding Your Solar Bill",
@@ -3092,7 +3125,7 @@
         "supports": "Contact the utility's customer service first; if unresolved, file an informal complaint with the CPUC — verified 2026-09-22"
       }
     ],
-    "reviewedAt": "2026-09-22"
+    "reviewedAt": "2026-09-24"
   },
   {
     "slug": "ucc-1-lien-solar-california",

@@ -233,7 +233,7 @@ export default function HowToReadPgeBillPage() {
                 Newer systems on the Solar Billing Plan are on the E-ELEC rate, which the CPUC requires for PG&amp;E customers on
                 the net billing tariff, and their exports earn hourly Energy Export Credits rather than retail-rate credits. The
                 true-up itself is covered in{' '}
-                <Link href="/blog/what-is-nem-true-up" className={guideLink}>
+                <Link href="/solar-problems/true-up-bill-california-explained" className={guideLink}>
                   what a NEM true-up is
                 </Link>{' '}
                 and PG&amp;E&apos;s NEM rules in{' '}

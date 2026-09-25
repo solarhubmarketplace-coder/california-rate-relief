@@ -410,6 +410,7 @@ const GS_MERGES: Readonly<Record<string, string>> = {
   '/blog/is-solar-worth-it-california-2026': '/solar-panels-california',
   '/blog/zero-down-solar-california': '/blog/free-solar-panels-california',
   '/blog/no-upfront-cost-solar-panels': '/blog/free-solar-panels-california',
+  '/blog/what-is-nem-true-up': '/solar-problems/true-up-bill-california-explained',
 };
 ROW_DELTAS.push(Object.keys(GS_MERGES).length);
 

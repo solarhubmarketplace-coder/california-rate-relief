@@ -284,7 +284,7 @@ export default function NetBillingVsNetMeteringPage() {
                 links={[
                   { href: '/blog/what-is-nem-3-california', label: 'NEM 3.0 explained from the bill' },
                   { href: '/blog/how-does-net-metering-work', label: 'How net metering works, step by step' },
-                  { href: '/blog/what-is-nem-true-up', label: 'How the annual true-up settles' },
+                  { href: '/solar-problems/true-up-bill-california-explained', label: 'How the annual true-up settles' },
                   { href: '/battery/battery-payback-nem-3-california', label: 'Whether storage changes the arithmetic' },
                   { href: '/blog/california-public-utilities-commission', label: 'How the CPUC makes rate decisions' },
                 ]}
