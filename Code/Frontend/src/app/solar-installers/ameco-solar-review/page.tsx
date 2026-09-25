@@ -103,6 +103,12 @@ export default function AmecoReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Ameco offers cash, loans, leases, and PPAs through third-party partners. You can own the system (cash/loan) or go $0-down (lease/PPA). Warranty is strong — 25-year options on equipment and workmanship, with the roofing side backed by manufacturer warranties (GAF, CertainTeed typical).
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Utility records list Ameco Solar LLC (CSLB #1053172) on 398 residential systems approved at PG&amp;E, SCE and SDG&amp;E in 2025, 130 of them in Los Angeles County. Of those, 71% included a battery and none was recorded as a lease or PPA (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026).
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                For customer-owned systems without a battery, 1 to 25 kW, approved from January 2025 through May 2026, Ameco&apos;s reported median price was $4.52 per watt on 170 systems. The statewide median on the same basis was $4.18. Reported prices are before incentives.
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Ameco Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

@@ -87,10 +87,16 @@ export default function SwitchToSolar() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Avoid companies in bankruptcy:{' '}<Link href='/solar-installers/freedom-forever-review' className='text-primary hover:underline'>Freedom Forever</Link>{' '}filed Chapter 11 in April 2026 and <strong>was converted to Chapter 7 liquidation in summer 2026</strong> — it is no longer operating.{' '}<Link href='/solar-installers/sunnova-review' className='text-primary hover:underline'>Sunnova</Link>{' '}(Chapter 11 June 2025) has been sold and its legacy portfolio is administered by SunStrong; it is not originating new contracts. Do not sign with either.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Both case records are public: <a href='https://www.courtlistener.com/docket/73192534/freedom-forever-llc/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>Freedom Forever LLC, No. 26-10522 (Bankr. D. Del.)</a>, filed April 15, 2026, and <a href='https://www.courtlistener.com/docket/70491405/sunnova-energy-international-inc/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>Sunnova Energy International Inc., No. 25-90160 (Bankr. S.D. Tex.)</a>, filed June 8, 2025 (CourtListener dockets, checked September 24, 2026).
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Step 4 — Sign, Install, Interconnect</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 After you sign the contract, the typical timeline is: <strong>1-3 weeks</strong> for site survey and engineering, <strong>2-6 weeks</strong> for permit approval through your local city or county, <strong>1-2 days</strong> for physical installation on the roof, <strong>2-4 weeks</strong> for utility interconnection (&quot;Permission to Operate&quot; or PTO). Total contract-to-PTO in California is typically 2-4 months.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                You can check the utility step. At PG&amp;E, SCE and SDG&amp;E, the median residential solar system approved in 2025 was approved 25 days after the utility received its interconnection application (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026). The installer files that application, so ask when it will go in.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 You can&apos;t turn the system on until you have PTO. Flipping the switch early triggers an unpermitted-generation fine from the utility and can cascade into permit issues.

@@ -124,6 +124,9 @@ export default function CaliforniaPublicUtilitiesCommission() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The CPUC is led by five commissioners, all appointed by the Governor. As of 2026, the commissioners are: President John Reynolds (promoted to president in February 2026), Darcie L. Houck, Karen Douglas, Matthew Baker, and Christine Harada — all appointed by Governor Newsom. They serve staggered six-year terms. The president sets the agenda and leads proceedings, but all five commissioners vote on major rate decisions.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                The CPUC&apos;s own page confirms the structure: &ldquo;The Governor appoints the five Commissioners, who must be confirmed by the Senate, for six year staggered terms,&rdquo; and lists John Reynolds as President with Commissioners Darcie L. Houck, Karen Douglas, Matthew Baker and Christine Harada (<a href='https://www.cpuc.ca.gov/about-cpuc/commissioners' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>CPUC, Commissioners</a>, checked September 24, 2026).
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 What the CPUC Controls
@@ -154,7 +157,7 @@ export default function CaliforniaPublicUtilitiesCommission() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The result is your per-kWh rate. And those rates have been climbing relentlessly. From 2021 to 2026, cumulative rate increases across the three IOUs range from 25% to 76%, depending on the utility and rate plan. SDG&amp;E customers have been hit hardest, with average rates now at 45.7 cents per kWh — the highest in the continental United States.
+                The result is your per-kWh rate. And those rates have been climbing relentlessly. From January 2021 to June 2026, residential average rates rose 39% at PG&amp;E, 56% at SCE and 42% at SDG&amp;E. SDG&amp;E&apos;s average was 45.5 cents per kWh in June 2026, the highest of the three (<a href='https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>CPUC Public Advocates Office, Q2 2026 Electric Rates Report</a>, p. 8, checked September 24, 2026).
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -170,7 +173,7 @@ export default function CaliforniaPublicUtilitiesCommission() {
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
-                Rate Increases: 25-76% in Five Years
+                Rate Increases: 39% to 56% Since 2021
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

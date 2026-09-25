@@ -115,6 +115,9 @@ export default function HowLongDoSolarPanelsLast() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The National Renewable Energy Laboratory (NREL) has tracked solar installations from the 1970s and 1990s. Those panels — now 35+ years old — still produce electricity at 80 to 90 percent of their original capacity. Some degrade even more slowly. This means a typical modern residential panel installed in 2026 with an initial 400-450 watt rating will likely be producing 300+ watts when you&apos;re 75 years old.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                The U.S. Department of Energy, citing a Berkeley Lab survey of U.S. solar professionals, puts the average operational lifespan of a solar panel at 25 to 35 years in 2025, up from about 20 years in 2007 (<a href='https://www.energy.gov/eere/solar/end-life-management-solar-photovoltaics' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>U.S. Department of Energy, End-of-Life Management for Solar Photovoltaics</a>, checked September 24, 2026).
+              </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 For context, most homeowners keep a house for 10 to 15 years on average. Even if you sell, a functioning solar system is an asset — not a liability. The panels will still be generating power, and the next owner gets the benefit (or takes over the PPA contract if that applies).
@@ -133,7 +136,7 @@ export default function HowLongDoSolarPanelsLast() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Premium panels from tier-one manufacturers (Panasonic, Sunpower, Enphase) often degrade at 0.25 to 0.35 percent annually, extending the lifespan advantage. Budget panels sometimes degrade faster — up to 0.7 percent per year — but still last decades.
+                Premium panels from tier-one manufacturers (Panasonic, SunPower) often degrade at 0.25 to 0.35 percent annually, extending the lifespan advantage. Budget panels sometimes degrade faster — up to 0.7 percent per year — but still last decades.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>

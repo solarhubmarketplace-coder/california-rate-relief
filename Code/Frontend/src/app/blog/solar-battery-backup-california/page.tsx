@@ -10,6 +10,7 @@ import { RelatedGuides } from '@/components/shared/RelatedGuides';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { Byline } from '@/components/trust/Byline';
 import { KeyFacts } from '@/components/trust/KeyFacts';
+import { FACTS, formatFactDate, formatFactDateAbbrev as shortDate, usd } from '@/data/facts';
 import { SourceList, QuoteChecklist, type Source } from '@/components/growth/DecisionPage';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
@@ -33,11 +34,16 @@ const updated = '2026-09-23';
 const hub = { label: 'Home battery storage', href: '/battery' };
 const link = 'text-primary underline underline-offset-2';
 
+// 2026-09-24 (plan item 5.1): the SGIP equity incentive levels and PG&E's
+// rebate amount, count and deadline read from src/data/facts.ts.
+const sgipEquity = FACTS.sgipEquityBudget.value;
+const pbsr = FACTS.pgeBatteryRebate.value;
+
 const programs: [string, string, string][] = [
-  ['SGIP Residential Solar and Storage Equity (AB 209)', '$1.10 per Wh of storage, $3.10 per W of new solar. Open only for customers of publicly owned utilities assigned to PG&E or SCE; waitlisted elsewhere (Sept 23, 2026)', 'Income at or below 80% of area median income, or verified through CARE, FERA, ESA, SASH or DAC-SASH'],
+  ['SGIP Residential Solar and Storage Equity (AB 209)', `${usd(sgipEquity.storagePerKwh / 1000, 2)} per Wh of storage, ${usd(sgipEquity.solarPerKw / 1000, 2)} per W of new solar. Open only for customers of publicly owned utilities assigned to PG&E or SCE; waitlisted elsewhere (${shortDate(FACTS.sgipStatus.checkedAt)})`, 'Income at or below 80% of area median income, or verified through CARE, FERA, ESA, SASH or DAC-SASH'],
   ['PG&E Residential Storage Initiative', 'Battery installed at no charge; PG&E says 2026 supply is almost gone', 'EPSS-impacted circuit, 5+ EPSS outages since Jan 1, 2024, and CARE, FERA, Medical Baseline or Self-Identified Vulnerable'],
   ['PG&E Reliability Battery Initiative', 'Battery installed at no cost; full for 2026', 'Customers on circuits PG&E identifies as having worse-than-average reliability'],
-  ['PG&E Permanent Battery Storage Rebate', '$7,500; 179 rebates left as of Sept 18, 2026; apply by Dec 31, 2026', 'First-time battery owners with 5+ Wildfire Safety outages since Jan 1, 2024'],
+  ['PG&E Permanent Battery Storage Rebate', `${usd(pbsr.amountUsd)}; ${pbsr.remaining} rebates left as of ${shortDate(pbsr.remainingAsOf)}; apply by ${shortDate(pbsr.applyByDate)}`, 'First-time battery owners with 5+ Wildfire Safety outages since Jan 1, 2024'],
   ['SCE Critical Care Backup Battery', 'Portable battery at no charge, not a whole-home system', 'Medical Baseline customers in a high fire risk area who use powered medical equipment'],
 ];
 
@@ -328,8 +334,8 @@ export default function SolarBatteryBackupPage() {
                 expenditures made after December 31, 2025. What remains is aimed at specific households. PG&amp;E
                 customers with five or more Wildfire Safety outages since January 1, 2024 may qualify for{' '}
                 <Link href="/battery/pge-permanent-battery-storage-rebate" className={link}>PG&amp;E’s Permanent Battery Storage Rebate</Link>,
-                $7,500 for first-time battery owners. PG&amp;E showed 179 rebates left as of September 18, 2026, with a
-                December 31, 2026 deadline. The full PG&amp;E list is on{' '}
+                {usd(pbsr.amountUsd)} for first-time battery owners. PG&amp;E showed {pbsr.remaining} rebates left as of{' '}
+                {formatFactDate(pbsr.remainingAsOf)}, with a {formatFactDate(pbsr.applyByDate)} deadline. The full PG&amp;E list is on{' '}
                 <Link href="/battery/pge-solar-battery-rebate" className={link}>PG&amp;E’s battery incentives page</Link>.
               </p>
               <div className="overflow-x-auto rounded-xl border border-border">

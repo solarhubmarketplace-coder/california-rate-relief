@@ -45,49 +45,33 @@ export default function AB942CASolar() {
                 <HeroQuickCheck topic="AB 942 and solar on a home sale" />
               </div>
 
-              <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Problem AB 942 Addressed</h2>
-              <p>Homeowners with solar leases or PPAs had been reporting consistent friction when selling:</p>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Buyers balking at inheriting long-term contracts with escalating payments.</li>
-                <li>UCC-1 liens filed by solar providers complicating title clearance.</li>
-                <li>Buyers&apos; mortgage lenders refusing to fund until the lien was released.</li>
-                <li>Transfer-approval delays stretching close dates by weeks.</li>
-                <li>Ambiguous disclosure of transfer requirements at contract signing.</li>
-              </ul>
+              {/* 2026-09-24 correction (plan item 5.4): the earlier body described AB 942
+                  as an enacted lease-transfer law codified at Civil Code § 1689.12. The
+                  bill text and history on leginfo.legislature.ca.gov say otherwise, and
+                  § 1689.12 is a home-solicitation provision unrelated to solar. */}
+              <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">AB 942 is not law</h2>
+              <p>AB 942 (Calderon), introduced February 19, 2025, is not law. Its history on the Legislature&apos;s site shows no action after August 29, 2025, when the Senate Appropriations Committee sent it to the Senate Rules Committee, and no chaptered version (<a href="https://leginfo.legislature.ca.gov/faces/billHistoryClient.xhtml?bill_id=202520260AB942" className="text-primary underline" target="_blank" rel="noopener noreferrer">California Legislative Information, AB 942 history</a>, checked September 24, 2026).</p>
+              <p>An earlier version of this page said AB 942 set lease-transfer rules, a 30-day lien-release deadline and new disclosures, codified at Civil Code § 1689.12. That was wrong. Section 1689.12 is part of the home-solicitation contract rules and does not mention solar.</p>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What AB 942 Actually Does</h2>
-              <p>Key provisions codified in Civil Code § 1689.12 and related sections:</p>
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What the bill proposed</h2>
+              <p>The version the Assembly passed on June 3, 2025 dealt with net metering on a home sale. From January 1, 2026, a buyer of a home with a solar or other renewable generation system, served by a large utility such as PG&amp;E, SCE or SDG&amp;E, would have had to take the then-current tariff instead of the seller&apos;s, without the export adder, and pay all nonbypassable charges (<a href="https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=202520260AB942" className="text-primary underline" target="_blank" rel="noopener noreferrer">AB 942 bill text and digest</a>, checked September 24, 2026).</p>
+              <p>On July 17, 2025, the Senate amended the bill and removed all of that. The remaining text deals only with the California Climate Credit: it would stop paying the credit to residential customers who are not enrolled in CARE or FERA and whose electricity bills for the previous year were less than $300.</p>
+
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What decides a lease or PPA transfer today</h2>
+              <p>Your contract does. The transfer terms, any credit check for the buyer, fees and the buyout price are in the lease or PPA you signed, so read that before you list the home. For the tariff, the CPUC says customers on NEM 2.0 may stay on it for 20 years from the date they interconnected (<a href="https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing" className="text-primary underline" target="_blank" rel="noopener noreferrer">CPUC, Net Energy Metering and Net Billing</a>, checked September 24, 2026). Ask your utility in writing which tariff the system will be on after the sale.</p>
+
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">If you are selling</h2>
               <ol className="list-decimal pl-6 space-y-2">
-                <li><strong>Mandatory transfer-terms disclosure at contract signing.</strong> Solar providers must clearly disclose the buyer credit qualification thresholds, transfer fees, and any terms that can block transfer.</li>
-                <li><strong>UCC release within 30 days.</strong> Providers must release UCC-1 financing statements within 30 days of a contract transfer or buyout, eliminating the title-friction problem.</li>
-                <li><strong>No extended-term requirement.</strong> Providers cannot require a buyer to sign a contract with a longer remaining term than the seller had.</li>
-                <li><strong>Good-faith transfer processing.</strong> Providers must process transfer applications within defined timelines; persistent delays can be reported to the California Department of Consumer Affairs.</li>
-                <li><strong>Consumer-friendly language.</strong> Contracts must disclose in plain language that the contract may survive a home sale and that the buyer will need to qualify.</li>
+                <li>Get the provider&apos;s written transfer requirements and a buyout quote before you list.</li>
+                <li>Pre-qualify your buyer with the provider before you accept an offer.</li>
+                <li>Give buyers the full contract early, including the payment schedule and any escalator.</li>
               </ol>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">What AB 942 Did NOT Do</h2>
-              <p>The law did not eliminate friction entirely:</p>
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">If you are buying</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li>Buyer credit qualification is still required. A bad-credit buyer can still be denied.</li>
-                <li>Escalator terms are still inherited, buyers still get your 2.9% annual payment increase.</li>
-                <li>Buyers can still negotiate a lease buyout at closing as a condition of purchase.</li>
-                <li>Transfer fees still apply (typically $100–$500).</li>
-              </ul>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Practical Impact for 2026 Sellers</h2>
-              <ol className="list-decimal pl-6 space-y-2">
-                <li>Your provider has a 30-day clock on UCC release. Reference this if they stall.</li>
-                <li>Pre-qualify your buyer with the solar provider before accepting an offer.</li>
-                <li>If the provider delays transfer processing, file a complaint with the California Department of Consumer Affairs, AB 942 gives regulators enforcement authority.</li>
-                <li>If your contract predates AB 942 (signed before January 2025), provisions still apply to post-effective-date transfers.</li>
-              </ol>
-
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Practical Impact for 2026 Buyers</h2>
-              <ul className="list-disc pl-6 space-y-2">
-                <li>Request full disclosure of the existing solar contract before offer.</li>
-                <li>Verify the UCC release is processing in your escrow timeline.</li>
-                <li>Negotiate contract transfer or buyout as part of your offer — don&apos;t leave it to inspection.</li>
-                <li>If you don&apos;t want to assume the contract, you can legitimately make the seller&apos;s lease buyout a condition of your offer.</li>
+                <li>Ask for the full solar contract before you make an offer.</li>
+                <li>Ask the escrow or title officer whether a financing statement is recorded for the system and how it will be handled at closing.</li>
+                <li>If you do not want to take over the contract, make a seller buyout a condition of your offer.</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>

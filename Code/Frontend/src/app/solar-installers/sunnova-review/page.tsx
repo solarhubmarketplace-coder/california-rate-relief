@@ -298,6 +298,12 @@ export default function SunnovaReview() {
                 That&apos;s the point at which the asset sale and the shift
                 to SunStrong Management became final, not just proposed.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                You can read the docket yourself: <a href='https://www.courtlistener.com/docket/70491405/sunnova-energy-international-inc/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>Sunnova Energy International Inc., No. 25-90160 (Bankr. S.D. Tex.)</a>, filed June 8, 2025 (CourtListener, checked September 24, 2026).
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Utility records show the effect in California. Sunnova Energy Corporation (CSLB #1003498) is listed on 2,832 residential systems approved at PG&amp;E, SCE and SDG&amp;E in 2025, 94% of them leases or PPAs, but on 28 from January through May 2026 (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026).
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 What It Means for Existing Sunnova Customers

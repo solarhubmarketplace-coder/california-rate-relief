@@ -68,7 +68,7 @@ export const financingHubExtraSources: Source[] = [
     url: DG_STATS,
   },
   {
-    label: 'U.S. Code: 26 U.S.C. § 48E(i), denial of credit for solar leasing arrangements',
+    label: 'U.S. Code: 26 U.S.C. § 48E(i), denial of credit for expenditures for wind and solar leasing arrangements (checked September 24, 2026)',
     url: US_48E,
   },
   {
@@ -318,14 +318,16 @@ export function FinancingHubExtras() {
           <a className={link} href={DG_STATS}>
             DG Stats
           </a>
-          , data through May 31, 2026). One reason to ask how a lease is priced in 2026: the 2025
-          federal tax law added 26 U.S.C. § 48E(i), under which no business credit is determined for
-          residential solar property &ldquo;if the taxpayer rents or leases such property to a third
-          party&rdquo; (
+          , data through May 31, 2026). The 2025 federal tax law added 26 U.S.C. § 48E(i), which
+          denies the business credit when the owner rents or leases to a third party property
+          &ldquo;described in paragraph (1) or (4) of section 25D(d)&rdquo;: solar water heating and
+          small wind. Rooftop solar electric property is paragraph (2), which the subsection does not
+          list (
           <a className={link} href={US_48E}>
             26 U.S.C. § 48E
           </a>
-          ). What that means for a given offer is for the provider to explain.
+          , checked September 24, 2026). What the tax law means for a given offer is for the provider
+          to explain.
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li>

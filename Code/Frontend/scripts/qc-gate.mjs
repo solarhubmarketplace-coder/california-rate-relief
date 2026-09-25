@@ -13,14 +13,23 @@
  *   3. UNSOURCED - a numeric claim with no source. Rates and incentives move
  *                  quarterly, and unsourced numbers are how a page ends up
  *                  telling Modesto residents they pay PG&E rates.
+ *   4. PROCESS-TEXT - editor, research or AI-drafting text in the copy ("this
+ *                  session", "fetched live"). Rules: scripts/process-text-phrases.json
+ *   5. STALE-STRING - a string known to be out of date (a superseded tariff
+ *                  document, an old rebate count, the old brand name).
+ *                  Rules: scripts/stale-strings.json
+ *   Checks 4 and 5 come from scripts/editorial-lint.mjs and are reported in
+ *   their own section, so they can be seen passing or failing on their own.
  *
- * Usage:  node scripts/qc-gate.mjs
+ * Usage:  node scripts/qc-gate.mjs [--no-editorial]
+ *   --no-editorial   skip checks 4 and 5 (to compare checks 1-3 with a base)
  * Exits non-zero if any page fails. Wire into the build before deploying.
  */
 
 import { readFileSync, existsSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { lintArticleJson, printFindings } from './editorial-lint.mjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, '..');
@@ -145,6 +154,13 @@ function main() {
     }
   }
 
+  // 4-5. PROCESS-TEXT and STALE-STRING (editorial lint)
+  const runEditorial = !process.argv.includes('--no-editorial');
+  const editorial = runEditorial ? lintArticleJson().findings : [];
+  for (const f of editorial) {
+    failures.push(`${f.check.padEnd(10)} ${f.slug}: [${f.rule}] "${f.match}" at ${f.where}`);
+  }
+
   // Report
   console.log(`QC gate: ${pages.length} pages checked\n`);
   const counts = pages.reduce((acc, p) => {
@@ -165,6 +181,13 @@ function main() {
   if (warnings.length) {
     console.log(`\nWARNINGS (${warnings.length}):`);
     for (const w of warnings) console.log('  ' + w);
+  }
+
+  if (runEditorial) {
+    console.log('\nEDITORIAL LINT (checks 4-5, scripts/editorial-lint.mjs):');
+    printFindings(editorial, { cap: 10 });
+  } else {
+    console.log('\nEDITORIAL LINT: skipped (--no-editorial)');
   }
 
   if (failures.length) {

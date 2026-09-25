@@ -123,6 +123,12 @@ export default function OptionOneReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Option One is unusual in residential solar: the company actively discourages PPAs and leases. Cash and loans are the focus. That used to mean capturing the 30% federal credit; it no longer does, because IRC § 25D does not apply to expenditures made after December 31, 2025. What ownership still buys you is no 20-year contract complicating a future home sale and cleaner total cost-of-ownership math. Whether this fits your cash flow is a separate question, if $0-down lease/PPA is a must, Option One isn&apos;t the right pick.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Utility records match the ownership-first model. Option One Solar (CSLB #985340) is the installer on 200 residential systems approved at PG&amp;E, SCE and SDG&amp;E in 2025, 151 of them in San Bernardino County; 87% included a battery and 1% were leases or PPAs (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026).
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                For customer-owned systems without a battery, 1 to 25 kW, approved from January 2025 through May 2026, its reported median price was $3.50 per watt, but on only 41 systems. The statewide median on the same basis was $4.18.
+              </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 Option One&apos;s own site names three specific paths, all built around ownership rather than a recurring bill to the installer (optiononesolar.com, accessed September 2026):
               </p>

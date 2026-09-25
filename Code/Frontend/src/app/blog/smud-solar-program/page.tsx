@@ -12,6 +12,7 @@ import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { CostFinGuideShell } from '@/components/growth/CostFinGuideShell';
 import type { Source } from '@/components/growth/DecisionPage';
 import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
+import { FACTS, usd } from '@/data/facts';
 
 const PATH = '/blog/smud-solar-program';
 const URL = `https://ratereliefca.com${PATH}`;
@@ -36,9 +37,16 @@ const sources: Source[] = [
   { label: 'CPUC: Net energy metering and the Net Billing Tariff (PG&E, SCE, SDG&E)', url: S.cpucNem },
 ];
 
+// 2026-09-24 (plan item 5.1): SMUD's export credit and battery incentive
+// amounts read from src/data/facts.ts. Dates of past changes stay literal.
+const exportCents = `${FACTS.smudExportRate.value}¢`;
+const batt = FACTS.smudBatteryIncentive.value;
+const battNow = `${usd(batt.perKwh)} per kWh, up to ${usd(batt.capPerHousehold)}`;
+const battBefore = `${usd(batt.previousPerKwh)} per kWh, up to ${usd(batt.previousCap)}`;
+
 const metaTitle = 'SMUD Solar Program 2026: Export Rate, Rebates, SolarShares';
 const metaDescription =
-  'SMUD has no solar panel rebate. It pays 9.6¢/kWh for exports, cut its battery incentive to $300/kWh on Sept. 23, 2026, and runs SolarShares.';
+  `SMUD has no solar panel rebate. It pays ${exportCents}/kWh for exports, cut its battery incentive to ${usd(batt.perKwh)}/kWh on Sept. 23, 2026, and runs SolarShares.`;
 
 export const metadata: Metadata = {
   title: metaTitle,
@@ -65,7 +73,7 @@ const faqs: FaqJsonLdItem[] = [
   {
     question: 'How much does SMUD pay for excess solar?',
     answer:
-      'On the Solar and Storage Rate, SMUD pays 9.6¢ per kWh for power you export and do not use or store, at any time of day or in any season, effective June 1, 2026. A credit offsets your usage charges and any remainder carries over to later bills.',
+      `On the Solar and Storage Rate, SMUD pays ${exportCents} per kWh for power you export and do not use or store, at any time of day or in any season, effective June 1, 2026. A credit offsets your usage charges and any remainder carries over to later bills.`,
   },
   {
     question: 'Does NEM 3.0 apply to SMUD customers?',
@@ -75,7 +83,7 @@ const faqs: FaqJsonLdItem[] = [
   {
     question: 'What is the SMUD solar battery rebate now?',
     answer:
-      'From September 23, 2026, SMUD’s upfront enrollment incentive is $300 per kWh, up to $6,000 per household. Projects submitted for interconnection by September 22 and enrolled by December 31, 2026 keep the earlier $500 per kWh, up to $10,000. You must be on the Solar and Storage Rate and enroll within 90 days of permission to operate.',
+      `From September 23, 2026, SMUD’s upfront enrollment incentive is ${battNow} per household. Projects submitted for interconnection by September 22 and enrolled by December 31, 2026 keep the earlier ${battBefore}. You must be on the Solar and Storage Rate and enroll within 90 days of permission to operate.`,
   },
   {
     question: 'How does SMUD SolarShares work?',
@@ -115,8 +123,8 @@ export default function SmudSolarProgramPage() {
           <>
             <p>
               SMUD does not pay a rebate on solar panels; it says so itself. What it does offer:
-              the Solar and Storage Rate, which pays 9.6¢ per kWh for power you export; a battery
-              incentive that fell to $300 per kWh, up to $6,000, on September 23, 2026; and
+              the Solar and Storage Rate, which pays {exportCents} per kWh for power you export; a battery
+              incentive that fell to {battNow}, on September 23, 2026; and
               SolarShares, for customers who want solar without panels on the roof. Older
               systems can stay on net metering through 2030.
             </p>
@@ -133,15 +141,15 @@ export default function SmudSolarProgramPage() {
         keyFacts={[
           {
             label: 'Export credit',
-            value: '9.6¢/kWh',
+            value: `${exportCents}/kWh`,
             note: 'Solar and Storage Rate, any hour or season, effective June 1, 2026.',
-            source: { publisher: 'SMUD', date: UPDATED, url: S.smudSsr },
+            source: { publisher: 'SMUD', date: FACTS.smudExportRate.checkedAt, url: FACTS.smudExportRate.sourceUrl },
           },
           {
             label: 'Battery incentive',
-            value: '$300/kWh',
-            note: 'Up to $6,000, from Sept. 23, 2026 (was $500/kWh, up to $10,000).',
-            source: { publisher: 'SMUD', date: UPDATED, url: S.smudBattery },
+            value: `${usd(batt.perKwh)}/kWh`,
+            note: `Up to ${usd(batt.capPerHousehold)}, from Sept. 23, 2026 (was ${usd(batt.previousPerKwh)}/kWh, up to ${usd(batt.previousCap)}).`,
+            source: { publisher: 'SMUD', date: FACTS.smudBatteryIncentive.checkedAt, url: FACTS.smudBatteryIncentive.sourceUrl },
           },
           {
             label: 'Solar panel rebate',
@@ -286,8 +294,9 @@ export default function SmudSolarProgramPage() {
             </li>
             <li>
               <strong>Which batteries.</strong> Eguana, Enphase, Franklin, SolarEdge, Sonnen and
-              Tesla. Ongoing quarterly payments are currently for Tesla batteries only: $110 for one,
-              $220 for two, $330 for three or more.
+              Tesla. Ongoing quarterly payments are currently for Tesla batteries only:{' '}
+              {usd(batt.teslaQuarterly.one)} for one, {usd(batt.teslaQuarterly.two)} for two,{' '}
+              {usd(batt.teslaQuarterly.threeOrMore)} for three or more.
             </li>
             <li>
               <strong>Who cannot join.</strong> You must be on the Solar and Storage Rate. Individual

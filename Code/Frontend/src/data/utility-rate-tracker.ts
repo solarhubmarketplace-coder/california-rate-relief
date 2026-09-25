@@ -15,15 +15,21 @@
 //   - Rate data must never come from model training data. Fetch and cite, or
 //     leave a marked TODO. A utility with no sourced figure carries null here
 //     and renders as "not sourced", never as a number.
+//
+// 2026-09-24 (plan item 5.1): the investor-owned averages, the LADWP and SMUD
+// records and the verified date now read from src/data/facts.ts, the site's
+// single fact record. Change a figure there, not here.
 // =============================================================================
+
+// Relative .ts import so the node --test suites that load this file resolve it.
+import { FACTS, FACT_URLS, centsFromDollars, formatFactDateShort } from './facts.ts';
 
 export const RATE_TRACKER_PATH = '/california-utility-rate-tracker';
 export const RATE_TRACKER_LAST_UPDATED = '2026-09-22';
-export const RATE_TRACKER_VERIFIED = '2026-09-22';
-export const RATE_TRACKER_VERIFIED_DISPLAY = '22 Sep 2026';
+export const RATE_TRACKER_VERIFIED = FACTS.pgeResidentialAverageRate.checkedAt;
+export const RATE_TRACKER_VERIFIED_DISPLAY = formatFactDateShort(RATE_TRACKER_VERIFIED);
 
-export const Q2_2026_URL =
-  'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260727-public-advocates-office-q2-2026-electric-rates-report.pdf';
+export const Q2_2026_URL = FACT_URLS.paoQ2_2026;
 export const Q1_2026_URL =
   'https://www.publicadvocates.cpuc.ca.gov/-/media/cal-advocates-website/files/press-room/reports-and-analyses/260430-public-advocates-office-q1-2026-electric-rates-report.pdf';
 export const Q4_2025_URL =
@@ -48,11 +54,7 @@ export const LADWP_STALE_PDF_URL =
   'https://www.ladwp.com/sites/default/files/documents/LADWP_Electric_Rates.pdf';
 export const LADWP_RESIDENTIAL_RATES_URL =
   'https://www.ladwp.com/account/understanding-your-rates/residential-electric-rates';
-/** LADWP's page with the current R-1A and R-1B totals by tier and period. */
-export const LADWP_R1A_RATES_URL =
-  'https://www.ladwp.com/account/customer-service/electric-rates/residential-rates';
-export const PAO_REPORTS_INDEX_URL =
-  'https://www.publicadvocates.cpuc.ca.gov/press-room/reports-and-analyses';
+export const PAO_REPORTS_INDEX_URL = FACT_URLS.paoReportsIndex;
 
 /** Utilities the tracker covers. A city page may only reference one of these. */
 export type UtilityRateKey =
@@ -115,40 +117,40 @@ const RECORDS: Record<UtilityRateKey, UtilityRateRecord> = {
     key: 'pge',
     name: 'PG&E',
     longName: 'Pacific Gas and Electric Company',
-    averageResidentialRateCents: 33.7,
-    averageResidentialRatePerKwh: '0.337',
+    averageResidentialRateCents: FACTS.pgeResidentialAverageRate.value,
+    averageResidentialRatePerKwh: (FACTS.pgeResidentialAverageRate.value / 100).toFixed(3),
     asOf: 'June 2026 (unchanged since March 2026)',
     sourceLabel: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report, p.8, 20',
-    sourceUrl: Q2_2026_URL,
+    sourceUrl: FACTS.pgeResidentialAverageRate.sourceUrl,
     basisNote:
       'a bundled generation-plus-delivery average across the whole residential class, excluding the California Climate Credit',
-    fetchedAt: RATE_TRACKER_VERIFIED,
+    fetchedAt: FACTS.pgeResidentialAverageRate.checkedAt,
   },
   sce: {
     key: 'sce',
     name: 'SCE',
     longName: 'Southern California Edison',
-    averageResidentialRateCents: 34.4,
-    averageResidentialRatePerKwh: '0.344',
+    averageResidentialRateCents: FACTS.sceResidentialAverageRate.value,
+    averageResidentialRatePerKwh: (FACTS.sceResidentialAverageRate.value / 100).toFixed(3),
     asOf: 'June 1, 2026',
     sourceLabel: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report, p.8, 22',
-    sourceUrl: Q2_2026_URL,
+    sourceUrl: FACTS.sceResidentialAverageRate.sourceUrl,
     basisNote:
       'a bundled generation-plus-delivery average across the whole residential class, excluding the California Climate Credit',
-    fetchedAt: RATE_TRACKER_VERIFIED,
+    fetchedAt: FACTS.sceResidentialAverageRate.checkedAt,
   },
   sdge: {
     key: 'sdge',
     name: 'SDG&E',
     longName: 'San Diego Gas & Electric',
-    averageResidentialRateCents: 45.5,
-    averageResidentialRatePerKwh: '0.455',
+    averageResidentialRateCents: FACTS.sdgeResidentialAverageRate.value,
+    averageResidentialRatePerKwh: (FACTS.sdgeResidentialAverageRate.value / 100).toFixed(3),
     asOf: 'June 1, 2026',
     sourceLabel: 'CPUC Public Advocates Office, Q2 2026 Electric Rates Report, p.8, 24',
-    sourceUrl: Q2_2026_URL,
+    sourceUrl: FACTS.sdgeResidentialAverageRate.sourceUrl,
     basisNote:
       'a bundled generation-plus-delivery average across the whole residential class, excluding the California Climate Credit',
-    fetchedAt: RATE_TRACKER_VERIFIED,
+    fetchedAt: FACTS.sdgeResidentialAverageRate.checkedAt,
   },
   smud: {
     key: 'smud',
@@ -163,29 +165,31 @@ const RECORDS: Record<UtilityRateKey, UtilityRateRecord> = {
     // the current Fixed Rate plan, effective January 1, 2026 (reviewed
     // draft source ledger #15, SMUD 2026 Residential Rate Guide).
     asOf: 'Fixed Rate plan effective January 1, 2026',
-    sourceLabel: 'SMUD 2026 Residential Rate Guide',
-    sourceUrl: SMUD_RATE_GUIDE_URL,
+    // 2026-09-24: the current prices were re-read on SMUD's Residential
+    // rates page (facts.smudRates); the Rate Guide PDF stays linked on the
+    // tracker's source list.
+    sourceLabel: 'SMUD Residential rates',
+    sourceUrl: FACTS.smudRates.sourceUrl,
     basisNote:
       'SMUD is a publicly owned utility and publishes a seasonal Fixed Rate schedule (an opt-in alternative to its default Time-of-Day plan) rather than a single blended average rate, so no comparable average is published here',
-    fetchedAt: RATE_TRACKER_VERIFIED,
+    fetchedAt: FACTS.smudRates.checkedAt,
   },
-  // 2026-09-24: replaces a note that cited a July 1, 2009 tariff document as
-  // the only one available. LADWP's Residential Rates page publishes the 2026
-  // R-1A totals (base rate plus adjustment factors) by tier and period; the
-  // figures below were read from it on 2026-09-24. LADWP publishes no single
-  // blended average, so the average stays null.
   ladwp: {
     key: 'ladwp',
     name: 'LADWP',
     longName: 'Los Angeles Department of Water and Power',
+    // LADWP is a city-owned utility outside the Public Advocates Office
+    // reports and publishes tiered prices, not one blended average, so no
+    // comparable average is stated. 2026-09-24: this record used to say the
+    // only retrievable tariff was dated July 1, 2009. That was wrong: LADWP's
+    // residential rates page publishes current 2026 prices (facts.ladwpR1a).
     averageResidentialRateCents: null,
     averageResidentialRatePerKwh: null,
-    asOf: 'R-1A Standard Residential Rate, 2026',
-    sourceLabel: 'LADWP Residential Rates (Schedule R-1A)',
-    sourceUrl: LADWP_R1A_RATES_URL,
-    basisNote:
-      'LADWP is a city-owned utility and publishes tiered prices rather than one average. On its standard R-1A plan, including adjustment factors, Tier 1 costs 26.408¢ and Tier 2 32.267¢ per kWh for July to September 2026, and 27.292¢ and 33.151¢ from October to December 2026, before taxes and the monthly Power Access Charge',
-    fetchedAt: '2026-09-24',
+    asOf: 'July to September 2026 prices on the standard R-1A plan',
+    sourceLabel: 'LADWP Residential Rates (R-1A Standard Residential Rate)',
+    sourceUrl: FACTS.ladwpR1a.sourceUrl,
+    basisNote: `LADWP is a city-owned utility outside the CPUC Public Advocates Office reports and publishes tiered prices rather than one blended average; on its standard R-1A plan, Tier 1 costs ${centsFromDollars(FACTS.ladwpR1a.value.julSep2026.tier1)} and Tier 2 ${centsFromDollars(FACTS.ladwpR1a.value.julSep2026.tier2)} per kWh for July to September 2026, rising to ${centsFromDollars(FACTS.ladwpR1a.value.octDec2026.tier1)} and ${centsFromDollars(FACTS.ladwpR1a.value.octDec2026.tier2)} from October 1, 2026`,
+    fetchedAt: FACTS.ladwpR1a.checkedAt,
   },
 
   roseville: {

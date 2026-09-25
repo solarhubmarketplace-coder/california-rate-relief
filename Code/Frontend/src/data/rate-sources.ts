@@ -20,7 +20,11 @@ import {
   Q3_2025_URL,
   Q4_2025_URL,
 } from '@/data/utility-rate-tracker';
+import { FACT_URLS } from '@/data/facts';
 
+// 2026-09-24 (plan item 5.1): documents that back an entry in
+// src/data/facts.ts take their URL from FACT_URLS, so a moved document is
+// fixed in one place. Labels still say what each document is.
 export const RATE_SOURCES_CHECKED = '2026-09-23';
 
 export interface RateSource {
@@ -49,7 +53,7 @@ export const SRC = {
   cpucGrc: { label: 'CPUC: What is a General Rate Case?', url: 'https://www.cpuc.ca.gov/generalratecase' },
   cpucGrcProcess: { label: 'CPUC: Understanding How the CPUC Processes a General Rate Case (July 29, 2025)', url: 'https://www.cpuc.ca.gov/news-and-updates/all-news/understanding-how-the-cpuc-processes-a-general-rate-case' },
   cpucCareFera: { label: 'CPUC: CARE/FERA Program (income limits June 1, 2026 to May 31, 2027)', url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/electric-costs/care-fera-program' },
-  cpucNbt: { label: 'CPUC: Net Energy Metering and Net Billing', url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing' },
+  cpucNbt: { label: 'CPUC: Net Energy Metering and Net Billing', url: FACT_URLS.cpucNemNbt },
   cpucDaProgram: { label: 'CPUC: California Direct Access Program (SB 695 rules and cap)', url: 'https://www.cpuc.ca.gov/consumer-support/consumer-programs-and-services/electrical-energy-and-energy-efficiency/community-choice-aggregation-and-direct-access-/direct-access/learn-more-about-costs-and-rates' },
   cpucDaLottery2025: { label: 'CPUC Energy Division: 2025 Direct Access Lottery Enrollment Report (June 2026)', url: 'https://www.cpuc.ca.gov/-/media/cpuc-website/divisions/energy-division/documents/direct-access-implementation-activity-reports/2025/2025-da-lottery-report.pdf' },
   sceDirectAccess: { label: 'SCE: Direct Access overview and FAQ', url: 'https://www.sce.com/partners/partnerships/direct-access' },
@@ -61,14 +65,14 @@ export const SRC = {
 
   // --- PG&E ----------------------------------------------------------------
   pgeRatesIndex: { label: 'PG&E: Electric rates, current and historic', url: 'https://www.pge.com/tariffs/en/rate-information/electric-rates.html' },
-  pgeResRatesCurrent: { label: 'PG&E: Residential rates table, March 1, 2026 to present (Advice Letter 7846-E)', url: 'https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx' },
+  pgeResRatesCurrent: { label: 'PG&E: Residential rates table, March 1, 2026 to present (Advice Letter 7846-E)', url: FACT_URLS.pgeResRatesCurrent },
   pgeResRatesJan2026: { label: 'PG&E: Residential rates table, January 1 to February 28, 2026', url: 'https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_260101-260228.xlsx' },
   pgeResRatesSep2025: { label: 'PG&E: Residential rates table, September 1 to December 31, 2025', url: 'https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_250901-251231.xlsx' },
   pgeResRatesMar2025: { label: 'PG&E: Residential rates table, March 1 to August 31, 2025', url: 'https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_250301-250831.xlsx' },
   pgeResRatesJan2024: { label: 'PG&E: Residential rates table, January 1 to February 29, 2024', url: 'https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_240101-240229.xlsx' },
   pgeResRatesJan2023: { label: 'PG&E: Residential rates table, January 1 to February 28, 2023', url: 'https://www.pge.com/assets/rates/tariffs/Res_Inclu_TOU_230101-230228.xlsx' },
   pgeBaseline: { label: 'PG&E: Residential baseline territories and quantities, June 1, 2022 to present', url: 'https://www.pge.com/assets/rates/tariffs/ResElecBaselineCurrent.xlsx' },
-  pgeBsc: { label: 'PG&E: Base Services Charge', url: 'https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html' },
+  pgeBsc: { label: 'PG&E: Base Services Charge', url: FACT_URLS.pgeBsc },
   pgeUnderstandBill: { label: 'PG&E: Understand Your Bill (glossary of bill terms)', url: 'https://www.pge.com/en/account/billing-and-assistance/understand-your-bill.html' },
   pgeBillExplainer: { label: 'PG&E: Bill Explainer video transcript', url: 'https://www.pge.com/assets/pge/transcripts/bill-explainer.pdf' },
   pgeCca: { label: 'PG&E: Community Choice Aggregation (CCA)', url: 'https://www.pge.com/en/account/alternate-energy-providers/community-choice-aggregation.html' },
@@ -102,7 +106,7 @@ export const SRC = {
   // --- SCE -----------------------------------------------------------------
   sceTou: { label: 'SCE: Time-of-Use Residential Rate Plans', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans' },
   sceTiered: { label: 'SCE: Tiered Rate Plan (Schedule D), rates as of June 1, 2026', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/tiered-rate-plan' },
-  sceBsc: { label: 'SCE: Base Services Charge', url: 'https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc' },
+  sceBsc: { label: 'SCE: Base Services Charge', url: FACT_URLS.sceBsc },
   sceRateOptions: { label: "SCE: Southern California Edison's Electric Rate Options (residential and nonresidential summary)", url: 'https://www.sce.com/sites/default/files/custom-files/Summary%20of%20Available%20Residential%20and%20Nonresidential%20Rate%20Options.pdf' },
   sceNemBill: { label: 'SCE: Guide to Your Net Energy Metering Bill', url: 'https://www.sce.com/customer-service-center/help-center/solar/net-energy-metering/understanding-nem-bill' },
   sceNsc: { label: 'SCE: Net Surplus Compensation Rate (monthly NSCR, 2022 to September 2026)', url: 'https://www.sce.com/regulatory/regulatory-information/ferc-Standards-conduct/tariff-books/rates-pricing-choices/net-surplus-compensation' },
@@ -115,10 +119,10 @@ export const SRC = {
 
   // --- SDG&E ---------------------------------------------------------------
   sdgeTotalRates: { label: 'SDG&E: Total Electric Rates (schedule rate tables by effective date)', url: 'https://www.sdge.com/total-electric-rates' },
-  sdgeTouDr1Aug2026: { label: 'SDG&E: Schedule TOU-DR1 total rates, effective August 1, 2026', url: 'https://www.sdge.com/sites/default/files/regulatory/8-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf' },
+  sdgeTouDr1Aug2026: { label: 'SDG&E: Schedule TOU-DR1 total rates, effective August 1, 2026', url: FACT_URLS.sdgeTouDr1Aug2026 },
   sdgeTouDr1Jun2026: { label: 'SDG&E: Schedule TOU-DR1 total rates, effective June 1, 2026', url: 'https://www.sdge.com/sites/default/files/regulatory/6-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf' },
   sdgeTouDr1Jan2026: { label: 'SDG&E: Schedule TOU-DR1 total rates, effective January 1, 2026', url: 'https://www.sdge.com/sites/default/files/regulatory/1-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf' },
-  sdgeTouDr1Oct2025: { label: 'SDG&E: Schedule TOU-DR1 total rates, effective October 1, 2025', url: 'https://www.sdge.com/sites/default/files/regulatory/10-1-25%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf' },
+  sdgeTouDr1Oct2025: { label: 'SDG&E: Schedule TOU-DR1 total rates, effective October 1, 2025', url: FACT_URLS.sdgeTouDr1Oct2025 },
   sdgeTouDr1Jun2025: { label: 'SDG&E: Schedule TOU-DR1 total rates, effective June 1, 2025', url: 'https://www.sdge.com/sites/default/files/regulatory/6-1-25%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf' },
   sdgeTouDr1Jan2024: { label: 'SDG&E: Schedule TOU-DR1 total rates, effective January 1, 2024', url: 'https://www.sdge.com/sites/default/files/regulatory/1-1-24%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf' },
   sdgeTouDr1Jan2023: { label: 'SDG&E: Schedule TOU-DR1 total rates, effective January 1, 2023', url: 'https://www.sdge.com/sites/default/files/regulatory/1-1-23%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf' },
@@ -141,7 +145,7 @@ export const SRC = {
   sdgeExportPricing: { label: 'SDG&E: Solar Billing Plan export pricing (hourly 2026 export rate files, NBT00 and NBT26)', url: 'https://www.sdge.com/solar/solar-billing-plan/export-pricing' },
 
   // --- LADWP ---------------------------------------------------------------
-  ladwpResRates: { label: 'LADWP: Residential Rates (R-1A and R-1B totals by period, 2025 and 2026)', url: 'https://www.ladwp.com/account/customer-service/electric-rates/residential-rates' },
+  ladwpResRates: { label: 'LADWP: Residential Rates (R-1A and R-1B totals by period, 2025 and 2026)', url: FACT_URLS.ladwpResRates },
   ladwpAdjFactors: { label: 'LADWP: Residential Adjustment Billing Factors (2025 and 2026)', url: 'https://www.ladwp.com/account/customer-service/electric-rates/residential-adjustment-billing-factors' },
   ladwpRateGuide: { label: 'LADWP: Residential Electric Rates (tiers, zones, TOU periods)', url: 'https://www.ladwp.com/account/understanding-your-rates/residential-electric-rates' },
   ladwpBillingFaq: { label: 'LADWP: Billing/Account Issues, Frequently Asked Questions', url: 'https://www.ladwp.com/account/customer-service/bill-payment/billingaccount-issues-frequently-asked-questions' },
@@ -151,7 +155,7 @@ export const SRC = {
   ladwpWaterScheduleA: { label: 'LADWP: Water Schedule A, Residential (price per HCF, 2026 and 2027)', url: 'https://www.ladwp.com/account/customer-service/water-rates/schedule-residential' },
 
   // --- SMUD ----------------------------------------------------------------
-  smudResRates: { label: 'SMUD: Residential rates (2026 prices and bill comparison)', url: 'https://www.smud.org/Rate-Information/Residential-rates' },
+  smudResRates: { label: 'SMUD: Residential rates (2026 prices and bill comparison)', url: FACT_URLS.smudResRates },
   smudTodDetails: { label: 'SMUD: Time-of-Day (5-8 p.m.) Rate details and holidays', url: 'https://www.smud.org/Rate-Information/Residential-rates/Time-of-Day-5-8pm-Rate/Rate-details' },
   smudLowIncome: { label: 'SMUD: Low income and nonprofits (EAPR limits effective Feb. 1, 2026)', url: 'https://www.smud.org/Rate-Information/Low-income-and-nonprofits' },
   smudRateArchive: { label: 'SMUD: Rate change archive (2026 and 2027 increases)', url: 'https://www.smud.org/Rate-Information/Rate-archive' },

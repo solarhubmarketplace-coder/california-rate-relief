@@ -69,6 +69,9 @@ export default function EnphaseVsSolarEdge() {
                   </tbody>
                 </table>
               </div>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                How common each is in California: of the 145,404 residential solar systems approved at PG&amp;E, SCE and SDG&amp;E in 2025, 61,138 (42%) listed Enphase inverters and 28,204 (19%) listed SolarEdge. Tesla inverters appeared on 59,267 (41%); a system can list more than one maker (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026).
+              </p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Where Enphase Wins</h2>
               <ul className="list-disc pl-6 space-y-2">

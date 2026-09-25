@@ -86,6 +86,12 @@ export default function DoSolarPanelsWorkAtNight() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Translation: a NEM 3.0 solar system without a battery exports most of its production at the low credit rate, then buys electricity back at the high on-peak rate at night. A NEM 3.0 solar + battery system stores the production and uses it at night, displacing that on-peak grid purchase. That&apos;s why battery storage moved from &quot;nice to have&quot; to &quot;essentially required&quot; under NEM 3.0. More detail in our{' '}<Link href='/blog/nem-3-california-still-worth-it' className='text-primary hover:underline'>NEM 3.0 worth-it analysis</Link>.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                The peak window is on each utility&apos;s own rate pages. PG&amp;E&apos;s E-TOU-C charges its peak price from 4 to 9 p.m. every day (<a href='https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>PG&amp;E residential rates table</a>). SCE&apos;s TOU-D-4-9PM plan has its highest rates on summer weekdays from 4 to 9 p.m. (<a href='https://www.sce.com/save-money/rates-financing/residential-rate-plans/time-of-use-plans' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>SCE</a>). SDG&amp;E&apos;s TOU-DR1 has peak pricing between 4 p.m. and 9 p.m. (<a href='https://www.sdge.com/whenmatters' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>SDG&amp;E</a>). All checked September 24, 2026.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                On the export side, the CPUC says Net Billing credits are based on its Avoided Cost Calculator values, &ldquo;usually lower than import rates&rdquo; (<a href='https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>CPUC, Net Energy Metering and Net Billing</a>, checked September 24, 2026).
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What Happens During a Power Outage at Night?</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

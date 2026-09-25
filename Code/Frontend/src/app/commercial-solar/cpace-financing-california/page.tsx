@@ -62,6 +62,9 @@ export default function CpaceFinancing() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Because CPACE is property-secured rather than personal/corporate-credit-secured, it&apos;s structurally closer to a mortgage than to a conventional business loan. Approval is based on the property&apos;s loan-to-value, existing mortgage consent (if applicable), and the project&apos;s energy-savings economics.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                The legal basis is state law. Streets and Highways Code §5898.20 lets a public agency designate an area where property owners may enter voluntary contractual assessments to finance distributed generation renewable energy and energy or water efficiency improvements, and §5898.12 states the Legislature&apos;s intent that this cover residential, commercial, industrial, agricultural and other real property (<a href='https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=5898.20.&lawCode=SHC' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Legislative Information</a>, checked September 24, 2026).
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>California CPACE Program: CSCDA Open PACE</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

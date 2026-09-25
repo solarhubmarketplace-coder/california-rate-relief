@@ -74,6 +74,9 @@ export default function DoSolarPanelsWorkOnCloudyDays() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Here is the mechanism, from a primary source. The U.S. Department of Energy splits sunlight into direct beam radiation (the straight line from the sun) and diffuse radiation (sunlight scattered by clouds, water vapor, dust, and pollution before it reaches the ground). Per DOE, atmospheric conditions cut direct beam radiation by about 10% even on a clear, dry day, and by up to 100% under thick, cloudy skies. Diffuse radiation doesn&apos;t disappear the same way — it keeps arriving from across the sky, and a standard silicon panel converts it too, just less efficiently than direct beam. That&apos;s why output drops but rarely hits zero, and why the deepest drops happen under the densest, lowest cloud decks: those block the most direct beam while adding back the least diffuse light. It&apos;s also why the same panel technology works at all under cloud: the cell doesn&apos;t require a direct line to the sun, only photons, and diffuse light still carries them.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                In the Department of Energy&apos;s words, atmospheric conditions &ldquo;can reduce direct beam solar radiation by 10% on clear, dry days and by 100% during thick, cloudy days&rdquo; (<a href='https://www.energy.gov/eere/solar/solar-radiation-basics' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>U.S. Department of Energy, Solar Radiation Basics</a>, checked September 24, 2026). The diffuse light that is left is what your panels run on under overcast skies.
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Why Diffuse Light Still Produces Electricity</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

@@ -73,6 +73,9 @@ export default function PanelReviewsHub() {
               <p className='text-foreground/80 leading-relaxed'>
                 Short version: most tier-1 panels in the current market produce similar output and carry similar 25-year warranties. The bigger differences are the manufacturer&apos;s financial stability (will they exist in year 20 to honor the warranty?), their US manufacturing presence (matters for IRA domestic-content bonuses), and how they pair with specific inverter brands.
               </p>
+              <p className='text-foreground/80 leading-relaxed'>
+                Utility records show which brands go on California roofs. Of the 145,404 residential solar systems approved at PG&amp;E, SCE and SDG&amp;E in 2025, applications named Qcells modules on 51,238 (35%), JA Solar on 21,763 (15%), Longi on 16,612 (11%), REC on 9,951 (7%), Silfab on 6,252 (4%) and Trina on 5,056 (3.5%) (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026).
+              </p>
             </div>
 
             {/* Bill-first step after the intro (2026-09-23); it opens the inquiry

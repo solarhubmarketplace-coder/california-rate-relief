@@ -26,6 +26,7 @@ import {
   formatAverageRateWithPerKwh,
   getUtilityRate,
 } from '@/data/utility-rate-tracker';
+import { FACTS, centsFromDollars, formatFactDateShort, usd } from '@/data/facts';
 
 // Page-specific driver sources cited in "Why Rates Moved in 2026" and the
 // Income-Graduated Fixed Charge section — not rate figures, so they live here
@@ -63,6 +64,11 @@ const dataVerifiedDisplay = '22 Sep 2026';
 // Figures added on 2026-09-23 (LADWP row and the utility-by-utility answers)
 // were fetched and checked that day.
 const t3VerifiedDisplay = '23 Sep 2026';
+// 2026-09-24 (plan item 5.1): the SMUD and LADWP rows and the fixed-charge
+// tiers read from src/data/facts.ts and show that record's checked date.
+const smud = FACTS.smudRates.value;
+const ladwp = FACTS.ladwpR1a.value;
+const igfc = FACTS.fixedChargeDecision.value;
 
 export const metadata: Metadata = {
   title,
@@ -326,25 +332,25 @@ export default function CaliforniaUtilityRateTrackerPage() {
                     </tr>
                     <tr className='border-b border-border align-top'>
                       <td className='py-3 pr-3 font-semibold'>SMUD&sup1;</td>
-                      <td className='py-3 px-3'>Fixed Rate plan (opt-in): $27.00/month + 13.71&cent;/kWh (Oct&ndash;May) / 21.89&cent;/kWh (Jun&ndash;Sep)</td>
+                      <td className='py-3 px-3'>Fixed Rate plan (opt-in): {usd(smud.sifcPerMonth, 2)}/month + {centsFromDollars(smud.fixedRate.nonSummer)}/kWh (Oct&ndash;May) / {centsFromDollars(smud.fixedRate.summer)}/kWh (Jun&ndash;Sep)</td>
                       <td className='py-3 px-3'>Effective January 1, 2026 &mdash; supersedes the May 2025 figures previously shown here</td>
                       <td className='py-3 px-3'>Not sourced (see note 1 below) &mdash; SMUD does not publish a CPUC-style blended average rate</td>
                       <td className='py-3 px-3'>January 1, 2026 (current version); a further &asymp;3% adjustment is board-approved for January 1, 2027</td>
                       <td className='py-3 px-3'>Not sourced (see note 1 below)</td>
-                      <td className='py-3 px-3'>$27.00/month System Infrastructure Fixed Charge (SIFC)</td>
-                      <td className='py-3 px-3'><a href={SMUD_RATE_GUIDE_URL} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD 2026 Residential Rate Guide</a></td>
-                      <td className='py-3 pl-3'>{dataVerifiedDisplay}</td>
+                      <td className='py-3 px-3'>{usd(smud.sifcPerMonth, 2)}/month System Infrastructure Fixed Charge (SIFC)</td>
+                      <td className='py-3 px-3'><a href={FACTS.smudRates.sourceUrl} target='_blank' rel='noopener noreferrer' className={sourceLink}>SMUD Residential rates</a></td>
+                      <td className='py-3 pl-3'>{formatFactDateShort(FACTS.smudRates.checkedAt)}</td>
                     </tr>
                     <tr className='align-top'>
                       <td className='py-3 pr-3 font-semibold'>LADWP&sup2;</td>
-                      <td className='py-3 px-3'>No blended average published. Standard R-1A plan: Tier 1 26.408&cent;/kWh, Tier 2 32.267&cent;/kWh (Jul&ndash;Sep 2026)</td>
+                      <td className='py-3 px-3'>No blended average published. Standard R-1A plan: Tier 1 {centsFromDollars(ladwp.julSep2026.tier1)}/kWh, Tier 2 {centsFromDollars(ladwp.julSep2026.tier2)}/kWh (Jul&ndash;Sep 2026)</td>
                       <td className='py-3 px-3'>July&ndash;September 2026 quarter</td>
-                      <td className='py-3 px-3'>Quarterly adjustment-factor step: Tier 1 rises to 27.292&cent;/kWh</td>
+                      <td className='py-3 px-3'>Quarterly adjustment-factor step: Tier 1 rises to {centsFromDollars(ladwp.octDec2026.tier1)}/kWh</td>
                       <td className='py-3 px-3'>October 1, 2026</td>
-                      <td className='py-3 px-3'>Not sourced as a blended figure; R-1A Tier 1 was 24.306&cent; for Jul&ndash;Sep 2025</td>
-                      <td className='py-3 px-3'>Power Access Charge $2.30&ndash;$22.70/month (R-1A); $12.00/month service charge (R-1B)</td>
-                      <td className='py-3 px-3'><a href={SRC.ladwpResRates.url} target='_blank' rel='noopener noreferrer' className={sourceLink}>LADWP Residential Rates</a></td>
-                      <td className='py-3 pl-3'>{t3VerifiedDisplay}</td>
+                      <td className='py-3 px-3'>Not sourced as a blended figure; R-1A Tier 1 was {centsFromDollars(ladwp.julSep2025.tier1)} for Jul&ndash;Sep 2025</td>
+                      <td className='py-3 px-3'>Power Access Charge {usd(ladwp.powerAccessChargePerMonth.tier1, 2)}&ndash;{usd(ladwp.powerAccessChargePerMonth.tier3, 2)}/month (R-1A); {usd(ladwp.r1bServiceChargePerMonth, 2)}/month service charge (R-1B)</td>
+                      <td className='py-3 px-3'><a href={FACTS.ladwpR1a.sourceUrl} target='_blank' rel='noopener noreferrer' className={sourceLink}>LADWP Residential Rates</a></td>
+                      <td className='py-3 pl-3'>{formatFactDateShort(FACTS.ladwpR1a.checkedAt)}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -450,9 +456,9 @@ export default function CaliforniaUtilityRateTrackerPage() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className='border-b border-border'><td className='py-2 pr-4'>1</td><td className='py-2 px-3'>CARE-enrolled households</td><td className='py-2 pl-3'>&asymp; $6/month</td></tr>
-                    <tr className='border-b border-border'><td className='py-2 pr-4'>2</td><td className='py-2 px-3'>FERA-enrolled / deed-restricted affordable housing</td><td className='py-2 pl-3'>&asymp; $12/month</td></tr>
-                    <tr><td className='py-2 pr-4'>3</td><td className='py-2 px-3'>All other residential customers</td><td className='py-2 pl-3'>$24.15/month</td></tr>
+                    <tr className='border-b border-border'><td className='py-2 pr-4'>1</td><td className='py-2 px-3'>CARE-enrolled households</td><td className='py-2 pl-3'>{usd(igfc.tier1Care, 2)}/month</td></tr>
+                    <tr className='border-b border-border'><td className='py-2 pr-4'>2</td><td className='py-2 px-3'>FERA-enrolled / deed-restricted affordable housing</td><td className='py-2 pl-3'>{usd(igfc.tier2Fera, 2)}/month</td></tr>
+                    <tr><td className='py-2 pr-4'>3</td><td className='py-2 px-3'>All other residential customers</td><td className='py-2 pl-3'>{usd(igfc.tier3Standard, 2)}/month</td></tr>
                   </tbody>
                 </table>
               </div>

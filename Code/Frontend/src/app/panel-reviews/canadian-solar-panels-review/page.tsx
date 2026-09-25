@@ -82,6 +82,9 @@ export default function CanadianSolarReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Canadian Solar panels are installed by a wide range of California installers — they&apos;re a common mid-tier choice when the installer is optimizing for price/performance balance. Not usually the panel of choice for premium installs (REC Alpha or Qcells Q.Peak Duo would typically be chosen there), but solid for standard residential systems.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Before you sign, check that the exact Canadian Solar model in your quote is on the <a href='https://www.energy.ca.gov/programs-and-topics/programs/solar-equipment-lists' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Energy Commission, Solar Equipment Lists</a>. The CEC says some utilities and local governments use these lists in interconnection or permit review, and it updates them three times a month, typically on the 1st, 11th and 21st (checked September 24, 2026).
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Canadian Solar Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

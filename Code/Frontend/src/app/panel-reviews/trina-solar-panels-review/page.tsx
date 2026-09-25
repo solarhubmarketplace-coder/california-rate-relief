@@ -85,6 +85,12 @@ export default function TrinaSolarReview() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Trina panels are installed by a broad range of California installers — they&apos;re a common tier-1 choice across residential and commercial. Which brands an installer offers changes with its supply agreements, so ask each installer, including companies such as{' '}<Link href='/solar-installers/momentum-solar-review' className='text-primary hover:underline'>Momentum Solar</Link>, which panel its quote specifies.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Utility records put a number on it: applications named Trina Solar modules on 5,056 of the 145,404 residential solar systems approved at PG&amp;E, SCE and SDG&amp;E in 2025, about 3.5% (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026). Qcells was named on 35%.
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Before you sign, check that the exact Trina model in your quote is on the <a href='https://www.energy.ca.gov/programs-and-topics/programs/solar-equipment-lists' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Energy Commission, Solar Equipment Lists</a>, which some utilities and local governments use in interconnection or permit review and which the CEC updates three times a month (checked September 24, 2026).
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>When Trina Makes Sense</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
