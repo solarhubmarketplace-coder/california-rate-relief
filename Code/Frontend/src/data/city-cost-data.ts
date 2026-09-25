@@ -1395,6 +1395,32 @@ export const CITY_COST_ROWS: CityCostRow[] = [
           "Not because of the neighborhood. Van Nuys and Wilmington are not separate cities: each sits in a community plan area of the City of Los Angeles, so the permit rules above apply there, and the California Energy Commission's service-territory map places both in LADWP's territory rather than SCE's. No public source prices an installation for either community. What changes a quote is the house itself: the roof, the main panel, shade and whether a battery is included.",
       },
     ],
+    // 2026-09-24 (gold-standard plan, Block 3 gate): /solar-savings/los-angeles
+    // 301s here, and LADWP homes are not in the CPUC's DG Stats data, so the
+    // page answers "LADWP rates" from LADWP's own residential rates page. The
+    // same prices are in src/data/facts.ts (ladwpR1a), which the weekly fact
+    // check re-reads.
+    localRates: {
+      heading: 'LADWP electricity rates in Los Angeles',
+      paragraphs: [
+        "The Los Angeles Department of Water and Power, the City's own utility, supplies electricity to most homes in Los Angeles. It is not part of the CPUC's net billing tariff, and its prices change four times a year: base rates were set July 1, 2019, and adjustment factors are updated in January, April, July and October.",
+        "On the Standard Residential Rate (R-1A), LADWP's total charge for July through September 2026 is 26.408¢ per kWh in Tier 1, 32.267¢ in Tier 2 and 40.968¢ in Tier 3. For October through December 2026 it is 27.292¢ in Tier 1 and 33.151¢ in Tiers 2 and 3. A monthly Power Access Charge of $2.30, $7.90 or $22.70 is added, depending on the tier.",
+        "The Time-of-Use rate (R-1B) has a $12.00 monthly service charge. For July through September 2026 LADWP lists 35.124¢ per kWh for high peak, 29.284¢ for low peak and 26.540¢ for base hours.",
+        "LADWP's Net Energy Metering rider, in effect since September 1, 2008, bills a solar customer for the net energy it supplies over the billing period. When a home sends back more than it uses, LADWP calculates a credit at the rate schedule's energy pricing and carries it to later bills; any credit left when service ends is set to zero. A savings estimate for a Los Angeles home should use these LADWP prices, not PG&E's or SCE's.",
+      ],
+      faq: {
+        question: 'What are LADWP electricity rates in Los Angeles?',
+        answer:
+          "On LADWP's Standard Residential Rate (R-1A), the total charge for July through September 2026 is 26.408¢ per kWh in Tier 1, 32.267¢ in Tier 2 and 40.968¢ in Tier 3, plus a monthly Power Access Charge of $2.30 to $22.70 by tier. For October through December 2026 the tier prices are 27.292¢ and 33.151¢. LADWP adjusts these prices in January, April, July and October. Source: LADWP Residential Rates, checked September 24, 2026.",
+      },
+      sources: [
+        {
+          label: 'Los Angeles Department of Water and Power, Residential Rates (R-1A Standard Residential; R-1B Time-of-Use; Service Rider NEM)',
+          url: 'https://www.ladwp.com/account/customer-service/electric-rates/residential-rates',
+          verifiedAt: '2026-09-24',
+        },
+      ],
+    },
   },
   {
     slug: "ontario",
@@ -1747,6 +1773,29 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "Yes. The City's Express Permit Portal offers a Solar Photovoltaic, or Solar Photovoltaic and Energy Storage System, express permit for residential properties through a Permit Center Online account. Pasadena Water and Power's initial review approval has to come before the building permit, and the California Energy Commission's SB 379 data lists Pasadena's platform as a custom one.",
     sourcesFetchedAt: '2026-09-23',
+    // 2026-09-24 (gold-standard plan, Block 3 gate): Pasadena Water and Power
+    // homes are not in the CPUC's DG Stats data, so the page answers "Pasadena
+    // electric rates" from PWP's own rates page (July 1, 2026 rate card).
+    localRates: {
+      heading: 'Pasadena Water and Power electricity rates',
+      paragraphs: [
+        "Pasadena Water and Power (PWP), the City's own utility, supplies electricity in Pasadena and sets its own rates. A Pasadena home is not on the CPUC's net billing tariff for PG&E, SCE and SDG&E.",
+        "PWP's residential rate (R-1/R-2) has two fixed monthly charges: an $11.00 customer charge and a $6.50 grid access charge, $17.50 in all. Each kWh then carries an energy charge of 10.0825¢, a transmission charge of 1.609¢ and a tiered distribution charge: 3.505¢ for the first 350 kWh a month, 14.018¢ for the next 400 kWh and 25.233¢ for every kWh above 750.",
+        "Added together, that is about 15.2¢ per kWh for the first 350 kWh, 25.7¢ for the next 400 and 36.9¢ above 750 kWh. PWP recalculates its Power Cost Adjustment every month, so the energy charge moves. A Pasadena savings estimate should use the tier your usage reaches, since solar removes the most expensive kWh first.",
+      ],
+      faq: {
+        question: 'What are Pasadena Water and Power electricity rates?',
+        answer:
+          "PWP's residential rate has a $17.50 monthly fixed charge ($11.00 customer charge plus a $6.50 grid access charge). Per kWh, it charges 10.0825¢ for energy and 1.609¢ for transmission, plus a distribution charge of 3.505¢ for the first 350 kWh a month, 14.018¢ for the next 400 kWh and 25.233¢ above 750 kWh. PWP adjusts the energy charge monthly. Source: Pasadena Water and Power, Water and Electric Rates, checked September 24, 2026.",
+      },
+      sources: [
+        {
+          label: 'Pasadena Water and Power, Water and Electric Rates (Residential R-1/R-2; Rate Card July 1, 2026)',
+          url: 'https://pwp.cityofpasadena.net/water-and-electric-rates/',
+          verifiedAt: '2026-09-24',
+        },
+      ],
+    },
   },
   {
     slug: 'santa-clarita',
@@ -1827,6 +1876,30 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     permitOnline:
       "Yes. The City connected SolarAPP+ to its Accela Citizen Access portal in fiscal year 2023/24, so a qualifying residential system can be applied for, paid for and permitted online, and automatically when both SolarAPP+ and City conditions are met.",
     sourcesFetchedAt: '2026-09-23',
+    // 2026-09-24 (gold-standard plan, Block 3 gate): SMUD homes are not in the
+    // CPUC's DG Stats data, so the page answers "SMUD rates" from SMUD's own
+    // residential rates page. Same prices as src/data/facts.ts (smudRates,
+    // smudExportRate), which the weekly fact check re-reads.
+    localRates: {
+      heading: 'SMUD electricity rates in Sacramento',
+      paragraphs: [
+        "The Sacramento Municipal Utility District (SMUD) supplies electricity in Sacramento. It sets its own rates, so the CPUC's net billing tariff for PG&E, SCE and SDG&E does not apply to a Sacramento home.",
+        "On SMUD's Time-of-Day (5-8 p.m.) Rate, summer prices (June 1 to September 30) are $0.1550 per kWh off-peak, $0.2139 mid-peak and $0.3765 at peak, which is weekdays from 5 to 8 p.m. From October 1 to May 31 they are $0.1285 off-peak and $0.1776 at peak. Every plan adds a System Infrastructure Fixed Charge of $27.00 a month ($17 on the Low Use rate).",
+        "SMUD's Solar and Storage Rate option credits energy a solar home sends to the grid at 9.6¢ per kWh, at any hour and in any season. That is well below the 5-8 p.m. peak price, so a Sacramento savings estimate should count how much of the system's output the home uses itself.",
+      ],
+      faq: {
+        question: 'What are SMUD electricity rates in Sacramento?',
+        answer:
+          "On SMUD's Time-of-Day (5-8 p.m.) Rate, summer prices are $0.1550 per kWh off-peak, $0.2139 mid-peak and $0.3765 at peak (weekdays 5 to 8 p.m.); from October through May they are $0.1285 off-peak and $0.1776 at peak. A System Infrastructure Fixed Charge of $27.00 a month applies, and SMUD's Solar and Storage Rate credits exported solar at 9.6¢ per kWh. Source: SMUD Residential rates, checked September 24, 2026.",
+      },
+      sources: [
+        {
+          label: 'Sacramento Municipal Utility District, Residential rates (current rate charges; System Infrastructure Fixed Charge; Solar and Storage Rate option)',
+          url: 'https://www.smud.org/Rate-Information/Residential-rates',
+          verifiedAt: '2026-09-24',
+        },
+      ],
+    },
   },
   {
     slug: 'sunnyvale',
@@ -2285,7 +2358,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     ccaSource: SVCE_ABOUT,
     permitUrl: 'https://www.saratoga.ca.us/building',
     permitFeeNote:
-      "Saratoga's Path to Permits guide lists fee assessment as a step after an application is filed in eTRAKiT, but the City's building pages did not state a solar permit fee when checked. Ask the Building Division or the installer for the City's figure.",
+      "Saratoga's Path to Permits guide lists fee assessment as a step after an application is filed in eTRAKiT, but the City's building pages do not state a solar permit fee. Ask the Building Division or the installer for the City's figure.",
     permitFeeSource: "City of Saratoga, Path to Permits (Community Development)",
     permitSources: [CEC_SB379_DATA],
     permitOnline:
