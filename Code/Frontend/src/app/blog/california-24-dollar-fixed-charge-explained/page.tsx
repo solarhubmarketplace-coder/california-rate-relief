@@ -11,6 +11,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
+import { Byline } from '@/components/trust/Byline';
 
 export const metadata: Metadata = {
   title: "California's New $24 Fixed Charge, Explained",
@@ -53,6 +54,7 @@ export default function FixedChargeExplained() {
                 The New $24 Fixed Charge on Your California Electric Bill,
                 Explained
               </h1>
+              <Byline updated="2026-09-22" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
@@ -113,9 +115,8 @@ export default function FixedChargeExplained() {
                 issued May 9, 2024. The decision states it &quot;authorizes all
                 investor-owned electric utilities to change the structure of
                 residential customer bills in accordance with Assembly Bill
-                205, Stats. 2022, ch. 61&quot; — confirming the connection some
-                searchers already suspect (see &quot;Where AB 205 Fits In&quot;
-                below).
+                205, Stats. 2022, ch. 61&quot; — confirming the link to AB 205 (see
+                &quot;Where AB 205 Fits In&quot; below).
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>

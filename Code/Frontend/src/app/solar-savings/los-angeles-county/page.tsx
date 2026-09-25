@@ -21,6 +21,7 @@ import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import { RATE_TRACKER_PATH } from '@/data/utility-rate-tracker';
+import { Byline } from '@/components/trust/Byline';
 
 /**
  * Los Angeles County regional hub.
@@ -145,6 +146,7 @@ export default function LosAngelesCountySolarPage() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-4 tracking-tight">
                 Who Provides Electricity in Los Angeles County
               </h1>
+              <Byline updated="2026-09-23" />
               <p className="text-xl text-muted-foreground max-w-3xl leading-relaxed">
                 If you live in the City of Los Angeles, your electricity comes
                 from LADWP, the city-owned Department of Water and Power. Most

@@ -25,6 +25,7 @@ import {
   articleHref,
   CLUSTER_BASE,
 } from '@/data/article-pages';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 /**
  * Shared plumbing for the four data-driven clusters, so canonical tags,
@@ -73,15 +74,15 @@ function buildSchema(page: ArticlePage) {
     '@type': 'Article',
     headline: page.h1,
     description: page.metaDescription,
+    // No first-publish date is recorded for JSON articles; reviewedAt is the
+    // earliest date the page itself vouches for.
+    datePublished: page.reviewedAt,
     dateModified: page.reviewedAt,
-    author: {
-      '@type': 'Organization',
-      name: 'California Rate Relief Program',
-      url: BASE_URL,
-    },
+    // The visible byline (Chad Simpson), as a Person — never the site.
+    author: CRR_AUTHOR_PERSON,
     publisher: {
       '@type': 'Organization',
-      name: 'California Rate Relief Program',
+      name: 'California Rate Relief',
       url: BASE_URL,
       logo: { '@type': 'ImageObject', url: `${BASE_URL}/img/logo.svg` },
     },

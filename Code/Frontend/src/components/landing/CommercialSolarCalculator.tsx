@@ -482,8 +482,8 @@ export default function CommercialSolarCalculator() {
                   : outputs?.installedCostPerWattSource === 'ca-small-nonres-midpoint-2023'
                     ? 'California-relevant small non-residential (≤100 kW) 2023 20th–80th percentile midpoint.'
                     : 'Your entered figure.'}{' '}
-                LBNL&rsquo;s August 2026 update was checked this session and did not publish a size-class or California figure
-                to replace this 2023 vintage — see Methodology below <SourceTag id="lbnl-2026-update" />.
+                LBNL&rsquo;s August 2026 update publishes no size-class or California figure to replace this
+                2023 vintage (checked September 22, 2026) — see Methodology below <SourceTag id="lbnl-2026-update" />.
               </FieldNote>
             </div>
           </div>

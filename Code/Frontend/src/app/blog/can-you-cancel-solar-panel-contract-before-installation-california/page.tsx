@@ -520,8 +520,8 @@ export default function CancelSolarContractBeforeInstallationCalifornia() {
       <section>
         <h2>A cancellation right and a cancellation fee are two different things</h2>
         <p>
-          This is the distinction the query is really asking about, so state it
-          cleanly and do not overstate it.
+          This is the distinction that matters most, and it is easy to
+          overstate.
         </p>
         <p className="mt-3">
           <strong>Inside the statutory window</strong>, the statutory notice form

@@ -7,8 +7,14 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar, AlertTriangle } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const SULLIVAN_LICENSES: InstallerLicense[] = [
+  { number: '839077', holder: 'Sullivan Solar Power of California Inc', basis: 'the license CSLB lists under the Sullivan Solar Power name', status: 'revoked', checked: 'September 24, 2026' }
+];
 
 export const metadata: Metadata = {
   title: "Sullivan Solar Power Reviews (2026): Defunct Installer",
@@ -20,8 +26,8 @@ const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: "Sullivan Solar Power Review 2026: The Company Is Defunct",
   datePublished: '2026-04-24', dateModified: '2026-04-24',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
+  publisher: { '@type': 'Organization', name: 'California Rate Relief', url: 'https://ratereliefca.com' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/sullivan-solar-power-review' },
 };
 
@@ -144,7 +150,7 @@ export default function SullivanReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Sullivan" cslbLicenseNumber="744971" />
+        <VerifyInstallerBox installerName="Sullivan Solar Power" licenses={SULLIVAN_LICENSES} />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

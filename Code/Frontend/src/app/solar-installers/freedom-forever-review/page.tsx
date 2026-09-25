@@ -11,11 +11,19 @@ import {
   Calendar,
 } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const FREEDOM_FOREVER_LICENSES: InstallerLicense[] = [
+  { number: '1029644', holder: 'Freedom Forever LLC dba Freedom Forever', basis: DGSTATS_LICENSE_BASIS, status: 'under suspension (Employee/Worker Bond Suspension)', checked: 'September 24, 2026' },
+  { number: '1125479', holder: 'Freedom Forever Northern California LLC dba Freedom Forever', basis: DGSTATS_LICENSE_BASIS, status: 'expired August 31, 2026', checked: 'September 24, 2026' },
+  { number: '1124448', holder: 'Freedom Forever Southern California LLC dba Freedom Forever', basis: DGSTATS_LICENSE_BASIS, status: 'expired July 31, 2026', checked: 'September 24, 2026' }
+];
 
 export const metadata: Metadata = {
   title:
@@ -44,14 +52,10 @@ const articleSchema = {
     'Freedom Forever filed Chapter 11 on April 15, 2026. A plain-English review of what it means for customers and what Californians should do if they have a pending quote.',
   datePublished: '2026-04-22',
   dateModified: '2026-09-22',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'California Rate Relief',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -155,7 +159,7 @@ export default function FreedomForeverReview() {
                 </div>
               </div>
               <p className='text-foreground/80 leading-relaxed mt-6'>
-                Freedom Forever filed for Chapter 11 reorganization on April 15, 2026 (already covered in detail below on the live page). Separately from that, its own site currently advertises three financing paths — Purchase, Lease, and PPA — a 25-year production guarantee, and three California contractor licenses that don&apos;t match the single number this page previously cited. Below is what we could confirm on freedomforever.com this week, what its site still doesn&apos;t publish (a transfer-on-sale process), and what federal court records — not review-site scores — show about the complaint pattern.
+                Freedom Forever filed for Chapter 11 reorganization on April 15, 2026 (covered in detail below). Separately from that, its own site currently advertises three financing paths — Purchase, Lease, and PPA — a 25-year production guarantee, and three California contractor licenses. Below is what freedomforever.com says, what its site still doesn&apos;t publish (a transfer-on-sale process), and what federal court records — not review-site scores — show about the complaint pattern.
               </p>
             </header>
 
@@ -439,7 +443,11 @@ export default function FreedomForeverReview() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Freedom Forever&apos;s own published license page lists three California CSLB numbers, not one: <strong>#1029644</strong> for Freedom Forever LLC (C10 Electrical, B General Building Contractor, C39 Roofing, C46 Solar), <strong>#1125479</strong> for Freedom Forever Northern California, LLC, and <strong>#1124448</strong> for Freedom Forever Southern California, LLC (freedomforever.com, Contractor Licenses, accessed September 22, 2026). None of these is the #1015697 this page previously cited below, and that number doesn&apos;t appear anywhere on Freedom Forever&apos;s own license page. We couldn&apos;t confirm current status, bond, or complaint history for any of the four numbers this session — CSLB&apos;s online lookup was unreachable to automated fetch (rate-limited on every attempt, September 22, 2026). Don&apos;t treat any of them as &ldquo;active&rdquo; until you verify directly at CSLB; see our{' '}
+                Freedom Forever&apos;s own published license page lists three California CSLB numbers, not one: <strong>#1029644</strong> for Freedom Forever LLC (C10 Electrical, B General Building Contractor, C39 Roofing, C46 Solar), <strong>#1125479</strong> for Freedom Forever Northern California, LLC, and <strong>#1124448</strong> for Freedom Forever Southern California, LLC (freedomforever.com, Contractor Licenses, accessed September 22, 2026). The same three numbers are the ones reported for Freedom Forever on utility interconnection applications in California DG Stats (CPUC), data through May 31, 2026. An earlier version of this page cited #1015697; CSLB shows that number belongs to an unrelated framing contractor.
+              </p>
+
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                On CSLB&apos;s license lookup (checked September 24, 2026), none of the three was current and active. #1029644 (Freedom Forever LLC) was under suspension for an Employee/Worker Bond Suspension. #1125479 (Northern California) expired on August 31, 2026, and #1124448 (Southern California) expired on July 31, 2026. Status can change, so check the number on your contract at CSLB before you sign; see our{' '}
                 <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className='text-primary hover:underline font-medium'>
                   full contractor-verification walkthrough
                 </Link>
@@ -451,7 +459,7 @@ export default function FreedomForeverReview() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Freedom Forever&apos;s own site names three financing paths: <strong>Purchase, Lease, and PPA</strong> (freedomforever.com, accessed September 22, 2026), on top of the third-party Mosaic loan financing already described above. It also brands a financing option <strong>&ldquo;Aura by Freedom Forever&rdquo;</strong> on its services page, without publishing rate, term, or down-payment detail there (freedomforever.com, accessed September 22, 2026). The site states that lease and PPA customers can &ldquo;take advantage of available tax credit benefits&rdquo; through those structures (freedomforever.com/why-go-solar/, accessed September 22, 2026) — get the specific mechanism in writing, since a lease or PPA customer typically doesn&apos;t claim the federal tax credit directly; the financing company does. No escalator rate, lease term length, or down-payment figure is published on any page we could reach this session — ask for those in writing before signing, and see our{' '}
+                Freedom Forever&apos;s own site names three financing paths: <strong>Purchase, Lease, and PPA</strong> (freedomforever.com, accessed September 22, 2026), on top of the third-party Mosaic loan financing already described above. It also brands a financing option <strong>&ldquo;Aura by Freedom Forever&rdquo;</strong> on its services page, without publishing rate, term, or down-payment detail there (freedomforever.com, accessed September 22, 2026). The site states that lease and PPA customers can &ldquo;take advantage of available tax credit benefits&rdquo; through those structures (freedomforever.com/why-go-solar/, accessed September 22, 2026) — get the specific mechanism in writing, since a lease or PPA customer typically doesn&apos;t claim the federal tax credit directly; the financing company does. No escalator rate, lease term length, or down-payment figure is published on its site (checked September 22, 2026) — ask for those in writing before signing, and see our{' '}
                 <Link href='/blog/ppa-loan-vs-solar-lease-vs-cash-california' className='text-primary hover:underline font-medium'>
                   Solar Lease vs. PPA vs. Loan vs. Cash explainer
                 </Link>{' '}
@@ -475,7 +483,7 @@ export default function FreedomForeverReview() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                We searched Freedom Forever&apos;s FAQ, guarantee page, and both service pages this session and found <strong>no published process for transferring the system, the guarantee, or a Lease/PPA agreement to a home buyer</strong> — unlike Sunrun and Palmetto, which each publish a step-by-step transfer flow on their own sites. That&apos;s a real gap, not an oversight in this review, and it&apos;s more consequential than usual given the open bankruptcy case.
+                Freedom Forever&apos;s FAQ, guarantee page, and both service pages publish <strong>no process for transferring the system, the guarantee, or a Lease/PPA agreement to a home buyer</strong> (freedomforever.com, checked September 22, 2026) — unlike Sunrun and Palmetto, which each publish a step-by-step transfer flow on their own sites. That&apos;s a real gap, not an oversight in this review, and it&apos;s more consequential than usual given the open bankruptcy case.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-2'><strong>Questions to ask before you rely on any of this:</strong></p>
@@ -684,7 +692,7 @@ export default function FreedomForeverReview() {
                     What CSLB license does Freedom Forever use in California?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Freedom Forever&apos;s own site lists three: #1029644, #1125479, and #1124448 (freedomforever.com, accessed September 22, 2026) — not the #1015697 previously cited here. None were verified for current status this session; check whichever number is on your contract at CSLB before signing.
+                    Freedom Forever&apos;s own site lists three: #1029644, #1125479, and #1124448 (freedomforever.com, accessed September 22, 2026). On CSLB&apos;s lookup on September 24, 2026, #1029644 was under suspension (Employee/Worker Bond Suspension) and the other two had expired. Check whichever number is on your contract at CSLB before signing.
                   </p>
                 </div>
 
@@ -693,7 +701,7 @@ export default function FreedomForeverReview() {
                     Does Freedom Forever say what happens to my contract if I sell my home?
                   </h3>
                   <p className='text-foreground/80 leading-relaxed'>
-                    Not on its public site as of this session. Get that answer in writing from your sales rep before signing, especially while the Chapter 11 case is open.
+                    Not on its public site as of September 22, 2026. Get that answer in writing from your sales rep before signing, especially while the Chapter 11 case is open.
                   </p>
                 </div>
               </div>
@@ -777,7 +785,7 @@ export default function FreedomForeverReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Freedom Forever" cslbLicenseNumber="1015697" />
+        <VerifyInstallerBox installerName="Freedom Forever" licenses={FREEDOM_FOREVER_LICENSES} />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

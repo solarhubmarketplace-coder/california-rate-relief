@@ -7,8 +7,14 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const NEW_DAY_LICENSES: InstallerLicense[] = [
+  { number: '812958', holder: 'New Day Solar', basis: DGSTATS_LICENSE_BASIS, status: 'current and active', checked: 'September 24, 2026' }
+];
 
 export const metadata: Metadata = {
   title: "New Day Solar Reviews (2026): Family-Owned, Murrieta, CA",
@@ -20,8 +26,8 @@ const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: "New Day Solar Review 2026",
   datePublished: '2026-04-24', dateModified: '2026-04-24',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program' },
+  author: CRR_AUTHOR_PERSON,
+  publisher: { '@type': 'Organization', name: 'California Rate Relief' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/new-day-solar-review' },
 };
 
@@ -58,15 +64,14 @@ export default function NewDayReview() {
               </div>
             </header>
 
-            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
-              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p><p className='text-3xl font-extrabold text-foreground mt-1'>4.7 <span className='text-lg text-muted-foreground'>/ 5</span></p></div>
+            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-2 gap-6'>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p><p className='text-sm text-foreground font-medium mt-1'>Inland Empire / South Riverside County buyers who want ownership and fast PTO turnaround</p></div>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>You want a $0-down PPA or lease — New Day focuses on ownership only</p></div>
             </div>
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                New Day Solar is a family-owned California installer based in Murrieta. The company focuses on ownership (cash or loan) and steers customers away from PPAs and leases. We did not verify its Yelp, Google or BBB ratings or its years in business for this update, so check its CSLB license record and recent reviews yourself. Get the install and Permission to Operate timeline in writing.
+                New Day Solar is a family-owned California installer based in Murrieta. The company focuses on ownership (cash or loan) and steers customers away from PPAs and leases. This review does not report its Yelp, Google or BBB ratings or its years in business, so check its CSLB license record and recent reviews yourself. Get the install and Permission to Operate timeline in writing.
               </p>
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
@@ -86,7 +91,7 @@ export default function NewDayReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Yelp, Google and BBB: not verified for this update. Check the current ratings and read the newest complaints yourself.</li>
+                <li>Yelp, Google and BBB: not reported here. Check the current ratings and read the newest complaints yourself.</li>
                 <li>Own-site testimonials: these are marketing, not independent reviews.</li>
                 <li>Solar forums and Reddit: Positive mentions in r/solar discussions about Inland Empire installers.</li>
               </ul>
@@ -138,7 +143,7 @@ export default function NewDayReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="New Day" />
+        <VerifyInstallerBox installerName="New Day Solar" licenses={NEW_DAY_LICENSES} />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

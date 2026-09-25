@@ -7,27 +7,50 @@ import { ExternalLink, ShieldCheck } from 'lucide-react';
 //   - CSLB License Lookup
 //   - BBB Search
 //   - CPUC Decision Search
-//   - Optional CSLB direct license URL when we have the number
+//   - The license number(s) on record for the company, each with where the
+//     number comes from and the CSLB status on the date it was checked
 //
-// Strong 2026 trust signal: editorial willingness to point readers to
-// primary sources for independent verification. All links use
-// rel="noopener external" — NOT nofollow — so search engines treat them
-// as the trust signal they are.
+// A license number is shown only when a primary source ties it to the company:
+// the utility interconnection records in California DG Stats (CPUC), the
+// CSLB record itself, or the company's own license page. CSLB's lookup does
+// not accept deep links (a LicNum URL redirects to the blank search form), so
+// the box links the lookup and prints the number to enter.
+//
+// All links use rel="noopener external" — NOT nofollow — so search engines
+// treat them as the trust signal they are.
 // =============================================================================
+
+export const CSLB_LOOKUP_URL =
+  'https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx';
+
+/** Source line for numbers taken from the CPUC's DG Stats interconnection data. */
+export const DGSTATS_LICENSE_BASIS =
+  'as reported on utility interconnection applications in California DG Stats (CPUC), data through May 31, 2026';
+
+export interface InstallerLicense {
+  /** CSLB license number, digits only. */
+  number: string;
+  /** Business name exactly as the CSLB record shows it. */
+  holder: string;
+  /** Why this number belongs to the company, with its source. */
+  basis: string;
+  /** The CSLB "License Status" line, in plain words. */
+  status: string;
+  /** Date the CSLB record was checked, e.g. "September 24, 2026". */
+  checked: string;
+}
 
 interface Props {
   /** Installer brand name, used in the search-pre-fill link text. */
   installerName: string;
-  /** CSLB license number (e.g., "1015697"), if known. */
-  cslbLicenseNumber?: string;
+  /** License number(s) tied to the company by a primary source. */
+  licenses?: InstallerLicense[];
   /** BBB profile URL (if we have it directly). */
   bbbProfileUrl?: string;
 }
 
-export function VerifyInstallerBox({ installerName, cslbLicenseNumber, bbbProfileUrl }: Props) {
-  const cslbUrl = cslbLicenseNumber
-    ? `https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/LicenseDetail.aspx?LicNum=${cslbLicenseNumber}`
-    : 'https://www.cslb.ca.gov/onlineservices/checklicenseii/checklicense.aspx';
+export function VerifyInstallerBox({ installerName, licenses, bbbProfileUrl }: Props) {
+  const cslbUrl = CSLB_LOOKUP_URL;
   const bbbUrl =
     bbbProfileUrl ||
     `https://www.bbb.org/search?find_country=USA&find_text=${encodeURIComponent(installerName)}`;
@@ -59,8 +82,18 @@ export function VerifyInstallerBox({ installerName, cslbLicenseNumber, bbbProfil
               </a>
               <span className='text-muted-foreground'>
                 {' '}
-                — confirm active license, bond, classification, disciplinary actions
+                — enter the license number to confirm active license, bond, classification, disciplinary actions
               </span>
+              {licenses && licenses.length > 0 ? (
+                <ul className='mt-2 space-y-2 border-l-2 border-border pl-3'>
+                  {licenses.map((lic) => (
+                    <li key={lic.number} className='text-muted-foreground'>
+                      <span className='font-semibold text-foreground'>CSLB #{lic.number}</span>
+                      {' '}({lic.holder}), {lic.basis}. CSLB status on {lic.checked}: {lic.status}.
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </li>
             <li>
               <a

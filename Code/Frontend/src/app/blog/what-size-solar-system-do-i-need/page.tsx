@@ -6,6 +6,7 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 export const metadata: Metadata = {
   title: "What Size Solar System Do I Need? California Guide",
@@ -32,14 +33,10 @@ const articleSchema = {
     'Complete guide to sizing a solar system for your California home, including the formula, NEM 3.0 impact, battery considerations, and roof space.',
   datePublished: '2026-04-16',
   dateModified: '2026-04-16',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'California Rate Relief',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',

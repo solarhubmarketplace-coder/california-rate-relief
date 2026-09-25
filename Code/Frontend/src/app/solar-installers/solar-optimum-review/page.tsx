@@ -9,8 +9,14 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const SOLAR_OPTIMUM_LICENSES: InstallerLicense[] = [
+  { number: '972228', holder: 'Solar Optimum Inc dba Solar Optimum Design & Electrical', basis: DGSTATS_LICENSE_BASIS, status: 'current and active', checked: 'September 24, 2026' }
+];
 
 const metaTitle = "Solar Optimum Reviews (2026): Lawsuits, Ratings, Warranty";
 const metaDescription =
@@ -36,8 +42,8 @@ const articleSchema = {
   headline: "Solar Optimum Reviews: What's Verifiable (Warranty, Lawsuit Check, 2026)",
   datePublished: '2026-04-22',
   dateModified: '2026-09-18',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
+  author: CRR_AUTHOR_PERSON,
+  publisher: { '@type': 'Organization', name: 'California Rate Relief', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/solar-optimum-review' },
 };
 
@@ -252,7 +258,7 @@ export default function SolarOptimumReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Solar Optimum" cslbLicenseNumber="903305" />
+        <VerifyInstallerBox installerName="Solar Optimum" licenses={SOLAR_OPTIMUM_LICENSES} />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

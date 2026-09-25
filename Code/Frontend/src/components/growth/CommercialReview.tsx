@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { CommercialAssessmentForm } from '@/components/landing/CommercialAssessmentForm';
 import { COMMERCIAL_ASSESSMENT_PATH, COMMERCIAL_FORM_ID } from '@/lib/intake-routing';
 import { IntentCTA } from './IntentCTA';
+import { ReferralDisclosure } from '@/components/shared/ReferralDisclosure';
 
 // =============================================================================
 // CommercialReview — the lead capture placed on commercial content pages
@@ -50,6 +51,7 @@ export function CommercialReviewForm({
   const body = (
     <>
       <CommercialAssessmentForm sectionId={COMMERCIAL_FORM_ID} heading={heading} intro={intro} />
+      <ReferralDisclosure className="mt-3" />
       {standaloneLink && (
         <p className="mt-4 text-sm text-muted-foreground">
           The same form is also on its own page:{' '}

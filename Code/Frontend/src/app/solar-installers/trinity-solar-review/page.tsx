@@ -14,6 +14,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 const path = '/solar-installers/trinity-solar-review';
 const checked = '2026-09-23';
@@ -42,10 +43,10 @@ const articleSchema = {
   description: metaDescription,
   datePublished: '2026-04-23',
   dateModified: checked,
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'California Rate Relief',
     url: 'https://ratereliefca.com',
     logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
   },
@@ -165,16 +166,7 @@ export default function TrinitySolarReview() {
               </div>
             </header>
 
-            {/* Score */}
-            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
-              <div>
-                <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>
-                  Our take
-                </p>
-                <p className='text-3xl font-extrabold text-foreground mt-1'>
-                  3.4 <span className='text-lg text-muted-foreground'>/ 5</span>
-                </p>
-              </div>
+            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-2 gap-6'>
               <div>
                 <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>
                   Best for
@@ -253,7 +245,7 @@ export default function TrinitySolarReview() {
                 installs here, and nothing on its site suggests it does.
               </p>
               <p className={p}>
-                Searches such as “Trinity Solar Fresno” turn up here for that reason. If a salesperson in
+                If a salesperson in
                 California uses the Trinity name, ask for the legal name of the company that will sign the
                 contract and check its license with the Contractors State License Board before you share
                 anything else. Our{' '}
@@ -302,7 +294,7 @@ export default function TrinitySolarReview() {
 
               <h2 className={h2}>Trinity Solar compared with Sunrun, Momentum and Tesla</h2>
               <p className={p}>
-                Comparison searches pair Trinity with national names. For a California home, the difference
+                Trinity is often compared with national names. For a California home, the difference
                 that matters is simple: Sunrun lists California on its own contractor-license page, and neither
                 Momentum nor Trinity lists California as a service state. See{' '}
                 <Link href='/solar-installers/sunrun-vs-trinity-solar' className={a}>Sunrun vs. Trinity Solar</Link>,{' '}

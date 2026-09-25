@@ -253,7 +253,7 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
       // states a fixed escalation cap; it says an estimate outside the
       // disclosure document may use, at most, the CPUC's calculated average.
       answer:
-        `That depends on the bill the system would offset and on the contract you are offered, not on the city. The CPUC's California Solar Consumer Protection Guide says bill savings estimates do not guarantee savings, and a homeowner signing it affirms that any savings estimate outside the disclosure document used, at most, the average electricity rate escalation the CPUC calculates, and that the installer will say which rate it used. Compare ${hasAddressSpecificUtility || split ? 'the utility named on your bill' : `${utility.name}'s own`} billed usage history against that estimate, and check that the estimate's assumptions match your household.`,
+        `That depends on the bill the system would offset and on the contract you are offered, not on the city. The CPUC's California Solar Consumer Protection Guide says bill savings estimates do not guarantee savings, and a homeowner signing it affirms that any savings estimate outside the disclosure document used, at most, the average electricity rate escalation the CPUC calculates, and that the installer will say which rate it used. Compare your billed usage history from ${hasAddressSpecificUtility || split ? 'the utility named on your bill' : utility.name} against that estimate, and check that the estimate's assumptions match your household.`,
     },
     {
       question: `Can I go solar in ${row.city} without paying upfront?`,
@@ -274,7 +274,9 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
           ? "The City of Corona's own electric utility, run by its Utilities Department, provides bundled service to residents and businesses within the City's electric service area, and its customers do not receive an electric bill from Southern California Edison. The California Energy Commission's service-territory map shows that area as a small part of Corona inside SCE's territory. Check the utility named on your actual bill before using a rate, a bill comparison, or a project estimate. Sources: City of Corona Utilities Department, Electric Service, and the CEC service-territory map, both verified September 23, 2026."
           : split
             ? `${split.note} ${utilityRateSentence(utility, rate, `Where ${utility.name} serves the address, `)}`
-            : `${utility.longName} (${utility.name}). Its current average residential rate is ${rate}, as of ${utility.asOf}, per ${utility.sourceLabel}, fetched ${formatVerified(utility.fetchedAt)}. That rate is ${utility.basisNote}.`,
+            : utility.averageResidentialRateCents === null
+              ? `${utility.longName} (${utility.name}). No comparable average residential rate is published for ${utility.name}: ${utility.basisNote}. Source: ${utility.sourceLabel}, checked ${formatVerified(utility.fetchedAt)}.`
+              : `${utility.longName} (${utility.name}). Its current average residential rate is ${rate}, as of ${utility.asOf}, per ${utility.sourceLabel}, checked ${formatVerified(utility.fetchedAt)}. That rate is ${utility.basisNote}.`,
     },
   ];
 

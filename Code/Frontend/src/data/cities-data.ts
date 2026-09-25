@@ -1703,7 +1703,7 @@ export const CITIES: CityData[] = [
     whenSolarDoesntWork:
       'If your electric bill is already low, your roof has heavy shade from trees or neighboring buildings, or you plan to sell within 1-2 years. In dense San Jose neighborhoods, check Google Project Sunroof to verify your specific roof exposure.',
     bottomLine:
-      'San Jose is the #1 priority solar city in California by search volume. With strong sunshine and many households charging EVs, size any quote to your actual usage, including the car.',
+      'With strong sunshine in San Jose and many households charging EVs, size any quote to your actual usage, including the car.',
     faqs: [
       {
         question: 'How much does solar cost in San Jose in 2026?',

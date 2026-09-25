@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 export const metadata: Metadata = {
   title: "Ameco Solar Reviews (2026): LA Installer, Roofing & Solar",
@@ -20,8 +21,8 @@ const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: "Ameco Solar Review 2026",
   datePublished: '2026-04-24', dateModified: '2026-04-24',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program' },
+  author: CRR_AUTHOR_PERSON,
+  publisher: { '@type': 'Organization', name: 'California Rate Relief' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/ameco-solar-review' },
 };
 
@@ -58,8 +59,7 @@ export default function AmecoReview() {
               </div>
             </header>
 
-            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
-              <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p><p className='text-3xl font-extrabold text-foreground mt-1'>4.2 <span className='text-lg text-muted-foreground'>/ 5</span></p></div>
+            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-2 gap-6'>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p><p className='text-sm text-foreground font-medium mt-1'>LA/OC homeowners who want solar + roofing bundled and value a long-established local installer</p></div>
               <div><p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Think twice if</p><p className='text-sm text-foreground font-medium mt-1'>You want Tesla Powerwall specifically, battery supply has been inconsistent</p></div>
             </div>

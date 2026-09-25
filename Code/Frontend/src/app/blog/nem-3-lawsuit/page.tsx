@@ -226,7 +226,7 @@ export default function Nem3LawsuitPage() {
                 enrolled under.
               </p>
               <p>
-                Legislation is the other route. The CPUC’s net billing page, checked for this update, still
+                Legislation is the other route. The CPUC’s net billing page, checked September 23, 2026, still
                 describes the net billing tariff as the one new applicants take service on.
               </p>
 

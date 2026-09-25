@@ -429,7 +429,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     cca: "Central Coast Community Energy (3CE)",
     permitUrl: "https://cdi.santacruzcountyca.gov/UPC/BuildingPermitsSafety/ApplyforaBuildingPermit/Solar(PV)SystemBatteryPermits/SolarAPPPlus.aspx",
     permitFeeNote:
-      "Aptos is an unincorporated community in Santa Cruz County - permits come from the County, not a city. No dollar amount given; page states \"SolarAPP+ charges a small fee, but Santa Cruz County costs are lower since the solar application is pre-approved.\"",
+      "Aptos is an unincorporated community in Santa Cruz County - permits come from the County, not a city. No dollar amount given; the County's page says \"SolarAPP+ charges a small fee, but Santa Cruz County costs are lower since the solar application is pre-approved.\"",
     permitFeeSource: "County of Santa Cruz SolarAPP+ page",
     permitOnline:
       "Yes, online. SolarAPP+ is explicitly named; contractors upload the SolarAPP+ approval to the County's ePermit system, pay fees, and the permit is issued electronically.",
@@ -445,7 +445,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
       "\"Solar Permit fees using this process are $187.00\" (flat fee for the expedited/SolarAPP-style PV toolkit process); submittal via Standard Electrical Plan for systems \u226410kW",
     permitFeeSource: "City of Bakersfield PV Toolkit Document #1 \u2014 Submittal Requirements Bulletin (content.civicplus.com asset a531a051)",
     permitOnline:
-      "yes \u2014 bulletin states applications may be submitted electronically (bldfax@bakersfieldcity.us or online portal) with processing in 1-3 days; page does not name SolarAPP+ specifically",
+      "yes \u2014 the City's bulletin says applications may be submitted electronically (bldfax@bakersfieldcity.us or online portal) with processing in 1-3 days; the City's page does not name SolarAPP+ specifically",
     sourcesFetchedAt: "2026-09-18",
   },
   {
@@ -455,7 +455,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     utilityKey: "sce",
     permitUrl: "https://www.californiacity-ca.gov/CC/index.php/building/permit-applications-forms/solar-permits",
     permitFeeNote:
-      "Page instructs residents to \"submit and obtain a solar or battery energy storage system (BESS) building permit for a residential building\" via SolarAPP+ but does not itemize a fee amount; the city's Master Fee Schedule (effective 5-11-2026) has no standalone PV/solar line item - solar permits fall under the general building-permit fee structure, calculated from \"the most recent edition of the ICC International Code Council Building Valuation Data.\"",
+      "The City's solar permits page tells residents to \"submit and obtain a solar or battery energy storage system (BESS) building permit for a residential building\" via SolarAPP+ but does not itemize a fee amount; the city's Master Fee Schedule (effective 5-11-2026) has no standalone PV/solar line item - solar permits fall under the general building-permit fee structure, calculated from \"the most recent edition of the ICC International Code Council Building Valuation Data.\"",
     permitFeeSource: "City of California City Solar Permits page and Master Fee Schedule (5-11-26)",
     permitOnline:
       "Yes, via SolarAPP+, explicitly named and linked on the page",
@@ -706,7 +706,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
       "Master Fee Schedule lists: \"Residential Solar < 10 kW \u2014 Residential Solar Photovoltaic System - Solar Permit - all inclusive up to 15kW: $450 per permit\" and \"Above 15kW \u2013 per kW: $15 per permit\"",
     permitFeeSource: "City of Lincoln Master Fee Schedule (adopted by City Council 11-12-2024)",
     permitOnline:
-      "yes \u2014 online filing via the Symbium portal for SB 379 instantaneous plan review (\"Apply Online for a residential solar or energy storage permit\"); page does NOT name SolarAPP+",
+      "yes \u2014 online filing via the Symbium portal for SB 379 instantaneous plan review (\"Apply Online for a residential solar or energy storage permit\"); the City's page does not name SolarAPP+",
     sourcesFetchedAt: "2026-09-18",
   },
   {
@@ -757,7 +757,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
       "The Building Division page does not itemize solar fees or mention SolarAPP+; it points to a general Online Permitting Portal (HDL) and a separate Fee Schedule page. The City of Marina Fee Schedule (Reso. No. 2025-99, effective Oct 6, 2025) lists under Building & Safety, Mechanical/Electrical/Plumbing Permit Fees: \"Combo Permit: Solar System - SFR $170, Non-SFR $492\"; the Fire fee schedule separately lists \"Fire Photovoltaic Syst. Plan Review - $121 per plan.\"",
     permitFeeSource: "City of Marina Building Division page; City of Marina Fee Schedule, City Reso. No. 2025-99 (effective 10/6/2025)",
     permitOnline:
-      "Yes for general building permits via the city's HDL Online Permitting Portal (requires a City of Marina business license for contractors); the page does not mention SolarAPP+ specifically.",
+      "Yes for general building permits via the city's HDL Online Permitting Portal (requires a City of Marina business license for contractors); the City's page does not mention SolarAPP+ specifically.",
     sourcesFetchedAt: "2026-09-18",
   },
   {
@@ -989,7 +989,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     cca: "Central Coast Community Energy (3CE)",
     permitUrl: "https://www.salinas.gov/Residents/Permit-Center/Permit-Services",
     permitFeeNote:
-      "Page states contractors must \"Pay the processing fee charged by SolarApp+\" but does not itself state a dollar amount. The City of Salinas Schedule of Fees and Charges (FY 2025-26) lists: Solar Plan Check Residential $215.00, Solar Permit Fee Residential $152.00, Solar Plan Check Commercial $564.00, Solar Permit Fee Commercial $867.00 (each noted \"Must match state fees rate\"), plus a $100.00 Solar Cancellation Charge.",
+      "The City's SolarApp+ page says contractors must \"Pay the processing fee charged by SolarApp+\" but does not itself state a dollar amount. The City of Salinas Schedule of Fees and Charges (FY 2025-26) lists: Solar Plan Check Residential $215.00, Solar Permit Fee Residential $152.00, Solar Plan Check Commercial $564.00, Solar Permit Fee Commercial $867.00 (each noted \"Must match state fees rate\"), plus a $100.00 Solar Cancellation Charge.",
     permitFeeSource: "City of Salinas Permit Services page; City of Salinas Schedule of Fees and Charges for City Services, effective July 1, 2025",
     permitOnline:
       "Yes, via SolarAPP+ for eligible residential rooftop systems; applicants register with SolarAPP+, then upload the approval to the city's eTRAKiT portal.",
@@ -1300,7 +1300,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     utilityKey: "sce",
     permitUrl: "https://beaumontca.gov/1456/Photovoltaic-Permit-Streamlining",
     permitFeeNote:
-      "The page states \"There will be additional fees charged by that vendor for the service\" (referring to the Symbium automated-review vendor) but does not give a dollar figure for either the vendor fee or the city's own building permit fee.",
+      "The City's Photovoltaic Permit Streamlining page says \"There will be additional fees charged by that vendor for the service\" (the Symbium automated-review vendor) but does not give a dollar figure for either the vendor fee or the city's own building permit fee.",
     permitFeeSource: "City of Beaumont Photovoltaic Permit Streamlining page",
     permitOnline:
       "Yes, online: submittals and inspections go through the \"City of Beaumont Citizen Self Service (CSS) Portal,\" using Symbium's automated permitting platform for expedited review. SolarAPP+ is not named \u2014 Beaumont uses Symbium instead.",
@@ -1314,7 +1314,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     cca: "MCE (Marin Clean Energy)",
     permitUrl: "https://www.danville.ca.gov/1042/SolarApp-Submittals",
     permitFeeNote:
-      "The page states \"A processing fee from SolarAPP+ and Town of Danville permit fees will be charged\" but does not specify a dollar amount for either fee.",
+      "The Town's SolarApp+ Submittals page says \"A processing fee from SolarAPP+ and Town of Danville permit fees will be charged\" but does not specify a dollar amount for either fee.",
     permitFeeSource: "Town of Danville SolarApp+ Submittals page",
     permitOnline:
       "Yes, explicitly: the page is titled \"SolarApp+ Submittals\" and states SolarAPP+ \"is designed to provide a code-compliance check for the majority of residential, roof-mounted, retrofit photovoltaic systems.\"",
@@ -1450,7 +1450,7 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     cca: "Central Coast Community Energy (3CE)",
     permitUrl: "https://ci.seaside.ca.us/852/Solar-App",
     permitFeeNote:
-      "The page states \"A processing fee will be charged by SolarAPP+\" for the automated review but does not give a dollar amount; it directs applicants to pay the separate city permit fee when applying through the City of Seaside Permitting System.",
+      "The City's solar permit page says \"A processing fee will be charged by SolarAPP+\" for the automated review but does not give a dollar amount; it directs applicants to pay the separate city permit fee when applying through the City of Seaside Permitting System.",
     permitFeeSource: "City of Seaside Solar App+ page (Building & Code Enforcement Department)",
     permitOnline:
       "Yes, explicitly: qualifying residential PV and PV+battery-storage projects are submitted for automated review through SolarAPP+, then the SolarAPP+ approval documents are uploaded to apply for the permit online via the City of Seaside Permitting System.",
@@ -2276,11 +2276,11 @@ export const CITY_COST_ROWS: CityCostRow[] = [
     ccaSource: SVCE_ABOUT,
     permitUrl: 'https://www.saratoga.ca.us/building',
     permitFeeNote:
-      "Saratoga's Path to Permits guide lists fee assessment as a step after an application is filed in eTRAKiT, but the City's building pages reached did not state a solar permit fee. Ask the Building Division or the installer for the City's figure.",
+      "Saratoga's Path to Permits guide lists fee assessment as a step after an application is filed in eTRAKiT, but the City's building pages do not state a solar permit fee. Ask the Building Division or the installer for the City's figure.",
     permitFeeSource: "City of Saratoga, Path to Permits (Community Development)",
     permitSources: [CEC_SB379_DATA],
     permitOnline:
-      "Yes. Saratoga's Path to Permits guide sends building applications through the City's eTRAKiT portal. The City's pages reached do not describe a solar route; the California Energy Commission's SB 379 data, which each city reports itself, lists Saratoga's platform as Symbium.",
+      "Yes. Saratoga's Path to Permits guide sends building applications through the City's eTRAKiT portal. The City's building pages do not describe a solar route; the California Energy Commission's SB 379 data, which each city reports itself, lists Saratoga's platform as Symbium.",
     sourcesFetchedAt: '2026-09-23',
   },
   {

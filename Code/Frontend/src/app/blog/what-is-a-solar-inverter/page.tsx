@@ -12,6 +12,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
+import { Byline } from '@/components/trust/Byline';
 export const metadata: Metadata = {
   title: "What Is a Solar Inverter? Types, Brands, and Lifespans",
   description: "A plain-English explanation of solar inverters: the main types, how long they last, which brands are reliable, and warranty realities.",
@@ -36,6 +37,7 @@ export default function WhatIsASolarInverter() {
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Solar Basics</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">What Is a Solar Inverter?</h1>
+              <Byline updated="2026-04-24" />
               <p className="text-lg text-muted-foreground">Solar panels produce DC electricity. Your home uses AC. The inverter is the device in the middle that makes it work, and it&apos;s the component most likely to need replacement during your system&apos;s lifetime.</p>
             </header>
             <div className="prose prose-slate max-w-none">

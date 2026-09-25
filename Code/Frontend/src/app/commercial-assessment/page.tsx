@@ -4,6 +4,7 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { CommercialAssessmentForm } from '@/components/landing/CommercialAssessmentForm';
+import { ReferralDisclosure } from '@/components/shared/ReferralDisclosure';
 
 export const metadata: Metadata = {
   title: 'Commercial Solar Project Assessment | California Rate Relief',
@@ -34,6 +35,7 @@ export default function CommercialAssessmentPage() {
             </p>
           </div>
           <CommercialAssessmentForm />
+          <ReferralDisclosure className='mx-auto mt-4 max-w-3xl text-center' />
         </div>
       </main>
       <Footer />

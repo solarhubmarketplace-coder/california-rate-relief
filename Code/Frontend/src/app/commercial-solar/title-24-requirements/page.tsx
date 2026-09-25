@@ -7,6 +7,8 @@ import { ArrowLeft, Calendar, Clock, AlertTriangle } from 'lucide-react';
 import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+import { Byline } from '@/components/trust/Byline';
 
 export const metadata: Metadata = {
   title: "California Title 24 Part 6 Commercial Solar Requirements",
@@ -19,8 +21,8 @@ const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: 'California Title 24 Part 6 Commercial Solar Requirements 2026',
   datePublished: '2026-04-23', dateModified: '2026-04-23',
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
+  author: CRR_AUTHOR_PERSON,
+  publisher: { '@type': 'Organization', name: 'California Rate Relief', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/commercial-solar/title-24-requirements' },
 };
 
@@ -51,6 +53,7 @@ export default function Title24Requirements() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>California Building Code</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>California Title 24 Part 6 Commercial Solar Requirements 2026</h1>
+              <Byline updated="2026-04-23" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-23'>April 23, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>8 min read</span></div>

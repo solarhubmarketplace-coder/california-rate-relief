@@ -13,8 +13,14 @@ import {
   Calendar,
 } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const SUNNOVA_LICENSES: InstallerLicense[] = [
+  { number: '1003498', holder: 'Sunnova Energy Corporation', basis: DGSTATS_LICENSE_BASIS, status: 'revoked', checked: 'September 24, 2026' }
+];
 
 export const metadata: Metadata = {
   title: "Sunnova Reviews 2026: Is It Still in Business?",
@@ -41,14 +47,10 @@ const articleSchema = {
     'Sunnova filed Chapter 11 in June 2025 and assets transitioned to Solaris Assets / SunStrong Management. A plain-English review of what it means for customers.',
   datePublished: '2026-04-23',
   dateModified: '2026-09-22',
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'California Rate Relief',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',
@@ -137,16 +139,7 @@ export default function SunnovaReview() {
               </div>
             </header>
 
-            {/* Score card */}
-            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
-              <div>
-                <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>
-                  Our take
-                </p>
-                <p className='text-3xl font-extrabold text-foreground mt-1'>
-                  2.3 <span className='text-lg text-muted-foreground'>/ 5</span>
-                </p>
-              </div>
+            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-2 gap-6'>
               <div>
                 <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>
                   Best for
@@ -716,7 +709,7 @@ export default function SunnovaReview() {
       </main>
       <Footer />
       <div className="container mx-auto px-4 max-w-3xl">
-        <VerifyInstallerBox installerName="Sunnova" />
+        <VerifyInstallerBox installerName="Sunnova" licenses={SUNNOVA_LICENSES} />
       </div>
       <div className="container mx-auto px-4 max-w-3xl">
         <AuthorBio domain="crr" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

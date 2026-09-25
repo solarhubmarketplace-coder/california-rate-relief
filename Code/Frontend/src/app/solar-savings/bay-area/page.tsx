@@ -19,6 +19,7 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { FaqBlock } from '@/components/trust/FaqBlock';
+import { Byline } from '@/components/trust/Byline';
 
 // Region-specific sources for the prose below. Each CCA's own statement of
 // where it serves, fetched 2026-09-23; see the Sources line on the page.
@@ -130,6 +131,7 @@ export default function BayAreaSolarPage() {
               <h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-4 tracking-tight'>
                 Solar Energy in the Bay Area
               </h1>
+              <Byline updated="2026-09-23" />
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
                 Nearly every city in this guide is on PG&amp;E&apos;s grid (Palo Alto runs its own utility), and in almost every one a community choice aggregator (CCA) supplies the electricity by default while PG&amp;E delivers it and sends the bill. {utilityRateText(pgeUtility).sentence} That is PG&amp;E&apos;s bundled figure. If a CCA supplies your power, part of your bill is priced by the CCA instead.
               </p>

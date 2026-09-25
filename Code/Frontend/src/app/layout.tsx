@@ -8,6 +8,7 @@ import './crr-palette.css';
 import { Providers } from './providers';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import FirstTouchCapture from '@/components/FirstTouchCapture';
+import { organizationIdentityFields } from '@/lib/site-identity';
 
 // =============================================================================
 // FONTS — self-hosted via next/font (2026-04-30, Batch 3.5)
@@ -245,6 +246,9 @@ export default async function RootLayout({
         ? `${cfg.base}/img/glp1/og-image.jpg`
         : `${cfg.base}/img/logo.svg`,
     },
+    // CRR only: legalName, address, contactPoint and sameAs come from the one
+    // identity record and appear only when filled in (plan item 2.1).
+    ...(isCRR ? organizationIdentityFields() : {}),
   };
   const websiteSchema = {
     '@context': 'https://schema.org',

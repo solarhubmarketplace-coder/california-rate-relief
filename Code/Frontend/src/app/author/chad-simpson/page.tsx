@@ -17,13 +17,25 @@ import { Footer as CRRFooter } from '@/components/landing/Footer';
 import { GLP1Layout } from '@/components/glp1/GLP1Layout';
 import { GLP1Header } from '@/components/glp1/GLP1Header';
 import { GLP1Footer } from '@/components/glp1/GLP1Footer';
+import {
+  CRR_AUTHOR_ID,
+  CRR_AUTHOR_JOB_TITLE,
+  CRR_AUTHOR_NAME,
+  CRR_AUTHOR_URL,
+} from '@/lib/crr-author';
 
 // =============================================================================
 // HOST-AWARE /author/chad-simpson PROFILE PAGE
 // =============================================================================
-// Public bio + Person JSON-LD anchor. Every review's reviewedBy schema points
-// at this page so Google can connect the dots: an editor with a public profile
-// is reviewing X products.
+// Public bio + Person JSON-LD anchor. Article schemas name this Person as
+// author and point at this page.
+//
+// 2026-09-24 (plan items 0.8a / 2.3): the CRR version shows only what is
+// already stated and relevant to California solar. The areas of focus and
+// working notes that belonged to the sibling sites (e-bikes, security
+// cameras, biohacking, CVE databases, health claims) are no longer on the
+// CRR page. On CRR the page carries ProfilePage markup with the Person as its
+// mainEntity. No credential, photo or sameAs is added: none is established.
 // =============================================================================
 
 type Domain = 'crr' | 'grh' | 'shg' | 'ahb' | 'glp1';
@@ -109,6 +121,110 @@ function PersonJsonLd({ cfg }: { cfg: DomainConfig }) {
       type='application/ld+json'
       dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
     />
+  );
+}
+
+function CrrProfileJsonLd({ cfg }: { cfg: DomainConfig }) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    url: cfg.canonical,
+    name: `Chad Simpson, Editor — ${cfg.brand}`,
+    mainEntity: {
+      '@type': 'Person',
+      '@id': CRR_AUTHOR_ID,
+      name: CRR_AUTHOR_NAME,
+      url: CRR_AUTHOR_URL,
+      jobTitle: CRR_AUTHOR_JOB_TITLE,
+      description: cfg.bioBlurb,
+      worksFor: {
+        '@type': 'Organization',
+        name: cfg.brand,
+        url: cfg.siteOrigin,
+      },
+    },
+  };
+  return (
+    <script
+      type='application/ld+json'
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+function CrrAuthorBody({ cfg, palette }: { cfg: DomainConfig; palette: Palette }) {
+  return (
+    <div className='space-y-10 leading-relaxed' style={{ color: palette.muted }}>
+      <div className='flex items-center gap-5'>
+        <div
+          className='w-20 h-20 rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0'
+          style={{ backgroundColor: palette.accent, color: '#0a0a0a' }}
+          aria-hidden='true'
+        >
+          CS
+        </div>
+        <div>
+          <h1 className='text-3xl md:text-4xl font-extrabold tracking-tight' style={{ color: palette.fg }}>Chad Simpson</h1>
+          <p className='text-base mt-1' style={{ color: palette.mutedFg }}>Editor, {cfg.brand}</p>
+        </div>
+      </div>
+
+      <section>
+        <h2 className='text-2xl font-bold mb-3' style={{ color: palette.fg }}>About</h2>
+        <p>{cfg.bioBlurb}</p>
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold mb-3' style={{ color: palette.fg }}>Areas of focus</h2>
+        <ul className='space-y-2 list-disc pl-6'>
+          <li>California solar installer market and CSLB licensing</li>
+          <li>NEM 3 net metering and post-2024 California solar economics</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold mb-3' style={{ color: palette.fg }}>How I work</h2>
+        <p className='mb-3'>
+          Most reviews on {cfg.brand} are research-led: I read primary sources (license records, court filings, manufacturer specs) and homeowner reports, then write down what matters for the homeowner. When I have personally owned or installed a product, I say so on the page.
+        </p>
+        <p>
+          Every page shows the date it was last updated. I refresh installer reviews every 90 days.
+        </p>
+      </section>
+
+      <section>
+        <h2 className='text-2xl font-bold mb-3' style={{ color: palette.fg }}>What I won&apos;t do</h2>
+        <ul className='space-y-2 list-disc pl-6'>
+          <li>Accept payment for placement, sponsored reviews, or rankings</li>
+          <li>Quote a price without a source URL</li>
+          <li>
+            Hide how the site is paid: see{' '}
+            <Link href='/how-we-make-money' className='underline' style={{ color: palette.accent }}>
+              how we make money
+            </Link>
+          </li>
+        </ul>
+      </section>
+
+      <section className='rounded-xl border p-5' style={{ borderColor: palette.cardBorder, backgroundColor: palette.cardBg }}>
+        <h2 className='text-xl font-bold mb-3' style={{ color: palette.fg }}>Get in touch</h2>
+        <p className='mb-3'>If you spot an error, want to flag a story, or want to get in touch with a question, please use the contact form. I read everything, even when I can&apos;t respond to all of it.</p>
+        <div className='flex flex-wrap gap-3 text-sm'>
+          <Link href='/contact' className='inline-flex items-center gap-1 underline font-semibold' style={{ color: palette.accent }}>
+            <Mail className='h-4 w-4' aria-hidden='true' />
+            Contact form
+          </Link>
+          <Link href='/methodology' className='inline-flex items-center gap-1 underline font-semibold' style={{ color: palette.accent }}>
+            <Microscope className='h-4 w-4' aria-hidden='true' />
+            Our methodology
+          </Link>
+          <Link href='/about' className='inline-flex items-center gap-1 underline font-semibold' style={{ color: palette.accent }}>
+            <BookOpen className='h-4 w-4' aria-hidden='true' />
+            About {cfg.brand}
+          </Link>
+        </div>
+      </section>
+    </div>
   );
 }
 
@@ -256,10 +372,10 @@ function Glp1AuthorBody({ cfg, palette }: { cfg: DomainConfig; palette: Palette 
   );
 }
 
-function PageShell({ palette, children, cfg }: { palette: Palette; cfg: DomainConfig; children: React.ReactNode }) {
+function PageShell({ palette, children, cfg, profile = false }: { palette: Palette; cfg: DomainConfig; children: React.ReactNode; profile?: boolean }) {
   return (
     <main className='py-16' style={{ backgroundColor: palette.bg }}>
-      <PersonJsonLd cfg={cfg} />
+      {profile ? <CrrProfileJsonLd cfg={cfg} /> : <PersonJsonLd cfg={cfg} />}
       <div className='container mx-auto px-4'>
         <article className='max-w-3xl mx-auto'>
           <nav className='mb-8 text-sm flex items-center gap-2 flex-wrap' style={{ color: palette.mutedFg }}>
@@ -292,7 +408,7 @@ function AhbAuthor() {
 function CrrAuthor() {
   const cfg = CONFIGS.crr;
   const palette: Palette = { fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', bg: 'hsl(var(--background))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' };
-  return <PublicLayout><CRRHeader /><PageShell palette={palette} cfg={cfg}><AuthorBody cfg={cfg} palette={palette} /></PageShell><CRRFooter /></PublicLayout>;
+  return <PublicLayout><CRRHeader /><PageShell palette={palette} cfg={cfg} profile><CrrAuthorBody cfg={cfg} palette={palette} /></PageShell><CRRFooter /></PublicLayout>;
 }
 function Glp1Author() {
   const cfg = CONFIGS.glp1;

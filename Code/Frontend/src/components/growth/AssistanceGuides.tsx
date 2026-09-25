@@ -824,7 +824,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               </table>
             </div>
             <p className="mt-4">
-              The existing site guidance applies unchanged: separate the solar
+              Before you sign, separate the solar
               scope, the roof scope, the financing agreement and any change-order
               terms, and compare them as separate pieces. A monthly payment alone
               does not show what each part of the project costs or who is
@@ -987,8 +987,9 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               for
             </h2>
             <p>
-              SOMAH is for the <strong>property</strong>, not for the tenant to
-              apply to directly. Say so plainly, because the query brings renters.
+              If you rent, you can&rsquo;t apply to SOMAH yourself. SOMAH is for
+              the <strong>property</strong>: the owner applies, and tenants share
+              in the benefit.
             </p>
             <p className="mt-3">
               The CPUC adopted the Solar on Multifamily Affordable Housing

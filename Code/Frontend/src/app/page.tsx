@@ -12,6 +12,7 @@ import { HomeGuides } from '@/components/landing/HomeGuides';
 import { Footer } from '@/components/landing/Footer';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { WhyTrust } from '@/components/trust/WhyTrust';
+import { ReferralDisclosure } from '@/components/shared/ReferralDisclosure';
 
 const BASE_URL = 'https://ratereliefca.com';
 
@@ -109,6 +110,9 @@ export default function HomePage() {
               it already has. */}
           <h2 className='sr-only'>Request a residential review</h2>
           <WizardWithSuspense />
+          <div className='bg-muted px-4 pb-12'>
+            <ReferralDisclosure className='mx-auto max-w-2xl text-center' />
+          </div>
         </div>
 
         {/* Publisher content: surfaces the site's own guides so the homepage

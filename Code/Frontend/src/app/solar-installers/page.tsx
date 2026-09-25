@@ -10,6 +10,7 @@ import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { Byline } from '@/components/trust/Byline';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 // =============================================================================
 // /solar-installers — hub of the installer review section.
@@ -156,11 +157,12 @@ const articleSchema = {
   '@type': 'Article',
   headline: 'Solar reviews for California homeowners: how to read them, and which companies still sell here',
   description: metaDescription,
+  datePublished: checked,
   dateModified: checked,
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'California Rate Relief',
     url: 'https://ratereliefca.com',
     logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
   },
@@ -348,7 +350,7 @@ export default function SolarInstallersIndex() {
             <section className='mb-12'>
               <h2 className={h2}>Which reviewed companies still list California?</h2>
               <p className={p}>
-                Several companies people search for do not sell here, and some no longer sell solar at all. This
+                Several well-known companies do not sell here, and some no longer sell solar at all. This
                 is what each company’s own site or filing said on September 23, 2026.
               </p>
               <div className='overflow-x-auto rounded-xl border border-border mb-4'>

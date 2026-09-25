@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Mail, MapPin, Shield } from 'lucide-react';
 import { FloatingMobileCTA } from '@/components/landing/FloatingMobileCTA';
 import { FOOTER_TRUST_LINKS, TRUST_LINKS } from '@/components/trust/trust-links';
+import { SiteIdentityBlock } from '@/components/trust/SiteIdentityBlock';
 
 // =============================================================================
 // CRR footer (design pass 2, 2026-09-22)
@@ -61,7 +62,7 @@ export function Footer() {
               <div className='flex items-center gap-3'>
                 <Image
                   src='/img/logo.svg'
-                  alt='California Rate Relief Program'
+                  alt='California Rate Relief'
                   width={40}
                   height={40}
                   className='h-10 w-10'
@@ -69,9 +70,6 @@ export function Footer() {
                 <div>
                   <span className='block text-lg font-bold tracking-tight text-white'>
                     California Rate Relief
-                  </span>
-                  <span className='text-xs font-medium uppercase tracking-wide text-white/70'>
-                    Program
                   </span>
                 </div>
               </div>
@@ -159,13 +157,14 @@ export function Footer() {
                   </Link>
                 </li>
               </ul>
+              <SiteIdentityBlock className='mt-4 text-xs leading-relaxed text-white/80' linkClassName={linkClass} />
             </div>
           </div>
 
           {/* Bottom bar */}
           <div className='flex flex-col gap-3 border-t border-white/15 pt-6 text-sm md:flex-row md:items-center md:justify-between'>
             <p className='text-white/70'>
-              &copy; {currentYear} California Rate Relief Program. All rights reserved.
+              &copy; {currentYear} California Rate Relief. All rights reserved.
             </p>
             <p className='flex flex-wrap gap-x-5 gap-y-2'>
               <Link href='/terms' className={linkClass}>

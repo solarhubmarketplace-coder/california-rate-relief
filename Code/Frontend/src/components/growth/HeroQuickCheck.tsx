@@ -29,6 +29,7 @@ import {
   type QuickCheckField,
   type QuickStart,
 } from '@/lib/quick-start';
+import { ReferralDisclosure } from '@/components/shared/ReferralDisclosure';
 
 export interface HeroQuickCheckProps {
   /** Inquiry topic for analytics (the full form keeps its own topic prop). */
@@ -332,6 +333,7 @@ export function HeroQuickCheck({
         {COPY.action}
         <ArrowRight className="h-5 w-5" aria-hidden="true" />
       </button>
+      <ReferralDisclosure className="mt-3" />
     </form>
   );
 }

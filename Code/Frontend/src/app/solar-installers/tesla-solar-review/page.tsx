@@ -9,12 +9,19 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const TESLA_LICENSES: InstallerLicense[] = [
+  { number: '888104', holder: 'Tesla Energy Operations Inc', basis: DGSTATS_LICENSE_BASIS, status: 'current and active', checked: 'September 24, 2026' },
+  { number: '1127593', holder: 'Tesla Construction Inc', basis: 'listed on Tesla’s own contractor-license page', status: 'current and active', checked: 'September 24, 2026' }
+];
 
 const path = '/solar-installers/tesla-solar-review';
 const checked = '2026-09-23';
@@ -44,8 +51,8 @@ const articleSchema = {
   description: metaDescription,
   datePublished: '2026-04-22',
   dateModified: checked,
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
+  author: CRR_AUTHOR_PERSON,
+  publisher: { '@type': 'Organization', name: 'California Rate Relief', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
   mainEntityOfPage: { '@type': 'WebPage', '@id': `https://ratereliefca.com${path}` },
 };
 // No Review/Rating JSON-LD here: Google's review-snippet rules require
@@ -185,11 +192,7 @@ export default function TeslaSolarReview() {
               </div>
             </header>
 
-            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
-              <div>
-                <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p>
-                <p className='text-3xl font-extrabold text-foreground mt-1'>3.1 <span className='text-lg text-muted-foreground'>/ 5</span></p>
-              </div>
+            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-2 gap-6'>
               <div>
                 <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p>
                 <p className='text-sm text-foreground font-medium mt-1'>Buyers who want one company&apos;s panels, inverter and battery in one app</p>
@@ -351,7 +354,7 @@ export default function TeslaSolarReview() {
 
               <h2 className={h2}>Tesla Solar vs ADT Solar, and vs Momentum Solar</h2>
               <p className={p}>
-                Two comparisons people search for do not work for a California home in 2026. ADT announced on January 24,
+                Two common comparisons do not work for a California home in 2026. ADT announced on January 24,
                 2024 that it would exit residential solar,<Cite href={SRC.adt} date={checked} /> and its 2024 annual results
                 say the solar business was substantially wound down and is now reported as discontinued operations.
                 <Cite href={SRC.adtFy24} date={checked} /> There is no ADT Solar quote to set against Tesla’s. If you are an
@@ -419,7 +422,7 @@ export default function TeslaSolarReview() {
       </main>
       <Footer />
       <div className='container mx-auto px-4 max-w-3xl'>
-        <VerifyInstallerBox installerName='Tesla' cslbLicenseNumber='888104' />
+        <VerifyInstallerBox installerName='Tesla' licenses={TESLA_LICENSES} />
       </div>
       <div className='container mx-auto px-4 max-w-3xl'>
         <AuthorBio domain='crr' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

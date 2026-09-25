@@ -9,12 +9,18 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const SUNRUN_LICENSES: InstallerLicense[] = [
+  { number: '750184', holder: 'Sunrun Installation Services Inc dba Sunrun', basis: DGSTATS_LICENSE_BASIS, status: 'current and active', checked: 'September 24, 2026' }
+];
 
 const path = '/solar-installers/vivint-review';
 const checked = '2026-09-23';
@@ -45,10 +51,10 @@ const articleSchema = {
   description: metaDescription,
   datePublished: checked,
   dateModified: checked,
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'California Rate Relief',
     url: 'https://ratereliefca.com',
     logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
   },
@@ -299,7 +305,7 @@ export default function VivintSolarReview() {
 
               <h2 className={h2}>Vivint Solar vs. Sunrun</h2>
               <p className={p}>
-                Searches for “Vivint Solar vs. Sunrun” are left over from when both sold solar. Since October 2020
+                Comparisons of Vivint Solar and Sunrun are left over from when both sold solar. Since October 2020
                 they have been one company. If you are shopping for a new system, compare Sunrun with other companies
                 that list California, using the{' '}
                 <Link href='/solar-installers' className={a}>California solar company reviews</Link>, and compare
@@ -335,7 +341,7 @@ export default function VivintSolarReview() {
       </main>
       <Footer />
       <div className='container mx-auto px-4 max-w-3xl'>
-        <VerifyInstallerBox installerName='Sunrun' bbbProfileUrl='https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-equipment-dealers/sunrun-inc-1116-312886' />
+        <VerifyInstallerBox installerName='Sunrun' licenses={SUNRUN_LICENSES} bbbProfileUrl='https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-equipment-dealers/sunrun-inc-1116-312886' />
       </div>
       <div className='container mx-auto px-4 max-w-3xl'>
         <AuthorBio domain='crr' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

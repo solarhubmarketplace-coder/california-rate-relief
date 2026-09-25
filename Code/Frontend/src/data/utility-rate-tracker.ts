@@ -48,6 +48,9 @@ export const LADWP_STALE_PDF_URL =
   'https://www.ladwp.com/sites/default/files/documents/LADWP_Electric_Rates.pdf';
 export const LADWP_RESIDENTIAL_RATES_URL =
   'https://www.ladwp.com/account/understanding-your-rates/residential-electric-rates';
+/** LADWP's page with the current R-1A and R-1B totals by tier and period. */
+export const LADWP_R1A_RATES_URL =
+  'https://www.ladwp.com/account/customer-service/electric-rates/residential-rates';
 export const PAO_REPORTS_INDEX_URL =
   'https://www.publicadvocates.cpuc.ca.gov/press-room/reports-and-analyses';
 
@@ -166,18 +169,23 @@ const RECORDS: Record<UtilityRateKey, UtilityRateRecord> = {
       'SMUD is a publicly owned utility and publishes a seasonal Fixed Rate schedule (an opt-in alternative to its default Time-of-Day plan) rather than a single blended average rate, so no comparable average is published here',
     fetchedAt: RATE_TRACKER_VERIFIED,
   },
+  // 2026-09-24: replaces a note that cited a July 1, 2009 tariff document as
+  // the only one available. LADWP's Residential Rates page publishes the 2026
+  // R-1A totals (base rate plus adjustment factors) by tier and period; the
+  // figures below were read from it on 2026-09-24. LADWP publishes no single
+  // blended average, so the average stays null.
   ladwp: {
     key: 'ladwp',
     name: 'LADWP',
     longName: 'Los Angeles Department of Water and Power',
     averageResidentialRateCents: null,
     averageResidentialRatePerKwh: null,
-    asOf: 'no current tariff document retrieved',
-    sourceLabel: 'No current LADWP tariff document could be retrieved',
-    sourceUrl: null,
+    asOf: 'R-1A Standard Residential Rate, 2026',
+    sourceLabel: 'LADWP Residential Rates (Schedule R-1A)',
+    sourceUrl: LADWP_R1A_RATES_URL,
     basisNote:
-      'the only retrievable LADWP tariff document is dated July 1, 2009 and is not current, so no LADWP rate is published',
-    fetchedAt: RATE_TRACKER_VERIFIED,
+      'LADWP is a city-owned utility and publishes tiered prices rather than one average. On its standard R-1A plan, including adjustment factors, Tier 1 costs 26.408¢ and Tier 2 32.267¢ per kWh for July to September 2026, and 27.292¢ and 33.151¢ from October to December 2026, before taxes and the monthly Power Access Charge',
+    fetchedAt: '2026-09-24',
   },
 
   roseville: {

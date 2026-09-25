@@ -4,6 +4,8 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+import { Byline } from '@/components/trust/Byline';
 
 const path='/commercial-solar/sgip-battery-storage';
 const title="SGIP commercial battery storage: California budget status";
@@ -11,9 +13,10 @@ const description="Check current SGIP commercial storage categories, distinguish
 export const metadata:Metadata={title,description,alternates:{canonical:path},openGraph:{title,description,type:'article',url:'https://ratereliefca.com'+path,modifiedTime:'2026-09-10T00:00:00Z'}};
 export default function SgipCommercialStorage(){
  return <PublicLayout><Header/><main className='mx-auto max-w-3xl px-4 py-12'>
-  <script type='application/ld+json' dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'Article',headline:title,dateModified:'2026-09-10',mainEntityOfPage:'https://ratereliefca.com'+path,author:{'@type':'Organization',name:'California Rate Relief'},citation:['https://www.cpuc.ca.gov/sgip','https://www.selfgenca.com/home/program_metrics/']})}}/>
+  <script type='application/ld+json' dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'Article',headline:title,datePublished:'2026-09-10',dateModified:'2026-09-10',mainEntityOfPage:'https://ratereliefca.com'+path,author: CRR_AUTHOR_PERSON,citation:['https://www.cpuc.ca.gov/sgip','https://www.selfgenca.com/home/program_metrics/']})}}/>
   <Link href='/commercial-solar' className='text-primary underline'>Commercial solar</Link>
   <h1 className='mt-5 text-3xl font-extrabold leading-tight md:text-5xl'>{title}</h1>
+  <Byline />
   <p className='mt-4 text-lg'>A commercial battery proposal should work from the program’s current category status. A historic rebate rate or a balance in a closed budget is not an offer of funding.</p>
   <p className='mt-3 text-sm text-muted-foreground'>Updated September 10, 2026 · California Rate Relief is a private solar referral service.</p>
   <aside className='my-6 rounded-xl border border-status-warning/30 bg-status-warning/10 p-5 text-sm'><strong>Correction September 10, 2026.</strong> Earlier availability statements, payment timelines and incentive calculations on this page are withdrawn. The earlier example multiplied $0.30/kWh by 200 kWh and reported $60,000; that multiplication is $60. The units did not support the conclusion. This guide does not use that example or an unverified tax-credit calculation.</aside>

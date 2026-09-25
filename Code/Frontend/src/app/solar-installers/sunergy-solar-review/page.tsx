@@ -14,6 +14,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 
 const path = '/solar-installers/sunergy-solar-review';
 const checked = '2026-09-23';
@@ -29,8 +30,8 @@ const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: 'Sunergy Solar Reviews (2026): Which Sunergy You Are Dealing With, Its BBB File and Warranty',
   datePublished: '2026-04-24', dateModified: checked,
-  author: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  author: CRR_AUTHOR_PERSON,
+  publisher: { '@type': 'Organization', name: 'California Rate Relief', url: 'https://ratereliefca.com' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': `https://ratereliefca.com${path}` },
 };
 // No Review/Rating JSON-LD here: Google's review-snippet rules require
@@ -112,11 +113,7 @@ export default function SunergyReview() {
               </div>
             </header>
 
-            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-3 gap-6'>
-              <div>
-                <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Our take</p>
-                <p className='text-3xl font-extrabold text-foreground mt-1'>4.0 <span className='text-lg text-muted-foreground'>/ 5</span></p>
-              </div>
+            <div className='mb-10 rounded-xl border border-border bg-card p-6 grid sm:grid-cols-2 gap-6'>
               <div>
                 <p className='text-xs font-semibold uppercase tracking-wide text-muted-foreground'>Best for</p>
                 <p className='text-sm text-foreground font-medium mt-1'>SoCal cash or loan buyers who want an Enphase-based system they own outright</p>

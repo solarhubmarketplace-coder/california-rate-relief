@@ -22,6 +22,7 @@ import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import { RATE_TRACKER_PATH } from '@/data/utility-rate-tracker';
+import { Byline } from '@/components/trust/Byline';
 
 // Region-specific sources for the prose below, fetched 2026-09-23; see the
 // Sources line on the page.
@@ -124,6 +125,7 @@ export default function OrangeCountySolarPage() {
               <h1 className='text-4xl md:text-5xl lg:text-6xl font-extrabold text-foreground mb-4 tracking-tight'>
                 Who Provides Electricity in Orange County
               </h1>
+              <Byline updated="2026-09-23" />
               <p className='text-xl text-muted-foreground max-w-3xl leading-relaxed'>
                 Southern California Edison delivers electricity to most of Orange County. The City of Anaheim runs its own utility, and the southern end of the county, including San Clemente, is San Diego Gas &amp; Electric territory. In three cities, Orange County Power Authority buys the power that SCE delivers. They price electricity very differently, so start with the name on your bill.
               </p>

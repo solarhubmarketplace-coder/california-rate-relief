@@ -87,8 +87,8 @@ export function SdgeRateTable() {
       <p className="mt-4">
         A CCA customer must add the generation charges from the CCA. A
         delivery-only number cannot be compared with a combined
-        generation-and-delivery price. CCA delivery-only winter figures were
-        not available this session — check your own bill and the{' '}
+        generation-and-delivery price. This table does not include CCA
+        delivery-only winter figures — check your own bill and the{' '}
         <a
           className="text-primary underline"
           href="https://www.sdge.com/residential/pricing-plans"

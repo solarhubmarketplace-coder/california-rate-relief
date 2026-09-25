@@ -9,9 +9,14 @@ import { CalendarCheck, ShieldCheck } from 'lucide-react';
 // freshness signal coverage.
 //
 // Variants:
-//  - 'reviewed'  — generic "Last reviewed" (default)
+//  - 'reviewed'  — default; renders "Last updated" (see below)
 //  - 'medical'   — "Last medically reviewed" (for AHB benefits-of pages)
 //  - 'updated'   — "Last updated" (for blog/news posts)
+//
+// 2026-09-24 (plan item 0.3): the name on this stamp is the page's author, so
+// the default no longer says "Last reviewed ... by" him. A page reviewed by
+// its own author is not a review; the stamp states the update date and who
+// wrote it.
 // =============================================================================
 
 export type StampVariant = 'reviewed' | 'medical' | 'updated';
@@ -41,8 +46,7 @@ function formatDate(iso: string): string {
 
 function variantLabel(v: StampVariant): string {
   if (v === 'medical') return 'Last medically reviewed';
-  if (v === 'updated') return 'Last updated';
-  return 'Last reviewed';
+  return 'Last updated';
 }
 
 export function LastReviewedStamp({

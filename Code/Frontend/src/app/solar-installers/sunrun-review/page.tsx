@@ -10,12 +10,19 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
-import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
+import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
+
+// License numbers tied to the company by a primary source; CSLB status checked September 24, 2026.
+const SUNRUN_LICENSES: InstallerLicense[] = [
+  { number: '750184', holder: 'Sunrun Installation Services Inc dba Sunrun', basis: DGSTATS_LICENSE_BASIS + ', and listed on Sunrun’s own license page', status: 'current and active', checked: 'September 24, 2026' },
+  { number: '969975', holder: 'Sunrun Inc', basis: 'listed on Sunrun’s own license page (accessed September 22, 2026)', status: 'current and active', checked: 'September 24, 2026' }
+];
 
 const path = '/solar-installers/sunrun-review';
 const checked = '2026-09-23';
@@ -46,14 +53,10 @@ const articleSchema = {
   description: metaDescription,
   datePublished: '2026-04-22',
   dateModified: checked,
-  author: {
-    '@type': 'Organization',
-    name: 'California Rate Relief Program',
-    url: 'https://ratereliefca.com',
-  },
+  author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'California Rate Relief',
     url: 'https://ratereliefca.com',
     logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' },
   },
@@ -404,12 +407,17 @@ export default function SunrunReview() {
                   state-by-state contractor-license page
                 </a>{' '}
                 lists two California numbers — CSLB #750184 and CSLB #969975 — accessed September 22, 2026
-                and corroborated by Sunrun’s own contractor-licenses PDF linked from that page. Those are not
-                the #925340 shown in the installer-verification box on this page, which does not appear on
-                Sunrun’s published license page. We could not independently confirm current status,
-                classification, or bond for any of the three numbers: CSLB’s online lookup returned only its
-                blank search form, with no rendered license record. Don’t treat “licensed” as settled from
-                this page — verify each number yourself at CSLB’s Check License tool before signing anything.
+                and corroborated by Sunrun’s own contractor-licenses PDF linked from that page. #750184 is also
+                the number reported for Sunrun on utility interconnection applications in California DG Stats
+                (CPUC), data through May 31, 2026. On{' '}
+                <a href='https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx' target='_blank' rel='noopener noreferrer' className={a}>
+                  CSLB’s license lookup
+                </a>{' '}
+                (checked September 24, 2026), #750184 belongs to Sunrun Installation Services Inc dba Sunrun and
+                is current and active, with C-10, C-46, C-39, B and C-47 classifications; #969975 belongs to
+                Sunrun Inc and is current and active with a B (General Building) classification. Both records
+                carry complaint disclosures. Status can change, so check the number on your own contract at
+                CSLB before signing anything.
                 For what else to check, see our{' '}
                 <Link href='/solar-installers/how-to-verify-a-solar-contractor-california' className={a}>
                   full contractor-verification walkthrough
@@ -488,7 +496,7 @@ export default function SunrunReview() {
       </main>
       <Footer />
       <div className='container mx-auto px-4 max-w-3xl'>
-        <VerifyInstallerBox installerName='Sunrun' cslbLicenseNumber='925340' bbbProfileUrl='https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-equipment-dealers/sunrun-inc-1116-312886' />
+        <VerifyInstallerBox installerName='Sunrun' licenses={SUNRUN_LICENSES} bbbProfileUrl='https://www.bbb.org/us/ca/san-francisco/profile/solar-energy-equipment-dealers/sunrun-inc-1116-312886' />
       </div>
       <div className='container mx-auto px-4 max-w-3xl'>
         <AuthorBio domain='crr' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--foreground) / 0.85)', mutedFg: 'hsl(var(--muted-foreground))', accent: 'hsl(var(--primary))', cardBg: 'hsl(var(--card))', cardBorder: 'hsl(var(--border))' }} />

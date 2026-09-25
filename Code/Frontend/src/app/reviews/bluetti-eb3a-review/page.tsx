@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Bluetti EB3A Review: 268Wh LFP Power Station at $299",
     description: "Is the $299 Bluetti EB3A enough for a power outage? 268Wh LFP, 30-min turbo charge, examined in depth.",
     url: 'https://greenreviewshub.com/reviews/bluetti-eb3a-review',
-    siteName: 'California Rate Relief Program',
+    siteName: 'California Rate Relief',
     type: 'article',
     locale: 'en_US',
   },
@@ -51,7 +51,7 @@ export default function Page() {
       offers: { '@type': 'Offer', price: '299', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
     },
     reviewRating: { '@type': 'Rating', ratingValue: '4.6', bestRating: '5' },
-    author: { '@type': 'Organization', name: 'California Rate Relief Program' },
+    author: { '@type': 'Organization', name: 'California Rate Relief' },
     datePublished: '2026-04-22',
     reviewBody:
       'Bluetti EB3A is the budget king of LFP power stations, 268Wh usable, 600W inverter (1,200W with Power Lifting), 200W solar input, 30-minute turbo recharge, and a 2,500-cycle LFP battery. At $299 it is an excellent entry point for California homeowners wanting PSPS peace of mind for essentials like Wi-Fi, phones, and a CPAP.',

@@ -19,7 +19,7 @@ export interface Source {
   label: string;
   url: string;
   publisher: string;
-  /** Publication or effective date when the source gives one; else the date this session accessed it. */
+  /** Publication or effective date when the source gives one; else the date it was accessed. */
   date: string;
 }
 
@@ -122,7 +122,7 @@ export const SOURCES: Record<string, Source> = {
     date: '2025',
   },
 
-  // --- Fetched this session (see JOB_LOG / report for fetch notes) ---
+  // --- Fetched 2026-09-22 (see JOB_LOG / report for fetch notes) ---
   'irc-11b': {
     label: 'Federal corporate income tax rate — 21% flat (26 U.S.C. §11(b))',
     url: 'https://www.law.cornell.edu/uscode/text/26/11',
@@ -144,7 +144,7 @@ export const SOURCES: Record<string, Source> = {
   },
   'lbnl-2026-update': {
     label:
-      'LBNL "U.S. Distributed Solar and Storage 2026 Data Update" (Aug 2026) — checked this session; no size-class (≤100 kW / >100 kW) or California-specific $/W figures found in extractable text, so the 2023 Tracking the Sun figures (costs-20, costs-24) are used instead',
+      'LBNL "U.S. Distributed Solar and Storage 2026 Data Update" (Aug 2026) — publishes no size-class (≤100 kW / >100 kW) or California-specific $/W figures, so the 2023 Tracking the Sun figures (costs-20, costs-24) are used instead (checked 2026-09-22)',
     url: 'https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf',
     publisher: 'Lawrence Berkeley National Laboratory',
     date: '2026-08',
@@ -527,7 +527,7 @@ export const DEFAULTS = {
   federalItcBaseRate: 0.3, // S fedtax-02
   domesticContentAdder: 0.1, // S fedtax-06/07
   energyCommunityAdder: 0.1, // S fedtax-05
-  federalCorpRate: 0.21, // S irc-11b (fetched this session)
+  federalCorpRate: 0.21, // S irc-11b (fetched 2026-09-22)
   caCorpRate: 0.0884, // S fedtax-38
   selfConsumptionShare: 0.7, // A
   smudExportRate: 0.096, // S rates-35
@@ -538,7 +538,7 @@ export const DEFAULTS = {
   analysisHorizonYears: 25, // A (S costs-13 notes NREL ATB models 30)
   discountRate: 0.08, // A
   capRate: 0.066, // S value-27
-  propertyTaxRate: 0.01, // S cal-const-xiiia-1 (fetched this session)
+  propertyTaxRate: 0.01, // S cal-const-xiiia-1 (fetched 2026-09-22)
 };
 
 // ---------------------------------------------------------------------------

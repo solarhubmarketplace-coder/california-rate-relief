@@ -11,6 +11,7 @@ import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { Byline } from '@/components/trust/Byline';
 
 export const metadata: Metadata = {
   title:
@@ -38,7 +39,7 @@ const CRUMB_LABEL = 'HOA solar rights';
 export default function HoaSolarRights() {
   return (
     <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Can an HOA Ban Solar Panels in California? Your Solar Rights, Explained"} url="https://ratereliefca.com/blog/hoa-solar-rights-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"California"} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Can an HOA Ban Solar Panels in California? Your Solar Rights, Explained"} url="https://ratereliefca.com/blog/hoa-solar-rights-california" datePublished="2026-04-23" dateModified="2026-09-24" description={"California's Solar Rights Act prevents HOAs from unreasonably blocking rooftop solar. What the law says and how to handle pushback."} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
@@ -53,6 +54,7 @@ export default function HoaSolarRights() {
                 Can an HOA Ban Solar Panels in California? Your Solar
                 Rights, Explained
               </h1>
+              <Byline updated="2026-09-24" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
@@ -74,9 +76,8 @@ export default function HoaSolarRights() {
                 has one of the strongest solar rights laws in the country,
                 and it specifically limits what HOAs can do. But
                 &quot;cannot ban&quot; is not the same as &quot;no rules
-                apply,&quot; and every year thousands of California
-                homeowners run into HOA friction when trying to install
-                solar. Here&apos;s what the law actually says and how to
+                apply,&quot; and homeowners still run into HOA friction
+                when trying to install solar. Here&apos;s what the law actually says and how to
                 handle an HOA that&apos;s pushing back.
               </p>
 
@@ -90,11 +91,19 @@ export default function HoaSolarRights() {
               </h2>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The California Solar Rights Act — codified primarily at
-                California Civil Code Section 714 — was originally passed
-                in 1978 and has been strengthened multiple times since. The
-                statute specifically invalidates any covenant, restriction,
-                or condition imposed by a homeowners association that
+                The California Solar Rights Act is codified primarily at{' '}
+                <a
+                  href='https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=714.&lawCode=CIV'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='text-primary underline'
+                >
+                  California Civil Code Section 714
+                </a>{' '}
+                (text last amended by AB 2188, effective January 1, 2015;
+                checked on leginfo.legislature.ca.gov, September 24, 2026).
+                It voids any covenant, restriction or condition, and any
+                provision of an HOA&apos;s governing documents, that
                 &quot;effectively prohibits or restricts the installation
                 or use of a solar energy system.&quot;
               </p>
@@ -104,11 +113,14 @@ export default function HoaSolarRights() {
                 An HOA rule is only enforceable if it does not
                 &quot;significantly increase the cost of the system&quot;
                 or &quot;significantly decrease its efficiency or specified
-                performance.&quot; California courts have interpreted
-                &quot;significantly&quot; fairly narrowly — generally
-                meaning anything that adds more than ~$1,000 to the system
-                cost or reduces production by more than ~10% fails the
-                test.
+                performance.&quot; The statute itself sets the test, in
+                Section 714(d): for a photovoltaic system,
+                &quot;significantly&quot; means an amount not to exceed
+                $1,000 over the system cost as originally specified and
+                proposed, or a decrease in system efficiency of more than
+                10 percent. A rule that adds more than $1,000 or cuts
+                efficiency by more than 10 percent is not a reasonable
+                restriction.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -155,9 +167,10 @@ export default function HoaSolarRights() {
                 <li className='flex items-start gap-2'>
                   <span className='text-primary font-bold mt-1'>•</span>
                   <span>
-                    Take longer than 45 days to approve or deny a
-                    reasonable application (after 45 days, the application
-                    is deemed approved by operation of law).
+                    Leave your application undecided: if the HOA does not
+                    deny it in writing within 45 days of receiving it, it is
+                    deemed approved, unless the delay comes from a
+                    reasonable request for more information.
                   </span>
                 </li>
               </ul>
@@ -211,18 +224,19 @@ export default function HoaSolarRights() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 This is the single most important piece of the law for
                 California homeowners dealing with a slow-moving HOA. Under
-                California Civil Code Section 714.1, an HOA has 45 days to
-                approve or deny a complete solar application. If the HOA
-                doesn&apos;t act within 45 days of receiving a complete
-                application, the application is automatically deemed
-                approved by operation of law. You can then proceed with
-                installation.
+                Civil Code Section 714(e), an HOA must approve or deny a
+                solar application in writing. If it does not deny the
+                application in writing within 45 days from the date it
+                receives it, the application is deemed approved, unless the
+                delay is the result of a reasonable request for additional
+                information.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                The 45-day clock starts only when the HOA has received a
-                <em> complete</em> application. HOAs sometimes stall by
-                claiming applications are incomplete. Document everything:
+                The 45 days run from the date the HOA receives your
+                application, but a reasonable request for more information
+                can hold the clock. HOAs sometimes stall by asking for more
+                documents, so send a complete application. Document everything:
                 send your application with a list of what&apos;s included,
                 get written confirmation of receipt, and track the calendar
                 days. If day 46 arrives without action, document that fact
@@ -267,13 +281,14 @@ export default function HoaSolarRights() {
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                <strong>5. Know the prevailing-party attorney&apos;s fees
-                provision.</strong> If an HOA violation of the Solar Rights
-                Act ends up in court, the prevailing homeowner is entitled
-                to attorney&apos;s fees under the statute. That provision
-                is specifically designed to deter HOAs from creating
-                barriers. Citing the fee-shifting provision in
-                correspondence often resolves disputes before they escalate.
+                <strong>5. Know the penalty and fee provisions.</strong>
+                Under Section 714(f), an HOA that willfully violates the
+                statute is liable for your actual damages and a civil
+                penalty of up to $1,000. Under Section 714(g), in any
+                action to enforce the statute, the prevailing party is
+                awarded reasonable attorney&apos;s fees. That cuts both
+                ways: if you sue and lose, you may owe the HOA&apos;s
+                fees.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
@@ -307,9 +322,10 @@ export default function HoaSolarRights() {
                 involvement. If your HOA continues to unreasonably block
                 installation after you&apos;ve documented the cost impact
                 and cited the Solar Rights Act, consult a California
-                real-estate attorney who handles solar disputes. The
-                attorney&apos;s-fees provision means your legal costs are
-                likely recoverable if you prevail.
+                real-estate attorney who handles solar disputes. Under
+                Section 714(g), the prevailing party in an enforcement
+                action is awarded reasonable attorney&apos;s fees, so ask
+                the attorney how strong your case is before you file.
               </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
