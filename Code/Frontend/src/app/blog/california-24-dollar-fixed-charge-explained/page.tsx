@@ -464,7 +464,7 @@ export default function FixedChargeExplained() {
                 Previous Article
               </Link>
               <Link
-                href='/blog/solar-tax-credit-expired-2026-options'
+                href='/blog/california-solar-tax-credit-2026'
                 className='text-primary hover:underline font-medium inline-flex items-center gap-2'
               >
                 Next Article

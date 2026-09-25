@@ -468,10 +468,10 @@ export default function SolarPanelsCalifornia() {
             <strong>The federal credit is gone for new installs.</strong> The IRS says the
             residential clean energy credit (section 25D) &ldquo;will not be allowed for any
             expenditures made after December 31, 2025,&rdquo; and that an expenditure is made
-            when the original installation is completed (IRS, checked September 23, 2026). What
-            is left is covered in{' '}
-            <Link href="/blog/solar-tax-credit-expired-2026-options" className={link}>
-              your options after the solar tax credit expired
+            when the original installation is completed (IRS, checked September 23, 2026). If a
+            2026 quote still counts it, see{' '}
+            <Link href="/blog/california-solar-tax-credit-2026#quote-without-credit" className={link}>
+              how to compare the quote without the credit
             </Link>
             .
           </li>

@@ -154,9 +154,11 @@ export function assistanceMetadata(kind: AssistanceKey): Metadata {
       type: "article",
       url: `https://ratereliefca.com${path}`,
       modifiedTime:
-        kind === "free" || kind === "california" || kind === "seniors"
-          ? "2026-09-23T00:00:00Z"
-          : "2026-09-10T00:00:00Z",
+        kind === "free" || kind === "california"
+          ? "2026-09-24T00:00:00Z" // GS-MERGES 2026-09-24: merge fold-ins
+          : kind === "seniors"
+            ? "2026-09-23T00:00:00Z"
+            : "2026-09-10T00:00:00Z",
       images: [CRR_SOCIAL_CARD],
     },
     twitter: crrTwitter(metaTitle, metaDescription),
@@ -188,6 +190,73 @@ function TaxTiming() {
           26 U.S.C. § 25D(c), (e)(8), (h)
         </a>
         , checked September 10, 2026.
+      </p>
+    </section>
+  );
+}
+// GS-MERGES 2026-09-24: carried from the retired records and options pages
+// into the incentives hub (kind === "california").
+function TaxCreditRecords() {
+  return (
+    <section id="tax-credit-records">
+      <h2>Finished by the end of 2025? Keep the completion record</h2>
+      <p>
+        The federal credit follows the installation date, not the payment date.
+        Section 25D treats an expenditure as made &ldquo;when the original
+        installation of the item is completed.&rdquo; For a home being built or
+        rebuilt, it counts when you begin using the home. A deposit or a 2025
+        contract does not move a 2026 completion into 2025 (
+        <a href={law25} className={link}>
+          26 U.S.C. § 25D(e)(8) and (h)
+        </a>
+        , checked September 24, 2026).
+      </p>
+      <ul className="mt-3 list-disc space-y-2 pl-6">
+        <li>Keep the signed contract, invoices and payment dates together.</li>
+        <li>
+          Ask the installer for records showing when installation was completed,
+          including any work that was still outstanding.
+        </li>
+        <li>For new construction, keep the date you began using the home.</li>
+        <li>
+          Keep prior returns and Form 5695 worksheets. Section 25D(c) carries a
+          credit your tax could not absorb into the next tax year.
+        </li>
+        <li>
+          Let your tax preparer decide the correct year. A project finished in an
+          earlier year does not belong on a later return by default.
+        </li>
+      </ul>
+    </section>
+  );
+}
+function QuoteWithoutCredit() {
+  return (
+    <section id="quote-without-credit">
+      <h2>If a 2026 quote still subtracts a tax credit</h2>
+      <p>
+        Ask who claims it and where it shows in the signed price. A lease or PPA
+        provider may hold a business credit under{" "}
+        <a href={law48} className={link}>
+          26 U.S.C. § 48E
+        </a>{" "}
+        on equipment it owns. That credit is the provider&apos;s. It gives you no
+        credit and does not set your price.
+      </p>
+      <p className="mt-3">
+        Then rebuild the comparison without it. Ask for the cash price before
+        any incentive. Put battery, roof and electrical work on separate lines.
+        For financing, add every payment and the utility bill that remains. If an
+        offer only works after subtracting a credit you cannot claim, it does not
+        work.
+      </p>
+      <p className="mt-3">
+        The{" "}
+        <Link href="/tools/solar-panel-calculator" className={link}>
+          bill and quote calculator
+        </Link>{" "}
+        does the price-per-watt and bill arithmetic with the quote&apos;s own
+        numbers. It does not decide tax eligibility.
       </p>
     </section>
   );
@@ -374,9 +443,11 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
       intro={d.intro}
       path={d.path}
       sourceCheckedDate={
-        kind === "free" || kind === "california" || kind === "seniors"
-          ? "2026-09-23"
-          : "2026-09-10"
+        kind === "free" || kind === "california"
+          ? "2026-09-24" // GS-MERGES 2026-09-24: merge fold-ins re-checked
+          : kind === "seniors"
+            ? "2026-09-23"
+            : "2026-09-10"
       }
       sources={[
         ...(kind === "options" || kind === "records" || kind === "california"
@@ -524,14 +595,21 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               solar quote.
             </p>
             <p className="mt-3">
-              For a new homeowner purchase, read the{" "}
-              <Link href={definitions.options.path} className={link}>
-                2026 federal-credit and payment-options guide
-              </Link>{" "}
+              For a new homeowner purchase, read{" "}
+              <a href="#quote-without-credit" className={link}>
+                what to do when a 2026 quote still subtracts a credit
+              </a>{" "}
               before accepting an incentive line. State program availability
               does not extend the federal expenditure deadline.
             </p>
           </section>
+          {/* GS-MERGES 2026-09-24: /blog/solar-tax-credit-2026 (records) and
+              /blog/solar-tax-credit-expired-2026-options (options) 301 here.
+              Their completion-date, carryforward, records and "credit shown
+              as a discount" material is carried in the next two sections;
+              26 U.S.C. § 25D re-checked on uscode.house.gov 2026-09-24. */}
+          <TaxCreditRecords />
+          <QuoteWithoutCredit />
           <ProgramPaths />
           <DacBoundary />
           <section>
@@ -1113,7 +1191,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               A provider may have its own separate business tax position. That is
               not a homeowner entitlement and it does not establish a price or a
               saving. See{" "}
-              <Link href={definitions.options.path} className={link}>
+              <Link href={`${definitions.california.path}#quote-without-credit`} className={link}>
                 what the ended homeowner credit leaves available in 2026
               </Link>{" "}
               for the §48E detail.
@@ -1381,7 +1459,7 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
               { href: "/blog/solar-ppa-explained-california", label: "How a solar PPA actually works" },
               { href: "/blog/ppa-loan-vs-solar-lease-vs-cash-california", label: "Cash, loan, lease and PPA side by side" },
               { href: "/blog/can-you-cancel-solar-panel-contract-before-installation-california", label: "The statutory cancellation window" },
-              { href: "/blog/solar-tax-credit-expired-2026-options", label: "The 2026 federal-credit position" },
+              { href: "/blog/california-solar-tax-credit-2026", label: "The 2026 federal-credit position" },
             ]}
           />
           <section>

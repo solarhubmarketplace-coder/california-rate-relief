@@ -302,7 +302,7 @@ export default function SolarPoolHeatingCA() {
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
               <ul className="list-disc pl-6 space-y-2">
                 <li><Link href="/blog/is-my-roof-good-for-solar-california" className="text-primary underline">Is your roof ready for solar collectors?</Link></li>
-                <li><Link href="/blog/solar-tax-credit-expired-2026-options" className="text-primary underline">What the ended federal credit leaves in 2026</Link></li>
+                <li><Link href="/blog/california-solar-tax-credit-2026" className="text-primary underline">What the ended federal credit leaves in 2026</Link></li>
                 <li><Link href="/blog/solar-payback-period-california" className="text-primary underline">Payback for solar electric panels in California</Link></li>
                 <li><Link href="/best-solar-companies-california" className="text-primary underline">Comparing California solar companies</Link></li>
               </ul>

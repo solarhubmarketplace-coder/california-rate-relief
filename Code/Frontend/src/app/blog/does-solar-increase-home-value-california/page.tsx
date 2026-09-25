@@ -254,7 +254,7 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
           Billing Plan tariff and before the 2026 federal credit position. A 2015
           average across eight states is not a 2026 valuation for one house in
           one county. For the current federal position, see{" "}
-          <Link className="underline" href="/blog/solar-tax-credit-expired-2026-options">
+          <Link className="underline" href="/blog/california-solar-tax-credit-2026">
             what the ended homeowner credit leaves available in 2026
           </Link>
           .
@@ -672,7 +672,7 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
             label: "Liens and title at sale",
           },
           {
-            href: "/blog/solar-tax-credit-expired-2026-options",
+            href: "/blog/california-solar-tax-credit-2026",
             label: "The 2026 federal-credit position",
           },
           {

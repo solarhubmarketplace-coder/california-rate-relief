@@ -679,15 +679,6 @@ const blogPosts: BlogPost[] = [
     category: 'Utility Rates',
   },
   {
-    slug: 'solar-tax-credit-expired-2026-options',
-    title: 'Solar Tax Credit Ended: California Options in 2026',
-    excerpt:
-      'Check the expenditure deadline, separate public assistance from payment contracts, and compare a proposal without an unavailable homeowner credit.',
-    date: '2026-09-10',
-    readTime: '8 min read',
-    category: 'Solar Savings',
-  },
-  {
     slug: 'nem-3-california-still-worth-it',
     title: 'Is Solar Still Worth It Under NEM 3.0 in California? (2026 Guide)',
     excerpt:
@@ -981,14 +972,6 @@ const blogPosts: BlogPost[] = [
       'Purchase, loan, PPA, PACE and SBA paperwork compared for the same commercial project, so ownership and payment terms are chosen on documents rather than on a monthly figure.',
     date: '2026-09-11',
     category: 'Solar Financing',
-  },
-  {
-    slug: 'solar-tax-credit-2026',
-    title: 'Solar Tax Credit in 2026: Completion Dates and Records',
-    excerpt:
-      'A payment receipt is not the whole record. The installation timeline and the correct tax year decide what can be claimed, and a deposit settles neither.',
-    date: '2026-09-10',
-    category: 'California Solar Incentives',
   },
   {
     slug: 'ab-942-california-solar',

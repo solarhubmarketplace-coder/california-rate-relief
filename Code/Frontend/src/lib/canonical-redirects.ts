@@ -220,6 +220,19 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   // at the top of this file).
   // Corrected 2026-09-20: Rocklin's growth-only route also has a cost twin.
   // Reversed 2026-09-22; see the file-level "third pass" comment above.
+
+  // GS-MERGES 2026-09-24 ----------------------------------------------------
+  // Plan item 6.3 (Decision 14 default: the winner is the page with the most
+  // Search Console impressions in page_audit.csv, 90 days, unless its content
+  // is clearly weaker). Each loser's unique, sourced facts were carried into
+  // its winner first; the loser is off the sitemap lists, blog index, hubs
+  // and internal links. Evidence per row: _gs_manifest/merges.json.
+  // Tax credit x3 -> the incentives hub (cluster 42, hub page for
+  // "incentives"). Impressions 2 / 0 / 0: too few to decide, and the two
+  // losers are 643- and 744-word pages the hub already covers.
+  '/blog/solar-tax-credit-2026': '/blog/california-solar-tax-credit-2026',
+  '/blog/solar-tax-credit-expired-2026-options': '/blog/california-solar-tax-credit-2026',
+  // END GS-MERGES 2026-09-24 ------------------------------------------------
 };
 
 /**

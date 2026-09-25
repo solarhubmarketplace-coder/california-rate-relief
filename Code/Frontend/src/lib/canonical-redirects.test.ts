@@ -390,6 +390,67 @@ test('Tier 3 city-cost wave: each new cost page without a companies twin renders
 });
 
 // ---------------------------------------------------------------------------
+// GS-MERGES 2026-09-24: plan item 6.3 merges (and 6.2 out-of-market
+// comparisons). Each loser 301s in one hop to a live winner that has a page
+// file (or a JSON article entry); no rule in either mechanism points at a
+// loser; the loser is off the sitemap lists and the hub spokes.
+// ---------------------------------------------------------------------------
+const GS_MERGES: Readonly<Record<string, string>> = {
+  '/blog/solar-tax-credit-2026': '/blog/california-solar-tax-credit-2026',
+  '/blog/solar-tax-credit-expired-2026-options': '/blog/california-solar-tax-credit-2026',
+};
+ROW_DELTAS.push(Object.keys(GS_MERGES).length);
+
+async function winnerHasPage(winner: string): Promise<boolean> {
+  const { existsSync, readFileSync } = await import('node:fs');
+  if (existsSync(new URL(`../app${winner}/page.tsx`, import.meta.url))) return true;
+  // JSON articles render through the section's [slug] route.
+  const m = /^\/(solar-problems|battery|commercial-solar|solar-installers)\/([^/]+)$/.exec(winner);
+  if (!m) return false;
+  const file = {
+    'solar-problems': 'problems',
+    battery: 'battery',
+    'commercial-solar': 'commercial',
+    'solar-installers': 'installer',
+  }[m[1] as 'solar-problems' | 'battery' | 'commercial-solar' | 'solar-installers'];
+  const pages = JSON.parse(
+    readFileSync(new URL(`../data/article-pages.${file}.json`, import.meta.url), 'utf8'),
+  ) as { slug: string }[];
+  return pages.some((p) => p.slug === m[2]);
+}
+
+test('GS-MERGES: each loser 301s straight to a live winner', async () => {
+  for (const [loser, winner] of Object.entries(GS_MERGES)) {
+    assert.equal(canonicalRedirectFor(loser), winner, loser);
+    assert.equal(canonicalRedirectFor(`${loser}/`), winner, `${loser}/`);
+    assert.equal(isRedirectedPath(winner), false, `${winner} must not itself redirect`);
+    assert.ok(await winnerHasPage(winner), `${winner} must render`);
+  }
+  const losers = new Set(Object.keys(GS_MERGES));
+  assert.deepEqual(destinations.filter((dest) => losers.has(dest)), []);
+  const rules = await nextConfigRedirects();
+  for (const r of rules) assert.equal(losers.has(r.destination), false, `${r.source} -> ${r.destination}`);
+});
+
+test('GS-MERGES: losers are off the sitemap lists and the hub spokes', async () => {
+  const { readFileSync } = await import('node:fs');
+  const read = (rel: string) => readFileSync(new URL(rel, import.meta.url), 'utf8');
+  const sitemap = read('../app/sitemap.ts');
+  const hubs = read('../data/topic-hubs.ts');
+  const blogIndex = read('../app/blog/page.tsx');
+  const growth = read('./growth-routes.ts');
+  for (const loser of Object.keys(GS_MERGES)) {
+    const slug = loser.split('/').pop() as string;
+    assert.equal(sitemap.includes(`'${loser}'`), false, `sitemap lists ${loser}`);
+    assert.equal(new RegExp(`'${slug}'`).test(sitemap) && loser.startsWith('/blog/'), false, `sitemap blogSlugs lists ${slug}`);
+    assert.equal(hubs.includes(`"${loser}"`) || hubs.includes(`'${loser}'`), false, `topic-hubs lists ${loser}`);
+    assert.equal(loser.startsWith('/blog/') && blogIndex.includes(`slug: '${slug}'`), false, `blog index lists ${slug}`);
+    assert.equal(growth.includes(`'${loser}'`) || growth.includes(`"${loser}"`), false, `growth-routes lists ${loser}`);
+  }
+});
+// END GS-MERGES 2026-09-24 ---------------------------------------------------
+
+// ---------------------------------------------------------------------------
 // Cross-cutting checks. These read the registries above.
 // ---------------------------------------------------------------------------
 test('every /solar-companies city page with a /solar-cost twin redirects there, unless it was reinstated', () => {

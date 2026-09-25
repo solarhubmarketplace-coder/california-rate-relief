@@ -1742,14 +1742,6 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "Why Is My PG&E Bill So High? 7 Causes to Check (2026)"
       },
       {
-        "href": "/blog/solar-tax-credit-2026",
-        "label": "Federal credit: completion dates and records"
-      },
-      {
-        "href": "/blog/solar-tax-credit-expired-2026-options",
-        "label": "Options after the federal credit ended"
-      },
-      {
         "href": "/blog/tech-clean-california-heat-pump-rebate",
         "label": "TECH Clean California heat pump rebates"
       },

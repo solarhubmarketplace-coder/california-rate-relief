@@ -256,11 +256,8 @@ export default function InflationReductionActSolarCalifornia() {
             </li>
           </ul>
           <p className={p}>
-            The full picture of what is left is in{' '}
-            <Link href="/blog/solar-tax-credit-expired-2026-options" className={link}>
-              your options now that the solar tax credit has expired
-            </Link>{' '}
-            and the{' '}
+            The full picture of what is left, including what to do when a
+            2026 quote still counts the credit, is in the{' '}
             <Link href="/blog/california-solar-tax-credit-2026" className={link}>
               overview of California solar incentives
             </Link>

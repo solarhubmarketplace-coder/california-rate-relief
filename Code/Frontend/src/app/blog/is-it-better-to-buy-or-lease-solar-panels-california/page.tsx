@@ -705,7 +705,7 @@ export default function IsItBetterToBuyOrLeaseSolarPanelsCalifornia() {
             label: "Selling a home with a solar lease or PPA",
           },
           {
-            href: "/blog/solar-tax-credit-expired-2026-options",
+            href: "/blog/california-solar-tax-credit-2026",
             label: "The federal credit ended: what is left in California",
           },
           {

@@ -420,8 +420,16 @@ const CRR_TOPICAL_20260923 = new Set<string>([
   '/solar-savings/sunnyvale',
 ]);
 
+// GS-MERGES 2026-09-24: merge winners that absorbed a loser's content
+// (plan item 6.3). Checked first so their lastmod moves with the fold-in.
+const GS_MERGES_20260924 = new Set<string>([
+  '/blog/california-solar-tax-credit-2026',
+]);
+// END GS-MERGES 2026-09-24
+
 function fileMtime(_relPath: string, _fallback: Date): Date {
   const route = _relPath.replace(/^src\/app/, '').replace(/\/page\.[tj]sx?$/, '');
+  if (GS_MERGES_20260924.has(route)) return new Date('2026-09-24T00:00:00.000Z'); // GS-MERGES
   if (CRR_TOPICAL_20260923.has(route)) return new Date('2026-09-23T00:00:00.000Z');
   if (CRR_NEW_QUESTION_20260920.has(route)) return new Date('2026-09-20T00:00:00.000Z');
   if (CRR_GREEN_20260918.has(route)) return new Date('2026-09-17T00:00:00.000Z'); // claude/ca-green-20260918
@@ -441,6 +449,7 @@ function reviewMtime(slug: string, fallback: Date): Date {
  * runtime filesystem I/O.
  */
 function urlMtime(_urlPath: string, _fallback: Date): Date {
+  if (GS_MERGES_20260924.has(_urlPath)) return new Date('2026-09-24T00:00:00.000Z'); // GS-MERGES
   if (CRR_TOPICAL_20260923.has(_urlPath)) return new Date('2026-09-23T00:00:00.000Z');
   if (CRR_NEW_QUESTION_20260920.has(_urlPath)) return new Date('2026-09-20T00:00:00.000Z');
   if (CRR_GREEN_20260918.has(_urlPath)) return new Date('2026-09-17T00:00:00.000Z'); // claude/ca-green-20260918
@@ -532,7 +541,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'sce-time-of-use-rates-2026',
     'pge-time-of-use-rates-2026',
     'sce-rate-increase-2026', 'pge-rate-increase-2026', 'sdge-rate-increase-2026',
-    'california-24-dollar-fixed-charge-explained', 'solar-tax-credit-expired-2026-options',
+    'california-24-dollar-fixed-charge-explained',
     'nem-3-california-still-worth-it', 'pge-vs-sce-vs-sdge-rates-compared',
     'prepaid-ppa-california-2026', 'ppa-loan-vs-solar-lease-vs-cash-california',
     'net-billing-vs-net-metering-california', 'nem-3-california-timeline',
@@ -567,7 +576,6 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'solar-panel-inspection-california', 'solar-panel-maintenance-cost',
     'solar-panel-removal-reinstall-cost', 'solar-powered-ev-charger',
     'solar-ppa-explained-california',
-    'solar-tax-credit-2026',
     // claude/ca-green-20260918
     'does-solar-increase-home-value-california',
     'do-solar-panels-increase-property-taxes-california',
