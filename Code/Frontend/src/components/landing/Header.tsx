@@ -134,13 +134,9 @@ export function Header() {
                 </span>
               </Link>
             </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="hidden xl:inline-flex border-border text-foreground hover:bg-muted font-medium"
-            >
-              <Link href="/login">Login</Link>
-            </Button>
+            {/* The staff Login link was removed from the public header
+                2026-09-24 (plan 11.4): /login is a CRM screen, noindexed, and
+                every public page linked it. Staff reach it directly. */}
           </div>
         </div>
         {menuOpen && (

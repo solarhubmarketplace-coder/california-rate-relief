@@ -1,4 +1,14 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
+
+// One robots meta on the 404 page (plan 11.4, audit T-17). Next adds
+// <meta name="robots" content="noindex"> to every 404 by itself; the root
+// layout's default robots (index, follow) was being rendered next to it, so
+// the page carried two conflicting robots metas. `robots: null` drops the
+// layout default here, leaving Next's single noindex.
+export const metadata: Metadata = {
+  robots: null,
+};
 
 export default function NotFound() {
   return (
