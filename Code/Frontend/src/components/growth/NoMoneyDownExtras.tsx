@@ -121,12 +121,15 @@ export function NoMoneyDownCost() {
         On a lease or PPA, payments often rise each year. The CPUC says escalators &ldquo;are
         typically in the range of a 1 percent to 3 percent increase above the rate you paid in the
         previous year. Be cautious of entering into a contract with an escalator higher than
-        that.&rdquo; At 3% a year, the payment after 20 increases is about 1.8 times the first
-        year&rsquo;s (
+        that&rdquo; (
         <a href={NMD.cpucGuide} className={link}>
           CPUC consumer guide
         </a>
-        , checked September 24, 2026; the multiple is arithmetic). How an escalator works is in{' '}
+        , checked September 24, 2026).
+      </p>
+      <p className="mt-3">
+        The arithmetic adds up: at 3% a year, the payment after 20 increases is about 1.8 times
+        the first year&rsquo;s. How an escalator works is in{' '}
         <Link href="/solar-problems/solar-escalator-clause-explained" className={link}>
           what a solar escalator clause does
         </Link>
@@ -138,10 +141,11 @@ export function NoMoneyDownCost() {
         The CPUC lists the trade-offs side by side. In favor: &ldquo;Little or no upfront
         costs,&rdquo; the &ldquo;Solar provider is responsible for all monitoring, maintenance,
         and repairs,&rdquo; and a &ldquo;Minimum energy production often guaranteed.&rdquo;
+      </p>
+      <p className="mt-3">
         Against: selling the home &ldquo;may be more complicated than with a purchased
-        system,&rdquo; because the buyer must take over the agreement, you keep paying, or you buy
-        it out, &ldquo;which could be thousands of dollars&rdquo; (CPUC, checked September 24,
-        2026).
+        system.&rdquo; The buyer takes over the agreement, you keep paying, or you buy it out,
+        &ldquo;which could be thousands of dollars&rdquo; (CPUC, checked September 24, 2026).
       </p>
       <p className="mt-3">
         Do not count on a resale boost either. Berkeley Lab studied 113 California home sales with
