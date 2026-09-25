@@ -4,7 +4,6 @@ import {
   companiesCityHref,
   hasCompaniesCityPage,
 } from "@/lib/canonical-redirects";
-import { formatSourceCheckedDate } from "./DecisionPage";
 import { FaqJsonLd } from "@/components/shared/FaqJsonLd";
 import { cityLinkLabel, cityPagePath, liveCityPageTypes } from "@/lib/city-pages";
 
@@ -150,60 +149,6 @@ export function CityRegionPlaces({ slug }: { slug: string }) {
           .
         </p>
       ) : null}
-    </section>
-  );
-}
-
-export function CityPublishedProvider({ slug }: { slug: string }) {
-  const city = growthCities[slug];
-  const provider = city.provider;
-  if (!provider) return null;
-  return (
-    <section>
-      <h2>A company website to investigate in {city.name}</h2>
-      <p className="mb-4">
-        Published service information checked{" "}
-        {formatSourceCheckedDate(city.sourceCheckedDate || "2026-09-10")}. This
-        is a starting point for requesting a comparable bid. Address acceptance,
-        current license status and contract terms still need to be checked
-        directly.
-      </p>
-      <div className="overflow-x-auto rounded-xl border">
-        <table className="w-full text-left text-sm">
-          <caption className="sr-only">
-            Published service scope and quote questions
-          </caption>
-          <thead className="bg-muted">
-            <tr>
-              <th className="p-4">Company source</th>
-              <th className="p-4">Published scope</th>
-              <th className="p-4">Confirm in the proposal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="border-t">
-              <th scope="row" className="p-4 align-top">
-                <a
-                  href={provider.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  {provider.name}
-                </a>
-              </th>
-              <td className="p-4 align-top">{provider.detail}</td>
-              <td className="p-4 align-top">{provider.ask}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p className="mt-4">
-        This listing is not a ranking, endorsement or statement of a referral
-        agreement. Add other available bids using the same project requirements.
-        Unknown roof work, battery scope and service obligations belong in
-        written questions, not assumptions.
-      </p>
     </section>
   );
 }
