@@ -30,6 +30,7 @@
  *   node scripts/editorial-lint.mjs --check process-text
  *   node scripts/editorial-lint.mjs --check stale-strings
  *   node scripts/editorial-lint.mjs --json out.json
+ *   EDITORIAL_LINT_ROOT=/path/to/Code/Frontend node scripts/editorial-lint.mjs
  * Exits 1 when any rule matches.
  *
  * qc-gate.mjs and qc-gate-tsx.mjs import runEditorialLint() and report the two
@@ -43,7 +44,9 @@ import { fileURLToPath } from 'node:url';
 import ts from 'typescript';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-export const ROOT = join(__dirname, '..');
+// EDITORIAL_LINT_ROOT lets an integrator lint another checkout with these
+// rules (for example a lane's worktree before it merges). Default: this repo.
+export const ROOT = process.env.EDITORIAL_LINT_ROOT || join(__dirname, '..');
 const SRC = join(ROOT, 'src');
 const APP = join(SRC, 'app');
 
