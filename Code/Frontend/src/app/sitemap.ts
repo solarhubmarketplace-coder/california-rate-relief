@@ -78,7 +78,6 @@ const CRR_TOPICAL_20260923 = new Set<string>([
   '/blog/ladwp-ev-charging-rates',
   '/blog/ladwp-rates',
   '/blog/ladwp-solar-rooftops-program',
-  '/blog/nem-3-california-timeline',
   '/blog/nem-3-export-rates-california',
   '/blog/nem-3-lawsuit',
   '/blog/nem-pge',
@@ -425,6 +424,7 @@ const GS_MERGES_20260924 = new Set<string>([
   '/blog/can-you-cancel-solar-panel-contract-before-installation-california',
   '/blog/commercial-solar-financing-california',
   '/blog/rent-solar-panels-for-your-home-california',
+  '/blog/what-is-nem-3-california',
 ]);
 // END GS-MERGES 2026-09-24
 
@@ -545,7 +545,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'california-24-dollar-fixed-charge-explained',
     'pge-vs-sce-vs-sdge-rates-compared',
     'prepaid-ppa-california-2026', 'ppa-loan-vs-solar-lease-vs-cash-california',
-    'net-billing-vs-net-metering-california', 'nem-3-california-timeline',
+    'net-billing-vs-net-metering-california',
     'hoa-solar-rights-california', 'low-income-solar-california',
     'free-roof-replacement-with-solar-panels-california', 'nem-2-vs-nem-3-california',
     'rent-solar-panels-for-your-home-california',

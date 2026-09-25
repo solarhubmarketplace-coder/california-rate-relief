@@ -241,7 +241,7 @@ export default function Nem3LawsuitPage() {
                 PG&amp;E and SCE customers who apply to interconnect before the end of 2027 get slightly
                 higher export credits for nine years, and that storage is how customers maximize savings
                 under the tariff. The{' '}
-                <Link href="/blog/nem-3-california-timeline" className={link}>NEM 3.0 timeline</Link>{' '}
+                <Link href="/blog/what-is-nem-3-california#nem-3-timeline" className={link}>NEM 3.0 timeline</Link>{' '}
                 lists the dates that still matter.
               </p>
 

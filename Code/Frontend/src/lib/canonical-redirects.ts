@@ -267,6 +267,14 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   // disclosure, payment-input, escalator and contract-terms material moved.
   '/blog/how-much-does-it-cost-to-lease-solar-panels-california':
     '/blog/rent-solar-panels-for-your-home-california',
+  // Topic-map G10 (held on 2026-09-23, applied here): both NEM 3.0 pages
+  // are in SERP cluster 16 ("nem 3.0"). Impressions are 63 (timeline) and 27
+  // (definition), too few and too close to separate them, and neither has
+  // query rows; the definition page answers the cluster's head question,
+  // carries the export and rate mechanics, and already receives the
+  // /blog/nem-3-california redirect (Decision 16). Winner chosen on content;
+  // the dated timeline is folded in at #nem-3-timeline.
+  '/blog/nem-3-california-timeline': '/blog/what-is-nem-3-california',
   // END GS-MERGES 2026-09-24 ------------------------------------------------
 };
 

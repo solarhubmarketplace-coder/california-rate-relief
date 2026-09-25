@@ -2158,10 +2158,6 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "Virtual net metering and meter aggregation"
       },
       {
-        "href": "/blog/nem-3-california-timeline",
-        "label": "NEM 3.0 California Timeline: Confirmed Dates"
-      },
-      {
         "href": "/blog/what-is-nem-3-california",
         "label": "What is NEM 3.0 in California? Start with the bill"
       },

@@ -231,6 +231,7 @@ const GS_MERGES_APPLIED_HELD = new Set<string>([
   '/blog/nem-3-california-still-worth-it', // G11, into the worth-it winner
   '/commercial-solar/financing-options', // G08
   '/blog/how-much-does-it-cost-to-lease-solar-panels-california', // G05
+  '/blog/nem-3-california-timeline', // G10
 ]);
 
 // 2026-09-23, topical-authority wave (cities agent): new /solar-companies
@@ -418,6 +419,7 @@ const GS_MERGES: Readonly<Record<string, string>> = {
   '/commercial-solar/financing-options': '/blog/commercial-solar-financing-california',
   '/blog/how-much-does-it-cost-to-lease-solar-panels-california':
     '/blog/rent-solar-panels-for-your-home-california',
+  '/blog/nem-3-california-timeline': '/blog/what-is-nem-3-california',
 };
 ROW_DELTAS.push(Object.keys(GS_MERGES).length);
 

@@ -263,7 +263,7 @@ export default function NetBillingVsNetMeteringPage() {
                 evaluation within five years, and the CPUC lists Decision 23-11-068 as planning that evaluation. The{' '}
                 <Link href="/blog/nem-3-lawsuit" className={link}>NEM 3.0 lawsuit page</Link>{' '}
                 has the court history, and the{' '}
-                <Link href="/blog/nem-3-california-timeline" className={link}>NEM 3.0 timeline</Link>{' '}
+                <Link href="/blog/what-is-nem-3-california#nem-3-timeline" className={link}>NEM 3.0 timeline</Link>{' '}
                 has the remaining deadlines.
               </p>
 

@@ -699,15 +699,6 @@ const blogPosts: BlogPost[] = [
     category: 'California Solar Policy',
   },
   {
-    slug: 'nem-3-california-timeline',
-    title: 'NEM 3.0 California Timeline: Key Dates, Deadlines, and What Happens Next',
-    excerpt:
-      'A complete timeline of NEM 3.0 — the CPUC vote, the April 2023 go-live, grandfathering windows, AB 942, and what is ahead in 2026 and beyond.',
-    date: '2026-04-23',
-    readTime: '7 min read',
-    category: 'California Solar Policy',
-  },
-  {
     slug: 'hoa-solar-rights-california',
     title: 'Can an HOA Ban Solar Panels in California? Your Solar Rights, Explained',
     excerpt:

@@ -218,7 +218,7 @@ export default function WhenDoesNem2ExpirePage() {
                 heading="Related NEM 2.0 questions"
                 links={[
                   { href: '/blog/sce-nem-2', label: 'SCE’s NEM 2.0 rules in detail' },
-                  { href: '/blog/nem-3-california-timeline', label: 'Every NEM 3.0 date in one timeline' },
+                  { href: '/blog/what-is-nem-3-california#nem-3-timeline', label: 'Every NEM 3.0 date in one timeline' },
                   { href: '/blog/what-happens-to-solar-lease-when-i-sell-california', label: 'Selling a home with leased solar' },
                   { href: '/battery/battery-payback-nem-3-california', label: 'Battery payback after the switch' },
                 ]}
