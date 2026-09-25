@@ -42,7 +42,7 @@ const sdcpBill: LocalGuidanceSource = {
   url: 'https://sdcommunitypower.org/understanding-your-bill/',
   verifiedAt: verified20260920,
   scope:
-    'For an enrolled SDCP account, SDCP supplies generation while SDG&E continues delivery and consolidated billing. The page does not establish enrollment or a rate plan for a particular address.',
+    'For an enrolled SDCP account, SDCP supplies generation while SDG&E continues delivery and consolidated billing. SDCP\'s page does not establish enrollment or a rate plan for a particular address.',
 };
 
 const ceaBill: LocalGuidanceSource = {
@@ -66,7 +66,7 @@ const palmSpringsPermit: LocalGuidanceSource = {
   url: 'https://www.palmspringsca.gov/government/departments/building/permits',
   verifiedAt: verified20260918,
   scope:
-    'The City directs applicants to Palm Springs Online to select the application for the project. The page does not name SolarAPP+ or establish a project-specific review or inspection schedule.',
+    'The City directs applicants to Palm Springs Online to select the application for the project. The City\'s page does not name SolarAPP+ or establish a project-specific review or inspection schedule.',
 };
 
 const riversideCountyPermit: LocalGuidanceSource = {
@@ -82,7 +82,7 @@ const carlsbadPermit: LocalGuidanceSource = {
   url: 'https://www.carlsbadca.gov/departments/community-development/building/solarapp',
   verifiedAt: verified20260918,
   scope:
-    'The City routes eligible licensed-contractor rooftop projects through SolarAPP+ and then its Customer Self Service portal. The page does not make that route universal for every solar, roof, panel or storage scope.',
+    'The City routes eligible licensed-contractor rooftop projects through SolarAPP+ and then its Customer Self Service portal. The City\'s page does not make that route universal for every solar, roof, panel or storage scope.',
 };
 
 

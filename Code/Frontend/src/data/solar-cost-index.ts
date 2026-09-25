@@ -631,7 +631,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   lincoln: { platform: 'symbium', evidence: 'online filing via the Symbium portal' },
   livermore: { platform: 'solarapp', evidence: 'retrofit systems go through SolarAPP+' },
   manteca: { platform: 'symbium', evidence: 'issued instantly online through Symbium' },
-  marina: { platform: 'none-named', evidence: 'the page does not mention SolarAPP+ specifically' },
+  marina: { platform: 'none-named', evidence: 'page does not mention SolarAPP+ specifically' },
   modesto: {
     platform: 'solarapp',
     evidence: "lists Modesto's automated solar permitting platform as SolarAPP+",
