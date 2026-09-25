@@ -114,7 +114,7 @@ export const DG_SOURCE = {
 /** CPUC, California Solar Consumer Protection Guide: points shoppers to DG Stats
  *  for recent installation costs and says they are not verified by the government. */
 export const CPUC_GUIDE_DGSTATS_NOTE = {
-  label: 'CPUC, California Solar Consumer Protection Guide ("Find a local contractor through DGStats")',
+  label: 'CPUC, California Solar Consumer Protection Guide',
   url: 'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide',
   verifiedAt: '2026-09-24',
 } as const;

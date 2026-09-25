@@ -8,14 +8,12 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
-import { BillComparison } from '@/components/growth/BillComparison';
 import { LocalProjectGuidance } from '@/components/growth/LocalProjectGuidance';
 import { CitySiblingLinks, NearbyCostCities } from '@/components/growth/NearbyCostCities';
-import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import { RelatedGuides, type RelatedGuideLink } from '@/components/shared/RelatedGuides';
 import { ContentBlock } from '@/components/growth/ContentBlocks';
 import { MapPin, ArrowRight } from 'lucide-react';
-import { cityCostPath, type CityCostRow } from '@/data/city-cost-data';
+import { cityCostPath, getPublishableCityCostRows, type CityCostRow } from '@/data/city-cost-data';
 import { RATE_TRACKER_PATH, getUtilityRate } from '@/data/utility-rate-tracker';
 import { growthCities } from '@/data/growth-cities';
 import { getCityBySlug } from '@/data/cities-data';
@@ -25,8 +23,18 @@ import {
   COST_RULES_PATH,
   COST_RULES_TITLE,
   buildCostPageContent,
+  costHubRow,
   formatVerified,
 } from '@/lib/city-cost-content';
+
+/** The next `max` cost cities after this one (alphabetical, wrapping), so every
+ *  city is linked from the pages just before it. */
+function otherCostCities(slug: string, max: number) {
+  const rows = [...getPublishableCityCostRows()].sort((a, b) => a.city.localeCompare(b.city));
+  const i = rows.findIndex((r) => r.slug === slug);
+  const ordered = [...rows.slice(i + 1), ...rows.slice(0, Math.max(i, 0))];
+  return ordered.slice(0, max).map(costHubRow);
+}
 
 // Per-city extra links where a city's cost page draws impressions for a query
 // another page answers (topical-authority wave 2026-09-23, CREATE_DEDICATED
@@ -164,18 +172,6 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 </div>
               ))}
 
-              {/* ---------- Tool ---------- */}
-              <h2 id='bill-tool' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>
-                Check two of your own bills
-              </h2>
-              <p>
-                Compare two {utilityForTools || 'utility'} bills on the same basis (billing days, kWh
-                and charges) before you size a system. The arithmetic runs in your browser.
-              </p>
-              <div className='not-prose my-8'>
-                <BillComparison utilityName={utilityForTools || 'utility'} />
-              </div>
-
               {/* ---------- FAQ ---------- */}
               <h2 id='faq' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>
                 Frequently asked questions
@@ -244,7 +240,25 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
 
             <NearbyCostCities row={row} />
 
-            <HubSpokeLinks hub='city_cost' currentPath={path} max={6} title='Solar cost in other California cities' />
+            {/* Replaces the city_cost HubSpokeLinks block, whose labels in
+                topic-hubs.ts still carry the pre-2026-09-24 titles: the same
+                rotation (the next cities after this one), labeled with each
+                city's own reported figure, plus the hub. */}
+            <nav aria-label='Solar cost in other California cities' className='not-prose mt-10 rounded-lg border border-border bg-muted/30 p-5'>
+              <h2 className='text-lg font-semibold mb-3'>Solar cost in other California cities</h2>
+              <ul className='grid gap-2 text-sm sm:grid-cols-2'>
+                {otherCostCities(row.slug, 6).map((other) => (
+                  <li key={other.slug}>
+                    <Link href={other.path} className={link}>
+                      {other.city}: {other.perWatt} ({other.level})
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p className='mt-3 text-sm'>
+                <Link href='/solar-cost' className={link}>Every city by county</Link>
+              </p>
+            </nav>
 
             <SolarInquiry
               variant='bill'

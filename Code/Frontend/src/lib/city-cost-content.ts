@@ -73,13 +73,13 @@ export const COMPLIANCE_SENTENCE =
   'California Rate Relief is a referral service. We are not a licensed contractor.';
 
 export const USC_25D_SOURCE: CityCostRowSource = {
-  label: '26 U.S.C. §25D, residential clean energy credit: §25D(h) (no credit for expenditures made after December 31, 2025) and §25D(e)(8)(A) (an expenditure is made when installation is completed)',
+  label: '26 U.S.C. §25D(h) and (e)(8)(A), residential clean energy credit',
   url: 'https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A25D+edition%3Aprelim%29',
   verifiedAt: '2026-09-24',
 };
 
 export const GOV_66015_SOURCE: CityCostRowSource = {
-  label: 'California Government Code §66015(a), residential solar permit fees (amended by AB 1132, Stats. 2023, Ch. 357; in effect until January 1, 2034)',
+  label: 'California Government Code §66015(a), residential solar permit fees',
   url: STATE_RESIDENTIAL_PV_FEE_LIMIT.source.url,
   verifiedAt: '2026-09-24',
 };
