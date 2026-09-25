@@ -16,7 +16,7 @@
     "assert:pagedates": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/page-dates.mjs --check",
     "lint:editorial": "node scripts/editorial-lint.mjs",
     "lint:brand": "node scripts/brand-sweep.mjs --check",
-    "test:gs": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test src/lib/canonical-redirects.test.ts src/lib/cta-intent.test.ts src/lib/intake-routing.test.ts src/lib/city-pages.test.ts src/data/solar-cost-index.test.ts src/data/city-gate.test.ts src/data/held-pages.test.ts src/data/facts.test.ts src/data/page-modified-dates.test.ts src/lib/security-headers.test.ts",
+    "test:gs": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON --experimental-strip-types --test src/lib/canonical-redirects.test.ts src/lib/cta-intent.test.ts src/lib/intake-routing.test.ts src/lib/city-pages.test.ts src/data/solar-cost-index.test.ts src/data/city-gate.test.ts src/data/held-pages.test.ts src/data/facts.test.ts src/data/page-modified-dates.test.ts src/data/topic-hubs.test.ts src/lib/security-headers.test.ts",
     "assert:links": "node --disable-warning=MODULE_TYPELESS_PACKAGE_JSON scripts/assert-city-links.mjs --report",
     "typecheck": "tsc --noEmit",
     "test:growth": "node --experimental-strip-types --test src/lib/solar-savings-engine.test.ts src/lib/growth-report.test.ts src/lib/attribution.test.ts src/lib/intake-routing.test.ts src/lib/bill-comparison.test.ts src/lib/solar-financing-comparison.test.ts src/lib/service-market.test.ts src/lib/cta-intent.test.ts src/lib/phone.test.ts src/lib/quick-start.test.ts src/lib/city-pages.test.ts",

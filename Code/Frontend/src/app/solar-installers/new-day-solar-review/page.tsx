@@ -111,7 +111,7 @@ export default function NewDayReview() {
                 Utility records list New Day Solar (CSLB #812958) on 166 residential systems approved at PG&amp;E, SCE and SDG&amp;E in 2025, 106 of them in Riverside County. Of those, 71% included a battery and about 10% were leases or PPAs (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026).
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                For customer-owned systems without a battery, 1 to 25 kW, approved from January 2025 through May 2026, New Day&apos;s reported median price was $5.71 per watt on 58 systems. The statewide median on the same basis was $4.18. Reported prices are before incentives.
+                For customer-owned systems without a battery, 1 to 25 kW, approved from January 2025 through May 2026, New Day&apos;s reported median price was $5.71 per watt on 58 systems. The statewide median on the same basis was $4.14. Reported prices are before incentives.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Warranty</h2>

@@ -1748,7 +1748,7 @@ export const TOPIC_HUBS: TopicHub[] = [
     "label": "Installer and panel brand reviews",
     "hubPage": "/solar-installers",
     "hubPageLabel": "California Solar Company Reviews and Comparisons",
-    "spokes": [,
+    "spokes": [
       {
         "href": "/solar-installers/pge-and-sunrun",
         "label": "PG&E and Sunrun: Battery Programs, Payments, Who Qualifies"
