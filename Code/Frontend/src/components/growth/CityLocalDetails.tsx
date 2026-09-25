@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { growthCities } from "@/data/growth-cities";
+import { growthCities, type GrowthCitySection } from "@/data/growth-cities";
 import {
   companiesCityHref,
   hasCompaniesCityPage,
 } from "@/lib/canonical-redirects";
-import { formatSourceCheckedDate } from "./DecisionPage";
 import { FaqJsonLd } from "@/components/shared/FaqJsonLd";
 import { cityLinkLabel, cityPagePath, liveCityPageTypes } from "@/lib/city-pages";
 
@@ -15,7 +14,7 @@ function withArticle(name: string): string {
 
 export function CityLocalChecks({ slug }: { slug: string }) {
   const city = growthCities[slug];
-  if (!city.checks) return null;
+  if (!city?.checks) return null;
   return (
     <section>
       <h2>What {withArticle(city.name)} quote needs to explain</h2>
@@ -52,12 +51,20 @@ export function CityLocalChecks({ slug }: { slug: string }) {
  * local program. Plain paragraphs from growth-cities.ts; every fact in them is
  * listed in the page's sources.
  */
-export function CityLocalSections({ slug }: { slug: string }) {
+export function CityLocalSections({
+  slug,
+  exclude,
+}: {
+  slug: string;
+  /** Sections another page of the city carries (2026-09-24: bill copy on /solar-savings). */
+  exclude?: (section: GrowthCitySection) => boolean;
+}) {
   const city = growthCities[slug];
-  if (!city.sections?.length) return null;
+  const sections = (city?.sections ?? []).filter((section) => !exclude?.(section));
+  if (!sections.length) return null;
   return (
     <>
-      {city.sections.map((section) => (
+      {sections.map((section) => (
         <section key={section.heading}>
           <h2>{section.heading}</h2>
           {section.paragraphs.map((paragraph, index) => (
@@ -80,7 +87,7 @@ export function CityLocalSections({ slug }: { slug: string }) {
  */
 export function CityRegionPlaces({ slug }: { slug: string }) {
   const city = growthCities[slug];
-  const region = city.region;
+  const region = city?.region;
   if (!region?.places.length) return null;
   const pageFor = (placeSlug: string) => {
     const types = liveCityPageTypes(placeSlug);
@@ -146,63 +153,9 @@ export function CityRegionPlaces({ slug }: { slug: string }) {
   );
 }
 
-export function CityPublishedProvider({ slug }: { slug: string }) {
-  const city = growthCities[slug];
-  const provider = city.provider;
-  if (!provider) return null;
-  return (
-    <section>
-      <h2>A company website to investigate in {city.name}</h2>
-      <p className="mb-4">
-        Published service information checked{" "}
-        {formatSourceCheckedDate(city.sourceCheckedDate || "2026-09-10")}. This
-        is a starting point for requesting a comparable bid. Address acceptance,
-        current license status and contract terms still need to be checked
-        directly.
-      </p>
-      <div className="overflow-x-auto rounded-xl border">
-        <table className="w-full text-left text-sm">
-          <caption className="sr-only">
-            Published service scope and quote questions
-          </caption>
-          <thead className="bg-muted">
-            <tr>
-              <th className="p-4">Company source</th>
-              <th className="p-4">Published scope</th>
-              <th className="p-4">Confirm in the proposal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr className="border-t">
-              <th scope="row" className="p-4 align-top">
-                <a
-                  href={provider.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline"
-                >
-                  {provider.name}
-                </a>
-              </th>
-              <td className="p-4 align-top">{provider.detail}</td>
-              <td className="p-4 align-top">{provider.ask}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p className="mt-4">
-        This listing is not a ranking, endorsement or statement of a referral
-        agreement. Add other available bids using the same project requirements.
-        Unknown roof work, battery scope and service obligations belong in
-        written questions, not assumptions.
-      </p>
-    </section>
-  );
-}
-
 export function CityQuestions({ slug }: { slug: string }) {
   const city = growthCities[slug];
-  if (!city.faq) return null;
+  if (!city?.faq) return null;
   return (
     <section>
       {/* FAQPage schema built from exactly the strings rendered below. */}
