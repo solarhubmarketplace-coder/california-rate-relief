@@ -410,7 +410,8 @@ export function SolarCostIndexTable({
               const detailsId = `${uid}-${row.slug}-details`;
               return (
                 <Fragment key={row.slug}>
-                  <tr className='border-b border-border align-top'>
+                  {/* id: each city page links here as #city-<slug> (2026-09-24). */}
+                  <tr id={`city-${row.slug}`} className='scroll-mt-24 border-b border-border align-top target:bg-primary/5'>
                     <th scope='row' className='sticky left-0 z-10 bg-card px-3 py-3 text-left font-normal'>
                       <Link href={row.cityPath} className={`${link} font-semibold`}>
                         {row.city}
