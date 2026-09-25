@@ -34,6 +34,7 @@ import { RATE_TRACKER_PATH, formatAverageRateCents, getUtilityRate } from '../da
 import { hasCompaniesCityPage, hasSavingsCityPage } from './canonical-redirects.ts';
 import { CRUMB_LABELS, type Crumb } from './breadcrumb-sections.ts';
 import { utilityOptions } from './calculator-context.ts';
+import { MUNICIPAL_MAIN_UTILITY } from '../data/dgstats/municipal.ts';
 
 export type CityPageType = 'cost' | 'companies' | 'savings';
 
@@ -359,6 +360,11 @@ export function savingsCityCrumbs(slug: string): Crumb[] {
 
 /** The companies route for the older template shipped in commit ff1ecfb. */
 const LEGACY_COMPANIES_LAUNCHED = '2026-04-24';
+/**
+ * 2026-09-24 (Block 3.3): every /solar-companies page was rebuilt around the
+ * CPUC DG Stats installer table (src/data/dgstats/companies.ts).
+ */
+const COMPANIES_REBUILT = '2026-09-24';
 /** growth-cities.ts: "Sources default to 2026-09-10". */
 const GROWTH_DEFAULT_CHECKED = '2026-09-10';
 
@@ -391,7 +397,7 @@ export function cityPageDates(type: CityPageType, slug: string): CityPageDateInf
   }
   if (type === 'companies' && growthCities[slug]) {
     const city = growthCities[slug];
-    return { modified: maxIso(city.sourceCheckedDate || GROWTH_DEFAULT_CHECKED, city.contentModified) };
+    return { modified: maxIso(city.sourceCheckedDate || GROWTH_DEFAULT_CHECKED, city.contentModified, COMPANIES_REBUILT) };
   }
   if (type === 'savings' && SAVINGS_BILLS_SEO[slug]?.modified) {
     const record = CITY_PAGE_DATES[slug];
@@ -403,7 +409,7 @@ export function cityPageDates(type: CityPageType, slug: string): CityPageDateInf
   const record = CITY_PAGE_DATES[slug];
   if (type === 'companies') {
     const published = maxIso(LEGACY_COMPANIES_LAUNCHED, record?.added);
-    return { published, modified: maxIso(published, record?.updated) };
+    return { published, modified: maxIso(published, record?.updated, COMPANIES_REBUILT) };
   }
   return { published: record?.added, modified: maxIso(record?.added, record?.updated) };
 }
@@ -538,44 +544,86 @@ export function costPageSeo(row: CityCostRow): CitySeo {
   };
 }
 
-/** /solar-companies/<city>, both the comparison template and the older one. */
+/** "the Bay Area", "Fresno". */
+function companiesPlace(name: string): string {
+  return /^(Bay Area|Coachella Valley|High Desert|Inland Empire)$/.test(name) ? `the ${name}` : name;
+}
+
+/**
+ * Title and H1 for the busiest /solar-companies pages, written from their top
+ * Search Console queries (page_audit.csv, 90 days to 2026-09-17; 7.2 / 7.3).
+ * Pages whose queries lean on "installers" and "installation" say so.
+ */
+const COMPANIES_SEO_OVERRIDES: Readonly<Record<string, { title: string; h1: string }>> = {
+  pleasanton: {
+    title: 'Pleasanton Solar Companies & Installers: 2025 Install Counts',
+    h1: 'Solar Companies and Installers in Pleasanton: Who Installed the Most in 2025',
+  },
+  livermore: {
+    title: 'Livermore Solar Companies & Installers: 2025 Install Counts',
+    h1: 'Solar Companies and Installers in Livermore: Who Installed the Most in 2025',
+  },
+  'san-mateo': {
+    title: 'Solar Installers in San Mateo, CA: 2025 Counts & Licenses',
+    h1: 'Solar Installers and Companies in San Mateo: 2025 Counts and Licenses',
+  },
+};
+
+/**
+ * /solar-companies/<city> (2026-09-24, Block 3.3 and 7.2/7.3). The page now
+ * opens with the installers the CPUC's interconnection records name for the
+ * city, so the title answers "solar companies <city>" with that: who installed
+ * the most there in 2025. A city whose main utility is publicly owned is not
+ * in those records (MUNICIPAL_MAIN_UTILITY), so its title promises installer
+ * counts and license checks, not a citywide ranking of who installed the most.
+ */
 export function companiesPageSeo(slug: string): CitySeo | null {
   const growth = growthCities[slug];
   const legacy = getCityBySlug(slug);
   const city = growth?.name ?? legacy?.name;
   if (!city) return null;
-  const title = fit(
-    TITLE_MAX,
-    `Solar Panels & Solar Companies in ${city}, CA (${YEAR})`,
-    `${city} Solar Panels & Solar Companies (${YEAR})`,
-  );
-  if (growth) {
-    const utility = GROWTH_UTILITY_LABEL[growth.utility];
-    const bill = utility ? `the ${utility} bill` : 'which utility bills you';
-    const checked = shortDate(growth.sourceCheckedDate || GROWTH_DEFAULT_CHECKED);
-    // A county or region page (2026-09-23, Tier 2) writes its own
-    // description: "the permit route" is one office per city, not per region.
-    const own = growth.seo;
+  const place = companiesPlace(city);
+  const municipal = MUNICIPAL_MAIN_UTILITY[slug];
+  const isRegion = Boolean(growth?.region);
+  const override = COMPANIES_SEO_OVERRIDES[slug];
+  if (municipal) {
     return {
-      title: own?.title ?? title,
-      description: own?.description ?? fit(
-        DESCRIPTION_MAX,
-        `Comparing solar companies in ${city}? Check ${bill}, ${possessive(city)} permit route and 6 quote items side by side. Sources checked ${checked}.`,
-        `Comparing solar companies in ${city}? Check ${bill}, the permit route and 6 quote items side by side. Sources checked ${checked}.`,
-        `Comparing solar companies in ${city}? Check ${bill}, the permit route and 6 quote items side by side.`,
+      title: override?.title ?? fit(
+        TITLE_MAX,
+        `Solar Companies in ${city}, CA: Installer Counts & Licenses`,
+        `${city} Solar Companies: Installer Counts & License Checks`,
+        `${city} Solar Companies: Installers & License Checks`,
       ),
-      h1: own?.h1 ?? `Solar Companies in ${city}, CA: How to Compare Solar Panel Quotes`,
+      description: fit(
+        DESCRIPTION_MAX,
+        `${municipal.short} customers are not in the state's solar records, so see the installers in nearby utility records for ${city}, with CSLB license numbers and quote checks.`,
+        `Installers in the state's solar records for ${city} and nearby, with CSLB license numbers and what ${municipal.short} customers should check.`,
+      ),
+      h1: override?.h1 ?? `Solar Companies in ${city}, CA: Installer Counts and License Checks`,
     };
   }
-  const utility = legacyUtilityLabel(legacy!);
+  const suffix = isRegion ? '' : ', CA';
   return {
-    title,
-    description: fit(
-      DESCRIPTION_MAX,
-      `9 solar companies compared for ${city}, CA homeowners: who each one fits, the honest trade-off, and the ${utility} and contract checks before you sign.`,
-      `9 solar companies compared for ${city}, CA: who each one fits, the honest trade-off, and the contract checks before you sign.`,
+    title: override?.title ?? fit(
+      TITLE_MAX,
+      `Solar Companies in ${city}${suffix}: Who Installed the Most in 2025`,
+      `${city} Solar Companies: Who Installed the Most in 2025`,
+      `${city} Solar Companies: 2025 Installer Counts`,
+      `${city} Solar Installers: 2025 Counts`,
     ),
-    h1: `Solar Companies in ${city}, CA: 9 Solar Panel Installers Compared`,
+    description: isRegion
+      ? fit(
+          DESCRIPTION_MAX,
+          `Which installers connected the most home solar systems across ${place} in 2025, from CPUC records, with license numbers and each city's utility and permit office.`,
+          `Which installers connected the most home solar systems across ${place} in 2025, from CPUC records, with license numbers and each city's utility.`,
+        )
+      : fit(
+          DESCRIPTION_MAX,
+          `Which installers connected the most home solar systems in ${city} in 2025, from CPUC utility records, with CSLB license numbers and the checks before you sign.`,
+          `Which installers connected the most home solar systems in ${city} in 2025, from CPUC records, with CSLB license numbers and quote checks.`,
+          `The installers on the most ${city} home solar systems in 2025, from CPUC records, with license numbers.`,
+        ),
+    h1: override?.h1 ?? `Solar Companies in ${place}${suffix}: Who Installed the Most Systems in 2025`,
   };
 }
 

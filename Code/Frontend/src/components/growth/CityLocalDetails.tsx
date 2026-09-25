@@ -15,7 +15,7 @@ function withArticle(name: string): string {
 
 export function CityLocalChecks({ slug }: { slug: string }) {
   const city = growthCities[slug];
-  if (!city.checks) return null;
+  if (!city?.checks) return null;
   return (
     <section>
       <h2>What {withArticle(city.name)} quote needs to explain</h2>
@@ -54,7 +54,7 @@ export function CityLocalChecks({ slug }: { slug: string }) {
  */
 export function CityLocalSections({ slug }: { slug: string }) {
   const city = growthCities[slug];
-  if (!city.sections?.length) return null;
+  if (!city?.sections?.length) return null;
   return (
     <>
       {city.sections.map((section) => (
@@ -80,7 +80,7 @@ export function CityLocalSections({ slug }: { slug: string }) {
  */
 export function CityRegionPlaces({ slug }: { slug: string }) {
   const city = growthCities[slug];
-  const region = city.region;
+  const region = city?.region;
   if (!region?.places.length) return null;
   const pageFor = (placeSlug: string) => {
     const types = liveCityPageTypes(placeSlug);
@@ -202,7 +202,7 @@ export function CityPublishedProvider({ slug }: { slug: string }) {
 
 export function CityQuestions({ slug }: { slug: string }) {
   const city = growthCities[slug];
-  if (!city.faq) return null;
+  if (!city?.faq) return null;
   return (
     <section>
       {/* FAQPage schema built from exactly the strings rendered below. */}
