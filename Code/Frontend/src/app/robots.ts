@@ -36,9 +36,10 @@ function detectDomainKey(host: string): string {
 // dashboard, the login page, or the API.
 // -----------------------------------------------------------------------------
 
+// '/login' was removed 2026-09-24 (plan 11.4): the page now carries a
+// noindex, and a Disallow would stop Google from ever reading it.
 const DISALLOWED_PATHS = [
   '/dashboard/',
-  '/login',
   '/api/',
   '/testing-guide',
 ];

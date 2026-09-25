@@ -84,7 +84,7 @@ export default function SolarPPAExplainedCalifornia() {
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
                   <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-04-16'>April 16, 2026</time>
+                  <time dateTime='2026-09-22'>Updated September 22, 2026</time>
                 </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />

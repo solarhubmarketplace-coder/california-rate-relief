@@ -4,6 +4,7 @@ import { createServerClient } from '@supabase/ssr';
 import { getGlp1RouteDisposition } from '@/lib/glp1-seo-routes';
 import { PUBLIC_CRR_NO_SESSION_ROUTES } from '@/lib/growth-routes';
 import { canonicalRedirectFor } from '@/lib/canonical-redirects';
+import { isHeldPath } from '@/data/held-pages';
 
 const GLP1_PUBLIC_CACHE_CONTROL =
   'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400';
@@ -289,11 +290,30 @@ export async function middleware(request: NextRequest) {
   }
 
   // --- ratereliefca.com → 301 redirect /reviews/* to greenreviewshub.com ---
-  if (isCRR && pathname.startsWith('/reviews')) {
+  // Straight to the www host, which serves the pages. The bare
+  // greenreviewshub.com host answers with a temporary (307) redirect to www,
+  // so pointing there made a two-hop chain with a temporary second hop
+  // (technical_site_audit.md §2.6; plan 6.5). Query string kept.
+  const reviewsTarget = (path: string) =>
+    `https://www.greenreviewshub.com${path}${request.nextUrl.search}`;
+
+  // --- www.ratereliefca.com → 301 to the apex, same path and query (plan 11.1) ---
+  // www has no DNS record yet (NXDOMAIN, T-15); once Chad adds one this makes
+  // www a single permanent hop to the canonical host. A path that the apex
+  // would redirect again goes straight to its final URL, so there is no chain.
+  if (/^www\.ratereliefca\.com(?::\d+)?$/.test(hostname)) {
+    if (pathname.startsWith('/reviews')) {
+      return NextResponse.redirect(reviewsTarget(pathname), 301);
+    }
+    const finalPath = canonicalRedirectFor(pathname) ?? pathname;
     return NextResponse.redirect(
-      `https://greenreviewshub.com${pathname}`,
+      `https://ratereliefca.com${finalPath}${request.nextUrl.search}`,
       301
     );
+  }
+
+  if (isCRR && pathname.startsWith('/reviews')) {
+    return NextResponse.redirect(reviewsTarget(pathname), 301);
   }
 
   // --- ratereliefca.com one-per-intent canonicalisation (301) ---
@@ -310,6 +330,19 @@ export async function middleware(request: NextRequest) {
     if (canonicalTarget) {
       return NextResponse.redirect(new URL(canonicalTarget, request.url), 301);
     }
+  }
+
+  // --- ratereliefca.com held pages (plan 0.4 / 0.5, 2026-09-24) ---
+  // Served normally (200) but marked noindex, follow, and left out of the
+  // sitemap. The list and the reason for each hold are in
+  // src/data/held-pages.ts. Done here with a header rather than in the city
+  // templates' metadata so releasing a page is a data change, not a template
+  // edit. These are public content pages, so the Supabase session logic below
+  // is not needed.
+  if (isCRR && isHeldPath(pathname)) {
+    const held = NextResponse.next();
+    held.headers.set('X-Robots-Tag', 'noindex, follow');
+    return held;
   }
 
   // --- ratereliefca.com's own page that collides with GLP1's '/best' prefix ---

@@ -230,8 +230,8 @@ export default async function RootLayout({
   const isCRR = domainKey === 'ratereliefca';
 
   // Global Organization + WebSite JSON-LD per host (Batch 5).
-  // Emitted on EVERY page so Google sees the publisher entity + sitelinks-search-box
-  // potential consistently across the site, not just on /reviews.
+  // Emitted on EVERY page so Google sees the publisher and site entities
+  // consistently across the site, not just on /reviews.
   const cfg = DOMAIN_DEFAULTS[domainKey];
   const orgSchema = {
     '@context': 'https://schema.org',
@@ -254,14 +254,9 @@ export default async function RootLayout({
     name: cfg.siteName,
     description: cfg.description,
     publisher: { '@id': `${cfg.base}#organization` },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: `${cfg.base}/?q={search_term_string}`,
-      },
-      'query-input': 'required name=search_term_string',
-    },
+    // No potentialAction/SearchAction: none of these hosts has a site search.
+    // `/?q=` returned the home page unchanged, so the markup declared a
+    // function that does not exist (audit T-29, plan 11.3, 2026-09-24).
   };
 
   return (

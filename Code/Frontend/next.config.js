@@ -1,5 +1,33 @@
+// ---------------------------------------------------------------------------
+// Security headers for every response on every host (plan 11.2, 2026-09-24).
+// The 2026-09-24 audit (technical_site_audit.md §2.4, T-18) found none of the
+// standard headers on a site whose forms collect an address and phone number.
+//   - HSTS: one year, subdomains included. Every host here is HTTPS-only.
+//   - nosniff and a referrer policy that sends only the origin cross-site.
+//   - Permissions-Policy turns off camera, microphone and geolocation. No page
+//     uses them: the voice features run on the backend (Twilio), and the
+//     address field uses Places autocomplete, not the browser location API.
+//   - CSP is frame-ancestors only (no framing by other sites). No script,
+//     style or connect directives: those could block gtag, Maps or Next's
+//     inline scripts and need their own tested rollout.
+// No Cache-Control here: the GLP1 cache header is set in middleware.ts and
+// is unaffected.
+// ---------------------------------------------------------------------------
+const SECURITY_HEADERS = [
+  { key: 'Strict-Transport-Security', value: 'max-age=31536000; includeSubDomains' },
+  { key: 'X-Content-Type-Options', value: 'nosniff' },
+  { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+  { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' },
+  { key: 'Content-Security-Policy', value: "frame-ancestors 'self'" },
+];
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Don't advertise the framework (T-18 noted x-powered-by: Next.js).
+  poweredByHeader: false,
+  async headers() {
+    return [{ source: '/:path*', headers: SECURITY_HEADERS }];
+  },
   // Lower peak build memory (slower compile, same output). The 2026-09-23
   // release build was OOM-killed at ~5.9 GB without it.
   experimental: { webpackMemoryOptimizations: true },

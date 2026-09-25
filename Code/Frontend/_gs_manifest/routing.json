@@ -1,0 +1,488 @@
+{
+  "lane": "routing",
+  "branch": "claude/gs-routing-20260924",
+  "base": "0355a03",
+  "updated": "2026-09-24",
+  "commits": [
+    "5aa173e Set every CRR sitemap lastmod to the page's own dateModified",
+    "3411109 Make 12 pages' visible date match their own dateModified",
+    "520a807 Noindex /login, stop disallowing it, drop it from the header; one robots meta on 404",
+    "3ad1423 Remove the WebSite SearchAction: no host has a site search",
+    "041e17b Add HSTS, nosniff, referrer, permissions and frame-ancestors headers",
+    "7279b86 Send /reviews/* to www.greenreviewshub.com in one hop; 301 www to the apex",
+    "5222f1d 301 the 24 out-of-state pages, the duplicate legal pages and 11 lost URLs",
+    "5005021 Hold 36 new cost pages and 15 near-duplicate companies pages from the index"
+  ],
+  "items": {
+    "0.4": {
+      "status": "done",
+      "what": "36 new /solar-cost city pages held: served 200 with X-Robots-Tag: noindex, follow (src/middleware.ts) and left out of the CRR sitemap (src/app/sitemap.ts). List and reasons in src/data/held-pages.ts (HELD_PAGES, isHeldPath). City templates untouched.",
+      "evidence": {
+        "files": [
+          "src/data/held-pages.ts",
+          "src/data/held-pages.test.ts",
+          "src/middleware.ts",
+          "src/app/sitemap.ts"
+        ],
+        "held_cost_slugs": 36,
+        "count": 36,
+        "source": "page_audit.csv family=/solar-cost, new_in_release=True"
+      }
+    },
+    "0.5": {
+      "status": "done",
+      "what": "15 new /solar-companies city pages with max_similarity_same_family >= 0.5 (0.663-0.773) held the same way.",
+      "evidence": {
+        "count": 15,
+        "source": "page_audit.csv family=/solar-companies, new_in_release=True, max_similarity_same_family>=0.5"
+      }
+    },
+    "0.7": {
+      "status": "done",
+      "what": "301 /terms-of-service -> /terms and /privacy-policy -> /privacy in the CRR table (middleware isCRR branch: ratereliefca.com, www, localhost preview). GLP1 keeps its own 308s for the same paths. Page files left in place; unreachable on CRR.",
+      "evidence": {
+        "files": [
+          "src/lib/canonical-redirects.ts",
+          "src/lib/canonical-redirects.test.ts"
+        ]
+      }
+    },
+    "6.1": {
+      "status": "done",
+      "what": "All 24 out-of-state pages 301 to a California page on the same question (table below). Removed from the sitemap (the explicit state block is deleted; the redirect filter also drops them). The only CRR code linking them outside the pages themselves was the unused ServiceMarkets component, now deleted (the home page comment updated). Page source files and their components (StateSolarDecisionPage, UtilityDecisionPage, LocalSolarCompaniesGuide, RichmondSolarCompaniesGuide) are left in place but unreachable. GROWTH_ROUTES still lists them (harmless: middleware redirects first; intake-routing.ts is out of scope). Out-of-state form utility options: speed lane.",
+      "evidence": {
+        "count": 24,
+        "test": "canonical-redirects.test.ts checks every page.tsx under /new-jersey, /maryland, /virginia, /delaware, /washington-dc, /utilities is a redirect source (24 found)"
+      }
+    },
+    "6.4": {
+      "status": "done",
+      "what": "The 11 GSC-impression URLs that 404 now 301 to their live page (table below). /programs/care-california (linked from 3 live pages, never published) 301s to /blog/income-qualified-bill-discount-pge, the site's CARE/FERA page. The release already carries no link to /programs/* (commits 057ca54, fcc9d3c) and no internal link to a 308 source (/blog/what-size-solar-system-do-i-need, /blog/nem-3-california, /blog/is-solar-worth-it-california-2026) or any other redirect source; assert:citylinks confirms no internal link points at a redirected path.",
+      "evidence": {
+        "count": 11,
+        "impressions": 12,
+        "clicks": 1,
+        "source": "topicmap/gsc/Pages.csv URLs not in the release sitemap, excluding redirects and 200s"
+      }
+    },
+    "6.5": {
+      "status": "done",
+      "what": "/reviews/* on ratereliefca.com (and www) now 301s straight to https://www.greenreviewshub.com<same path><same query>, one hop instead of 301 -> 307.",
+      "evidence": {
+        "files": [
+          "src/middleware.ts"
+        ]
+      }
+    },
+    "11.1": {
+      "status": "done",
+      "what": "Host www.ratereliefca.com -> 301 https://ratereliefca.com<same path><same query>. A path the apex would redirect again (CRR table, /reviews) goes straight to its final URL. Inert until the DNS record and the Railway custom domain exist.",
+      "evidence": {
+        "files": [
+          "src/middleware.ts"
+        ]
+      }
+    },
+    "11.2": {
+      "status": "done",
+      "what": "next.config.js headers() on /:path* for all hosts: Strict-Transport-Security max-age=31536000; includeSubDomains, X-Content-Type-Options nosniff, Referrer-Policy strict-origin-when-cross-origin, Permissions-Policy camera=(), microphone=(), geolocation=(), Content-Security-Policy frame-ancestors 'self' (only). Also poweredByHeader: false (T-18 noted x-powered-by). No Cache-Control rule; GLP1 cache header stays in middleware. Checked: no frontend code uses camera, microphone or geolocation (voice is backend Twilio; Places autocomplete does not use the browser location API); the only iframe is a srcdoc preview in the CRM.",
+      "evidence": {
+        "files": [
+          "next.config.js",
+          "src/lib/security-headers.test.ts"
+        ]
+      }
+    },
+    "11.3": {
+      "status": "done",
+      "what": "WebSite potentialAction/SearchAction removed from src/app/layout.tsx (all hosts; none has a site search). Organization and the rest of WebSite unchanged.",
+      "evidence": {
+        "files": [
+          "src/app/layout.tsx"
+        ]
+      }
+    },
+    "11.4": {
+      "status": "done",
+      "what": "/login: robots noindex, nofollow via new server layout src/app/(auth)/login/layout.tsx (the page is a client component); '/login' removed from robots.ts DISALLOWED_PATHS (other Disallows kept); Login button removed from the public header (src/components/landing/Header.tsx). 404: not-found.tsx exports robots: null so the root layout's index, follow is not rendered next to Next's own noindex (one robots meta).",
+      "evidence": {
+        "files": [
+          "src/app/(auth)/login/layout.tsx",
+          "src/app/robots.ts",
+          "src/components/landing/Header.tsx",
+          "src/app/not-found.tsx"
+        ],
+        "note": "Not rendered in a build (no next build allowed); the 404 behaviour follows next@15.5.25 resolve-metadata (robots null -> no tag) and app-render NonIndex."
+      }
+    },
+    "11.5": {
+      "status": "done",
+      "what": "Every CRR sitemap lastmod now equals the page's own dateModified from the source the page uses. Hand-written pages: src/data/page-modified-dates.ts generated by scripts/page-dates.mjs from each page file (219 pages); city pages: cityPageDates(); JSON articles: reviewedAt (one shadowed by a hand-written page uses the page's date); cost index: COST_INDEX_UPDATED; /solar-cost, /battery, /solar-problems hubs: newest date among the rows they list (as their CollectionPage schema). Pages declaring no date (/, /blog, /about, /contact, /methodology, /author/chad-simpson, /affiliate-disclosure, /editorial-policy, /how-we-make-money, /sources-we-use, /corrections, two installer comparisons) get no lastmod. Removed the per-wave date sets, the SF/Oakland 2026-09-11 override and the request-time date on the hubs. 12 pages' visible date fixed to match dateModified (later of the two each page already declared; no new dates). Non-CRR sitemaps byte-identical.",
+      "evidence": {
+        "verification": "sitemap.ts bundled and rendered in Node: 523 CRR URLs (598 - 51 held - 24 out-of-state), 0 duplicates, every lastmod == the page's JSON-LD dateModified in page_audit.csv except the two reviews whose dateModified this lane moved to 04-24; GRH/SHG/AHB/GLP1 output identical to base.",
+        "page_fixes": [
+          "/blog/california-24-dollar-fixed-charge-explained (04-14 shown -> Updated 2026-09-22)",
+          "/blog/hoa-solar-rights-california (04-23 -> Updated 2026-04-24)",
+          "/blog/switch-to-solar-california (04-23 -> 04-24)",
+          "/blog/tesla-powerwall-installers-california (04-23 -> 04-24)",
+          "/blog/can-solar-panels-power-a-whole-house-california (04-23 -> 04-24)",
+          "/blog/what-happens-to-solar-panels-after-25-years (04-23 -> 04-24)",
+          "/blog/do-solar-panels-work-at-night-california (04-23 -> 09-22)",
+          "/blog/do-solar-panels-work-on-cloudy-days-california (04-23 -> 09-22)",
+          "/blog/how-big-of-a-solar-system-do-i-need-california (04-23 -> 09-22)",
+          "/blog/solar-ppa-explained-california (04-16 -> 09-22)",
+          "/solar-installers/sunpower-review (dateModified and Updated 04-22 -> 04-24, its 'Last reviewed' date)",
+          "/solar-installers/semper-solaris-review (same)"
+        ],
+        "audit_false_positives": "/solar-savings/{bay-area,central-valley,inland-empire,san-diego-county} ('June 2026' is rate data, not a page date) and /commercial-solar/title-24-requirements ('January 1, 2026' is the code's effective date): only their lastmod needed fixing.",
+        "files": [
+          "scripts/page-dates.mjs",
+          "src/data/page-modified-dates.ts",
+          "src/data/page-modified-dates.test.ts",
+          "src/app/sitemap.ts"
+        ]
+      }
+    }
+  },
+  "redirects": {
+    "block": "src/lib/canonical-redirects.ts, '// GS-ROUTING 2026-09-24' ... '// END GS-ROUTING 2026-09-24', last in CRR_CANONICAL_REDIRECTS; test registry block of the same name in canonical-redirects.test.ts (ROW_DELTAS +38). Table now 69 rows.",
+    "status_code": "301 (middleware, CRR hosts only)",
+    "0.7_legal": [
+      {
+        "from": "/terms-of-service",
+        "to": "/terms"
+      },
+      {
+        "from": "/privacy-policy",
+        "to": "/privacy"
+      }
+    ],
+    "6.1_out_of_state": [
+      {
+        "from": "/new-jersey/solar-cost",
+        "to": "/solar-panels-california",
+        "impressions_90d": 12,
+        "why": "State \"solar panel cost / compare the real quote\" guide -> the California solar guide, which answers \"How much do solar panels cost in California?\" and covers incentives and paying for solar."
+      },
+      {
+        "from": "/maryland/solar-cost",
+        "to": "/solar-panels-california",
+        "impressions_90d": 16,
+        "why": "State \"solar panel cost / compare the real quote\" guide -> the California solar guide, which answers \"How much do solar panels cost in California?\" and covers incentives and paying for solar."
+      },
+      {
+        "from": "/virginia/solar-cost",
+        "to": "/solar-panels-california",
+        "impressions_90d": 16,
+        "why": "State \"solar panel cost / compare the real quote\" guide -> the California solar guide, which answers \"How much do solar panels cost in California?\" and covers incentives and paying for solar."
+      },
+      {
+        "from": "/delaware/solar-cost",
+        "to": "/solar-panels-california",
+        "impressions_90d": 22,
+        "why": "State \"solar panel cost / compare the real quote\" guide -> the California solar guide, which answers \"How much do solar panels cost in California?\" and covers incentives and paying for solar."
+      },
+      {
+        "from": "/washington-dc/solar",
+        "to": "/solar-panels-california",
+        "impressions_90d": 3,
+        "why": "State \"solar panel cost / compare the real quote\" guide -> the California solar guide, which answers \"How much do solar panels cost in California?\" and covers incentives and paying for solar."
+      },
+      {
+        "from": "/new-jersey/solar-companies",
+        "to": "/best-solar-companies-california",
+        "impressions_90d": 0,
+        "why": "State or city \"solar companies / quote comparison\" guide -> the California installer comparison (find, compare and verify an installer; CSLB check)."
+      },
+      {
+        "from": "/maryland/solar-companies",
+        "to": "/best-solar-companies-california",
+        "impressions_90d": 0,
+        "why": "State or city \"solar companies / quote comparison\" guide -> the California installer comparison (find, compare and verify an installer; CSLB check)."
+      },
+      {
+        "from": "/virginia/solar-companies",
+        "to": "/best-solar-companies-california",
+        "impressions_90d": 0,
+        "why": "State or city \"solar companies / quote comparison\" guide -> the California installer comparison (find, compare and verify an installer; CSLB check)."
+      },
+      {
+        "from": "/delaware/solar-companies",
+        "to": "/best-solar-companies-california",
+        "impressions_90d": 0,
+        "why": "State or city \"solar companies / quote comparison\" guide -> the California installer comparison (find, compare and verify an installer; CSLB check)."
+      },
+      {
+        "from": "/washington-dc/solar-companies",
+        "to": "/best-solar-companies-california",
+        "impressions_90d": 0,
+        "why": "State or city \"solar companies / quote comparison\" guide -> the California installer comparison (find, compare and verify an installer; CSLB check)."
+      },
+      {
+        "from": "/virginia/richmond-solar-companies",
+        "to": "/best-solar-companies-california",
+        "impressions_90d": 0,
+        "why": "State or city \"solar companies / quote comparison\" guide -> the California installer comparison (find, compare and verify an installer; CSLB check)."
+      },
+      {
+        "from": "/virginia/virginia-beach-solar-companies",
+        "to": "/best-solar-companies-california",
+        "impressions_90d": 0,
+        "why": "State or city \"solar companies / quote comparison\" guide -> the California installer comparison (find, compare and verify an installer; CSLB check)."
+      },
+      {
+        "from": "/maryland/baltimore-solar-companies",
+        "to": "/best-solar-companies-california",
+        "impressions_90d": 0,
+        "why": "State or city \"solar companies / quote comparison\" guide -> the California installer comparison (find, compare and verify an installer; CSLB check)."
+      },
+      {
+        "from": "/new-jersey/solar-incentives",
+        "to": "/blog/solar-rebates-by-california-utility",
+        "impressions_90d": 28,
+        "why": "State \"solar incentives program guide\" -> solar and battery incentives by California utility (2026)."
+      },
+      {
+        "from": "/maryland/solar-incentives",
+        "to": "/blog/solar-rebates-by-california-utility",
+        "impressions_90d": 16,
+        "why": "State \"solar incentives program guide\" -> solar and battery incentives by California utility (2026)."
+      },
+      {
+        "from": "/virginia/solar-incentives",
+        "to": "/blog/solar-rebates-by-california-utility",
+        "impressions_90d": 18,
+        "why": "State \"solar incentives program guide\" -> solar and battery incentives by California utility (2026)."
+      },
+      {
+        "from": "/delaware/solar-incentives",
+        "to": "/blog/solar-rebates-by-california-utility",
+        "impressions_90d": 20,
+        "why": "State \"solar incentives program guide\" -> solar and battery incentives by California utility (2026)."
+      },
+      {
+        "from": "/washington-dc/solar-incentives",
+        "to": "/blog/solar-rebates-by-california-utility",
+        "impressions_90d": 25,
+        "why": "State \"solar incentives program guide\" -> solar and battery incentives by California utility (2026)."
+      },
+      {
+        "from": "/new-jersey/commercial-solar",
+        "to": "/commercial-solar",
+        "impressions_90d": 0,
+        "why": "NJ commercial project and bid guide -> the California commercial solar guide (build a comparable quote)."
+      },
+      {
+        "from": "/maryland/bge-high-bill",
+        "to": "/blog/why-is-my-california-electric-bill-so-high",
+        "impressions_90d": 0,
+        "why": "\"Why is my <utility> bill so high\" two-bill check -> the California high-bill check (what drives rates and what to check on your bill)."
+      },
+      {
+        "from": "/utilities/pepco/high-bill",
+        "to": "/blog/why-is-my-california-electric-bill-so-high",
+        "impressions_90d": 0,
+        "why": "\"Why is my <utility> bill so high\" two-bill check -> the California high-bill check (what drives rates and what to check on your bill)."
+      },
+      {
+        "from": "/utilities/delmarva/high-bill",
+        "to": "/blog/why-is-my-california-electric-bill-so-high",
+        "impressions_90d": 0,
+        "why": "\"Why is my <utility> bill so high\" two-bill check -> the California high-bill check (what drives rates and what to check on your bill)."
+      },
+      {
+        "from": "/maryland/bge-electricity-rates",
+        "to": "/california-utility-rate-tracker",
+        "impressions_90d": 73,
+        "why": "BGE residential rate components -> the California utility rate tracker (current PG&E, SCE, SDG&E, SMUD rates)."
+      },
+      {
+        "from": "/utilities/pepco/solar-credits",
+        "to": "/blog/how-does-net-metering-work",
+        "impressions_90d": 0,
+        "why": "Pepco net metering and solar credits -> how net metering, export credits and the true-up work on a California bill."
+      }
+    ],
+    "6.4_404_with_impressions": [
+      {
+        "from": "/blog/why-is-pge-bill-so-high",
+        "to": "/blog/why-is-my-pge-bill-so-high",
+        "why": "mangled slug (missing \"my\"); 1 impression, 1 click"
+      },
+      {
+        "from": "/blog/pge-vs-sce-sdge-rates-compared",
+        "to": "/blog/pge-vs-sce-vs-sdge-rates-compared",
+        "why": "mangled slug (missing \"vs\"); 2 impressions"
+      },
+      {
+        "from": "/blog/are-solar-panels-worth-it-in-california",
+        "to": "/blog/are-solar-panels-worth-it-california",
+        "why": "mangled slug (extra \"in\"); 1 impression"
+      },
+      {
+        "from": "/blog/do-solar-panels-work-at-night",
+        "to": "/blog/do-solar-panels-work-at-night-california",
+        "why": "slug without \"-california\"; 1 impression"
+      },
+      {
+        "from": "/blog/ppa-loan-vs-solar-lease-vs-california",
+        "to": "/blog/ppa-loan-vs-solar-lease-vs-cash-california",
+        "why": "mangled slug (missing \"cash\"); 1 impression"
+      },
+      {
+        "from": "/blog/prepaid-solar-ppa-california-how-it-works-what-it-costs-and-who-its-best",
+        "to": "/blog/prepaid-ppa-california-2026",
+        "why": "title-derived slug of the prepaid PPA post; 1 impression"
+      },
+      {
+        "from": "/blog/what-happens-to-solar-lease-when-i-sales-california",
+        "to": "/blog/what-happens-to-solar-lease-when-i-sell-california",
+        "why": "typo (\"sales\" for \"sell\"); 1 impression"
+      },
+      {
+        "from": "/san-mateo",
+        "to": "/solar-companies/san-mateo",
+        "why": "root-level city slug; 1 impression; the San Mateo page with the most impressions is /solar-companies/san-mateo (1,509; topicmap G13 winner)"
+      },
+      {
+        "from": "/solar-problems/true-up-bill-california-explainedED",
+        "to": "/solar-problems/true-up-bill-california-explained",
+        "why": "typo suffix; 1 impression"
+      },
+      {
+        "from": "/blog/nem-2-vs-net-3",
+        "to": "/blog/nem-2-vs-nem-3-california",
+        "why": "typo (\"net\" for \"nem\"); 1 impression"
+      },
+      {
+        "from": "/solar-companies/simi-valley-california-solar-companies/simi-valley",
+        "to": "/solar-companies/simi-valley",
+        "why": "nested mangled path; 1 impression"
+      }
+    ],
+    "never_published_linked_from_live": [
+      {
+        "from": "/programs/care-california",
+        "to": "/blog/income-qualified-bill-discount-pge",
+        "why": "linked from 3 live pages (T-21); the site's CARE/FERA page"
+      }
+    ],
+    "middleware_rules": [
+      {
+        "from": "ratereliefca.com/reviews/*",
+        "to": "https://www.greenreviewshub.com/reviews/* (same path and query)",
+        "code": 301
+      },
+      {
+        "from": "www.ratereliefca.com/*",
+        "to": "https://ratereliefca.com/* (same path and query; final target if the apex path is itself redirected)",
+        "code": 301
+      }
+    ]
+  },
+  "held_pages": {
+    "cost": [
+      "/solar-cost/arcata",
+      "/solar-cost/berkeley",
+      "/solar-cost/chico",
+      "/solar-cost/clovis",
+      "/solar-cost/concord",
+      "/solar-cost/cupertino",
+      "/solar-cost/elk-grove",
+      "/solar-cost/fremont",
+      "/solar-cost/gilroy",
+      "/solar-cost/glendale",
+      "/solar-cost/huntington-beach",
+      "/solar-cost/irvine",
+      "/solar-cost/lakewood",
+      "/solar-cost/long-beach",
+      "/solar-cost/mission-viejo",
+      "/solar-cost/mountain-view",
+      "/solar-cost/oakland",
+      "/solar-cost/pasadena",
+      "/solar-cost/pleasanton",
+      "/solar-cost/redding",
+      "/solar-cost/redwood-city",
+      "/solar-cost/richmond",
+      "/solar-cost/riverside",
+      "/solar-cost/sacramento",
+      "/solar-cost/san-clemente",
+      "/solar-cost/san-mateo",
+      "/solar-cost/san-ramon",
+      "/solar-cost/santa-ana",
+      "/solar-cost/santa-barbara",
+      "/solar-cost/santa-clara",
+      "/solar-cost/santa-clarita",
+      "/solar-cost/saratoga",
+      "/solar-cost/sunnyvale",
+      "/solar-cost/vacaville",
+      "/solar-cost/victorville",
+      "/solar-cost/visalia"
+    ],
+    "companies": [
+      "/solar-companies/monterey",
+      "/solar-companies/manteca",
+      "/solar-companies/encinitas",
+      "/solar-companies/beaumont",
+      "/solar-companies/oceanside",
+      "/solar-companies/winchester",
+      "/solar-companies/el-dorado-hills",
+      "/solar-companies/salinas",
+      "/solar-companies/seaside",
+      "/solar-companies/watsonville",
+      "/solar-companies/marina",
+      "/solar-companies/aptos",
+      "/solar-companies/walnut-creek",
+      "/solar-companies/pacific-grove",
+      "/solar-companies/rancho-cordova"
+    ]
+  },
+  "gates": {
+    "tsc": "pass (flock, NODE_OPTIONS=4096)",
+    "test:growth": "53/53 pass",
+    "node tests": "canonical-redirects, cta-intent, intake-routing, city-pages, solar-cost-index + new held-pages, security-headers, page-modified-dates: 61/61 pass",
+    "Header.test.mjs": "2/2 pass",
+    "qc-gate.mjs": "PASSED",
+    "qc-gate-tsx.mjs": "55 fail / 148 warn / 669 review on both base 0355a03 and this branch; 0 new fails, 0 new warns",
+    "assert:citylinks": "pass (exit 0)",
+    "assert:linkspine": "pass (exit 0)",
+    "page-dates --check": "pass (219 dated, 14 undated, 0 conflicts)",
+    "middleware": "bundled with esbuild and exercised with NextRequest for 19 host/path cases (legal, out-of-state, 404 rows, /reviews, held noindex, www, GLP1): all as intended",
+    "next build": "not run (brief rule 9)"
+  },
+  "sources_fetched": [],
+  "sources_note": "No facts, figures or program rules were added or changed, so no primary source was fetched. Evidence came from the audit files (page_audit.csv, technical_site_audit.md, page_audit_summary.md), topicmap/gsc/Pages.csv and topicmap/blocks/06_merges/MERGE_CANDIDATES.md.",
+  "requests_for_other_lanes": [
+    {
+      "lane": "speed",
+      "request": "Plan 6.1 / Decision 41: take the out-of-state utilities (NJ, MD, VA, DE, DC; Pepco, Delmarva, BGE) out of the form's options. The pages now 301 to California pages; intake-routing.ts still lists the /new-jersey, /maryland, /virginia, /delaware, /washington-dc prefixes (harmless, never reached)."
+    },
+    {
+      "lane": "merges",
+      "request": "My GS-ROUTING rows point at these winners: /blog/are-solar-panels-worth-it-california, /solar-problems/true-up-bill-california-explained, /blog/ppa-loan-vs-solar-lease-vs-cash-california, /blog/prepaid-ppa-california-2026, /blog/nem-2-vs-nem-3-california, /blog/what-happens-to-solar-lease-when-i-sell-california, /blog/solar-rebates-by-california-utility, /blog/how-does-net-metering-work, /blog/why-is-my-california-electric-bill-so-high, /solar-panels-california, /best-solar-companies-california. If a merge retires any of them, retarget my row in place to the new winner (the 'no destination is itself a redirect source' test will fail otherwise)."
+    },
+    {
+      "lane": "citydata / integrator",
+      "request": "Wire the Block 3 city data gate into isHeldPath() in src/data/held-pages.ts (keep it synchronous; middleware calls it per request). Releasing a page = it stops matching isHeldPath; no template change needed."
+    },
+    {
+      "lane": "all / integrator",
+      "request": "After merging lanes, run `node scripts/page-dates.mjs` from Code/Frontend to regenerate src/data/page-modified-dates.ts, then the tests (page-modified-dates.test.ts runs --check). Any lane that changed a page's dateModified, added a hand-written page to the sitemap lists, or rewrote a page's date markup needs this. If --check reports UNREAD for a new page pattern, extend the rules in scripts/page-dates.mjs rather than hard-coding a date."
+    },
+    {
+      "lane": "trust / onpage",
+      "request": "If you add a Byline to the posts that show only an unlabeled date (T-50/T-51), pass the page's dateModified. Ten of them now show 'Updated <dateModified>' in the old header (this lane); prefer your version on conflict as long as the visible date equals dateModified. Trust pages (/about, /contact, /methodology, /editorial-policy, /how-we-make-money, /sources-we-use, /corrections, /author) declare no date and so get no sitemap lastmod; if you add a dateModified or a 'Last updated: Month D, YYYY' line, rerun page-dates."
+    },
+    {
+      "lane": "trust",
+      "request": "src/app/layout.tsx: this lane removed only WebSite.potentialAction (and a two-line comment above orgSchema). Organization fields are yours."
+    }
+  ],
+  "needs_chad": [
+    "11.1: add a DNS record for www.ratereliefca.com and add www.ratereliefca.com as a custom domain on the Railway frontend service; the code 301s www to the apex as soon as requests arrive.",
+    "11.2: HSTS includeSubDomains (one year) is sent on all five domains, so every subdomain of each (e.g. api.ratereliefca.com) must stay HTTPS-only. Browsers remember it for a year once seen.",
+    "0.5 tension: the 15 held /solar-companies pages (e.g. monterey, salinas, seaside) were reinstated on 2026-09-23 under Decision 15 because they draw installer-query impressions (the seven Monterey Bay cities 9,968 in 90 days via the old redirect). Holding them noindex follows plan 0.5 / the brief; confirm, or release any of them by removing its slug from HELD_COMPANIES_CITY_SLUGS.",
+    "Approvals the plan marks 'Chad approves': the 38 new 301s (0.7, 6.1, 6.4), the /reviews hop, the robots.ts change (Rule 6), and the noindex holds.",
+    "6.1 mapping judgement calls to glance at: the five state cost/quote guides go to /solar-panels-california (not the /solar-cost city index), the three city company guides (Richmond, Virginia Beach, Baltimore) go to the statewide installer comparison, and /programs/care-california goes to the PG&E CARE/FERA page (the site has no statewide CARE page)."
+  ]
+}
