@@ -148,6 +148,7 @@ export const GROWTH_ROUTES = [
   // city-cost-data.ts, so a city whose permit or utility fields are still TODO
   // is absent here exactly as it is absent from generateStaticParams.
   ...getPublishableCityCostSlugs().map((city) => `/solar-cost/${city}`),
+  "/solar-cost/california-tax-and-permit-rules", // 2026-09-24 gold-standard plan, Block 3
   "/blog/why-is-my-pge-bill-so-high",
   "/blog/why-is-my-california-electric-bill-so-high",
   "/blog/how-to-lower-electric-bill-california",

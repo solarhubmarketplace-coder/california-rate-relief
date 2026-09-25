@@ -14,6 +14,7 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { Byline } from '@/components/trust/Byline';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // Region-specific sources for the prose below, fetched 2026-09-23; see the
 // Sources line on the page.
@@ -31,6 +32,7 @@ export const metadata: Metadata = {
     canonical: '/solar-savings/san-diego-county',
   },
   openGraph: {
+    images: [CRR_SOCIAL_CARD],
     title: 'San Diego County Solar Guide: City, Bill and Project Paths',
     description:
       'SDG&E delivers power to every city in this guide; a community choice aggregator supplies it in most. What that means for a quote.',

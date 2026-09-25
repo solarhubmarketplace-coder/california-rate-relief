@@ -11,6 +11,7 @@ import { COST_RULES_PATH, COST_RULES_TITLE, costHubRow, formatVerified } from '@
 import { DG_MIN_COST_N, DG_SOURCE, formatDollars, formatPerWatt, stateDg, systemPrice } from '@/data/dgstats';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // =============================================================================
 // /solar-cost — the index of the city cost layer.
@@ -66,6 +67,7 @@ export const metadata: Metadata = {
   description: metaDescription,
   alternates: { canonical: path },
   openGraph: {
+    images: [CRR_SOCIAL_CARD],
     title: metaTitle,
     description: metaDescription,
     type: 'website',

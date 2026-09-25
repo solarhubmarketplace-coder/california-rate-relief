@@ -35,6 +35,7 @@ import {
   getCostIndexRows,
   listJoin,
 } from '@/data/solar-cost-index';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // =============================================================================
 // /solar-cost/california-tax-and-permit-rules — the one page for the rules
@@ -58,7 +59,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: path },
-  openGraph: { title, description, type: 'article', url: `https://ratereliefca.com${path}` },
+  openGraph: { title, description, type: 'article', url: `https://ratereliefca.com${path}`, images: [CRR_SOCIAL_CARD] },
 };
 
 const SOURCES = {

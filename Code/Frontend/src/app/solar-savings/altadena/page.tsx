@@ -13,6 +13,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, guideLink } from '@/components/growth/RateGuideParts';
 import { Q2_2026_URL, Q3_2025_URL } from '@/data/utility-rate-tracker';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // =============================================================================
 // /solar-savings/altadena — the SCE bill increase as it reached Altadena
@@ -127,6 +128,7 @@ export const metadata: Metadata = {
   description,
   alternates: { canonical: path },
   openGraph: {
+    images: [CRR_SOCIAL_CARD],
     title,
     description,
     type: 'article',

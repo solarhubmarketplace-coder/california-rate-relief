@@ -118,6 +118,9 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     // claude/upg-index-20260922 — the linkable cost index. lastModified is the
     // index's own updated date, the one its byline and dateModified carry.
     { url: `${base}${COST_INDEX_PATH}`, lastModified: new Date(`${COST_INDEX_UPDATED}T00:00:00.000Z`), changeFrequency: 'monthly', priority: 0.9 },
+    // 2026-09-24 (gold-standard plan, Block 3): the one explainer for the tax,
+    // lease, disclosure and permit rules every /solar-cost city page shares.
+    { url: `${base}/solar-cost/california-tax-and-permit-rules`, ...pageLastmod('/solar-cost/california-tax-and-permit-rules'), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/solar-installers`, ...pageLastmod('/solar-installers'), changeFrequency: 'weekly', priority: 0.9 },
     // 2026-09-24 integration — hand-written bills page (unincorporated Altadena; not in cities-data.ts).
     { url: `${base}/solar-savings/altadena`, ...pageLastmod('/solar-savings/altadena'), changeFrequency: 'monthly', priority: 0.75 },

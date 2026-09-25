@@ -19,6 +19,7 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { Byline } from '@/components/trust/Byline';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // Region-specific sources for the prose below, fetched 2026-09-23; see the
 // Sources line on the page. Which utility serves which city comes from
@@ -44,6 +45,7 @@ export const metadata: Metadata = {
     canonical: '/solar-savings/central-valley',
   },
   openGraph: {
+    images: [CRR_SOCIAL_CARD],
     title: 'Central Valley Solar Companies: Fresno & Sacramento',
     description:
       'Central Valley solar: PG&E, SCE, SMUD and the district and city utilities, and what each changes in a quote.',

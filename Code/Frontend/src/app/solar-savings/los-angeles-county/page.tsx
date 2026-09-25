@@ -22,6 +22,7 @@ import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import { RATE_TRACKER_PATH } from '@/data/utility-rate-tracker';
 import { Byline } from '@/components/trust/Byline';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 /**
  * Los Angeles County regional hub.
@@ -53,6 +54,7 @@ export const metadata: Metadata = {
   description: DESCRIPTION,
   alternates: { canonical: '/solar-savings/los-angeles-county' },
   openGraph: {
+    images: [CRR_SOCIAL_CARD],
     title: TITLE,
     description: DESCRIPTION,
     type: 'article',

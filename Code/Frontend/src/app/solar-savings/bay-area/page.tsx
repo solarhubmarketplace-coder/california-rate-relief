@@ -20,6 +20,7 @@ import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { Byline } from '@/components/trust/Byline';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // Region-specific sources for the prose below. Each CCA's own statement of
 // where it serves, fetched 2026-09-23; see the Sources line on the page.
@@ -67,6 +68,7 @@ export const metadata: Metadata = {
     canonical: '/solar-savings/bay-area',
   },
   openGraph: {
+    images: [CRR_SOCIAL_CARD],
     title: 'Bay Area Solar Savings & PG&E Rates by City (2026)',
     description:
       "PG&E's average rate, the Base Services Charge, and which community choice provider shares your PG&E bill in each Bay Area city.",

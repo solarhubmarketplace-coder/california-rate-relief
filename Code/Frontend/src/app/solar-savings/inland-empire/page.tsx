@@ -14,6 +14,7 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RegionalCostCities } from '@/components/shared/RegionalCostCities';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { Byline } from '@/components/trust/Byline';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // Region-specific sources for the prose below, fetched 2026-09-23; see the
 // Sources line on the page. Which utility serves which city comes from
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
     canonical: '/solar-savings/inland-empire',
   },
   openGraph: {
+    images: [CRR_SOCIAL_CARD],
     title: 'Inland Empire Solar Guide: Riverside & San Bernardino',
     description:
       'Which utility bills your Inland Empire address, from SCE to Riverside Public Utilities and IID, and where community choice fits.',
