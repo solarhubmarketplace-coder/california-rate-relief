@@ -1,8 +1,8 @@
-/* DRAFT — Chad to confirm before release. */
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { TrustPageShell } from '@/components/trust/TrustPageShell';
 import { TRUST_LINKS } from '@/components/trust/trust-links';
+import { COMPENSATION_SENTENCE } from '@/components/shared/ReferralDisclosure';
 
 // =============================================================================
 // /how-we-make-money — CRR only (middleware 404s it on the other four hosts).
@@ -13,6 +13,11 @@ import { TRUST_LINKS } from '@/components/trust/trust-links';
 // "what submitting means" lines repeat the existing /affiliate-disclosure
 // page; the placement line repeats the existing /methodology page.
 // No fee amounts, no partner names.
+//
+// 2026-09-24: the compensation sentence is Decision #1's wording, shared with
+// /methodology and the line next to every form (COMPENSATION_SENTENCE). Chad
+// approved it by approving the implementation plan, so the page no longer
+// carries a confirm-before-release note.
 // =============================================================================
 
 const PATH = TRUST_LINKS.howWeMakeMoney.href;
@@ -35,8 +40,8 @@ export default function HowWeMakeMoneyPage() {
         <h2>How the site is paid</h2>
         <p>
           California Rate Relief is an independent information and referral site. When a
-          California homeowner asks for help, the site refers them to a solar provider.
-          California Rate Relief is compensated when a referred homeowner signs an agreement.
+          California homeowner asks for help, the site refers them to a solar provider.{' '}
+          {COMPENSATION_SENTENCE}
         </p>
       </section>
 

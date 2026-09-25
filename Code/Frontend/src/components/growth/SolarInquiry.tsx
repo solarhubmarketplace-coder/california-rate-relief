@@ -40,6 +40,7 @@ import {
 } from '@/lib/quick-start';
 import { InquiryReceived } from './InquiryReceived';
 import { TrustBlock } from './TrustBlock';
+import { ReferralDisclosure } from '@/components/shared/ReferralDisclosure';
 
 const fieldBase =
   'w-full rounded-lg border border-input bg-white px-3 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring';
@@ -895,6 +896,7 @@ export function SolarInquiry({
           </p>
         </form>
       )}
+      <ReferralDisclosure className="mt-4" />
       {showTrustBlock && <TrustBlock id={`${sectionId}-trust`} />}
     </section>
   );
