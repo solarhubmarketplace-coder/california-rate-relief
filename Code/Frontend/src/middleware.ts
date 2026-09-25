@@ -4,6 +4,7 @@ import { createServerClient } from '@supabase/ssr';
 import { getGlp1RouteDisposition } from '@/lib/glp1-seo-routes';
 import { PUBLIC_CRR_NO_SESSION_ROUTES } from '@/lib/growth-routes';
 import { canonicalRedirectFor } from '@/lib/canonical-redirects';
+import { isHeldPath } from '@/data/held-pages';
 
 const GLP1_PUBLIC_CACHE_CONTROL =
   'public, max-age=0, s-maxage=3600, stale-while-revalidate=86400';
@@ -310,6 +311,19 @@ export async function middleware(request: NextRequest) {
     if (canonicalTarget) {
       return NextResponse.redirect(new URL(canonicalTarget, request.url), 301);
     }
+  }
+
+  // --- ratereliefca.com held pages (plan 0.4 / 0.5, 2026-09-24) ---
+  // Served normally (200) but marked noindex, follow, and left out of the
+  // sitemap. The list and the reason for each hold are in
+  // src/data/held-pages.ts. Done here with a header rather than in the city
+  // templates' metadata so releasing a page is a data change, not a template
+  // edit. These are public content pages, so the Supabase session logic below
+  // is not needed.
+  if (isCRR && isHeldPath(pathname)) {
+    const held = NextResponse.next();
+    held.headers.set('X-Robots-Tag', 'noindex, follow');
+    return held;
   }
 
   // --- ratereliefca.com's own page that collides with GLP1's '/best' prefix ---

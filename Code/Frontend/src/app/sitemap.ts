@@ -9,6 +9,7 @@ import { GROWTH_ROUTES, LOCAL_RELEASE_REVIEW_ROUTES } from '@/lib/growth-routes'
 import { getPublishableCityCostRows } from '@/data/city-cost-data';
 import { COST_INDEX_PATH, COST_INDEX_UPDATED } from '@/data/solar-cost-index';
 import { isRedirectedPath } from '@/lib/canonical-redirects';
+import { isHeldPath } from '@/data/held-pages';
 import { cityPageDates } from '@/lib/city-pages';
 import { reviews as grhReviews, TOTAL_PAGES as GRH_TOTAL_PAGES } from '@/lib/grh-reviews-data';
 
@@ -812,6 +813,10 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     // src/lib/canonical-redirects.ts, so retiring a URL there removes it here
     // without a second edit.
     .filter((entry) => !isRedirectedPath(new URL(entry.url).pathname))
+    // Held pages (plan 0.4 / 0.5): served with X-Robots-Tag noindex by
+    // middleware and not advertised here until released. See
+    // src/data/held-pages.ts.
+    .filter((entry) => !isHeldPath(new URL(entry.url).pathname))
     .map((entry) => CRR_REVIEWED_SEPTEMBER_11.has(new URL(entry.url).pathname)
       ? { ...entry, lastModified: new Date('2026-09-11T00:00:00.000Z') }
       : entry);
