@@ -290,11 +290,30 @@ export async function middleware(request: NextRequest) {
   }
 
   // --- ratereliefca.com → 301 redirect /reviews/* to greenreviewshub.com ---
-  if (isCRR && pathname.startsWith('/reviews')) {
+  // Straight to the www host, which serves the pages. The bare
+  // greenreviewshub.com host answers with a temporary (307) redirect to www,
+  // so pointing there made a two-hop chain with a temporary second hop
+  // (technical_site_audit.md §2.6; plan 6.5). Query string kept.
+  const reviewsTarget = (path: string) =>
+    `https://www.greenreviewshub.com${path}${request.nextUrl.search}`;
+
+  // --- www.ratereliefca.com → 301 to the apex, same path and query (plan 11.1) ---
+  // www has no DNS record yet (NXDOMAIN, T-15); once Chad adds one this makes
+  // www a single permanent hop to the canonical host. A path that the apex
+  // would redirect again goes straight to its final URL, so there is no chain.
+  if (/^www\.ratereliefca\.com(?::\d+)?$/.test(hostname)) {
+    if (pathname.startsWith('/reviews')) {
+      return NextResponse.redirect(reviewsTarget(pathname), 301);
+    }
+    const finalPath = canonicalRedirectFor(pathname) ?? pathname;
     return NextResponse.redirect(
-      `https://greenreviewshub.com${pathname}`,
+      `https://ratereliefca.com${finalPath}${request.nextUrl.search}`,
       301
     );
+  }
+
+  if (isCRR && pathname.startsWith('/reviews')) {
+    return NextResponse.redirect(reviewsTarget(pathname), 301);
   }
 
   // --- ratereliefca.com one-per-intent canonicalisation (301) ---
