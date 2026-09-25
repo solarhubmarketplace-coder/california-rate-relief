@@ -16,6 +16,7 @@ import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Sunnova Reviews 2026: Is It Still in Business?",
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
       'What the 2025 Sunnova bankruptcy and SunStrong asset sale mean for the ~500,000 legacy customers and for California solar shoppers in 2026.',
     type: 'article',
     publishedTime: '2026-04-23T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

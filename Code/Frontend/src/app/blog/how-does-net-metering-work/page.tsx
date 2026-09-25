@@ -16,6 +16,7 @@ import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import { SourceList } from '@/components/growth/DecisionPage';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { RATE_SOURCES_CHECKED, rateSources } from '@/data/rate-sources';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // 2026-09-23 (Tier 3): the NEM generations table and true-up section now follow
 // the CPUC's own comparison, the net metering bill question is answered, and
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
   title: "How Does Net Metering Work? Plain-English Guide (2026)",
   description: "Net metering explained in plain English: how export credits and the true-up work, what a California net metering bill shows, and NEM 1.0, 2.0 and 3.0.",
   alternates: { canonical: '/blog/how-does-net-metering-work' },
-  openGraph: { title: 'How Does Net Metering Work?', description: 'Plain-English net metering guide for 2026.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', modifiedTime: '2026-09-23T00:00:00Z', url: 'https://ratereliefca.com/blog/how-does-net-metering-work' },
+  openGraph: { title: 'How Does Net Metering Work?', description: 'Plain-English net metering guide for 2026.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', modifiedTime: '2026-09-23T00:00:00Z', url: 'https://ratereliefca.com/blog/how-does-net-metering-work', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list

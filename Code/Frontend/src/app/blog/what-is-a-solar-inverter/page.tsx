@@ -13,11 +13,12 @@ import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 export const metadata: Metadata = {
   title: "What Is a Solar Inverter? Types, Brands, and Lifespans",
   description: "A plain-English explanation of solar inverters: the main types, how long they last, which brands are reliable, and warranty realities.",
   alternates: { canonical: '/blog/what-is-a-solar-inverter' },
-  openGraph: { title: 'What Is a Solar Inverter?', description: 'Plain-English solar inverter guide.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-a-solar-inverter' },
+  openGraph: { title: 'What Is a Solar Inverter?', description: 'Plain-English solar inverter guide.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-a-solar-inverter', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list

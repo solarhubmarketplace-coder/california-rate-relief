@@ -12,12 +12,13 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: 'Can Solar Panels Power a Whole House in California?',
   description: "Yes — a correctly sized solar + battery system can run a typical California home for the full day, evening, and most outages. Here is exactly what it takes.",
   alternates: { canonical: '/blog/can-solar-panels-power-a-whole-house-california' },
-  openGraph: { title: 'Can Solar Panels Power a Whole House in California?', description: 'What it takes to run a whole California home on solar + battery.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Can Solar Panels Power a Whole House in California?', description: 'What it takes to run a whole California home on solar + battery.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list

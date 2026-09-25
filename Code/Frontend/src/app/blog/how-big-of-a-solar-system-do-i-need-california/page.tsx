@@ -13,12 +13,13 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "How Big of a Solar System Do You Need in California?",
   description: "Size your California solar system from your kWh usage: NREL-based production factors, a 5-12 kW table, real panel counts, and what NEM 3 changes.",
   alternates: { canonical: '/blog/how-big-of-a-solar-system-do-i-need-california' },
-  openGraph: { title: 'How Big of a Solar System Do You Need in California?', description: 'Solar system sizing for California homes.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'How Big of a Solar System Do You Need in California?', description: 'Solar system sizing for California homes.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list

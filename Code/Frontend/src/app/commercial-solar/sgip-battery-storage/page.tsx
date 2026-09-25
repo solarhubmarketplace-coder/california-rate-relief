@@ -4,11 +4,12 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const path='/commercial-solar/sgip-battery-storage';
 const title="SGIP commercial battery storage: California budget status";
 const description="Check current SGIP commercial storage categories, distinguish an existing reservation from a new application, and compare without an assumed rebate.";
-export const metadata:Metadata={title,description,alternates:{canonical:path},openGraph:{title,description,type:'article',url:'https://ratereliefca.com'+path,modifiedTime:'2026-09-10T00:00:00Z'}};
+export const metadata:Metadata={title,description,alternates:{canonical:path},openGraph:{ title,description,type:'article',url:'https://ratereliefca.com'+path,modifiedTime:'2026-09-10T00:00:00Z', images: [CRR_SOCIAL_CARD] }};
 export default function SgipCommercialStorage(){
  return <PublicLayout><Header/><main className='mx-auto max-w-3xl px-4 py-12'>
   <script type='application/ld+json' dangerouslySetInnerHTML={{__html:JSON.stringify({'@context':'https://schema.org','@type':'Article',headline:title,dateModified:'2026-09-10',mainEntityOfPage:'https://ratereliefca.com'+path,author:{'@type':'Organization',name:'California Rate Relief'},citation:['https://www.cpuc.ca.gov/sgip','https://www.selfgenca.com/home/program_metrics/']})}}/>

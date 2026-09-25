@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title:
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
       'The CEC mandates solar on new homes and sets Title 24 efficiency standards. Here\'s what it means for existing homeowners.',
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

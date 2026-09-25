@@ -8,6 +8,7 @@ import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
 import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const sources: Source[] = [
   {
@@ -82,6 +83,7 @@ export const metadata: Metadata = {
     type: "article",
     url: "https://ratereliefca.com/blog/does-solar-increase-home-value-california",
     modifiedTime: "2026-09-23T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

@@ -13,6 +13,7 @@ import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, QuickAnswer, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // Tier 3 (2026-09-23). What it costs a California household to start
 // electric service: start fees, deposits, the fixed charge that begins on day
@@ -85,7 +86,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: path },
-  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z` },
+  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z`, images: [CRR_SOCIAL_CARD] },
 };
 
 export default function CostToTurnOnElectricityPage() {

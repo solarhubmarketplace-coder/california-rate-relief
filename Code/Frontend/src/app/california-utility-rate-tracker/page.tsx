@@ -26,6 +26,7 @@ import {
   formatAverageRateWithPerKwh,
   getUtilityRate,
 } from '@/data/utility-rate-tracker';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // Page-specific driver sources cited in "Why Rates Moved in 2026" and the
 // Income-Graduated Fixed Charge section — not rate figures, so they live here
@@ -75,6 +76,7 @@ export const metadata: Metadata = {
     publishedTime: '2026-09-18T00:00:00Z',
     modifiedTime: '2026-09-23T00:00:00Z',
     url: canonicalUrl,
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

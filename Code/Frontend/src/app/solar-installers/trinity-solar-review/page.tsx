@@ -14,6 +14,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { FaqJsonLd } from '@/components/shared/FaqJsonLd';
 import { Cite, SourceList, type ReviewSource } from '@/components/reviews/ReviewParts';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const path = '/solar-installers/trinity-solar-review';
 const checked = '2026-09-23';
@@ -32,6 +33,7 @@ export const metadata: Metadata = {
     type: 'article',
     url: `https://ratereliefca.com${path}`,
     publishedTime: '2026-04-23T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

@@ -13,11 +13,12 @@ import { ArticleCTA } from '@/components/shared/ArticleCTA';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 export const metadata: Metadata = {
   title: "String Inverter vs Microinverter: Which Is Right for You?",
   description: "Head-to-head comparison of string inverter vs microinverter solar systems. Cost, performance under shade, warranty, rapid shutdown, and repairability.",
   alternates: { canonical: '/blog/string-inverter-vs-microinverter' },
-  openGraph: { title: 'String Inverter vs Microinverter', description: 'Technical and real-world comparison for California solar installs.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/string-inverter-vs-microinverter' },
+  openGraph: { title: 'String Inverter vs Microinverter', description: 'Technical and real-world comparison for California solar installs.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/string-inverter-vs-microinverter', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list

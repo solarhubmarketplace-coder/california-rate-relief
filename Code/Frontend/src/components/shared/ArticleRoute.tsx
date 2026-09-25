@@ -13,6 +13,7 @@ import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { IntentCTA } from '@/components/growth/IntentCTA';
 import { HubUpLink, hubUpLinkFor } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import {
   CommercialReviewButton,
   CommercialReviewForm,
@@ -59,7 +60,11 @@ export function articleMetadata(
       description: page.metaDescription,
       type: 'article',
       url: `${BASE_URL}${url}`,
+      // A page-level openGraph replaces the root one outright, so without this
+      // the 49 data-driven pages shipped with no og:image (plan 7.6).
+      images: [CRR_SOCIAL_CARD],
     },
+    twitter: crrTwitter(page.metaTitle, page.metaDescription),
   };
 }
 

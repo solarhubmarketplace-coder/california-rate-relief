@@ -10,6 +10,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Solar Panel Inspection in California: $150 to $350",
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
       'Is a solar inspection required? Not by law. Should you get one? Here&apos;s what you need to know.',
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

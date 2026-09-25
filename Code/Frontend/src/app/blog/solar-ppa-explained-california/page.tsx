@@ -8,6 +8,7 @@ import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Solar PPA Explained: How California's $0-Down Solar Works",
@@ -22,6 +23,7 @@ export const metadata: Metadata = {
       'How a solar PPA works in California: the per-kWh price, the escalator, the term, and what the CPUC and CSLB require providers to disclose.',
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

@@ -11,11 +11,12 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 
 import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 export const metadata: Metadata = {
   title: "What Is a Demand Charge? Do CA Residential Customers Pay?",
   description: "Demand charges explained in plain English: what they are, who pays them in California, and how solar/battery eliminates them.",
   alternates: { canonical: '/blog/what-is-demand-charge-california' },
-  openGraph: { title: 'What Is a Demand Charge?', description: 'Plain-English explanation of electric demand charges.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-demand-charge-california' },
+  openGraph: { title: 'What Is a Demand Charge?', description: 'Plain-English explanation of electric demand charges.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/what-is-demand-charge-california', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list

@@ -13,12 +13,13 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Tesla Powerwall Installers in California: 2026 Guide",
   description: "Who can install a Tesla Powerwall in California, how Tesla's certified installer program works, and what drives the installed price.",
   alternates: { canonical: '/blog/tesla-powerwall-installers-california' },
-  openGraph: { title: 'Tesla Powerwall Installers in California: 2026 Guide', description: 'Guide to Tesla Powerwall installation in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Tesla Powerwall Installers in California: 2026 Guide', description: 'Guide to Tesla Powerwall installation in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list

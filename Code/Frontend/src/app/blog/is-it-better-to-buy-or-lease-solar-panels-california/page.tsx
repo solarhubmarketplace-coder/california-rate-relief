@@ -10,6 +10,7 @@ import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { FaqJsonLd } from "@/components/shared/FaqJsonLd";
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const sources: Source[] = [
   {
@@ -141,6 +142,7 @@ export const metadata: Metadata = {
     url:
       "https://ratereliefca.com/blog/is-it-better-to-buy-or-lease-solar-panels-california",
     modifiedTime: "2026-09-22T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

@@ -13,6 +13,7 @@ import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const path = '/blog/income-qualified-bill-discount-pge';
 const url = `https://ratereliefca.com${path}`;
@@ -53,7 +54,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: path },
-  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z` },
+  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z`, images: [CRR_SOCIAL_CARD] },
 };
 
 export default function IncomeQualifiedBillDiscountPgePage() {

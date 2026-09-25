@@ -13,12 +13,13 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Do Solar Panels Work on Cloudy Days? California Guide",
   description: "Yes. Solar panels still work on cloudy California days, just at lower output. DOE figures, coastal fog effects, and how the NEM 3 true-up works.",
   alternates: { canonical: '/blog/do-solar-panels-work-on-cloudy-days-california' },
-  openGraph: { title: 'Do Solar Panels Work on Cloudy Days? California Guide', description: 'How solar panels perform on cloudy California days.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Do Solar Panels Work on Cloudy Days? California Guide', description: 'How solar panels perform on cloudy California days.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list

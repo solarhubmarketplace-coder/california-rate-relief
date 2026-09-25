@@ -9,6 +9,7 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title:
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
       'The CPUC controls your electricity rates, NEM policy, and the $24 fixed charge. Here\'s how it works and what it means for your bill.',
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

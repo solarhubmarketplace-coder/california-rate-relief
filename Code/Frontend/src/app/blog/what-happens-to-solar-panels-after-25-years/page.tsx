@@ -13,12 +13,13 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "What Happens to Solar Panels After 25 Years? CA Guide",
   description: "What happens when solar panels reach 25 years: expected power degradation, inverter replacement cycles, warranty expiration, and system upgrade options.",
   alternates: { canonical: '/blog/what-happens-to-solar-panels-after-25-years' },
-  openGraph: { title: 'What Happens to Solar Panels After 25 Years? California Guide', description: 'Solar panel lifespan and what happens past the warranty.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'What Happens to Solar Panels After 25 Years? California Guide', description: 'Solar panel lifespan and what happens past the warranty.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list

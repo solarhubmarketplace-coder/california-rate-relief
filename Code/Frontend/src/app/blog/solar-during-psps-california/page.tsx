@@ -11,12 +11,13 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
 import { HeroQuickCheck } from "@/components/growth/HeroQuickCheck";
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Solar During a PSPS in California: Will My Panels Work?",
   description: "Does solar work during a PG&E PSPS outage? Why grid-tied solar shuts off, how batteries change that, and what you need to survive a blackout.",
   alternates: { canonical: '/blog/solar-during-psps-california' },
-  openGraph: { title: 'Solar During PSPS California', description: 'The honest answer on solar during PSPS outages.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/solar-during-psps-california' },
+  openGraph: { title: 'Solar During PSPS California', description: 'The honest answer on solar during PSPS outages.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/blog/solar-during-psps-california', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list

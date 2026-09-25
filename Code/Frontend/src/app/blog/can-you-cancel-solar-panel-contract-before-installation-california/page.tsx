@@ -8,6 +8,7 @@ import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const sources: Source[] = [
   {
@@ -108,6 +109,7 @@ export const metadata: Metadata = {
     type: "article",
     url: "https://ratereliefca.com/blog/can-you-cancel-solar-panel-contract-before-installation-california",
     modifiedTime: "2026-09-22T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

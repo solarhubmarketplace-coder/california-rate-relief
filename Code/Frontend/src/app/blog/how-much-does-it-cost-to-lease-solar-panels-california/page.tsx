@@ -13,6 +13,7 @@ import {
   QuoteChecklist,
   type Source,
 } from "@/components/growth/DecisionPage";
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const sources: Source[] = [
   {
@@ -141,6 +142,7 @@ export const metadata: Metadata = {
     url:
       "https://ratereliefca.com/blog/how-much-does-it-cost-to-lease-solar-panels-california",
     modifiedTime: "2026-09-22T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

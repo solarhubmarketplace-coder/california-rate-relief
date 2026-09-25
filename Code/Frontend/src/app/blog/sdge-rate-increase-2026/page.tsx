@@ -13,6 +13,7 @@ import { KeyFacts } from '@/components/trust/KeyFacts';
 import { FaqBlock } from '@/components/trust/FaqBlock';
 import { DataTable, GuideHeader, guideLink } from '@/components/growth/RateGuideParts';
 import { RATE_SOURCES_CHECKED, SRC, rateSources } from '@/data/rate-sources';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const path = '/blog/sdge-rate-increase-2026';
 const url = `https://ratereliefca.com${path}`;
@@ -96,7 +97,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: path },
-  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z` },
+  openGraph: { title, description, type: 'article', url, publishedTime: `${published}T00:00:00Z`, modifiedTime: `${updated}T00:00:00Z`, images: [CRR_SOCIAL_CARD] },
 };
 
 export default function SdgeRateIncreasePage() {

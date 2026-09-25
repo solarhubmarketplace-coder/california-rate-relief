@@ -10,6 +10,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "How Long Do Solar Panels Last? 2026 Degradation Data",
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
       'Solar panels last 30-40+ years. Here&apos;s what you actually need to know about lifespan, degradation, and warranties.',
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

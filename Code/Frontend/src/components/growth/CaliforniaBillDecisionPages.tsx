@@ -3,6 +3,7 @@ import Link from "next/link";
 import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { BillComparison } from "./BillComparison";
 import { DecisionPage, type Source } from "./DecisionPage";
+import { CRR_SOCIAL_CARD } from "@/lib/crr-social";
 
 const sources: Source[] = [
   { label: "CPUC: California Electric Rate Comparison", url: "https://www.cpuc.ca.gov/RateComparison" },
@@ -85,6 +86,7 @@ export function californiaBillMetadata(kind: CaliforniaBillGuideKind): Metadata 
           : "modifiedTime" in guide && guide.modifiedTime
             ? guide.modifiedTime
             : "2026-09-12T00:00:00Z",
+      images: [CRR_SOCIAL_CARD],
     },
   };
 }

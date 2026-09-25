@@ -12,12 +12,13 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Switch to Solar in California: The 2026 Complete Guide",
   description: "Complete guide to switching to solar in California: understanding NEM 3.0 rules, sizing with batteries, selecting contractors, and saving on bills.",
   alternates: { canonical: '/blog/switch-to-solar-california' },
-  openGraph: { title: 'Switch to Solar in California: The 2026 Complete Guide', description: 'A complete step-by-step guide to switching to solar in California in 2026.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Switch to Solar in California: The 2026 Complete Guide', description: 'A complete step-by-step guide to switching to solar in California in 2026.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list

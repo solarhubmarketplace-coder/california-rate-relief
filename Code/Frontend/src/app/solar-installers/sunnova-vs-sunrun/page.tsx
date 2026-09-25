@@ -8,12 +8,13 @@ import { Footer } from '@/components/landing/Footer';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Sunnova vs Sunrun (2026): Dealer Network vs In-House Crews",
   description: "In major CA metros Sunrun often installs with its own W-2 crews; Sunnova works through dealers. Compare contracts, warranties, escalators, and batteries.",
   alternates: { canonical: '/solar-installers/sunnova-vs-sunrun' },
-  openGraph: { title: 'Sunnova vs Sunrun (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunnova-vs-sunrun' },
+  openGraph: { title: 'Sunnova vs Sunrun (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunnova-vs-sunrun', images: [CRR_SOCIAL_CARD] },
 };
 const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Sunnova vs Sunrun', datePublished: '2026-04-24', author: { '@type': 'Organization', name: 'California Rate Relief Program' }, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
 

@@ -12,6 +12,7 @@ import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title:
@@ -28,6 +29,7 @@ export const metadata: Metadata = {
       "The Solar Rights Act gives California homeowners strong protections against HOA interference with rooftop solar. Here's how it works.",
     type: 'article',
     publishedTime: '2026-04-23T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

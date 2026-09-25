@@ -7,12 +7,13 @@ import { ArrowLeft, Calendar, Clock, AlertTriangle } from 'lucide-react';
 import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "California Title 24 Part 6 Commercial Solar Requirements",
   description: "California's Title 24 Part 6 makes solar PV + battery mandatory for most new nonresidential buildings after Jan 1, 2026.",
   alternates: { canonical: '/commercial-solar/title-24-requirements' },
-  openGraph: { title: 'California Title 24 Part 6 Commercial Solar Requirements 2026', description: 'Title 24 solar mandate for new California commercial buildings.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'California Title 24 Part 6 Commercial Solar Requirements 2026', description: 'Title 24 solar mandate for new California commercial buildings.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 const articleSchema = {

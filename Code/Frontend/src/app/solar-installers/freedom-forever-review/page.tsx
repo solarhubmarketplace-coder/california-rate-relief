@@ -17,6 +17,7 @@ import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 import { HubSpokeLinks } from '@/components/growth/HubSpokeLinks';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title:
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
       'What the April 15 Chapter 11 filing means for existing Freedom Forever customers and anyone shopping for solar in California right now.',
     type: 'article',
     publishedTime: '2026-04-22T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

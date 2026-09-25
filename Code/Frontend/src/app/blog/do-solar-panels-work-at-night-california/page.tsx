@@ -13,12 +13,13 @@ import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Do Solar Panels Work at Night? California Solar Guide",
   description: "Do solar panels produce power at night? How net metering, home battery storage, and grid power keep California homes running after sunset.",
   alternates: { canonical: '/blog/do-solar-panels-work-at-night-california' },
-  openGraph: { title: 'Do Solar Panels Work at Night? California Guide', description: "How California solar homes still run on solar after dark.", type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Do Solar Panels Work at Night? California Guide', description: "How California solar homes still run on solar after dark.", type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 // Breadcrumb: Home / <topic hub> / this post (Block 5 section 5.6). One list

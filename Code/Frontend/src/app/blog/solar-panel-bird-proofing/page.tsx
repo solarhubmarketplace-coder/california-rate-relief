@@ -10,6 +10,7 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Solar Panel Bird Proofing Cost: $200-$500 in California",
@@ -24,6 +25,7 @@ export const metadata: Metadata = {
       'Pigeons and other birds damage solar systems. Here&apos;s what bird proofing costs and why it matters in California fire zones.',
     type: 'article',
     publishedTime: '2026-04-16T00:00:00Z',
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

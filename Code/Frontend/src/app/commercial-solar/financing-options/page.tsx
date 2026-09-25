@@ -8,12 +8,13 @@ import { ArrowLeft, Calendar, Clock } from 'lucide-react';
 import { VerifyCommercialSolarBox } from '@/components/shared/VerifyCommercialSolarBox';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { CommercialReviewButton, CommercialReviewForm } from '@/components/growth/CommercialReview';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Commercial Solar Financing in California: PPA to CPACE",
   description: "How to finance commercial solar in California: PPA, lease, direct ownership with the 48E credit and MACRS, and CPACE repaid through the property tax bill.",
   alternates: { canonical: '/commercial-solar/financing-options' },
-  openGraph: { title: 'Commercial Solar Financing in California: PPA, Lease, Direct, CPACE', description: 'Complete guide to commercial solar financing options in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Commercial Solar Financing in California: PPA, Lease, Direct, CPACE', description: 'Complete guide to commercial solar financing options in California.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 const articleSchema = {

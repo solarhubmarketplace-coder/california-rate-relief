@@ -28,6 +28,7 @@ import {
   listJoin,
 } from '@/data/solar-cost-index';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // =============================================================================
 // /california-solar-cost-index — the linkable data page for the cost layer.
@@ -78,6 +79,7 @@ export const metadata: Metadata = {
     url: COST_INDEX_URL,
     publishedTime: `${COST_INDEX_PUBLISHED}T00:00:00Z`,
     modifiedTime: `${COST_INDEX_UPDATED}T00:00:00Z`,
+    images: [CRR_SOCIAL_CARD],
   },
   twitter: { card: 'summary', title: metaTitle, description: metaDescription },
 };

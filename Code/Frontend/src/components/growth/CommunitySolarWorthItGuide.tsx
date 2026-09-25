@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DecisionPage, type Source } from "./DecisionPage";
+import { CRR_SOCIAL_CARD } from "@/lib/crr-social";
 
 const path = "/blog/is-community-solar-worth-it";
 const title = "Is Community Solar Worth It? Compare the Credit With Every Cost";
@@ -22,7 +23,7 @@ const sources: Source[] = [
   { label: "Maryland PSC: Solar in Maryland", url: "https://www.psc.state.md.us/electricity/wp-content/uploads/sites/2/Solar-in-Maryland-Fact-Sheet-1.pdf" },
   { label: "DC DOEE: Solar for All", url: "https://doee.dc.gov/solarforall" },
 ];
-export const communitySolarWorthItMetadata: Metadata = { title: metaTitle, description: metaDescription, alternates: { canonical: path }, openGraph: { title: metaTitle, description: metaDescription, type: "article", url: `https://ratereliefca.com${path}`, modifiedTime: "2026-09-12T00:00:00Z" } };
+export const communitySolarWorthItMetadata: Metadata = { title: metaTitle, description: metaDescription, alternates: { canonical: path }, openGraph: { title: metaTitle, description: metaDescription, type: "article", url: `https://ratereliefca.com${path}`, modifiedTime: "2026-09-12T00:00:00Z", images: [CRR_SOCIAL_CARD] } };
 
 export function CommunitySolarWorthItGuide() {
   return <DecisionPage title={title} intro={intro} path={path} sources={sources} sourceCheckedDate="2026-09-12" topic="community solar subscription comparison" primaryResourceHref="/solar-panels-california" primaryResourceLabel="Compare rooftop solar" comparisonHref="/blog/how-to-lower-electric-bill-california" comparisonLabel="Electric-bill decision guide">

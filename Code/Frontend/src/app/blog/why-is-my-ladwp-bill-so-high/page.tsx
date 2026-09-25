@@ -13,6 +13,7 @@ import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
 import { SourceList } from "@/components/growth/DecisionPage";
 import { FaqBlock } from "@/components/trust/FaqBlock";
 import { RATE_SOURCES_CHECKED, rateSources } from "@/data/rate-sources";
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const title = "Why Is My LADWP Bill So High? Rates & Fees Explained";
 const description =
@@ -82,6 +83,7 @@ export const metadata: Metadata = {
     publishedTime: "2026-04-24T00:00:00Z",
     modifiedTime: "2026-09-23T00:00:00Z",
     url: `https://ratereliefca.com${path}`,
+    images: [CRR_SOCIAL_CARD],
   },
 };
 

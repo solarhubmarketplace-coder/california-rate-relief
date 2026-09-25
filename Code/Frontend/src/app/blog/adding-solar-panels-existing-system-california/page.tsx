@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const path = "/blog/adding-solar-panels-existing-system-california";
 const title = "Adding Solar Panels to an Existing System in California";
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   title,
   description: "Adding solar capacity to an existing California system is a design, compatibility and approval decision. Start with the records and serving utility process.",
   alternates: { canonical: path },
-  openGraph: { title, description: "What to confirm before adding solar panels to an existing California system.", type: "article", url: `https://ratereliefca.com${path}`, publishedTime: "2026-09-20T00:00:00Z", modifiedTime: "2026-09-20T00:00:00Z" },
+  openGraph: { title, description: "What to confirm before adding solar panels to an existing California system.", type: "article", url: `https://ratereliefca.com${path}`, publishedTime: "2026-09-20T00:00:00Z", modifiedTime: "2026-09-20T00:00:00Z", images: [CRR_SOCIAL_CARD] },
 };
 
 export default function AddingSolarPanelsExistingSystem() {

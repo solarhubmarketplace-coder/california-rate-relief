@@ -9,12 +9,13 @@ import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
   title: "Trina Solar Panels Review: Tier-1, 25-Year Warranty",
   description: "Trina Solar is a tier-1 manufacturer with a 25-year product and power warranty. What the Vertex S series offers and what to ask a California installer.",
   alternates: { canonical: '/panel-reviews/trina-solar-panels-review' },
-  openGraph: { title: 'Trina Solar Panels Review 2026: California Homeowner Guide', description: 'Trina Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z' },
+  openGraph: { title: 'Trina Solar Panels Review 2026: California Homeowner Guide', description: 'Trina Solar panel review for California homeowners.', type: 'article', publishedTime: '2026-04-23T00:00:00Z', images: [CRR_SOCIAL_CARD] },
 };
 
 const articleSchema = {

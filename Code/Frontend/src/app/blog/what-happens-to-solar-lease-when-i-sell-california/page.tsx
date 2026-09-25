@@ -4,6 +4,7 @@ import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
 import { HubSpokeLinks } from "@/components/growth/HubSpokeLinks";
 import type { FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
+import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // 2026-09-23 Tier 2 (agent costfin): upgraded for the "sell solar rent" cluster
 // and the questions Search Console shows reaching this page ("can you buy out a
@@ -88,6 +89,7 @@ export const metadata: Metadata = {
     type: "article",
     url: "https://ratereliefca.com/blog/what-happens-to-solar-lease-when-i-sell-california",
     modifiedTime: "2026-09-23T00:00:00Z",
+    images: [CRR_SOCIAL_CARD],
   },
 };
 
