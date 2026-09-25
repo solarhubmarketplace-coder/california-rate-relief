@@ -9,6 +9,14 @@ export interface CalculatorContext {
   annualBillAfter?: string;
 }
 const KEY = 'crr_calculator_context_v2';
+// The utility select on the CRR forms (SolarInquiry, HeroQuickCheck,
+// SolarCalculator). California utilities only: the ten New Jersey, Maryland,
+// Delaware, DC and Virginia utilities were removed on 2026-09-24 (decision 41,
+// plan item 6.1). The codes that remain are unchanged, and the backend's
+// normalizeUtility maps each of them as before (it never knew the removed
+// codes and stored them as Other). If a page still passes a removed code,
+// SolarInquiry shows it as the visitor's "other" text and sends the same
+// utility_provider string; HeroQuickCheck leaves its select unset.
 export const utilityOptions = [
   ['pge', 'PG&E'],
   ['sce', 'SCE'],
@@ -16,16 +24,6 @@ export const utilityOptions = [
   ['ladwp', 'LADWP'],
   ['smud', 'SMUD'],
   ['mvu', 'MVU'],
-  ['pseg', 'PSE&G'],
-  ['jcpl', 'JCP&L'],
-  ['ace', 'Atlantic City Electric'],
-  ['rockland', 'Rockland Electric'],
-  ['bge', 'BGE'],
-  ['pepco', 'Pepco'],
-  ['delmarva', 'Delmarva Power'],
-  ['potomac-edison', 'Potomac Edison'],
-  ['dominion', 'Dominion Energy Virginia'],
-  ['appalachian-power', 'Appalachian Power'],
   ['other', 'Other / not sure'],
 ] as const;
 export function saveCalculatorContext(value: CalculatorContext) {
