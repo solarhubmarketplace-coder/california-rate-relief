@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { growthCities } from "@/data/growth-cities";
+import { growthCities, type GrowthCitySection } from "@/data/growth-cities";
 import {
   companiesCityHref,
   hasCompaniesCityPage,
@@ -52,12 +52,20 @@ export function CityLocalChecks({ slug }: { slug: string }) {
  * local program. Plain paragraphs from growth-cities.ts; every fact in them is
  * listed in the page's sources.
  */
-export function CityLocalSections({ slug }: { slug: string }) {
+export function CityLocalSections({
+  slug,
+  exclude,
+}: {
+  slug: string;
+  /** Sections another page of the city carries (2026-09-24: bill copy on /solar-savings). */
+  exclude?: (section: GrowthCitySection) => boolean;
+}) {
   const city = growthCities[slug];
-  if (!city?.sections?.length) return null;
+  const sections = (city?.sections ?? []).filter((section) => !exclude?.(section));
+  if (!sections.length) return null;
   return (
     <>
-      {city.sections.map((section) => (
+      {sections.map((section) => (
         <section key={section.heading}>
           <h2>{section.heading}</h2>
           {section.paragraphs.map((paragraph, index) => (

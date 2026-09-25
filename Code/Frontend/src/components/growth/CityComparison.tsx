@@ -27,6 +27,7 @@ import {
 } from "@/data/dgstats/companies";
 import { cityPageDates, cityQuickCheckUtility, companiesPageSeo, growthUtilityForForm, isLiveCityPage } from "@/lib/city-pages";
 import type { FaqJsonLdItem } from "@/components/shared/FaqJsonLd";
+import { isBillSection, savingsCarriesBill } from "@/lib/city-bill-content";
 
 /**
  * The contract-risk guides a reader comparing installers needs. Until
@@ -189,6 +190,7 @@ export function CityComparison({ slug }: { slug: string }) {
     `A useful ${county} quote starts with the actual property, electric bill and scope of work. Compare the same system. Then compare the contract.`;
   const keyStats = city?.keyFacts ?? (dg ? dgKeyFacts(dg, legacy) : []);
   const lead = answerParagraph(city);
+  const billOnSavings = savingsCarriesBill(slug);
   return (
     <DecisionPage
       title={seo?.h1 ?? `Solar companies in ${name}, California`}
@@ -227,7 +229,9 @@ export function CityComparison({ slug }: { slug: string }) {
           <p>{lead}</p>
         </section>
       ) : null}
-      {city ? (
+      {/* 2026-09-24: where the city's savings page is live, the bill copy
+          lives there (lib/city-bill-content.ts) and this page links to it. */}
+      {city && !billOnSavings ? (
         <section>
           <h2>Start with your {name} electricity bill</h2>
           <p>{city.bill}</p>
@@ -245,7 +249,7 @@ export function CityComparison({ slug }: { slug: string }) {
           </p>
         </section>
       ) : null}
-      <CityLocalSections slug={slug} />
+      <CityLocalSections slug={slug} exclude={billOnSavings ? isBillSection : undefined} />
       <CityLocalChecks slug={slug} />
       {city?.projectLinks?.length ? (
         <RelatedGuides

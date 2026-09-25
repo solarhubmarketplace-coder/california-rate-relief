@@ -35,6 +35,7 @@ import { hasCompaniesCityPage, hasSavingsCityPage } from './canonical-redirects.
 import { CRUMB_LABELS, type Crumb } from './breadcrumb-sections.ts';
 import { utilityOptions } from './calculator-context.ts';
 import { MUNICIPAL_MAIN_UTILITY } from '../data/dgstats/municipal.ts';
+import { SAVINGS_GENERATION, SAVINGS_SPLIT } from '../data/savings-providers.ts';
 
 export type CityPageType = 'cost' | 'companies' | 'savings';
 
@@ -365,6 +366,8 @@ const LEGACY_COMPANIES_LAUNCHED = '2026-04-24';
  * CPUC DG Stats installer table (src/data/dgstats/companies.ts).
  */
 const COMPANIES_REBUILT = '2026-09-24';
+/** 2026-09-24 (Block 3.4): /solar-savings re-scoped to provider and cost. */
+const SAVINGS_REBUILT = '2026-09-24';
 /** growth-cities.ts: "Sources default to 2026-09-10". */
 const GROWTH_DEFAULT_CHECKED = '2026-09-10';
 
@@ -403,7 +406,7 @@ export function cityPageDates(type: CityPageType, slug: string): CityPageDateInf
     const record = CITY_PAGE_DATES[slug];
     return {
       published: record?.added,
-      modified: maxIso(record?.added, record?.updated, SAVINGS_BILLS_SEO[slug].modified),
+      modified: maxIso(record?.added, record?.updated, SAVINGS_BILLS_SEO[slug].modified, SAVINGS_REBUILT),
     };
   }
   const record = CITY_PAGE_DATES[slug];
@@ -411,7 +414,7 @@ export function cityPageDates(type: CityPageType, slug: string): CityPageDateInf
     const published = maxIso(LEGACY_COMPANIES_LAUNCHED, record?.added);
     return { published, modified: maxIso(published, record?.updated, COMPANIES_REBUILT) };
   }
-  return { published: record?.added, modified: maxIso(record?.added, record?.updated) };
+  return { published: record?.added, modified: maxIso(record?.added, record?.updated, type === 'savings' ? SAVINGS_REBUILT : undefined) };
 }
 
 // -----------------------------------------------------------------------------
@@ -711,45 +714,85 @@ export const SAVINGS_BILLS_SEO: Readonly<Record<string, CitySeo & { modified: st
   },
 };
 
-/** /solar-savings/<city> */
+/** Short names for the split-city utilities in savings titles. */
+const SPLIT_TITLE: Readonly<Record<string, [string, string]>> = {
+  merced: ['Merced ID', 'PG&E'],
+  'moreno-valley': ['MVU', 'SCE'],
+  modesto: ['MID', 'TID'],
+  'palm-desert': ['SCE', 'IID'],
+};
+
+const RATE_KEY: Readonly<Record<string, 'pge' | 'sce' | 'sdge'>> = { pge: 'pge', sce: 'sce', sdge: 'sdge' };
+
+/**
+ * /solar-savings/<city> (2026-09-24, Block 3.4, Decision 42): "who supplies
+ * your power and what it costs". The URL stays; the title names the city's
+ * electricity provider(s) from src/data/savings-providers.ts, the way the ten
+ * hand-written bills pages above already do.
+ */
 export function savingsPageSeo(city: CityData): CitySeo {
   const bills = SAVINGS_BILLS_SEO[city.slug];
   if (bills) return { title: bills.title, description: bills.description, h1: bills.h1 };
   const name = city.name;
-  const utility = legacyUtilityLabel(city);
-  const confirm = city.utilityConfirmationRequired === true;
-  const title = confirm
-    ? fit(
+  const utility = UTILITY_DATA[city.utilityCode]?.shortName ?? legacyUtilityLabel(city);
+  const cca = SAVINGS_GENERATION[city.slug]?.cca ?? null;
+  const split = SPLIT_TITLE[city.slug] && SAVINGS_SPLIT[city.slug] ? SPLIT_TITLE[city.slug] : null;
+  const rateKey = RATE_KEY[city.utilityCode];
+  const rate = rateKey ? formatAverageRateCents(getUtilityRate(rateKey)) : null;
+  if (split) {
+    const [a, b] = split;
+    return {
+      title: fit(
         TITLE_MAX,
-        `${name} Solar Savings: ${utility} Rates & Quotes (${YEAR})`,
-        `${name} Solar Savings: ${utility} (${YEAR})`,
-        `${name} Solar Savings: Rates & Quotes (${YEAR})`,
-      )
-    : fit(
+        `${name} Electricity Providers: ${a} or ${b} Rates (${YEAR})`,
+        `${name} Electricity: ${a} or ${b} Rates (${YEAR})`,
+        `${name} Electric Rates: ${a} or ${b}`,
+      ),
+      description: fit(
+        DESCRIPTION_MAX,
+        `${name} is split between ${a} and ${b}. See who serves which part of the city, what each charges, the rate plans and the bill discounts.`,
+        `${name} is split between ${a} and ${b}: who serves which part, what each charges and the bill discounts.`,
+      ),
+      h1: `${possessive(name)} Electricity Providers: ${a} or ${b}, Rates and Bills`,
+    };
+  }
+  if (cca) {
+    return {
+      title: fit(
         TITLE_MAX,
-        `${name} Solar Savings: ${utility} Rates & Costs (${YEAR})`,
-        `${name} Solar Savings: ${utility} Rates (${YEAR})`,
-        `${name} Solar Savings: Rates & Costs (${YEAR})`,
-      );
-  const split = / or /.test(utility);
-  const description = confirm
-    ? fit(
+        `${name} Electricity Provider: ${cca.short} & ${utility} Rates (${YEAR})`,
+        `${name} Electricity: ${cca.short} & ${utility} Rates (${YEAR})`,
+        `${name} Electric Rates: ${cca.short} & ${utility}`,
+      ),
+      description: fit(
         DESCRIPTION_MAX,
-        split
-          ? `${name} is split between ${utility.replace(' or ', ' and ')}. Confirm which bills your address, then compare solar quotes on the same usage, roof and contract terms.`
-          : `${name} is ${utility} territory. Confirm the utility on your bill, then compare solar quotes on the same usage, roof, equipment and contract terms.`,
-        `Confirm which utility bills your ${name} address, then compare solar quotes on the same usage, roof, equipment and contract terms.`,
-      )
-    : fit(
-        DESCRIPTION_MAX,
-        `${name} solar savings on ${utility}: rate-plan and CARE/FERA checks, what a system costs, HOA rules under Civil Code 714 and when solar doesn't pay.`,
-        `${name} solar savings on ${utility}: rate-plan checks, system costs, HOA rules under Civil Code 714 and when solar doesn't pay.`,
-        `${name} solar savings: rate-plan checks, system costs, HOA rules and when solar doesn't pay.`,
-      );
+        `${name} electricity: ${cca.name} generation and ${utility} delivery on one bill, ${utility}'s ${rate} average rate, the $24.15 charge, rate plans and discounts.`,
+        `${name} electricity: ${cca.name} generation and ${utility} delivery on one bill, the average rate, rate plans and discounts.`,
+        `${name} electricity: ${cca.short} generation, ${utility} delivery, the average rate, plans and discounts.`,
+      ),
+      h1: `${possessive(name)} Electricity Providers: ${cca.name} and ${utility}`,
+    };
+  }
+  const iou = Boolean(rateKey);
   return {
-    title,
-    description,
-    h1: `Solar Savings in ${name}, CA: Rates, Costs and Your Options in ${YEAR}`,
+    title: fit(
+      TITLE_MAX,
+      `${name} Electricity Provider: ${utility} Rates & Bills (${YEAR})`,
+      `${name} Electricity Provider: ${utility} Rates (${YEAR})`,
+      `${name} Electric Rates: ${utility} (${YEAR})`,
+    ),
+    description: iou
+      ? fit(
+          DESCRIPTION_MAX,
+          `${name} electricity comes from ${utility}: its ${rate} average rate, the $24.15 fixed charge, its rate plans, CARE/FERA discounts and how solar is billed.`,
+          `${name} electricity comes from ${utility}: the average rate, the fixed charge, rate plans, discounts and solar billing.`,
+        )
+      : fit(
+          DESCRIPTION_MAX,
+          `${name} electricity comes from ${utility}, a publicly owned utility with its own rates: where they are published, its discounts and its solar rules.`,
+          `${name} electricity comes from ${utility}: where its rates are published, its discounts and its solar rules.`,
+        ),
+    h1: `${possessive(name)} Electricity Provider Is ${utility}: Rates, Plans and Bills`,
   };
 }
 
