@@ -1354,10 +1354,6 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "C-PACE financing for commercial solar"
       },
       {
-        "href": "/commercial-solar/financing-options",
-        "label": "Commercial solar financing options"
-      },
-      {
         "href": "/commercial-solar/sgip-battery-storage",
         "label": "SGIP status for commercial battery storage"
       },

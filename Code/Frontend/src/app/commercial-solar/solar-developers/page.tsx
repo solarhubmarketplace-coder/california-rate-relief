@@ -415,7 +415,7 @@ export default function SolarDevelopers() {
                 the value. A developer PPA is also a poor fit if you may sell the building, move
                 or reroof within the contract term without a clear buyout or relocation clause.
                 The{' '}
-                <Link href="/commercial-solar/financing-options" className={link}>
+                <Link href="/blog/commercial-solar-financing-california" className={link}>
                   commercial financing guide
                 </Link>{' '}
                 sets out the alternatives.

@@ -423,6 +423,7 @@ const GS_MERGES_20260924 = new Set<string>([
   '/solar-panels-california',
   '/blog/free-solar-panels-california',
   '/blog/can-you-cancel-solar-panel-contract-before-installation-california',
+  '/blog/commercial-solar-financing-california',
 ]);
 // END GS-MERGES 2026-09-24
 
@@ -700,7 +701,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
 
   // Commercial solar (7 topics)
   const commercialSlugs = [
-    'companies-california', 'financing-options', 'cost-per-watt-california',
+    'companies-california', 'cost-per-watt-california',
     'title-24-requirements', 'cpace-financing-california',
     'sgip-battery-storage', 'vnem-aggregation-multi-meter',
     // claude/ta-release-20260923

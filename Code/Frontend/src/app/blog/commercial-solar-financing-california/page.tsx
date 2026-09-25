@@ -19,9 +19,12 @@ import { CommercialReviewButton, CommercialReviewForm } from '@/components/growt
 // can see its Article, FAQPage and author signals. The 2025 ownership counts
 // are CRR's tabulation of the CPUC DGStats Interconnected Applications file
 // (data through 2026-05-31): PV, status Interconnected, non-residential
-// sectors, approved in 2025. The /commercial-solar/financing-options merge
-// (G08) is held under the Decision 14 default, so this stays a separate,
-// document-focused guide.
+// sectors, approved in 2025.
+//
+// GS-MERGES 2026-09-24 (plan 6.3, topic-map G08): /commercial-solar/financing-options
+// (175 impressions in 90 days vs this page's 1,524; same topic, cluster 223)
+// now 301s here. Its "which structure fits" guidance and the elective-pay route
+// are carried below; its lease "off balance sheet" claim was not carried.
 
 const metaTitle = 'Commercial Solar Financing in California: 4 Options Compared';
 const h1 = 'Commercial Solar Financing in California: Loans, SBA, Leases, PPAs and PACE';
@@ -29,7 +32,7 @@ const description =
   'How a California business can finance solar: purchase or loan, SBA 7(a) and 504, lease or PPA, and PACE. Who owns the system and what documents to compare.';
 const path = '/blog/commercial-solar-financing-california';
 const canonicalUrl = `https://ratereliefca.com${path}`;
-const DATE_MODIFIED = '2026-09-23';
+const DATE_MODIFIED = '2026-09-24'; // GS-MERGES 2026-09-24
 const CHECKED = 'September 23, 2026';
 const link = 'text-primary underline';
 
@@ -45,6 +48,9 @@ const usc = (s: string) =>
   `https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title26-section${s}&num=0&edition=prelim`;
 const irc48e = usc('48E');
 const irc45 = usc('45');
+// GS-MERGES 2026-09-24: elective pay, carried from /commercial-solar/financing-options.
+const irc6417 = usc('6417');
+const irsElective = 'https://www.irs.gov/credits-deductions/elective-pay-and-transferability';
 
 const faqs = [
   {
@@ -136,12 +142,11 @@ export default function CommercialSolarFinancingCalifornia() {
                 Compare signed documents for the same project, not monthly payments.
               </p>
               <p>
-                This guide is about the paperwork and the programs. For which structure tends to
-                suit which kind of business, see the{' '}
-                <Link href="/commercial-solar/financing-options" className={link}>
-                  commercial financing options guide
-                </Link>
-                ; for every business guide, the{' '}
+                This guide is about the paperwork and the programs, and{' '}
+                <a href="#which-structure" className={link}>
+                  which structure tends to suit which kind of business
+                </a>
+                ; for every business guide, see the{' '}
                 <Link href="/commercial-solar" className={link}>
                   commercial solar hub
                 </Link>
@@ -282,6 +287,41 @@ export default function CommercialSolarFinancingCalifornia() {
                 covers the PPA side.
               </p>
 
+              {/* GS-MERGES 2026-09-24: /commercial-solar/financing-options 301s here
+                  (plan 6.3, topic-map G08). Its "which structure fits" guidance
+                  and the elective-pay route for tax-exempt owners are carried in
+                  #which-structure and #elective-pay; 26 U.S.C. § 6417 and the
+                  IRS elective pay page re-read 2026-09-24. */}
+              <h2 id="which-structure" className="mb-4 mt-10 text-2xl font-bold text-foreground">
+                Which structure tends to fit which business
+              </h2>
+              <ul className="list-disc space-y-2 pl-6">
+                <li>
+                  <strong>Profitable, with tax to offset and capital or credit:</strong> owning,
+                  with cash or a loan, keeps the federal credit and depreciation with you.
+                </li>
+                <li>
+                  <strong>Profitable, but avoiding a capital purchase:</strong> a PPA if you want
+                  to pay per kilowatt-hour delivered, a lease if you want a fixed payment.
+                </li>
+                <li>
+                  <strong>Little taxable income:</strong> a lease or PPA lets the owner use the tax
+                  benefits you could not, which the price should reflect.
+                </li>
+                <li>
+                  <strong>A long-held property:</strong> PACE, where the property sits in a
+                  participating district and the existing lender consents.
+                </li>
+                <li>
+                  <strong>A nonprofit, school, public agency or tribe:</strong> owning with
+                  elective pay, described below.
+                </li>
+              </ul>
+              <p>
+                Ask each bidder to price the same project under two or three structures, with the
+                monthly payment, the 10-year and 25-year totals and who takes the tax position
+                under each.
+              </p>
               {/* One mid-page ask; its button scrolls to the form at the end of the page. */}
               <div className="not-prose">
                 <CommercialReviewButton />
@@ -403,6 +443,28 @@ export default function CommercialSolarFinancingCalifornia() {
                 </Link>{' '}
                 sets out the rates, bonuses and transfer rules.
               </p>
+              <h3 id="elective-pay" className="mb-2 mt-6 text-xl font-bold text-foreground">
+                Nonprofits, schools and public agencies: elective pay
+              </h3>
+              <p>
+                An owner with no income tax to offset can still use the credit. Under{' '}
+                <a href={irc6417} target="_blank" rel="noopener noreferrer" className={link}>
+                  26 U.S.C. §6417
+                </a>
+                , a tax-exempt organization, a state or local government, an Indian tribal
+                government or a rural electric cooperative can elect to be paid the §48E credit.
+                The IRS says elective pay treats the credit as a tax payment and refunds it as an
+                overpayment (
+                <a href={irsElective} target="_blank" rel="noopener noreferrer" className={link}>
+                  IRS
+                </a>
+                , checked September 24, 2026).
+              </p>
+              <p>
+                So a nonprofit or public owner can buy the system and receive the credit&apos;s
+                value, rather than handing it to a lease or PPA provider. The same placed-in-service
+                deadline applies. Have a tax professional confirm the election before you sign.
+              </p>
 
               <h2 className="mb-4 mt-10 text-2xl font-bold text-foreground">
                 Keep utility and tax assumptions separate
@@ -461,6 +523,7 @@ export default function CommercialSolarFinancingCalifornia() {
                 <li>USDA Rural Development, <a href={reap} target="_blank" rel="noopener noreferrer" className={link}>Rural Energy for America Program</a> (updated April 9, 2026)</li>
                 <li>California Public Utilities Commission, <a href={dgStats} target="_blank" rel="noopener noreferrer" className={link}>DGStats Interconnected Applications Data Set</a> (data through May 31, 2026); CRR count of 2025 non-residential PV systems</li>
                 <li>26 U.S.C. <a href={irc48e} target="_blank" rel="noopener noreferrer" className={link}>§48E</a> and <a href={irc45} target="_blank" rel="noopener noreferrer" className={link}>§45</a>, Office of the Law Revision Counsel (text in effect September 23, 2026)</li>
+                <li>26 U.S.C. <a href={irc6417} target="_blank" rel="noopener noreferrer" className={link}>§6417</a> (elective payment; applicable entities and credits) and IRS, <a href={irsElective} target="_blank" rel="noopener noreferrer" className={link}>Elective pay and transferability</a> (both checked September 24, 2026)</li>
               </ul>
             </div>
 

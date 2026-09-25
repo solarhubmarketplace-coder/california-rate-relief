@@ -138,7 +138,7 @@ export default function CommercialSolarLeasePrograms() {
               <p>
                 This page covers both kinds of lease and the property-owner questions that come
                 with them. For how a lease compares with buying, a loan or C-PACE, see the{' '}
-                <Link href="/commercial-solar/financing-options" className={link}>
+                <Link href="/blog/commercial-solar-financing-california" className={link}>
                   commercial solar financing options
                 </Link>
                 ; for every business guide on this site, start at the{' '}

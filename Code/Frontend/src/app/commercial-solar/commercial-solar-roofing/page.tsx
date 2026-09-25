@@ -319,7 +319,7 @@ export default function CommercialSolarRoofing() {
                 excludes &ldquo;a building or its structural components&rdquo; from qualified
                 property, so ask a tax professional before treating roofing cost as part of the
                 credit basis. For how ownership changes who takes the credit, see{' '}
-                <Link href="/commercial-solar/financing-options" className={link}>
+                <Link href="/blog/commercial-solar-financing-california" className={link}>
                   commercial solar financing options
                 </Link>
                 .

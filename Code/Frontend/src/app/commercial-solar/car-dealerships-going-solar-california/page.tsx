@@ -350,7 +350,7 @@ export default function DealershipSolar() {
                   PPA versus purchase
                 </Link>{' '}
                 and{' '}
-                <Link href="/commercial-solar/financing-options" className={link}>
+                <Link href="/blog/commercial-solar-financing-california" className={link}>
                   commercial solar financing options
                 </Link>
                 .

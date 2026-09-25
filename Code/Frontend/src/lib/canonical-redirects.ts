@@ -257,6 +257,10 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   // records sections are now in the blog guide, and its JSON entry is gone.
   '/solar-problems/solar-cancellation-california':
     '/blog/can-you-cancel-solar-panel-contract-before-installation-california',
+  // Topic-map G08 (held on 2026-09-23, applied here): two commercial
+  // financing guides in cluster 223. The blog guide has 1,524 impressions to
+  // 175; its structure-fit and elective-pay material is carried over.
+  '/commercial-solar/financing-options': '/blog/commercial-solar-financing-california',
   // END GS-MERGES 2026-09-24 ------------------------------------------------
 };
 

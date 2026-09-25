@@ -530,7 +530,7 @@ export default function CommercialSolarCost() {
                   PPA versus purchase
                 </Link>{' '}
                 and{' '}
-                <Link href="/commercial-solar/financing-options" className="text-primary underline">
+                <Link href="/blog/commercial-solar-financing-california" className="text-primary underline">
                   commercial financing options
                 </Link>{' '}
                 for how ownership changes both the price you sign and who keeps the tax benefit.

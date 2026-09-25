@@ -229,6 +229,7 @@ test('Decision 14: the held merges (G05, G08, G10, G11) are not redirected', () 
 /** GS-MERGES 2026-09-24: held Decision 14 merges that plan 6.3 applied. */
 const GS_MERGES_APPLIED_HELD = new Set<string>([
   '/blog/nem-3-california-still-worth-it', // G11, into the worth-it winner
+  '/commercial-solar/financing-options', // G08
 ]);
 
 // 2026-09-23, topical-authority wave (cities agent): new /solar-companies
@@ -413,6 +414,7 @@ const GS_MERGES: Readonly<Record<string, string>> = {
   '/blog/what-is-nem-true-up': '/solar-problems/true-up-bill-california-explained',
   '/solar-problems/solar-cancellation-california':
     '/blog/can-you-cancel-solar-panel-contract-before-installation-california',
+  '/commercial-solar/financing-options': '/blog/commercial-solar-financing-california',
 };
 ROW_DELTAS.push(Object.keys(GS_MERGES).length);
 
