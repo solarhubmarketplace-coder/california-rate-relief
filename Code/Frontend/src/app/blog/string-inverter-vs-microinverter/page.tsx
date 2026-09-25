@@ -92,7 +92,7 @@ export default function StringVsMicro() {
               <p>California requires compliance with the National Electrical Code 690.12 (Rapid Shutdown), which mandates that firefighters can de-energize rooftop arrays for safety. Microinverters satisfy this requirement natively. String inverters need an add-on optimizer (SolarEdge, Tigo) to comply — which closes most of the cost gap vs microinverters.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The Market Reality in California</h2>
-              <p>Roughly 70–75% of new residential California installs in 2026 use microinverters or module-level power electronics (MLPE), typically Enphase. String-only installs are declining. For most homeowners the decision isn&apos;t &ldquo;string vs micro&rdquo; but rather &ldquo;Enphase microinverters vs SolarEdge string-plus-optimizers.&rdquo;</p>
+              <p>Utility records give the real mix. Of the 145,404 residential solar systems approved at PG&amp;E, SCE and SDG&amp;E in 2025, 42% listed Enphase inverters, 41% Tesla and 19% SolarEdge; a system can list more than one maker (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026). For most homeowners the choice is among Enphase microinverters, SolarEdge string-plus-optimizers and a Tesla inverter, not &ldquo;string vs micro&rdquo; in the abstract.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
               <ul className="list-disc pl-6 space-y-2">

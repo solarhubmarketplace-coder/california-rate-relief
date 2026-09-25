@@ -40,10 +40,11 @@ export default function WhatIsDemandChargeCA() {
               <h2 className="text-2xl font-bold text-foreground mt-8 mb-4">The Simple Definition</h2>
               <p>A <strong>demand charge</strong> bills you based on the <em>highest</em> electrical load (kW) you drew during the billing period; typically measured as a rolling 15-minute peak. It&apos;s separate from your per-kWh energy charge. You pay both: energy charges for how much total electricity you used, and demand charges for how big your biggest moment was.</p>
               <p>Analogy: energy charges are like paying for gallons of water used; demand charges are like paying extra because you opened every faucet in the house at once for 15 minutes.</p>
+              <p>A real example: PG&amp;E&apos;s Schedule B-19, for business customers whose demand reaches 500 kW (and an option below that), charged $37.37 per kW of maximum demand at secondary voltage from March 1, 2026, plus $46.16 per kW of peak-period demand in summer. For customers above 499 kW, PG&amp;E averages demand over 15-minute intervals (<a href='https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_B-19.pdf' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>PG&amp;E Electric Schedule B-19</a>, checked September 24, 2026).</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Who Actually Pays Demand Charges?</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Commercial customers</strong> — virtually every commercial rate schedule in California (PG&amp;E, SCE, SDG&amp;E, LADWP, SMUD) includes demand charges, typically $15–$30/kW of monthly peak demand.</li>
+                <li><strong>Commercial customers</strong> — larger business rate schedules include demand charges; the PG&amp;E B-19 example above shows how large they can be. Check the schedule named on your own bill.</li>
                 <li><strong>Industrial customers</strong> — always, at higher per-kW rates.</li>
                 <li><strong>Some residential customers</strong> — PG&amp;E, SCE, and SDG&amp;E have piloted or offered residential demand-charge rate plans, but they are opt-in and not the default. Most California residential customers do <strong>not</strong> pay demand charges directly.</li>
                 <li><strong>EV high-power charging</strong> — commercial DCFC sites pay demand charges that often exceed the energy charges themselves.</li>

@@ -168,6 +168,9 @@ export default function SolarPanelInspectionCalifornia() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Finding the right inspector:</strong> Ask for recommendations from your original installer, check reviews on Google and Yelp, and confirm the inspector holds a current C-10 or C-46 license. Request a detailed written report that documents any issues and recommended repairs. A good inspector also has liability insurance in case they damage something on your roof.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                To check a contractor, use the Contractors State License Board&apos;s lookup, which shows license information including complaint disclosure; CSLB recommends reading its Hiring a Contractor page before you hire or sign (<a href='https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>CSLB, Check a License</a>, checked September 24, 2026).
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>
                 California Fire Zone Requirements

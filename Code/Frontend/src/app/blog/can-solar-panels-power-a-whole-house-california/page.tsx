@@ -79,6 +79,9 @@ export default function CanSolarPowerWholeHouse() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Going fully off-grid in California typically costs 2-3x more than solar + battery + grid, because you have to oversize everything to handle worst-case winter weeks. The grid is a nearly-free backstop — you pay a fixed monthly charge plus any grid electricity you import during outlier weather. For most California households, the math favors grid-tied with backup.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                Most new systems are built grid-tied with storage. Of the 145,404 residential solar systems approved at PG&amp;E, SCE and SDG&amp;E in 2025, 55% included a battery, and the median system was 6.16 kW DC (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026).
+              </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What About During an Outage?</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>

@@ -204,6 +204,9 @@ export default function SolarPanelBirdProofing() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Ideally: At initial installation.</strong> When panels are first mounted, bird proofing installation is easiest and cheapest. Many installers include it automatically or can add it for a small premium.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                One legal limit before anyone clears a nest: California Fish and Game Code §3503 makes it unlawful &ldquo;to take, possess, or needlessly destroy the nest or eggs of any bird,&rdquo; except as the code or its regulations allow (<a href='https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=3503.&lawCode=FGC' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Legislative Information</a>). The federal Migratory Bird Treaty Act also bars taking a protected migratory bird&apos;s &ldquo;nest, or egg&rdquo; except as regulations permit (<a href='https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title16-section703&num=0&edition=prelim' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>16 U.S.C. §703</a>). Both checked September 24, 2026. If a nest is active, ask how the installer will handle it before guards go on.
+              </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Later addition:</strong> If your system was installed without bird proofing and you&apos;re now seeing signs of nesting (droppings under panels, debris, bird sounds under the array), add it immediately. Waiting allows damage to worsen.

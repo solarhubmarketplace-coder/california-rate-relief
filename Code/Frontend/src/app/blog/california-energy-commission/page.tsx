@@ -113,6 +113,12 @@ export default function CaliforniaEnergyCommission() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 The CEC is California&apos;s primary energy policy and planning agency. It was created in 1974 during the energy crisis and is responsible for setting building energy efficiency standards (Title 24), forecasting energy demand, administering renewable energy and efficiency programs, licensing large power plants, and developing policies to advance clean energy technology.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                In the CEC&apos;s own words, &ldquo;The Warren‐Alquist Act established the California Energy Commission in 1974&rdquo; (<a href='https://www.energy.ca.gov/about' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Energy Commission, About</a>, checked September 24, 2026). Its current building code is the 2025 Energy Code: buildings whose permit applications are filed on or after January 1, 2026 must comply with it (<a href='https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/2025-building-energy-efficiency' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>CEC, 2025 Building Energy Efficiency Standards</a>).
+              </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                The code before it, the 2022 Energy Code, applied to permit applications from January 1, 2023 and &ldquo;expands solar photovoltaic and battery storage standards,&rdquo; the CEC says (<a href='https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/2022-building-energy-efficiency' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>CEC, 2022 Building Energy Efficiency Standards</a>, checked September 24, 2026).
+              </p>
 
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Think of the CEC as the forward-looking, standards-setting agency. It decides what buildings must include and how efficient they need to be. The CPUC, by contrast, is the rate-setting and regulatory agency that governs how much utilities charge you. They&apos;re separate agencies with different roles, and understanding the distinction helps you navigate California&apos;s energy landscape.

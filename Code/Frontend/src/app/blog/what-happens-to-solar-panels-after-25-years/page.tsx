@@ -78,6 +78,9 @@ export default function WhatHappensAfter25Years() {
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 <strong>Panels rarely need replacement.</strong> Most California homeowners keep their original panels past year 25 because the production is still meaningful and replacement cost outweighs the incremental benefit.
               </p>
+              <p className='text-foreground/80 leading-relaxed mb-6'>
+                The Department of Energy cites a Berkeley Lab survey of U.S. solar professionals: the average operational lifespan of a solar panel rose from about 20 years in 2007 to 25 to 35 years in 2025 (<a href='https://www.energy.gov/eere/solar/end-life-management-solar-photovoltaics' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>U.S. Department of Energy, End-of-Life Management for Solar Photovoltaics</a>, checked September 24, 2026).
+              </p>
 
               <h2 className='text-2xl function bold text-foreground mt-10 mb-4'>Your Options at Year 25+</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
@@ -92,10 +95,10 @@ export default function WhatHappensAfter25Years() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What About Solar Panel Recycling?</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                California requires solar panels to be handled as hazardous waste at end-of-life because of trace lead and other materials in the cells. Solar panel recycling facilities exist but are still scaling — most California homeowners don&apos;t deal with this personally until a full system replacement, and the installer typically handles disposal as part of a replacement install.
+                End-of-life panels that test as hazardous waste can be managed in California as universal waste, a lighter set of hazardous-waste rules: Health and Safety Code §25259 (SB 489, 2015) lets the Department of Toxic Substances Control designate them that way (<a href='https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=25259.&lawCode=HSC' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Legislative Information</a>, checked September 24, 2026). Most homeowners deal with this only at a full replacement, when the installer handles disposal.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Panel manufacturers are required to recover glass, aluminum, silicon, and copper from decommissioned panels. The recycling infrastructure is growing as the first wave of 2010-era residential installs approaches end-of-life in the 2035-2040 timeframe.
+                Before a removal, ask the installer or recycler in writing where the panels will go and how they will be handled. Recycling capacity is still growing as older residential systems reach the end of their working life.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What if My Installer Goes Out of Business Before Year 25?</h2>
