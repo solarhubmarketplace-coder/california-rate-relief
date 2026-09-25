@@ -16,6 +16,7 @@ import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header as CRRHeader } from '@/components/landing/Header';
 import { Footer as CRRFooter } from '@/components/landing/Footer';
 import { GLP1TrustPage } from '@/components/glp1/GLP1TrustPage';
+import { AI_USE_HEADING, AiUseStatement } from '@/components/trust/AiUseStatement';
 
 // =============================================================================
 // HOST-AWARE /methodology PAGE
@@ -82,7 +83,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
     freshness:
       'Installer reviews are reviewed at least every 90 days, sooner if a CSLB action, BBB pattern shift, or major news event occurs. Each review carries a "Last updated" date stamp visible to readers.',
     conflictsBlurb:
-      'California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement. We do not accept payment for placement; ratings reflect our research, not commercial relationships.',
+      'California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement. We do not accept payment for placement, and installer pages carry no ratings or rankings; what they say reflects our research, not commercial relationships.',
   },
   grh: {
     brand: 'GreenReviewsHub',
@@ -306,6 +307,16 @@ function MethodologyBody({ cfg, palette, domain }: { cfg: DomainConfig; palette:
         </div>
         <p>{cfg.conflictsBlurb}</p>
       </section>
+
+      {domain === 'crr' && (
+        <section>
+          <div className='flex items-center gap-3 mb-4'>
+            <CheckCircle2 className='h-6 w-6' style={{ color: palette.accent }} />
+            <h2 className='text-2xl md:text-3xl font-bold' style={{ color: palette.fg }}>{AI_USE_HEADING}</h2>
+          </div>
+          <AiUseStatement linkClassName='underline font-semibold' />
+        </section>
+      )}
 
       <TrustedSources domain={domain} palette={{ fg: palette.fg, muted: palette.muted, mutedFg: palette.mutedFg, accent: palette.accent, cardBg: palette.cardBg, cardBorder: palette.cardBorder }} />
 

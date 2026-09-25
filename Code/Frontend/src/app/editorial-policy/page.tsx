@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { TrustPageShell } from '@/components/trust/TrustPageShell';
 import { TRUST_LINKS } from '@/components/trust/trust-links';
+import { AI_USE_HEADING, AiUseStatement } from '@/components/trust/AiUseStatement';
 
 // =============================================================================
 // /editorial-policy — CRR only (middleware 404s it on the other four hosts).
@@ -62,14 +63,19 @@ export default function EditorialPolicyPage() {
       <section>
         <h2>How the site is paid</h2>
         <p>
-          California Rate Relief is compensated when a homeowner it refers signs an agreement
-          with a solar provider. The details are on{' '}
+          California Rate Relief is compensated by a solar provider when a homeowner we refer
+          signs an agreement. The details are on{' '}
           <Link href={TRUST_LINKS.howWeMakeMoney.href}>how we make money</Link>.
         </p>
         <p>
           As the <Link href={TRUST_LINKS.methodology.href}>methodology page</Link> states, the
           site does not accept payment for placement.
         </p>
+      </section>
+
+      <section>
+        <h2>{AI_USE_HEADING}</h2>
+        <AiUseStatement />
       </section>
 
       <section>
