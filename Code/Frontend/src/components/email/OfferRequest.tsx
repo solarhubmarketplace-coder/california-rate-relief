@@ -5,7 +5,7 @@ import { captureFirstTouch } from '@/lib/attribution';
 import { getOrCreateSubmissionAttempt, intakeAttribution, submitIntake, type IntakePayload } from '@/lib/intake';
 import { emailOfferAttribution } from '@/lib/email-offer-attribution';
 import { ensureEmailOfferVisit } from '@/lib/email-funnel';
-import { serviceMarkets } from '@/lib/service-market';
+import { selectableServiceMarkets } from '@/lib/service-market';
 import { trackEvent } from '@/components/GoogleAnalyticsClient';
 
 const inputClass = 'mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-600';
@@ -81,7 +81,7 @@ export function OfferRequest({ offer }: { offer: 'bill-review' | 'quote-review' 
           <label className="text-sm font-medium">Name<input name="name" required autoComplete="name" maxLength={160} className={inputClass}/></label>
           <label className="text-sm font-medium">Phone<input name="phone" required type="tel" autoComplete="tel" maxLength={40} className={inputClass}/></label>
           <label className="text-sm font-medium sm:col-span-2">Email<input name="email" required type="email" autoComplete="email" maxLength={254} className={inputClass}/></label>
-          <label className="text-sm font-medium">Project state<select name="market" defaultValue="CA" className={inputClass}>{serviceMarkets.map(([code,label])=><option key={code} value={code}>{label}</option>)}</select></label>
+          <label className="text-sm font-medium">Project state<select name="market" defaultValue="CA" className={inputClass}>{selectableServiceMarkets.map(([code,label])=><option key={code} value={code}>{label}</option>)}</select></label>
           <label className="text-sm font-medium">Project ZIP<input name="zip" required inputMode="numeric" pattern="[0-9]{5}" maxLength={5} autoComplete="postal-code" className={inputClass}/></label>
           <label className="text-sm font-medium">Utility on your bill<input name="utility" required maxLength={120} placeholder="For example, SCE" className={inputClass}/></label>
           <label className="text-sm font-medium">Monthly electric bill (optional)<input name="bill" type="number" min="0" max="10000000" step="0.01" className={inputClass}/></label>

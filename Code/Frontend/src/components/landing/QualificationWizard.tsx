@@ -29,7 +29,7 @@ import {
   submitIntake,
   type IntakePayload,
 } from '@/lib/intake';
-import { isFiveDigitZip, serviceLocationFields, serviceMarkets, type ServiceMarket } from '@/lib/service-market';
+import { isFiveDigitZip, serviceLocationFields, selectableServiceMarkets, type ServiceMarket } from '@/lib/service-market';
 import { isNewConfirmedSubmission } from '@/lib/submission-identity';
 import { useToast } from '@/hooks/use-toast';
 import usePlacesAutocomplete, {
@@ -1033,7 +1033,7 @@ export function QualificationWizard({
                         className={`h-12 w-full rounded-md border-2 bg-background px-3 text-base focus:border-primary focus:outline-none ${fieldErrors.serviceMarket ? 'border-destructive' : 'border-border'}`}
                       >
                         <option value=''>Select project market</option>
-                        {serviceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
+                        {selectableServiceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
                       </select>
                       {fieldErrors.serviceMarket && (
                         <p id={fieldErrorId('serviceMarket')} className='text-sm font-medium text-destructive'>

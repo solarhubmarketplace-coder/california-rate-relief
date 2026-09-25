@@ -375,335 +375,335 @@ export const TOPIC_HUBS: TopicHub[] = [
     "hub": "city_cost",
     "label": "City pages: solar cost",
     "hubPage": "/solar-cost",
-    "hubPageLabel": "Solar Panel Cost by California City: 57 Cities",
+    "hubPageLabel": "Solar panel cost by California city",
     "spokes": [
       {
         "href": "/solar-cost/fresno",
-        "label": "Solar Panel Cost in Fresno, CA: What Sets the Price (2026)"
+        "label": "Solar cost in Fresno, CA"
       },
       {
         "href": "/solar-cost/murrieta",
-        "label": "Solar Panel Cost in Murrieta, CA: What Sets the Price (2026)"
+        "label": "Solar cost in Murrieta, CA"
       },
       {
         "href": "/solar-cost/el-cajon",
-        "label": "Solar Panel Cost in El Cajon, CA: What Sets the Price (2026)"
+        "label": "Solar cost in El Cajon, CA"
       },
       {
         "href": "/solar-cost/carlsbad",
-        "label": "Solar Panels in Carlsbad, CA: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Carlsbad, CA"
       },
       {
         "href": "/solar-cost/temecula",
-        "label": "Solar Panel Cost in Temecula, CA: What Sets the Price (2026)"
+        "label": "Solar cost in Temecula, CA"
       },
       {
         "href": "/solar-cost/roseville",
-        "label": "Roseville Solar Panel Cost: What Sets the Price (2026)"
+        "label": "Solar cost in Roseville, CA"
       },
       {
         "href": "/solar-cost/escondido",
-        "label": "Escondido Solar Panel Cost: What Sets the Price (2026)"
+        "label": "Solar cost in Escondido, CA"
       },
       {
         "href": "/solar-cost/encinitas",
-        "label": "Encinitas Solar Panels: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Encinitas, CA"
       },
       {
         "href": "/solar-cost/san-luis-obispo",
-        "label": "San Luis Obispo Solar Panel Cost: What Sets the Price (2026)"
+        "label": "Solar cost in San Luis Obispo, CA"
       },
       {
         "href": "/solar-cost/livermore",
-        "label": "Livermore Solar Panel Cost: What Sets the Price (2026)"
+        "label": "Solar cost in Livermore, CA"
       },
       {
         "href": "/solar-cost/chula-vista",
-        "label": "Chula Vista Solar Panels: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Chula Vista, CA"
       },
       {
         "href": "/solar-cost/vallejo",
-        "label": "Solar Panels in Vallejo, CA: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Vallejo, CA"
       },
       {
         "href": "/solar-cost/oceanside",
-        "label": "Oceanside Solar Panels: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Oceanside, CA"
       },
       {
         "href": "/solar-cost/santa-cruz",
-        "label": "Santa Cruz Solar Panel Cost: What Sets the Price (2026)"
+        "label": "Solar cost in Santa Cruz, CA"
       },
       {
         "href": "/solar-cost/stockton",
-        "label": "Solar Panel Cost in Stockton, CA: What Sets the Price (2026)"
+        "label": "Solar cost in Stockton, CA"
       },
       {
         "href": "/solar-cost/santa-rosa",
-        "label": "Santa Rosa Solar Panel Cost: What Sets the Price (2026)"
+        "label": "Solar cost in Santa Rosa, CA"
       },
       {
         "href": "/solar-cost/walnut-creek",
-        "label": "Walnut Creek Solar Panels: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Walnut Creek, CA"
       },
       {
         "href": "/solar-cost/thousand-oaks",
-        "label": "Thousand Oaks Solar Panel Cost: What Sets the Price (2026)"
+        "label": "Solar cost in Thousand Oaks, CA"
       },
       {
         "href": "/solar-cost/anaheim",
-        "label": "Solar Panel Cost in Anaheim, CA: What Sets the Price (2026)"
+        "label": "Solar cost in Anaheim, CA"
       },
       {
         "href": "/solar-cost/el-dorado-hills",
-        "label": "El Dorado Hills Solar Panels: Cost & Installer Checks (2026)"
+        "label": "Solar cost in El Dorado Hills, CA"
       },
       {
         "href": "/solar-cost/san-jose",
-        "label": "Solar Panel Cost in San Jose, CA: What Sets the Price (2026)"
+        "label": "Solar cost in San Jose, CA"
       },
       {
         "href": "/solar-cost/tulare",
-        "label": "Solar Panels in Tulare, CA: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Tulare, CA"
       },
       {
         "href": "/solar-cost/manteca",
-        "label": "Solar Panels in Manteca, CA: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Manteca, CA"
       },
       {
         "href": "/solar-cost/san-marcos",
-        "label": "San Marcos Solar Panels: Cost & Installer Checks (2026)"
+        "label": "Solar cost in San Marcos, CA"
       },
       {
         "href": "/solar-cost/napa",
-        "label": "Solar Panels in Napa, CA: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Napa, CA"
       },
       {
         "href": "/solar-cost/tracy",
-        "label": "Solar Panels in Tracy, CA: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Tracy, CA"
       },
       {
         "href": "/solar-cost/yucaipa",
-        "label": "Solar Panels in Yucaipa, CA: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Yucaipa, CA"
       },
       {
         "href": "/solar-cost/camarillo",
-        "label": "Camarillo Solar Panel Cost: What Sets the Price (2026)"
+        "label": "Solar cost in Camarillo, CA"
       },
       {
         "href": "/solar-cost/grass-valley",
-        "label": "Grass Valley Solar Panel Cost: What Sets the Price (2026)"
+        "label": "Solar cost in Grass Valley, CA"
       },
       {
         "href": "/solar-cost/auburn",
-        "label": "Solar Panels in Auburn, CA: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Auburn, CA"
       },
       {
         "href": "/solar-cost/rancho-cucamonga",
-        "label": "Solar Panel Cost in Rancho Cucamonga, CA (2026)"
+        "label": "Solar cost in Rancho Cucamonga, CA"
       },
       {
         "href": "/solar-cost/rancho-cordova",
-        "label": "Rancho Cordova Solar Panels: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Rancho Cordova, CA"
       },
       {
         "href": "/solar-cost/modesto",
-        "label": "Solar Panel Cost in Modesto, CA: What Sets the Price (2026)"
+        "label": "Solar cost in Modesto, CA"
       },
       {
         "href": "/solar-cost/ontario",
-        "label": "Solar Panels in Ontario, CA: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Ontario, CA"
       },
       {
         "href": "/solar-cost/corona",
-        "label": "Solar Panels in Corona, CA: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Corona, CA"
       },
       {
         "href": "/solar-cost/monterey",
-        "label": "Solar Panels in Monterey, CA: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Monterey, CA"
       },
       {
         "href": "/solar-cost/yuba-city",
-        "label": "Yuba City Solar Panels: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Yuba City, CA"
       },
       {
         "href": "/solar-cost/windsor",
-        "label": "Solar Panels in Windsor, CA: Cost & Installer Checks (2026)"
+        "label": "Solar cost in Windsor, CA"
       },
       {
         "href": "/solar-cost/ventura",
-        "label": "Solar Panel Cost in Ventura, CA: What Sets the Price (2026)"
+        "label": "Solar cost in Ventura, CA"
       },
       {
         "href": "/solar-cost/rocklin",
-        "label": "Solar Panel Cost in Rocklin, CA: What Sets the Price (2026)"
+        "label": "Solar cost in Rocklin, CA"
       },
       {
         "href": "/solar-cost/bakersfield",
-        "label": "Solar panel cost in Bakersfield"
+        "label": "Solar cost in Bakersfield, CA"
       },
       {
         "href": "/solar-cost/california-city",
-        "label": "Solar panel cost in California City"
+        "label": "Solar cost in California City, CA"
       },
       {
         "href": "/solar-cost/los-angeles",
-        "label": "Solar panel cost in Los Angeles"
+        "label": "Solar cost in Los Angeles, CA"
       },
       {
         "href": "/solar-cost/palm-springs",
-        "label": "Solar panel cost in Palm Springs"
+        "label": "Solar cost in Palm Springs, CA"
       },
       {
         "href": "/solar-cost/san-mateo",
-        "label": "Solar panel cost in San Mateo"
+        "label": "Solar cost in San Mateo, CA"
       },
       {
         "href": "/solar-cost/irvine",
-        "label": "Solar panel cost in Irvine"
+        "label": "Solar cost in Irvine, CA"
       },
       {
         "href": "/solar-cost/fremont",
-        "label": "Solar panel cost in Fremont"
+        "label": "Solar cost in Fremont, CA"
       },
       {
         "href": "/solar-cost/riverside",
-        "label": "Solar panel cost in Riverside"
+        "label": "Solar cost in Riverside, CA"
       },
       {
         "href": "/solar-cost/oakland",
-        "label": "Solar panel cost in Oakland"
+        "label": "Solar cost in Oakland, CA"
       },
       {
         "href": "/solar-cost/pleasanton",
-        "label": "Solar panel cost in Pleasanton"
+        "label": "Solar cost in Pleasanton, CA"
       },
       {
         "href": "/solar-cost/chico",
-        "label": "Solar panel cost in Chico"
+        "label": "Solar cost in Chico, CA"
       },
       {
         "href": "/solar-cost/pasadena",
-        "label": "Solar panel cost in Pasadena"
+        "label": "Solar cost in Pasadena, CA"
       },
       {
         "href": "/solar-cost/santa-clarita",
-        "label": "Solar panel cost in Santa Clarita"
+        "label": "Solar cost in Santa Clarita, CA"
       },
       {
         "href": "/solar-cost/long-beach",
-        "label": "Solar panel cost in Long Beach"
+        "label": "Solar cost in Long Beach, CA"
       },
       {
         "href": "/solar-cost/santa-ana",
-        "label": "Solar panel cost in Santa Ana"
+        "label": "Solar cost in Santa Ana, CA"
       },
       {
         "href": "/solar-cost/sacramento",
-        "label": "Solar panel cost in Sacramento"
+        "label": "Solar cost in Sacramento, CA"
       },
       {
         "href": "/solar-cost/sunnyvale",
-        "label": "Solar panel cost in Sunnyvale"
+        "label": "Solar cost in Sunnyvale, CA"
       },
       {
         "href": "/solar-cost/visalia",
-        "label": "Solar panel cost in Visalia"
+        "label": "Solar cost in Visalia, CA"
       },
       {
         "href": "/solar-cost/mountain-view",
-        "label": "Solar panel cost in Mountain View"
+        "label": "Solar cost in Mountain View, CA"
       },
       {
         "href": "/solar-cost/huntington-beach",
-        "label": "Solar panel cost in Huntington Beach"
+        "label": "Solar cost in Huntington Beach, CA"
       },
       {
         "href": "/solar-cost/arcata",
-        "label": "Solar panel cost in Arcata"
+        "label": "Solar cost in Arcata, CA"
       },
       {
         "href": "/solar-cost/concord",
-        "label": "Solar panel cost in Concord"
+        "label": "Solar cost in Concord, CA"
       },
       {
         "href": "/solar-cost/richmond",
-        "label": "Solar panel cost in Richmond"
+        "label": "Solar cost in Richmond, CA"
       },
       {
         "href": "/solar-cost/berkeley",
-        "label": "Solar panel cost in Berkeley"
+        "label": "Solar cost in Berkeley, CA"
       },
       {
         "href": "/solar-cost/santa-clara",
-        "label": "Solar panel cost in Santa Clara"
+        "label": "Solar cost in Santa Clara, CA"
       },
       {
         "href": "/solar-cost/san-clemente",
-        "label": "Solar panel cost in San Clemente"
+        "label": "Solar cost in San Clemente, CA"
       },
       {
         "href": "/solar-cost/clovis",
-        "label": "Solar panel cost in Clovis"
+        "label": "Solar cost in Clovis, CA"
       },
       {
         "href": "/solar-cost/lakewood",
-        "label": "Solar panel cost in Lakewood"
+        "label": "Solar cost in Lakewood, CA"
       },
       {
         "href": "/solar-cost/elk-grove",
-        "label": "Solar panel cost in Elk Grove"
+        "label": "Solar cost in Elk Grove, CA"
       },
       {
         "href": "/solar-cost/mission-viejo",
-        "label": "Solar panel cost in Mission Viejo"
+        "label": "Solar cost in Mission Viejo, CA"
       },
       {
         "href": "/solar-cost/victorville",
-        "label": "Solar panel cost in Victorville"
+        "label": "Solar cost in Victorville, CA"
       },
       {
         "href": "/solar-cost/glendale",
-        "label": "Solar panel cost in Glendale"
+        "label": "Solar cost in Glendale, CA"
       },
       {
         "href": "/solar-cost/santa-barbara",
-        "label": "Solar panel cost in Santa Barbara"
+        "label": "Solar cost in Santa Barbara, CA"
       },
       {
         "href": "/solar-cost/vacaville",
-        "label": "Solar panel cost in Vacaville"
+        "label": "Solar cost in Vacaville, CA"
       },
       {
         "href": "/solar-cost/saratoga",
-        "label": "Solar panel cost in Saratoga"
+        "label": "Solar cost in Saratoga, CA"
       },
       {
         "href": "/solar-cost/gilroy",
-        "label": "Solar panel cost in Gilroy"
+        "label": "Solar cost in Gilroy, CA"
       },
       {
         "href": "/solar-cost/san-ramon",
-        "label": "Solar panel cost in San Ramon"
+        "label": "Solar cost in San Ramon, CA"
       },
       {
         "href": "/solar-cost/redding",
-        "label": "Solar panel cost in Redding"
+        "label": "Solar cost in Redding, CA"
       },
       {
         "href": "/solar-cost/redwood-city",
-        "label": "Solar panel cost in Redwood City"
+        "label": "Solar cost in Redwood City, CA"
       },
       {
         "href": "/solar-cost/cupertino",
-        "label": "Solar panel cost in Cupertino"
+        "label": "Solar cost in Cupertino, CA"
       },
       {
         "href": "/solar-cost/hollister",
-        "label": "Solar cost in Hollister"
+        "label": "Solar cost in Hollister, CA"
       },
       {
         "href": "/solar-cost/petaluma",
-        "label": "Solar cost in Petaluma"
+        "label": "Solar cost in Petaluma, CA"
       }
     ]
   },

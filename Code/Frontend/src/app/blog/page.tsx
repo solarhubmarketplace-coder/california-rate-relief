@@ -1067,7 +1067,7 @@ const blogPosts: BlogPost[] = [
   },
   {
     slug: 'solar-ppa-explained-california',
-    title: 'Solar PPA Explained: How California’s $0-Down Solar Works',
+    title: 'Solar PPA Explained: How a Power Purchase Agreement Works in California',
     excerpt:
       'How a California solar PPA works: the $/kWh rate, escalator, term, and what CPUC’s consumer guide requires providers to disclose before you sign.',
     date: '2026-09-22',

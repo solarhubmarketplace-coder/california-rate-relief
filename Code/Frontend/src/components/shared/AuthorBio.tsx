@@ -26,7 +26,7 @@ type Domain = 'crr' | 'grh' | 'shg' | 'ahb';
 const BIOS: Record<Domain, { headline: string; body: string; }> = {
   crr: {
     headline: 'Editor — Chad Simpson',
-    body: 'Chad has been researching California solar policy and the installer market for several years, including the NEM 1, NEM 2, and NEM 3 transitions, NBT compensation, and the post-2024 lead-acquisition shakeout. He reads CSLB licensing records, BBB complaint files, and California Superior Court filings before any installer review goes live. California Rate Relief is a research-led publication; Chad is not a licensed contractor and does not give project-specific advice — see the methodology page for how we evaluate installers.',
+    body: 'Chad Simpson edits California Rate Relief. He has followed California solar policy through the NEM 1, NEM 2 and NEM 3 changes and net billing. Before an installer review goes live, he checks CSLB license records, BBB complaint files and court filings. He is not a licensed contractor and does not give project-specific advice; see the methodology page.',
   },
   grh: {
     headline: 'Editor — Chad Simpson',

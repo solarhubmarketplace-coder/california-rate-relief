@@ -13,14 +13,14 @@ import { Byline } from '@/components/trust/Byline';
 import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
-  title: "Solar PPA Explained: How California's $0-Down Solar Works",
+  title: "Solar PPA Explained: How a PPA Works in California (2026)",
   description: "How a California solar PPA works: the $/kWh rate, escalator, term, and what CPUC's consumer guide requires providers to disclose before you sign.",
   alternates: {
     canonical: '/blog/solar-ppa-explained-california',
   },
   openGraph: {
     title:
-      'Solar PPA Explained: How California\'s $0-Down Solar Works (2026)',
+      'Solar PPA Explained: How a Power Purchase Agreement Works in California (2026)',
     description:
       'How a solar PPA works in California: the per-kWh price, the escalator, the term, and what the CPUC and CSLB require providers to disclose.',
     type: 'article',
@@ -33,7 +33,7 @@ const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
   headline:
-    'Solar PPA Explained: How California\'s $0-Down Solar Works (2026)',
+    'Solar PPA Explained: How a Power Purchase Agreement Works in California (2026)',
   description:
     'How a solar PPA works in California: the per-kWh price, the escalator, the term, and what the CPUC and CSLB require providers to disclose.',
   datePublished: '2026-04-16',
@@ -79,7 +79,7 @@ export default function SolarPPAExplainedCalifornia() {
                 Solar Financing
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Solar PPA Explained: How California&apos;s $0-Down Solar Works (2026)
+                Solar PPA Explained: How a Power Purchase Agreement Works in California (2026)
               </h1>
               <Byline updated="2026-09-22" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>

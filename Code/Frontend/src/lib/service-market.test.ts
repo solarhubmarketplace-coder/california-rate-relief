@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { isFiveDigitZip, isServiceMarket, serviceLocationFields, serviceMarkets } from './service-market.ts';
+import { isFiveDigitZip, isServiceMarket, selectableServiceMarkets, serviceLocationFields, serviceMarkets } from './service-market.ts';
 
 test('six authorized markets and representative ZIPs are accepted without utility guesses', () => {
   const zips: Record<string, string> = { CA: '95814', NJ: '07102', DE: '19801', MD: '20850', VA: '23219', DC: '20001' };
@@ -14,4 +14,7 @@ test('six authorized markets and representative ZIPs are accepted without utilit
 });
 test('malformed ZIPs and out-of-market codes are rejected', () => {
   assert.equal(isFiveDigitZip('1234'), false); assert.equal(isServiceMarket('TX'), false);
+});
+test('forms offer only California (plan 6.1, Decision 41)', () => {
+  assert.deepEqual(selectableServiceMarkets.map(([code]) => code), ['CA']);
 });

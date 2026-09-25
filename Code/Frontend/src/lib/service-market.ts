@@ -5,6 +5,13 @@ export const serviceMarkets = [
   ['MD', 'Maryland'], ['VA', 'Virginia'], ['DC', 'District of Columbia'],
 ] as const;
 export type ServiceMarket = (typeof serviceMarkets)[number][0];
+/**
+ * The markets a visitor can pick in a form's project-state list. California
+ * only since 2026-09-24 (plan 6.1, Decision 41: the out-of-state pages 301 to
+ * California pages). The other codes stay valid values of ServiceMarket so the
+ * intake contract and older records are unchanged.
+ */
+export const selectableServiceMarkets = serviceMarkets.filter(([code]) => code === 'CA');
 export function isServiceMarket(value: string): value is ServiceMarket {
   return serviceMarkets.some(([code]) => code === value);
 }

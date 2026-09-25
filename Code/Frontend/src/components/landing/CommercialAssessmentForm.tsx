@@ -13,7 +13,7 @@ import {
   submitIntake,
   type IntakePayload,
 } from "@/lib/intake";
-import { isFiveDigitZip, serviceLocationFields, serviceMarkets, type ServiceMarket } from "@/lib/service-market";
+import { isFiveDigitZip, serviceLocationFields, selectableServiceMarkets, type ServiceMarket } from "@/lib/service-market";
 import { CTA_COPY } from "@/lib/cta-intent";
 import { US_PHONE_HINT, formatUsPhoneInput, isValidUsPhone, toE164Us, usPhoneError } from "@/lib/phone";
 
@@ -426,7 +426,7 @@ export function CommercialAssessmentForm({
             <Label htmlFor={fid("commercial-market")}>Project state or district</Label>
             <select id={fid("commercial-market")} value={form.serviceMarket} onChange={(e) => update("serviceMarket", e.target.value as ServiceMarket)} required className={selectClass}>
               <option value="">Select project market</option>
-              {serviceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
+              {selectableServiceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
             </select>
           </div>
 

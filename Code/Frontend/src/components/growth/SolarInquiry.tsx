@@ -15,7 +15,7 @@ import {
   type CalculatorContext,
 } from '@/lib/calculator-context';
 import { calculateSolarScenario } from '@/lib/solar-savings-engine';
-import { isFiveDigitZip, isServiceMarket, serviceMarkets, type ServiceMarket } from '@/lib/service-market';
+import { isFiveDigitZip, isServiceMarket, selectableServiceMarkets, type ServiceMarket } from '@/lib/service-market';
 import { trackEvent } from '@/components/GoogleAnalyticsClient';
 import {
   INQUIRY_RECEIVED_COPY,
@@ -688,7 +688,7 @@ export function SolarInquiry({
                       }}
                     >
                       <option value="">Select project market</option>
-                      {serviceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
+                      {selectableServiceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
                     </select>
                   </label>
                   {fieldError('service_market')}

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Bluetti AC200Max Review: 2,048Wh Expandable to 8,192Wh LFP",
     description: "2,048Wh, expandable to 8,192Wh, $1,699. Is the Bluetti AC200Max the best home backup under $2K?",
     url: 'https://greenreviewshub.com/reviews/bluetti-ac200max-review',
-    siteName: 'California Rate Relief',
+    siteName: 'Green Reviews Hub',
     type: 'article',
     locale: 'en_US',
   },

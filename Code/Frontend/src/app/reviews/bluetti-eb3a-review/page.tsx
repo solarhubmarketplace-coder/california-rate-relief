@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Bluetti EB3A Review: 268Wh LFP Power Station at $299",
     description: "Is the $299 Bluetti EB3A enough for a power outage? 268Wh LFP, 30-min turbo charge, examined in depth.",
     url: 'https://greenreviewshub.com/reviews/bluetti-eb3a-review',
-    siteName: 'California Rate Relief',
+    siteName: 'Green Reviews Hub',
     type: 'article',
     locale: 'en_US',
   },
