@@ -401,7 +401,6 @@ const CRR_TOPICAL_20260923 = new Set<string>([
   '/solar-installers/sunrun-vs-tesla-solar',
   '/solar-problems',
   '/solar-problems/do-i-still-get-a-utility-bill-with-solar',
-  '/solar-problems/solar-cancellation-california',
   '/solar-problems/solar-dealer-fees-explained',
   '/solar-savings/altadena',
   '/solar-savings/bay-area',
@@ -423,6 +422,7 @@ const GS_MERGES_20260924 = new Set<string>([
   '/blog/california-solar-tax-credit-2026',
   '/solar-panels-california',
   '/blog/free-solar-panels-california',
+  '/blog/can-you-cancel-solar-panel-contract-before-installation-california',
 ]);
 // END GS-MERGES 2026-09-24
 

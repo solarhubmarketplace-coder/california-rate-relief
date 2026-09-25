@@ -250,6 +250,13 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   // new in the release). Its NEM 2.0 vs net billing settlement, surplus
   // compensation and fixed-charge material is now in the winner.
   '/blog/what-is-nem-true-up': '/solar-problems/true-up-bill-california-explained',
+  // Cancellation x2 -> the statute-by-statute blog guide. Both had 0
+  // impressions; the blog page is live and indexed, longer (4,234 words) and
+  // cites more primary sources (18 vs 7); the JSON page was new in the
+  // release. Its after-installation, complaint-window, exit-company and
+  // records sections are now in the blog guide, and its JSON entry is gone.
+  '/solar-problems/solar-cancellation-california':
+    '/blog/can-you-cancel-solar-panel-contract-before-installation-california',
   // END GS-MERGES 2026-09-24 ------------------------------------------------
 };
 

@@ -411,6 +411,8 @@ const GS_MERGES: Readonly<Record<string, string>> = {
   '/blog/zero-down-solar-california': '/blog/free-solar-panels-california',
   '/blog/no-upfront-cost-solar-panels': '/blog/free-solar-panels-california',
   '/blog/what-is-nem-true-up': '/solar-problems/true-up-bill-california-explained',
+  '/solar-problems/solar-cancellation-california':
+    '/blog/can-you-cancel-solar-panel-contract-before-installation-california',
 };
 ROW_DELTAS.push(Object.keys(GS_MERGES).length);
 
@@ -443,6 +445,26 @@ test('GS-MERGES: each loser 301s straight to a live winner', async () => {
   assert.deepEqual(destinations.filter((dest) => losers.has(dest)), []);
   const rules = await nextConfigRedirects();
   for (const r of rules) assert.equal(losers.has(r.destination), false, `${r.source} -> ${r.destination}`);
+});
+
+test('GS-MERGES: a JSON-article loser has no entry left to render or list', async () => {
+  const { readFileSync } = await import('node:fs');
+  for (const loser of Object.keys(GS_MERGES)) {
+    const m = /^\/(solar-problems|battery|commercial-solar|solar-installers)\/([^/]+)$/.exec(loser);
+    if (!m) continue;
+    const file = {
+      'solar-problems': 'problems',
+      battery: 'battery',
+      'commercial-solar': 'commercial',
+      'solar-installers': 'installer',
+    }[m[1] as 'solar-problems' | 'battery' | 'commercial-solar' | 'solar-installers'];
+    const pages = JSON.parse(
+      readFileSync(new URL(`../data/article-pages.${file}.json`, import.meta.url), 'utf8'),
+    ) as { slug: string }[];
+    assert.equal(pages.some((p) => p.slug === m[2]), false, `${loser} still has a JSON entry`);
+    const related = readFileSync(new URL('../data/json-article-links.ts', import.meta.url), 'utf8');
+    assert.equal(related.includes(`'${loser}'`), false, `json-article-links still names ${loser}`);
+  }
 });
 
 test('GS-MERGES: losers are off the sitemap lists and the hub spokes', async () => {

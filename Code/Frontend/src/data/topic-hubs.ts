@@ -2375,10 +2375,6 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-installers/solar-installer-bankruptcy-california",
         "label": "When a solar installer goes bankrupt"
-      },
-      {
-        "href": "/solar-problems/solar-cancellation-california",
-        "label": "How to get out of a solar contract"
       }
     ]
   },

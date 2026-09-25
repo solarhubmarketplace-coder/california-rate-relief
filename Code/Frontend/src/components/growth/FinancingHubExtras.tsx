@@ -409,7 +409,7 @@ export function FinancingHubExtras() {
 
       <p className="mt-10">
         Already in a lease or PPA and want out? Read{' '}
-        <Link className={link} href="/solar-problems/solar-cancellation-california">
+        <Link className={link} href="/blog/can-you-cancel-solar-panel-contract-before-installation-california#after-installation">
           how to get out of a solar contract in California
         </Link>
         . Still deciding whether to own? The{' '}

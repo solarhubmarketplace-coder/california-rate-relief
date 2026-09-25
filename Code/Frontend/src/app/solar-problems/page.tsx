@@ -68,14 +68,11 @@ export default function Page() {
         <>
         <p className="mt-10 leading-relaxed text-foreground/80">
           Stuck in a contract you want out of? Start with{' '}
-          <Link href="/solar-problems/solar-cancellation-california" className="text-primary underline underline-offset-2">
-            how to get out of a solar contract in California
-          </Link>
-          , and for the statutory window in detail,{' '}
           <Link href="/blog/can-you-cancel-solar-panel-contract-before-installation-california" className="text-primary underline underline-offset-2">
-            cancelling before installation
+            how to cancel a solar contract in California
           </Link>
-          .
+          : the statutory window day by day, and what applies once the system
+          is installed.
         </p>
         <RelatedGuides
           heading="Disputes, lawsuits and the rules that apply"

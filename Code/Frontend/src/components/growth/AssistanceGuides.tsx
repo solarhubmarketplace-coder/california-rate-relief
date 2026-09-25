@@ -444,11 +444,9 @@ export function AssistanceGuide({ kind }: { kind: AssistanceKey }) {
       intro={d.intro}
       path={d.path}
       sourceCheckedDate={
-        kind === "free" || kind === "california"
-          ? "2026-09-24" // GS-MERGES 2026-09-24: merge fold-ins re-checked
-          : kind === "seniors"
-            ? "2026-09-23"
-            : "2026-09-10"
+        kind === "free" || kind === "california" || kind === "seniors"
+          ? "2026-09-23"
+          : "2026-09-10"
       }
       sources={[
         ...(kind === "options" || kind === "records" || kind === "california"

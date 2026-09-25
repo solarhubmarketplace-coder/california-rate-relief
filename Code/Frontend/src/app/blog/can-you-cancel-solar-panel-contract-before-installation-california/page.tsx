@@ -9,6 +9,10 @@ import { RelatedGuides } from "@/components/shared/RelatedGuides";
 import { DecisionPage, type Source } from "@/components/growth/DecisionPage";
 import { SolarInquiry } from "@/components/growth/SolarInquiry";
 
+const DFPI_PACE = "https://dfpi.ca.gov/consumers/housing/pace/";
+const CSLB_COMPLAINT = "https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/";
+const CALBAR_LRS =
+  "https://www.calbar.ca.gov/public/find-legal-professionals/find-lawyer-referral-service";
 const sources: Source[] = [
   {
     label:
@@ -90,6 +94,20 @@ const sources: Source[] = [
     label: "DFPI: File a Complaint",
     url: "https://dfpi.ca.gov/file-a-complaint/",
   },
+  // GS-MERGES 2026-09-24: sources for the sections carried from
+  // /solar-problems/solar-cancellation-california.
+  {
+    label: "DFPI: Property Assessed Clean Energy (PACE), licensing since 2019 and contracts difficult to void (checked 2026-09-24)",
+    url: DFPI_PACE,
+  },
+  {
+    label: "CSLB: Filing a construction complaint, four-year limit (checked 2026-09-24)",
+    url: CSLB_COMPLAINT,
+  },
+  {
+    label: "State Bar of California: Find a certified lawyer referral service (checked 2026-09-24)",
+    url: CALBAR_LRS,
+  },
 ];
 
 export const metadata: Metadata = {
@@ -107,7 +125,7 @@ export const metadata: Metadata = {
       "The statutory cancellation window, when the clock starts, how to send the notice, and where a cancellation fee sits relative to the statutory right.",
     type: "article",
     url: "https://ratereliefca.com/blog/can-you-cancel-solar-panel-contract-before-installation-california",
-    modifiedTime: "2026-09-22T00:00:00Z",
+    modifiedTime: "2026-09-24T00:00:00Z",
   },
 };
 
@@ -335,12 +353,9 @@ export default function CancelSolarContractBeforeInstallationCalifornia() {
           Protection Guide, verified 2026-09-22.) Read the contract’s own
           termination section before assuming a number. For each later stage,
           from a signed lease or loan to a home sale, see{" "}
-          <Link
-            className="underline"
-            href="/solar-problems/solar-cancellation-california"
-          >
+          <a className="underline" href="#after-installation">
             what to do after the cancellation window closes
-          </Link>
+          </a>
           . If the contract is
           silent, or a fee looks out of proportion to the work actually done,
           that is a fact pattern for a CSLB complaint rather than something to
@@ -600,6 +615,106 @@ export default function CancelSolarContractBeforeInstallationCalifornia() {
           where the required Notice of Cancellation was not included or attached.
           Keep your copy of the contract, the disclosure document, the Notice of
           Cancellation form and proof of what you sent and when.
+        </p>
+      </section>
+
+      {/* GS-MERGES 2026-09-24: /solar-problems/solar-cancellation-california
+          301s here (plan 6.3, cancellation x2). Its after-installation,
+          complaint-window, exit-company and records material is carried in
+          the next four sections; CSLB, DFPI and State Bar pages re-read
+          2026-09-24. */}
+      <section id="after-installation">
+        <h2>After installation: who owns the system decides</h2>
+        <p>
+          Once the panels are on the roof, the question is how to end what you
+          still owe, and that depends on who owns the equipment. If you paid
+          cash, there is nothing left to cancel; any dispute is about
+          workmanship, warranty or production.
+        </p>
+        <p className="mt-3">
+          A loan is a separate contract with a lender, and it can usually be paid
+          off early. Read the loan agreement for prepayment terms, and if the
+          price included a dealer fee, ask the lender in writing how it is
+          treated on early payoff.
+        </p>
+        <p className="mt-3">
+          A lease or PPA provider owns the system. The agreement usually ends
+          only by transferring it to a home buyer, buying the system at a time
+          the agreement allows, or reaching the end of the term. Find the
+          purchase option and early-termination sections before you call.
+        </p>
+        <p className="mt-3">
+          PACE financing sits on your property tax bill. The Department of
+          Financial Protection and Innovation, which began licensing PACE
+          program administrators in 2019, says PACE contracts &ldquo;are signed
+          financing agreements that are difficult to void&rdquo; (
+          <a className="underline" href={DFPI_PACE}>
+            DFPI
+          </a>
+          , checked September 24, 2026).
+        </p>
+        <p className="mt-3">
+          Stopping payments does not end a lease, PPA or loan. It puts you in
+          default under the contract&rsquo;s own terms. If money is the problem,
+          write to the provider before you miss a payment and ask what it
+          offers.
+        </p>
+      </section>
+
+      <section id="complaints">
+        <h2>If you were misled: complaints with a deadline</h2>
+        <p>
+          The Contractors State License Board addresses violations of
+          contractor license law, whether the contractor is licensed or not,
+          &ldquo;for up to four years from the date of the act&rdquo; (
+          <a className="underline" href={CSLB_COMPLAINT}>
+            CSLB
+          </a>
+          , checked September 24, 2026). File while the records are fresh.
+        </p>
+        <p className="mt-3">
+          For a PACE administrator, DFPI takes questions and complaints at
+          1-866-275-2677. For a large dispute, or a contract with an arbitration
+          clause, a consumer attorney can tell you what the contract allows and
+          what state law adds.
+        </p>
+      </section>
+
+      <section id="exit-companies">
+        <h2>Companies that advertise getting you out of a solar contract</h2>
+        <p>
+          Some are law firms and some are not. Before you pay one, ask three
+          things. Which licensed lawyer will handle my case? What will you do
+          that I cannot do myself? What will it cost, and when, in writing?
+        </p>
+        <p className="mt-3">
+          A timely cancellation notice, a CSLB complaint and a DFPI complaint
+          are all things you can file yourself. To check a named lawyer, use
+          the State Bar&rsquo;s Check Attorney Profile search. A lawyer referred
+          by a State Bar certified referral service must be in good standing,
+          carry professional liability insurance and offer a first consultation
+          for a reduced fee or no fee (
+          <a className="underline" href={CALBAR_LRS}>
+            State Bar of California
+          </a>
+          , checked September 24, 2026).
+        </p>
+      </section>
+
+      <section id="what-to-gather">
+        <h2>What to gather before you ask anyone for help</h2>
+        <ul className="mt-3 list-disc space-y-2 pl-5">
+          <li>The full signed contract, every addendum and the disclosure page.</li>
+          <li>The date you received your copy of the contract.</li>
+          <li>Any loan, lease, PPA or PACE documents.</li>
+          <li>The CPUC consumer guide you initialed.</li>
+          <li>Texts and emails with the salesperson, and the savings proposal.</li>
+          <li>Utility bills from before and after installation.</li>
+          <li>Permit and interconnection approval dates.</li>
+        </ul>
+        <p className="mt-3">
+          Write a short timeline of who said what, and when, while you still
+          remember it.
         </p>
       </section>
 
