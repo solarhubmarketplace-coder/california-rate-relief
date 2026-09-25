@@ -71,6 +71,15 @@ import type { UtilityRateKey } from './utility-rate-tracker';
 //   - It does not relax anything above: still no city-specific price, no
 //     invented range for a city, no payback period, no savings promise.
 //
+// SUPERSEDED 2026-09-24 (Block 3 of the SEO plan): the "no city price" rule
+// above is retired. Each city page now states the median cost per watt that
+// owners reported to their utility in the CPUC's DG Stats interconnection
+// data, for the city when at least 30 reported and otherwise the county,
+// utility territory or state, always named, labeled as reported costs and not
+// a quote (src/data/dgstats, src/lib/city-cost-content.ts). The LBNL national
+// benchmark is no longer shown on this layer. Still no payback period and no
+// savings promise.
+//
 // SEED STATE NOTE, superseded 2026-09-18: all 44 rows below now carry sourced
 // values. The five that could not have an exact fee confirmed say what the
 // city's own page says instead of holding a TODO.
