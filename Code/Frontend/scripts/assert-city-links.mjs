@@ -535,16 +535,10 @@ function outboundFor(route, file) {
       links.add(CRR_CANONICAL_REDIRECTS[base] ?? base);
     }
     noteExpansion(file, '/solar-savings/', cityPool.length);
-    // Mirrors RegionalCostCities: the cost cities of those counties that the
-    // grid above does not already reach through savingsCityHref().
+    // Mirrors RegionalCostCities: since 2026-09-24 a table of every cost city
+    // in those counties (it used to skip the ones the grid above reached).
     if (closure.has(REGIONAL_COST_CITIES)) {
-      const alreadyLinked = new Set(cityPool.map((c) => {
-        const base = `/solar-savings/${c.slug}`;
-        return CRR_CANONICAL_REDIRECTS[base] ?? base;
-      }));
-      const rows = COST_ROWS.filter(
-        (r) => pageCounties.includes(r.county) && !alreadyLinked.has(`/solar-cost/${r.slug}`),
-      );
+      const rows = COST_ROWS.filter((r) => pageCounties.includes(r.county));
       for (const r of rows) links.add(`/solar-cost/${r.slug}`);
       noteExpansion(REGIONAL_COST_CITIES, '/solar-cost/', rows.length);
     }

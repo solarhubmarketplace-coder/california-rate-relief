@@ -3,10 +3,12 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { StatewideCostBenchmark } from '@/components/growth/StatewideCostBenchmark';
+import { CostCityTable } from '@/components/growth/CostCityTable';
 import { cityCostPath, getPublishableCityCostRows } from '@/data/city-cost-data';
 import { COST_INDEX_PATH } from '@/data/solar-cost-index';
-import { getUtilityRate, RATE_TRACKER_PATH } from '@/data/utility-rate-tracker';
+import { RATE_TRACKER_PATH } from '@/data/utility-rate-tracker';
+import { COST_RULES_PATH, COST_RULES_TITLE, costHubRow, formatVerified } from '@/lib/city-cost-content';
+import { DG_MIN_COST_N, DG_SOURCE, formatDollars, formatPerWatt, stateDg, systemPrice } from '@/data/dgstats';
 import { SolarInquiry } from '@/components/growth/SolarInquiry';
 import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 
@@ -26,20 +28,15 @@ import { HeroQuickCheck } from '@/components/growth/HeroQuickCheck';
 // gate in city-cost-data.ts, so a city page cannot ship without an inbound
 // link. scripts/assert-city-links.mjs fails the moment that stops being true.
 //
-// WHAT IT MAY AND MAY NOT SAY
-// The cost layer publishes no city-specific system price, no price range
-// invented for a city, no per-watt figure attributed to a city, and no
-// payback period, and neither does its index. The only per-city facts stated
-// here are the two the row already carries with a source: the county and the
-// utility that bills the address. Everything quantitative beyond that stays
-// on the city page beside the document it came from.
-//
-// The one exception, added 2026-09-22 (Chad's decision): this index and every
-// city page may also state ONE sourced, statewide installed-price benchmark
-// (currently Lawrence Berkeley National Laboratory's Tracking the Sun figure)
-// via the shared StatewideCostBenchmark component. It always reads as
-// statewide, never as a city's price — see the policy comment atop
-// src/data/city-cost-data.ts and src/data/solar-cost-benchmark.ts.
+// WHAT IT SAYS (rebuilt 2026-09-24, Block 3 of the SEO plan)
+// It answers the price question first with the statewide CPUC DG Stats
+// figure (reported cost per watt, PG&E, SCE and SDG&E territories), then lists
+// every city in a table per county: utility, CCA, the reported median cost per
+// watt with the level it comes from (city, county, utility area or statewide)
+// and the permit fee. Every cell is built by costHubRow() from the same data
+// the city page renders. The earlier "no price anywhere" rule and the LBNL
+// national benchmark are retired on this layer: DG Stats is a California,
+// per-city, sourced figure, always labeled as reported costs, not a quote.
 // =============================================================================
 
 const path = '/solar-cost';
@@ -58,9 +55,11 @@ const REGIONAL_GUIDES: { href: string; label: string }[] = [
 
 // The count is interpolated rather than typed: a row added to city-cost-data.ts
 // must not be able to make this title wrong.
-const metaTitle = `Solar Panel Cost by California City: ${rows.length} Cities`;
-const metaDescription =
-  'Every California city page here names the utility that bills the address, the city permit rules and the state rules that set a solar price. No price estimates.';
+const state = stateDg();
+const statePerWatt = state.costPerWatt;
+const statePrice = systemPrice(state.medianSizeKwDc2025 as number, statePerWatt.median as number);
+const metaTitle = `Solar Panel Cost by California City (2026): ${rows.length} Cities`;
+const metaDescription = `Median reported solar cost per watt for ${rows.length} California cities from CPUC data, each city's permit fee against the $450 state limit, its utility and CCA.`;
 
 export const metadata: Metadata = {
   title: metaTitle,
@@ -98,7 +97,7 @@ function buildSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Solar panel cost by California city',
+    name: 'Solar panel cost by California city (2026)',
     description: metaDescription,
     url: `https://ratereliefca.com${path}`,
     ...(newest ? { dateModified: newest } : {}),
@@ -142,98 +141,64 @@ export default function SolarCostIndex() {
             </nav>
 
             <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mb-4 tracking-tight leading-tight'>
-              What solar costs in your California city
+              Solar Panel Cost by California City (2026)
             </h1>
 
             <p className='text-lg text-foreground/80 leading-relaxed mb-5'>
-              {rows.length} California cities have a page here, and not one of them prints a
-              price for your home. That is deliberate: what a system actually costs depends on
-              your roof, your utility and the contract your own installer hands you &mdash; not a
-              website. Under California Business and Professions Code section 7169 that number has
-              to arrive in writing, on the front or cover page, in boldface 16-point type, showing
-              the total cost of the system including financing costs.
+              California homeowners who paid for their own solar systems reported a median of{' '}
+              <strong>{formatPerWatt(statePerWatt.median as number)} per watt</strong> from January 2025 to
+              May 2026, across {statePerWatt.n.toLocaleString('en-US')} systems in PG&amp;E, SCE and
+              SDG&amp;E territory. The middle half paid {formatPerWatt(statePerWatt.p25 as number)} to{' '}
+              {formatPerWatt(statePerWatt.p75 as number)}. At the {state.medianSizeKwDc2025} kW median
+              size, that is about {formatDollars(statePrice)}.
             </p>
             <p className='text-foreground/80 leading-relaxed mb-5'>
-              What a city page does carry is the part that genuinely differs by address: which
-              utility bills it and whether a community choice aggregator supplies the generation,
-              what that city&rsquo;s own adopted fee schedule says about a solar permit, whether
-              the permit can be filed online, and the California rules that apply the same way
-              everywhere. Every one of those is stated beside the document it came from and the
-              date it was checked.
+              The tables below give each city&apos;s own figure where at least {DG_MIN_COST_N} owners
+              reported a cost, and otherwise its county&apos;s, its utility area&apos;s or the statewide
+              one, always labeled. They are reported costs, not quotes, and no federal credit comes off
+              them for a system finished in 2026. Each city also shows its permit fee against the $450
+              state limit.
+            </p>
+            <p className='text-sm text-muted-foreground mb-5'>
+              Source:{' '}
+              <a className={link} href={DG_SOURCE.url} rel='noopener noreferrer' target='_blank'>
+                {DG_SOURCE.label}
+              </a>
+              , checked {formatVerified(DG_SOURCE.verifiedAt)}. Municipal utilities such as LADWP and
+              SMUD are not in the data; their cities use the county or statewide figure. How it is
+              counted, and the tax and permit rules every city shares:{' '}
+              <Link href={COST_RULES_PATH} className={link}>{COST_RULES_TITLE}</Link>.
             </p>
             <p className='text-foreground/80 leading-relaxed mb-5'>
-              To compare cities side by side, the{' '}
+              To sort and filter the permit fees, permit platforms and utilities of all {rows.length}{' '}
+              cities, or download them, use the{' '}
               <Link href={COST_INDEX_PATH} className={link}>
                 California Solar Cost Index
-              </Link>{' '}
-              lays out the permit fee, the permit path, the utility and the community choice
-              aggregator for all {rows.length} cities in one table you can sort, filter and download.
-            </p>
-
-            {/* Bill-first step after the intro (2026-09-23); it opens the inquiry
-                form at the end of the page at step 2. */}
-            <HeroQuickCheck topic="California solar cost by city" className='mb-10' />
-
-            <StatewideCostBenchmark />
-
-            <p className='text-foreground/80 leading-relaxed mb-5'>
-              The rate you pay now is the other half of the arithmetic, and it is not a city
-              fact but a utility one. The{' '}
+              </Link>
+              . The average rate your utility charges is on the{' '}
               <Link href={RATE_TRACKER_PATH} className={link}>
                 California utility rate tracker
-              </Link>{' '}
-              holds the current average residential rate for each biller with the CPUC report it
-              came from. If your utility is SDG&amp;E, the plan you are on moves the bill before
-              solar enters the picture at all &mdash;{' '}
-              <Link href='/blog/sdge-time-of-use-rates-2026' className={link}>
-                SDG&amp;E time-of-use rates
-              </Link>{' '}
-              sets out the peak windows and what changing plan does. For a business property the
-              question is a different one, priced per watt against load and tariff rather than per
-              household:{' '}
+              </Link>
+              ; for a business property, see{' '}
               <Link href='/commercial-solar/cost-per-watt-california' className={link}>
                 commercial solar cost per watt in California
-              </Link>{' '}
-              is where that starts.
+              </Link>
+              .
             </p>
-            <p className='text-sm text-muted-foreground mb-10'>
-              Source for the disclosure requirement above: California Business and Professions
-              Code &sect;7169 &mdash;{' '}
-              <a
-                className={link}
-                href='https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7169'
-                rel='noopener noreferrer'
-                target='_blank'
-              >
-                leginfo.legislature.ca.gov
-              </a>{' '}
-              &mdash; verified 17 September 2026.
-            </p>
+
+            {/* Bill-first step after the answer (2026-09-23); it opens the inquiry
+                form at the end of the page at step 2. */}
+            <HeroQuickCheck topic="California solar cost by city" className='mb-10' />
 
             {grouped.map(([county, list]) => (
               <section key={county} className='mb-10'>
                 <h2 className='text-xl font-bold text-foreground mb-4 tracking-tight'>
                   {county}
                 </h2>
-                <ul className='space-y-3'>
-                  {list.map((row) => (
-                    <li key={row.slug}>
-                      <Link
-                        href={cityCostPath(row.slug)}
-                        className='group block rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/50'
-                      >
-                        <span className='block font-semibold text-foreground group-hover:text-primary'>
-                          Solar panel cost in {row.city}
-                        </span>
-                        <span className='mt-1 block text-sm text-muted-foreground'>
-                          Billed by {getUtilityRate(row.utilityKey).name}
-                          {row.cca ? ' with a community choice aggregator supplying generation' : ''}
-                          . Permit rules and fee wording as {row.city} publishes them.
-                        </span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
+                <CostCityTable
+                  rows={list.map(costHubRow)}
+                  caption={`Solar cost pages in ${county}: reported median cost per watt (level and number of reports) and permit fee`}
+                />
               </section>
             ))}
 
