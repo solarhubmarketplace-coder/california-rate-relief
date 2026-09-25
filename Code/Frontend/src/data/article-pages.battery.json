@@ -194,7 +194,7 @@
       {
         "name": "Yahoo Finance / Reuters — Freedom Forever bankruptcy conversion",
         "url": "https://finance.yahoo.com/energy/articles/freedom-forever-customers-limbo-bankruptcy-000324439.html",
-        "supports": "Confirms Freedom Forever's Chapter 11 case (filed April 15, 2026) was converted to Chapter 7 liquidation on the debtors' August 3, 2026 motion, with the conversion order signed August 7, 2026 — corroborated independently via Law360 and Bloomberg Law coverage of the same filing"
+        "supports": "Confirms Freedom Forever's Chapter 11 case (filed April 15, 2026) was converted to Chapter 7 liquidation on the debtors' August 3, 2026 motion, with the conversion order signed August 7, 2026 Law coverage of the same filing"
       },
       {
         "name": "Lawrence Berkeley National Laboratory — Tracking the Sun, 2024 Edition",
@@ -1060,7 +1060,7 @@
       },
       {
         "question": "Which of these three batteries has the longest warranty?",
-        "answer": "Enphase's IQ Battery 5P and FranklinWH's aPower 2 both carry 15-year warranties, longer than Tesla Powerwall 3's 10-year term. But term length isn't the whole story: Enphase guarantees over 60% capacity retention at 15 years, Tesla guarantees 70% at 10 years, and FranklinWH has not published a capacity-retention percentage for its 15-year term in its datasheet or in any verified secondary source as of this writing. A longer term with an unpublished retention guarantee isn't automatically the stronger warranty — ask FranklinWH's installer directly for that number in writing before you compare it head to head with the other two."
+        "answer": "Enphase's IQ Battery 5P and FranklinWH's aPower 2 both carry 15-year warranties, longer than Tesla Powerwall 3's 10-year term. But term length isn't the whole story: Enphase guarantees over 60% capacity retention at 15 years, Tesla guarantees 70% at 10 years, and FranklinWH has not published a capacity-retention percentage for its 15-year term in its datasheet. A longer term with an unpublished retention guarantee isn't automatically the stronger warranty — ask FranklinWH's installer directly for that number in writing before you compare it head to head with the other two."
       },
       {
         "question": "Can I get a federal tax credit for any of these batteries in 2026?",
@@ -1852,7 +1852,7 @@
           "Not separately published",
           "DC-coupled via compatible hybrid inverter — confirm compatibility with installer",
           "10 yr / 70% capacity floor",
-          "Sold through authorized dealers; installed pricing not independently confirmed for this page"
+          "Sold through authorized dealers; no published installed price"
         ],
         [
           "SunPower SunVault",
@@ -1924,7 +1924,7 @@
         "supports": "Usable capacity, continuous/peak output, aGate controller requirement, throughput-based warranty, expansion ceiling"
       },
       {
-        "name": "SolarEdge Home Battery specifications (via third-party retailers; manufacturer page not independently confirmed)",
+        "name": "SolarEdge Home Battery specifications (retailer listings)",
         "url": "https://www.solaredge.com",
         "supports": "Usable capacity, output, round-trip efficiency, DC-coupling and inverter-ecosystem requirement — flagged as secondary-sourced"
       },
