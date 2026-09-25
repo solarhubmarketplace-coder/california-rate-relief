@@ -44,7 +44,7 @@ const articleSchema = {
   description: metaDescription,
   datePublished: '2026-04-24', dateModified: checked,
   author: CRR_AUTHOR_PERSON,
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  publisher: { '@type': 'Organization', name: 'California Rate Relief', url: 'https://ratereliefca.com' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': `https://ratereliefca.com${path}` },
 };
 // No Review/Rating JSON-LD here: Google's review-snippet rules require

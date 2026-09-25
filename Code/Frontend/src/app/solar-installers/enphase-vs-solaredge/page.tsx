@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/solar-installers/enphase-vs-solaredge' },
   openGraph: { title: 'Enphase vs SolarEdge (2026)', description: 'Head-to-head inverter comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/enphase-vs-solaredge' },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Enphase vs SolarEdge', datePublished: '2026-04-24', author: CRR_AUTHOR_PERSON, publisher: { '@type': 'Organization', name: 'California Rate Relief Program' } };
+const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Enphase vs SolarEdge', datePublished: '2026-04-24', author: CRR_AUTHOR_PERSON, publisher: { '@type': 'Organization', name: 'California Rate Relief' } };
 
 export default function EnphaseVsSolarEdge() {
   return (

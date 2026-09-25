@@ -31,7 +31,7 @@ const articleSchema = {
   headline: 'Sunergy Solar Reviews (2026): Which Sunergy You Are Dealing With, Its BBB File and Warranty',
   datePublished: '2026-04-24', dateModified: checked,
   author: CRR_AUTHOR_PERSON,
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  publisher: { '@type': 'Organization', name: 'California Rate Relief', url: 'https://ratereliefca.com' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': `https://ratereliefca.com${path}` },
 };
 // No Review/Rating JSON-LD here: Google's review-snippet rules require

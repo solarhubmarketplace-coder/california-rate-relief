@@ -27,7 +27,7 @@ const articleSchema = {
   headline: "Sullivan Solar Power Review 2026: The Company Is Defunct",
   datePublished: '2026-04-24', dateModified: '2026-04-24',
   author: CRR_AUTHOR_PERSON,
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com' },
+  publisher: { '@type': 'Organization', name: 'California Rate Relief', url: 'https://ratereliefca.com' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/sullivan-solar-power-review' },
 };
 

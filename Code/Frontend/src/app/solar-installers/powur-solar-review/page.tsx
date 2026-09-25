@@ -27,7 +27,7 @@ const articleSchema = {
   headline: "Powur Solar Review 2026",
   datePublished: '2026-04-24', dateModified: '2026-04-24',
   author: CRR_AUTHOR_PERSON,
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program' },
+  publisher: { '@type': 'Organization', name: 'California Rate Relief' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/powur-solar-review' },
 };
 

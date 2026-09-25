@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Bluetti AC200Max Review: 2,048Wh Expandable to 8,192Wh LFP",
     description: "2,048Wh, expandable to 8,192Wh, $1,699. Is the Bluetti AC200Max the best home backup under $2K?",
     url: 'https://greenreviewshub.com/reviews/bluetti-ac200max-review',
-    siteName: 'California Rate Relief Program',
+    siteName: 'California Rate Relief',
     type: 'article',
     locale: 'en_US',
   },
@@ -51,7 +51,7 @@ export default function Page() {
       offers: { '@type': 'Offer', price: '1699', priceCurrency: 'USD', availability: 'https://schema.org/InStock' },
     },
     reviewRating: { '@type': 'Rating', ratingValue: '4.6', bestRating: '5' },
-    author: { '@type': 'Organization', name: 'California Rate Relief Program' },
+    author: { '@type': 'Organization', name: 'California Rate Relief' },
     datePublished: '2026-04-22',
     reviewBody:
       'Bluetti AC200Max combines 2,048Wh of LFP storage with true expandability up to 8,192Wh via B230 or B300 batteries, a 2,200W pure-sine inverter (4,800W with Power Lifting), and 900W of solar input with dual MPPT. At $1,699 it is one of the best value home-backup units in its class, with 3,500-cycle LFP chemistry that will outlive most grid outages California throws at it.',

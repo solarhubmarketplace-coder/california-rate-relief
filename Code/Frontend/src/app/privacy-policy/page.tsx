@@ -5,9 +5,9 @@ import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | California Rate Relief Program',
+  title: 'Privacy Policy | California Rate Relief',
   description:
-    'Privacy Policy for the California Rate Relief Program. Learn how we collect, use, and protect your personal information.',
+    'Privacy Policy for California Rate Relief. Learn how we collect, use, and protect your personal information.',
   alternates: {
     canonical: '/privacy-policy',
   },
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
                 1. Introduction
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                The California Rate Relief Program (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is
+                California Rate Relief (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) is
                 committed to protecting your privacy. This Privacy Policy explains how we
                 collect, use, disclose, and safeguard your information when you visit our
                 website at ratereliefca.com and use our services.
@@ -71,8 +71,7 @@ export default function PrivacyPolicyPage() {
                 If you submit an assessment, we save your entry page, referring website and campaign tags with your inquiry. We also attach up to 30 public pages visited in the same browser tab, with visit times and the page where you submitted. This helps us understand which pages bring useful inquiries. Page history excludes query strings and private account pages. It is stored in your tab until submission and then in our private lead records and owner notification.
               </p>
               <p className='text-foreground/80 leading-relaxed mb-4'>
-                We use the information we collect to determine your eligibility for the
-                Rate Relief Program, to contact you regarding your inquiry and potential
+                We use the information we collect to determine your eligibility for California Rate Relief, to contact you regarding your inquiry and potential
                 savings, to schedule and conduct savings assessments, to improve our website
                 and services, and to comply with legal obligations.
               </p>
@@ -129,8 +128,7 @@ export default function PrivacyPolicyPage() {
               </h2>
               <p className='text-foreground/80 leading-relaxed mb-4'>
                 By submitting your information through our qualification form, you consent
-                to receive communications from us via phone, email, and SMS regarding the
-                Rate Relief Program and your potential savings. You may opt out of
+                to receive communications from us via phone, email, and SMS regarding California Rate Relief and your potential savings. You may opt out of
                 communications at any time by replying STOP to any SMS message or contacting
                 us at{' '}
                 <a

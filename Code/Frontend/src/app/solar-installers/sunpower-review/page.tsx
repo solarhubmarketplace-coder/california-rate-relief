@@ -30,7 +30,7 @@ const articleSchema = {
   datePublished: '2026-04-22',
   dateModified: '2026-04-22',
   author: CRR_AUTHOR_PERSON,
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
+  publisher: { '@type': 'Organization', name: 'California Rate Relief', url: 'https://ratereliefca.com', logo: { '@type': 'ImageObject', url: 'https://ratereliefca.com/img/logo.svg' } },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/sunpower-review' },
 };
 

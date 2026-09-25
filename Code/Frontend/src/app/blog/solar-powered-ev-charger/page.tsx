@@ -37,7 +37,7 @@ const articleSchema = {
   author: CRR_AUTHOR_PERSON,
   publisher: {
     '@type': 'Organization',
-    name: 'California Rate Relief Program',
+    name: 'California Rate Relief',
     url: 'https://ratereliefca.com',
     logo: {
       '@type': 'ImageObject',

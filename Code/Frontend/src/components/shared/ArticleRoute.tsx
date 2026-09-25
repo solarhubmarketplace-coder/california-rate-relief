@@ -82,7 +82,7 @@ function buildSchema(page: ArticlePage) {
     author: CRR_AUTHOR_PERSON,
     publisher: {
       '@type': 'Organization',
-      name: 'California Rate Relief Program',
+      name: 'California Rate Relief',
       url: BASE_URL,
       logo: { '@type': 'ImageObject', url: `${BASE_URL}/img/logo.svg` },
     },

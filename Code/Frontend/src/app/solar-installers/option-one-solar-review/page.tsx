@@ -40,7 +40,7 @@ const articleSchema = {
   headline: "Option One Solar Review 2026",
   datePublished: '2026-04-24', dateModified: '2026-09-22',
   author: CRR_AUTHOR_PERSON,
-  publisher: { '@type': 'Organization', name: 'California Rate Relief Program' },
+  publisher: { '@type': 'Organization', name: 'California Rate Relief' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/option-one-solar-review' },
 };
 
