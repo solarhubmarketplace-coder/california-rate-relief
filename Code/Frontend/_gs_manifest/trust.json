@@ -1,0 +1,117 @@
+{
+  "lane": "trust",
+  "branch": "claude/gs-trust-20260924",
+  "base": "0355a03",
+  "date": "2026-09-24",
+  "items": {
+    "0.1": {
+      "status": "done",
+      "summary": "Leaked drafting/process text rewritten as reader copy in 55+ files (TSX pages, growth components, JSON articles, city data). Garbled FAQ 'Compare the utility named on your bill billed usage history' fixed at its template (CityCostPage.tsx), which covers all 7 cost pages; the same FAQ block no longer prints 'not published on the tracker, as of ... That rate is ...' for utilities with no average.",
+      "evidence": {
+        "commits": ["652540f", "5382cf5", "4c8d569 (garbled FAQ)", "7b0e5ba (installer pages)"],
+        "phrases_removed": ["this session", "fetched live", "this pass", "this brief", "this research", "Page instructs residents to", "Say so plainly, because the query brings renters", "The existing site guidance applies unchanged", "The live page is right", "previously cited here", "Many <place> searches are about", "the searches behind this page", "the distinction the query is really asking about", "#1 priority solar city ... by search volume", "Most of the search volume behind this page", "verified directly / pulled directly / fetched and read directly / re-verified live / by direct fetch", "The page states / pages reached (city permit notes)"],
+        "grep_after": "grep -riE 'this session|fetched live|this pass|page instructs|query brings|searches are about|say so plainly' over CRR src (app, components, data, lib; comments included) returns 0 hits"
+      }
+    },
+    "0.3": {
+      "status": "done",
+      "summary": "Every CRR Article names the visible byline (Chad Simpson) as a Person with url; no Organization or 'Program' author remains; no reviewedBy on any CRR schema; datePublished always present (page's own published date, else its dateModified). 39 pages that had schema but no visible byline now show the shared Byline under the H1. LastReviewedStamp default reads 'Last updated <date> by Chad Simpson' instead of 'Last reviewed ... by' the author.",
+      "evidence": {
+        "commit": "9d52378",
+        "new_file": "src/lib/crr-author.ts (CRR_AUTHOR_PERSON)",
+        "files": ["src/components/shared/ArticleJsonLd.tsx (reviewedBy removed; datePublished falls back to dateModified; crr author = CRR_AUTHOR_PERSON)", "src/components/growth/DecisionPage.tsx (always Person; authorSchema prop now ignored)", "src/components/shared/ArticleRoute.tsx (JSON articles)", "50 hand-written pages (installers, blog, commercial, panel-reviews) switched from Organization 'California Rate Relief Program' to CRR_AUTHOR_PERSON", "src/components/shared/LastReviewedStamp.tsx"],
+        "bylines_added": 39,
+        "datePublished_added_inline": ["/solar-installers (index)", "/commercial-solar/sgip-battery-storage"],
+        "dataset_creator_left": "Dataset 'creator' on the rate tracker and cost index stays an Organization (a dataset's creator, not an article author); its name is handled by the brand sweep"
+      }
+    },
+    "0.6": {
+      "status": "done",
+      "summary": "Sunrun's box showed CSLB #925340; CSLB says that number is M J & J Drywall Contractors. Box now shows #750184 (Sunrun Installation Services Inc dba Sunrun), the number reported for Sunrun on utility interconnection applications in DG Stats, plus #969975 from Sunrun's own license page, each with CSLB status checked 2026-09-24, and links CSLB's lookup. Six other boxes were also wrong and are corrected: Freedom Forever #1015697 (a framing contractor) -> #1029644/#1125479/#1124448; SunPower #690444 (a roofing company) -> #961988 (Complete Solar dba SunPower) and #890895 (pre-2024 SunPower Corp, revoked); Solar Optimum #903305 (an HVAC company) -> #972228; Sullivan #744971 (a building contractor) -> #839077 (revoked); Powur #1100039 (an electrical company) -> #1060243; Momentum #997872 (a painting company) -> #1026366 (expired). Tesla, Option One, Palmetto, Baker, Semper Solaris were right and now carry the source and status; New Day, Sunnova and the Vivint (Sunrun) box gained sourced numbers. Body text that said status could not be checked now states the CSLB status and date.",
+      "evidence": {
+        "commit": "7b0e5ba",
+        "component": "src/components/shared/VerifyInstallerBox.tsx (licenses prop: number, holder, basis, status, checked; LicNum deep links dropped because CSLB redirects them to the blank form)",
+        "notable_status": "Freedom Forever LLC #1029644: 'License is under suspension ... Employee/Worker Bond Suspension'; its NorCal and SoCal licenses expired 2026-08-31 and 2026-07-31 (CSLB, 2026-09-24). Complete Solar dba SunPower #961988 and Palmetto #1048921 are active with a pending accusation on the record."
+      }
+    },
+    "0.8": {
+      "status": "done",
+      "summary": "LADWP: rate record no longer says the only tariff is dated July 1, 2009; it cites LADWP's Residential Rates page (R-1A 2026 totals). Minimum bill: the free-electricity guide now says the Base Services Charge replaced the minimum bill, with each utility's amounts; the bill-still-high guide dates SCE/SDG&E rollout from the utilities; the utility-bill guide's NEM 2.0 $5/$10 note points to the BSC. HOA: the post now follows Civil Code 714 (test in 714(d), 45-day rule in 714(e)(2)(B), prevailing-party fees in 714(g), penalty in 714(f)) and links leginfo; unverified '1978' history and 'thousands every year' removed.",
+      "evidence": {
+        "commits": ["4c8d569", "652540f", "d1c42b9"],
+        "files": ["src/data/utility-rate-tracker.ts", "src/components/growth/CityCostPage.tsx", "src/data/article-pages.problems.json", "src/app/blog/hoa-solar-rights-california/page.tsx"],
+        "other_copies_checked": "Other §714 copies (cities-data.ts, solar-savings/[city], problems JSON) already matched the statute except one fee sentence in problems JSON, now fixed. Other minimum-bill mentions (pge-tier-rates, nem-pge, sce-rate-increase-2026, sdge TOU EV-TOU minimum bill) are current."
+      }
+    },
+    "0.8a_2.3": {
+      "status": "done",
+      "summary": "CRR /author/chad-simpson renders its own body: areas of focus cut to California solar installer market/CSLB licensing and NEM 3/post-2024 economics; e-bikes, cameras, biohacking, CVE databases, health claims and affiliate lines removed from the CRR host. ProfilePage JSON-LD with Person mainEntity (name, url, jobTitle 'Editor', description, worksFor). No credentials, photo or sameAs added (none exist in code). Sibling hosts unchanged. AuthorBio's CRR bio had no off-topic lines.",
+      "evidence": { "commit": "5a6050c", "file": "src/app/author/chad-simpson/page.tsx" }
+    },
+    "0.8b_2.5": {
+      "status": "done",
+      "summary": "/how-we-make-money and /methodology carry 'California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.'; DRAFT marker removed from /how-we-make-money. New ReferralDisclosure (sentence + link to /how-we-make-money) placed beside the home wizard (#qualify, outside the wizard), inside the bottom of HeroQuickCheck (under the button), under the SolarInquiry form, under CommercialReviewForm and on /commercial-assessment. QualificationWizard.tsx and CommercialAssessmentForm.tsx untouched; no consent text or payload changed. Editorial policy pay sentence aligned to the same wording.",
+      "evidence": { "commits": ["e4270fe", "f0898a5"], "new_file": "src/components/shared/ReferralDisclosure.tsx (COMPENSATION_SENTENCE)" }
+    },
+    "2.1": {
+      "status": "partial",
+      "reason": "Slots built; only the published email is filled. Legal entity, street address and phone are not provided, and the code publishes no phone number (FinalCTA.tsx: 'No phone number is published yet'), so telephone is empty despite the brief's note.",
+      "evidence": { "commit": "f2ec509", "files": ["src/lib/site-identity.ts", "src/components/trust/SiteIdentityBlock.tsx", "src/app/layout.tsx (Organization spreads legalName/address/contactPoint/sameAs only when present; today contactPoint with info@ratereliefca.com)", "src/app/about/page.tsx", "src/app/contact/page.tsx", "src/components/landing/Footer.tsx"] }
+    },
+    "2.2": {
+      "status": "done",
+      "summary": "scripts/brand-sweep.mjs replaces 'California Rate Relief Program' -> 'California Rate Relief' in src/**/*.{ts,tsx,json,md} with article handling ('the California Rate Relief Program' -> 'California Rate Relief'; kept as 'the California Rate Relief website' when used as a modifier; legacy 'the Rate Relief Program' -> 'California Rate Relief'). Idempotent; --dry-run and --check modes. Skips the forbidden form/intake files and src/app/testing-guide/page.tsx (quotes the backend voice greeting). The footer's separate 'Program' subtitle under the logo was removed by hand in the same commit. Last commit on the branch.",
+      "evidence": { "dry_run_before_sweep": "73 occurrences in 56 files", "rerun": "node scripts/brand-sweep.mjs (then --check exits 0)" }
+    },
+    "2.6": {
+      "status": "done",
+      "summary": "AI-use and fact-check statement on /editorial-policy and the CRR /methodology: drafts written with AI assistance; every number checked against the primary source cited on the page, with the date shown; Chad Simpson approves each release before it goes live; errors to info@ratereliefca.com or /contact, logged on /corrections.",
+      "evidence": { "commit": "f0898a5", "file": "src/components/trust/AiUseStatement.tsx" },
+      "flag": "Chad should read before pushing"
+    },
+    "2.7": {
+      "status": "done",
+      "summary": "Numeric 'Our take X/5' score removed from all 12 CRR installer reviews that had one (Powur, Empire, New Day, SunPower, Sunnova, Ameco, Option One, Tesla, Trinity, Semper Solaris, Sunlux, Sunergy); written 'Best for' / 'Think twice if' kept in a two-column card. No Review/AggregateRating/reviewRating markup exists on CRR pages (the Review branch in ArticleJsonLd is unused by CRR). Methodology no longer says 'ratings reflect our research'. Third-party BBB/Trustpilot figures with source and date left as is. Base had 12 such files, not 15.",
+      "evidence": { "commit": "3f3af98" }
+    }
+  },
+  "gates": {
+    "tsc": "pass (no errors)",
+    "test_growth": "53/53 pass",
+    "unit_tests": "canonical-redirects, cta-intent, intake-routing, city-pages, solar-cost-index: 46/46 pass",
+    "header_test": "2/2 pass",
+    "qc_gate_json": "PASSED (51 pages)",
+    "qc_gate_tsx": "55 fail / 148 warn at base 0355a03 and 55 fail / 148 warn after; 0 new fails, 0 new warns (compared by route+check)",
+    "assert_citylinks": "pass",
+    "assert_linkspine": "pass",
+    "next_build": "not run (integration runs it)"
+  },
+  "sources_fetched": [
+    { "url": "https://www.cslb.ca.gov/OnlineServices/CheckLicenseII/CheckLicense.aspx", "what": "CSLB license detail by number (form POST): 750184, 969975, 925340, 1029644, 1125479, 1124448, 1015697, 690444, 890895, 961988, 888104, 1127593, 985340, 1048921, 903305, 972228, 744971, 839077, 1100039, 1060243, 997872, 1026366, 858088, 161756, 978152, 812958, 1003498; name search 'Sullivan Solar', 'Powur'", "date": "2026-09-24" },
+    { "url": "https://www.californiadgstats.ca.gov/downloads/", "what": "Installer name -> CSLB number as reported on utility interconnection applications, read from the citydata lane's src/data/dgstats/dgstats-2026-05-31.json (data through 2026-05-31, downloaded 2026-09-24)", "date": "2026-09-24" },
+    { "url": "https://www.ladwp.com/account/customer-service/electric-rates/residential-rates", "what": "R-1A 2026 total consumption charges by tier and period, PAC, $10 minimum charge (via r.jina.ai; direct fetch 403)", "date": "2026-09-24" },
+    { "url": "https://www.pge.com/baseservicescharge", "what": "PG&E Base Services Charge amounts, March 2026 start, replaces Minimum Electric Charge, excluded plans, solar customers pay", "date": "2026-09-24" },
+    { "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc", "what": "SCE Base Services Charge $24.15/$12.08/$6.00, November 2025, minimum charge no longer applicable, not offset by generation", "date": "2026-09-24" },
+    { "url": "https://www.sdge.com/BaseServicesCharge", "what": "SDG&E Base Services Charge $0.793/$0.197/$0.396 per day, October 2025, replaces minimum bills, solar customers pay", "date": "2026-09-24" },
+    { "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=714.&lawCode=CIV", "what": "Civil Code 714 full text (amended by Stats. 2014, Ch. 521, AB 2188)", "date": "2026-09-24" }
+  ],
+  "requests_for_other_lanes": [
+    { "lane": "accuracy", "request": "Phrase lint (0.2): the tree is clean for 'this session', 'fetched live', 'this pass', 'this brief', 'this research', 'Page instructs', 'the query brings', 'searches are about', 'Say so plainly', 'direct fetch', 'verified directly', 'search volume', 'searches behind this page' (comments included). Also consider 'Organization' as Article author and 'reviewedBy' as schema lint rules; CRR_AUTHOR_PERSON in src/lib/crr-author.ts is the one allowed author." },
+    { "lane": "citycost", "request": "CityCostPage.tsx: I changed only the 'Is solar worth it' FAQ sentence (garbled line) and the 'Which utility serves' FAQ for utilities with no average (it now uses one sentence plus source). Please keep both when rebuilding the template. The source lines still say 'Fetched <date>'; 'Checked' would match the rest of the site." },
+    { "lane": "citycost/citydata", "request": "src/data/utility-rate-tracker.ts ladwp record now cites LADWP_R1A_RATES_URL with 2026 R-1A tier prices (fetchedAt 2026-09-24). city-cost-data.ts permit notes for California City, Beaumont, Danville, Seaside, Salinas, Aptos, Bakersfield, Lincoln, Marina, Yuba City/Saratoga reworded ('Page instructs', 'The page states'); solar-cost-index.ts evidence strings for Saratoga and Marina follow." },
+    { "lane": "onpage", "request": "authorSchema='person' props on CityComparison.tsx, /solar-panels-california and /best-solar-companies-california are now ignored by DecisionPage and can be deleted. 39 pages gained a Byline directly under the H1." },
+    { "lane": "speed", "request": "HeroQuickCheck.tsx and SolarInquiry.tsx each gained one <ReferralDisclosure /> line (inside the quick-check form under the button; in the inquiry section after the form). Nothing in submit logic, fields, consent or tracking changed. Please keep them when merging." },
+    { "lane": "routing", "request": "/privacy-policy and /terms-of-service (to be 301'd under 0.7) had brand text rewritten by the sweep; no action needed unless they are deleted." },
+    { "lane": "integrator", "request": "Rerun `node scripts/brand-sweep.mjs` after merging other lanes, then `node scripts/brand-sweep.mjs --check` (exit 0). GRH pages src/app/reviews/bluetti-*-review set openGraph siteName to the CRR brand (was 'California Rate Relief Program', now 'California Rate Relief'); they should say Green Reviews Hub — outside this lane." }
+  ],
+  "needs_chad": [
+    "Read the AI-use statement (src/components/trust/AiUseStatement.tsx, shown on /editorial-policy and /methodology) before pushing: it says drafts use AI, every number is checked against the cited primary source with a date, and you approve each release.",
+    "Compensation sentence is now live on /how-we-make-money, /methodology, /editorial-policy and next to every form, and the DRAFT note on /how-we-make-money is gone. Correct it before pushing if the wording is wrong. /editorial-policy still has its own '/* DRAFT — Chad to confirm before release. */' comment (not rendered).",
+    "Freedom Forever: CSLB (2026-09-24) shows #1029644 under suspension (Employee/Worker Bond Suspension) and both regional licenses expired; the review now says so with the date.",
+    "Author page keeps three lines that were already stated but that I cannot verify: 'for several years', 'I refresh installer reviews every 90 days', and 'When I have personally owned or installed a product, I say so on the page'. Keep, fix or cut.",
+    "Legal entity, street address and phone: slots exist in src/lib/site-identity.ts and render nothing until filled. The code publishes no phone today.",
+    "Methodology still lists method claims the audit called unverifiable ('inspection pass rate', 'complaints exceeding 1.5% of install count', 'Direct interviews with homeowners (when arranged)', 'reviewed at least every 90 days'). Only the scores were in this lane's scope.",
+    "Shared-component side effects on sibling hosts: ArticleJsonLd no longer emits reviewedBy on GRH/SHG/AHB either, and LastReviewedStamp's default label is 'Last updated' everywhere ('medical' variant unchanged).",
+    "does-solar-mean-free-electricity-california reviewedAt moved to 2026-09-24 because its minimum-bill section was rewritten; its byline now shows that date."
+  ]
+}
