@@ -19,7 +19,7 @@ import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 const path = '/blog/smud-peak-hours';
 const url = `https://ratereliefca.com${path}`;
 const title = 'SMUD Peak Hours 2026: Summer and Time-of-Day Rates';
-const h1 = 'SMUD Peak Hours in 2026: 5 to 8 p.m. on Weekdays, and What Changes June 1 to September 30';
+const h1 = 'SMUD Peak Hours in 2026: 5 to 8 p.m. Weekdays, and Summer Time-of-Day Rates';
 const description =
   'SMUD peak hours are 5–8 p.m. on weekdays. Summer adds mid-peak noon–midnight from June 1 to Sept. 30. See 2026 prices, holidays and when summer ends.';
 const published = '2026-09-23';

@@ -15,7 +15,7 @@ import { CommercialReviewButton, CommercialReviewForm } from '@/components/growt
 // was fetched on 2026-09-23 from the source it cites.
 
 const title = 'Commercial Solar Roofing in California: What to Check';
-const h1 = 'Commercial Solar Roofing in California: Roof Condition, Mounting and Who Does the Work';
+const h1 = 'Commercial Solar Roofing in California: What to Check, From Roof Condition to Mounting';
 const description =
   'Solar on a business roof starts with the roof: remaining life, membrane and structure, fire-access pathways, and which CSLB license covers each part of the work.';
 const path = '/commercial-solar/commercial-solar-roofing';

@@ -18,7 +18,7 @@ import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 const path = '/blog/electricity-peak-hours-california';
 const url = `https://ratereliefca.com${path}`;
 const title = 'Electricity Peak Hours in California by Utility (2026)';
-const h1 = 'Electricity Peak Hours in California: 4 to 9 p.m. at Most Utilities, and the Cheapest Time to Use Power';
+const h1 = 'Electricity Peak Hours in California by Utility, and the Cheapest Time to Use Power';
 const description =
   'Peak hours are 4–9 p.m. on the main PG&E, SCE and SDG&E plans. SMUD peaks 5–8 p.m. weekdays; LADWP 1–5 p.m. See off-peak hours and the cheapest times.';
 const published = '2026-09-23';

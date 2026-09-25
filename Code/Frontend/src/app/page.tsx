@@ -16,14 +16,14 @@ import { WhyTrust } from '@/components/trust/WhyTrust';
 const BASE_URL = 'https://ratereliefca.com';
 
 export const metadata: Metadata = {
-  title: 'California Solar Project Review | California Rate Relief',
+  title: 'Compare California Solar Options | California Rate Relief',
   description:
     'A private California referral service for residential and commercial solar project review. Share the property and utility basics with a matched provider.',
   alternates: {
     canonical: BASE_URL,
   },
   openGraph: {
-    title: 'California Solar Project Review | California Rate Relief',
+    title: 'Compare California Solar Options | California Rate Relief',
     description:
       'Share residential or commercial project basics for review by a matched California solar provider.',
     url: BASE_URL,

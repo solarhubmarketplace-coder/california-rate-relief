@@ -326,7 +326,7 @@ function MethodologyBody({ cfg, palette, domain }: { cfg: DomainConfig; palette:
   );
 }
 
-function PageShell({ palette, children }: { palette: Palette; children: React.ReactNode }) {
+function PageShell({ palette, children, heading = 'Our Methodology' }: { palette: Palette; children: React.ReactNode; heading?: string }) {
   return (
     <main className='py-16' style={{ backgroundColor: palette.bg }}>
       <div className='container mx-auto px-4'>
@@ -337,7 +337,7 @@ function PageShell({ palette, children }: { palette: Palette; children: React.Re
             <span style={{ color: palette.fg }}>Our Methodology</span>
           </nav>
           <header className='mb-10'>
-            <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight' style={{ color: palette.fg }}>Our Methodology</h1>
+            <h1 className='text-4xl md:text-5xl font-extrabold mb-4 tracking-tight' style={{ color: palette.fg }}>{heading}</h1>
             <p className='text-lg' style={{ color: palette.muted }}>
               How we research, what data we use, what disqualifies a recommendation, and how often we refresh content.
             </p>
@@ -391,7 +391,8 @@ function CrrMethodology() {
   return (
     <PublicLayout>
       <CRRHeader />
-      <PageShell palette={palette}><MethodologyBody cfg={cfg} palette={palette} domain="crr" /></PageShell>
+      {/* H1 matches the CRR <title> (plan 7.3: the two shared no words). */}
+      <PageShell palette={palette} heading="Our Methodology: How We Evaluate California Solar Installers"><MethodologyBody cfg={cfg} palette={palette} domain="crr" /></PageShell>
       <CRRFooter />
     </PublicLayout>
   );

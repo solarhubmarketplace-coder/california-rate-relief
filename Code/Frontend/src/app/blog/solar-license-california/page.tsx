@@ -117,7 +117,7 @@ export default function SolarLicenseCaliforniaPage() {
       <ArticleJsonLd
         variant="Article"
         domain="crr"
-        headline="California solar license requirements: installing and selling solar"
+        headline="Solar license in California: C-46, HIS registration and how to get one"
         url={`https://ratereliefca.com${PATH}`}
         datePublished={UPDATED}
         dateModified={UPDATED}
@@ -135,7 +135,7 @@ export default function SolarLicenseCaliforniaPage() {
         </nav>
         <p className="text-sm font-semibold uppercase tracking-wide text-primary">Licensing</p>
         <h1 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-foreground md:text-5xl">
-          California solar license requirements: installing and selling solar
+          Solar license in California: C-46, HIS registration and how to get one
         </h1>
         <Byline updated={UPDATED} sourceCount={sources.length} />
         <p className="mt-5 text-lg leading-relaxed text-foreground/80">

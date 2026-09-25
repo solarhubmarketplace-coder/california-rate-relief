@@ -20,7 +20,7 @@ import { CommercialReviewButton, CommercialReviewForm } from '@/components/growt
 // B-19 and B-20 as fetched 2026-09-23 (rates effective March 1, 2026).
 
 const title = 'Industrial Solar in California: Rates, Sizing and Rules';
-const h1 = 'Industrial Solar in California: What Plants and Manufacturers Should Check';
+const h1 = 'Industrial Solar in California: Rates, Sizing and Rules for Plants and Manufacturers';
 const description =
   'How California industrial sites use solar: 2025 system sizes, PG&E B-19 and B-20 demand charges, export rules, the Energy Code and what to ask bidders.';
 const path = '/commercial-solar/industrial-solar-california';

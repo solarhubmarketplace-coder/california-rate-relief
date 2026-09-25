@@ -31,7 +31,7 @@ export default function SunnovaVsSunrun() {
             </nav>
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Installer Comparison</span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Sunnova vs Sunrun: Which Solar Installer Wins in California?</h1>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Sunnova vs Sunrun: Dealer Network vs In-House Crews in California</h1>
               
               <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <p className="text-lg text-muted-foreground">The two biggest names in residential solar-as-a-service. Similar pricing, similar contracts — but meaningful differences in service model, equipment, and warranty structure.</p>

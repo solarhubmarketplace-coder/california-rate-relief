@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Sunrun Reviews (2026): Business Status, Complaints, Contracts and Vivint Solar',
+  headline: 'Sunrun Reviews (2026): Is Sunrun Going Out of Business? Status, Complaints, Contracts',
   description: metaDescription,
   datePublished: '2026-04-22',
   dateModified: checked,
@@ -159,7 +159,7 @@ export default function SunrunReview() {
                 Solar Installer Review
               </span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>
-                Sunrun Reviews (2026): Business Status, Complaints, Contracts and Vivint Solar
+                Sunrun Reviews (2026): Is Sunrun Going Out of Business? Status, Complaints, Contracts
               </h1>
               <LastReviewedStamp date={checked} variant='reviewed' palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>

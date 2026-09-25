@@ -5,7 +5,7 @@ import { DecisionPage, type Source } from "./DecisionPage";
 import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const path = "/blog/do-solar-panels-work-during-power-outage-california";
-const title = "Will My Solar Panels Work in a Blackout? Check the Backup Design";
+const title = "Do Solar Panels Work During a Power Outage? Check the Backup Design";
 const intro = "Most grid-tied solar systems shut down when utility power is off. A system must be specifically designed to disconnect safely from the grid and support selected loads before it can provide backup power.";
 
 

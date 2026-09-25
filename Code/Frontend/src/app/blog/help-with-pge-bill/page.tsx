@@ -18,7 +18,7 @@ import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 const path = '/blog/help-with-pge-bill';
 const url = `https://ratereliefca.com${path}`;
 const title = 'Help Paying Your PG&E Bill: 2026 Assistance Programs';
-const h1 = 'Help With a PG&E Bill in 2026: Past-Due Help, Payment Plans and Discounts';
+const h1 = 'Help Paying Your PG&E Bill in 2026: Assistance Programs, Payment Plans and Discounts';
 const description =
   'Behind on PG&E? REACH pays up to $800 after a shutoff notice, LIHEAP up to $1,000 and AMP forgives up to $8,000. Who qualifies, and what to do first.';
 const published = '2026-09-23';

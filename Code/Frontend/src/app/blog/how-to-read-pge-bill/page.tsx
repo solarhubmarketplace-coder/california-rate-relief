@@ -19,7 +19,7 @@ import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 const path = '/blog/how-to-read-pge-bill';
 const url = `https://ratereliefca.com${path}`;
 const title = 'How to Read Your PG&E Bill: Every Page and Charge';
-const h1 = 'How to Read a PG&E Bill in 2026: The Account Summary, Electric Charges, CCA Lines and Solar Statements';
+const h1 = 'How to Read Your PG&E Bill in 2026: Every Page and Charge, From the Account Summary to CCA Lines';
 const description =
   'A PG&E bill has five parts: account summary, service notes, electric, gas and a breakdown. What each line means, how to check the math, and solar bills.';
 const published = '2026-09-23';
