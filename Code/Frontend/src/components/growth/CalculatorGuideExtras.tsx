@@ -178,8 +178,8 @@ export function CalculatorGuideExtras() {
       <section id="rebate-calculator">
         <h2>Why there is no rebate field</h2>
         <p>
-          People search for a California solar rebate calculator, but for most homes in 2026
-          there is little to subtract. The IRS says the homeowner credit &ldquo;is not available
+          You may be looking for a California solar rebate calculator, but for most homes in
+          2026 there is little to subtract. The IRS says the homeowner credit &ldquo;is not available
           for any property placed in service after December 31, 2025&rdquo; (
           <a className={link} href={IRS_25D}>
             IRS

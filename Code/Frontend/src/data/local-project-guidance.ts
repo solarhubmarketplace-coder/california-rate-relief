@@ -129,7 +129,7 @@ const fresnoSolarApp: LocalGuidanceSource = {
   url: 'https://www.fresno.gov/planning/get-an-instantly-approved-solar-permit-through-solar-app/',
   verifiedAt: verified20260923,
   scope:
-    'Single-family and duplex projects may use SolarAPP+ and then Accela Citizens Access; commercial installations do not qualify and apply for a standard solar permit. The page states no fee.',
+    'Single-family and duplex projects may use SolarAPP+ and then Accela Citizens Access; commercial installations do not qualify and apply for a standard solar permit. The City\'s page states no fee.',
 };
 
 const fresnoFees2026: LocalGuidanceSource = {

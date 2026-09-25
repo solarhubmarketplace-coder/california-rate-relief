@@ -4,7 +4,7 @@
 // that page instead of absorbing it. Added: rent-to-own, what renting costs,
 // end of term, getting out of a lease, rent vs buy. Tenant options moved to
 // /blog/solar-for-renters and are summarized here. Claims the previous body
-// carried without a primary source this session (SOMAH tenant credit amounts,
+// carried without a primary source on 2026-09-23 (SOMAH tenant credit amounts,
 // CCA counts, "lifetime cost is usually higher", a customer count for a
 // bankrupt provider) were removed. Every figure below was fetched 2026-09-23.
 // 2026-09-23 Tier 2 (agent costfin): added the roof-lease section ("lease roof
@@ -392,7 +392,7 @@ export default function RentSolarPanels() {
         <section>
           <h2>The reverse deal: leasing your roof to a solar program</h2>
           <p>
-            Some searches for renting solar mean the opposite arrangement: someone else owns the
+            &ldquo;Renting solar&rdquo; can also mean the opposite arrangement: someone else owns the
             panels and pays you for the roof space. In California the clearest example is a utility
             program. LADWP&rsquo;s Solar Rooftops program installs a 1 to 10 kW system that LADWP
             owns, takes all the power it produces, and pays owner-occupants &ldquo;fixed annual

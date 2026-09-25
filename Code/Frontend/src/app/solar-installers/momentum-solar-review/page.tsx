@@ -335,7 +335,7 @@ export default function MomentumSolarReview() {
 
               <h2 className={h2}>Momentum Solar compared with ADT Solar and Trinity Solar</h2>
               <p className={p}>
-                Searches often pair Momentum with two other East Coast names. ADT announced on January 24, 2024
+                Momentum is often compared with two other East Coast names. ADT announced on January 24, 2024
                 that it was leaving residential solar,<Cite href={SRC.adt} date={checked} /> and neither Momentum nor Trinity lists California as a service
                 state. See{' '}
                 <Link href='/solar-installers/adt-solar-vs-momentum-solar' className={a}>ADT Solar vs. Momentum Solar</Link>{' '}

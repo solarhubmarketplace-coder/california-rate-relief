@@ -126,10 +126,10 @@ export function StopPayingSolarLeaseGuide() {
       <section>
         <h2>What Sunrun and Tesla&apos;s own sites say about default — and what they don&apos;t</h2>
         <p>
-          The live page is right that the signed agreement controls, not a general rule. This session checked what Sunrun and Tesla actually publish on their own websites about missed payments, and the finding itself is useful: <strong>neither company publishes its default, late-fee, or repossession terms publicly.</strong>
+          Your signed agreement controls, not a general rule. What Sunrun and Tesla publish on their own websites about missed payments is still useful to know: <strong>neither company publishes its default, late-fee, or repossession terms publicly</strong> (sunrun.com and tesla.com, checked September 22, 2026).
         </p>
         <p className="mt-3">
-          Checked this session and confirmed to contain no default, late-payment, or repossession language: Tesla&apos;s billing page, its Removal &amp; Reinstallation page, its Solar Service and Warranty page, Sunrun&apos;s &ldquo;Our Guarantee&rdquo; page, and Sunrun&apos;s monthly-lease plan page. Sunrun&apos;s own website Terms of Service makes the separation explicit: it states that if you have &ldquo;entered into a Solar Power Purchase Agreement or Lease Agreement with Sunrun,&rdquo; that is a distinct document from the site terms you&apos;re reading (sunrun.com, accessed 2026-09-22). In other words, the default, cure, and remedies language the six-clause table above tells you to pull is real, but it lives only in the contract you signed — not on either company&apos;s public site. Request your specific clause language in writing, exactly as the &ldquo;Contact the current servicer&rdquo; section above already recommends.
+          These pages contain no default, late-payment, or repossession language (checked September 22, 2026): Tesla&apos;s billing page, its Removal &amp; Reinstallation page, its Solar Service and Warranty page, Sunrun&apos;s &ldquo;Our Guarantee&rdquo; page, and Sunrun&apos;s monthly-lease plan page. Sunrun&apos;s own website Terms of Service makes the separation explicit: it states that if you have &ldquo;entered into a Solar Power Purchase Agreement or Lease Agreement with Sunrun,&rdquo; that is a distinct document from the site terms you&apos;re reading (sunrun.com, accessed 2026-09-22). In other words, the default, cure, and remedies language the six-clause table above tells you to pull is real, but it lives only in the contract you signed — not on either company&apos;s public site. Request your specific clause language in writing, exactly as the &ldquo;Contact the current servicer&rdquo; section above already recommends.
         </p>
       </section>
 
@@ -146,7 +146,7 @@ export function StopPayingSolarLeaseGuide() {
           .
         </p>
         <p className="mt-3">
-          Credit reporting: the &ldquo;Check the credit record for accuracy&rdquo; section above already covers this correctly and isn&apos;t changed here. Neither provider&apos;s public pages checked this session added anything not already stated in that section.
+          Credit reporting: see the &ldquo;Check the credit record for accuracy&rdquo; section above. Neither provider&apos;s public pages add anything to it (sunrun.com and tesla.com, checked September 22, 2026).
         </p>
       </section>
 
@@ -165,7 +165,7 @@ export function StopPayingSolarLeaseGuide() {
             <strong>Buyout.</strong> Tesla publishes a specific early-buyout formula: the price is &ldquo;whichever amount is lower, the estimated price from your contract or the appraised FMV,&rdquo; with a standard buyout timing of year six of the term (tesla.com, accessed 2026-09-22). Sunrun&apos;s published buyout path is prepaying the remaining balance and bundling it into a home sale price (sunrun.com, accessed 2026-09-22). Paying off the remaining obligation ends the payment relationship without a default ever being declared.
           </li>
           <li>
-            <strong>Hardship programs.</strong> This session found no publicly published hardship or forbearance program for either company. Tesla&apos;s documented early-buyout exception applies only &ldquo;in cases where you&apos;re selling your home and relocating,&rdquo; not for financial hardship generally (tesla.com, accessed 2026-09-22). If your situation is a temporary inability to pay rather than a wish to sell or buy out, the only sourced path is the advice above: contact the servicer in writing before you miss a payment and ask directly what arrangements, if any, they offer — because none is stated in advance on either company&apos;s site.
+            <strong>Hardship programs.</strong> Neither company publishes a hardship or forbearance program on its website (checked September 22, 2026). Tesla&apos;s documented early-buyout exception applies only &ldquo;in cases where you&apos;re selling your home and relocating,&rdquo; not for financial hardship generally (tesla.com, accessed 2026-09-22). If your situation is a temporary inability to pay rather than a wish to sell or buy out, the only sourced path is the advice above: contact the servicer in writing before you miss a payment and ask directly what arrangements, if any, they offer — because none is stated in advance on either company&apos;s site.
           </li>
         </ul>
         <p className="mt-3">

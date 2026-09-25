@@ -357,7 +357,7 @@ export default function TeslaSolarReview() {
 
               <h2 className={h2}>Tesla Solar vs ADT Solar, and vs Momentum Solar</h2>
               <p className={p}>
-                Two comparisons people search for do not work for a California home in 2026. ADT announced on January 24,
+                Two common comparisons do not work for a California home in 2026. ADT announced on January 24,
                 2024 that it would exit residential solar,<Cite href={SRC.adt} date={checked} /> and its 2024 annual results
                 say the solar business was substantially wound down and is now reported as discontinued operations.
                 <Cite href={SRC.adtFy24} date={checked} /> There is no ADT Solar quote to set against Tesla’s. If you are an

@@ -347,8 +347,8 @@ export default function CommercialSolarCompanies() {
                 </h2>
                 <p>
                   This page does not name a company as the largest or the best. No dated,
-                  primary-source ranking of commercial solar companies working in California was
-                  available for this update, and a ranking without one is a guess. You can still
+                  primary-source ranking of commercial solar companies working in California exists
+                  (checked September 23, 2026), and a ranking without one is a guess. You can still
                   read published lists critically by asking how they were measured:
                 </p>
                 <ul className="list-disc space-y-2 pl-6">

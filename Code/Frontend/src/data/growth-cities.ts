@@ -3987,7 +3987,7 @@ export const growthCities: Record<string, GrowthCity> = {
   // growthCities counterpart, so /solar-companies/<slug> was still serving
   // the legacy template instead of this sourced CityComparison content.
   // No `provider` field: CSLB's license lookup blocks automation, so no
-  // installer license number here could be verified this session, and an
+  // installer license number here could be verified at the time, and an
   // installer roster is deliberately not added. `checks`/`faq` are also
   // left out rather than filled with unsourced filler.
   // ---------------------------------------------------------------------
@@ -4222,7 +4222,7 @@ export const growthCities: Record<string, GrowthCity> = {
     bill:
       "Check the generation provider and enrolled program on the PG&E bill before comparing proposals. Ava Community Energy (formerly East Bay Community Energy) lists Fremont among the 16 cities and unincorporated areas it serves; Ava supplies generation while PG&E delivers the electricity, maintains the wires and sends the bill. Have each bidder use both portions of the actual account.",
     local:
-      "Fremont's Community Development Department issues residential building permits, including solar; the city's own site could not be reached in enough depth this session to confirm its current permit path, so ask the bidder to name it and the review timeline directly. Fremont's inland-Bay-Area location, away from the coastal fog belt, generally sees more clear-sky solar hours than cities directly on the coast.",
+      "Fremont's Community Development Department issues residential building permits, including solar. This page does not confirm the city's current permit path, so ask the bidder to name it and the review timeline directly. Fremont's inland-Bay-Area location, away from the coastal fog belt, generally sees more clear-sky solar hours than cities directly on the coast.",
     example:
       "Put the same roof layout, shade model and monthly production in every Fremont bid. Then separate solar, storage, roof and electrical work, and compare the remaining bill under the same Ava generation and PG&E delivery enrollment shown on the account.",
     sources: [
@@ -4245,7 +4245,7 @@ export const growthCities: Record<string, GrowthCity> = {
     bill:
       "Check the generation provider and enrolled program on the PG&E bill. Peninsula Clean Energy renamed itself WestLight Energy in 2026 and describes serving \"San Mateo County and Los Banos,\" but its site did not name Half Moon Bay specifically among member jurisdictions as of this check — confirm current enrollment on the actual bill rather than assuming it either way. PG&E delivers the electricity and sends the bill regardless of the generation provider.",
     local:
-      "Half Moon Bay's Building Division issues residential building permits, including solar; the city's own site could not be reached in enough depth this session to confirm its current permit path, so ask the bidder to name it and the review timeline directly. Half Moon Bay sits directly on the coast, and the Pacific marine layer brings more fog and overcast mornings than inland San Mateo County — a proposal's production estimate should account for that coastal shading pattern, not an inland default.",
+      "Half Moon Bay's Building Division issues residential building permits, including solar. This page does not confirm the city's current permit path, so ask the bidder to name it and the review timeline directly. Half Moon Bay sits directly on the coast, and the Pacific marine layer brings more fog and overcast mornings than inland San Mateo County — a proposal's production estimate should account for that coastal shading pattern, not an inland default.",
     example:
       "Put the same roof layout, shade model and monthly production in every Half Moon Bay bid. Then compare total price, financing terms, equipment, the city's permit scope and the remaining PG&E (and WestLight Energy, if enrolled) bill after installation.",
     sources: [
@@ -9623,7 +9623,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "heading": "Permits: the City, or the state for manufactured homes",
         "paragraphs": [
           "The City of Chula Vista reported 3,188 residential solar permits to the California Energy Commission for 2023 and 1,554 for 2024. The storage share climbed from 16% to 58% over those two years, and the share issued online from 16% to 41%. Ask each bidder whether your design will be permitted online or go through plan review.",
-          "Many Chula Vista searches are about mobile and manufactured homes, and those follow state rules. The Department of Housing and Community Development requires an HCD permit for any solar system on a manufactured home and a permit before any alteration begins. Its advisory warns that manufactured home roofs are not accessible, so damage from poor installation is not visible, and HCD's guidelines say when engineered plans or electrical load calculations are needed. HCD's Southern Area Office is in Riverside."
+          "If you live in a mobile or manufactured home in Chula Vista, state rules apply. The Department of Housing and Community Development requires an HCD permit for any solar system on a manufactured home and a permit before any alteration begins. Its advisory warns that manufactured home roofs are not accessible, so damage from poor installation is not visible, and HCD's guidelines say when engineered plans or electrical load calculations are needed. HCD's Southern Area Office is in Riverside."
         ]
       }
     ],
@@ -10328,7 +10328,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "heading": "Permits, and the manufactured-home exception",
         "paragraphs": [
           "Government Code section 65850.52 required cities of more than 50,000 people to offer an online, automated solar permit such as SolarAPP+ by September 30, 2023, and smaller cities by September 30, 2024. The 2024 reports to the Energy Commission show the uneven result across the county: all online in Banning, Canyon Lake, Cathedral City, Indio and La Quinta; 82% in Palm Springs; 48% in Menifee; 5% in Corona; none in Calimesa or Palm Desert. Storage shares ranged from 1% of Banning's permits to 91% of Cathedral City's.",
-          "Searches for solar on mobile and manufactured homes in Riverside County are common, and those homes follow state rules. The Department of Housing and Community Development requires an HCD permit for any solar system on a manufactured home and a permit before any alteration begins; its advisory warns that damage from poor installation on those roofs is not visible and tells owners to check the contractor's CSLB license and HCD permit first. HCD's Southern Area Office is at 3737 Main Street in Riverside."
+          "If you live in a mobile or manufactured home in Riverside County, state rules apply. The Department of Housing and Community Development requires an HCD permit for any solar system on a manufactured home and a permit before any alteration begins; its advisory warns that damage from poor installation on those roofs is not visible and tells owners to check the contractor's CSLB license and HCD permit first. HCD's Southern Area Office is at 3737 Main Street in Riverside."
         ]
       }
     ],
@@ -12287,7 +12287,7 @@ export const growthCities: Record<string, GrowthCity> = {
     "sourceCheckedDate": "2026-09-23",
     "bill": "Galt sits at the southern edge of SMUD territory, and the California Energy Commission's utility map shows SMUD across the whole city, with no PG&E and no community choice provider. That puts a Galt solar home on SMUD's Solar and Storage Rate, which pays 9.6 cents per kWh for exported power at any hour, rather than PG&E's Solar Billing Plan. Ask each bidder to confirm which utility its savings figure uses.",
     "local": "The City of Galt reported to the Energy Commission that it has no automated solar permitting platform, and its SB 379 report for 2024 counts 43 residential solar permits, 7 of them with battery storage and none issued online. Expect a staff plan review rather than an instant permit, and ask each bidder how long its recent Galt permits have taken.",
-    "example": "Many Galt searches are about solar roofing. If your roof needs replacing within the next several years, get the reroof and solar priced together or in sequence, and ask how the bid handles removing and reinstalling panels later. SMUD's size cap applies whichever way you do it: 110% of the last twelve months' use, or 120% with a battery.",
+    "example": "If your Galt roof needs replacing within the next several years, get the reroof and solar priced together or in sequence, and ask how the bid handles removing and reinstalling panels later. SMUD's size cap applies whichever way you do it: 110% of the last twelve months' use, or 120% with a battery.",
     "checks": [
       [
         "SMUD rules",
@@ -12818,7 +12818,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "heading": "Hollister's permit office",
         "paragraphs": [
           "The City told the Energy Commission it has no automated solar permitting platform, and it has not filed an annual SB 379 permit report, so there is no published count of Hollister solar permits or of how many were issued online. Its solar permit page provides the building permit application, and the Building Division, at 339 Fifth Street, takes appointments through an online booking link.",
-          "Homes outside the city limits are permitted by San Benito County, which the Energy Commission lists as exempt from the SB 379 requirement but as having a SolarAPP+ platform. Many Hollister searches also ask about roofs and bird-proofing; if pigeons nesting under panels are a concern, ask each bidder to price critter guards as a separate line rather than assuming they are included."
+          "Homes outside the city limits are permitted by San Benito County, which the Energy Commission lists as exempt from the SB 379 requirement but as having a SolarAPP+ platform. If pigeons nesting under panels are a concern, ask each bidder to price critter guards as a separate line rather than assuming they are included."
         ]
       }
     ],
@@ -15360,7 +15360,7 @@ export const growthCities: Record<string, GrowthCity> = {
       {
         "heading": "When an existing system needs a diagnosis",
         "paragraphs": [
-          "Many Coachella Valley searches are about systems already on the roof. If production drops, the monitoring app or the inverter's status display usually shows whether the whole system is off or one string of panels is down. The installer's workmanship warranty is the first call; ask for the warranty terms in writing before you sign any new contract, and who performs service if the installing company closes.",
+          "If your Coachella Valley home already has solar and production drops, the monitoring app or the inverter's status display usually shows whether the whole system is off or one string of panels is down. The installer's workmanship warranty is the first call; ask for the warranty terms in writing before you sign any new contract, and who performs service if the installing company closes.",
           "Permitting also varies across the valley. Cathedral City, La Quinta and Indio issued every 2024 residential solar permit online, while Palm Desert issued 6% of its 2025 permits online. Indian Wells, with fewer than 5,000 residents, is exempt from SB 379's automated permitting requirement. Ask each bidder which office has your address and how its last permit there went."
         ]
       }

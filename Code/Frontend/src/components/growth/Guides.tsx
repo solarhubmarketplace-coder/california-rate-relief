@@ -130,7 +130,7 @@ const definitions = {
     path: '/blog/sdge-time-of-use-rates-2026',
     title: 'SDG&E Time-of-Use Rates: TOU-DR1 Peak Hours Explained',
     intro:
-      'SDG&E’s TOU-DR1 residential plan has a peak and off-peak window that runs 4–9 p.m. every day, including weekends — that’s what most searchers are actually looking for. Your generation provider, whether SDG&E or a community choice aggregator, is billed separately from delivery, but the plan’s hourly schedule is what determines when you pay the higher rate. This page opens with the TOU-DR1 hours, then explains how generation charges add to the delivery price.',
+      'SDG&E’s TOU-DR1 residential plan has a peak and off-peak window that runs 4–9 p.m. every day, including weekends. Your generation provider, whether SDG&E or a community choice aggregator, is billed separately from delivery, but the plan’s hourly schedule is what determines when you pay the higher rate. This page opens with the TOU-DR1 hours, then explains how generation charges add to the delivery price.',
     metaTitle: "SDG&E Peak Hours & TOU-DR1 Rates (2026): 5 Plans Compared",
     metaDescription:
       "SDG&E peak is 4-9 p.m. every day, weekends included. Off-peak windows plus summer and winter cents per kWh for TOU-DR1, TOU-DR2, TOU-DR-P, EV-TOU-5 and DR.",
@@ -427,9 +427,9 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
                   </th>
                   <td className="p-3 align-top">
                     Tesla&rsquo;s own product page currently leads with a &ldquo;Tesla
-                    Solar Lease&rdquo; (tesla.com, accessed 2026-09-22); cash and loan
-                    purchase weren&rsquo;t independently reconfirmed on tesla.com this
-                    session &mdash; ask which options apply to your address.
+                    Solar Lease&rdquo; (tesla.com, accessed 2026-09-22); that page
+                    does not confirm cash and loan purchase &mdash; ask which
+                    options apply to your address.
                   </td>
                   <td className="p-3 align-top">
                     Solar panels: manufacturer-backed guarantee of at least 80% of
@@ -438,8 +438,8 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
                     accessed 2026-09-22).
                   </td>
                   <td className="p-3 align-top">
-                    Not itemized on the tesla.com pages reachable this session
-                    &mdash; see the full Tesla review.
+                    Not itemized on tesla.com (checked 2026-09-22) &mdash; see the
+                    full Tesla review.
                   </td>
                   <td className="p-3 align-top">
                     #888104 and #1127593 (tesla.com, accessed 2026-09-22)
@@ -458,8 +458,8 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
                   <td className="p-3 align-top">
                     New installs go through SunPower&rsquo;s dealer network (the
                     CA-licensed entity is &ldquo;Complete Solar, Inc. DBA
-                    SunPower&rdquo;); specific payment types weren&rsquo;t itemized on the
-                    pages fetched this session. Legacy pre-9/30/2024 lease/PPA
+                    SunPower&rdquo;); its site does not itemize specific payment
+                    types. Legacy pre-9/30/2024 lease/PPA
                     accounts are serviced by SunStrong Management, not new
                     originations (us.sunpower.com, accessed 2026-09-22).
                   </td>
@@ -479,8 +479,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
                     lease/PPA customers contact SunStrong Management, (833)
                     514-1858. Systems installed after that date carry SunPower
                     Inc.&rsquo;s own coverage (us.sunpower.com, accessed 2026-09-22).
-                    Home-sale transfer mechanics specifically weren&rsquo;t itemized
-                    this session.
+                    The site does not itemize home-sale transfer steps.
                   </td>
                   <td className="p-3 align-top">
                     #961988, held by &ldquo;Complete Solar, Inc. DBA SunPower,&rdquo;
@@ -489,8 +488,8 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
                   </td>
                   <td className="p-3 align-top">
                     Sold through SunPower&rsquo;s dealer/partner network; coverage
-                    varies by dealer and wasn&rsquo;t published as a single list this
-                    session.
+                    varies by dealer, and SunPower does not publish a single list
+                    (us.sunpower.com, checked 2026-09-22).
                   </td>
                 </tr>
                 <tr className="border-t">
@@ -503,7 +502,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
                     The Palmetto Energy Plan &mdash; a PPA or a lease depending on
                     state, $0 down, with a 0&ndash;3.5% annual rate escalator
                     (help.palmetto.com, accessed 2026-09-22). Outright cash or loan
-                    purchase wasn&rsquo;t itemized on the pages fetched this session.
+                    purchase is not itemized on those pages.
                   </td>
                   <td className="p-3 align-top">
                     90% performance/production guarantee, reviewed every 3 years,
@@ -511,9 +510,9 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
                     service (help.palmetto.com, accessed 2026-09-22).
                   </td>
                   <td className="p-3 align-top">
-                    Not itemized on the palmetto.com pages reachable this session
-                    &mdash; see the full Palmetto review for the transfer options
-                    documented there.
+                    Not itemized on palmetto.com (checked 2026-09-22) &mdash; see
+                    the full Palmetto review for the transfer options documented
+                    there.
                   </td>
                   <td className="p-3 align-top">
                     #1048921, classified Electrical Contractor (palmetto.com,
@@ -521,17 +520,18 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
                   </td>
                   <td className="p-3 align-top">
                     Sold through Palmetto&rsquo;s own crews and partner network;
-                    coverage varies by address and wasn&rsquo;t published as a single
-                    list this session.
+                    coverage varies by address, and Palmetto does not publish a
+                    single list (palmetto.com, checked 2026-09-22).
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
           <p className="mt-4">
-            None of these license numbers&rsquo; current status &mdash; active,
-            suspended, bond on file &mdash; was independently verified this session;
-            CSLB&rsquo;s own lookup tool is the only place to confirm that.{' '}
+            The license numbers above are the ones each company publishes. This
+            table does not show their current status &mdash; active, suspended,
+            bond on file &mdash; so confirm that on CSLB&rsquo;s own lookup
+            tool.{' '}
             <Link
               className={link}
               href="/solar-installers/how-to-verify-a-solar-contractor-california"
@@ -724,9 +724,8 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
               >
                 how-to-verify guide
               </Link>
-              . None of the license numbers listed on this page had
-              their current status re-verified this session, so check before
-              you sign.
+              . This page lists the license numbers the companies publish, not
+              their current status, so check that before you sign.
             </p>
           </div>
           <div>
@@ -1787,9 +1786,8 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             Figures below are SDG&amp;E&rsquo;s bundled Total Rate (delivery +
             SDG&amp;E generation); a community choice aggregation (CCA)
             customer pays SDG&amp;E&rsquo;s delivery-only portion of the same
-            schedule plus their CCA&rsquo;s generation charge — delivery-only
-            figures for these four plans were not independently available
-            this session.
+            schedule plus their CCA&rsquo;s generation charge. The table below
+            does not include delivery-only figures for these four plans.
           </p>
           <div className="mt-4 overflow-x-auto rounded-xl border">
             <table className="w-full text-left text-sm">

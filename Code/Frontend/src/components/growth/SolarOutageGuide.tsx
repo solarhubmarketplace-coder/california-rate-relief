@@ -238,7 +238,8 @@ export function SolarOutageGuide() {
           utility-initiated shutoff during high fire-risk weather — different
           from an equipment outage, and one solar alone (without a battery or
           secure-power-outlet inverter) does nothing to prevent. What each
-          major California utility says about it, checked this session:
+          major California utility says about it on its own PSPS page, checked
+          September 22, 2026:
         </p>
         <div className="mt-4 overflow-x-auto rounded-xl border">
           <table className="w-full text-left text-sm">
@@ -255,13 +256,13 @@ export function SolarOutageGuide() {
                 <th className="p-4 align-top" scope="row">PG&amp;E</th>
                 <td className="p-4 align-top">High wind, dry vegetation, and a National Weather Service Red Flag Warning combined (PG&amp;E, accessed 2026-09-22)</td>
                 <td className="p-4 align-top">&quot;We will always do our best to alert you... in some cases we may not send the first alert until the same day&quot;</td>
-                <td className="p-4 align-top">Not specified on the fetched page</td>
+                <td className="p-4 align-top">Not stated on the utility&apos;s PSPS page</td>
               </tr>
               <tr className="border-t">
                 <th className="p-4 align-top" scope="row">SCE</th>
                 <td className="p-4 align-top">Fire-weather conditions — strong winds, dry vegetation, low humidity — evaluated on a 4&ndash;7 day lookout, refined through 1&ndash;4 hours before shutoff (SCE, accessed 2026-09-22)</td>
                 <td className="p-4 align-top">Staged notifications from 4&ndash;7 days out down to 1&ndash;4 hours before</td>
-                <td className="p-4 align-top">Not specified on the fetched page</td>
+                <td className="p-4 align-top">Not stated on the utility&apos;s PSPS page</td>
               </tr>
               <tr className="border-t">
                 <th className="p-4 align-top" scope="row">SDG&amp;E</th>
@@ -273,7 +274,7 @@ export function SolarOutageGuide() {
           </table>
         </div>
         <p className="mt-4">
-          None of the three utility pages fetched this session recommend a
+          None of the three utility PSPS pages recommends a
           specific backup technology; SDG&amp;E&apos;s page notes Community
           Resource Centers for charging small devices and mentions keeping a
           generator on hand as an option. Keep utility contact information

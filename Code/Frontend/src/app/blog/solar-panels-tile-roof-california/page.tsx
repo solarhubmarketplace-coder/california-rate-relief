@@ -202,12 +202,12 @@ export default function SolarTileRoofCalifornia() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Does tile mounting cost more?</h2>
               <p>
-                No manufacturer or industry source we could verify this session publishes a specific dollar premium for tile versus composition-shingle attachment, so treat any number a salesperson quotes as their estimate, not an industry standard — ask them to itemize it. What is documented: tile roofing is one of the factors our <Link href='/solar-cost' className='text-primary underline'>statewide solar cost breakdown</Link> lists as adding installation labor versus a straightforward shingle job. Get a tile line item, or confirmation the labor is already reflected in your quote.
+                No manufacturer or industry source we could find publishes a specific dollar premium for tile versus composition-shingle attachment, so treat any number a salesperson quotes as their estimate, not an industry standard — ask them to itemize it. What is documented: tile roofing is one of the factors our <Link href='/solar-cost' className='text-primary underline'>statewide solar cost breakdown</Link> lists as adding installation labor versus a straightforward shingle job. Get a tile line item, or confirmation the labor is already reflected in your quote.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>What about slate roofs?</h2>
               <p>
-                A smaller share of the searches behind this page are about slate — a heavier, less common natural-stone material in California. The same principle applies: attachment has to run through the structure and a proper flashing, not straight into a fragile tile. We did not find a manufacturer technical page specific to slate mounting hardware this session, so if you have a slate roof, ask your installer directly whether they stock slate-specific hooks or flashing and ask to see a past slate job.
+                Some California homes have slate, a heavier, less common natural-stone roof. The same principle applies: attachment has to run through the structure and a proper flashing, not straight into a fragile tile. We found no manufacturer technical page specific to slate mounting hardware (checked September 23, 2026), so if you have a slate roof, ask your installer directly whether they stock slate-specific hooks or flashing and ask to see a past slate job.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Questions to ask before a crew touches your tile roof</h2>

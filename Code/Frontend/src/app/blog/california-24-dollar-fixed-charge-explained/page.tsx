@@ -113,9 +113,8 @@ export default function FixedChargeExplained() {
                 issued May 9, 2024. The decision states it &quot;authorizes all
                 investor-owned electric utilities to change the structure of
                 residential customer bills in accordance with Assembly Bill
-                205, Stats. 2022, ch. 61&quot; — confirming the connection some
-                searchers already suspect (see &quot;Where AB 205 Fits In&quot;
-                below).
+                205, Stats. 2022, ch. 61&quot; — confirming the link to AB 205 (see
+                &quot;Where AB 205 Fits In&quot; below).
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>

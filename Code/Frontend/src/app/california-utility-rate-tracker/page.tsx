@@ -536,7 +536,7 @@ export default function CaliforniaUtilityRateTrackerPage() {
               </div>
 
               <h2 id='sources' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>Sources and How We Update This Page</h2>
-              <p>Every figure on this page traces to one of the primary sources below, each with the date it was fetched for this page.</p>
+              <p>Every figure on this page traces to one of the primary sources below, each with the date it was checked.</p>
               <div className='overflow-x-auto mb-3 not-prose'>
                 <table className='w-full border-collapse text-sm'>
                   <thead>

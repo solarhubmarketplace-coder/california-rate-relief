@@ -57,7 +57,7 @@
       },
       {
         "heading": "Connection fees, minimum bills, and other fixed charges",
-        "body": "Beyond the four non-bypassable charges, most residential rate schedules carry their own fixed or minimum-bill structure that solar doesn't remove.\n\nThe Commission's decision is explicit that it did not invent a new minimum bill for Net Billing customers — it simply confirmed that, as was the current practice in NEM 2.0, \"net billing tariff customers will be subject to any minimum bill or fixed charge that is contained in a customer's applicable rate\" (D.22-12-056 at 128; adopted at Ordering Para. 1(g), p. 239). In other words: whatever minimum applies to the underlying rate schedule you're on (PG&E's E-ELEC, SCE's TOU-D-PRIME, SDG&E's EV-TOU-5, and similar plans) still applies after solar. For reference, a prior Commission decision, D.15-07-001, set a minimum bill of $5/month for CARE customers and $10/month for non-CARE residential customers on the non-generation portion of the bill (cited at D.22-12-056, p. 128 and Finding of Fact 136, p. 227) — that figure comes from the NEM 2.0 era, and whether the exact dollar amount carries forward unchanged on today's rate schedules wasn't independently confirmed for this page. Check your utility's current tariff sheet for the number that applies to your account.\n\nSeparately, there's a one-time application fee to interconnect in the first place — not a recurring bill item, but worth knowing about upfront. SCE publishes a $94 fee for systems under 1 MW (residential systems are almost always well under this) and $800 for systems 1 MW and larger (sce.com, fetched 2026-09-08). That's paid once, at installation, not monthly."
+        "body": "Beyond the four non-bypassable charges, most residential rate schedules carry their own fixed or minimum-bill structure that solar doesn't remove.\n\nThe Commission's decision is explicit that it did not invent a new minimum bill for Net Billing customers — it simply confirmed that, as was the current practice in NEM 2.0, \"net billing tariff customers will be subject to any minimum bill or fixed charge that is contained in a customer's applicable rate\" (D.22-12-056 at 128; adopted at Ordering Para. 1(g), p. 239). In other words: whatever minimum applies to the underlying rate schedule you're on (PG&E's E-ELEC, SCE's TOU-D-PRIME, SDG&E's EV-TOU-5, and similar plans) still applies after solar. For reference, a prior Commission decision, D.15-07-001, set a minimum bill of $5/month for CARE customers and $10/month for non-CARE residential customers on the non-generation portion of the bill (cited at D.22-12-056, p. 128 and Finding of Fact 136, p. 227) — that figure comes from the NEM 2.0 era. At PG&E, SCE and SDG&E, the Base Services Charge has since replaced the minimum bill; the next section gives the current amounts.\n\nSeparately, there's a one-time application fee to interconnect in the first place — not a recurring bill item, but worth knowing about upfront. SCE publishes a $94 fee for systems under 1 MW (residential systems are almost always well under this) and $800 for systems 1 MW and larger (sce.com, fetched 2026-09-08). That's paid once, at installation, not monthly."
       },
       {
         "heading": "What the Base Services Charge costs right now",
@@ -69,7 +69,7 @@
       },
       {
         "heading": "What a normal post-solar bill should actually contain",
-        "body": "A legitimate monthly bill after solar installation will typically show, in some form: a basic service or meter charge, generation charges for any energy purchased from the utility, distribution and transmission delivery charges, the four non-bypassable charges above, a scattering of small regulatory line items (a CEC energy fee, a franchise fee), your net energy credit or charge for the billing period, and your running bank of banked bill credits carried from prior months. PG&E's own bill explainer groups these into three buckets — Energy Cost (about 50% of a typical electric bill), Energy Delivery (about 40%), and Public Purpose Programs (about 10%) — with named line items including the Base Services Charge, Distribution Charge, Wildfire Hardening Charge, Recovery Bond Charge/Credit, the Power Charge Indifference Adjustment (PCIA), and Competition Transition Charges (pge.com, fetched 2026-09-08). SCE and SDG&E structure their bills similarly, though this page could not independently pull an equivalent itemized list directly from either utility's own bill-explainer page — treat the Commission's decision (Table 5, p. 118) as the authoritative cross-check for what's allowed to appear.\n\nWhat should NOT be a permanent fixture: a bill that never shows any credit line, ever, even in July. If your system is sized and oriented reasonably and you're seeing full retail-equivalent charges in your peak production month with zero bill credit applied, that's worth a call to your utility to check the interconnection was completed and net metering is actually active on the account — not a normal outcome of the tariff itself."
+        "body": "A legitimate monthly bill after solar installation will typically show, in some form: a basic service or meter charge, generation charges for any energy purchased from the utility, distribution and transmission delivery charges, the four non-bypassable charges above, a scattering of small regulatory line items (a CEC energy fee, a franchise fee), your net energy credit or charge for the billing period, and your running bank of banked bill credits carried from prior months. PG&E's own bill explainer groups these into three buckets — Energy Cost (about 50% of a typical electric bill), Energy Delivery (about 40%), and Public Purpose Programs (about 10%) — with named line items including the Base Services Charge, Distribution Charge, Wildfire Hardening Charge, Recovery Bond Charge/Credit, the Power Charge Indifference Adjustment (PCIA), and Competition Transition Charges (pge.com, fetched 2026-09-08). SCE and SDG&E structure their bills similarly; treat the Commission's decision (Table 5, p. 118) as the authoritative cross-check for what's allowed to appear.\n\nWhat should NOT be a permanent fixture: a bill that never shows any credit line, ever, even in July. If your system is sized and oriented reasonably and you're seeing full retail-equivalent charges in your peak production month with zero bill credit applied, that's worth a call to your utility to check the interconnection was completed and net metering is actually active on the account — not a normal outcome of the tariff itself."
       },
       {
         "heading": "Gas bills and Community Choice Aggregation generation charges",
@@ -309,7 +309,7 @@
     "metaTitle": "Does Solar Mean Free Electricity in California?",
     "metaDescription": "No. California solar offsets your usage, not your bill. Non-bypassable utility charges and fixed monthly fees keep arriving. Here's what stays, by utility.",
     "h1": "Does Solar Mean Free Electricity in California?",
-    "intro": "No. Solar offsets the electricity you'd otherwise buy — it doesn't remove the bill itself. The California Public Utilities Commission says this directly: its own Solar Consumer Protection Guide lists \"you will never pay an electricity bill ever again\" as a false claim, and tells customers to expect a reduced bill every month, not a zero one.\n\nThe reason is structural, not a sales trick. A handful of charges on every California utility bill are non-bypassable by law — they exist to fund things like a bond from the 2001 energy crisis and statewide low-income energy programs, and they apply to every kilowatt-hour you pull from the grid, solar or not. On top of that, PG&E, SCE, and SDG&E customers carry a minimum monthly bill floor and an income-graduated fixed charge that arrive whether your panels produced 5 kWh or 500 that month.\n\nNone of this means solar is a bad deal — it means the pitch \"no more electric bill\" is wrong, and you should budget for what actually stays. This page walks through what solar offsets, what it can't touch, and what a realistic post-solar bill looks like depending on which utility serves you.",
+    "intro": "No. Solar offsets the electricity you'd otherwise buy — it doesn't remove the bill itself. The California Public Utilities Commission says this directly: its own Solar Consumer Protection Guide lists \"you will never pay an electricity bill ever again\" as a false claim, and tells customers to expect a reduced bill every month, not a zero one.\n\nThe reason is structural, not a sales trick. A handful of charges on every California utility bill are non-bypassable by law — they exist to fund things like a bond from the 2001 energy crisis and statewide low-income energy programs, and they apply to every kilowatt-hour you pull from the grid, solar or not. On top of that, PG&E, SCE, and SDG&E customers pay a flat Base Services Charge, about $24 a month for most households, that arrives whether your panels produced 5 kWh or 500 that month.\n\nNone of this means solar is a bad deal — it means the pitch \"no more electric bill\" is wrong, and you should budget for what actually stays. This page walks through what solar offsets, what it can't touch, and what a realistic post-solar bill looks like depending on which utility serves you.",
     "keyStats": [
       {
         "label": "Federal solar tax credit (25D)",
@@ -353,23 +353,23 @@
       },
       {
         "heading": "Non-bypassable charges: the part solar cannot touch",
-        "body": "Every bundled California investor-owned-utility customer pays four charges the CPUC itself labels non-bypassable: the Department of Water Resources bond charge, the Public Purpose Programs surcharge, the Nuclear Decommissioning charge, and the Competition Transition Charge. They're named directly on the CPUC's Net Energy Metering and Net Billing page. Each funds a specific statewide obligation — a bond issued during the 2001 energy crisis, low-income and energy-efficiency programs, decommissioning reserves for retired nuclear plants, and remaining transition costs from utility restructuring in the 1990s — and by design, self-generation doesn't exempt you from them.\n\nWhat changed under the Net Billing Tariff is how these charges get applied to a solar household. Under NEM 2.0, non-bypassable charges were assessed against your net grid usage in each billing interval — meaning if you exported more than you imported in a period, you could reduce your NBC exposure. Under the current Net Billing Tariff, the CPUC's page describes these charges as applying to all energy imports rather than being netted that way, so a solar customer today pays non-bypassable charges on every kWh pulled from the grid, independent of what got exported. We could not pull the specific cents-per-kWh figure for each individual charge from a primary tariff sheet in this pass — if you want the exact number, it's on the rate schedule pages of your own utility, not a fixed statewide figure we'd feel comfortable printing without that verification."
+        "body": "Every bundled California investor-owned-utility customer pays four charges the CPUC itself labels non-bypassable: the Department of Water Resources bond charge, the Public Purpose Programs surcharge, the Nuclear Decommissioning charge, and the Competition Transition Charge. They're named directly on the CPUC's Net Energy Metering and Net Billing page. Each funds a specific statewide obligation — a bond issued during the 2001 energy crisis, low-income and energy-efficiency programs, decommissioning reserves for retired nuclear plants, and remaining transition costs from utility restructuring in the 1990s — and by design, self-generation doesn't exempt you from them.\n\nWhat changed under the Net Billing Tariff is how these charges get applied to a solar household. Under NEM 2.0, non-bypassable charges were assessed against your net grid usage in each billing interval — meaning if you exported more than you imported in a period, you could reduce your NBC exposure. Under the current Net Billing Tariff, the CPUC's page describes these charges as applying to all energy imports rather than being netted that way, so a solar customer today pays non-bypassable charges on every kWh pulled from the grid, independent of what got exported. This page does not print a cents-per-kWh figure for each charge: the exact numbers are on your own utility's rate schedule pages, not a single statewide figure."
       },
       {
-        "heading": "The minimum bill and the income-graduated fixed charge",
-        "body": "Two separate mechanisms put a floor under a solar customer's bill at PG&E, SCE, and SDG&E, and we want to be precise about what we can and can't confirm here.\n\nFirst, net billing customers are subject to a minimum monthly bill built into CPUC rate-design decisions — a mechanism that traces to the Commission's Residential Rate Reform proceeding (R.12-06-013) and was carried forward into net-billing-specific implementing decisions. The specific dollar figure lives in those CPUC decisions and current utility tariff sheets, not in a single statute section — we were not able to confirm today's exact number against a primary source in this pass, so rather than repeat a figure that might be stale, we're telling you plainly: check the \"minimum bill\" or \"minimum charge\" line on your own utility statement, or ask your utility directly, before assuming any number you've seen quoted elsewhere.\n\nSecond, and separately, CPUC Decision D.24-05-028 — adopted May 15, 2024, in Rulemaking R.22-07-005 — authorized PG&E, SCE, and SDG&E to add an income-graduated fixed monthly charge to every residential bill — solar and non-solar alike — under the mandate of AB 205 (2022), on top of the usual volumetric rate. This charge is decoupled from how much electricity you use or export; it's set by income tier. We're not printing specific dollar amounts by tier here because we could not verify the currently adopted figures against a primary CPUC decision in this pass. The mechanism matters more than the exact number for this article's purpose: it's a second bill-floor component that solar production doesn't move."
+        "heading": "The Base Services Charge replaced the minimum bill",
+        "body": "A flat monthly charge now puts a floor under every residential bill at PG&E, SCE and SDG&E, with or without solar. Under AB 205 (2022), CPUC Decision D.24-05-028 (Rulemaking R.22-07-005) authorized the three utilities to add a fixed monthly charge to residential bills, set by income tier rather than by how much electricity you use or export. Each utility calls it the Base Services Charge, and each says it replaced the old minimum bill.\n\nPG&E charges about $24.00 a month, about $6.00 for CARE customers and about $12.00 for FERA customers, since March 2026. It replaces the monthly Minimum Electric Charge and does not apply to the EV-B, EM and EM-TOU rate plans. PG&E says solar customers \"still use the electric grid, and therefore pay the same Base Services Charge as non-solar customers\" (pge.com, checked September 24, 2026).\n\nSCE charges $24.15 a month, $12.08 for FERA customers and qualifying deed-restricted affordable housing, and $6.00 for CARE customers, since November 2025. SCE says \"the minimum charge is no longer applicable\" and that the charge \"cannot be offset by the electricity you generate,\" though a remaining Net Surplus Compensation or Energy Export Bonus Credit balance can pay it (sce.com, checked September 24, 2026).\n\nSDG&E charges $0.793 a day (about $24 a month), $0.197 a day for CARE and $0.396 a day for FERA, since October 2025. SDG&E says the charge \"will replace minimum bills\" and that residential customers with solar pay it (sdge.com, checked September 24, 2026).\n\nIf you see a $5 or $10 \"minimum bill\" quoted for solar customers, that figure predates this change. The number that applies to you is the Base Services Charge line on your own bill."
       },
       {
         "heading": "Why you stay a utility customer no matter how much you produce",
-        "body": "Net metering and net billing are tariffs offered by your incumbent utility — not a separate service that replaces it. When you go solar and interconnect to PG&E, SCE, SDG&E, or a public utility, you remain metered by that utility, billed monthly by that utility, and subject to that utility's non-bypassable charges, minimum bill, and (for the three IOUs) the income-graduated fixed charge. There is no current CPUC mechanism for a residential net-billing customer to disconnect from utility billing while staying connected to the grid.\n\nThis is also why system size is capped rather than left to the homeowner: under the Net Billing Tariff, a new system can't be sized above 150% of your trailing 12 months' usage. You can't oversize your way into a zero bill by generating a large surplus, because the interconnection rules don't allow it, and any surplus beyond your bill credits is compensated at a net surplus rate around $0.02–$0.03/kWh — nowhere close to the retail rate you're paying to buy power back."
+        "body": "Net metering and net billing are tariffs offered by your incumbent utility — not a separate service that replaces it. When you go solar and interconnect to PG&E, SCE, SDG&E, or a public utility, you remain metered by that utility, billed monthly by that utility, and subject to that utility's non-bypassable charges and fixed charges, including (for the three IOUs) the Base Services Charge. There is no current CPUC mechanism for a residential net-billing customer to disconnect from utility billing while staying connected to the grid.\n\nThis is also why system size is capped rather than left to the homeowner: under the Net Billing Tariff, a new system can't be sized above 150% of your trailing 12 months' usage. You can't oversize your way into a zero bill by generating a large surplus, because the interconnection rules don't allow it, and any surplus beyond your bill credits is compensated at a net surplus rate around $0.02–$0.03/kWh — nowhere close to the retail rate you're paying to buy power back."
       },
       {
         "heading": "Publicly owned utilities play by different rules",
-        "body": "The CPUC's NEM/Net Billing Tariff framework — and the AB 205 income-graduated fixed charge — apply only to investor-owned utilities: PG&E, SCE, SDG&E, and a few smaller ones like Bear Valley. LADWP, SMUD, MID, Anaheim, Roseville, Lodi, Imperial ID, and Turlock ID are municipal or public utility districts governed by their own boards, not CPUC decisions. That means the specific mechanics in this article — the Net Billing Tariff's avoided-cost export rate, the 150% sizing cap, the income-graduated fixed charge — do not automatically apply to a POU customer. Each POU sets its own net metering terms, and they can differ meaningfully from utility to utility and from the IOU framework described above.\n\nWhat carries over regardless of utility type is the basic principle: solar offsets usage, and any fixed or minimum charge your utility applies is unlikely to be affected by your production. If you're a POU customer, the right move is to pull your specific utility's net metering rules directly rather than assuming the CPUC rules above apply to you."
+        "body": "The CPUC's NEM/Net Billing Tariff framework — and the AB 205 fixed charge (the Base Services Charge) — apply only to investor-owned utilities: PG&E, SCE, SDG&E, and a few smaller ones like Bear Valley. LADWP, SMUD, MID, Anaheim, Roseville, Lodi, Imperial ID, and Turlock ID are municipal or public utility districts governed by their own boards, not CPUC decisions. That means the specific mechanics in this article — the Net Billing Tariff's avoided-cost export rate, the 150% sizing cap, the income-graduated fixed charge — do not automatically apply to a POU customer. Each POU sets its own net metering terms, and they can differ meaningfully from utility to utility and from the IOU framework described above.\n\nWhat carries over regardless of utility type is the basic principle: solar offsets usage, and any fixed or minimum charge your utility applies is unlikely to be affected by your production. If you're a POU customer, the right move is to pull your specific utility's net metering rules directly rather than assuming the CPUC rules above apply to you."
       },
       {
         "heading": "What a realistic post-solar bill looks like, by utility",
-        "body": "The single biggest driver of your post-solar bill size is your utility's per-kWh rate, because that rate sets both what you save on offset usage and what you pay on any import solar didn't cover. At current approximate residential rates, SDG&E customers ($0.457/kWh) get the most value per offset kWh and also pay the most for every kWh solar didn't cover; PG&E ($0.415/kWh) and SCE ($0.345/kWh) sit below that; public utility customers on SMUD ($0.19/kWh), MID ($0.17/kWh), or LADWP ($0.27/kWh) see smaller swings in both directions because their per-kWh rate is lower to begin with.\n\nLayer in the mechanics above and a realistic expectation looks like this: at PG&E, SCE, or SDG&E, expect your bill to drop substantially but never to zero, with non-bypassable charges, a minimum bill floor, and the income-graduated fixed charge as the permanent baseline, plus any import cost for usage solar didn't cover — heavier in winter and after dark. On a POU like LADWP, SMUD, or MID, expect a similar shape (a real reduction, not elimination) but built from that utility's own fixed-charge structure rather than the CPUC's framework — worth confirming directly with your utility since we can't apply the IOU-specific figures to a POU account."
+        "body": "The single biggest driver of your post-solar bill size is your utility's per-kWh rate, because that rate sets both what you save on offset usage and what you pay on any import solar didn't cover. At current approximate residential rates, SDG&E customers ($0.457/kWh) get the most value per offset kWh and also pay the most for every kWh solar didn't cover; PG&E ($0.415/kWh) and SCE ($0.345/kWh) sit below that; public utility customers on SMUD ($0.19/kWh), MID ($0.17/kWh), or LADWP ($0.27/kWh) see smaller swings in both directions because their per-kWh rate is lower to begin with.\n\nLayer in the mechanics above and a realistic expectation looks like this: at PG&E, SCE, or SDG&E, expect your bill to drop substantially but never to zero, with non-bypassable charges and the Base Services Charge as the permanent baseline, plus any import cost for usage solar didn't cover — heavier in winter and after dark. On a POU like LADWP, SMUD, or MID, expect a similar shape (a real reduction, not elimination) but built from that utility's own fixed-charge structure rather than the CPUC's framework — worth confirming directly with your utility since we can't apply the IOU-specific figures to a POU account."
       }
     ],
     "dataTable": {
@@ -438,7 +438,7 @@
       },
       {
         "question": "Is there a minimum bill even with solar?",
-        "answer": "Yes, structurally — the Net Billing Tariff and its predecessor NEM 2.0 both build in a minimum monthly charge for solar customers on PG&E, SCE, and SDG&E, separate from the income-graduated fixed charge. We could not verify the exact current dollar figure against a primary CPUC decision or utility tariff sheet in this pass, so we're not printing a number here — check the tariff line on your own bill or ask your utility directly."
+        "answer": "Not under that name any more. At PG&E, SCE and SDG&E, the Base Services Charge replaced the minimum bill: about $24 a month for most customers, about $12 for FERA and $6 for CARE. Solar customers pay it, and solar generation does not offset it (pge.com, sce.com and sdge.com, checked September 24, 2026)."
       },
       {
         "question": "Why do I still have to interact with my utility at all after going solar?",
@@ -453,7 +453,7 @@
         "answer": "They're governed differently, not necessarily better across the board — LADWP, SMUD, MID, Anaheim, Roseville, Lodi, Imperial ID, and Turlock ID set their own net metering terms because the CPUC only regulates PG&E, SCE, and SDG&E. What we can say with confidence: their per-kWh rates run lower (SMUD around $0.19, MID around $0.17, LADWP around $0.27, versus $0.345–$0.457 at the IOUs), so the value of every offset kWh is smaller too — solar payback math looks different, not automatically worse."
       }
     ],
-    "bottomLine": "Solar cuts the electricity you buy, not the bill itself to zero — non-bypassable charges, a minimum monthly floor, and (for PG&E/SCE/SDG&E customers) an income-graduated fixed charge keep arriving because you remain a full utility customer of record; budget a real monthly number, not a fantasy of $0.",
+    "bottomLine": "Solar cuts the electricity you buy, not the bill itself to zero — non-bypassable charges and (for PG&E/SCE/SDG&E customers) the Base Services Charge keep arriving because you remain a full utility customer of record; budget a real monthly number, not a fantasy of $0.",
     "sources": [
       {
         "name": "CPUC — California Solar Consumer Protection Guide (Version 4, 2025)",
@@ -484,9 +484,24 @@
         "name": "California Public Utilities Code § 2827.1(b)",
         "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?sectionNum=2827.1.&lawCode=PUC",
         "supports": "Statutory mandate directing CPUC to adopt a standard net-metering tariff for eligible renewable customer-generators by Dec. 31, 2015 — the statutory basis underlying NEM 2.0 (D.14-03-041); does not itself set a minimum-bill dollar amount"
+      },
+      {
+        "name": "PG&E — Base Services Charge",
+        "url": "https://www.pge.com/baseservicescharge",
+        "supports": "Amounts (about $24.00 standard, $6.00 CARE, $12.00 FERA), March 2026 start, replacement of the Minimum Electric Charge, excluded plans, and solar customers paying it; checked 2026-09-24"
+      },
+      {
+        "name": "SCE — Base Services Charge",
+        "url": "https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc",
+        "supports": "Amounts ($24.15, $12.08, $6.00), November 2025 start, minimum charge no longer applicable, no offset by generation; checked 2026-09-24"
+      },
+      {
+        "name": "SDG&E — Base Services Charge",
+        "url": "https://www.sdge.com/BaseServicesCharge",
+        "supports": "Daily amounts ($0.793, $0.197, $0.396), October 2025 start, replacement of minimum bills, solar customers paying it; checked 2026-09-24"
       }
     ],
-    "reviewedAt": "2026-09-08"
+    "reviewedAt": "2026-09-24"
   },
   {
     "slug": "hidden-costs-of-solar-california",
@@ -494,7 +509,7 @@
     "metaTitle": "Hidden Costs of Solar in California (2026 Guide)",
     "metaDescription": "California solar hidden costs: panel upgrades, roof repair, trenching, permit fees, HOA rules, tree removal, and battery subpanels — with sources.",
     "h1": "The Hidden Costs of Solar in California",
-    "intro": "A California solar quote usually lands between $25,000 and $35,000 before incentives. That number is the beginning of the conversation, not the end of it — several common add-on costs sit outside the base quote entirely, and they only surface once a contractor is standing in your attic or your HOA board is reading your application.\n\nNone of the costs below are secret. Most trace to a real California statute, a CPUC consumer guide, or a CSLB disclosure requirement that already exists to protect you — the problem is that homeowners rarely know to ask about them before signing. A few others (trenching, panel upgrades, tree removal) are genuine market costs with no government price-setting at all, and we say so plainly rather than inventing a number to sound authoritative.\n\nThis page walks through eight of them: panel upgrades, roof condition, trenching to detached structures, permit and interconnection fees, HOA rules, tree removal, battery subpanels, and what happens when your roof outlives its warranty but not your panels. Where we found a verified figure, it's cited. Where we didn't, we say so instead of guessing.",
+    "intro": "A California solar quote usually lands between $25,000 and $35,000 before incentives. That number is the beginning of the conversation, not the end of it — several common add-on costs sit outside the base quote entirely, and they only surface once a contractor is standing in your attic or your HOA board is reading your application.\n\nNone of the costs below are secret. Most trace to a real California statute, a CPUC consumer guide, or a CSLB disclosure requirement that already exists to protect you — the problem is that homeowners rarely know to ask about them before signing. A few others (trenching, panel upgrades, tree removal) are market costs with no government price-setting at all, so this page gives no number for them.\n\nThis page walks through eight of them: panel upgrades, roof condition, trenching to detached structures, permit and interconnection fees, HOA rules, tree removal, battery subpanels, and what happens when your roof outlives its warranty but not your panels. Where we found a verified figure, it's cited. Where we didn't, we say so instead of guessing.",
     "keyStats": [
       {
         "label": "Main panel upgrade (100A→200A)",
@@ -541,7 +556,7 @@
       },
       {
         "heading": "HOA Requirements",
-        "body": "If you're in an HOA, California law is on your side more than most homeowners realize — but it isn't a blank check either.\n\nCivil Code § 714, part of the state's Solar Rights Act, voids any HOA rule or CC&R that prohibits or restricts installing a solar system. The HOA isn't powerless, though: it can impose \"reasonable restrictions,\" which the statute defines with actual numbers. For a photovoltaic system, a restriction is only reasonable if it doesn't increase your system's cost by more than $1,000 and doesn't cut its efficiency by more than 10%, measured in kWh. That $1,000 is a real, legally capped hidden cost — mounting-location requirements, screening, or color-matching can legitimately add expense up to that ceiling, no further.\n\nThere's a deadline that works in your favor too. If your HOA doesn't deny your solar application in writing within 45 days of receiving it, the application is automatically deemed approved, unless the delay is a genuine request for more information. An HOA that violates § 714 is liable for your actual damages plus a civil penalty of up to $1,000, with attorney's fees recoverable if you have to enforce it.\n\nA separate statute, Civil Code § 714.1, covers common-interest developments specifically: the HOA can require the installer to indemnify the association and can set rules for equipment on common areas, but it cannot impose a blanket ban on rooftop solar over your own unit or assigned parking, and can't route around the law with a membership vote instead."
+        "body": "If you're in an HOA, California law is on your side more than most homeowners realize — but it isn't a blank check either.\n\nCivil Code § 714, part of the state's Solar Rights Act, voids any HOA rule or CC&R that prohibits or restricts installing a solar system. The HOA isn't powerless, though: it can impose \"reasonable restrictions,\" which the statute defines with actual numbers. For a photovoltaic system, a restriction is only reasonable if it doesn't increase your system's cost by more than $1,000 and doesn't cut its efficiency by more than 10%, measured in kWh. That $1,000 is a real, legally capped hidden cost — mounting-location requirements, screening, or color-matching can legitimately add expense up to that ceiling, no further.\n\nThere's a deadline that works in your favor too. If your HOA doesn't deny your solar application in writing within 45 days of receiving it, the application is automatically deemed approved, unless the delay is a genuine request for more information. An HOA that willfully violates § 714 is liable for your actual damages plus a civil penalty of up to $1,000, and in an action to enforce it the prevailing party is awarded reasonable attorney's fees (Civil Code § 714(f) and (g), checked September 24, 2026).\n\nA separate statute, Civil Code § 714.1, covers common-interest developments specifically: the HOA can require the installer to indemnify the association and can set rules for equipment on common areas, but it cannot impose a blanket ban on rooftop solar over your own unit or assigned parking, and can't route around the law with a membership vote instead."
       },
       {
         "heading": "Tree Removal",
@@ -597,7 +612,7 @@
         ],
         [
           "Utility interconnection application fee",
-          "Not verified this session",
+          "Not verified",
           "—",
           "Flagged — do not rely on any figure until sourced directly from your utility"
         ],
@@ -615,13 +630,13 @@
         ],
         [
           "Critical-loads subpanel for battery backup",
-          "Not verified this session",
+          "Not verified",
           "—",
           "Flagged — get an itemized contractor quote"
         ],
         [
           "Panel removal/reinstall for later re-roof",
-          "Not verified this session",
+          "Not verified",
           "—",
           "Flagged — ask contractor to itemize in the contract"
         ]
@@ -754,7 +769,7 @@
       },
       {
         "heading": "What an extra hour of AC actually costs, by utility",
-        "body": "Assume a typical mid-size central AC system drawing roughly 3.5 kW while running — a standard HVAC rule of thumb (roughly 1–1.5 kW per ton of cooling capacity), not a figure we independently verified against a DOE or Energy Star source this pass, so treat it as illustrative rather than exact for your specific system.\n\nOn PG&E's E-TOU-C, one extra hour of AC during the 4-9pm summer peak costs about $1.83 (at $0.52240/kWh, verified against the filed tariff sheet). Run that same hour during off-peak instead and it costs about $1.40 (at $0.39940/kWh) — roughly 31% more just from timing, before you even account for the fact that at 7pm your panels are producing close to zero, so essentially all of that peak-hour draw is grid-imported at the top rate.\n\nOn SDG&E's TOU-DR1, the gap is worse: one peak hour costs about $2.44 (at $0.69654/kWh summer on-peak, verified against the SDG&E rate table) versus about $1.36 during super off-peak (at $0.38818/kWh) — roughly 80% more for the identical hour of cooling, just because of the clock. Note that SDG&E's genuine off-peak rate (as opposed to its cheaper super off-peak tier) is $0.47560/kWh — still a large gap from peak, just not as dramatic as the super off-peak comparison. SCE's published TOU-D-PRIME figures point the same direction (summer on-peak near $0.59/kWh versus off-peak near $0.26/kWh), though those numbers come from SCE's customer-facing rate page rather than the filed tariff sheet, so treat them as directionally right rather than penny-exact.\n\nThe pattern holds across all three utilities: the same AC use costs 30-80% more depending only on what time the thermostat calls for cooling."
+        "body": "Assume a typical mid-size central AC system drawing roughly 3.5 kW while running — a standard HVAC rule of thumb (roughly 1–1.5 kW per ton of cooling capacity), not a figure from a DOE or Energy Star source, so treat it as illustrative rather than exact for your specific system.\n\nOn PG&E's E-TOU-C, one extra hour of AC during the 4-9pm summer peak costs about $1.83 (at $0.52240/kWh, verified against the filed tariff sheet). Run that same hour during off-peak instead and it costs about $1.40 (at $0.39940/kWh) — roughly 31% more just from timing, before you even account for the fact that at 7pm your panels are producing close to zero, so essentially all of that peak-hour draw is grid-imported at the top rate.\n\nOn SDG&E's TOU-DR1, the gap is worse: one peak hour costs about $2.44 (at $0.69654/kWh summer on-peak, verified against the SDG&E rate table) versus about $1.36 during super off-peak (at $0.38818/kWh) — roughly 80% more for the identical hour of cooling, just because of the clock. Note that SDG&E's genuine off-peak rate (as opposed to its cheaper super off-peak tier) is $0.47560/kWh — still a large gap from peak, just not as dramatic as the super off-peak comparison. SCE's published TOU-D-PRIME figures point the same direction (summer on-peak near $0.59/kWh versus off-peak near $0.26/kWh), though those numbers come from SCE's customer-facing rate page rather than the filed tariff sheet, so treat them as directionally right rather than penny-exact.\n\nThe pattern holds across all three utilities: the same AC use costs 30-80% more depending only on what time the thermostat calls for cooling."
       },
       {
         "heading": "Pre-cooling: the one habit that actually offsets the peak window",
@@ -850,12 +865,12 @@
       {
         "name": "PG&E Schedule E-TOU-C tariff sheet (Advice 7921-E, Decision D.26-04-036)",
         "url": "https://www.pge.com/tariffs/assets/pdf/tariffbook/ELEC_SCHEDS_E-TOU-C.pdf",
-        "supports": "PG&E peak window (4-9pm, every day, both summer and winter) and summer/winter peak and off-peak rates, effective 6/1/2026 — fetched and read directly, verified 2026-09-08"
+        "supports": "PG&E peak window (4-9pm, every day, both summer and winter) and summer/winter peak and off-peak rates, effective 6/1/2026 — checked 2026-09-08"
       },
       {
         "name": "SDG&E Schedule TOU-DR1 rate table",
         "url": "https://www.sdge.com/sites/default/files/regulatory/1-1-26%20Schedule%20TOU-DR1%20Total%20Rates%20Table.pdf",
-        "supports": "SDG&E summer/winter on-peak, off-peak, and super off-peak rates, effective 1/1/2026 — fetched and read directly, verified 2026-09-08"
+        "supports": "SDG&E summer/winter on-peak, off-peak, and super off-peak rates, effective 1/1/2026 — checked 2026-09-08"
       },
       {
         "name": "CPUC — Net Energy Metering and Net Billing",
@@ -880,7 +895,7 @@
       {
         "name": "SCE residential TOU-D-PRIME rate page",
         "url": "https://www.sce.com/residential/rates/Time-Of-Use-Residential-Rate-Plans",
-        "supports": "SCE summer/winter peak and off-peak rate figures and the clean-energy-technology eligibility requirement (utility-published customer page, not independently verified against the filed tariff sheet this pass)"
+        "supports": "SCE summer/winter peak and off-peak rate figures and the clean-energy-technology eligibility requirement (utility-published customer page, not the filed tariff sheet)"
       },
       {
         "name": "CPUC — Self-Generation Incentive Program (SGIP)",
@@ -936,7 +951,7 @@
       },
       {
         "heading": "Step 2: Look for non-bypassable charges on every imported kWh",
-        "body": "Your bill likely carries four charges with names like Public Purpose Program Charge (PPPC), Nuclear Decommissioning Charge (NDC), Competition Transition Charge (CTC), and Wildfire Fund Charge (WFC). Under the old NEM 1.0 and 2.0 tariffs, these applied only to your net metered consumption — solar production could reduce or fully cancel them out. Under the Net Billing Tariff (NEM 3.0, in effect for systems interconnected after April 15, 2023), the CPUC's own program page confirms these charges now apply to every kilowatt-hour you pull from the grid, full stop. Solar export credits can no longer offset them.\n\nThis creates what several industry sources call a bill floor — a per-kWh charge your solar production cannot touch, no matter how well the system performs. We were not able to confirm the exact combined cents-per-kWh rate directly against a current PG&E, SCE, or SDG&E tariff sheet in this pass, so don't take a specific number from us on this one — pull up your own bill, find the line items named above, and add them up over a billing cycle. That total is money your panels cannot save you, by design of the current tariff structure, not by any flaw in your installation."
+        "body": "Your bill likely carries four charges with names like Public Purpose Program Charge (PPPC), Nuclear Decommissioning Charge (NDC), Competition Transition Charge (CTC), and Wildfire Fund Charge (WFC). Under the old NEM 1.0 and 2.0 tariffs, these applied only to your net metered consumption — solar production could reduce or fully cancel them out. Under the Net Billing Tariff (NEM 3.0, in effect for systems interconnected after April 15, 2023), the CPUC's own program page confirms these charges now apply to every kilowatt-hour you pull from the grid, full stop. Solar export credits can no longer offset them.\n\nThis creates what several industry sources call a bill floor — a per-kWh charge your solar production cannot touch, no matter how well the system performs. This page does not print a combined cents-per-kWh rate from a current PG&E, SCE, or SDG&E tariff sheet, so pull up your own bill, find the line items named above, and add them up over a billing cycle. That total is money your panels cannot save you, by design of the current tariff structure, not by any flaw in your installation."
       },
       {
         "heading": "Step 3: See what replaced your old minimum charge",
@@ -1036,32 +1051,32 @@
       {
         "name": "CPUC — Net Energy Metering and Net Billing",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
-        "supports": "Non-bypassable charges applying to all imported energy under Net Billing Tariff; April 15 2023 cutover; annual true-up and Net Surplus Compensation (~$0.02-$0.03/kWh); NBT scope limited to PG&E/SCE/SDG&E — verified by direct fetch 2026-09-05"
+        "supports": "Non-bypassable charges applying to all imported energy under Net Billing Tariff; April 15 2023 cutover; annual true-up and Net Surplus Compensation (~$0.02-$0.03/kWh); NBT scope limited to PG&E/SCE/SDG&E — checked 2026-09-05"
       },
       {
         "name": "CPUC — California Solar Consumer Protection Guide",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
-        "supports": "System sizing guidance: not in customer's interest to oversize; 150%-of-usage cap with attestation — verified by direct fetch 2026-09-05"
+        "supports": "System sizing guidance: not in customer's interest to oversize; 150%-of-usage cap with attestation — checked 2026-09-05"
       },
       {
         "name": "PG&E — Base Services Charge",
         "url": "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
-        "supports": "Fixed charge amounts by tier ($24.00/$12.00/$6.00), March 2026 rollout, replacement of prior Minimum Electric Charge, \"still use the electric grid\" language — verified by direct fetch 2026-09-05"
+        "supports": "Fixed charge amounts by tier ($24.00/$12.00/$6.00), March 2026 rollout, replacement of prior Minimum Electric Charge, \"still use the electric grid\" language — checked 2026-09-05"
       },
       {
         "name": "Utility Dive — California PUC approves income-based fixed charge",
         "url": "https://www.utilitydive.com/news/california-puc-approves-income-based-fixed-charge/715748/",
-        "supports": "CPUC-approved $24.15 uniform cap and low-income discount tiers; utilities' original higher requests ($53/$74/$49); AB 205 basis; SCE/SDG&E \"late 2025\" and PG&E \"early 2026\" rollout language — verified by direct fetch 2026-09-05"
+        "supports": "CPUC-approved $24.15 uniform cap and low-income discount tiers; utilities' original higher requests ($53/$74/$49); AB 205 basis; SCE/SDG&E \"late 2025\" and PG&E \"early 2026\" rollout language — checked 2026-09-05"
       },
       {
         "name": "California Legislative Information — Business & Professions Code § 7169",
         "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7169",
-        "supports": "Statutory basis for the solar disclosure document consumers can check against original savings assumptions — verified by direct fetch 2026-09-05"
+        "supports": "Statutory basis for the solar disclosure document consumers can check against original savings assumptions — checked 2026-09-05"
       },
       {
         "name": "CSLB — Solar Requirements",
         "url": "https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx",
-        "supports": "Disclosure document requirements for reviewing original sales assumptions — verified by direct fetch 2026-09-05"
+        "supports": "Disclosure document requirements for reviewing original sales assumptions — checked 2026-09-05"
       }
     ],
     "reviewedAt": "2026-09-08"
@@ -1124,7 +1139,7 @@
       },
       {
         "heading": "The $25,000 License Bond — What It Covers and Where It Runs Out",
-        "body": "Every active CSLB license is backed by a surety bond, currently $25,000 under Business & Professions Code § 7071.6 (raised from $15,000 by SB 607, effective January 2023). LLC contractors carry an additional $100,000 employee/worker bond under § 7071.6.5, on top of that. Property owners can claim against the bond for damages from incomplete, defective, or abandoned work, alongside unpaid employees, unpaid suppliers and subcontractors, and the state for unpaid taxes.\n\nThe number that matters most: total payout from the bond is capped at its face value, full stop, no matter how much you personally lost. And that $25,000 is per license — not per homeowner. If a contractor collapses with hundreds or thousands of customers in the same position, everyone with a valid claim is drawing against the same fixed pool, which can mean pennies on the dollar once it's divided.\n\nHonestly: the exact mechanics of filing a bond claim — whether you go through CSLB or the surety company directly, what documentation they want, and how claims get prioritized once a bond is oversubscribed — weren't something we could confirm from a live CSLB page in this pass. Call CSLB at (800) 321-2752 and ask them to walk you through the current claim procedure before you assume the bond will cover your loss, or that it won't."
+        "body": "Every active CSLB license is backed by a surety bond, currently $25,000 under Business & Professions Code § 7071.6 (raised from $15,000 by SB 607, effective January 2023). LLC contractors carry an additional $100,000 employee/worker bond under § 7071.6.5, on top of that. Property owners can claim against the bond for damages from incomplete, defective, or abandoned work, alongside unpaid employees, unpaid suppliers and subcontractors, and the state for unpaid taxes.\n\nThe number that matters most: total payout from the bond is capped at its face value, full stop, no matter how much you personally lost. And that $25,000 is per license — not per homeowner. If a contractor collapses with hundreds or thousands of customers in the same position, everyone with a valid claim is drawing against the same fixed pool, which can mean pennies on the dollar once it's divided.\n\nCSLB's pages do not spell out the exact mechanics of filing a bond claim — whether you go through CSLB or the surety company directly, what documentation they want, and how claims get prioritized once a bond is oversubscribed. Call CSLB at (800) 321-2752 and ask them to walk you through the current claim procedure before you assume the bond will cover your loss, or that it won't."
       },
       {
         "heading": "Small Claims Court: The Backstop That Actually Pays",
@@ -1212,22 +1227,22 @@
       {
         "name": "California Civil Code § 1689.7 (home solicitation contracts, right to cancel)",
         "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=CIV&sectionNum=1689.7",
-        "supports": "3/5/7 business day cancellation right, refund within 10 days — verified verbatim by direct fetch"
+        "supports": "3/5/7 business day cancellation right, refund within 10 days — wording checked at the source"
       },
       {
         "name": "California Business & Professions Code § 7159.5 (down payment and progress payment limits)",
         "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7159.5",
-        "supports": "$1,000 or 10% down payment cap, progress payment rules — verified by direct fetch; confirmed this section contains no boldface/point-size disclosure language"
+        "supports": "$1,000 or 10% down payment cap, progress payment rules — checked at the source; this section contains no boldface/point-size disclosure language"
       },
       {
         "name": "California Business & Professions Code § 7159 (home improvement contract disclosures)",
         "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7159",
-        "supports": "12-point boldface down payment disclosure requirement and the exact statutory sentence, verified verbatim (\"DOWNPAYMENT,\" one word) by direct fetch"
+        "supports": "12-point boldface down payment disclosure requirement and the exact statutory sentence, wording checked at the source (\"DOWNPAYMENT,\" one word)"
       },
       {
         "name": "California Business & Professions Code §§ 7107, 7108, 7090",
         "url": "https://leginfo.legislature.ca.gov/faces/codes_displayText.xhtml?lawCode=BPC&division=3.&title=&part=&chapter=9.&article=6.",
-        "supports": "Abandonment, diversion of funds, and registrar disciplinary authority — each verified verbatim by direct fetch of the individual sections"
+        "supports": "Abandonment, diversion of funds, and registrar disciplinary authority — each section's wording checked at the source"
       },
       {
         "name": "CSLB — Filing a Complaint",
@@ -1242,7 +1257,7 @@
       {
         "name": "California Courts Self-Help — Small Claims",
         "url": "https://selfhelp.courts.ca.gov/small-claims",
-        "supports": "$12,500 individual / $6,250 business limits, filing fees, appeal and enforcement rules — verified by direct fetch"
+        "supports": "$12,500 individual / $6,250 business limits, filing fees, appeal and enforcement rules — checked at the source"
       },
       {
         "name": "DFPI — Submit a Complaint / How We Enforce the Law",
@@ -1917,7 +1932,7 @@
       },
       {
         "heading": "What Sunrun and Tesla actually publish for their own escalator",
-        "body": "Most of the search volume behind this page names a provider directly, so here is what the two largest ones state in their own materials, not just CPUC's general range. Sunrun's FAQ describes its lease and PPA escalators as running \"somewhere between 1 and 5 percent... each year\" (Sunrun, \"What's a Solar Lease or PPA?\") — a band that starts inside CPUC's 1-3% typical range and extends above the point CPUC says to be cautious about. Tesla's published lease terms are narrower and fixed: \"your lease payments increase by 3% annually per the lease terms\" (Tesla, \"Buying Out Your Tesla Solar Panel Lease\") — at the very top edge of CPUC's typical range. Neither figure is a promise about your specific contract. Ask your own provider for the number in writing, and check it against the disclosure field described later on this page."
+        "body": "Here is what the two largest providers state in their own materials, not just CPUC's general range. Sunrun's FAQ describes its lease and PPA escalators as running \"somewhere between 1 and 5 percent... each year\" (Sunrun, \"What's a Solar Lease or PPA?\") — a band that starts inside CPUC's 1-3% typical range and extends above the point CPUC says to be cautious about. Tesla's published lease terms are narrower and fixed: \"your lease payments increase by 3% annually per the lease terms\" (Tesla, \"Buying Out Your Tesla Solar Panel Lease\") — at the very top edge of CPUC's typical range. Neither figure is a promise about your specific contract. Ask your own provider for the number in writing, and check it against the disclosure field described later on this page."
       },
       {
         "heading": "How the compounding actually works",
@@ -2123,7 +2138,7 @@
       {
         "label": "Typical annual degradation",
         "value": "0.3%–0.5%/yr",
-        "note": "Industry-standard range for crystalline-silicon panels; widely attributed to NREL field research (Jordan & Kurtz, 2012/2016). Not independently re-verified against a live NREL source this pass — treat as literature consensus, not a contract number."
+        "note": "Industry-standard range for crystalline-silicon panels; widely attributed to NREL field research (Jordan & Kurtz, 2012/2016). Not taken from a current NREL source — treat as literature consensus, not a contract number."
       },
       {
         "label": "Projected output at year 25, 0.5%/yr decline",
@@ -2133,7 +2148,7 @@
       {
         "label": "Typical product/materials warranty",
         "value": "10–12 yrs (up to 25 on premium panels)",
-        "note": "Typical industry structure, not independently verified live this pass — confirm against your specific manufacturer's warranty document."
+        "note": "Typical industry structure — confirm against your specific manufacturer's warranty document."
       },
       {
         "label": "Typical performance warranty term",
@@ -2329,7 +2344,7 @@
     "metaTitle": "Solar Panels Not Producing Enough? What to Check",
     "metaDescription": "California solar underperforming? Check monitoring, shading, soiling and inverter faults in order, then learn how production guarantees actually pay out.",
     "h1": "Solar Panels Not Producing Enough: The Diagnostic Order That Actually Finds the Problem",
-    "intro": "Before you call anyone, open your monitoring app. Installers report that a large share of \"my solar isn't working\" calls turn out to be a monitoring data gap, not a production problem — the panels kept making power, the app just stopped reporting it. That's a common field observation from installers, not a figure this brief could confirm against a published study, so treat it as a reason to check monitoring first, not as a hard statistic. The distinction still matters because the two problems have completely different fixes, and chasing the wrong one wastes weeks.\n\nThis page walks the diagnostic order that actually isolates what's wrong: monitoring first, then shading, soiling, inverter faults, string outages, and panel-level failures, in that sequence, because each step rules out a category before the next one becomes worth checking. It also covers the question underneath all of it — was the original production estimate ever realistic — and what recourse actually exists if the answer is no, including how production guarantees on leased and PPA systems work and where the legal backstops are for owned systems.\n\nNone of this requires panic. A single low month is usually weather. A genuinely broken system usually announces itself once you know where to look.",
+    "intro": "Before you call anyone, open your monitoring app. Installers report that a large share of \"my solar isn't working\" calls turn out to be a monitoring data gap, not a production problem — the panels kept making power, the app just stopped reporting it. That's a common field observation from installers, not a figure from a published study, so treat it as a reason to check monitoring first, not as a hard statistic. The distinction still matters because the two problems have completely different fixes, and chasing the wrong one wastes weeks.\n\nThis page walks the diagnostic order that actually isolates what's wrong: monitoring first, then shading, soiling, inverter faults, string outages, and panel-level failures, in that sequence, because each step rules out a category before the next one becomes worth checking. It also covers the question underneath all of it — was the original production estimate ever realistic — and what recourse actually exists if the answer is no, including how production guarantees on leased and PPA systems work and where the legal backstops are for owned systems.\n\nNone of this requires panic. A single low month is usually weather. A genuinely broken system usually announces itself once you know where to look.",
     "keyStats": [
       {
         "label": "CSLB patent-defect complaint window",
@@ -2363,7 +2378,7 @@
       },
       {
         "heading": "Step 3: Soiling — dust, pollen, and time since the last rain",
-        "body": "Dust, pollen, and bird droppings reduce output gradually and are easy to miss because the loss creeps in over weeks. This is more pronounced in the Central Valley and desert regions during long dry stretches between rains, and less of an issue near the coast. Industry practice puts typical annual soiling losses in the low single digits in low-dust coastal areas, climbing meaningfully higher in dusty inland conditions without rain for months — these are trade-standard figures, not numbers this brief could verify against a primary NREL or CEC document this session, so treat them as directional rather than exact.\n\nThe practical test doesn't require a percentage table: look at the panels, and compare production in your app right before and right after a rinse or a real rainstorm. If output visibly recovers after cleaning, soiling was the cause and a periodic cleaning schedule (or waiting for the next rain) is the fix — not a service call."
+        "body": "Dust, pollen, and bird droppings reduce output gradually and are easy to miss because the loss creeps in over weeks. This is more pronounced in the Central Valley and desert regions during long dry stretches between rains, and less of an issue near the coast. Industry practice puts typical annual soiling losses in the low single digits in low-dust coastal areas, climbing meaningfully higher in dusty inland conditions without rain for months — these are trade-standard figures, not numbers from a primary NREL or CEC document, so treat them as directional rather than exact.\n\nThe practical test doesn't require a percentage table: look at the panels, and compare production in your app right before and right after a rinse or a real rainstorm. If output visibly recovers after cleaning, soiling was the cause and a periodic cleaning schedule (or waiting for the next rain) is the fix — not a service call."
       },
       {
         "heading": "Step 4: Inverter faults",
@@ -2375,11 +2390,11 @@
       },
       {
         "heading": "Step 6: Panel-level failures and your warranty coverage",
-        "body": "Individual panel failure is governed by two separate warranties bundled into your original paperwork: a workmanship warranty (typically 10-25 years, covering defects in manufacturing) and a separate power/performance warranty, which guarantees the panel won't degrade below a specified output curve over 25 years — commonly starting in the high 90s percent of rated output in year one and declining toward the high 80s percent by year 25, though the exact numbers vary by manufacturer and this brief could not pull current figures for your specific installed panel model this session. Before assuming a percentage, find your panel's brand and model on the original contract and pull its current datasheet directly from the manufacturer.\n\nIsolating a single bad panel, again, requires microinverter or optimizer-level monitoring, or a manual per-panel test if you have a plain string inverter. If a panel is confirmed underperforming within its power-warranty window, the manufacturer — not necessarily your installer — is who owes you the remedy, which matters if your original installer is out of business."
+        "body": "Individual panel failure is governed by two separate warranties bundled into your original paperwork: a workmanship warranty (typically 10-25 years, covering defects in manufacturing) and a separate power/performance warranty, which guarantees the panel won't degrade below a specified output curve over 25 years — commonly starting in the high 90s percent of rated output in year one and declining toward the high 80s percent by year 25, though the exact numbers vary by manufacturer, so check the figures for your specific installed panel model. Before assuming a percentage, find your panel's brand and model on the original contract and pull its current datasheet directly from the manufacturer.\n\nIsolating a single bad panel, again, requires microinverter or optimizer-level monitoring, or a manual per-panel test if you have a plain string inverter. If a panel is confirmed underperforming within its power-warranty window, the manufacturer — not necessarily your installer — is who owes you the remedy, which matters if your original installer is out of business."
       },
       {
         "heading": "Step 7: Was the original production estimate ever realistic?",
-        "body": "If you've worked through steps 1-6 and the system is functioning exactly as installed — no faults, no shading, no soiling, no dead strings — but it has never come close to the number you were shown at the sale, the problem may be the estimate itself, not the equipment. The Department of Energy's own guidance warns homeowners against relying on generic online calculators and recommends a custom, site-specific estimate from the installer (DOE/EERE, energy.gov, as of 2026-09-05). The industry-standard modeling tool for these estimates is PVWatts (NREL/DOE), which factors system size, tilt, azimuth, shading, and an assumed system-loss percentage into its output — worth knowing exists, even though this brief could not independently confirm PVWatts's current default assumptions this session.\n\nCalifornia law gives you a paper trail to check this against, though it's a narrower trail than it might seem. B&P §7169(b) does require every solar contract's cost, payment-terms, and cancellation-rights disclosures to appear on the front or cover page in 16-point boldface type — but the production-calculator output itself is governed by the separate, discretionary §7169(c), which the board may allow an installer to include as supporting information, not a mandatory front-page item. In practice, if your installer did give you a production-calculator printout as part of the sale, it should be in your contract file somewhere, boldface or not, and it's worth pulling and comparing to what you were told verbally. If the number in it doesn't match, or if no such document exists at all, that's a documentable gap worth raising with the installer or CSLB — not proof of fraud, and not a statutory violation on its own, but a specific, citable point rather than a vague complaint that \"it doesn't make what they said.\""
+        "body": "If you've worked through steps 1-6 and the system is functioning exactly as installed — no faults, no shading, no soiling, no dead strings — but it has never come close to the number you were shown at the sale, the problem may be the estimate itself, not the equipment. The Department of Energy's own guidance warns homeowners against relying on generic online calculators and recommends a custom, site-specific estimate from the installer (DOE/EERE, energy.gov, as of 2026-09-05). The industry-standard modeling tool for these estimates is PVWatts (NREL/DOE), which factors system size, tilt, azimuth, shading, and an assumed system-loss percentage into its output — worth knowing exists, though this page does not list PVWatts's current default assumptions.\n\nCalifornia law gives you a paper trail to check this against, though it's a narrower trail than it might seem. B&P §7169(b) does require every solar contract's cost, payment-terms, and cancellation-rights disclosures to appear on the front or cover page in 16-point boldface type — but the production-calculator output itself is governed by the separate, discretionary §7169(c), which the board may allow an installer to include as supporting information, not a mandatory front-page item. In practice, if your installer did give you a production-calculator printout as part of the sale, it should be in your contract file somewhere, boldface or not, and it's worth pulling and comparing to what you were told verbally. If the number in it doesn't match, or if no such document exists at all, that's a documentable gap worth raising with the installer or CSLB — not proof of fraud, and not a statutory violation on its own, but a specific, citable point rather than a vague complaint that \"it doesn't make what they said.\""
       },
       {
         "heading": "Production guarantees — what they cover, and how a claim actually works",
@@ -2411,7 +2426,7 @@
           "3. Soiling",
           "Visible dust, pollen, or bird droppings on panel surface",
           "Visual inspection; compare production right before and after a rinse or rainstorm",
-          "Common in Central Valley/desert areas with long dry stretches — industry figures, not independently verified this session"
+          "Common in Central Valley/desert areas with long dry stretches — industry figures, not from a primary source"
         ],
         [
           "4. Inverter fault",
@@ -2523,7 +2538,7 @@
       {
         "label": "Earth's axial tilt driving the swing",
         "value": "23.45 degrees",
-        "note": "Fixed value in the solar declination formula; the same for every California rooftop regardless of latitude. Source: PVEducation.org, accessed 2026-09-05; formula and tilt value re-verified live 2026-09-08."
+        "note": "Fixed value in the solar declination formula; the same for every California rooftop regardless of latitude. Source: PVEducation.org, accessed 2026-09-05; formula and tilt value checked 2026-09-08."
       },
       {
         "label": "Statewide utility-scale generation, June vs. December 2022",
@@ -2533,7 +2548,7 @@
       {
         "label": "Net Billing (NEM 3.0) effective date",
         "value": "April 15, 2023",
-        "note": "Applies only to PG&E, SCE, and SDG&E customers. Source: CPUC Net Energy Metering and Net Billing page, re-verified live 2026-09-08."
+        "note": "Applies only to PG&E, SCE, and SDG&E customers. Source: CPUC Net Energy Metering and Net Billing page, checked 2026-09-08."
       },
       {
         "label": "Net Billing export credit rate",
@@ -2543,7 +2558,7 @@
       {
         "label": "Standard contract cancellation window",
         "value": "3 business days",
-        "note": "5 days for senior citizens, 7 days for emergency-repair contracts. Source: Bus. & Prof. Code section 7159, leginfo.legislature.ca.gov, re-verified live 2026-09-08."
+        "note": "5 days for senior citizens, 7 days for emergency-repair contracts. Source: Bus. & Prof. Code section 7159, leginfo.legislature.ca.gov, checked 2026-09-08."
       }
     ],
     "sections": [
@@ -2553,7 +2568,7 @@
       },
       {
         "heading": "How big the swing actually is, and why an exact residential number needs care",
-        "body": "The only hard statewide figure available is utility-scale: California's solar farms produced 4,456 GWh in June 2022 against 1,832 GWh in December 2022, roughly a 59 percent drop, per generation tables referenced on Wikipedia's \"Solar power in California\" page, which in turn cites the U.S. Energy Information Administration's Electricity Data Browser as its source (accessed 2026-09-08). That's useful for direction and order of magnitude, but it describes big desert installations, many of them tracking arrays, not a fixed rooftop system in a coastal or Central Valley city. Treat any residential percentage you see quoted online -- including elsewhere on this site -- as an estimate until it's backed by a specific, dated modeling run for your address.\n\nThe industry-standard way to get that specific number is a per-address production model, typically built on NREL's PVWatts calculator or equivalent software, which projects expected output month by month for a given location, tilt, azimuth, and system size. California's own contractor-licensing statute gestures at this directly: Business and Professions Code section 7169(c) permits (though doesn't require) a solar contract to include \"a calculator that calculates performance of solar projects to provide solar customers the solar power system's projected output\" (leginfo.legislature.ca.gov, re-verified live 2026-09-08). Before you sign anything -- or before you decide an existing system is underperforming -- ask for the month-by-month projected output table your quote was built on. That table, not a single bad bill, is the right baseline for judging your system."
+        "body": "The only hard statewide figure available is utility-scale: California's solar farms produced 4,456 GWh in June 2022 against 1,832 GWh in December 2022, roughly a 59 percent drop, per generation tables referenced on Wikipedia's \"Solar power in California\" page, which in turn cites the U.S. Energy Information Administration's Electricity Data Browser as its source (accessed 2026-09-08). That's useful for direction and order of magnitude, but it describes big desert installations, many of them tracking arrays, not a fixed rooftop system in a coastal or Central Valley city. Treat any residential percentage you see quoted online -- including elsewhere on this site -- as an estimate until it's backed by a specific, dated modeling run for your address.\n\nThe industry-standard way to get that specific number is a per-address production model, typically built on NREL's PVWatts calculator or equivalent software, which projects expected output month by month for a given location, tilt, azimuth, and system size. California's own contractor-licensing statute gestures at this directly: Business and Professions Code section 7169(c) permits (though doesn't require) a solar contract to include \"a calculator that calculates performance of solar projects to provide solar customers the solar power system's projected output\" (leginfo.legislature.ca.gov, checked 2026-09-08). Before you sign anything -- or before you decide an existing system is underperforming -- ask for the month-by-month projected output table your quote was built on. That table, not a single bad bill, is the right baseline for judging your system."
       },
       {
         "heading": "Regional variation: the same sun, a different sky",
@@ -2565,15 +2580,15 @@
       },
       {
         "heading": "Annual netting: how the true-up is built to absorb the swing",
-        "body": "California's Net Billing Tariff, the rule most people mean when they say \"NEM 3.0,\" took effect April 15, 2023, and applies only to customers of PG&E, SCE, and SDG&E (CPUC, re-verified live 2026-09-08). It runs on monthly billing with a running credit balance, plus a mandatory annual true-up at the twelve-month mark. In the CPUC's own words, from its Solar Consumer Protection Guide (Solar Billing Plan Addendum, published September 2025): \"If you send more electricity to the grid than you buy in a year, your provider will subtract any bill credits you already received for that excess energy, and then provide compensation at a different rate for the excess energy.\" Export credits during the year are valued off the CPUC's Avoided Cost Calculator rather than the retail rate you pay to buy power -- generally lower, though it can spike above retail on late-summer evenings when grid demand peaks.\n\nThat true-up is the whole point: no fixed-tilt system produces evenly across twelve months, so the tariff is built around a full-year accounting rather than a monthly one. Your summer surplus, banked monthly, is designed to offset your winter shortfall. A system that nets out close to zero (or to whatever your contract targeted) over the full year is doing exactly what it's supposed to, even if any single December statement shows a draw from the grid.\n\nTwo things change this picture for specific homeowners. If you interconnected before April 15, 2023, you're likely still grandfathered onto NEM 2.0, which credits exports at the full retail rate rather than the lower avoided-cost rate. Net Billing has applied only to new interconnections since that date, so most California solar systems already installed and operating -- built up over the many years NEM 1.0 and NEM 2.0 were open to new customers -- are still on one of those legacy tariffs rather than on Net Billing; this page could not confirm a specific percentage from a CPUC source for how large that majority is, so treat that as a directional statement, not a statistic, and check your own interconnection date rather than assume either way. And if you're served by a publicly owned utility -- LADWP, SMUD, MID, Anaheim, Roseville, Lodi, Imperial Irrigation District, or Turlock Irrigation District -- none of the above applies to you at all; these utilities sit outside CPUC jurisdiction and set their own net-metering and true-up terms, which this page has not verified utility-by-utility. Check your specific provider's tariff rather than assuming Net Billing rules apply."
+        "body": "California's Net Billing Tariff, the rule most people mean when they say \"NEM 3.0,\" took effect April 15, 2023, and applies only to customers of PG&E, SCE, and SDG&E (CPUC, checked 2026-09-08). It runs on monthly billing with a running credit balance, plus a mandatory annual true-up at the twelve-month mark. In the CPUC's own words, from its Solar Consumer Protection Guide (Solar Billing Plan Addendum, published September 2025): \"If you send more electricity to the grid than you buy in a year, your provider will subtract any bill credits you already received for that excess energy, and then provide compensation at a different rate for the excess energy.\" Export credits during the year are valued off the CPUC's Avoided Cost Calculator rather than the retail rate you pay to buy power -- generally lower, though it can spike above retail on late-summer evenings when grid demand peaks.\n\nThat true-up is the whole point: no fixed-tilt system produces evenly across twelve months, so the tariff is built around a full-year accounting rather than a monthly one. Your summer surplus, banked monthly, is designed to offset your winter shortfall. A system that nets out close to zero (or to whatever your contract targeted) over the full year is doing exactly what it's supposed to, even if any single December statement shows a draw from the grid.\n\nTwo things change this picture for specific homeowners. If you interconnected before April 15, 2023, you're likely still grandfathered onto NEM 2.0, which credits exports at the full retail rate rather than the lower avoided-cost rate. Net Billing has applied only to new interconnections since that date, so most California solar systems already installed and operating -- built up over the many years NEM 1.0 and NEM 2.0 were open to new customers -- are still on one of those legacy tariffs rather than on Net Billing; this page could not confirm a specific percentage from a CPUC source for how large that majority is, so treat that as a directional statement, not a statistic, and check your own interconnection date rather than assume either way. And if you're served by a publicly owned utility -- LADWP, SMUD, MID, Anaheim, Roseville, Lodi, Imperial Irrigation District, or Turlock Irrigation District -- none of the above applies to you at all; these utilities sit outside CPUC jurisdiction and set their own net-metering and true-up terms, which this page has not verified utility-by-utility. Check your specific provider's tariff rather than assuming Net Billing rules apply."
       },
       {
         "heading": "When the drop is normal, and when it's a sign of a real problem",
-        "body": "Every fixed-tilt system in California produces less in December than in June. That alone tells you nothing about whether yours is working correctly. The CPUC's Solar Consumer Protection Guide frames the right diagnostic questions to have asked before you ever needed them: \"Will I be able to monitor the performance of the system once it's installed?\" and \"how will I be compensated if the system does not produce as much energy as promised\" (CPUC, California Solar Consumer Protection Guide, 2022 edition, re-verified verbatim 2026-09-08). Real-time monitoring data, not a single low bill, is the tool that actually separates a normal seasonal shortfall from an actual fault.\n\nCalifornia also requires your contract to carry a specific disclosure document. Under Business and Professions Code section 7169(b), every solar energy system contract must include, in boldface 16-point type on the front page, the total cost and financing terms, information on the complaint procedure, and the buyer's cancellation rights under section 7159 -- three business days to cancel a standard contract, five for a senior citizen, seven for a contract addressing emergency repairs (leginfo.legislature.ca.gov, re-verified live 2026-09-08). If you don't have that document, or don't remember seeing it, that's worth flagging on its own, separate from any production question.\n\nThe practical test: pull your monitoring history and compare this December and January against the same months in a prior year on your own system, not against last June. If the shortfall tracks a prior winter within a normal range, your dashboard is live and reporting, and a visual check shows no shading, soiling, or visible damage, you're looking at ordinary seasonality. If the dashboard is offline, showing fault codes, or this winter is meaningfully worse than your own system's prior winters with no new shade or added household load to explain it, that's when it's worth calling your installer."
+        "body": "Every fixed-tilt system in California produces less in December than in June. That alone tells you nothing about whether yours is working correctly. The CPUC's Solar Consumer Protection Guide frames the right diagnostic questions to have asked before you ever needed them: \"Will I be able to monitor the performance of the system once it's installed?\" and \"how will I be compensated if the system does not produce as much energy as promised\" (CPUC, California Solar Consumer Protection Guide, 2022 edition, checked 2026-09-08). Real-time monitoring data, not a single low bill, is the tool that actually separates a normal seasonal shortfall from an actual fault.\n\nCalifornia also requires your contract to carry a specific disclosure document. Under Business and Professions Code section 7169(b), every solar energy system contract must include, in boldface 16-point type on the front page, the total cost and financing terms, information on the complaint procedure, and the buyer's cancellation rights under section 7159 -- three business days to cancel a standard contract, five for a senior citizen, seven for a contract addressing emergency repairs (leginfo.legislature.ca.gov, checked 2026-09-08). If you don't have that document, or don't remember seeing it, that's worth flagging on its own, separate from any production question.\n\nThe practical test: pull your monitoring history and compare this December and January against the same months in a prior year on your own system, not against last June. If the shortfall tracks a prior winter within a normal range, your dashboard is live and reporting, and a visual check shows no shading, soiling, or visible damage, you're looking at ordinary seasonality. If the dashboard is offline, showing fault codes, or this winter is meaningfully worse than your own system's prior winters with no new shade or added household load to explain it, that's when it's worth calling your installer."
       },
       {
         "heading": "If you think it's a fault, not a season",
-        "body": "Start with the data you already have. Pull your monitoring app's history and line this month up against the same month in a prior year on the same system -- not against summer, and not against a neighbor's system with a different roof pitch, orientation, or panel count. Check whether the dashboard itself is live; an offline monitor or a fault code is a different problem than low kWh totals, and it's the one that actually indicates equipment failure. A quick visual check for shading from tree growth, dust or debris buildup, and any visible panel or wiring damage rules out the simplest physical causes.\n\nIf the numbers still don't line up, contact your installer and reference the production estimate and any monitoring or performance guarantee in your contract -- the CSLB disclosure document required under section 7169(b) should have pointed you to the complaint procedure at the time of sale. If that doesn't resolve it, the Contractors State License Board can investigate license-law violations for up to four years from the act in question, and its own guidance recommends sending the contractor a formal written demand letter first, with sample letters available in English and Spanish (cslb.ca.gov, re-verified live 2026-09-08). Be clear-eyed about what a CSLB complaint can and can't do: in the Board's own words, \"the purpose of a CSLB investigation is not to obtain restitution.\" CSLB can discipline or suspend a contractor's license; getting money back generally means pursuing the contractor's required license bond -- a standard $25,000 under Business and Professions Code section 7071.6, which the board can require to double to $50,000 if the contractor was convicted under section 7028 or cited under section 7028.7 for unlicensed contracting that caused substantial injury to the public -- or civil court action."
+        "body": "Start with the data you already have. Pull your monitoring app's history and line this month up against the same month in a prior year on the same system -- not against summer, and not against a neighbor's system with a different roof pitch, orientation, or panel count. Check whether the dashboard itself is live; an offline monitor or a fault code is a different problem than low kWh totals, and it's the one that actually indicates equipment failure. A quick visual check for shading from tree growth, dust or debris buildup, and any visible panel or wiring damage rules out the simplest physical causes.\n\nIf the numbers still don't line up, contact your installer and reference the production estimate and any monitoring or performance guarantee in your contract -- the CSLB disclosure document required under section 7169(b) should have pointed you to the complaint procedure at the time of sale. If that doesn't resolve it, the Contractors State License Board can investigate license-law violations for up to four years from the act in question, and its own guidance recommends sending the contractor a formal written demand letter first, with sample letters available in English and Spanish (cslb.ca.gov, checked 2026-09-08). Be clear-eyed about what a CSLB complaint can and can't do: in the Board's own words, \"the purpose of a CSLB investigation is not to obtain restitution.\" CSLB can discipline or suspend a contractor's license; getting money back generally means pursuing the contractor's required license bond -- a standard $25,000 under Business and Professions Code section 7071.6, which the board can require to double to $50,000 if the contractor was convicted under section 7028 or cited under section 7028.7 for unlicensed contracting that caused substantial injury to the public -- or civil court action."
       }
     ],
     "dataTable": {
@@ -2639,7 +2654,7 @@
       {
         "name": "PVEducation.org - Declination Angle (Arizona State University)",
         "url": "https://www.pveducation.org/pvcdrom/properties-of-sunlight/declination-angle",
-        "supports": "Solar declination formula and the 23.45-degree axial tilt mechanism; formula wording re-verified live 2026-09-08 (matches page verbatim: delta = -23.45 deg x cos[360/365 x (d+10)])"
+        "supports": "Solar declination formula and the 23.45-degree axial tilt mechanism; formula wording checked 2026-09-08 (matches page verbatim: delta = -23.45 deg x cos[360/365 x (d+10)])"
       },
       {
         "name": "\"Solar power in California,\" Wikipedia",
@@ -2654,7 +2669,7 @@
       {
         "name": "CPUC - Net Energy Metering and Net Billing",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
-        "supports": "Net Billing Tariff effective date (April 15, 2023) and utility scope (PG&E, SCE, SDG&E only -- confirms Bear Valley Electric Service and PacifiCorp run separate, non-NBT tariffs); re-verified live 2026-09-08"
+        "supports": "Net Billing Tariff effective date (April 15, 2023) and utility scope (PG&E, SCE, SDG&E only -- confirms Bear Valley Electric Service and PacifiCorp run separate, non-NBT tariffs); checked 2026-09-08"
       },
       {
         "name": "CPUC - California Solar Consumer Protection Guide (long-form, 2022 edition, p.11)",
@@ -2669,22 +2684,22 @@
       {
         "name": "California Business and Professions Code section 7159 (cancellation rights)",
         "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7159.",
-        "supports": "3/5/7 business-day cancellation windows (standard/senior/emergency-repair), re-verified live 2026-09-08"
+        "supports": "3/5/7 business-day cancellation windows (standard/senior/emergency-repair), checked 2026-09-08"
       },
       {
         "name": "California Business and Professions Code section 7169 (contract disclosures)",
         "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7169.",
-        "supports": "Subsection (b) boldface 16-point disclosure requirements and subsection (c) optional performance calculator language, re-verified live 2026-09-08"
+        "supports": "Subsection (b) boldface 16-point disclosure requirements and subsection (c) optional performance calculator language, checked 2026-09-08"
       },
       {
         "name": "California Business and Professions Code section 7071.6 (contractor bond)",
         "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7071.6",
-        "supports": "$25,000 base bond and the specific doubling trigger (conviction under section 7028 or citation under section 7028.7 causing substantial public injury), re-verified live 2026-09-08"
+        "supports": "$25,000 base bond and the specific doubling trigger (conviction under section 7028 or citation under section 7028.7 causing substantial public injury), checked 2026-09-08"
       },
       {
         "name": "CSLB - Filing a Complaint",
         "url": "https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/",
-        "supports": "CSLB complaint process, four-year investigation window, sample demand letters in English/Spanish, and the verbatim restitution quote, re-verified live 2026-09-08"
+        "supports": "CSLB complaint process, four-year investigation window, sample demand letters in English/Spanish, and the verbatim restitution quote, checked 2026-09-08"
       }
     ],
     "reviewedAt": "2026-09-08"
@@ -3670,7 +3685,7 @@
       {
         "name": "CSLB — Home Improvement Salesperson (HIS) Registration Requirements",
         "url": "https://www.cslb.ca.gov/Contractors/Applicants/Home_Improvement_Registration/Before_Applying_For_HIS.aspx",
-        "supports": "Minimum age 18 with no experience, residency, or education requirement; basis for the licensing-bar section (re-verified by direct fetch, 2026-09-08)"
+        "supports": "Minimum age 18 with no experience, residency, or education requirement; basis for the licensing-bar section (checked 2026-09-08)"
       },
       {
         "name": "California Business & Professions Code § 7159",
@@ -3685,7 +3700,7 @@
       {
         "name": "CPUC — California Solar Consumer Protection Guide (Version 4, 2025)",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
-        "supports": "NEM 3.0/Solar Billing Plan mechanics, 10%/year rate-escalation cap on savings pitches, warnings against 'free solar' sales claims, license classifications (C-46/C-10/B) and license/HIS verification instructions — re-verified by direct fetch, 2026-09-08"
+        "supports": "NEM 3.0/Solar Billing Plan mechanics, 10%/year rate-escalation cap on savings pitches, warnings against 'free solar' sales claims, license classifications (C-46/C-10/B) and license/HIS verification instructions — checked 2026-09-08"
       },
       {
         "name": "CSLB — Solar Energy System Disclosure Document (Form 13L-6, cover page)",

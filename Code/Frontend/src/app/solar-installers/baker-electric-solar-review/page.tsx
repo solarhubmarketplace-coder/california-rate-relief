@@ -80,7 +80,7 @@ const faqs: FaqJsonLdItem[] = [
   {
     question: 'What is NB Baker Electric Inc?',
     answer:
-      'That name appears in searches but neither Baker website uses it for itself. The two published names are Baker Home Energy and Baker Electric. Ask which exact legal entity will sign your contract, then look that name and license number up at the CSLB rather than matching on a similar name.',
+      'It is the legal name on CSLB license #858088, which does business as Baker Home Energy (CSLB license lookup, checked September 24, 2026). Neither Baker website uses it for itself; the two published names are Baker Home Energy and Baker Electric. Ask which exact legal entity will sign your contract, then look that name and license number up at the CSLB rather than matching on a similar name.',
   },
   {
     question: 'Which license number should I check?',
@@ -129,7 +129,7 @@ export default function BakerReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                &ldquo;Baker Electric&rdquo; and &ldquo;Baker solar&rdquo; searches lead to two separately licensed Escondido companies that both trace their start to 1938. Home solar in San Diego County goes through Baker Home Energy, CA License #858088, which Baker Electric&apos;s own site names as its residential arm. Baker Electric, CA License #161756, does commercial and large electrical work. Check whichever license is printed on your contract at the CSLB before you sign.
+                The names &ldquo;Baker Electric&rdquo; and &ldquo;Baker solar&rdquo; cover two separately licensed Escondido companies that both trace their start to 1938. Home solar in San Diego County goes through Baker Home Energy, CA License #858088, which Baker Electric&apos;s own site names as its residential arm. Baker Electric, CA License #161756, does commercial and large electrical work. Check whichever license is printed on your contract at the CSLB before you sign.
               </p>
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}

@@ -14,7 +14,7 @@ import Link from 'next/link';
 // Every figure was re-fetched from its primary source on 2026-09-23.
 //
 // Not carried over, because they could not be verified from a primary source
-// this session or break Rule 5: named-company bankruptcy dates other than the
+// on 2026-09-23 or break Rule 5: named-company bankruptcy dates other than the
 // SEC-filed Sunnova petition, the "guaranteed 50%+ savings" third-party-owner
 // description, the non-compliant-provider list status, and the CSLB bond and
 // PACE cap figures in the loser's key facts.

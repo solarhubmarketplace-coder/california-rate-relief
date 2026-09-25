@@ -412,12 +412,12 @@ export default function DoesSolarIncreaseHomeValueCalifornia() {
       <section>
         <h2>Do solar homes sell faster? The honest answer</h2>
         <p>
-          Search interest asks this directly, and the honest answer is that
+          The short answer is that
           the two most-cited studies on this page — Berkeley Lab’s{" "}
           <em>Selling Into the Sun</em> and Zillow’s 2019 research —
           measured sale price, not days on market. Neither publishes a
-          verified time-to-sell figure, and no California-specific
-          days-on-market dataset for solar homes was found this session.
+          verified time-to-sell figure, and we found no California-specific
+          days-on-market dataset for solar homes (checked September 22, 2026).
           Treat any specific “sells X days faster” number you see elsewhere
           as unsourced until you can trace it to a study that actually
           measured time on market rather than price.

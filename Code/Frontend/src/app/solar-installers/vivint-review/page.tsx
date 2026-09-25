@@ -304,7 +304,7 @@ export default function VivintSolarReview() {
 
               <h2 className={h2}>Vivint Solar vs. Sunrun</h2>
               <p className={p}>
-                Searches for “Vivint Solar vs. Sunrun” are left over from when both sold solar. Since October 2020
+                Comparisons of Vivint Solar and Sunrun are left over from when both sold solar. Since October 2020
                 they have been one company. If you are shopping for a new system, compare Sunrun with other companies
                 that list California, using the{' '}
                 <Link href='/solar-installers' className={a}>California solar company reviews</Link>, and compare

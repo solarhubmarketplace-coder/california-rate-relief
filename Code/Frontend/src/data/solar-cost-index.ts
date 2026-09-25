@@ -546,7 +546,7 @@ const FEES: Record<string, FeeEntry> = {
     components: [{ label: 'photovoltaic system, residential, 15 kW or less', usd: 450, quote: 'of 15 kW or less at $450' }],
   },
   vacaville: { status: 'not-retrievable', evidence: 'could not be read in a form that ties an amount to it' },
-  saratoga: { status: 'not-published', evidence: 'did not state a solar permit fee' },
+  saratoga: { status: 'not-published', evidence: 'do not state a solar permit fee' },
   gilroy: {
     status: 'published',
     components: [{ label: 'solar PV permit, residential, 15 kW or less', usd: 450, quote: 'at $450.00 for a residential system of 15 kW or less' }],
@@ -750,7 +750,7 @@ const PLATFORMS: Record<string, PlatformEntry> = {
   saratoga: {
     platform: 'symbium',
     evidence: "lists Saratoga's platform as Symbium",
-    note: 'Per the CEC SB 379 data (self-reported); the City pages reached do not describe a solar route.',
+    note: 'Per the CEC SB 379 data (self-reported); the City\'s building pages do not describe a solar route.',
   },
   gilroy: { platform: 'solarapp', evidence: 'go through SolarAPP+ for instant permitting' },
   'san-ramon': { platform: 'solarapp', evidence: 'Electrical Photovoltaic (SolarAPP) permit' },

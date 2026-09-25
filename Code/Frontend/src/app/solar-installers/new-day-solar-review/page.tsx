@@ -71,7 +71,7 @@ export default function NewDayReview() {
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                New Day Solar is a family-owned California installer based in Murrieta. The company focuses on ownership (cash or loan) and steers customers away from PPAs and leases. We did not verify its Yelp, Google or BBB ratings or its years in business for this update, so check its CSLB license record and recent reviews yourself. Get the install and Permission to Operate timeline in writing.
+                New Day Solar is a family-owned California installer based in Murrieta. The company focuses on ownership (cash or loan) and steers customers away from PPAs and leases. This review does not report its Yelp, Google or BBB ratings or its years in business, so check its CSLB license record and recent reviews yourself. Get the install and Permission to Operate timeline in writing.
               </p>
 
               {/* Bill-first step after the intro; it opens the inquiry form below at step 2. */}
@@ -91,7 +91,7 @@ export default function NewDayReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Reviews and Reputation</h2>
               <ul className='list-disc pl-6 space-y-2 text-foreground/80 mb-6'>
-                <li>Yelp, Google and BBB: not verified for this update. Check the current ratings and read the newest complaints yourself.</li>
+                <li>Yelp, Google and BBB: not reported here. Check the current ratings and read the newest complaints yourself.</li>
                 <li>Own-site testimonials: these are marketing, not independent reviews.</li>
                 <li>Solar forums and Reddit: Positive mentions in r/solar discussions about Inland Empire installers.</li>
               </ul>

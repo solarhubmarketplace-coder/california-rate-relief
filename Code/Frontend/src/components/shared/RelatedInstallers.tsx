@@ -11,7 +11,7 @@ import { ArrowRight, Building2 } from 'lucide-react';
 // Goal: kill the "orphan installer review" pattern from the audit.
 //
 // 2026-09-22 — status-claim audit: every bankruptcy/defunct/status claim
-// below was checked this session against a primary source (a court docket,
+// below was checked 2026-09-22 against a primary source (a court docket,
 // an SEC filing, a state regulator record, or the company's own investor
 // page) and now carries that source and date via `statusSource`. A claim
 // that did not check out was removed rather than restated with a citation
@@ -31,7 +31,7 @@ interface InstallerCard {
   name: string;
   tagline: string;
   /** Present only when the tagline makes a bankruptcy/defunct/status claim
-   *  that was verified this session. Renders as a small citation line under
+   *  that was verified 2026-09-22. Renders as a small citation line under
    *  the tagline. Absent for ordinary product/positioning taglines, which
    *  don't need one. */
   statusSource?: StatusSource;
@@ -56,7 +56,7 @@ const INSTALLER_PICKS: Record<string, InstallerCard[]> = {
       slug: 'sunpower-review',
       name: 'SunPower',
       tagline: 'Premium-brand panels; 2024 Chapter 11 restructuring',
-      // Not "(now SunStrong)" — checked this session and that's a different
+      // Not "(now SunStrong)" — checked 2026-09-22 and that's a different
       // company. SunStrong Management is a separate entity that services
       // legacy SunPower (and, since a 2025 acquisition, legacy Sunnova)
       // lease/PPA fleets; it did not acquire the SunPower brand or new-build
@@ -89,7 +89,7 @@ const INSTALLER_PICKS: Record<string, InstallerCard[]> = {
       slug: 'sunpower-review',
       name: 'SunPower',
       // "Maxeon panels" (the pre-2024 exclusive supply relationship) is no
-      // longer accurate — checked this session against the same 8-K plus
+      // longer accurate — checked 2026-09-22 against the same 8-K plus
       // sunpower-review's own sourced text: that relationship was unwound in
       // the bankruptcy, and today's SunPower sources Tier-1 panels from
       // multiple suppliers.
@@ -119,7 +119,7 @@ const INSTALLER_PICKS: Record<string, InstallerCard[]> = {
       slug: 'sullivan-solar-power-review',
       name: 'Sullivan Solar Power',
       // The widely-repeated "defunct since 2021" date is trade-press/local
-      // news only (no primary source found this session). What a primary
+      // news only (no primary source found on 2026-09-22). What a primary
       // source does confirm is the CSLB license revocation below, which is
       // itself sufficient reason not to hire this company.
       tagline: 'CSLB revoked its contractor license — do not hire',

@@ -4,7 +4,7 @@
 // the utilities' own pages do not support, and PSPS/HFTD battery tiers). Every
 // figure below was fetched from the program's administrator, the CPUC or the
 // utility on 2026-09-23. Glendale Water & Power is left out because its current
-// terms could not be confirmed from a primary source this session; LADWP's own
+// terms could not be confirmed from a primary source on 2026-09-23; LADWP's own
 // site refused automated retrieval, so its section states only what the CPUC
 // and the SGIP tracker confirm. Prior body is in git history.
 //
