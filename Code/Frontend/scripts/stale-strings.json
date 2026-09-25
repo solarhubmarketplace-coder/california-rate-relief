@@ -1,0 +1,55 @@
+{
+  "about": "Strings known to be out of date. Read by scripts/editorial-lint.mjs (STALE-STRING check), which qc-gate.mjs and qc-gate-tsx.mjs both run; any match fails the gate. Matching is case-insensitive and whitespace-tolerant on rendered text only (code comments are ignored). Each rule says why the string is stale and which primary source shows the current fact, with the date that source was read. `allowFiles` lists files where the string is correct in context (for example a page explaining that a schedule was eliminated). When src/data/facts.ts replaces a value, add the old value here if it was typed into pages.",
+  "rules": [
+    {
+      "id": "ladwp-2009-tariff",
+      "pattern": "dated July 1, 2009|only retrievable LADWP tariff",
+      "reason": "The /solar-cost pages said the only retrievable LADWP tariff was dated July 1, 2009. LADWP's Residential Rates page publishes current R-1A prices by quarter (26.408¢ Tier 1 for July to September 2026) on base rates effective July 1, 2019. Use FACTS.ladwpR1a.",
+      "source": "https://www.ladwp.com/account/customer-service/electric-rates/residential-rates",
+      "checked": "2026-09-24"
+    },
+    {
+      "id": "pge-battery-rebate-200-left",
+      "pattern": "\\b200 rebates (?:left|remain)",
+      "reason": "Old PG&E Permanent Battery Storage Rebate count. PG&E's page showed 179 rebates remaining as of 09/18/2026. Use FACTS.pgeBatteryRebate.",
+      "source": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
+      "checked": "2026-09-24"
+    },
+    {
+      "id": "brand-program",
+      "phrase": "California Rate Relief Program",
+      "reason": "Decision #39 (2026-09-24): the brand is \"California Rate Relief\". \"Program\" reads like a state program. Backend voice scripts are out of scope and are not scanned.",
+      "source": "/home/claude/crr/out/gs_program/PROGRAM_BRIEF.md §3",
+      "checked": "2026-09-24"
+    },
+    {
+      "id": "minimum-bill-floor",
+      "phrase": "minimum bill floor",
+      "reason": "PG&E, SCE and SDG&E replaced the residential minimum charge with the Base Services Charge (SDG&E by October 1, 2025, SCE in November 2025, PG&E on March 1, 2026). PG&E: \"The Base Services Charge replaces the monthly Minimum Electric Charge.\" SCE: \"The minimum charge is no longer applicable.\" Use FACTS.pgeBaseServicesCharge / sceBaseServicesCharge / sdgeBaseServicesCharge.",
+      "source": "https://www.pge.com/en/account/billing-and-assistance/base-services-charge.html",
+      "checked": "2026-09-24"
+    },
+    {
+      "id": "cpa-battery-rebates-early-2024",
+      "pattern": "battery rebates beginning in early 2024",
+      "reason": "Future-tense launch date that passed more than two years ago (Downey and other Clean Power Alliance city pages, audit 4.4 #5). Restate the program's current status from cleanpoweralliance.org with a checked date, or remove it.",
+      "source": "content_quality_review.md 4.4 #5",
+      "checked": "2026-09-24"
+    },
+    {
+      "id": "lbnl-2026-no-size-class",
+      "pattern": "did not publish a size-class|no size-class \\(",
+      "reason": "LBNL's U.S. Distributed Solar and Storage: 2026 Data Update (August 2026) does publish size-class medians: small non-residential (100 kWdc or less) $3.1/W and large $2.4/W nationally, and $3.2/W and $2.6/W for California (slides 8 and 37). Use FACTS.lbnlNonResidentialPrice2025.",
+      "source": "https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf",
+      "checked": "2026-09-24"
+    },
+    {
+      "id": "pge-eliminated-schedules",
+      "pattern": "\\b(?:E-TOU-B|E-6|E-TOU Option A|EV-A)\\b",
+      "reason": "PG&E schedules that no longer exist: E-6 eliminated March 1, 2024 (AL 7191-E); E-TOU Option A discontinued December 31, 2020; E-TOU-B eliminated October 31, 2025 (AL 7747-E); E-V-A eliminated (AL 7771-E). Name a current schedule instead.",
+      "source": "https://www.pge.com/assets/rates/tariffs/res-inclu-tou-current.xlsx",
+      "checked": "2026-09-24",
+      "allowFiles": ["src/app/blog/pge-rate-schedules/page.tsx"]
+    }
+  ]
+}
