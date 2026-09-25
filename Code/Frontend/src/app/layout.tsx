@@ -304,8 +304,9 @@ export default async function RootLayout({
         />}
         <GoogleAnalytics />
         {isCRR && <FirstTouchCapture />}
-        {/* The Google Places script is loaded by the home page only (src/app/page.tsx),
-            the one CRR page whose form uses address suggestions. Loading it
+        {/* The Google Places script is loaded by the home-page wizard
+            (QualificationWizard) on the first focus of its address field, the
+            one CRR form that uses address suggestions. Loading it
             beforeInteractive here made every CRR page fetch and run Maps JS. */}
         <Providers>
           {/* display: contents — wrapper carries the skip-link target id without

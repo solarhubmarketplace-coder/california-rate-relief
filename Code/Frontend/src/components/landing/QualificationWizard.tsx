@@ -151,11 +151,39 @@ const initialFormData: FormData = {
   serviceMarket: 'CA',
 };
 
-/** Minimal window shape for the Maps script loaded in layout.tsx. */
+/** Minimal window shape for the Maps script this wizard injects. */
 type MapsWindow = Window & {
   google?: { maps?: { places?: unknown } };
   gm_authFailure?: () => void;
 };
+
+// Google Maps JavaScript API with the Places library, for the address field's
+// suggestions. Loaded on demand (plan item 4.2, 2026-09-24): the first focus or
+// keystroke in the address field injects it. It used to load with the home
+// page (386 KB, about 1.9 s of mobile LCP) for a field on the wizard's last
+// step. The URL and key are the ones the home page used.
+const PLACES_SCRIPT_ID = 'google-maps-places';
+const PLACES_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY;
+const PLACES_SCRIPT_SRC = PLACES_API_KEY
+  ? `https://maps.googleapis.com/maps/api/js?key=${PLACES_API_KEY}&libraries=places`
+  : '';
+
+/**
+ * Add the Maps script to the page once. Returns false when there is no key,
+ * so the address field stays the plain input it is without Maps.
+ */
+function injectPlacesScript(onError: () => void): boolean {
+  if (!PLACES_SCRIPT_SRC) return false;
+  if (document.getElementById(PLACES_SCRIPT_ID)) return true;
+  const script = document.createElement('script');
+  script.id = PLACES_SCRIPT_ID;
+  script.src = PLACES_SCRIPT_SRC;
+  script.async = true;
+  script.addEventListener('error', onError);
+  // Body, like next/script, so it sits outside the <head> React renders.
+  document.body.appendChild(script);
+  return true;
+}
 
 const creditOptions = [
   { id: 'yes', label: 'Yes', sublabel: 'Above 650' },
@@ -253,8 +281,15 @@ export function QualificationWizard({
   });
   const [placesFailed, setPlacesFailed] = useState(false);
   const placesActive = placesReady && !placesFailed;
+  // Set on the first focus or keystroke in the address field (see
+  // injectPlacesScript). Nothing Maps-related loads before that.
+  const [placesRequested, setPlacesRequested] = useState(false);
+  const requestPlaces = () => {
+    if (!placesRequested) setPlacesRequested(true);
+  };
 
   useEffect(() => {
+    if (!placesRequested) return;
     const mapsWindow = window as MapsWindow;
     // Google calls this global when the key is rejected (for example
     // ApiNotActivatedMapError); fall back to the plain input quietly.
@@ -272,18 +307,36 @@ export function QualificationWizard({
         initPlaces();
         return;
       }
-      // The home page loads the script afterInteractive, only when a key is
-      // configured; stop looking after ~30 s so a page without Maps does no
-      // further work.
+      // The script loads async; look for the Places namespace until it
+      // appears, and stop after ~30 s so a failed load does no further work.
       if (++tries < 60) timer = window.setTimeout(tryInit, 500);
     };
-    tryInit();
+    if (mapsWindow.google?.maps?.places || injectPlacesScript(() => setPlacesFailed(true))) {
+      tryInit();
+    }
     return () => {
       if (timer) window.clearTimeout(timer);
       if (mapsWindow.gm_authFailure === onAuthFailure) mapsWindow.gm_authFailure = previousAuthFailure;
     };
     // initPlaces and clearSuggestions are stable useCallbacks in the hook.
-  }, [clearSuggestions, initPlaces]);
+  }, [placesRequested, clearSuggestions, initPlaces]);
+
+  // Maps can arrive while the visitor is already typing. Offer suggestions for
+  // what is in the field then, once, instead of waiting for the next keystroke.
+  const placesWereActiveRef = useRef(false);
+  useEffect(() => {
+    if (!placesActive || placesWereActiveRef.current) return;
+    placesWereActiveRef.current = true;
+    const input = document.getElementById('address');
+    if (
+      input instanceof HTMLInputElement &&
+      document.activeElement === input &&
+      input.value &&
+      !hasUnconfirmedAttempt
+    ) {
+      setPlacesValue(input.value);
+    }
+  }, [placesActive, hasUnconfirmedAttempt, setPlacesValue]);
 
   const nextStep = () => {
     markStarted();
@@ -822,8 +875,10 @@ export function QualificationWizard({
                           type='text'
                           maxLength={500}
                           value={formData.address}
+                          onFocus={requestPlaces}
                           onChange={(e) => {
                             const value = e.target.value;
+                            requestPlaces();
                             updateFormData('address', value);
                             if (placesActive && !hasUnconfirmedAttempt) setPlacesValue(value);
                           }}
