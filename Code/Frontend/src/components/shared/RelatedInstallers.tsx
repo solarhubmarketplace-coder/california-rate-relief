@@ -11,11 +11,17 @@ import { ArrowRight, Building2 } from 'lucide-react';
 // Goal: kill the "orphan installer review" pattern from the audit.
 //
 // 2026-09-22 — status-claim audit: every bankruptcy/defunct/status claim
-// below was checked this session against a primary source (a court docket,
-// an SEC filing, a state regulator record, or the company's own investor
-// page) and now carries that source and date via `statusSource`. A claim
-// that did not check out was removed rather than restated with a citation
-// bolted on after the fact — see the per-entry notes.
+// below was checked against a primary source (a court docket, an SEC filing,
+// a state regulator record) and carries that source and date via
+// `statusSource`.
+//
+// 2026-09-24 (Block 3.3, item 5) — re-checked. Freedom Forever's case was
+// converted from Chapter 11 to Chapter 7 on Aug 7, 2026 (CourtListener's copy
+// of the D. Del. docket, case 26-10522), so its line now says so. Taglines
+// that rested on a company's own marketing ("America's largest", "Tier-1
+// panels", "veteran-owned", "boutique", panel brands) were replaced with
+// neutral lines or a figure from the CPUC's DG Stats records. The header no
+// longer promises "ratings" (Decision 10: no published scoring method).
 // =============================================================================
 
 interface StatusSource {
@@ -40,46 +46,50 @@ interface InstallerCard {
 // Curated set per topic. Most blog posts use 'general' — NEM-related posts
 // might surface a different mix. Keep this honest: we only link to reviews
 // that are genuinely relevant to the blog topic.
+const DG_STATS_SOURCE: StatusSource = {
+  publisher: 'CPUC DG Stats, Interconnected Project Sites (data through May 31, 2026)',
+  date: 'checked Sep 24, 2026',
+  url: 'https://www.californiadgstats.ca.gov/downloads/',
+};
+
+const SUNPOWER_8K: StatusSource = {
+  publisher: 'SEC EDGAR — SunPower Corp. Form 8-K',
+  date: 'Aug 5, 2024',
+  url: 'https://www.sec.gov/Archives/edgar/data/867773/000086777324000086/spwr-20240802.htm',
+};
+
+// Curated set per topic. Most blog posts use 'general'. Each tagline either
+// makes no factual claim or carries its source.
 const INSTALLER_PICKS: Record<string, InstallerCard[]> = {
   general: [
     {
       slug: 'sunrun-review',
       name: 'Sunrun',
-      tagline: "America's largest residential solar & storage provider; PPA/lease focus",
-      statusSource: {
-        publisher: 'Sunrun investor relations',
-        date: 'as of Sep 2026',
-        url: 'https://investors.sunrun.com/',
-      },
+      // Sunrun 37,356 of 145,404 California residential systems approved to
+      // connect in 2025, the largest count of any installer in the data set.
+      tagline: 'Named on 37,356 California home solar systems connected in 2025, the most of any installer',
+      statusSource: DG_STATS_SOURCE,
     },
     {
       slug: 'sunpower-review',
       name: 'SunPower',
-      tagline: 'Premium-brand panels; 2024 Chapter 11 restructuring',
-      // Not "(now SunStrong)" — checked this session and that's a different
-      // company. SunStrong Management is a separate entity that services
-      // legacy SunPower (and, since a 2025 acquisition, legacy Sunnova)
-      // lease/PPA fleets; it did not acquire the SunPower brand or new-build
-      // business. The entity that did is Complete Solaria, which rebranded
-      // to SunPower in April 2025 after buying the operating assets out of
-      // the August 2024 bankruptcy (see sunpower-review for the full case).
-      statusSource: {
-        publisher: 'SEC EDGAR — SunPower Corp. Form 8-K',
-        date: 'Aug 5, 2024',
-        url: 'https://www.sec.gov/Archives/edgar/data/867773/000086777324000086/spwr-20240802.htm',
-      },
+      // The 8-K: Chapter 11 petitions filed Aug 5, 2024 (D. Del., Case No.
+      // 24-11649), and an asset purchase agreement with Complete Solaria for
+      // the Blue Raven Solar, New Homes and dealer-network businesses.
+      tagline: 'Filed Chapter 11 on Aug 5, 2024; Complete Solaria agreed to buy parts of the business',
+      statusSource: SUNPOWER_8K,
     },
-    { slug: 'tesla-solar-review', name: 'Tesla Solar', tagline: 'Solar Roof + Powerwall integration; cash-buy focus' },
+    { slug: 'tesla-solar-review', name: 'Tesla Solar', tagline: 'Solar with Powerwall; ask for the net billing assumptions in writing' },
   ],
-  // NEM 3 / NBT-relevant posts — favor installers with battery + post-NEM 3 economics
+  // NEM 3 / NBT-relevant posts
   nem3: [
     { slug: 'tesla-solar-review', name: 'Tesla Solar', tagline: 'Solar with Powerwall; ask for net billing assumptions' },
     { slug: 'baker-electric-solar-review', name: 'Baker Electric Solar', tagline: 'California installer; ask for net billing assumptions in writing' },
-    { slug: 'semper-solaris-review', name: 'Semper Solaris', tagline: 'Veteran-owned CA installer; battery-forward post-NEM 3' },
+    { slug: 'semper-solaris-review', name: 'Semper Solaris', tagline: 'California installer; get its battery and export assumptions in writing' },
   ],
   // Low-income / affordability posts
   affordability: [
-    { slug: 'powur-solar-review', name: 'Powur', tagline: 'Network model; check who installs and services your system' },
+    { slug: 'powur-solar-review', name: 'Powur', tagline: 'Check who installs and who services your system' },
     { slug: 'sunrun-review', name: 'Sunrun', tagline: 'Leases and PPAs; read the escalator and transfer terms' },
     { slug: 'la-solar-group-review', name: 'LA Solar Group', tagline: 'Los Angeles-area installer; compare its written terms' },
   ],
@@ -88,19 +98,10 @@ const INSTALLER_PICKS: Record<string, InstallerCard[]> = {
     {
       slug: 'sunpower-review',
       name: 'SunPower',
-      // "Maxeon panels" (the pre-2024 exclusive supply relationship) is no
-      // longer accurate — checked this session against the same 8-K plus
-      // sunpower-review's own sourced text: that relationship was unwound in
-      // the bankruptcy, and today's SunPower sources Tier-1 panels from
-      // multiple suppliers.
-      tagline: 'Tier-1 panels since 2024 restructuring; premium-tier pricing',
-      statusSource: {
-        publisher: 'SEC EDGAR — SunPower Corp. Form 8-K',
-        date: 'Aug 5, 2024',
-        url: 'https://www.sec.gov/Archives/edgar/data/867773/000086777324000086/spwr-20240802.htm',
-      },
+      tagline: 'Filed Chapter 11 on Aug 5, 2024; confirm who backs an old warranty',
+      statusSource: SUNPOWER_8K,
     },
-    { slug: 'solar-optimum-review', name: 'Solar Optimum', tagline: 'Boutique CA installer; Panasonic / REC panels' },
+    { slug: 'solar-optimum-review', name: 'Solar Optimum', tagline: 'California installer; compare its written panel models and warranty' },
     { slug: 'baker-electric-solar-review', name: 'Baker Electric Solar', tagline: 'California installer; compare its written price and warranty' },
   ],
   // Bankruptcy / failed-installer focus
@@ -108,21 +109,20 @@ const INSTALLER_PICKS: Record<string, InstallerCard[]> = {
     {
       slug: 'freedom-forever-review',
       name: 'Freedom Forever',
-      tagline: 'Chapter 11 filed Apr 15, 2026 — what existing customers should do',
+      tagline: 'Filed Chapter 11 on Apr 15, 2026; the case became a Chapter 7 case on Aug 7, 2026',
       statusSource: {
-        publisher: 'U.S. Bankruptcy Court, D. Del. (Case No. 26-10522)',
-        date: 'Apr 15, 2026',
+        publisher: 'U.S. Bankruptcy Court, D. Del. (Case No. 26-10522), via CourtListener',
+        date: 'checked Sep 24, 2026',
         url: 'https://www.courtlistener.com/docket/73192534/freedom-forever-llc/',
       },
     },
     {
       slug: 'sullivan-solar-power-review',
       name: 'Sullivan Solar Power',
-      // The widely-repeated "defunct since 2021" date is trade-press/local
-      // news only (no primary source found this session). What a primary
-      // source does confirm is the CSLB license revocation below, which is
-      // itself sufficient reason not to hire this company.
-      tagline: 'CSLB revoked its contractor license — do not hire',
+      // The widely repeated "defunct since 2021" date is trade-press/local
+      // news only. The CSLB report lists Sullivan Solar Power of California
+      // Inc, license 839077, revoked 06/20/2022.
+      tagline: 'CSLB revoked its contractor license (No. 839077) on June 20, 2022',
       statusSource: {
         publisher: 'California CSLB — revoked-license report',
         date: 'Jun 20, 2022',
@@ -132,12 +132,8 @@ const INSTALLER_PICKS: Record<string, InstallerCard[]> = {
     {
       slug: 'sunpower-review',
       name: 'SunPower',
-      tagline: 'Chapter 11 filed Aug 5, 2024; now operates under Complete Solaria',
-      statusSource: {
-        publisher: 'SEC EDGAR — SunPower Corp. Form 8-K',
-        date: 'Aug 5, 2024',
-        url: 'https://www.sec.gov/Archives/edgar/data/867773/000086777324000086/spwr-20240802.htm',
-      },
+      tagline: 'Filed Chapter 11 on Aug 5, 2024; Complete Solaria agreed to buy parts of the business',
+      statusSource: SUNPOWER_8K,
     },
   ],
 };
@@ -167,7 +163,7 @@ export function RelatedInstallers({ picks = 'general', heading }: Props) {
             {heading ?? 'Compare California solar installers'}
           </h2>
           <p className='text-sm text-muted-foreground mt-1'>
-            We&apos;ve reviewed every major California installer with honest ratings, complaint patterns, and what each is best (and worst) at.
+            Our installer reviews rest on public records: complaint categories, court dockets, company filings and license checks.
           </p>
         </div>
       </div>
@@ -212,9 +208,9 @@ export function RelatedInstallers({ picks = 'general', heading }: Props) {
 
       {hasStatusClaims ? (
         <p className='mt-4 pt-4 border-t border-border text-xs text-muted-foreground'>
-          Company status notes above, including any bankruptcy, license
-          revocation or restructuring, carry their own source and date and
-          were last checked on 22 September 2026. Each company&apos;s review
+          Company notes above, including any bankruptcy, license revocation
+          or restructuring, carry their own source and date and were last
+          checked on 24 September 2026. Each company&apos;s review
           page sets out the fuller case behind them. Status can change after
           that date; confirm anything you intend to rely on.
         </p>
