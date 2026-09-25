@@ -145,7 +145,7 @@ export default function SolarCostIndex() {
             </h1>
 
             <p className='text-lg text-foreground/80 leading-relaxed mb-5'>
-              California homeowners who paid for their own solar systems reported a median of{' '}
+              California homeowners who bought their own solar systems reported a median of{' '}
               <strong>{formatPerWatt(statePerWatt.median as number)} per watt</strong> from January 2025 to
               May 2026, across {statePerWatt.n.toLocaleString('en-US')} systems in PG&amp;E, SCE and
               SDG&amp;E territory. The middle half paid {formatPerWatt(statePerWatt.p25 as number)} to{' '}

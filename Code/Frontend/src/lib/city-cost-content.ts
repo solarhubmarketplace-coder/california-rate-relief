@@ -308,7 +308,7 @@ function answerBlocks(row: CityCostRow, b: CostBenchmark): Block[] {
   blocks.push({
     kind: 'p',
     parts: [
-      `${reporters(cost)} who paid for their own solar systems reported a median of `,
+      `${reporters(cost)} who bought their own solar systems reported a median of `,
       { strong: `${formatPerWatt(perWatt.median)} per watt` },
       ` between January 2025 and May 2026, across ${count(perWatt.n)} systems. The middle half paid ${formatPerWatt(perWatt.p25)} to ${formatPerWatt(perWatt.p75)} per watt.`,
     ],
@@ -363,7 +363,7 @@ function answerBlocks(row: CityCostRow, b: CostBenchmark): Block[] {
     parts: [
       'Source: ',
       { text: DG_SOURCE.label, href: DG_SOURCE.url, external: true },
-      `, checked ${formatVerified(DG_SOURCE.verifiedAt)}. Owner-paid, solar-only systems of 1 to 25 kW; leases, PPAs and battery systems are left out (`,
+      `, checked ${formatVerified(DG_SOURCE.verifiedAt)}. Homeowner-owned, solar-only systems of 1 to 25 kW; leases, PPAs and battery systems are left out (`,
       { text: 'method', href: `${COST_RULES_PATH}#method` },
       '). The ',
       { text: 'CPUC', href: CPUC_GUIDE_DGSTATS_NOTE.url, external: true },
