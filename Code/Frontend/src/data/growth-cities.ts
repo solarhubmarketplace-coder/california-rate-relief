@@ -12072,7 +12072,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "label": "Sacramento, across the causeway on SMUD"
       },
       {
-        "href": "/blog/what-is-nem-true-up",
+        "href": "/solar-problems/true-up-bill-california-explained",
         "label": "What happens at a solar true-up"
       },
       {
@@ -12751,7 +12751,7 @@ export const growthCities: Record<string, GrowthCity> = {
         "label": "Bird-proofing solar panels: what it costs and when it helps"
       },
       {
-        "href": "/blog/what-is-nem-true-up",
+        "href": "/solar-problems/true-up-bill-california-explained",
         "label": "What happens at a solar true-up"
       }
     ],

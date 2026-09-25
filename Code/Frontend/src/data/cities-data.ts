@@ -545,44 +545,45 @@ export function getAllCitySlugs(): string[] {
 // ---------------------------------------------------------------------------
 const SCE_RELATED_ARTICLES = [
   { slug: 'sce-rate-increase-2026', title: 'SCE Rate Increase 2026: What You Need to Know' },
-  { slug: 'nem-3-california-still-worth-it', title: 'Is Solar Still Worth It Under NEM 3.0?' },
+  { slug: 'nem-2-vs-nem-3-california', title: 'NEM 2.0 vs NEM 3.0 in California' },
   { slug: 'california-24-dollar-fixed-charge-explained', title: 'The New $24 Fixed Charge, Explained' },
-  { slug: 'solar-tax-credit-expired-2026-options', title: 'Solar Tax Credit Expired — Your Options Now' },
+  { slug: 'california-solar-tax-credit-2026', title: 'California Solar Tax Credit and Incentives (2026)' },
 ];
 
 const SDGE_RELATED_ARTICLES = [
   { slug: 'pge-vs-sce-vs-sdge-rates-compared', title: 'PG&E vs SCE vs SDG&E: Rates Compared' },
-  { slug: 'nem-3-california-still-worth-it', title: 'Is Solar Still Worth It Under NEM 3.0?' },
+  { slug: 'nem-2-vs-nem-3-california', title: 'NEM 2.0 vs NEM 3.0 in California' },
   { slug: 'california-24-dollar-fixed-charge-explained', title: 'The New $24 Fixed Charge, Explained' },
-  { slug: 'solar-tax-credit-expired-2026-options', title: 'Solar Tax Credit Expired — Your Options Now' },
+  { slug: 'california-solar-tax-credit-2026', title: 'California Solar Tax Credit and Incentives (2026)' },
 ];
 
 const PGE_RELATED_ARTICLES = [
   { slug: 'pge-vs-sce-vs-sdge-rates-compared', title: 'PG&E vs SCE vs SDG&E: Rates Compared' },
-  { slug: 'nem-3-california-still-worth-it', title: 'Is Solar Still Worth It Under NEM 3.0?' },
+  { slug: 'nem-2-vs-nem-3-california', title: 'NEM 2.0 vs NEM 3.0 in California' },
   { slug: 'california-24-dollar-fixed-charge-explained', title: 'The New $24 Fixed Charge, Explained' },
-  { slug: 'solar-tax-credit-expired-2026-options', title: 'Solar Tax Credit Expired — Your Options Now' },
+  { slug: 'california-solar-tax-credit-2026', title: 'California Solar Tax Credit and Incentives (2026)' },
 ];
 
 const MUNI_RELATED_ARTICLES = [
   { slug: 'pge-vs-sce-vs-sdge-rates-compared', title: 'California Utility Rates Compared' },
-  { slug: 'nem-3-california-still-worth-it', title: 'Is Solar Still Worth It Under NEM 3.0?' },
-  { slug: 'solar-tax-credit-expired-2026-options', title: 'Solar Tax Credit Expired — Your Options Now' },
+  { slug: 'nem-2-vs-nem-3-california', title: 'NEM 2.0 vs NEM 3.0 in California' },
+  { slug: 'california-solar-tax-credit-2026', title: 'California Solar Tax Credit and Incentives (2026)' },
   { slug: 'prepaid-ppa-california-2026', title: 'Prepaid PPA in California: 2026 Guide' },
 ];
 
 const ADDRESS_CHECK_RELATED_ARTICLES = [
-  { slug: 'are-solar-panels-worth-it-california', title: 'Are Solar Panels Worth It in California?' },
+  { slug: 'solar-payback-period-california', title: 'Solar Payback Period in California' },
   { slug: 'is-my-roof-good-for-solar-california', title: 'Is My Roof Good for Solar?' },
   { slug: 'how-big-of-a-solar-system-do-i-need-california', title: 'How Big Should a Solar System Be?' },
   { slug: 'is-it-better-to-buy-or-lease-solar-panels-california', title: 'Buy or Lease Solar in California?' },
 ];
 
 const LADWP_RELATED_ARTICLES = [
-  { slug: 'are-solar-panels-worth-it-california', title: 'Are Solar Panels Worth It in California?' },
-  { slug: 'nem-3-california-still-worth-it', title: 'Is Solar Still Worth It Under NEM 3.0?' },
+  // GS-MERGES 2026-09-24: two merged slugs replaced with live ones.
+  { slug: 'solar-payback-period-california', title: 'Solar Payback Period in California' },
+  { slug: 'ladwp-net-metering', title: 'LADWP Net Metering' },
   { slug: 'solar-ppa-explained-california', title: 'Solar PPA Explained: California Guide' },
-  { slug: 'solar-tax-credit-expired-2026-options', title: 'Solar Tax Credit Expired — Your Options Now' },
+  { slug: 'california-solar-tax-credit-2026', title: 'California Solar Tax Credit and Incentives (2026)' },
 ];
 
 // ---------------------------------------------------------------------------
@@ -5875,7 +5876,7 @@ export const CITIES: CityData[] = [
   googleSunroofUrl: 'https://sunroof.withgoogle.com',
   relatedArticles: [
     { slug: 'pge-vs-sce-vs-sdge-rates-compared', title: 'California Utility Rates Compared' },
-    { slug: 'nem-3-california-still-worth-it', title: 'Is Solar Still Worth It Under NEM 3.0?' },
+    { slug: 'nem-2-vs-nem-3-california', title: 'NEM 2.0 vs NEM 3.0 in California' },
   ],
   bills: {
     answer:

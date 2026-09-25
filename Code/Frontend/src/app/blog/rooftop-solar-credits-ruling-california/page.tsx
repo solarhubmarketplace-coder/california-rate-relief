@@ -234,9 +234,8 @@ export default function RooftopSolarCreditsRuling() {
           </ul>
           <p>
             For the numbers behind those choices, see <Link href="/blog/nem-2-vs-nem-3-california">NEM 2.0 vs NEM 3.0 in California</Link>,{' '}
-            <Link href="/blog/nem-3-california-still-worth-it">whether solar still pays under net billing</Link> and{' '}
-            <Link href="/battery/battery-payback-nem-3-california">battery payback under NEM 3.0</Link>. If you are
-            deciding from scratch, start with <Link href="/blog/are-solar-panels-worth-it-california">whether solar panels are worth it in California</Link>.
+            <Link href="/solar-panels-california#still-worth-it-nem-3">whether solar still pays under net billing</Link> and{' '}
+            <Link href="/battery/battery-payback-nem-3-california">battery payback under NEM 3.0</Link>.
           </p>
         </section>
 

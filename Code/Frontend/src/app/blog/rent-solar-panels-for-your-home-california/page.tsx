@@ -1,7 +1,8 @@
 // 2026-09-23 upgrade (topical-authority wave, agent costfin). Title and URL kept:
 // the Decision 14 G03 retitle of this page is held ("held: Decision 14 default"),
-// and the G05 fold-in of the lease-cost page is held too, so this page links to
-// that page instead of absorbing it. Added: rent-to-own, what renting costs,
+// and the G05 fold-in of the lease-cost page was held too at that date. GS-MERGES
+// 2026-09-24 (plan 6.3) applied G05: the lease-cost page now 301s here and its
+// material is in #what-sets-the-payment. Added: rent-to-own, what renting costs,
 // end of term, getting out of a lease, rent vs buy. Tenant options moved to
 // /blog/solar-for-renters and are summarized here. Claims the previous body
 // carried without a primary source on 2026-09-23 (SOMAH tenant credit amounts,
@@ -22,6 +23,7 @@ import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 const PATH = '/blog/rent-solar-panels-for-your-home-california';
 const URL = `https://ratereliefca.com${PATH}`;
 const UPDATED = '2026-09-23';
+const MERGED = '2026-09-24'; // GS-MERGES 2026-09-24: G05 fold-in
 const link = 'text-primary underline underline-offset-2';
 
 const S = {
@@ -35,6 +37,8 @@ const S = {
   sunnova8k: 'https://www.sec.gov/Archives/edgar/data/1772695/000177269525000105/nova-20250608.htm',
   cpucCre: 'https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-updates-existing-community-solar-programs',
   ladwpRooftops: 'https://www.ladwp.com/residential-services/solar-programs/solar-rooftops',
+  // GS-MERGES 2026-09-24: the disclosure-document statute, carried with G05.
+  bpc7169: 'https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7169',
 } as const;
 
 const sources: Source[] = [
@@ -46,6 +50,7 @@ const sources: Source[] = [
   { label: 'Berkeley Lab: Leasing Into the Sun (LBNL-1007003, January 2017)', url: S.lbnlTpo },
   { label: 'Sunnova Energy International: Form 8-K (Item 1.03), filed 2025-06-09', url: S.sunnova8k },
   { label: 'CPUC: community solar program update (June 11, 2026)', url: S.cpucCre },
+  { label: 'California Business and Professions Code § 7169: the solar energy system disclosure document (checked September 24, 2026)', url: S.bpc7169 },
   { label: 'LADWP: Solar Rooftops (utility-owned system, annual roof payments)', url: S.ladwpRooftops },
 ];
 
@@ -63,7 +68,7 @@ export const metadata: Metadata = {
     type: 'article',
     url: URL,
     publishedTime: '2026-04-23T00:00:00Z',
-    modifiedTime: `${UPDATED}T00:00:00Z`,
+    modifiedTime: `${MERGED}T00:00:00Z`,
     images: [CRR_SOCIAL_CARD],
   },
   twitter: crrTwitter(metaTitle, metaDescription),
@@ -114,7 +119,7 @@ export default function RentSolarPanels() {
         headline="Rent Solar Panels for Your Home in California: Lease vs PPA"
         url={URL}
         datePublished="2026-04-23"
-        dateModified={UPDATED}
+        dateModified={MERGED}
         description={metaDescription}
       />
       <FaqJsonLd items={faqs} />
@@ -123,7 +128,7 @@ export default function RentSolarPanels() {
         title="Rent Solar Panels for Your Home in California: Lease vs PPA"
         crumbs={[{ label: 'Leases, PPAs and financing', href: '/blog/ppa-loan-vs-solar-lease-vs-cash-california' }]}
         crumbLabel="Rent solar panels"
-        updated={UPDATED}
+        updated={MERGED}
         sourceCheckedDate={UPDATED}
         sources={sources}
         faqs={faqs}
@@ -250,12 +255,142 @@ export default function RentSolarPanels() {
               PG&amp;E
             </a>
             ). Compare lease or PPA payment plus remaining bill against today&rsquo;s bill, for the
-            first year and the last. What sets the payment itself is in{' '}
-            <Link className={link} href="/blog/how-much-does-it-cost-to-lease-solar-panels-california">
-              what a solar lease costs in California
-            </Link>
+            first year and the last. What sets the payment itself is 
+            <a className={link} href="#what-sets-the-payment">
+              below
+            </a>
             .
           </p>
+        </section>
+
+        {/* GS-MERGES 2026-09-24: /blog/how-much-does-it-cost-to-lease-solar-panels-california
+            301s here (plan 6.3, topic-map G05, cluster 12 "solar leasing").
+            Its disclosure-document, payment-inputs, two-escalators,
+            compounding and contract-terms material is carried below; Bus. &
+            Prof. Code 7169 and the CPUC guide re-read 2026-09-24. Not carried:
+            one installer's escalator band and two installers' production-
+            guarantee and buyout wording (installer sites are not sources). */}
+        <section id="what-sets-the-payment">
+          <h2>What sets a lease or PPA payment</h2>
+          <p>
+            A lease payment is not a list price. It comes from one roof, one production estimate,
+            one term and one household&rsquo;s use, so two quotes for the same address can differ
+            and both be real. California puts the total in a fixed place: the Solar Energy System
+            Disclosure Document, &ldquo;printed on the front page or cover page of every solar
+            energy contract&rdquo; in boldface 16-point type, must show &ldquo;the total cost and
+            payments for the system, including financing costs&rdquo; (
+            <a className={link} href={S.bpc7169}>
+              Bus. &amp; Prof. Code § 7169(b)
+            </a>
+            , checked September 24, 2026).
+          </p>
+          <p className="mt-3">Ask what the payment is built from:</p>
+          <ul className="mt-2 list-disc space-y-2 pl-5">
+            <li>The system size, panel and inverter models, and roof layout.</li>
+            <li>The production estimate and its shading, tilt and loss assumptions.</li>
+            <li>
+              Whether you pay for the equipment (a lease) or for its output (a PPA), which changes
+              what a low-production year costs you.
+            </li>
+            <li>The term, and whether you pay monthly or prepay part of it.</li>
+            <li>Any escalator, and anything else in scope: battery, roof or panel work.</li>
+          </ul>
+          <h3 className="mt-6">Two different things get called an escalator</h3>
+          <p>
+            A contract escalator raises what you pay the provider each year; ask for the full
+            payment schedule for every year of the term. A utility-rate escalation assumption is
+            an input to the savings estimate, not a charge. The CPUC says &ldquo;solar providers
+            are allowed to use a maximum electricity rate escalation of 10% in any calculation, as
+            of 2025&rdquo; (
+            <a className={link} href={S.cpucGuide}>
+              CPUC
+            </a>
+            , checked September 24, 2026). Ask which one a salesperson means.
+          </p>
+          <p className="mt-3">
+            A contract escalator compounds. With the first year&rsquo;s payment set at 100, here
+            is where each rate takes it (arithmetic only, no dollar figure):
+          </p>
+          <div className="mt-3 overflow-x-auto rounded-xl border">
+            <table className="w-full text-left text-sm">
+              <caption className="sr-only">Escalator compounding index by contract year</caption>
+              <thead className="bg-muted">
+                <tr>
+                  <th className="p-3">Year</th>
+                  <th className="p-3">1% a year</th>
+                  <th className="p-3">2% a year</th>
+                  <th className="p-3">3% a year</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr className="border-t">
+                    <td className="p-3">1</td>
+                    <td className="p-3">100</td>
+                    <td className="p-3">100</td>
+                    <td className="p-3">100</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="p-3">5</td>
+                    <td className="p-3">104</td>
+                    <td className="p-3">108</td>
+                    <td className="p-3">113</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="p-3">10</td>
+                    <td className="p-3">109</td>
+                    <td className="p-3">120</td>
+                    <td className="p-3">130</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="p-3">15</td>
+                    <td className="p-3">115</td>
+                    <td className="p-3">132</td>
+                    <td className="p-3">151</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="p-3">20</td>
+                    <td className="p-3">121</td>
+                    <td className="p-3">146</td>
+                    <td className="p-3">175</td>
+                  </tr>
+                  <tr className="border-t">
+                    <td className="p-3">25</td>
+                    <td className="p-3">127</td>
+                    <td className="p-3">161</td>
+                    <td className="p-3">203</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+          <h3 className="mt-6">Terms that decide a cost you have not been quoted</h3>
+          <ul className="mt-2 list-disc space-y-2 pl-5">
+            <li>
+              <strong>End of term:</strong> renewal, removal, purchase, or nothing stated.
+            </li>
+            <li>
+              <strong>Buyout and early termination:</strong> the formula in the contract, not a
+              verbal estimate.
+            </li>
+            <li>
+              <strong>A home sale:</strong> whether a buyer may take over the agreement, and what
+              happens if not. Section 7169(c) lets the disclosure cover the effect on a sale,
+              &ldquo;including any balloon payments or solar energy system relocation that may be
+              required if the contract is not assigned to the new owner.&rdquo;
+            </li>
+            <li>
+              <strong>Repairs, monitoring and insurance:</strong> who is responsible, for how
+              long, and what is excluded.
+            </li>
+            <li>
+              <strong>Production guarantee:</strong> whether there is one, what output it covers,
+              how a shortfall is measured and who starts a claim. An estimate is not a guarantee,
+              and a guarantee does not cap the escalator.
+            </li>
+            <li>
+              <strong>Roof access:</strong> who pays to remove and reinstall the system if the
+              roof needs work during the term.
+            </li>
+          </ul>
         </section>
 
         <section>

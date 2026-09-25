@@ -658,7 +658,7 @@ export function CityCostPage({ row }: { row: CityCostRow }) {
                 <Link href='/blog/is-it-better-to-buy-or-lease-solar-panels-california' className={link}>
                   buying versus leasing in California
                 </Link>,{' '}
-                <Link href='/blog/no-upfront-cost-solar-panels' className={link}>
+                <Link href='/blog/free-solar-panels-california#no-money-down' className={link}>
                   what a no-upfront-cost offer actually costs
                 </Link>,{' '}
                 <Link href='/solar-problems/solar-dealer-fees-explained' className={link}>

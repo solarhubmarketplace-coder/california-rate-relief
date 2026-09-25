@@ -526,7 +526,7 @@ export default function HowMuchToLeaseSolarPanelsCalifornia() {
           the contract term, and does not change what you owe in total. For
           what the claim does and doesn&rsquo;t mean, including
           California&rsquo;s cap on required down payments, see{" "}
-          <Link className="underline" href="/blog/zero-down-solar-california">
+          <Link className="underline" href="/blog/free-solar-panels-california#no-money-down">
             what a $0-down solar offer means
           </Link>
           .
@@ -723,7 +723,7 @@ export default function HowMuchToLeaseSolarPanelsCalifornia() {
             note: "the 2026 federal-credit dating rule and what it changes",
           },
           {
-            href: "/blog/zero-down-solar-california",
+            href: "/blog/free-solar-panels-california#no-money-down",
             label: "What a no-down-payment solar offer means",
             note: "why the first payment is not the total",
           },

@@ -1354,10 +1354,6 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "C-PACE financing for commercial solar"
       },
       {
-        "href": "/commercial-solar/financing-options",
-        "label": "Commercial solar financing options"
-      },
-      {
         "href": "/commercial-solar/sgip-battery-storage",
         "label": "SGIP status for commercial battery storage"
       },
@@ -1406,10 +1402,6 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "Solar payback period in California"
       },
       {
-        "href": "/blog/no-upfront-cost-solar-panels",
-        "label": "No-upfront-cost solar: who pays"
-      },
-      {
         "href": "/blog/solar-pool-heating-california",
         "label": "Solar Pool Heating in California: Cost, Sizing and Payback"
       },
@@ -1448,10 +1440,6 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/blog/solar-panel-removal-reinstall-cost",
         "label": "Solar Panel Removal for Roof Replacement: CA Quote Checklist"
-      },
-      {
-        "href": "/blog/are-solar-panels-worth-it-california",
-        "label": "Whether solar panels pay off in California"
       },
       {
         "href": "/blog/switch-to-solar-california",
@@ -1662,16 +1650,8 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "Are Free Solar Panels Real in California? The CPUC Answer"
       },
       {
-        "href": "/blog/how-much-does-it-cost-to-lease-solar-panels-california",
-        "label": "What a solar lease costs"
-      },
-      {
         "href": "/blog/solar-ppa-explained-california",
         "label": "How a solar PPA works"
-      },
-      {
-        "href": "/blog/zero-down-solar-california",
-        "label": "Zero-down solar offers, explained"
       },
       {
         "href": "/blog/what-happens-if-stop-paying-solar-lease-california",
@@ -1742,14 +1722,6 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "Why Is My PG&E Bill So High? 7 Causes to Check (2026)"
       },
       {
-        "href": "/blog/solar-tax-credit-2026",
-        "label": "Federal credit: completion dates and records"
-      },
-      {
-        "href": "/blog/solar-tax-credit-expired-2026-options",
-        "label": "Options after the federal credit ended"
-      },
-      {
         "href": "/blog/tech-clean-california-heat-pump-rebate",
         "label": "TECH Clean California heat pump rebates"
       },
@@ -1776,19 +1748,7 @@ export const TOPIC_HUBS: TopicHub[] = [
     "label": "Installer and panel brand reviews",
     "hubPage": "/solar-installers",
     "hubPageLabel": "California Solar Company Reviews and Comparisons",
-    "spokes": [
-      {
-        "href": "/solar-installers/momentum-solar-vs-trinity-solar",
-        "label": "Momentum Solar vs Trinity Solar (2026): Records Compared"
-      },
-      {
-        "href": "/solar-installers/adt-solar-vs-momentum-solar",
-        "label": "ADT Solar vs Momentum Solar: ADT Exited Solar in 2024"
-      },
-      {
-        "href": "/solar-installers/sunrun-vs-trinity-solar",
-        "label": "Sunrun vs Trinity Solar (2026): Service Area, BBB, Contracts"
-      },
+    "spokes": [,
       {
         "href": "/solar-installers/pge-and-sunrun",
         "label": "PG&E and Sunrun: Battery Programs, Payments, Who Qualifies"
@@ -2162,10 +2122,6 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "NEM on a PG&E bill"
       },
       {
-        "href": "/blog/what-is-nem-true-up",
-        "label": "What a NEM true-up is"
-      },
-      {
         "href": "/blog/why-are-my-nem-charges-so-high",
         "label": "Why NEM charges run high"
       },
@@ -2188,14 +2144,6 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/commercial-solar/vnem-aggregation-multi-meter",
         "label": "Virtual net metering and meter aggregation"
-      },
-      {
-        "href": "/blog/nem-3-california-timeline",
-        "label": "NEM 3.0 California Timeline: Confirmed Dates"
-      },
-      {
-        "href": "/blog/nem-3-california-still-worth-it",
-        "label": "Is Solar Still Worth It Under California Net Billing?"
       },
       {
         "href": "/blog/what-is-nem-3-california",
@@ -2403,10 +2351,6 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/solar-installers/solar-installer-bankruptcy-california",
         "label": "When a solar installer goes bankrupt"
-      },
-      {
-        "href": "/solar-problems/solar-cancellation-california",
-        "label": "How to get out of a solar contract"
       }
     ]
   },

@@ -359,7 +359,7 @@ export default function TeslaSolarReview() {
                 say the solar business was substantially wound down and is now reported as discontinued operations.
                 <Cite href={SRC.adtFy24} date={checked} /> There is no ADT Solar quote to set against Tesla’s. If you are an
                 existing ADT Solar customer, our{' '}
-                <Link href='/solar-installers/adt-solar-vs-momentum-solar' className={a}>ADT Solar page</Link> covers what
+                <Link href='/solar-installers/momentum-solar-review#adt-solar' className={a}>ADT Solar section</Link> covers what
                 ADT has and has not said about service.
               </p>
               <p className={p}>

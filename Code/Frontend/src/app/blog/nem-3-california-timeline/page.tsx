@@ -258,7 +258,7 @@ export default function Nem3TimelinePage() {
                 links={[
                   { href: '/blog/what-is-nem-3-california', label: 'What NEM 3.0 is, starting from the bill' },
                   { href: '/blog/net-billing-vs-net-metering-california', label: 'What the CPUC’s 2022 decision adopted' },
-                  { href: '/blog/nem-3-california-still-worth-it', label: 'Whether solar is still worth it now' },
+                  { href: '/solar-panels-california#still-worth-it-nem-3', label: 'Whether solar is still worth it now' },
                   { href: '/battery/battery-payback-nem-3-california', label: 'Battery payback under net billing' },
                 ]}
               />

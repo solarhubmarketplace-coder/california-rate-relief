@@ -198,9 +198,9 @@ export function WhenZeroDownIsFair() {
         Then judge it as what it is: a way to pay for equipment over time. The questions
         are total cost, rate, term and what happens if you sell. The pros and cons of that
         trade are in{' '}
-        <Link className={link} href="/blog/no-upfront-cost-solar-panels">
-          no-upfront-cost solar: who pays and when
-        </Link>
+        <a className={link} href="#no-money-down">
+          $0 down or no upfront cost: where the money goes
+        </a>
         .
       </p>
     </section>

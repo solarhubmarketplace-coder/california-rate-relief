@@ -497,7 +497,7 @@ export default function CommercialSolarCompanies() {
                   and claim the tax benefits), a lease, a power purchase agreement where a third
                   party owns the system and sells you the power, or C-PACE, repaid on the
                   property tax bill. The{' '}
-                  <Link href="/commercial-solar/financing-options" className={link}>
+                  <Link href="/blog/commercial-solar-financing-california" className={link}>
                     commercial financing options guide
                   </Link>{' '}
                   compares them, and{' '}

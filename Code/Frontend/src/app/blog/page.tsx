@@ -307,14 +307,6 @@ const blogPosts: BlogPost[] = [
     category: 'California Solar Policy',
   },
   {
-    slug: 'what-is-nem-true-up',
-    title: 'What Is a NEM True-Up? How the Annual Solar Bill Works',
-    excerpt:
-      'A NEM true-up is the yearly bill that settles a solar account’s charges and credits. How it works on NEM 2.0 and NEM 3.0, and what happens to extra credit.',
-    date: '2026-09-23',
-    category: 'California Solar Policy',
-  },
-  {
     slug: 'when-does-nem-2-expire',
     title: 'When Does NEM 2.0 Expire? The 20-Year Clock Explained',
     excerpt:
@@ -337,14 +329,6 @@ const blogPosts: BlogPost[] = [
       'A prepaid solar lease swaps monthly payments for one upfront payment. The provider still owns the panels. Costs, sale, buyout and end-of-term checks.',
     date: '2026-09-23',
     category: 'Solar Financing',
-  },
-  {
-    slug: 'no-upfront-cost-solar-panels',
-    title: 'No Upfront Cost Solar Panels in California: Who Pays',
-    excerpt:
-      'No-upfront-cost solar is paid later: a loan, a lease or a per-kWh PPA. How the company gets paid, the pros and cons, and the total-cost test to run first.',
-    date: '2026-09-23',
-    category: 'Solar Savings',
   },
   {
     slug: 'solar-payback-period-california',
@@ -679,24 +663,6 @@ const blogPosts: BlogPost[] = [
     category: 'Utility Rates',
   },
   {
-    slug: 'solar-tax-credit-expired-2026-options',
-    title: 'Solar Tax Credit Ended: California Options in 2026',
-    excerpt:
-      'Check the expenditure deadline, separate public assistance from payment contracts, and compare a proposal without an unavailable homeowner credit.',
-    date: '2026-09-10',
-    readTime: '8 min read',
-    category: 'Solar Savings',
-  },
-  {
-    slug: 'nem-3-california-still-worth-it',
-    title: 'Is Solar Still Worth It Under NEM 3.0 in California? (2026 Guide)',
-    excerpt:
-      'NEM 3.0 credits exports at values usually below the retail rate. When solar can still work in 2026, and what a battery changes.',
-    date: '2026-04-14',
-    readTime: '9 min read',
-    category: 'Solar Education',
-  },
-  {
     slug: 'pge-vs-sce-vs-sdge-rates-compared',
     title: 'PG&E vs. SCE vs. SDG&E: Which California Utility Customers Pay the Most in 2026?',
     excerpt:
@@ -728,15 +694,6 @@ const blogPosts: BlogPost[] = [
     title: 'Net Billing vs Net Metering: The California Solar Difference, Explained',
     excerpt:
       "Net metering and net billing sound similar but pay you very differently. Here's what California's NEM 3.0 Net Billing tariff changed.",
-    date: '2026-04-23',
-    readTime: '7 min read',
-    category: 'California Solar Policy',
-  },
-  {
-    slug: 'nem-3-california-timeline',
-    title: 'NEM 3.0 California Timeline: Key Dates, Deadlines, and What Happens Next',
-    excerpt:
-      'A complete timeline of NEM 3.0 — the CPUC vote, the April 2023 go-live, grandfathering windows, AB 942, and what is ahead in 2026 and beyond.',
     date: '2026-04-23',
     readTime: '7 min read',
     category: 'California Solar Policy',
@@ -785,15 +742,6 @@ const blogPosts: BlogPost[] = [
     date: '2026-04-23',
     readTime: '7 min read',
     category: 'Solar Financing',
-  },
-  {
-    slug: 'are-solar-panels-worth-it-california',
-    title: 'Are Solar Panels Worth It in California? 2026 Honest Answer',
-    excerpt:
-      "For most California homeowners paying $200+ per month, solar is still worth it in 2026. but only with a battery and only if the math fits your situation.",
-    date: '2026-04-23',
-    readTime: '8 min read',
-    category: 'Solar Decision',
   },
   {
     slug: 'switch-to-solar-california',
@@ -931,24 +879,6 @@ const blogPosts: BlogPost[] = [
     readTime: '11 min read',
     category: 'Solar Financing',
   },
-  {
-    slug: 'how-much-does-it-cost-to-lease-solar-panels-california',
-    title: 'How Much Does It Cost to Lease Solar Panels in California?',
-    excerpt:
-      'No two lease quotes are built the same way. What determines the payment, which contract terms move it, and the disclosure document California requires to carry the total.',
-    date: '2026-09-18',
-    readTime: '10 min read',
-    category: 'Solar Financing',
-  },
-  {
-    slug: 'zero-down-solar-california',
-    title: 'What Does $0 Down Solar Mean in California?',
-    excerpt:
-      'A no-down-payment offer is a statement about the first payment, not the total. Where the cost actually sits in a loan, a lease and a PPA, and what California already caps.',
-    date: '2026-09-18',
-    readTime: '8 min read',
-    category: 'Solar Financing',
-  },
   // claude/audit-links-20260918 — fourteen posts that were published and then
   // linked from nowhere. The 2026-09-18 link audit found them with zero inbound
   // internal links anywhere on the site: they were in the sitemap, and that was
@@ -981,14 +911,6 @@ const blogPosts: BlogPost[] = [
       'Purchase, loan, PPA, PACE and SBA paperwork compared for the same commercial project, so ownership and payment terms are chosen on documents rather than on a monthly figure.',
     date: '2026-09-11',
     category: 'Solar Financing',
-  },
-  {
-    slug: 'solar-tax-credit-2026',
-    title: 'Solar Tax Credit in 2026: Completion Dates and Records',
-    excerpt:
-      'A payment receipt is not the whole record. The installation timeline and the correct tax year decide what can be claimed, and a deposit settles neither.',
-    date: '2026-09-10',
-    category: 'California Solar Incentives',
   },
   {
     slug: 'ab-942-california-solar',

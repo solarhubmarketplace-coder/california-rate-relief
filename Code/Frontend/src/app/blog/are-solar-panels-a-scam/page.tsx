@@ -292,7 +292,7 @@ export default function AreSolarPanelsAScam() {
           <h2>So is solar worth it?</h2>
           <p>
             Once the sales tactics are set aside, whether solar pays is a numbers question about your usage, your
-            utility and how you pay for the system. <Link href="/blog/are-solar-panels-worth-it-california">Are solar panels worth it in California?</Link>{' '}
+            utility and how you pay for the system. <Link href="/solar-panels-california#worth-it">Are solar panels worth it in California?</Link>{' '}
             works through it, and <Link href="/blog/ppa-loan-vs-solar-lease-vs-cash-california">cash vs loan vs lease vs PPA</Link>{' '}
             compares the ways to pay. After installation, <Link href="/solar-panel-maintenance-california">our maintenance guide</Link>{' '}
             covers what upkeep a system needs.

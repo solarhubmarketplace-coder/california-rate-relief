@@ -133,12 +133,8 @@ const WRITTEN_GUIDES: { href: string; anchor: string; blurb: string }[] = [
     blurb:
       "What the published per-watt figures are by system size, where they come from and the date they were checked, so a bid can be read against something.",
   },
-  {
-    href: "/commercial-solar/financing-options",
-    anchor: "Commercial solar financing: PPA, lease, direct purchase and C-PACE",
-    blurb:
-      "What each structure obliges you to, who takes the tax position and what changes when the property is sold or refinanced.",
-  },
+  // GS-MERGES 2026-09-24: /commercial-solar/financing-options merged into
+  // /blog/commercial-solar-financing-california, listed in BLOG_GUIDES below.
   {
     href: "/commercial-solar/cpace-financing-california",
     anchor: "How C-PACE financing works in California",

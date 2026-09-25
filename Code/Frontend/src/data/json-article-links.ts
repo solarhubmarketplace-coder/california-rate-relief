@@ -103,18 +103,7 @@ export const JSON_ARTICLE_RELATED: Record<string, JsonArticleRelated> = {
       { href: '/solar-installers/sunrun-buyout-cost', label: 'How a Sunrun buyout price is calculated' },
       { href: '/blog/what-happens-to-solar-lease-when-i-sell-california', label: 'Selling a home with a Sunrun lease or PPA' },
       { href: '/solar-installers/pge-and-sunrun', label: 'PG&E and Sunrun battery programs' },
-      { href: '/solar-problems/solar-cancellation-california', label: 'How to get out of a solar contract in California' },
-    ],
-  },
-  '/solar-problems/solar-cancellation-california': {
-    heading: 'The detail for each way out',
-    links: [
-      { href: '/blog/can-you-cancel-solar-panel-contract-before-installation-california', label: 'Cancelling before installation: the statute, day by day' },
-      { href: '/blog/what-happens-to-solar-lease-when-i-sell-california', label: 'Selling a home with a solar lease or PPA' },
-      { href: '/solar-installers/sunrun-buyout-cost', label: 'How a Sunrun buyout price is calculated' },
-      { href: '/blog/what-happens-if-stop-paying-solar-lease-california', label: 'What happens if you stop paying a solar lease' },
-      { href: '/solar-problems/ucc-1-lien-solar-california', label: 'The UCC-1 filing a buyer’s title company will find' },
-      { href: '/solar-problems/attorney-to-sue-solar-company-california', label: 'Finding an attorney for a solar dispute' },
+      { href: '/blog/can-you-cancel-solar-panel-contract-before-installation-california#after-installation', label: 'How to get out of a solar contract in California' },
     ],
   },
 };

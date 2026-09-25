@@ -308,7 +308,7 @@ export default function PgeSolarBillingPlanPage() {
                 surplus compensation method, which it calculates from average wholesale prices between 7 a.m. and 5
                 p.m. over the past 12 months. The CPUC puts that at about 2 to 3 cents per kWh. What the statement
                 contains, line by line, is in{' '}
-                <Link href="/blog/what-is-nem-true-up" className={link}>what a NEM true-up is</Link>.
+                <Link href="/solar-problems/true-up-bill-california-explained" className={link}>what a NEM true-up is</Link>.
               </p>
 
               <h2>Why most Solar Billing Plan customers add a battery</h2>

@@ -220,9 +220,19 @@ test('Decision 14: the held merges (G05, G08, G10, G11) are not redirected', () 
     '/blog/nem-3-california-timeline', // G10
     '/blog/nem-3-california-still-worth-it', // G11
   ]) {
+    // GS-MERGES 2026-09-24 applied some held merges (plan 6.3); those are
+    // asserted in the GS-MERGES section instead.
+    if (GS_MERGES_APPLIED_HELD.has(held)) continue;
     assert.equal(canonicalRedirectFor(held), null, held);
   }
 });
+/** GS-MERGES 2026-09-24: held Decision 14 merges that plan 6.3 applied. */
+const GS_MERGES_APPLIED_HELD = new Set<string>([
+  '/blog/nem-3-california-still-worth-it', // G11, into the worth-it winner
+  '/commercial-solar/financing-options', // G08
+  '/blog/how-much-does-it-cost-to-lease-solar-panels-california', // G05
+  '/blog/nem-3-california-timeline', // G10
+]);
 
 // 2026-09-23, topical-authority wave (cities agent): new /solar-companies
 // pages built as CREATE_DEDICATED for installer-intent clusters. Each city
@@ -430,7 +440,7 @@ const GS_ROUTING_OUT_OF_STATE: Readonly<Record<string, string>> = {
 const GS_ROUTING_404_WITH_IMPRESSIONS: Readonly<Record<string, string>> = {
   '/blog/why-is-pge-bill-so-high': '/blog/why-is-my-pge-bill-so-high',
   '/blog/pge-vs-sce-sdge-rates-compared': '/blog/pge-vs-sce-vs-sdge-rates-compared',
-  '/blog/are-solar-panels-worth-it-in-california': '/blog/are-solar-panels-worth-it-california',
+  '/blog/are-solar-panels-worth-it-in-california': '/solar-panels-california', // GS-MERGES moved the worth-it post into this hub
   '/blog/do-solar-panels-work-at-night': '/blog/do-solar-panels-work-at-night-california',
   '/blog/ppa-loan-vs-solar-lease-vs-california': '/blog/ppa-loan-vs-solar-lease-vs-cash-california',
   '/blog/prepaid-solar-ppa-california-how-it-works-what-it-costs-and-who-its-best': '/blog/prepaid-ppa-california-2026',
@@ -519,6 +529,101 @@ test('GS-ROUTING: the duplicate legal pages go to the pages the site links', () 
   assert.equal(canonicalRedirectFor('/privacy'), null);
 });
 // END GS-ROUTING 2026-09-24
+// GS-MERGES 2026-09-24: plan item 6.3 merges (and 6.2 out-of-market
+// comparisons). Each loser 301s in one hop to a live winner that has a page
+// file (or a JSON article entry); no rule in either mechanism points at a
+// loser; the loser is off the sitemap lists and the hub spokes.
+// ---------------------------------------------------------------------------
+const GS_MERGES: Readonly<Record<string, string>> = {
+  '/blog/solar-tax-credit-2026': '/blog/california-solar-tax-credit-2026',
+  '/blog/solar-tax-credit-expired-2026-options': '/blog/california-solar-tax-credit-2026',
+  '/blog/are-solar-panels-worth-it-california': '/solar-panels-california',
+  '/blog/nem-3-california-still-worth-it': '/solar-panels-california',
+  '/blog/is-solar-worth-it-california-2026': '/solar-panels-california',
+  '/blog/zero-down-solar-california': '/blog/free-solar-panels-california',
+  '/blog/no-upfront-cost-solar-panels': '/blog/free-solar-panels-california',
+  '/blog/what-is-nem-true-up': '/solar-problems/true-up-bill-california-explained',
+  '/solar-problems/solar-cancellation-california':
+    '/blog/can-you-cancel-solar-panel-contract-before-installation-california',
+  '/commercial-solar/financing-options': '/blog/commercial-solar-financing-california',
+  '/blog/how-much-does-it-cost-to-lease-solar-panels-california':
+    '/blog/rent-solar-panels-for-your-home-california',
+  '/blog/nem-3-california-timeline': '/blog/what-is-nem-3-california',
+  // 6.2: comparisons with a company that does not serve California.
+  '/solar-installers/adt-solar-vs-momentum-solar': '/solar-installers/momentum-solar-review',
+  '/solar-installers/momentum-solar-vs-trinity-solar': '/solar-installers/momentum-solar-review',
+  '/solar-installers/sunrun-vs-trinity-solar': '/solar-installers/trinity-solar-review',
+};
+ROW_DELTAS.push(Object.keys(GS_MERGES).length);
+
+async function winnerHasPage(winner: string): Promise<boolean> {
+  const { existsSync, readFileSync } = await import('node:fs');
+  if (existsSync(new URL(`../app${winner}/page.tsx`, import.meta.url))) return true;
+  // JSON articles render through the section's [slug] route.
+  const m = /^\/(solar-problems|battery|commercial-solar|solar-installers)\/([^/]+)$/.exec(winner);
+  if (!m) return false;
+  const file = {
+    'solar-problems': 'problems',
+    battery: 'battery',
+    'commercial-solar': 'commercial',
+    'solar-installers': 'installer',
+  }[m[1] as 'solar-problems' | 'battery' | 'commercial-solar' | 'solar-installers'];
+  const pages = JSON.parse(
+    readFileSync(new URL(`../data/article-pages.${file}.json`, import.meta.url), 'utf8'),
+  ) as { slug: string }[];
+  return pages.some((p) => p.slug === m[2]);
+}
+
+test('GS-MERGES: each loser 301s straight to a live winner', async () => {
+  for (const [loser, winner] of Object.entries(GS_MERGES)) {
+    assert.equal(canonicalRedirectFor(loser), winner, loser);
+    assert.equal(canonicalRedirectFor(`${loser}/`), winner, `${loser}/`);
+    assert.equal(isRedirectedPath(winner), false, `${winner} must not itself redirect`);
+    assert.ok(await winnerHasPage(winner), `${winner} must render`);
+  }
+  const losers = new Set(Object.keys(GS_MERGES));
+  assert.deepEqual(destinations.filter((dest) => losers.has(dest)), []);
+  const rules = await nextConfigRedirects();
+  for (const r of rules) assert.equal(losers.has(r.destination), false, `${r.source} -> ${r.destination}`);
+});
+
+test('GS-MERGES: a JSON-article loser has no entry left to render or list', async () => {
+  const { readFileSync } = await import('node:fs');
+  for (const loser of Object.keys(GS_MERGES)) {
+    const m = /^\/(solar-problems|battery|commercial-solar|solar-installers)\/([^/]+)$/.exec(loser);
+    if (!m) continue;
+    const file = {
+      'solar-problems': 'problems',
+      battery: 'battery',
+      'commercial-solar': 'commercial',
+      'solar-installers': 'installer',
+    }[m[1] as 'solar-problems' | 'battery' | 'commercial-solar' | 'solar-installers'];
+    const pages = JSON.parse(
+      readFileSync(new URL(`../data/article-pages.${file}.json`, import.meta.url), 'utf8'),
+    ) as { slug: string }[];
+    assert.equal(pages.some((p) => p.slug === m[2]), false, `${loser} still has a JSON entry`);
+    const related = readFileSync(new URL('../data/json-article-links.ts', import.meta.url), 'utf8');
+    assert.equal(related.includes(`'${loser}'`), false, `json-article-links still names ${loser}`);
+  }
+});
+
+test('GS-MERGES: losers are off the sitemap lists and the hub spokes', async () => {
+  const { readFileSync } = await import('node:fs');
+  const read = (rel: string) => readFileSync(new URL(rel, import.meta.url), 'utf8');
+  const sitemap = read('../app/sitemap.ts');
+  const hubs = read('../data/topic-hubs.ts');
+  const blogIndex = read('../app/blog/page.tsx');
+  const growth = read('./growth-routes.ts');
+  for (const loser of Object.keys(GS_MERGES)) {
+    const slug = loser.split('/').pop() as string;
+    assert.equal(sitemap.includes(`'${loser}'`), false, `sitemap lists ${loser}`);
+    assert.equal(new RegExp(`'${slug}'`).test(sitemap) && loser.startsWith('/blog/'), false, `sitemap blogSlugs lists ${slug}`);
+    assert.equal(hubs.includes(`"${loser}"`) || hubs.includes(`'${loser}'`), false, `topic-hubs lists ${loser}`);
+    assert.equal(loser.startsWith('/blog/') && blogIndex.includes(`slug: '${slug}'`), false, `blog index lists ${slug}`);
+    assert.equal(growth.includes(`'${loser}'`) || growth.includes(`"${loser}"`), false, `growth-routes lists ${loser}`);
+  }
+});
+// END GS-MERGES 2026-09-24 ---------------------------------------------------
 
 // ---------------------------------------------------------------------------
 // Cross-cutting checks. These read the registries above.

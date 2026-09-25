@@ -361,7 +361,7 @@ export default function CommercialSolarCarportCost() {
                   elective pay FAQ
                 </a>{' '}
                 says the entity must own the property. The{' '}
-                <Link href="/commercial-solar/financing-options" className={link}>
+                <Link href="/blog/commercial-solar-financing-california" className={link}>
                   commercial financing guide
                 </Link>{' '}
                 compares ownership, leases and PPAs.

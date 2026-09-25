@@ -275,7 +275,7 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   // with the most impressions (1,509; topicmap G13 winner).
   '/blog/why-is-pge-bill-so-high': '/blog/why-is-my-pge-bill-so-high',
   '/blog/pge-vs-sce-sdge-rates-compared': '/blog/pge-vs-sce-vs-sdge-rates-compared',
-  '/blog/are-solar-panels-worth-it-in-california': '/blog/are-solar-panels-worth-it-california',
+  '/blog/are-solar-panels-worth-it-in-california': '/solar-panels-california', // was the worth-it post; that post merged into this hub (GS-MERGES)
   '/blog/do-solar-panels-work-at-night': '/blog/do-solar-panels-work-at-night-california',
   '/blog/ppa-loan-vs-solar-lease-vs-california': '/blog/ppa-loan-vs-solar-lease-vs-cash-california',
   '/blog/prepaid-solar-ppa-california-how-it-works-what-it-costs-and-who-its-best':
@@ -291,6 +291,72 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   // those links; this sends the URL to the site's CARE/FERA page.
   '/programs/care-california': '/blog/income-qualified-bill-discount-pge',
   // END GS-ROUTING 2026-09-24
+  // GS-MERGES 2026-09-24 ----------------------------------------------------
+  // Plan item 6.3 (Decision 14 default: the winner is the page with the most
+  // Search Console impressions in page_audit.csv, 90 days, unless its content
+  // is clearly weaker). Each loser's unique, sourced facts were carried into
+  // its winner first; the loser is off the sitemap lists, blog index, hubs
+  // and internal links. Evidence per row: _gs_manifest/merges.json.
+  // Tax credit x3 -> the incentives hub (cluster 42, hub page for
+  // "incentives"). Impressions 2 / 0 / 0: too few to decide, and the two
+  // losers are 643- and 744-word pages the hub already covers.
+  '/blog/solar-tax-credit-2026': '/blog/california-solar-tax-credit-2026',
+  '/blog/solar-tax-credit-expired-2026-options': '/blog/california-solar-tax-credit-2026',
+  // "Is solar worth it" x4 -> the cost_value hub, which already carries a
+  // #worth-it section and has the cluster's impressions (3,036 in 90 days vs
+  // 32 and 1). The older /blog/is-solar-worth-it-california-2026 redirect
+  // (page-level 308 to the first loser) is re-pointed here so it stays one hop.
+  // Topic map G11 (still-worth-it -> are-worth-it) is superseded by this.
+  '/blog/are-solar-panels-worth-it-california': '/solar-panels-california',
+  '/blog/nem-3-california-still-worth-it': '/solar-panels-california',
+  '/blog/is-solar-worth-it-california-2026': '/solar-panels-california',
+  // No money down x4 -> the free-solar page (2,585 impressions; Search
+  // Console already shows it for "no upfront cost solar panels", and it holds
+  // topic-map cluster 266). The $0-down post had 8, the no-upfront post 0.
+  // /blog/solar-ppa-explained-california stays: its intent is what a PPA is.
+  '/blog/zero-down-solar-california': '/blog/free-solar-panels-california',
+  '/blog/no-upfront-cost-solar-panels': '/blog/free-solar-panels-california',
+  // True-up x2 -> the JSON explainer (93 impressions vs 0; the blog post is
+  // new in the release). Its NEM 2.0 vs net billing settlement, surplus
+  // compensation and fixed-charge material is now in the winner.
+  '/blog/what-is-nem-true-up': '/solar-problems/true-up-bill-california-explained',
+  // Cancellation x2 -> the statute-by-statute blog guide. Both had 0
+  // impressions; the blog page is live and indexed, longer (4,234 words) and
+  // cites more primary sources (18 vs 7); the JSON page was new in the
+  // release. Its after-installation, complaint-window, exit-company and
+  // records sections are now in the blog guide, and its JSON entry is gone.
+  '/solar-problems/solar-cancellation-california':
+    '/blog/can-you-cancel-solar-panel-contract-before-installation-california',
+  // Topic-map G08 (held on 2026-09-23, applied here): two commercial
+  // financing guides in cluster 223. The blog guide has 1,524 impressions to
+  // 175; its structure-fit and elective-pay material is carried over.
+  '/commercial-solar/financing-options': '/blog/commercial-solar-financing-california',
+  // Topic-map G05 (held on 2026-09-23, applied here): the lease-cost page and
+  // the rent/lease page are both in SERP cluster 12 ("solar leasing"). The
+  // rent page has 1,368 impressions; the lease-cost page 0 in 90 days. Its
+  // disclosure, payment-input, escalator and contract-terms material moved.
+  '/blog/how-much-does-it-cost-to-lease-solar-panels-california':
+    '/blog/rent-solar-panels-for-your-home-california',
+  // Topic-map G10 (held on 2026-09-23, applied here): both NEM 3.0 pages
+  // are in SERP cluster 16 ("nem 3.0"). Impressions are 63 (timeline) and 27
+  // (definition), too few and too close to separate them, and neither has
+  // query rows; the definition page answers the cluster's head question,
+  // carries the export and rate mechanics, and already receives the
+  // /blog/nem-3-california redirect (Decision 16). Winner chosen on content;
+  // the dated timeline is folded in at #nem-3-timeline.
+  '/blog/nem-3-california-timeline': '/blog/what-is-nem-3-california',
+  // Plan item 6.2: comparisons with a company that does not serve California.
+  // Trinity Solar lists nine eastern states and no California, and the CPUC's
+  // interconnection data (PG&E, SCE, SDG&E; through May 2026) show no
+  // residential system under its name since 2016. ADT announced its exit from
+  // residential solar on January 24, 2024; its last 3 CPUC-recorded systems
+  // were approved in 2025. All three pages were new in the release (0
+  // impressions). Each goes to the review that the topic map assigns the
+  // comparison query to (clusters 136, 139, 258).
+  '/solar-installers/adt-solar-vs-momentum-solar': '/solar-installers/momentum-solar-review',
+  '/solar-installers/momentum-solar-vs-trinity-solar': '/solar-installers/momentum-solar-review',
+  '/solar-installers/sunrun-vs-trinity-solar': '/solar-installers/trinity-solar-review',
+  // END GS-MERGES 2026-09-24 ------------------------------------------------
 };
 
 /**

@@ -366,7 +366,7 @@ export default function IndustrialSolarCalifornia() {
                   commercial solar tax credit guide
                 </Link>{' '}
                 covers the rest, and{' '}
-                <Link href="/commercial-solar/financing-options" className={link}>
+                <Link href="/blog/commercial-solar-financing-california" className={link}>
                   commercial financing options
                 </Link>{' '}
                 compares owning with a PPA or lease.

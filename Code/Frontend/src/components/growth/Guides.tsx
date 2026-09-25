@@ -32,6 +32,30 @@ const sdge: Source = {
   label: 'SDG&E: current residential pricing plans',
   url: 'https://www.sdge.com/residential/pricing-plans',
 };
+// GS-MERGES 2026-09-24: sources for the NEM 3.0 timeline carried from
+// /blog/nem-3-california-timeline (topic-map G10).
+const nemDecision2022: Source = {
+  label: 'CPUC: solar tariff decision announcement, December 15, 2022 (checked 2026-09-24)',
+  url: 'https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-modernizes-solar-tariff-to-support-reliability-and-decarbonization',
+};
+const nemCourt2026: Source = {
+  label: 'Court of Appeal: Center for Biological Diversity v. PUC, A167721A (Mar. 9, 2026), via Justia (checked 2026-09-24)',
+  url: 'https://law.justia.com/cases/california/court-of-appeal/2026/a167721a.html',
+};
+const NEM_TIMELINE: [string, string][] = [
+  ['1996', 'The CPUC creates the first net metering tariff, NEM 1.0.'],
+  ['2014', 'Decision 14-03-041 lets customers stay on their NEM tariff for 20 years from interconnection.'],
+  ['2016', 'The CPUC creates NEM 2.0 under AB 327; NEM 1.0 closes at its 2016-2017 sunset dates.'],
+  ['December 15, 2022', 'The CPUC adopts Decision 22-12-056, the Net Billing Tariff, with no charges specific to solar customers and no change for existing ones.'],
+  ['April 15, 2023', 'New PG&E, SCE and SDG&E interconnection applications take service on net billing.'],
+  ['2025', 'The California Supreme Court sends the court challenge back to be reviewed under a stricter standard.'],
+  ['March 2026', 'PG&E’s Base Services Charge replaces the Minimum Electric Charge on solar bills.'],
+  ['March 9, 2026', 'The Court of Appeal applies that standard and affirms the CPUC’s decision.'],
+  ['April 14, 2026', 'SCE’s deadline for already-valid NEM 2.0 applications to submit final documents.'],
+  ['End of 2027', 'Last chance for residential PG&E and SCE applicants to get the export adder, which lasts nine years. SCE locks export prices for nine years for enrollment before January 1, 2028.'],
+  ['2032 onward', 'The first net billing customers reach the end of their nine-year legacy period.'],
+  ['Mid-2030s', 'The first NEM 2.0 accounts reach 20 years and move to the current tariff.'],
+];
 const rates: Source = {
   label: 'CPUC: electric rate comparison',
   url: 'https://www.cpuc.ca.gov/RateComparison',
@@ -143,7 +167,7 @@ export function guideMetadata(key: GuideKey): Metadata {
     key === 'financing' || key === 'calculator'
       ? '2026-09-23T00:00:00Z'
       : key === 'nem'
-      ? '2026-09-23T00:00:00Z'
+      ? '2026-09-24T00:00:00Z' // GS-MERGES 2026-09-24: G10 timeline fold-in
       : key === 'companies'
       ? '2026-09-22T00:00:00Z'
       : key === 'panels'
@@ -809,7 +833,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             short ownership horizon. Read the{' '}
             <Link
               className={link}
-              href="/blog/are-solar-panels-worth-it-california"
+              href="/solar-panels-california#worth-it"
             >
               worth-it decision guide
             </Link>
@@ -995,7 +1019,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             ,{' '}
             <Link
               className={link}
-              href="/blog/how-much-does-it-cost-to-lease-solar-panels-california"
+              href="/blog/rent-solar-panels-for-your-home-california#what-sets-the-payment"
             >
               what a solar lease costs in California
             </Link>
@@ -1205,6 +1229,12 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
         label: 'SDG&E: Export pricing',
         url: 'https://www.sdge.com/solar/solar-billing-plan/export-pricing',
       },
+      nemDecision2022,
+      nemCourt2026,
+      {
+        label: 'PG&E: Understand your solar bill (Base Services Charge from March 2026; checked 2026-09-24)',
+        url: 'https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html',
+      },
     ];
     // FAQ as data (2026-09-23) so DecisionPage's FaqBlock emits FAQPage schema
     // from the same strings. The links the old JSX answers carried (NEM 2.0 vs
@@ -1214,6 +1244,11 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
         question: 'What is NEM 3.0?',
         answer:
           'It is the common name for California’s Net Billing Tariff, adopted by the CPUC in Decision D.22-12-056 and in effect for PG&E, SCE and SDG&E customers who applied for solar interconnection on or after April 15, 2023.',
+      },
+      {
+        question: 'Is there still a NEM 3.0 deadline?',
+        answer:
+          'The NEM 2.0 cutoff passed in April 2023: applications from April 15, 2023 take net billing. The date that still matters is the end of 2027. The CPUC says residential PG&E and SCE customers who apply to interconnect before then get slightly higher export credits for nine years; SDG&E customers are excluded.',
       },
       {
         question: 'When did NEM 3.0 start?',
@@ -1541,6 +1576,62 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             checked.
           </p>
         </section>
+        {/* GS-MERGES 2026-09-24: /blog/nem-3-california-timeline 301s here
+            (plan 6.3, topic-map G10; both pages sit in SERP cluster 16
+            "nem 3.0"). Its dated timeline is carried below. Dates re-checked
+            2026-09-24 against the CPUC net billing page and 2022 decision
+            announcement, the Court of Appeal opinion (A167721A), PG&E and SCE.
+            Not carried: the 2021 proposed-decision details and the exact
+            step-down dates, which were not re-checked. */}
+        <section id="nem-3-timeline">
+          <h2>NEM 3.0 timeline: the dates that shaped it, and the ones left</h2>
+          <div className="overflow-x-auto rounded-xl border">
+            <table className="w-full text-left text-sm">
+              <caption className="sr-only">NEM and net billing dates</caption>
+              <thead className="bg-muted">
+                <tr>
+                  <th className="p-3">When</th>
+                  <th className="p-3">What happened or happens</th>
+                </tr>
+              </thead>
+              <tbody>
+                {NEM_TIMELINE.map(([when, what]) => (
+                  <tr key={when} className="border-t align-top">
+                    <th scope="row" className="p-3 font-medium whitespace-nowrap">
+                      {when}
+                    </th>
+                    <td className="p-3">{what}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3">
+            The date that decides your tariff is the interconnection application,
+            not the installation or permission-to-operate date. The court record
+            is in{' '}
+            <Link className={link} href="/blog/nem-3-lawsuit">
+              the NEM 3.0 lawsuit, explained
+            </Link>
+            , and the NEM 2.0 end dates in{' '}
+            <Link className={link} href="/blog/when-does-nem-2-expire">
+              when NEM 2.0 expires
+            </Link>
+            . Sources: the{' '}
+            <a className={link} href={nem.url}>
+              CPUC net billing page
+            </a>
+            , the{' '}
+            <a className={link} href={nemDecision2022.url}>
+              CPUC&rsquo;s December 15, 2022 announcement
+            </a>
+            , the{' '}
+            <a className={link} href={nemCourt2026.url}>
+              Court of Appeal opinion
+            </a>
+            , PG&amp;E and SCE, checked September 24, 2026.
+          </p>
+        </section>
         <QuoteChecklist />
         <section>
           <h2>Follow the question you are trying to answer</h2>
@@ -1551,14 +1642,14 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
               </Link>
             </li>
             <li>
-              <Link className={link} href="/blog/nem-3-california-timeline">
+              <a className={link} href="#nem-3-timeline">
                 Review the net billing timeline
-              </Link>
+              </a>
             </li>
             <li>
               <Link
                 className={link}
-                href="/blog/are-solar-panels-worth-it-california"
+                href="/solar-panels-california#worth-it"
               >
                 Decide whether the quote fits your home
               </Link>

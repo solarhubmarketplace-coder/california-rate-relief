@@ -260,7 +260,7 @@ export default function SunrunReview() {
                 <Link href='/solar-installers/sunrun-buyout-cost' className={a}>how a Sunrun buyout is priced</Link>{' '}
                 cover those terms.</p>
               <p className={p}>For what drives any lease payment, see{' '}
-                <Link href='/blog/how-much-does-it-cost-to-lease-solar-panels-california' className={a}>
+                <Link href='/blog/rent-solar-panels-for-your-home-california#what-sets-the-payment' className={a}>
                   how much it costs to lease solar in California
                 </Link>
                 .</p>

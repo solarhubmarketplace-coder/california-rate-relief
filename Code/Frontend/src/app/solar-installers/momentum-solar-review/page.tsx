@@ -72,6 +72,9 @@ const SRC = {
   murphy: 'https://www.courtlistener.com/docket/71177446/murphy-v-momentum-solar-llc/',
   whitten: 'https://www.courtlistener.com/docket/69330690/whitten-v-momentum-solar-llc/',
   adt: 'https://investor.adt.com/News--Events/news/news-details/2024/ADT-Provides-Solar-Business-Update-and-Advances-Capital-Allocation-Strategy/default.aspx',
+  // GS-MERGES 2026-09-24 (plan 6.2): CPUC interconnection data as the record
+  // of who installs in PG&E, SCE and SDG&E territory.
+  dgstats: 'https://www.californiadgstats.ca.gov/downloads/',
   ftc: 'https://consumer.ftc.gov/articles/multi-level-marketing-businesses-pyramid-schemes',
   careers: 'https://www.momentumsolar.com/careers/sales/',
   clPyramid: 'https://www.courtlistener.com/?type=r&q=%28%22Momentum%20Solar%22%20OR%20%22Pro%20Custom%20Solar%22%29%20AND%20pyramid',
@@ -89,7 +92,8 @@ const sources: ReviewSource[] = [
   { name: 'CourtListener — federal dockets, party name “Momentum Solar”', url: SRC.cl, supports: '23 dockets returned; natures of suit and dates listed on this page', checked },
   { name: 'CourtListener — Amini v. Pro Custom Solar LLC dba Momentum Solar, C.D. Cal. No. 8:17-cv-02243', url: SRC.amini, supports: 'Filed December 26, 2017; terminated January 3, 2018', checked },
   { name: 'CourtListener — Gordon v. Momentum Solar, LLC, S.D. Cal. No. 3:24-cv-00693', url: SRC.gordon, supports: 'Filed April 17, 2024', checked },
-  { name: 'ADT — Solar business update (January 24, 2024)', url: SRC.adt, supports: 'ADT will exit its residential solar business', checked },
+  { name: 'ADT — Solar business update (January 24, 2024)', url: SRC.adt, supports: 'ADT will exit its residential solar business; the exit may include transferring components of the business to other parties (re-read 2026-09-24)', checked },
+  { name: 'CPUC California DG Statistics — Interconnected Project Sites data set (data through May 31, 2026)', url: SRC.dgstats, supports: 'Residential PV systems by installer name and approval year in PG&E, SCE and SDG&E territory: Momentum Solar / Pro Custom Solar 217 in 2024, 29 in 2025, none January to May 2026; ADT Solar 1,398 in all, the last 3 in 2025; Trinity Solar none since 2016 (CRR count, 2026-09-24)', checked: '2026-09-24' },
   { name: 'CourtListener — Velasco v. Momentum Solar, LLC, C.D. Cal. No. 2:25-cv-00016', url: SRC.velasco, supports: 'Filed January 2, 2025; terminated February 25, 2025', checked },
   { name: 'Federal Trade Commission — Multi-level marketing businesses and pyramid schemes (July 2022)', url: SRC.ftc, supports: 'Pyramid scheme income based mostly on recruiting; a legitimate business pays on sales to retail customers', checked },
   { name: 'Momentum Solar — Careers: Sales', url: SRC.careers, supports: 'Base pay plus uncapped commissions and bonuses; meets homeowners 1–3 times a day, 5 days a week; company leads plus referrals; full benefits (medical, dental, 401K); two-week instructor-led training; no recruiting-based pay mentioned', checked },
@@ -110,7 +114,7 @@ const faqs = [
   {
     question: 'Does Momentum Solar install in California?',
     answer:
-      'Its homepage, checked September 23, 2026, lists Connecticut, Florida, Massachusetts, Nevada, New Jersey, New York and Texas. California is not on the list. Three federal cases naming the company were filed in California courts between 2017 and 2025, but a lawsuit filed in a state does not show the company installs there today. Ask for your ZIP code to be confirmed in writing.',
+      'Its homepage, checked September 23, 2026, lists Connecticut, Florida, Massachusetts, Nevada, New Jersey, New York and Texas. California is not on the list. The CPUC’s interconnection data show residential systems installed under the Momentum Solar or Pro Custom Solar name in PG&E, SCE and SDG&E territory: 217 approved in 2024, 29 in 2025 and none from January through May 2026. Ask for your ZIP code to be confirmed in writing.',
   },
   {
     question: 'What are the most common Momentum Solar complaints?',
@@ -216,8 +220,15 @@ export default function MomentumSolarReview() {
                 marketing page is not a legal statement, so the safest reading is simple: confirm your ZIP code
                 with the company in writing before you spend time on a proposal.
               </p>
-              <p className={p}>The court record shows some California connection in the past.</p>
-              <p className={p}>Three federal cases naming the
+              <p className={p}>
+                The state&rsquo;s interconnection record shows how that has changed. In the CPUC&rsquo;s data for
+                PG&amp;E, SCE and SDG&amp;E territory, residential systems listed under the Momentum Solar or Pro
+                Custom Solar name were approved 217 times in 2024, 29 times in 2025 and not at all from January
+                through May 2026, the latest month in the data set. Municipal utilities such as LADWP and SMUD are
+                not in that data.<Cite href={SRC.dgstats} date='2026-09-24' />
+              </p>
+              <p className={p}>
+                The court record shows some California connection in the past. Three federal cases naming the
                 company were filed in California courts: <em>Amini v. Pro Custom Solar LLC</em> in the Central
                 District (No. 8:17-cv-02243, filed December 26, 2017, closed January 3, 2018),{' '}
                 <em>Gordon v. Momentum Solar, LLC</em> in the Southern District (No. 3:24-cv-00693, filed April
@@ -327,17 +338,35 @@ export default function MomentumSolarReview() {
                 <Link href='/solar-installers/sunrun-vs-tesla-solar' className={a}>Sunrun vs Tesla Solar</Link> compares it
                 with a company that does sell here.</p>
 
-              <h2 className={h2}>Momentum Solar compared with ADT Solar and Trinity Solar</h2>
+              {/* GS-MERGES 2026-09-24 (plan 6.2): the ADT vs Momentum and Momentum vs
+                  Trinity comparison pages 301 here. Neither pairing is a California
+                  choice: ADT left residential solar and Trinity has no California
+                  service area or recent California installs. */}
+              <h2 className={h2} id='adt-solar'>Momentum Solar compared with ADT Solar and Trinity Solar</h2>
               <p className={p}>
-                Momentum is often compared with two other East Coast names. ADT announced on January 24, 2024
-                that it was leaving residential solar,<Cite href={SRC.adt} date={checked} /> and neither Momentum nor Trinity lists California as a service
-                state. See{' '}
-                <Link href='/solar-installers/adt-solar-vs-momentum-solar' className={a}>ADT Solar vs. Momentum Solar</Link>{' '}
-                and{' '}
-                <Link href='/solar-installers/momentum-solar-vs-trinity-solar' className={a}>Momentum Solar vs. Trinity Solar</Link>{' '}
-                for the side-by-side records, and the{' '}
-                <Link href='/solar-installers/sunrun-review' className={a}>Sunrun review</Link> for a company that does
-                list California.
+                Searches often pair Momentum with two other East Coast names, and neither pairing is a choice a
+                California homeowner can make. ADT announced on January 24, 2024 that it would exit its
+                residential solar business, saying the exit &ldquo;may include the transfer of components of the
+                business to other parties.&rdquo;<Cite href={SRC.adt} date='2026-09-24' /> In the CPUC&rsquo;s
+                data, ADT Solar had 1,398 residential systems approved in PG&amp;E and SCE territory, the last 3 in
+                2025.<Cite href={SRC.dgstats} date='2026-09-24' />
+              </p>
+              <p className={p}>
+                If you own an ADT Solar system, ask ADT in writing for your contract, warranty and monitoring
+                records, and who, if anyone, took over your agreement. Panel, inverter and battery warranties come
+                from their manufacturers. What to do when an installer is gone is in{' '}
+                <Link href='/solar-installers/solar-installer-bankruptcy-california' className={a}>
+                  when your solar installer goes out of business
+                </Link>
+                .
+              </p>
+              <p className={p}>
+                Trinity Solar lists nine eastern states and no California, and no residential system under its
+                name appears in the CPUC data since 2016; its{' '}
+                <Link href='/solar-installers/trinity-solar-review' className={a}>review</Link> has the details.
+                For a company that does sell in California, start with the{' '}
+                <Link href='/solar-installers/sunrun-review' className={a}>Sunrun review</Link> or the{' '}
+                <Link href='/solar-installers' className={a}>California solar company reviews</Link>.
               </p>
 
               <h2 className={h2}>CSLB license: expired</h2>

@@ -331,13 +331,6 @@ export function FinancingHubExtras() {
         </p>
         <ul className="mt-3 list-disc space-y-2 pl-5">
           <li>
-            <strong>What a lease costs each month:</strong>{' '}
-            <Link className={link} href="/blog/how-much-does-it-cost-to-lease-solar-panels-california">
-              what sets a solar lease payment
-            </Link>
-            .
-          </li>
-          <li>
             <strong>Choosing a leasing company:</strong>{' '}
             <Link className={link} href="/blog/solar-leasing-company">
               how to compare solar leasing companies
@@ -345,11 +338,11 @@ export function FinancingHubExtras() {
             .
           </li>
           <li>
-            <strong>The end of a lease, and getting out early:</strong>{' '}
+            <strong>What a lease costs, how it ends, and getting out early:</strong>{' '}
             <Link className={link} href="/blog/rent-solar-panels-for-your-home-california">
               renting solar panels for your home
             </Link>
-            , which covers renewal, buyout and removal, and{' '}
+            , which covers what sets the payment, renewal, buyout and removal, and{' '}
             <Link className={link} href="/blog/what-happens-if-stop-paying-solar-lease-california">
               what happens if you stop paying
             </Link>
@@ -411,7 +404,7 @@ export function FinancingHubExtras() {
 
       <p className="mt-10">
         Already in a lease or PPA and want out? Read{' '}
-        <Link className={link} href="/solar-problems/solar-cancellation-california">
+        <Link className={link} href="/blog/can-you-cancel-solar-panel-contract-before-installation-california#after-installation">
           how to get out of a solar contract in California
         </Link>
         . Still deciding whether to own? The{' '}

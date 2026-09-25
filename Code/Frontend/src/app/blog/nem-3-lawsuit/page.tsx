@@ -243,7 +243,7 @@ export default function Nem3LawsuitPage() {
                 PG&amp;E and SCE customers who apply to interconnect before the end of 2027 get slightly
                 higher export credits for nine years, and that storage is how customers maximize savings
                 under the tariff. The{' '}
-                <Link href="/blog/nem-3-california-timeline" className={link}>NEM 3.0 timeline</Link>{' '}
+                <Link href="/blog/what-is-nem-3-california#nem-3-timeline" className={link}>NEM 3.0 timeline</Link>{' '}
                 lists the dates that still matter.
               </p>
 
@@ -253,7 +253,7 @@ export default function Nem3LawsuitPage() {
               <RelatedGuides
                 heading="If the ruling changes your plans"
                 links={[
-                  { href: '/blog/nem-3-california-still-worth-it', label: 'Whether solar still pencils out under NEM 3.0' },
+                  { href: '/solar-panels-california#still-worth-it-nem-3', label: 'Whether solar still pencils out under NEM 3.0' },
                   { href: '/blog/nem-3-export-rates-california', label: 'The export values the court left in place' },
                   { href: '/battery/battery-payback-nem-3-california', label: 'How storage changes net billing math' },
                   { href: '/blog/california-public-utilities-commission', label: 'What the CPUC is and how it sets rates' },

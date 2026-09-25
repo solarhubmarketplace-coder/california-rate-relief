@@ -162,7 +162,7 @@ export function LongContractsOnFixedIncome() {
           what a roof-and-solar bundle really costs
         </Link>
         , and the full payment comparison is in{' '}
-        <Link className={link} href="/blog/no-upfront-cost-solar-panels">
+        <Link className={link} href="/blog/free-solar-panels-california#no-money-down">
           what no-upfront-cost solar costs over the contract
         </Link>
         .

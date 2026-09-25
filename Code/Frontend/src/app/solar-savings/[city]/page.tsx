@@ -636,7 +636,7 @@ export default async function CityPage({ params }: PageProps) {
                   Have each proposal use the same actual usage history, confirmed
                   utility, roof design, and backup-load scope. For background on
                   California investor-owned utility billing, see our{' '}
-                  <Link href="/blog/nem-3-california-still-worth-it" className="text-primary hover:underline">
+                  <Link href="/blog/what-is-nem-3-california" className="text-primary hover:underline">
                     NEM 3.0 guide
                   </Link>, then verify the rule for the account.
                 </p>
@@ -651,7 +651,7 @@ export default async function CityPage({ params }: PageProps) {
                     A battery can store excess daytime solar for later use. Compare
                     the battery settings and backup loads alongside the{' '}
                 <Link
-                  href="/blog/nem-3-california-still-worth-it"
+                  href="/blog/what-is-nem-3-california"
                   className="text-primary hover:underline"
                 >
                   NEM 3.0 guide
@@ -728,7 +728,7 @@ export default async function CityPage({ params }: PageProps) {
                 business credit; that is the provider&apos;s tax position, not
                 a savings figure for you. See our{' '}
                 <Link
-                  href="/blog/solar-tax-credit-expired-2026-options"
+                  href="/blog/california-solar-tax-credit-2026#quote-without-credit"
                   className="text-primary hover:underline"
                 >
                   full guide on post-tax-credit options

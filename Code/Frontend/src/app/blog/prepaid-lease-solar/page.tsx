@@ -244,7 +244,7 @@ export default function PrepaidLeaseSolarPage() {
           </ol>
           <p className="mt-3">
             What sets a standard lease payment is covered in{' '}
-            <Link className={link} href="/blog/how-much-does-it-cost-to-lease-solar-panels-california">
+            <Link className={link} href="/blog/rent-solar-panels-for-your-home-california#what-sets-the-payment">
               what a California solar lease costs
             </Link>
             . For the equipment price you would pay to buy instead, see{' '}

@@ -1,0 +1,312 @@
+{
+  "lane": "merges",
+  "branch": "claude/gs-merges-20260924",
+  "base": "0355a03",
+  "date": "2026-09-24",
+  "plan_items": {
+    "6.3": {
+      "status": "done",
+      "summary": "All five named clusters merged (tax credit, worth it, no money down, true-up, cancellation) and the four held Decision 14 merges resolved (G05, G08, G10 applied; G11 superseded by the worth-it merge). 12 loser URLs now 301 in one hop to a live winner; each winner absorbed the loser's unique, re-verified facts. Losers removed from sitemap lists, blog index, growth routes, topic-hub spokes, json-article-links and the JSON article data; internal links retargeted (including 5 mechanical href/row edits in city-lane files so assert:citylinks stays green).",
+      "evidence_files": [
+        "Code/Frontend/src/lib/canonical-redirects.ts (GS-MERGES 2026-09-24 block, 15 rows incl. 6.2)",
+        "Code/Frontend/src/lib/canonical-redirects.test.ts (GS-MERGES registry + 3 tests; Decision 14 held-merge test skips GS_MERGES_APPLIED_HELD)",
+        "Code/Frontend/src/app/sitemap.ts (GS_MERGES_20260924 lastmod set for winners; loser entries removed)",
+        "Code/Frontend/src/components/growth/NoMoneyDownExtras.tsx (new)"
+      ],
+      "decision_rule": "Winner = most 90-day Search Console impressions (page_audit.csv gsc_impressions_90d) unless its content is clearly weaker. Applied literally in every merge except tax credit (2 vs 0 vs 0 impressions: noise; content decides) and cancellation (0 vs 0: content decides) and G10 (63 vs 27, no query rows: content decides, flagged in needs_chad)."
+    },
+    "6.2": {
+      "status": "partial",
+      "summary": "Trinity Solar (no California service area, no CPUC-recorded California residential install since 2016) and ADT Solar (exited residential solar 2024-01-24; last 3 CPUC-recorded systems approved in 2025) removed from comparisons: 3 comparison pages 301'd, Trinity removed from the /best-solar-companies-california list, the Trinity review reframed with the CPUC finding, the Momentum review given the CPUC record and an #adt-solar section. Momentum Solar stays in comparisons: its site lists no California, but CPUC data show 217 (2024) and 29 (2025) California residential systems.",
+      "why_partial": "The /solar-companies/[city] template (city lane) still lists Trinity Solar among its nine companies and calls Momentum a California seller; requested below. The Trinity review still carries the California lead forms (needs_chad).",
+      "company_evidence": [
+        {
+          "company": "Trinity Solar",
+          "cpuc_dgstats": "Installer name containing 'Trinity Solar' on residential PV records (PG&E+SCE+SDG&E, through 2026-05-31): 10 approved in 2010, 6 in 2016, 0 since 2017, 0 in 2025, 0 in 2024-May 2026. (Records under 'Trinity Power'/'Trinity Energy', CSLB 853740/870804, are a different California business.)",
+          "own_service_area": "https://www.trinitysolar.com/ footer service areas: CT, DE, MD, MA, NJ, NY, PA, RI, OH; no California (checked 2026-09-24)",
+          "result": "fails both tests: removed from comparisons; review reframed"
+        },
+        {
+          "company": "ADT Solar",
+          "cpuc_dgstats": "ADT SOLAR LLC (CSLB 1080382): 1,398 residential PV systems (PG&E 343, SCE 1,055); by approval year 2022 466, 2023 820, 2024 109, 2025 3, 2026 0.",
+          "own_service_area": "ADT investor release 2024-01-24: 'announced it will be exiting its residential solar business' (re-read 2026-09-24). No current service area anywhere.",
+          "result": "not a current California option: ADT vs Momentum comparison 301'd; owner guidance kept in the Momentum review (#adt-solar)"
+        },
+        {
+          "company": "Momentum Solar (Pro Custom Solar LLC)",
+          "cpuc_dgstats": "Installer name 'Momentum Solar' or 'Pro Custom Solar': 2024 217, 2025 29 (19 of them filed under CSLB 1003498, 10 under 1026366), 2026 Jan-May 0; 1,464 in all.",
+          "own_service_area": "https://www.momentumsolar.com/: 'CT, FL, MA, NV, NJ, NY, and TX'; no California (checked 2026-09-24)",
+          "result": "has California installs in the CPUC data, so it stays in comparisons; the review now states the CPUC record"
+        },
+        {
+          "company": "Elevation, Empire Solar Group, Palmetto, Sunnova, Vivint, Sullivan (checked, no change)",
+          "cpuc_dgstats": "2025 residential approvals: Elevation 2, Empire Solar Group 2, Palmetto installer 22 plus 765 LightReach third-party-owned, Sunnova 2,094, Vivint 4, Sullivan 0 (defunct California installer). All have California residential installs in the data; Elevation's review cites its own California locations page.",
+          "result": "no removal: each has California installs in the CPUC data or is a California company; their pages are single-company reviews, not out-of-market comparisons"
+        }
+      ],
+      "data_source": "CPUC California DG Statistics, Interconnected Project Sites data set (file Interconnected_Project_Sites_2026-05-31.zip, data through 2026-05-31, downloaded 2026-09-24; local copy /home/claude/crr/data/dgstats/projects.zip), scanned 2026-09-24: Customer Sector = Residential, PV technology, installer name pattern, App Approved Date year. Top-10 state list cross-checked with gs-citydata dgstats-2026-05-31.json state.installers2025 (none of Trinity, ADT or Momentum is in the top 10)."
+    }
+  },
+  "merges": [
+    {
+      "cluster": "tax credit x3",
+      "losers": [
+        "/blog/solar-tax-credit-2026",
+        "/blog/solar-tax-credit-expired-2026-options"
+      ],
+      "winner": "/blog/california-solar-tax-credit-2026",
+      "evidence": "90-day impressions 2 / 0 / 0 (page_audit.csv); no shared query rows; the winner is the topic map's hub page for the incentives cluster (42, 'california solar incentives', 9,340/mo) and runs 2,979 words vs 643 and 744 (records page scored 2.38/5 in content_quality_scores.csv). Overlap named in block6_conflicts.csv (overlapping_pages) and the audit (tax credit x3).",
+      "folded": "#tax-credit-records: 25D(e)(8) completion-date rule incl. construction/reconstruction, 25D(h) end date, 25D(c) carryforward, records checklist. #quote-without-credit: provider's 48E credit is not the homeowner's; rebuild a quote without an unavailable credit; calculator. Hub spoke directory 'Tax credits' group now lists the IRA page and the commercial 48E page.",
+      "not_carried": "nothing material; the losers' SASH/DAC-SASH/CARE paths already exist on the winner",
+      "links_retargeted": 18
+    },
+    {
+      "cluster": "is solar worth it x4",
+      "losers": [
+        "/blog/are-solar-panels-worth-it-california",
+        "/blog/nem-3-california-still-worth-it",
+        "/blog/is-solar-worth-it-california-2026 (existing page-level 308, re-pointed)"
+      ],
+      "winner": "/solar-panels-california",
+      "evidence": "90-day impressions 3,036 (winner, title already 'Cost, Rules, Worth It', cost_value hub) vs 32 (+8 via the 2026 URL) and 1. Cluster 101 'is solar worth it in california' (SERP-verified) contains both losers' head phrases. The thin loser: 513 words, no figures, 3 forms (quality 2.38/5). Topic-map G11 (still-worth-it -> are-worth-it) superseded.",
+      "folded": "#still-worth-it-nem-3: CPUC 2022-12-15 projection ($100/month, at least $136 with a battery, payback 9 years or less on average); approach steps (size to use; true-up surplus ~$0.02-$0.04/kWh per PG&E; shift loads; storage per CPUC; E-ELEC/TOU-D-PRIME/EV-TOU-5; PG&E/SCE export adder before end of 2027, SDG&E excluded; PG&E ~$24 Base Services Charge not offsettable). #stress-test: worse-assumption rerun, backup value vs payback, reasons to pause, when it is weakest. New FAQ 'Is solar still worth it in California under NEM 3.0?'.",
+      "not_carried": "PG&E hourly April export value (~$0.0085/kWh, from a ZIP of price sheets), Cal Advocates 33.7 cents average rate, LBNL storage $750-$1,000/kWh, SDG&E 4.7-8.4-year payback range, 'nearly 70% of net billing customers have batteries' (not found on the CPUC page today)",
+      "links_retargeted": 35
+    },
+    {
+      "cluster": "no money down x4-5",
+      "losers": [
+        "/blog/zero-down-solar-california",
+        "/blog/no-upfront-cost-solar-panels"
+      ],
+      "winner": "/blog/free-solar-panels-california",
+      "evidence": "90-day impressions 2,585 vs 8 and 0 (no-upfront page new in release). Search Console shows the winner for 'no upfront cost solar panels' (11 impr) and 'solar power no upfront cost' (10); it holds topic-map cluster 266 'no upfront cost solar panels' (and 20/154, free solar). Kept, not merged: /blog/solar-ppa-explained-california (240 impr; intent = what a PPA is; only its title says '$0-Down') and /blog/ppa-loan-vs-solar-lease-vs-cash-california (financing hub).",
+      "folded": "NoMoneyDownExtras #no-money-down: where the cost sits by structure and what to ask for; Bus. & Prof. Code 7159.5(a)(5) progress-payment rule incl. lender advances; dealer fee on a $0-down loan; CPUC 1-3% escalator quote + 3% compounding (about 1.8x after 20 increases, arithmetic); CPUC lease/PPA pros and cons quotes; LBNL-1007003 (113 TPO sales 2011-2013, no significant premium); CPUC total-cost questions and test. New FAQ on how companies are paid.",
+      "not_carried": "Tesla lease 3% escalator (installer site)",
+      "links_retargeted": 8
+    },
+    {
+      "cluster": "true-up x2",
+      "losers": [
+        "/blog/what-is-nem-true-up"
+      ],
+      "winner": "/solar-problems/true-up-bill-california-explained",
+      "evidence": "90-day impressions 93 vs 0 (loser new in release); content_quality_review.md flags the overlap (P-49).",
+      "folded": "4 JSON sections + 3 FAQs: NEM 1.0/2.0 annual billing vs net billing monthly payment (CPUC); NSC ~$0.02-$0.03 (CPUC, D.11-06-016, AB 920) and ~$0.02-$0.04 (PG&E), automatic eligibility, credits reset; SCE: CCA and Direct Access ineligible for NSC; charges credits cannot offset (PG&E BSC ~$24 since March 2026, reduced for CARE/FERA/deed-restricted; SCE fixed fees, non-bypassable charges, taxes); keeping the true-up predictable. reviewedAt 2026-09-24.",
+      "not_carried": "SDG&E required-charges list (not re-checked)",
+      "links_retargeted": 10
+    },
+    {
+      "cluster": "cancellation x2",
+      "losers": [
+        "/solar-problems/solar-cancellation-california (JSON entry and json-article-links block removed)"
+      ],
+      "winner": "/blog/can-you-cancel-solar-panel-contract-before-installation-california",
+      "evidence": "90-day impressions 0 vs 0; winner is live and indexed (loser new in release), 4,234 vs 3,153 words, 18 vs 7 primary-source links; content_quality_review.md flags the overlap.",
+      "folded": "#after-installation (cash, loan payoff and dealer fee, lease/PPA exits, PACE: DFPI licensing since 2019 and 'difficult to void', stopping payments = default); #complaints (CSLB four-year window, DFPI PACE line 1-866-275-2677); #exit-companies (three questions; State Bar Check Attorney Profile; certified referral-service terms); #what-to-gather.",
+      "not_carried": "Sunrun FAQ purchase/transfer examples (installer site)",
+      "links_retargeted": 4
+    },
+    {
+      "cluster": "topic-map G08 (held Decision 14 merge)",
+      "losers": [
+        "/commercial-solar/financing-options"
+      ],
+      "winner": "/blog/commercial-solar-financing-california",
+      "evidence": "90-day impressions 1,524 vs 175; same topic and near-identical titles; cluster 223 'commercial solar financing'.",
+      "folded": "#which-structure (which structure fits which business; price two or three structures with 10- and 25-year totals); #elective-pay (26 U.S.C. 6417: 48E is an applicable credit; applicable entities; IRS elective pay = tax payment refunded).",
+      "not_carried": "lease 'off balance sheet' claim; CSCDA Open PACE opt-in specifics (program page 404s)",
+      "links_retargeted": 10
+    },
+    {
+      "cluster": "topic-map G05 (held Decision 14 merge)",
+      "losers": [
+        "/blog/how-much-does-it-cost-to-lease-solar-panels-california"
+      ],
+      "winner": "/blog/rent-solar-panels-for-your-home-california",
+      "evidence": "90-day impressions 1,368 vs 0; both SERP-verified members of cluster 12 'solar leasing', held by the rent page.",
+      "folded": "#what-sets-the-payment: 7169(b) disclosure cover page (total cost and payments incl. financing), payment inputs, contract escalator vs CPUC 10% rate-escalation cap, compounding index at 1/2/3% (arithmetic), contract terms to locate incl. 7169(c)(11) home-sale item.",
+      "not_carried": "Sunrun 1-5% escalator band; Sunrun/Tesla production-guarantee and buyout wording (installer sites)",
+      "links_retargeted": 9
+    },
+    {
+      "cluster": "topic-map G10 (held Decision 14 merge)",
+      "losers": [
+        "/blog/nem-3-california-timeline"
+      ],
+      "winner": "/blog/what-is-nem-3-california",
+      "evidence": "90-day impressions 63 (loser) vs 27 (winner), no query rows for either; both SERP-verified members of cluster 16 'nem 3.0'. Winner chosen on content: it answers the head question, carries the per-utility export and rate mechanics, and already receives /blog/nem-3-california (Decision 16). See needs_chad.",
+      "folded": "#nem-3-timeline table (1996, 2014 D.14-03-041, 2016 NEM 2.0, 2022-12-15 D.22-12-056, 2023-04-15, 2025 Supreme Court remand, March 2026 PG&E BSC, 2026-03-09 Court of Appeal, 2026-04-14 SCE deadline, end of 2027 adder, 2032 onward, mid-2030s) + 'Is there still a NEM 3.0 deadline?' FAQ.",
+      "not_carried": "2021-03-15 proposals date, the December 2021 proposed decision's $8/kW charge, 2023-12-31 20% step-down date, D.23-11-068 evaluation plan (not re-checked)",
+      "links_retargeted": 4
+    },
+    {
+      "cluster": "6.2 out-of-market comparisons",
+      "losers": [
+        "/solar-installers/adt-solar-vs-momentum-solar",
+        "/solar-installers/momentum-solar-vs-trinity-solar",
+        "/solar-installers/sunrun-vs-trinity-solar"
+      ],
+      "winner": "/solar-installers/momentum-solar-review (first two); /solar-installers/trinity-solar-review (third)",
+      "evidence": "All three new in release, 0 impressions. Targets are the pages hub_page_map.csv assigns the comparison queries to (clusters 136, 258 -> Momentum review; 139 'sunrun vs trinity solar' -> Trinity review). Company evidence under plan_items.6.2.",
+      "folded": "Momentum review: CPUC record (217/29/0) in body and FAQ; #adt-solar section (ADT exit quote, CPUC 1,398/last 3 in 2025, owner steps, installer-gone guide). Trinity review: CPUC finding (none since 2016) and Sunrun pointer in the California note; its comparison paragraph links the reviews instead of the retired pages.",
+      "not_carried": "Elevation/Sunrun Lighthouse service claims from the ADT page (installer sites)",
+      "links_retargeted": 9
+    },
+    {
+      "cluster": "Decision 14 remnants",
+      "losers": [
+        "/blog/solar-ppa-vs-lease-california",
+        "/blog/commercial-solar-installation-cost-california"
+      ],
+      "winner": "(already redirected 2026-09-23)",
+      "evidence": "Left in the sitemap dated set and GROWTH_ROUTES by 409b92d.",
+      "folded": "list entries removed only",
+      "links_retargeted": 0
+    }
+  ],
+  "redirects_added": 15,
+  "redirect_chains": "none: test 'GS-MERGES: each loser 301s straight to a live winner' checks every loser -> winner is one hop, the winner is not a source, no canonical-table or next.config.js rule points at a loser; the page-level 308 on /blog/is-solar-worth-it-california-2026 now targets /solar-panels-california too.",
+  "loser_page_files": "TSX loser page files are kept (as with the 2026-09-23 Decision 14 merges); the middleware 301 fires first on ratereliefca.com. The one JSON loser's entry was removed so the /solar-problems hub and sibling lists no longer render it.",
+  "gates": {
+    "tsc": "clean",
+    "canonical-redirects + cta-intent + intake-routing + city-pages + solar-cost-index tests": "49/49",
+    "test:growth": "53/53",
+    "Header.test.mjs": "2/2",
+    "qc-gate.mjs (JSON)": "PASSED (51 pages)",
+    "qc-gate-tsx.mjs": "55 fail / 148 warn, identical set to base 0355a03 (0 new fails, 0 new warns)",
+    "assert:citylinks": "ok (no internal link points at a redirected path)",
+    "assert:linkspine": "ok"
+  },
+  "sources_fetched": [
+    {
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A25D+edition%3Aprelim%29",
+      "date": "2026-09-24",
+      "used_for": "25D(c), (e)(8), (h)"
+    },
+    {
+      "url": "https://uscode.house.gov/view.xhtml?req=%28title%3A26+section%3A6417+edition%3Aprelim%29",
+      "date": "2026-09-24",
+      "used_for": "elective pay: 48E applicable credit, applicable entities"
+    },
+    {
+      "url": "https://www.irs.gov/credits-deductions/elective-pay-and-transferability",
+      "date": "2026-09-24",
+      "used_for": "elective pay mechanics"
+    },
+    {
+      "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide",
+      "date": "2026-09-24",
+      "used_for": "escalator range, lease term, pros/cons, total-cost questions, 10% rate-escalation cap"
+    },
+    {
+      "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
+      "date": "2026-09-24",
+      "used_for": "NEM/NBT billing, NSC, TOU rates, adder, legacy periods, NEM history"
+    },
+    {
+      "url": "https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-modernizes-solar-tariff-to-support-reliability-and-decarbonization",
+      "date": "2026-09-24",
+      "used_for": "2022 projected savings and payback; no solar-specific charges"
+    },
+    {
+      "url": "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
+      "date": "2026-09-24",
+      "used_for": "NSC, true-up, Base Services Charge"
+    },
+    {
+      "url": "https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/solar-billing-plan-faqs",
+      "date": "2026-09-24",
+      "used_for": "NSC ineligibility, non-offsettable charges, April 14, 2026 deadline, EEC lock-in"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7159.5",
+      "date": "2026-09-24",
+      "used_for": "(a)(3), (a)(5)"
+    },
+    {
+      "url": "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7169",
+      "date": "2026-09-24",
+      "used_for": "(b), (c)(11)"
+    },
+    {
+      "url": "https://dfpi.ca.gov/consumers/housing/pace/",
+      "date": "2026-09-24",
+      "used_for": "PACE licensing since 2019, 'difficult to void', 1-866-275-2677 (read via r.jina.ai)"
+    },
+    {
+      "url": "https://www.cslb.ca.gov/Consumers/Filing_A_Complaint/",
+      "date": "2026-09-24",
+      "used_for": "four-year complaint window"
+    },
+    {
+      "url": "https://www.calbar.ca.gov/public/find-legal-professionals/find-lawyer-referral-service",
+      "date": "2026-09-24",
+      "used_for": "referral-service terms; Check Attorney Profile"
+    },
+    {
+      "url": "https://www.osti.gov/servlets/purl/1342946",
+      "date": "2026-09-24",
+      "used_for": "LBNL-1007003 abstract (113 TPO sales, no significant premium)"
+    },
+    {
+      "url": "https://law.justia.com/cases/california/court-of-appeal/2026/a167721a.html",
+      "date": "2026-09-24",
+      "used_for": "Court of Appeal affirmance 2026-03-09; 2025 Supreme Court remand; five-year glide path (read via r.jina.ai)"
+    },
+    {
+      "url": "https://investor.adt.com/News--Events/news/news-details/2024/ADT-Provides-Solar-Business-Update-and-Advances-Capital-Allocation-Strategy/default.aspx",
+      "date": "2026-09-24",
+      "used_for": "ADT exit (read via r.jina.ai)"
+    },
+    {
+      "url": "https://www.trinitysolar.com/",
+      "date": "2026-09-24",
+      "used_for": "6.2 evidence: own service areas (company site used only for its own footprint)"
+    },
+    {
+      "url": "https://www.momentumsolar.com/",
+      "date": "2026-09-24",
+      "used_for": "6.2 evidence: own service states"
+    },
+    {
+      "url": "https://poweredbyelevation.com/ and https://empiresolargroup.com/",
+      "date": "2026-09-24",
+      "used_for": "6.2 check only; no change made"
+    },
+    {
+      "url": "https://www.californiadgstats.ca.gov/downloads/ (Interconnected_Project_Sites_2026-05-31.zip, local copy)",
+      "date": "2026-09-24",
+      "used_for": "6.2 installer counts by year"
+    }
+  ],
+  "requests_for_other_lanes": [
+    {
+      "lane": "citycos (src/app/solar-companies/[city]/page.tsx)",
+      "request": "Plan 6.2: remove Trinity Solar from the nine-company comparison list (slug trinity-solar-review) and fix the FAQ sentence 'Eight of the nine companies above sell solar in California; the ninth, Trinity Solar, serves the Northeast.' Change Momentum's serviceNote 'National installer that sells solar in California.' to reflect the evidence: its site lists no California; CPUC data show 217 (2024), 29 (2025), 0 (Jan-May 2026) California residential systems. Evidence in plan_items.6.2."
+    },
+    {
+      "lane": "citycos / citydata / integration",
+      "request": "Keep the merges lane's one-line href/row retargets in city files when merging rewrites: solar-companies/[city]/page.tsx Related Reading link -> /solar-panels-california#still-worth-it-nem-3; solar-savings/[city]/page.tsx two 'NEM 3.0 guide' links -> /blog/what-is-nem-3-california and the post-tax-credit link -> /blog/california-solar-tax-credit-2026#quote-without-credit; components/growth/CityCostPage.tsx no-upfront link -> /blog/free-solar-panels-california#no-money-down; data/cities-data.ts related-article rows (nem-3-california-still-worth-it -> nem-2-vs-nem-3-california, solar-tax-credit-expired-2026-options -> california-solar-tax-credit-2026, are-solar-panels-worth-it-california -> solar-payback-period-california; LADWP list -> ladwp-net-metering); data/growth-cities.ts two true-up links -> /solar-problems/true-up-bill-california-explained. Any new link to a GS-MERGES source fails assert:citylinks."
+    },
+    {
+      "lane": "onpage",
+      "request": "/blog/solar-ppa-explained-california title 'Solar PPA Explained: How California's $0-Down Solar Works': drop the '$0-Down' framing so it stops competing with the no-money-down winner /blog/free-solar-panels-california (which now carries #no-money-down)."
+    },
+    {
+      "lane": "accuracy/trust",
+      "request": "Leaked process text on the no-money-down winner /blog/free-solar-panels-california (components/growth/AssistanceGuides.tsx, kind 'free'): 'Say so plainly, because the query brings renters.' and 'The existing site guidance applies unchanged:'. Not edited here to avoid a double edit."
+    },
+    {
+      "lane": "integration",
+      "request": "Combine the GS-MERGES blocks with the routing lane's block at the end of CRR_CANONICAL_REDIRECTS and in canonical-redirects.test.ts (ROW_DELTAS already counts 15). The Decision 14 held-merge test now skips GS_MERGES_APPLIED_HELD (G05, G08, G10, G11). sitemap.ts gains GS_MERGES_20260924, checked first in fileMtime/urlMtime. scripts/review-worth-owner-consolidation.mjs (not a gate) asserts the retired worth-it canonical and should be retired. GRH /reviews/* pages (anker-solix-c1000, ecoflow-*) still link /blog/nem-3-california-still-worth-it; those render on greenreviewshub.com where /blog/* 404s anyway, so they were left alone."
+    }
+  ],
+  "needs_chad": [
+    "G10: the NEM 3.0 definition page was kept over the timeline page on content, not impressions (27 vs 63 in 90 days, no query rows). If you prefer the timeline URL, swap the row and retarget /blog/nem-3-california.",
+    "Trinity Solar review (1,338 impressions, mostly East Coast brand searches) is kept and reframed as 'not a California option', but it still shows the California quick check and inquiry form. Remove the forms, or 301 the review to /solar-installers? Not done here (forms rule).",
+    "Loser page files are kept behind the 301s, as with the 2026-09-23 merges. Delete them in a later cleanup if you want the code gone."
+  ],
+  "last_commit": "147ab41 (content); this manifest is committed on top of it",
+  "links_retargeted_note": "Count of removed href/slug/redirect lines naming a loser across src (excluding the index files), including the city-lane rows listed in requests_for_other_lanes."
+}

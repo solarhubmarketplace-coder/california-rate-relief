@@ -102,13 +102,13 @@ export function IncentivesAnswer() {
         credit&rdquo; to later years (IRS). The IRS also says you could claim it for your main
         home &ldquo;whether you own or rent it,&rdquo; but not as a landlord who does not
         live there. For the records to keep, see{' '}
-        <Link className={link} href="/blog/solar-tax-credit-2026">
+        <a className={link} href="#tax-credit-records">
           completion dates and prior-year records
-        </Link>
-        ; for what a new buyer can still use, see{' '}
-        <Link className={link} href="/blog/solar-tax-credit-expired-2026-options">
-          the options now the credit has ended
-        </Link>
+        </a>
+        ; for a quote that still subtracts a credit, see{' '}
+        <a className={link} href="#quote-without-credit">
+          how to compare it without one
+        </a>
         .
       </p>
     </section>
@@ -229,9 +229,12 @@ export function IncentivesTable() {
 const groups: { heading: string; links: { href: string; label: string; note: string }[] }[] = [
   {
     heading: 'Tax credits',
+    // GS-MERGES 2026-09-24: the two tax-credit spokes merged into this page
+    // (#tax-credit-records, #quote-without-credit); their slots now list the
+    // remaining tax-credit guides.
     links: [
-      { href: '/blog/solar-tax-credit-expired-2026-options', label: 'Solar tax credit ended: your 2026 options', note: 'What a new purchase can still use.' },
-      { href: '/blog/solar-tax-credit-2026', label: 'Completion dates and prior-year records', note: 'For systems finished by the end of 2025.' },
+      { href: '/blog/inflation-reduction-act-solar-california', label: 'The Inflation Reduction Act and solar in California', note: 'How the law set the credit, and what federal help is left.' },
+      { href: '/commercial-solar/commercial-solar-tax-credit', label: 'The commercial solar tax credit (§ 48E)', note: 'The business credit, which follows different rules.' },
     ],
   },
   {

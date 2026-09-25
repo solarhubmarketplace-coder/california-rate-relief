@@ -66,8 +66,6 @@ export const GROWTH_ROUTES = [
   '/blog/nem-2-vs-nem-3-california',
   '/blog/pge-rate-increase-2026',
   '/blog/net-billing-vs-net-metering-california',
-  '/blog/nem-3-california-still-worth-it',
-  '/blog/nem-3-california-timeline',
   '/solar-companies/sonoma',
   '/solar-companies/ventura',
   '/solar-companies/grass-valley',
@@ -130,14 +128,11 @@ export const GROWTH_ROUTES = [
   "/utilities/pepco/high-bill",
   "/utilities/pepco/solar-credits",
   "/utilities/delmarva/high-bill",
-  "/blog/are-solar-panels-worth-it-california",
   "/blog/sdge-time-of-use-rates-2026",
   "/blog/sce-time-of-use-rates-2026",
   "/commercial-solar/companies-california",
   "/commercial-solar",
-  "/blog/solar-tax-credit-expired-2026-options",
   "/blog/california-solar-tax-credit-2026",
-  "/blog/solar-tax-credit-2026",
   "/blog/free-solar-for-seniors-california",
   "/blog/free-solar-panels-california",
   "/blog/low-income-solar-california",
@@ -235,8 +230,6 @@ export const LOCAL_RELEASE_REVIEW_ROUTES = [
   '/solar-companies/santa-barbara',
   '/blog/solar-panels-tile-roof-california',
   '/blog/nem-2-vs-nem-3-california',
-  '/blog/nem-3-california-timeline',
-  '/blog/nem-3-california-still-worth-it',
   '/blog/net-billing-vs-net-metering-california',
   '/blog/pge-rate-increase-2026',
   '/blog/free-roof-replacement-with-solar-panels-california',
@@ -244,13 +237,11 @@ export const LOCAL_RELEASE_REVIEW_ROUTES = [
   '/blog/what-happens-to-solar-lease-when-i-sell-california',
   '/blog/commercial-solar-financing-california',
   '/blog/solar-panel-removal-reinstall-cost',
-  '/blog/commercial-solar-installation-cost-california',
 ] as const;
 
 export const PUBLIC_CRR_NO_SESSION_ROUTES = [
   '/email/bill-review',
   '/email/quote-review',
-  '/blog/is-solar-worth-it-california-2026',
   // claude/upg-index-20260922: the cost index's CSV download. A file, not a
   // page, so it stays out of GROWTH_ROUTES (and so out of the sitemap).
   '/california-solar-cost-index/data.csv',

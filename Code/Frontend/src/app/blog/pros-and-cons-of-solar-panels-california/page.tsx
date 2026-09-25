@@ -332,8 +332,8 @@ export default function ProsAndConsOfSolarPanelsCalifornia() {
               guide to choosing and verifying a solar company
             </Link>{' '}
             shows how, and the{' '}
-            <Link href="/blog/are-solar-panels-worth-it-california" className={link}>
-              worth-it decision guide
+            <Link href="/solar-panels-california#stress-test" className={link}>
+              worth-it stress test
             </Link>{' '}
             helps you test a proposal against less favorable assumptions.
           </p>

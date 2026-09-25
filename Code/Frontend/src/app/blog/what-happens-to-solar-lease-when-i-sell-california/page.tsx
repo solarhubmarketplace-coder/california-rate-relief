@@ -362,7 +362,7 @@ export default function SolarLeaseHomeSaleCA() {
           { href: "/blog/what-happens-if-stop-paying-solar-lease-california", label: "What default does to the transfer" },
           // claude/ca-financing-20260918
           { href: "/blog/is-it-better-to-buy-or-lease-solar-panels-california", label: "Whether buying or leasing fits the next house" },
-          { href: "/blog/how-much-does-it-cost-to-lease-solar-panels-california", label: "What determines a lease or PPA payment in the first place" },
+          { href: "/blog/rent-solar-panels-for-your-home-california#what-sets-the-payment", label: "What determines a lease or PPA payment in the first place" },
           { href: "/blog/do-solar-panels-increase-property-taxes-california", label: "The property tax exclusion and a change in ownership" },
           { href: "/blog/does-solar-increase-home-value-california", label: "What solar does to a California home's value" },
         ]}

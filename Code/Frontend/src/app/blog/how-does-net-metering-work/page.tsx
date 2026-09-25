@@ -132,7 +132,7 @@ export default function HowDoesNetMeteringWork() {
                 <li><Link href="/blog/what-is-nem-3-california" className="text-primary underline">What Is NEM 3.0?</Link></li>
                 <li><Link href="/blog/net-billing-vs-net-metering-california" className="text-primary underline">Net Billing vs Net Metering</Link></li>
                 <li><Link href="/blog/nem-2-vs-nem-3-california" className="text-primary underline">NEM 2.0 vs NEM 3.0</Link></li>
-                <li><Link href="/blog/nem-3-california-still-worth-it" className="text-primary underline">Is Solar Still Worth It Under NEM 3.0?</Link></li>
+                <li><Link href="/solar-panels-california#still-worth-it-nem-3" className="text-primary underline">Is Solar Still Worth It Under NEM 3.0?</Link></li>
               </ul>
             </div>
             <div className="not-prose">

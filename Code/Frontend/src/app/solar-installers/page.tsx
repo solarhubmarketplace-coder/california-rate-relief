@@ -92,9 +92,6 @@ const COMPARISONS: Entry[] = [
   { href: '/solar-installers/sunrun-vs-sunpower', anchor: 'Sunrun vs SunPower', blurb: 'Two very different businesses after one of them restructured: who carries the warranty and who does the work.' },
   { href: '/solar-installers/sunrun-vs-tesla-solar', anchor: 'Sunrun vs Tesla Solar', blurb: 'Third-party ownership against a cash or loan purchase: price structure, install timeline and service.' },
   { href: '/solar-installers/sunnova-vs-sunrun', anchor: 'Sunnova vs Sunrun', blurb: 'A dealer network against in-house crews, and what that difference does to accountability for the install.' },
-  { href: '/solar-installers/sunrun-vs-trinity-solar', anchor: 'Sunrun vs Trinity Solar', blurb: 'One lists California and one does not: service area, complaint files and contract type side by side.' },
-  { href: '/solar-installers/momentum-solar-vs-trinity-solar', anchor: 'Momentum Solar vs Trinity Solar', blurb: 'Two East Coast installers compared on their own records, and why neither is a California quote.' },
-  { href: '/solar-installers/adt-solar-vs-momentum-solar', anchor: 'ADT Solar vs Momentum Solar', blurb: 'ADT left residential solar in 2024. What that means for its customers and for anyone comparing the two.' },
   { href: '/solar-installers/enphase-vs-solaredge', anchor: 'Enphase vs SolarEdge inverters', blurb: 'Microinverters against a string inverter with optimisers: what each does at the roof and what fails differently.' },
 ];
 
@@ -213,7 +210,7 @@ const STATUS: { company: string; href: string; status: string; src: string }[] =
   { company: 'Sunergy (Lake Forest)', href: '/solar-installers/sunergy-solar-review', status: 'California-based; also lists Montana and Alaska', src: SRC.sunergy },
   { company: 'Momentum Solar', href: '/solar-installers/momentum-solar-review', status: 'Does not list California; lists CT, FL, MA, NV, NJ, NY, TX', src: SRC.momentum },
   { company: 'Trinity Solar', href: '/solar-installers/trinity-solar-review', status: 'Does not list California; lists nine Northeast, Mid-Atlantic and Ohio states', src: SRC.trinity },
-  { company: 'ADT Solar', href: '/solar-installers/adt-solar-vs-momentum-solar', status: 'ADT exited residential solar (announced January 24, 2024)', src: SRC.adt },
+  { company: 'ADT Solar', href: '/solar-installers/momentum-solar-review#adt-solar', status: 'ADT exited residential solar (announced January 24, 2024)', src: SRC.adt },
   { company: 'Vivint Solar', href: '/solar-installers/vivint-review', status: 'Acquired by Sunrun, October 8, 2020', src: SRC.vivint },
 ];
 

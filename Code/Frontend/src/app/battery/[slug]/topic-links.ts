@@ -110,7 +110,7 @@ export const BATTERY_TOPIC_LINKS: Record<string, BatteryTopicLinks> = {
     heading: 'Inputs to the payback math',
     links: [
       { href: '/blog/nem-3-export-rates-california', label: 'The hourly export values behind the math' },
-      { href: '/blog/nem-3-california-still-worth-it', label: 'Whether solar still pencils out under NEM 3.0' },
+      { href: '/solar-panels-california#still-worth-it-nem-3', label: 'Whether solar still pencils out under NEM 3.0' },
       { href: '/battery/home-battery-cost-california', label: 'Installed battery cost, line by line' },
       { href: '/battery/pge-solar-battery-rebate', label: 'Rebates a PG&E customer can still claim' },
     ],

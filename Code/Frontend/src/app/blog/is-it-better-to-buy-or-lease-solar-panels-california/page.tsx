@@ -155,7 +155,7 @@ export default function IsItBetterToBuyOrLeaseSolarPanelsCalifornia() {
       sources={sources}
       sourceCheckedDate="2026-09-22"
       topic="Comparing a solar purchase and a solar lease"
-      primaryResourceHref="/blog/how-much-does-it-cost-to-lease-solar-panels-california"
+      primaryResourceHref="/blog/rent-solar-panels-for-your-home-california#what-sets-the-payment"
       primaryResourceLabel="What sets a lease payment"
       comparisonHref="/blog/ppa-loan-vs-solar-lease-vs-cash-california"
       comparisonLabel="All four payment structures"
@@ -684,7 +684,7 @@ export default function IsItBetterToBuyOrLeaseSolarPanelsCalifornia() {
         intro="Each of these covers one input to the comparison above."
         links={[
           {
-            href: "/blog/how-much-does-it-cost-to-lease-solar-panels-california",
+            href: "/blog/rent-solar-panels-for-your-home-california#what-sets-the-payment",
             label: "What determines a solar lease or PPA payment",
             note: "and the document that has to carry the total",
           },
@@ -694,7 +694,7 @@ export default function IsItBetterToBuyOrLeaseSolarPanelsCalifornia() {
             note: "one pays for equipment, the other for output",
           },
           {
-            href: "/blog/zero-down-solar-california",
+            href: "/blog/free-solar-panels-california#no-money-down",
             label: "What a no-down-payment solar offer means",
             note: "the first payment is not the total",
           },
@@ -707,7 +707,7 @@ export default function IsItBetterToBuyOrLeaseSolarPanelsCalifornia() {
             label: "Selling a home with a solar lease or PPA",
           },
           {
-            href: "/blog/solar-tax-credit-expired-2026-options",
+            href: "/blog/california-solar-tax-credit-2026",
             label: "The federal credit ended: what is left in California",
           },
           {

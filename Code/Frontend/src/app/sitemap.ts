@@ -149,13 +149,13 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'sce-time-of-use-rates-2026',
     'pge-time-of-use-rates-2026',
     'sce-rate-increase-2026', 'pge-rate-increase-2026', 'sdge-rate-increase-2026',
-    'california-24-dollar-fixed-charge-explained', 'solar-tax-credit-expired-2026-options',
-    'nem-3-california-still-worth-it', 'pge-vs-sce-vs-sdge-rates-compared',
+    'california-24-dollar-fixed-charge-explained',
+    'pge-vs-sce-vs-sdge-rates-compared',
     'prepaid-ppa-california-2026', 'ppa-loan-vs-solar-lease-vs-cash-california',
-    'net-billing-vs-net-metering-california', 'nem-3-california-timeline',
+    'net-billing-vs-net-metering-california',
     'hoa-solar-rights-california', 'low-income-solar-california',
     'free-roof-replacement-with-solar-panels-california', 'nem-2-vs-nem-3-california',
-    'rent-solar-panels-for-your-home-california', 'are-solar-panels-worth-it-california',
+    'rent-solar-panels-for-your-home-california',
     'switch-to-solar-california', 'solar-system-quotes-california',
     'tesla-powerwall-installers-california', 'solar-panels-for-ev-charging-california',
     'what-is-nem-3-california', 'free-solar-for-seniors-california',
@@ -184,15 +184,12 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'solar-panel-inspection-california', 'solar-panel-maintenance-cost',
     'solar-panel-removal-reinstall-cost', 'solar-powered-ev-charger',
     'solar-ppa-explained-california',
-    'solar-tax-credit-2026',
     // claude/ca-green-20260918
     'does-solar-increase-home-value-california',
     'do-solar-panels-increase-property-taxes-california',
     'can-you-cancel-solar-panel-contract-before-installation-california',
     // claude/ca-financing-20260918 — Tier A financing-decision cluster
     'is-it-better-to-buy-or-lease-solar-panels-california',
-    'how-much-does-it-cost-to-lease-solar-panels-california',
-    'zero-down-solar-california',
     // claude/ta-release-20260923 — topical-authority wave (new posts)
     'average-kwh-per-day-california',
     'average-pge-bill-for-1-bedroom-apartment',
@@ -210,7 +207,6 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'nem-3-export-rates-california',
     'nem-3-lawsuit',
     'nem-pge',
-    'no-upfront-cost-solar-panels',
     'pge-solar-calculator',
     'pge-tier-rates',
     'prepaid-lease-solar',
@@ -229,7 +225,6 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'solar-payback-period-california',
     'solar-resources',
     'what-is-3rd-party-electric-on-pge-bill',
-    'what-is-nem-true-up',
     'what-percentage-of-california-power-is-solar',
     'when-does-nem-2-expire',
     'where-does-california-get-its-electricity',
@@ -284,11 +279,8 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'sunnova-vs-sunrun', 'sunrun-vs-tesla-solar', 'sunrun-vs-sunpower',
     'enphase-vs-solaredge',
     // claude/ta-release-20260923
-    'adt-solar-vs-momentum-solar',
     'licensed-solar-installer',
-    'momentum-solar-vs-trinity-solar',
     'pge-and-sunrun',
-    'sunrun-vs-trinity-solar',
     'vivint-review',
     'worst-solar-companies-california',
   ];
@@ -313,7 +305,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
 
   // Commercial solar (7 topics)
   const commercialSlugs = [
-    'companies-california', 'financing-options', 'cost-per-watt-california',
+    'companies-california', 'cost-per-watt-california',
     'title-24-requirements', 'cpace-financing-california',
     'sgip-battery-storage', 'vnem-aggregation-multi-meter',
     // claude/ta-release-20260923
