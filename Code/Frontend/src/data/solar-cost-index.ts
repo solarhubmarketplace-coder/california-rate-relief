@@ -94,7 +94,7 @@ export const FEE_STATUS_LABEL: Record<FeeStatus, string> = {
   conflicting: 'Two figures published',
   dated: 'Only a dated schedule',
   'not-published': 'No figure published',
-  'not-retrievable': 'Schedule not readable when checked',
+  'not-retrievable': 'Fee schedule not published in readable form',
   unclassified: 'See city page',
 };
 

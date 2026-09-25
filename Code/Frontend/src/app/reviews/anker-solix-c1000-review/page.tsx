@@ -668,7 +668,7 @@ export default function AnkerSolixC1000Review() {
                 SOLIX C1000 is a reasonable starting point. For more on NEM
                 3.0 economics, see{' '}
                 <Link
-                  href='/blog/nem-3-california-still-worth-it'
+                  href='https://ratereliefca.com/solar-panels-california'
                   className='text-primary hover:underline'
                 >
                   is solar still worth it under NEM 3.0

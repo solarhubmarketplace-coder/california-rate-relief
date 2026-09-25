@@ -7,7 +7,7 @@ import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
 import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
@@ -30,7 +30,7 @@ const CRUMB_LABEL = 'Switching to solar';
 export default function SwitchToSolar() {
   return (
     <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Switch to Solar in California: The 2026 Complete Guide"} url="https://ratereliefca.com/blog/switch-to-solar-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Everything California homeowners need to know about switching to solar in 2026 — the NEM 3.0 rules, financing options, what it costs, how long it takes, and the 5-step process."} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Switch to Solar in California: The 2026 Complete Guide"} url="https://ratereliefca.com/blog/switch-to-solar-california" datePublished="2026-04-23" dateModified="2026-09-24" description={"Everything California homeowners need to know about switching to solar in 2026 — the NEM 3.0 rules, financing options, what it costs, how long it takes, and the 5-step process."} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
@@ -40,16 +40,15 @@ export default function SwitchToSolar() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Getting Started</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Switch to Solar in California: The 2026 Complete Guide</h1>
-              <Byline updated="2026-04-24" />
+              <Byline updated="2026-09-24" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-24'>Updated April 24, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>10 min read</span></div>
               </div>
             </header>
 
             <div className='prose prose-slate max-w-none'>
               <p className='text-lg text-foreground/80 leading-relaxed mb-6'>
-                Switching to solar in California in 2026 is a different process than it was three years ago. The NEM 3.0 tariff changed the math. Battery storage is now essentially mandatory for solid economics. The federal tax credit situation shifted. And the installer landscape has consolidated — Freedom Forever filed Chapter 11 last week, Sunnova went through Chapter 11 in June 2025. This guide walks through the complete process: deciding if solar is right for you, comparing installers and financing, getting through installation and interconnection, and what to expect on your first few utility bills.
+                Switching to solar in California in 2026 is a different process than it was three years ago. The NEM 3.0 tariff changed the math. Battery storage is now essentially mandatory for solid economics. The federal tax credit situation shifted. And the installer landscape has consolidated — Freedom Forever filed Chapter 11 on April 15, 2026 and the court converted the case to a Chapter 7 liquidation on August 7, 2026, and Sunnova went through Chapter 11 in June 2025. This guide walks through the complete process: deciding if solar is right for you, comparing installers and financing, getting through installation and interconnection, and what to expect on your first few utility bills.
               </p>
               <HubUpLink path="/blog/switch-to-solar-california" />
 

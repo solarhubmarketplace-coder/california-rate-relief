@@ -106,7 +106,7 @@ function buildFindings(): string[] {
   const conflicting = rows.filter((r) => r.fee.status === 'conflicting').map((r) => r.city);
   out.push(
     `${f.feeCounts.published} of ${f.total} cities publish a current dollar figure for a residential solar permit that we could confirm. ` +
-      `${f.feeCounts['not-published']} publish no dollar figure on the permit pages we checked, and ${plural(f.feeCounts['not-retrievable'], 'city', 'cities')} had a fee schedule we could not read when we checked.` +
+      `${f.feeCounts['not-published']} publish no dollar figure on their permit pages, and ${plural(f.feeCounts['not-retrievable'], 'city', 'cities')} ${f.feeCounts['not-retrievable'] === 1 ? 'does' : 'do'} not publish a fee schedule in readable form.` +
       (dated.length ? ` ${listJoin(dated)} ${dated.length === 1 ? 'has' : 'have'} only a dated schedule.` : '') +
       (conflicting.length ? ` ${listJoin(conflicting)} ${conflicting.length === 1 ? 'publishes' : 'publish'} two different figures.` : ''),
   );
@@ -127,7 +127,7 @@ function buildFindings(): string[] {
   out.push(
     `${automated} of ${f.total} cities name an instant permit platform for home solar: SolarAPP+ in ${p.solarapp} and Symbium in ${p.symbium}` +
       (f.cityInstantCities.length ? `, while ${listJoin(f.cityInstantCities)} ${f.cityInstantCities.length === 1 ? 'issues' : 'issue'} qualifying permits through ${f.cityInstantCities.length === 1 ? 'its' : 'their'} own system` : '') +
-      `. ${p['none-named']} name none on the pages we checked${p.unconfirmed ? `, and for ${p.unconfirmed} we could not confirm either way` : ''}.`,
+      `. ${p['none-named']} name none on their permit pages${p.unconfirmed ? `, and ${p.unconfirmed} do not say either way` : ''}.`,
   );
   const u = f.utilityCounts;
   out.push(
@@ -383,7 +383,7 @@ export default function CaliforniaSolarCostIndexPage() {
                     {platformSourceCities.length
                       ? `, or for ${listJoin(platformSourceCities)} on another City page cited in that row`
                       : ''}
-                    . &ldquo;None named&rdquo; means the pages we checked do not name a platform. It does
+                    . &ldquo;None named&rdquo; means the city&apos;s permit pages do not name a platform. It does
                     not prove the city has none.
                   </li>
                   <li>

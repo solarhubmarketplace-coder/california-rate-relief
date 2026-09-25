@@ -188,7 +188,7 @@ function CrrAuthorBody({ cfg, palette }: { cfg: DomainConfig; palette: Palette }
           Most reviews on {cfg.brand} are research-led: I read primary sources (license records, court filings, manufacturer specs) and homeowner reports, then write down what matters for the homeowner. When I have personally owned or installed a product, I say so on the page.
         </p>
         <p>
-          Every page shows the date it was last updated. I refresh installer reviews every 90 days.
+          Every page shows the date it was last updated.
         </p>
       </section>
 
@@ -267,7 +267,7 @@ function AuthorBody({ cfg, palette }: { cfg: DomainConfig; palette: Palette }) {
           Most reviews on {cfg.brand} are research-led: I read primary sources (license records, court filings, CVE databases, peer-reviewed literature, manufacturer specs) and aggregated owner reports, then synthesize what matters for the buyer. When I have personally owned or installed a product, I say so on the page.
         </p>
         <p>
-          Every review carries a "Last reviewed" date stamp. I refresh installer reviews every 90 days, product reviews every 60–90 days depending on category, and health-claim pages every 180 days against current literature.
+          Every review carries a date stamp showing when it was last updated.
         </p>
       </section>
 

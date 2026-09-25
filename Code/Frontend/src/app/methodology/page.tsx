@@ -81,7 +81,7 @@ const CONFIGS: Record<Domain, DomainConfig> = {
       'Refusal to provide written contracts before deposit',
     ],
     freshness:
-      'Installer reviews are reviewed at least every 90 days, sooner if a CSLB action, BBB pattern shift, or major news event occurs. Each review carries a "Last updated" date stamp visible to readers.',
+      'Installer reviews are updated when a CSLB action, a court filing, a BBB pattern shift or other news changes what a reader should know. Each review shows the date it was last updated.',
     conflictsBlurb:
       'California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement. We do not accept payment for placement, and installer pages carry no ratings or rankings; what they say reflects our research, not commercial relationships.',
   },

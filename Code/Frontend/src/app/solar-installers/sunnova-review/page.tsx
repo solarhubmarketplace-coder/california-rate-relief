@@ -10,8 +10,7 @@ import {
   ArrowRight,
   AlertTriangle,
   Clock,
-  Calendar,
-} from 'lucide-react';
+  } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
@@ -131,10 +130,6 @@ export default function SunnovaReview() {
 
               <LastReviewedStamp date="2026-09-22" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'>
-                  <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-09-22'>Updated September 22, 2026</time>
-                </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />
                   <span>11 min read</span>

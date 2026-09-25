@@ -439,7 +439,7 @@ export default function EcoFlowRiver3PlusReview() {
                 more flexible pathways. Verify eligibility with your
                 utility. For a deeper look at California&apos;s storage
                 incentive landscape, see our article on{' '}
-                <Link href='/blog/nem-3-california-still-worth-it' className='text-primary hover:underline'>
+                <Link href='https://ratereliefca.com/solar-panels-california' className='text-primary hover:underline'>
                   NEM 3.0 and battery economics
                 </Link>
                 .

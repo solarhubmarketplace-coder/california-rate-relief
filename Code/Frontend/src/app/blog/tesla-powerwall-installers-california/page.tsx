@@ -6,7 +6,7 @@ import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
 import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
@@ -44,7 +44,6 @@ export default function TeslaPowerwallInstallers() {
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Tesla Powerwall Installers in California: 2026 Guide</h1>
               <Byline updated="2026-04-24" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-24'>Updated April 24, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>7 min read</span></div>
               </div>
             </header>

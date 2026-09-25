@@ -5,7 +5,7 @@ import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
 import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
@@ -30,7 +30,7 @@ const CRUMB_LABEL = 'Can solar power a whole house?';
 export default function CanSolarPowerWholeHouse() {
   return (
     <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"Can Solar Panels Power a Whole House in California?"} url="https://ratereliefca.com/blog/can-solar-panels-power-a-whole-house-california" datePublished="2026-04-23" dateModified="2026-04-24" description={"Yes — a correctly sized solar + battery system can run a typical California home for the full day, evening, and most outages. Here is exactly what it takes."} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"Can Solar Panels Power a Whole House in California?"} url="https://ratereliefca.com/blog/can-solar-panels-power-a-whole-house-california" datePublished="2026-04-23" dateModified="2026-09-24" description={"Yes — a correctly sized solar + battery system can run a typical California home for the full day, evening, and most outages. Here is exactly what it takes."} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
@@ -40,9 +40,8 @@ export default function CanSolarPowerWholeHouse() {
             <header className='mb-10'>
               <span className='text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide'>Solar Capacity</span>
               <h1 className='text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight'>Can Solar Panels Power a Whole House in California?</h1>
-              <Byline updated="2026-04-24" />
+              <Byline updated="2026-09-24" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-24'>Updated April 24, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>6 min read</span></div>
               </div>
             </header>

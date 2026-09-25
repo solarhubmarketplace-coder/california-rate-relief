@@ -38,7 +38,7 @@ const h1 = 'The SCE Bill Hike in Altadena: What Changed, What It Costs and Where
 const description =
   "Altadena SCE bills rose when the CPUC's 2025 rate case took effect Oct. 1, 2025: what it added, the $24 charge, Clean Power Alliance rates and local help.";
 const published = '2026-09-23';
-const updated = '2026-09-23';
+const updated = '2026-09-24';
 const checked = '2026-09-23';
 const hub = { label: 'Los Angeles County solar guide', href: '/solar-savings/los-angeles-county' };
 
@@ -329,8 +329,9 @@ export default function AltadenaSceBillPage() {
                   portal.
                 </li>
                 <li>
-                  <strong>Solar with a battery.</strong> Clean Power Alliance lists its Sun Storage Rebate, up to $2,250 for
-                  eligible customers installing solar with a battery, among its wildfire resilience programs.
+                  <strong>Solar with a battery.</strong> Clean Power Alliance&apos;s Sun Storage Rebate pays $2,000 toward an eligible
+                  battery, and up to $3,500 with its add-ons for homes in Public Safety Power Shutoff areas and for Medical
+                  Baseline, CARE or FERA customers, first come, first served (CPA, checked September 24, 2026).
                 </li>
               </ul>
 

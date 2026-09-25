@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { PublicLayout } from '@/components/layout/PublicLayout';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Clock } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const articleSchema = {
   '@context': 'https://schema.org', '@type': 'Article',
   headline: "Ameco Solar Review 2026",
-  datePublished: '2026-04-24', dateModified: '2026-04-24',
+  datePublished: '2026-04-24', dateModified: '2026-09-24',
   author: CRR_AUTHOR_PERSON,
   publisher: { '@type': 'Organization', name: 'California Rate Relief' },
   mainEntityOfPage: { '@type': 'WebPage', '@id': 'https://ratereliefca.com/solar-installers/ameco-solar-review' },
@@ -53,9 +53,8 @@ export default function AmecoReview() {
                 Ameco Solar Reviews (2026): Long-Standing LA Regional Installer
               </h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <LastReviewedStamp date="2026-09-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'><Calendar className='h-4 w-4' /><time dateTime='2026-04-24'>Updated April 24, 2026</time></div>
                 <div className='flex items-center gap-1'><Clock className='h-4 w-4' /><span>7 min read</span></div>
               </div>
             </header>
@@ -103,7 +102,7 @@ export default function AmecoReview() {
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Financing and Warranty</h2>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                Ameco offers cash, loans, leases, and PPAs through third-party partners. You can own the system (cash/loan) or go $0-down (lease/PPA). Warranty is strong — 25-year options on equipment and workmanship, with the roofing side backed by manufacturer warranties (GAF, CertainTeed typical).
+                Ameco lists cash, loans, leases and PPAs through third-party partners, but the utility records below show none of its 2025 systems as a lease or PPA. You can own the system (cash/loan) or go $0-down (lease/PPA). Warranty is strong — 25-year options on equipment and workmanship, with the roofing side backed by manufacturer warranties (GAF, CertainTeed typical).
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
                 Utility records list Ameco Solar LLC (CSLB #1053172) on 398 residential systems approved at PG&amp;E, SCE and SDG&amp;E in 2025, 130 of them in Los Angeles County. Of those, 71% included a battery and none was recorded as a lease or PPA (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026).

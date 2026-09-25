@@ -7,7 +7,7 @@ import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
 import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Clock } from 'lucide-react';
 import { CRR_AUTHOR_PERSON } from '@/lib/crr-author';
 import { Byline } from '@/components/trust/Byline';
 import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
@@ -83,10 +83,6 @@ export default function SolarPPAExplainedCalifornia() {
               </h1>
               <Byline updated="2026-09-22" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'>
-                  <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-09-22'>Updated September 22, 2026</time>
-                </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />
                   <span>8 min read</span>

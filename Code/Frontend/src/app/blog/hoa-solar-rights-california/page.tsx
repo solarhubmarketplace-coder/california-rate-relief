@@ -5,7 +5,7 @@ import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
 import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowRight, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
@@ -59,10 +59,6 @@ export default function HoaSolarRights() {
               </h1>
               <Byline updated="2026-09-24" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'>
-                  <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-04-24'>Updated April 24, 2026</time>
-                </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />
                   <span>6 min read</span>

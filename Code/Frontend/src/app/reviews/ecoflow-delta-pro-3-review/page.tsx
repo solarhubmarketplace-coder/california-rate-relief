@@ -660,7 +660,7 @@ export default function EcoFlowDeltaPro3Review() {
                 the Smart Home Panel, this happens automatically. For more on how
                 NEM 3.0 affects solar economics, see our article on{' '}
                 <Link
-                  href='/blog/nem-3-california-still-worth-it'
+                  href='https://ratereliefca.com/solar-panels-california'
                   className='text-primary hover:underline'
                 >
                   whether solar is still worth it under NEM 3.0

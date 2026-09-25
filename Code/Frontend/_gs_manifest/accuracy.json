@@ -91,7 +91,7 @@
   },
   "5.4": {
    "status": "done",
-   "summary": "30 of the 33 flagged pages now cite a primary source in the body, with publisher and check date (2026-09-24). Installer reviews first: 7 reviews + 3 comparisons use CPUC DG Stats interconnection data (computed from Interconnected_Project_Sites_2026-05-31.zip: systems per CSLB number, county, lease/PPA and battery shares, reported median $/W for host-owned PV-only 1-25 kW vs $4.18 statewide) and CourtListener dockets. Where the primary source contradicted a page, the claim was corrected (see commit 5387b35 and e0f4d77).",
+   "summary": "30 of the 33 flagged pages now cite a primary source in the body, with publisher and check date (2026-09-24). Installer reviews first: 7 reviews + 3 comparisons use CPUC DG Stats interconnection data (computed from Interconnected_Project_Sites_2026-05-31.zip: systems per CSLB number, county, lease/PPA and battery shares, reported median $/W for host-owned PV-only 1-25 kW vs $4.18 statewide; restated on 2026-09-24 as $4.14 on the site's single DG Stats basis) and CourtListener dockets. Where the primary source contradicted a page, the claim was corrected (see commit 5387b35 and e0f4d77).",
    "done_pages": [
     "/solar-installers/sunpower-review",
     "/solar-installers/semper-solaris-review",
@@ -364,7 +364,7 @@
  "needs_chad": [
   "§48E(i) wording: two pages now quote the statute text (it lists §25D(d)(1) solar water heating and (d)(4) small wind, not (d)(2) solar electric), matching the buy-or-lease and PPA-vs-lease pages. The tax-literate review (DO #11/#34) should confirm how the site describes lease/PPA credits.",
   "AB 942 page: its body now says the bill is not law and what it proposed. Decide whether to keep the page (with the on-page lane's new title/H1) or fold it into /blog/what-happens-to-solar-lease-when-i-sell-california.",
-  "Installer reviews now show each installer's reported median $/W from CPUC DG Stats next to the $4.18 statewide median. It is public CPUC data with the basis stated; confirm you are comfortable publishing it on installer pages.",
+  "Installer reviews now show each installer's reported median $/W from CPUC DG Stats next to the $4.14 statewide median (recomputed 2026-09-24 on the site's single DG Stats basis, src/data/dgstats/README.md). It is public CPUC data with the basis stated; confirm you are comfortable publishing it on installer pages.",
   "Create the weekly scheduled fact check from scheduled_task_prompt (integrator), and confirm the path of the local repo clone under D:\\5_Solar_Business\\Web_Projects\\ that it should read.",
   "Unsourced claims left in place on 5.4 pages (listed under items.5.4.unsourced_claims_left_in_place): approve removing them if no primary source turns up."
  ],

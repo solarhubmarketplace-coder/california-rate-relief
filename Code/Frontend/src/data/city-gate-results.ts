@@ -44,7 +44,7 @@ export const COST_CITY_GATE: Readonly<Record<string, CityGateSnapshotRow>> = {
   "hollister": { pass: true, overlap: 0.344, nearest: "marina", localDataPoints: 7 },
   "huntington-beach": { pass: true, overlap: 0.348, nearest: "beaumont", localDataPoints: 6 },
   "irvine": { pass: true, overlap: 0.288, nearest: "beaumont", localDataPoints: 7 },
-  "lakewood": { pass: true, overlap: 0.351, nearest: "pasadena", localDataPoints: 4 },
+  "lakewood": { pass: true, overlap: 0.352, nearest: "pasadena", localDataPoints: 4 },
   "lincoln": { pass: true, overlap: 0.35, nearest: "marina", localDataPoints: 6 },
   "livermore": { pass: true, overlap: 0.359, nearest: "danville", localDataPoints: 6 },
   "long-beach": { pass: true, overlap: 0.275, nearest: "beaumont", localDataPoints: 6 },

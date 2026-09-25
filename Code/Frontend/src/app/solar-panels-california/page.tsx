@@ -130,7 +130,7 @@ const faqs: FaqJsonLdItem[] = [
   {
     question: 'How much do solar panels cost in California?',
     answer:
-      'Lawrence Berkeley National Laboratory’s Tracking the Sun report put most host-owned residential systems installed in 2023 between $3.20 and $5.50 per watt (the 20th to 80th percentile of its national sample) and described California pricing as near the middle of that range. LBNL’s August 2026 update reports that host-owned residential prices fell by $0.50 per watt in 2025 after adjusting for inflation. Your own price depends on system size, equipment, roof and electrical work, so compare itemized quotes.',
+      'In the CPUC’s interconnection data, customer-owned home systems without a battery (1 to 25 kW) approved at PG&E, SCE and SDG&E from January 2025 through May 2026 reported a median price of $4.14 per watt, with the middle half between $2.90 and $5.53. Lawrence Berkeley National Laboratory’s Tracking the Sun report put most host-owned residential systems installed in 2023 between $3.20 and $5.50 per watt (the 20th to 80th percentile of its national sample) and described California pricing as near the middle of that range. LBNL’s August 2026 update reports that host-owned residential prices fell by $0.50 per watt in 2025 after adjusting for inflation. Your own price depends on system size, equipment, roof and electrical work, so compare itemized quotes.',
   },
   {
     question: 'Is solar free in California?',
@@ -225,6 +225,12 @@ export default function SolarPanelsCalifornia() {
       comparisonLabel="Compare solar companies"
       keyStats={[
         {
+          label: 'Reported price in California',
+          value: '$4.14/W median',
+          note: 'Customer-owned systems without a battery, 1–25 kW, approved at PG&E, SCE and SDG&E, Jan 2025–May 2026 (58,628 systems); middle half $2.90–$5.53.',
+          source: { publisher: 'CPUC DG Stats', date: '2026-09-24', url: 'https://www.californiadgstats.ca.gov/downloads/' },
+        },
+        {
           label: 'Installed price band',
           value: '$3.20–$5.50/W',
           note: 'Host-owned residential systems installed in 2023, 20th–80th percentile, national sample. LBNL places California near the middle.',
@@ -254,14 +260,25 @@ export default function SolarPanelsCalifornia() {
       <section id="cost">
         <h2 className={h2}>How much do solar panels cost in California?</h2>
         <p>
-          Solar is priced per watt of panel capacity. The most recent dollar range Lawrence
+          Solar is priced per watt of panel capacity. In the CPUC&apos;s interconnection data,
+          customer-owned home systems without a battery, 1 to 25 kW, approved at PG&amp;E, SCE
+          and SDG&amp;E from January 2025 through May 2026 reported a median price of $4.14 per
+          watt, with the middle half between $2.90 and $5.53 (58,628 systems;{' '}
+          <a href="https://www.californiadgstats.ca.gov/downloads/" target="_blank" rel="noopener noreferrer">California DG Stats</a>,
+          data through May 31, 2026, downloaded September 24, 2026). These are prices owners
+          reported, before incentives, not quotes. The{' '}
+          <Link href="/solar-cost">solar cost pages for each city</Link> give the local figure
+          where there is one.
+        </p>
+        <p className="mt-3">
+          The most recent dollar range Lawrence
           Berkeley National Laboratory states in its text comes from Tracking the Sun, 2024
           Edition: host-owned residential systems installed in 2023 ran from $3.20 to $5.50 per
           watt, the 20th to 80th percentile of its national sample. LBNL adds that residential
           pricing in California, &ldquo;which dominates the sample, is near the middle of the
           pack&rdquo; (LBNL, checked September 23, 2026). Its August 2026 update reports that
           host-owned residential prices fell by $0.50 per watt in 2025 after adjusting for
-          inflation, without restating a new band.
+          inflation.
         </p>
         <p className="mt-3">
           To turn that into a rough total, multiply by system size. Purely as arithmetic, a

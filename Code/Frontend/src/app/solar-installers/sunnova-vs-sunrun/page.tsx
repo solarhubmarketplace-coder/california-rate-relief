@@ -12,12 +12,12 @@ import { HubUpLink } from '@/components/growth/HubUpLink';
 import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 export const metadata: Metadata = {
-  title: "Sunnova vs Sunrun (2026): Dealer Network vs In-House Crews",
-  description: "In major CA metros Sunrun often installs with its own W-2 crews; Sunnova works through dealers. Compare contracts, warranties, escalators, and batteries.",
+  title: "Sunnova vs Sunrun (2026): After Sunnova's Bankruptcy",
+  description: "Sunnova's Chapter 11 plan took effect in November 2025 and SunStrong now services its contracts; Sunrun still sells. How the two compare now.",
   alternates: { canonical: '/solar-installers/sunnova-vs-sunrun' },
-  openGraph: { title: 'Sunnova vs Sunrun (2026)', description: 'Head-to-head comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunnova-vs-sunrun', images: [CRR_SOCIAL_CARD] },
+  openGraph: { title: 'Sunnova vs Sunrun (2026): After Sunnova\'s Bankruptcy', description: 'What changed for Sunnova customers, and how a Sunnova-era contract compares with Sunrun today.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/sunnova-vs-sunrun', images: [CRR_SOCIAL_CARD] },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Sunnova vs Sunrun', datePublished: '2026-04-24', author: CRR_AUTHOR_PERSON, publisher: { '@type': 'Organization', name: 'California Rate Relief' } };
+const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Sunnova vs Sunrun in California: What Changed After Sunnova\'s Bankruptcy', datePublished: '2026-04-24', dateModified: '2026-09-24', author: CRR_AUTHOR_PERSON, publisher: { '@type': 'Organization', name: 'California Rate Relief' } };
 
 export default function SunnovaVsSunrun() {
   return (
@@ -32,10 +32,10 @@ export default function SunnovaVsSunrun() {
             </nav>
             <header className="mb-10">
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Installer Comparison</span>
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Sunnova vs Sunrun: Dealer Network vs In-House Crews in California</h1>
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Sunnova vs Sunrun in California: What Changed After Sunnova&apos;s Bankruptcy</h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
-<p className="text-lg text-muted-foreground">The two biggest names in residential solar-as-a-service. Similar pricing, similar contracts — but meaningful differences in service model, equipment, and warranty structure.</p>
+              <LastReviewedStamp date="2026-09-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+<p className="text-lg text-muted-foreground">Sunnova filed Chapter 11 in June 2025, and its contracts are now serviced by SunStrong Management. Sunrun is still selling. If you have a Sunnova contract, or an old Sunnova quote next to a Sunrun one, here is how they differ now.</p>
 <HubUpLink path="/solar-installers/sunnova-vs-sunrun" />
             </header>
             <div className="prose prose-slate max-w-none">
@@ -55,9 +55,9 @@ export default function SunnovaVsSunrun() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Service model</td><td className="text-center">Dealer network</td><td className="text-center">Direct + dealer</td></tr>
-                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Primary finance offering</td><td className="text-center">Lease, PPA, loan</td><td className="text-center">Lease, PPA, cash</td></tr>
-                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">California footprint</td><td className="text-center">Statewide via dealers</td><td className="text-center">Statewide direct + dealers</td></tr>
+                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Service model</td><td className="text-center">Dealer network (before 2025)</td><td className="text-center">Direct + dealer</td></tr>
+                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Primary finance offering</td><td className="text-center">Lease, PPA, loan (existing contracts)</td><td className="text-center">Lease, PPA, cash</td></tr>
+                    <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">California footprint</td><td className="text-center">28 systems approved Jan–May 2026; contracts serviced by SunStrong</td><td className="text-center">Statewide direct + dealers</td></tr>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Warranty wrap</td><td className="text-center">25 yr Sunnova Protect</td><td className="text-center">25 yr BrightSave Monthly wrap</td></tr>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Contract length</td><td className="text-center">20–25 years</td><td className="text-center">20–25 years</td></tr>
                     <tr className="border-b border-border"><td className="py-3 pr-4 font-medium">Escalator typical</td><td className="text-center">0–2.9% annual</td><td className="text-center">0–2.9% annual</td></tr>
@@ -72,11 +72,11 @@ export default function SunnovaVsSunrun() {
                 Sunrun (CSLB #750184) is listed on 37,367 systems approved in 2025, 88% of them leases or PPAs (<a href='https://www.californiadgstats.ca.gov/downloads/' className='text-primary underline underline-offset-2' target='_blank' rel='noopener noreferrer'>California Distributed Generation Statistics</a>, CPUC interconnection data through May 31, 2026, downloaded September 24, 2026). Confirm who will service a Sunnova-era contract before you rely on the warranty rows above.
               </p>
 
-              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Where Sunnova Wins</h2>
+              <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">If You Have a Sunnova Contract</h2>
               <ul className="list-disc pl-6 space-y-2">
-                <li><strong>Warranty wraparound is more comprehensive.</strong> Sunnova Protect rolls panel, inverter, workmanship, roof, and production-guarantee coverage into one contact. If something fails, you call one number.</li>
-                <li><strong>More equipment flexibility.</strong> Sunnova&apos;s dealer network uses several panel/inverter combos, so your dealer can often spec what fits your roof best.</li>
-                <li><strong>Stronger loan option.</strong> Sunnova&apos;s Easy Own financing tends to quote competitively vs Sunrun&apos;s loan partners.</li>
+                <li><strong>SunStrong Management now services it.</strong> Sunnova&apos;s Chapter 11 plan took effect on November 14, 2025, and its customer contracts moved to SunStrong. The <Link href="/solar-installers/sunnova-review" className="text-primary underline">Sunnova review</Link> has the case record.</li>
+                <li><strong>Your signed terms still set the rules.</strong> The rate, escalator, term and Sunnova Protect coverage in your contract are the starting point. Ask SunStrong in writing how to request service and who honors the production guarantee.</li>
+                <li><strong>Panel, inverter and battery warranties come from their makers.</strong> Keep the model numbers and the manufacturer warranty documents with your contract.</li>
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Where Sunrun Wins</h2>
@@ -94,7 +94,7 @@ export default function SunnovaVsSunrun() {
               </ul>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">The Bottom Line</h2>
-              <p>For California homeowners: <strong>Sunrun</strong> tends to be the stronger pick in major metros (Bay Area, LA, San Diego) where it operates with its own in-house crews. <strong>Sunnova</strong> can be a better fit in smaller markets where its dealer network sends you a local California-only installer whose reputation you can verify. In both cases, ask for the specific installer by name and verify their CSLB license before signing.</p>
+              <p>Sunnova is no longer a practical choice for a new system: utility records show 28 Sunnova approvals from January through May 2026, and its contracts are serviced by SunStrong. If you are shopping now, compare Sunrun with other companies that are still selling in California, ask for the installer by name and check its CSLB license before signing. If you already have a Sunnova contract, start with SunStrong and the terms you signed.</p>
 
               <h2 className="text-2xl font-bold text-foreground mt-10 mb-4">Related Reading</h2>
               <ul className="list-disc pl-6 space-y-2">

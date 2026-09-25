@@ -8,8 +8,7 @@ import {
   ArrowRight,
   AlertTriangle,
   Clock,
-  Calendar,
-} from 'lucide-react';
+  } from 'lucide-react';
 import { AuthorBio } from '@/components/shared/AuthorBio';
 import { VerifyInstallerBox, type InstallerLicense, DGSTATS_LICENSE_BASIS } from '@/components/shared/VerifyInstallerBox';
 import { LastReviewedStamp } from '@/components/shared/LastReviewedStamp';
@@ -152,10 +151,6 @@ export default function FreedomForeverReview() {
               <LastReviewedStamp date="2026-09-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <div className='flex items-center gap-4 text-sm text-muted-foreground'>
                 <div className='flex items-center gap-1'>
-                  <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-09-24'>Updated September 24, 2026</time>
-                </div>
-                <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />
                   <span>11 min read</span>
                 </div>
@@ -175,6 +170,18 @@ export default function FreedomForeverReview() {
                 <li className='flex items-start gap-2'>
                   <span className='text-primary font-bold mt-1'>•</span>
                   <span>
+                    Freedom Forever&apos;s bankruptcy was converted to a
+                    Chapter 7 liquidation by an order signed August 7, 2026
+                    (Bankr. D. Del. No.
+                    26-10522). Promises made during the Chapter 11 period,
+                    including about the 25-year production guarantee, should
+                    not be relied on without written confirmation from
+                    whoever now holds your agreement.
+                  </span>
+                </li>
+                <li className='flex items-start gap-2'>
+                  <span className='text-primary font-bold mt-1'>•</span>
+                  <span>
                     Freedom Forever filed Chapter 11 on April 15, 2026 with
                     roughly $500M to $1B in liabilities against $100M to
                     $500M in assets.
@@ -183,12 +190,9 @@ export default function FreedomForeverReview() {
                 <li className='flex items-start gap-2'>
                   <span className='text-primary font-bold mt-1'>•</span>
                   <span>
-                    The case was converted to Chapter 7 liquidation by an
-                    order signed August 7, 2026 (Bankr. D. Del. No.
-                    26-10522). Promises made during the Chapter 11 period,
-                    including about the 25-year production guarantee, should
-                    not be relied on without written confirmation from
-                    whoever now holds your agreement.
+                    Proofs of claim in the Chapter 7 case are due October 16,
+                    2026 (the court&apos;s Chapter 7 notice, Doc. 568). A
+                    claim filed before the conversion already counts.
                   </span>
                 </li>
                 <li className='flex items-start gap-2'>

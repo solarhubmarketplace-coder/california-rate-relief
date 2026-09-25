@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   alternates: { canonical: '/solar-installers/enphase-vs-solaredge' },
   openGraph: { title: 'Enphase vs SolarEdge (2026)', description: 'Head-to-head inverter comparison.', type: 'article', publishedTime: '2026-04-24T00:00:00Z', url: 'https://ratereliefca.com/solar-installers/enphase-vs-solaredge', images: [CRR_SOCIAL_CARD] },
 };
-const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Enphase vs SolarEdge', datePublished: '2026-04-24', author: CRR_AUTHOR_PERSON, publisher: { '@type': 'Organization', name: 'California Rate Relief' } };
+const articleSchema = { '@context': 'https://schema.org', '@type': 'Article', headline: 'Enphase vs SolarEdge', datePublished: '2026-04-24', dateModified: '2026-09-24', author: CRR_AUTHOR_PERSON, publisher: { '@type': 'Organization', name: 'California Rate Relief' } };
 
 export default function EnphaseVsSolarEdge() {
   return (
@@ -34,7 +34,7 @@ export default function EnphaseVsSolarEdge() {
               <span className="text-xs font-semibold text-primary bg-primary/10 px-3 py-1 rounded-full uppercase tracking-wide">Inverter Comparison</span>
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-foreground mt-4 mb-4 tracking-tight leading-tight">Enphase vs SolarEdge: The 2026 Inverter Face-Off</h1>
               
-              <LastReviewedStamp date="2026-04-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
+              <LastReviewedStamp date="2026-09-24" variant="reviewed" palette={{ fg: 'hsl(var(--foreground))', muted: 'hsl(var(--muted-foreground))', border: 'hsl(var(--border))', accent: 'hsl(var(--primary))' }} />
 <p className="text-lg text-muted-foreground">The two dominant inverter platforms in American residential solar. Here&apos;s how they actually compare — technically, commercially, and in real-world reliability.</p>
 <HubUpLink path="/solar-installers/enphase-vs-solaredge" />
             </header>

@@ -7,7 +7,7 @@ import { BreadcrumbTrail } from '@/components/shared/BreadcrumbTrail';
 import { defaultCrumbs } from '@/lib/breadcrumbs';
 import { Header } from '@/components/landing/Header';
 import { Footer } from '@/components/landing/Footer';
-import { ArrowLeft, ArrowRight, Calendar, Clock } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Clock } from 'lucide-react';
 import { TrustedSources } from '@/components/shared/TrustedSources';
 import { RelatedInstallers } from '@/components/shared/RelatedInstallers';
 import { ArticleJsonLd } from '@/components/shared/ArticleJsonLd';
@@ -40,7 +40,7 @@ const CRUMB_LABEL = 'The $24 fixed charge explained';
 export default function FixedChargeExplained() {
   return (
     <PublicLayout breadcrumbLabel={CRUMB_LABEL} breadcrumbParents={CRUMBS}>
-      <ArticleJsonLd variant="Article" domain="crr" headline={"The New $24 Fixed Charge on Your California Electric Bill, Explained"} url="https://ratereliefca.com/blog/california-24-dollar-fixed-charge-explained" datePublished="2026-04-14" dateModified="2026-09-22" description={"PG&E, SCE, and SDG&E added a ~$24/month fixed charge to every residential bill. Learn exactly what it is, why it exists, who pays less, and how it affects solar savings."} />
+      <ArticleJsonLd variant="Article" domain="crr" headline={"The New $24 Fixed Charge on Your California Electric Bill, Explained"} url="https://ratereliefca.com/blog/california-24-dollar-fixed-charge-explained" datePublished="2026-04-14" dateModified="2026-09-24" description={"PG&E, SCE, and SDG&E added a ~$24/month fixed charge to every residential bill. Learn exactly what it is, why it exists, who pays less, and how it affects solar savings."} />
       <Header />
       <main className='py-16 bg-background'>
         <div className='container mx-auto px-4'>
@@ -57,12 +57,8 @@ export default function FixedChargeExplained() {
                 The New $24 Fixed Charge on Your California Electric Bill,
                 Explained
               </h1>
-              <Byline updated="2026-09-22" />
+              <Byline updated="2026-09-24" />
               <div className='flex items-center gap-4 text-sm text-muted-foreground'>
-                <div className='flex items-center gap-1'>
-                  <Calendar className='h-4 w-4' />
-                  <time dateTime='2026-09-22'>Updated September 22, 2026</time>
-                </div>
                 <div className='flex items-center gap-1'>
                   <Clock className='h-4 w-4' />
                   <span>6 min read</span>
@@ -221,17 +217,17 @@ export default function FixedChargeExplained() {
                         SCE
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        $0.79/day (about $24/mo) — same figure across all
+                        $24.15/mo (about $0.79/day) — same figure across all
                         residential TOU plans
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        not broken out on SCE&apos;s own page
+                        $6.00/mo
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        not broken out on SCE&apos;s own page
+                        $12.08/mo (also deed-restricted affordable housing)
                       </td>
                       <td className='text-center py-3 px-4 text-foreground/80'>
-                        not dated on SCE&apos;s page; CPUC-ordered for Q4 2025
+                        November 2025
                       </td>
                     </tr>
                     <tr>
@@ -263,10 +259,15 @@ export default function FixedChargeExplained() {
                 and $12. PG&amp;E and SDG&amp;E both round their own published
                 figures to about $24 rather than quoting $24.15 directly; the
                 small difference is a billing-cycle-length effect, not a
-                different policy. SCE&apos;s own residential rate page states
-                the $0.79/day figure but doesn&apos;t break out a separate CARE
-                or FERA amount the way PG&amp;E&apos;s and SDG&amp;E&apos;s
-                pages do.
+                different policy. SCE&apos;s Base Services Charge page lists
+                $24.15 a month, $12.08 for FERA customers and qualifying
+                deed-restricted affordable housing, and $6.00 for CARE
+                customers, effective November 2025 (<a
+                  href='https://www.sce.com/save-money/rates-financing/residential-rate-plans/bsc'
+                  className='underline'
+                  target='_blank'
+                  rel='noopener noreferrer'
+                >SCE, Base Services Charge</a>, checked September 24, 2026).
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>

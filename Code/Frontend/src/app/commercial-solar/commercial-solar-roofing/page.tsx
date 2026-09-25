@@ -17,7 +17,7 @@ import { CommercialReviewButton, CommercialReviewForm } from '@/components/growt
 const title = 'Commercial Solar Roofing in California: What to Check';
 const h1 = 'Commercial Solar Roofing in California: What to Check, From Roof Condition to Mounting';
 const description =
-  'Solar on a business roof starts with the roof: remaining life, membrane and structure, fire-access pathways, and which CSLB license covers each part of the work.';
+  'Solar on a business roof starts with the roof: remaining life, membrane and structure, fire-access pathways, and which CSLB license covers each part of the job.';
 const path = '/commercial-solar/commercial-solar-roofing';
 const canonicalUrl = `https://ratereliefca.com${path}`;
 const DATE_MODIFIED = '2026-09-23';

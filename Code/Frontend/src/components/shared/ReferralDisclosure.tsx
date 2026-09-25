@@ -6,9 +6,12 @@ import Link from 'next/link';
 //
 // The sentence is Decision #1's wording, the same one /methodology and
 // /how-we-make-money carry. Keep all three in step by importing
-// COMPENSATION_SENTENCE rather than retyping it. It is not the compliance
-// sentence ("California Rate Relief is a referral service. We are not a
-// licensed contractor."), which stays where it is and is never paraphrased.
+// COMPENSATION_SENTENCE rather than retyping it.
+//
+// 2026-09-24: the exact compliance sentence (COMPLIANCE_SENTENCE, never
+// paraphrased) now leads the line, so it sits beside every form. The
+// independent release check found it missing near the form on 45 of 74
+// sampled form pages, where only the form's own paraphrase appeared.
 //
 // Rendered beside a form, never inside its consent text, and it changes
 // nothing the form submits.
@@ -17,12 +20,16 @@ import Link from 'next/link';
 export const COMPENSATION_SENTENCE =
   'California Rate Relief is compensated by a solar provider when a homeowner we refer signs an agreement.';
 
+/** Owner-authored; must match scripts/qc-gate-tsx.mjs COMPLIANCE_SENTENCE exactly. */
+export const COMPLIANCE_SENTENCE =
+  'California Rate Relief is a referral service. We are not a licensed contractor.';
+
 export const HOW_WE_MAKE_MONEY_PATH = '/how-we-make-money';
 
 export function ReferralDisclosure({ className = '' }: { className?: string }) {
   return (
     <p className={`text-xs leading-relaxed text-muted-foreground ${className}`} data-referral-disclosure="">
-      {COMPENSATION_SENTENCE}{' '}
+      {COMPLIANCE_SENTENCE} {COMPENSATION_SENTENCE}{' '}
       <Link href={HOW_WE_MAKE_MONEY_PATH} className="underline underline-offset-2 hover:text-primary">
         How we make money
       </Link>

@@ -416,7 +416,7 @@ export default function EcoFlowDelta3PlusReview() {
                 reasonable option for small to moderate self-consumption
                 shifting without the $10,000+ cost of a Powerwall install.
                 See{' '}
-                <Link href='/blog/nem-3-california-still-worth-it' className='text-primary hover:underline'>
+                <Link href='https://ratereliefca.com/solar-panels-california' className='text-primary hover:underline'>
                   is solar still worth it under NEM 3.0
                 </Link>{' '}for more on the economics.
               </p>
