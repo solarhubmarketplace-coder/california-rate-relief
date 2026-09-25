@@ -51,23 +51,37 @@ export default async function GoogleAnalytics() {
 
   if (!id) return null;
 
+  // Load timing only (plan item 4.1, 2026-09-24). The measurement ID, the
+  // config call and every event are unchanged; what changed is when the
+  // 176 KB gtag.js library arrives.
+  //
+  // 1. The queue is created in the server HTML, so it exists before any client
+  //    code runs. window.gtag() only pushes onto window.dataLayer; trackEvent()
+  //    calls made before the library arrives wait there instead of being
+  //    dropped (with the old afterInteractive inline script, a call before
+  //    hydration found no window.gtag and was lost).
+  // 2. gtag.js loads lazyOnload: after the window load event, in idle time.
+  //    It is no longer preloaded in <head>, where it competed with the page's
+  //    own CSS and JS and pushed LCP back 0.2-0.7 s on every page. When it
+  //    loads it replays the queue in order: js, config (the page_view), then
+  //    any events.
+  const bootstrap = [
+    'window.dataLayer=window.dataLayer||[];',
+    'function gtag(){dataLayer.push(arguments);}',
+    "gtag('js',new Date());",
+    `gtag('config',${JSON.stringify(id)},{page_title:document.title,send_page_view:true});`,
+  ].join('');
+
   return (
     <>
+      <script
+        id='google-analytics'
+        dangerouslySetInnerHTML={{ __html: bootstrap }}
+      />
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${id}`}
-        strategy='afterInteractive'
+        strategy='lazyOnload'
       />
-      <Script id='google-analytics' strategy='afterInteractive'>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${id}', {
-            page_title: document.title,
-            send_page_view: true,
-          });
-        `}
-      </Script>
     </>
   );
 }
@@ -75,8 +89,8 @@ export default async function GoogleAnalytics() {
 // =============================================================================
 // trackEvent — fire a custom event from client code
 // =============================================================================
-// Safe no-op when gtag isn't loaded (env var unset or before script hydrates).
-// Callable from any `'use client'` component.
+// Queued on window.dataLayer until gtag.js loads; a no-op when this host has
+// no measurement ID. Callable from any `'use client'` component.
 // =============================================================================
 export function trackEvent(
   eventName: string,
