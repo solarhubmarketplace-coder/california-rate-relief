@@ -18,7 +18,7 @@ import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 const path = '/blog/sdge-time-of-use-rates-2026';
 const url = `https://ratereliefca.com${path}`;
-const title = 'SDG&E Peak Hours and TOU-DR1 Rates 2026: Every Plan';
+const title = 'SDG&E Time-of-Use Rates 2026: Peak Hours and TOU-DR1 Prices';
 const h1 = 'SDG&E Time-of-Use Rates in 2026: Peak Hours, Weekends and Prices for TOU-DR1, EV-TOU-5 and Every Plan';
 const description =
   'SDG&E peak is 4–9 p.m. every day, weekends included. See super off-peak hours and August 2026 prices for TOU-DR1, TOU-DR2, EV-TOU-5, TOU-ELEC and DR.';

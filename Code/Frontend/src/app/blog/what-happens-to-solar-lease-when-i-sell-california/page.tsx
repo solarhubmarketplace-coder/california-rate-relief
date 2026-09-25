@@ -76,14 +76,14 @@ const sources: Source[] = [
 ];
 
 export const metadata: Metadata = {
-  title: "Selling a CA Home With Solar Lease or PPA: Buyout Guide",
+  title: "Selling a House With a Solar Lease or PPA in California",
   description:
     "Selling a home with a solar lease or PPA? See how transfer, buyout and end-of-term options work before you list.",
   alternates: {
     canonical: "/blog/what-happens-to-solar-lease-when-i-sell-california",
   },
   openGraph: {
-    title: "Selling a CA Home With Solar Lease or PPA: Buyout Guide",
+    title: "Selling a House With a Solar Lease or PPA in California",
     description:
       "Selling a home with a solar lease or PPA? See how transfer, buyout and end-of-term options work before you list.",
     type: "article",

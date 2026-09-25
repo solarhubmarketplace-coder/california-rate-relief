@@ -19,7 +19,7 @@ import { Cite, SourceList, type ReviewSource } from '@/components/reviews/Review
 const path = '/solar-installers/tesla-solar-review';
 const checked = '2026-09-23';
 
-const metaTitle = 'Tesla Solar Reviews (2026): Are Tesla Solar Panels Good?';
+const metaTitle = 'Tesla Solar Panels Review (2026): Cost, Inverter, Service';
 const metaDescription =
   "Tesla's panels, inverter and Powerwall 3 on their datasheets, how a Tesla solar quote and lease work in California, SolarCity, ADT, and service.";
 

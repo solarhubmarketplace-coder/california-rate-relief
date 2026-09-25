@@ -20,7 +20,7 @@ import { CommercialReviewButton, CommercialReviewForm } from '@/components/growt
 
 // `h1` is the on-page heading; `metaTitle` is the search title.
 const h1 = 'Commercial Solar Companies and EPCs in California: Compare by Scope';
-const metaTitle = 'Commercial Solar Companies & EPCs in California: 6 Checks';
+const metaTitle = 'California Commercial Solar Companies, EPCs and Developers';
 const description =
   'Installer, EPC, developer or owner? How California commercial solar companies split the work, and 6 items to get in writing before comparing quotes.';
 const path = '/commercial-solar/companies-california';

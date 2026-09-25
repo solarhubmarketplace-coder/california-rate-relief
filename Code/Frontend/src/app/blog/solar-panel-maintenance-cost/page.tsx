@@ -13,7 +13,7 @@ import type { KeyFact } from '@/components/trust/KeyFacts';
 const PATH = '/blog/solar-panel-maintenance-cost';
 const UPDATED = '2026-09-23';
 const HUB = { label: 'Solar panel maintenance', href: '/solar-panel-maintenance-california' };
-const metaTitle = 'Solar Panel Maintenance & Cleaning Cost in California';
+const metaTitle = 'Solar Panel Maintenance Cost per Year in California (2026)';
 const metaDescription =
   'NREL’s $30 per kW a year upkeep benchmark, what cleaning, inspection and repair prices depend on, and how to tell if a cleaning pays for itself.';
 

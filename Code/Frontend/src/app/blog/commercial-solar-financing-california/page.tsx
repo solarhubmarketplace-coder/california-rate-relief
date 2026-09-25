@@ -23,7 +23,7 @@ import { CommercialReviewButton, CommercialReviewForm } from '@/components/growt
 // (G08) is held under the Decision 14 default, so this stays a separate,
 // document-focused guide.
 
-const metaTitle = 'Commercial Solar Financing in California: 4 Options Compared';
+const metaTitle = 'Commercial Solar Financing in California: 5 Options Compared';
 const h1 = 'Commercial Solar Financing in California: Loans, SBA, Leases, PPAs and PACE';
 const description =
   'How a California business can finance solar: purchase or loan, SBA 7(a) and 504, lease or PPA, and PACE. Who owns the system and what documents to compare.';

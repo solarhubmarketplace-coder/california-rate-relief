@@ -106,7 +106,7 @@ const definitions = {
     title: "Free Solar for Seniors in California: Which Programs Actually Apply",
     intro:
       "Being a senior does not, by itself, qualify you for free solar in California. Eligibility depends on your income, your property, your utility territory and whether program funding is currently available — starting with DAC-SASH, the state's low-income solar program. This page checks what actually applies to you, not just what the ads promise.",
-    metaTitle: "Free Solar for Seniors in California? What Actually Applies",
+    metaTitle: "Free Solar for Seniors in California: Programs That Apply",
     metaDescription:
       "Age alone doesn't qualify a California homeowner for no-cost solar. DAC-SASH turns on income and location; CARE and FERA cut the bill. What to check first.",
   },
@@ -123,7 +123,7 @@ const definitions = {
     title: "Can you get solar panels for free in California?",
     intro:
       "Usually not, and the CPUC says so in those terms. A small number of government-funded programmes are genuinely no-cost for households that qualify. Everything else advertised as free is a payment contract with the payment moved somewhere you have not looked yet.",
-    metaTitle: "Are Free Solar Panels Real in California? The CPUC Answer",
+    metaTitle: "Free Solar Panels in California: What's the Catch? (2026)",
     metaDescription:
       "The CPUC says solar is “rarely free.” The 4 things a free-solar ad can mean, the no-cost state program for income-qualified homeowners, and SOMAH.",
   },

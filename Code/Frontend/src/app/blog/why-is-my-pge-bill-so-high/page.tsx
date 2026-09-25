@@ -15,7 +15,7 @@ import { BillComparison } from '@/components/growth/BillComparison';
 import { Calendar, Clock } from 'lucide-react';
 import { HubUpLink } from '@/components/growth/HubUpLink';
 
-const title = "Why Is My PG&E Bill So High? 7 Causes to Check (2026)";
+const title = "Why Is My PG&E Bill So High This Month? 7 Causes to Check";
 const description =
   "Check kWh per day, billing days, TOU peak use and PG&E's Base Services Charge (about $24 a month for most customers, per PG&E). 7 causes, in order.";
 const sourceLink = 'text-primary underline decoration-primary/30 underline-offset-2 hover:decoration-primary';

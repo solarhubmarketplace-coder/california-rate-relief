@@ -39,7 +39,7 @@ import type { FaqJsonLdItem } from '@/components/shared/FaqJsonLd';
 
 const PATH = '/solar-panels-california';
 const UPDATED = '2026-09-23';
-const metaTitle = 'Solar Panels in California (2026): Cost, Rules, Worth It';
+const metaTitle = 'Solar Panels in California (2026): Cost, Payback, Worth It';
 const metaDescription =
   'What home solar costs in California, how net billing credits your exports, which incentives still apply in 2026, and how to judge whether it pays.';
 

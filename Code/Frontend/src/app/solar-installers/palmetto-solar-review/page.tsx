@@ -30,7 +30,7 @@ const path = '/solar-installers/palmetto-solar-review';
 const checked = '2026-09-23';
 const sep22 = '2026-09-22';
 
-const metaTitle = 'Palmetto Solar and LightReach Reviews (2026): BBB, Contract';
+const metaTitle = 'Palmetto Solar Reviews (2026): LightReach, BBB, Contract';
 const metaDescription =
   "Palmetto Solar and LightReach reviews: its BBB file (340 complaints in 3 years), nine federal dockets, the 25-year Energy Plan and selling your home.";
 

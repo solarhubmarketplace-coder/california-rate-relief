@@ -39,7 +39,7 @@ const statusFaqs = [
   },
 ];
 
-const metaTitle = "Sunrun vs SunPower (2026): After SunPower's Bankruptcy";
+const metaTitle = "Sunrun vs SunPower (2026): Bankruptcy, Warranty, Service";
 const metaDescription =
   "SunPower filed Chapter 11 in 2024; Complete Solaria now runs the brand. Sunrun vs SunPower on warranty, ownership, CSLB license and pre-2024 systems.";
 
