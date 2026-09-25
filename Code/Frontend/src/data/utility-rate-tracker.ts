@@ -323,3 +323,33 @@ export function formatAverageRateWithPerKwh(record: UtilityRateRecord): string {
   if (record.averageResidentialRateCents === null) return 'Not sourced';
   return `${formatAverageRateCents(record)} (${'$'}${record.averageResidentialRatePerKwh})`;
 }
+
+/**
+ * The residential average rate snapshots behind the tracker's "12-Month Rate
+ * History" table and its chart (plan 7.6), one per CPUC Public Advocates
+ * Office quarterly report. Each value is the report's own "Residential Average
+ * Rate" for the utility, in cents per kWh, re-read in all five reports on
+ * 2026-09-24 (Q2 2025: $0.386 / $0.312 / $0.415; Q3 2025: $0.378 / $0.353 /
+ * $0.410; Q4 2025: $0.350 / $0.345 / $0.457; Q1 2026: $0.337 / $0.345 / $0.457;
+ * Q2 2026: $0.337 / $0.344 / $0.455, PG&E / SCE / SDG&E). `month` counts
+ * months from the first snapshot so a chart spaces the points by the calendar.
+ * The history table on the tracker page prints the same figures; change both
+ * together.
+ */
+export interface RateHistorySnapshot {
+  label: string;
+  longLabel: string;
+  month: number;
+  pge: number;
+  sce: number;
+  sdge: number;
+  sourceUrl: string;
+}
+
+export const RATE_HISTORY_SNAPSHOTS: readonly RateHistorySnapshot[] = [
+  { label: 'Jun 2025', longLabel: 'June 2025 (as of July 1, 2025)', month: 0, pge: 38.6, sce: 31.2, sdge: 41.5, sourceUrl: Q2_2025_URL },
+  { label: 'Oct 2025', longLabel: 'October 1, 2025', month: 3, pge: 37.8, sce: 35.3, sdge: 41.0, sourceUrl: Q3_2025_URL },
+  { label: 'Jan 2026', longLabel: 'January 1, 2026', month: 6, pge: 35.0, sce: 34.5, sdge: 45.7, sourceUrl: Q4_2025_URL },
+  { label: 'Mar 2026', longLabel: 'March 1, 2026', month: 8, pge: 33.7, sce: 34.5, sdge: 45.7, sourceUrl: Q1_2026_URL },
+  { label: 'Jun 2026', longLabel: 'June 1, 2026', month: 11, pge: 33.7, sce: 34.4, sdge: 45.5, sourceUrl: Q2_2026_URL },
+];

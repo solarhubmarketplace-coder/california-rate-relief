@@ -28,6 +28,7 @@ import {
   listJoin,
 } from '@/data/solar-cost-index';
 import { HubUpLink } from '@/components/growth/HubUpLink';
+import { PermitFeeChart } from '@/components/growth/PermitFeeChart';
 import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
 
 // =============================================================================
@@ -264,6 +265,26 @@ export default function CaliforniaSolarCostIndexPage() {
                 , checked {formatTrustDate(STATE_RESIDENTIAL_PV_FEE_LIMIT.source.verifiedAt)}.
               </p>
             </section>
+
+            {/* ---------- The fee finding, drawn (plan 7.6); computed from the same rows ---------- */}
+            <PermitFeeChart
+              id='permit-fee-chart'
+              rows={rows}
+              limitUsd={STATE_RESIDENTIAL_PV_FEE_LIMIT.baseUsd}
+              limitLabel={`State limit: $${STATE_RESIDENTIAL_PV_FEE_LIMIT.baseUsd} (Gov. Code §66015)`}
+              sourceNote={
+                <>
+                  Each dot is one city&rsquo;s published residential solar permit fee from the index below;
+                  cities that publish no fee, two figures or only a dated schedule are left out. Under{' '}
+                  <a href={STATE_RESIDENTIAL_PV_FEE_LIMIT.source.url} target='_blank' rel='noopener noreferrer' className={link}>
+                    Government Code &sect;66015(a)
+                  </a>{' '}
+                  (checked September 24, 2026) a photovoltaic permit fee may not exceed $450 plus $15 per kW
+                  above 15 kW, unless the city adopts a written finding that its cost is higher. The chart
+                  does not show whether any city above the line has adopted one.
+                </>
+              }
+            />
 
             {/* ---------- The table ---------- */}
             <section aria-labelledby='index-table' className='mt-12'>

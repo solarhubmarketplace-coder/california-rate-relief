@@ -27,6 +27,8 @@ import {
   getUtilityRate,
 } from '@/data/utility-rate-tracker';
 import { CRR_SOCIAL_CARD } from '@/lib/crr-social';
+import { RateHistoryChart } from '@/components/growth/RateHistoryChart';
+import { RATE_HISTORY_SNAPSHOTS } from '@/data/utility-rate-tracker';
 
 // Page-specific driver sources cited in "Why Rates Moved in 2026" and the
 // Income-Graduated Fixed Charge section — not rate figures, so they live here
@@ -417,7 +419,21 @@ export default function CaliforniaUtilityRateTrackerPage() {
 
               <h2 id='rate-history' className='text-2xl font-bold text-foreground mt-10 mb-4 scroll-mt-24'>12-Month Rate History</h2>
               <p>The CPUC Public Advocates Office publishes this data <strong>quarterly</strong>, not monthly &mdash; so this table reflects the quarter-end snapshot each report captures rather than 12 separate calendar months. Where the underlying report gives a specific rate-change date within the quarter, that date is used instead of the report&apos;s cover date.</p>
-              <div className='overflow-x-auto mb-3 not-prose'>
+              {/* The history table below, drawn (plan 7.6). Same figures, from RATE_HISTORY_SNAPSHOTS. */}
+              <RateHistoryChart
+                id='rate-history-chart'
+                title='Residential average electricity rate, June 2025 to June 2026 (cents per kWh)'
+                description={`Line chart of the CPUC Public Advocates Office residential average rate for PG&E, SCE and SDG&E at five quarterly snapshots. ${RATE_HISTORY_SNAPSHOTS.map((r) => `${r.longLabel}: PG&E ${r.pge.toFixed(1)}, SCE ${r.sce.toFixed(1)}, SDG&E ${r.sdge.toFixed(1)} cents`).join('; ')}.`}
+                points={RATE_HISTORY_SNAPSHOTS.map((r) => ({ label: r.label, longLabel: r.longLabel, month: r.month }))}
+                series={[
+                  { name: 'PG&E', values: RATE_HISTORY_SNAPSHOTS.map((r) => r.pge) },
+                  { name: 'SCE', values: RATE_HISTORY_SNAPSHOTS.map((r) => r.sce) },
+                  { name: 'SDG&E', values: RATE_HISTORY_SNAPSHOTS.map((r) => r.sdge) },
+                ]}
+                tableHref='#rate-history-table'
+                sourceNote={<>Source: CPUC Public Advocates Office quarterly electric rates reports, Q2 2025 to Q2 2026, residential average rate excluding the California Climate Credit; checked September 24, 2026. Points are spaced by date, not evenly.</>}
+              />
+              <div id='rate-history-table' className='overflow-x-auto mb-3 not-prose scroll-mt-24'>
                 <table className='w-full border-collapse text-sm'>
                   <thead>
                     <tr className='border-b-2 border-border'>
