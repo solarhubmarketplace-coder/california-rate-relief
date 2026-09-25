@@ -29,6 +29,16 @@
 // The CPUC net billing quote now uses the CPUC's own words ("usually lower than
 // the retail rate"). Tier 2 link requests applied: /blog/10-kw-solar-system-cost
 // and /blog/solar-rate. Sources re-fetched 2026-09-23.
+//
+// GS-MERGES 2026-09-24 (plan 6.3): this page is the winner of the "is solar
+// worth it" cluster (3,036 Search Console impressions in 90 days, against 32
+// and 1 for the two posts it absorbed). /blog/are-solar-panels-worth-it-california
+// and /blog/nem-3-california-still-worth-it 301 here, and the older
+// /blog/is-solar-worth-it-california-2026 redirect now lands here in one hop.
+// Their stress test, backup-value advice and NEM 3.0 approach are in the
+// #worth-it section. Not carried: the PG&E hourly export figure, the Cal
+// Advocates average rate, the LBNL storage $/kWh range and the SDG&E payback
+// range, which could not all be re-checked against their sources today.
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
@@ -39,6 +49,8 @@ import type { FaqJsonLdItem } from '@/components/shared/FaqJsonLd';
 
 const PATH = '/solar-panels-california';
 const UPDATED = '2026-09-23';
+// GS-MERGES 2026-09-24: the "worth it" posts were merged into this page.
+const MERGED = '2026-09-24';
 const metaTitle = 'Solar Panels in California (2026): Cost, Rules, Worth It';
 const metaDescription =
   'What home solar costs in California, how net billing credits your exports, which incentives still apply in 2026, and how to judge whether it pays.';
@@ -52,7 +64,7 @@ export const metadata: Metadata = {
     description: metaDescription,
     type: 'article',
     url: `https://ratereliefca.com${PATH}`,
-    modifiedTime: `${UPDATED}T00:00:00Z`,
+    modifiedTime: `${MERGED}T00:00:00Z`,
     images: [CRR_SOCIAL_CARD],
   },
   twitter: crrTwitter(metaTitle, metaDescription),
@@ -63,6 +75,11 @@ const LBNL_TTS_2024 =
 const LBNL_2026 =
   'https://emp.lbl.gov/sites/default/files/2026-08/Distributed%20Solar%20%26%20Storage-2026%20Data%20Update_FINAL.pdf';
 const CPUC_NEM = 'https://www.cpuc.ca.gov/NEM/';
+// GS-MERGES 2026-09-24: sources for the carried "worth it" material.
+const CPUC_PR_2022 =
+  'https://www.cpuc.ca.gov/news-and-updates/all-news/cpuc-modernizes-solar-tariff-to-support-reliability-and-decarbonization';
+const PGE_SOLAR_BILL =
+  'https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html';
 const CPUC_GUIDE =
   'https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/california-solar-consumer-protection-guide';
 const CPUC_LOW_INCOME =
@@ -93,6 +110,8 @@ const sources: Source[] = [
     url: LBNL_2026,
   },
   { label: 'CPUC: net energy metering and the Net Billing Tariff', url: CPUC_NEM },
+  { label: 'CPUC: solar tariff decision announcement, December 15, 2022 (projected savings and payback; checked September 24, 2026)', url: CPUC_PR_2022 },
+  { label: 'PG&E: Understand your solar bill (net surplus compensation, Base Services Charge; checked September 24, 2026)', url: PGE_SOLAR_BILL },
   { label: 'CPUC: California Solar Consumer Protection Guide (version 4, 2025)', url: CPUC_GUIDE },
   { label: 'CPUC: low-income solar programs', url: CPUC_LOW_INCOME },
   { label: 'IRS: FAQs on OBBB changes to the residential clean energy credit (section 25D)', url: IRS_OBBB },
@@ -174,6 +193,11 @@ const faqs: FaqJsonLdItem[] = [
       'It depends on who you are. For income-qualified households in disadvantaged communities, a green-tariff solar discount takes 20% off the bill with no equipment, and DAC-SASH provides a rooftop system at no cost to qualifying homeowners. For everyone else, the lowest cost per kilowatt-hour usually comes from buying a right-sized system with cash after comparing at least three itemized bids; a lease or PPA lowers the upfront cost but not the total.',
   },
   {
+    question: 'Is solar still worth it in California under NEM 3.0?',
+    answer:
+      'It can be, when the system is sized to what the home uses and more of the output is used on site or stored for the evening. When it adopted net billing in December 2022, the CPUC projected that an average residential solar customer would save $100 a month, and one with a battery at least $136, with systems paying off in 9 years or less on average. Those are 2022 averages; your price, usage and utility decide your own answer.',
+  },
+  {
     question: 'How much do solar panels save in California?',
     answer:
       'No honest page can give you one number. Savings depend on how much of the solar output you use at home, your utility’s rate plan and export credit, the price you pay and how long you keep the system. Ask each bidder to model your remaining bill on your own 12 months of usage and your actual tariff, and treat any quote that shows your bill disappearing entirely as a reason for questions.',
@@ -192,7 +216,7 @@ export default function SolarPanelsCalifornia() {
       path={PATH}
       sources={sources}
       sourceCheckedDate={UPDATED}
-      contentModifiedDate={UPDATED}
+      contentModifiedDate={MERGED}
       topic="Home solar in California: cost and value"
       authorSchema="person"
       primaryResourceHref="/tools/solar-panel-calculator"
@@ -609,20 +633,108 @@ export default function SolarPanelsCalifornia() {
           </li>
         </ol>
         <p className="mt-3">
-          Work through them in{' '}
-          <Link href="/blog/are-solar-panels-worth-it-california" className={link}>
-            the worth-it decision guide
-          </Link>
-          , or read{' '}
-          <Link href="/blog/nem-3-california-still-worth-it" className={link}>
-            whether solar is still worth it under NEM 3.0
-          </Link>{' '}
-          for the net billing math. To see how many years a specific quote takes to pay for
-          itself, use{' '}
+          To see how many years a specific quote takes to pay for itself, use{' '}
           <Link href="/blog/solar-payback-period-california" className={link}>
             the solar payback period guide
           </Link>
           .
+        </p>
+
+        {/* GS-MERGES 2026-09-24: /blog/are-solar-panels-worth-it-california and
+            /blog/nem-3-california-still-worth-it 301 here (plan 6.3, "worth it"
+            cluster). Their stress-test, backup-value and NEM 3.0 approach
+            material is carried below; CPUC and PG&E figures re-checked
+            2026-09-24. */}
+        <h3 className="mt-6 text-xl font-semibold" id="still-worth-it-nem-3">
+          Is solar still worth it under NEM 3.0?
+        </h3>
+        <p className="mt-2">
+          It can be, if the system is built for how net billing pays. When the CPUC adopted the
+          tariff on December 15, 2022, it projected that an average residential solar customer
+          would save $100 a month, and one with a battery at least $136, with systems paying off
+          in 9 years or less on average (
+          <a href={CPUC_PR_2022} className={link}>
+            CPUC
+          </a>
+          , checked September 24, 2026). Those are averages from 2022, not a forecast for your
+          home.
+        </p>
+        <p className="mt-3">What makes the numbers work now:</p>
+        <ol className="mt-2 list-decimal space-y-2 pl-5">
+          <li>
+            <strong>Size to what the house uses, not to zero out the year.</strong> A surplus left
+            at the annual true-up is paid at about $0.02 to $0.04 per kWh, PG&amp;E says (
+            <a href={PGE_SOLAR_BILL} className={link}>
+              PG&amp;E
+            </a>
+            ). The{' '}
+            <Link href="/blog/how-big-of-a-solar-system-do-i-need-california" className={link}>
+              system sizing guide
+            </Link>{' '}
+            starts from your bill.
+          </li>
+          <li>
+            <strong>Move flexible loads into sunny hours.</strong> Laundry, dishwashing, pool
+            pumps, water heating and EV charging run at midday use your own solar instead of
+            exporting it.
+          </li>
+          <li>
+            <strong>Price a battery for the evening.</strong> The CPUC says customers can
+            maximize net billing savings by adding storage, so they can use or export stored
+            energy in the high-value evening hours.
+          </li>
+          <li>
+            <strong>Know the required rate.</strong> Net billing customers take an electrification
+            time-of-use rate: E-ELEC at PG&amp;E, TOU-D-PRIME at SCE and EV-TOU-5 at SDG&amp;E
+            (CPUC).
+          </li>
+          <li>
+            <strong>Apply before the end of 2027 at PG&amp;E or SCE.</strong> Residential
+            applicants before then get slightly higher export credits for nine years. SDG&amp;E
+            customers are excluded because of its higher rates (CPUC).
+          </li>
+          <li>
+            <strong>Model the monthly bill.</strong> Some charges never go away. PG&amp;E&rsquo;s
+            Base Services Charge, about $24 a month since March 2026, cannot be offset by solar
+            credits (PG&amp;E).
+          </li>
+        </ol>
+        <p className="mt-3">
+          CPUC figures are from its{' '}
+          <a href={CPUC_NEM} className={link}>
+            net billing page
+          </a>
+          , checked September 24, 2026.
+        </p>
+
+        <h3 className="mt-6 text-xl font-semibold" id="stress-test">
+          Make the quote survive worse assumptions
+        </h3>
+        <p className="mt-2">
+          Ask the bidder to rerun the proposal with lower production, a larger remaining utility
+          bill and any expected replacement cost. Compare solar alone with solar plus storage on
+          the same usage and tariff. A battery is not automatically required, and a battery quote
+          is not automatically good value.
+        </p>
+        <p className="mt-3">
+          Keep backup value separate from payback. A battery can protect chosen circuits in an
+          outage without paying for itself quickly. Decide which circuits matter; the backup
+          design, battery reserve and power limits belong in the proposal.
+        </p>
+        <p className="mt-3">Reasons to pause and ask for a revised proposal:</p>
+        <ul className="mt-2 list-disc space-y-2 pl-5">
+          <li>Production assumes an unshaded roof the site survey has not checked.</li>
+          <li>The savings estimate removes the whole utility bill.</li>
+          <li>
+            The proposal mixes a cash price with a financed payment, or counts an incentive nobody
+            has confirmed.
+          </li>
+          <li>A lease or PPA lacks clear transfer, buyout and service terms.</li>
+        </ul>
+        <p className="mt-3">
+          The case is weakest when little of your use happens while the sun is up and you will
+          not add storage, when shade or roof age cut production, when you expect to move before
+          it pays back, or when the price sits far above the benchmarks above.
         </p>
       </section>
 

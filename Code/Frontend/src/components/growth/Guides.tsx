@@ -810,7 +810,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             short ownership horizon. Read the{' '}
             <Link
               className={link}
-              href="/blog/are-solar-panels-worth-it-california"
+              href="/solar-panels-california#worth-it"
             >
               worth-it decision guide
             </Link>
@@ -1559,7 +1559,7 @@ export function GrowthGuide({ kind }: { kind: GuideKey }) {
             <li>
               <Link
                 className={link}
-                href="/blog/are-solar-panels-worth-it-california"
+                href="/solar-panels-california#worth-it"
               >
                 Decide whether the quote fits your home
               </Link>

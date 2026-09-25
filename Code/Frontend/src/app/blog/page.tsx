@@ -679,15 +679,6 @@ const blogPosts: BlogPost[] = [
     category: 'Utility Rates',
   },
   {
-    slug: 'nem-3-california-still-worth-it',
-    title: 'Is Solar Still Worth It Under NEM 3.0 in California? (2026 Guide)',
-    excerpt:
-      'NEM 3.0 credits exports at values usually below the retail rate. When solar can still work in 2026, and what a battery changes.',
-    date: '2026-04-14',
-    readTime: '9 min read',
-    category: 'Solar Education',
-  },
-  {
     slug: 'pge-vs-sce-vs-sdge-rates-compared',
     title: 'PG&E vs. SCE vs. SDG&E: Which California Utility Customers Pay the Most in 2026?',
     excerpt:
@@ -776,15 +767,6 @@ const blogPosts: BlogPost[] = [
     date: '2026-04-23',
     readTime: '7 min read',
     category: 'Solar Financing',
-  },
-  {
-    slug: 'are-solar-panels-worth-it-california',
-    title: 'Are Solar Panels Worth It in California? 2026 Honest Answer',
-    excerpt:
-      "For most California homeowners paying $200+ per month, solar is still worth it in 2026. but only with a battery and only if the math fits your situation.",
-    date: '2026-04-23',
-    readTime: '8 min read',
-    category: 'Solar Decision',
   },
   {
     slug: 'switch-to-solar-california',

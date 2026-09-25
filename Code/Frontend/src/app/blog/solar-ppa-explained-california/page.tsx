@@ -382,7 +382,7 @@ export default function SolarPPAExplainedCalifornia() {
                 All Articles
               </Link>
               <Link
-                href='/blog/are-solar-panels-worth-it-california'
+                href='/solar-panels-california#worth-it'
                 className='text-primary hover:underline font-medium inline-flex items-center gap-2'
               >
                 Next Article

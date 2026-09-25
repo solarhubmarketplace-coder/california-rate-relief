@@ -224,7 +224,7 @@ export default function DidPgeRatesGoUpPage() {
                   PG&amp;E 2026 rate guide
                 </Link>
                 . If rising rates have you weighing solar, start with{' '}
-                <Link href="/blog/nem-3-california-still-worth-it" className={guideLink}>
+                <Link href="/solar-panels-california#still-worth-it-nem-3" className={guideLink}>
                   whether solar under NEM 3.0 still pays
                 </Link>
                 .

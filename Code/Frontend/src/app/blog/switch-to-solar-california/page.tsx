@@ -58,7 +58,7 @@ export default function SwitchToSolar() {
                 Before comparing installers, confirm solar actually makes sense for your situation. The core test: is your monthly electric bill above $200? Do you have a south or west-facing roof with reasonable sun exposure? Are you staying in the home for at least 7 years (cash/loan) or willing to transfer a lease/PPA to a future buyer?
               </p>
               <p className='text-foreground/80 leading-relaxed mb-6'>
-                If yes to all three, solar probably works for you. If your bill is under $150 or your roof is heavily shaded, the math is harder — see our{' '}<Link href='/blog/are-solar-panels-worth-it-california' className='text-primary hover:underline'>full is-it-worth-it analysis</Link>.
+                If yes to all three, solar probably works for you. If your bill is under $150 or your roof is heavily shaded, the math is harder — see our{' '}<Link href='/solar-panels-california#worth-it' className='text-primary hover:underline'>full is-it-worth-it analysis</Link>.
               </p>
 
               <h2 className='text-2xl font-bold text-foreground mt-10 mb-4'>Step 2 — Pick Your Financing Path</h2>

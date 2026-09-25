@@ -274,7 +274,7 @@ export default function Nem3ExportRatesPage() {
               <RelatedGuides
                 heading="Using the export numbers"
                 links={[
-                  { href: '/blog/nem-3-california-still-worth-it', label: 'Whether solar still makes sense under NEM 3.0' },
+                  { href: '/solar-panels-california#still-worth-it-nem-3', label: 'Whether solar still makes sense under NEM 3.0' },
                   { href: '/battery/how-many-batteries-do-i-need-california', label: 'Sizing storage around your evening load' },
                   { href: '/blog/pge-time-of-use-rates-2026', label: 'PG&E time-of-use rates, the other side of the math' },
                   { href: '/blog/why-are-my-nem-charges-so-high', label: 'Why NEM charges climb on a solar bill' },

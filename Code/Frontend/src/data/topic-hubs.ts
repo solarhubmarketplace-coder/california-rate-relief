@@ -1450,10 +1450,6 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "Solar Panel Removal for Roof Replacement: CA Quote Checklist"
       },
       {
-        "href": "/blog/are-solar-panels-worth-it-california",
-        "label": "Whether solar panels pay off in California"
-      },
-      {
         "href": "/blog/switch-to-solar-california",
         "label": "Switching to solar, step by step"
       },
@@ -2184,10 +2180,6 @@ export const TOPIC_HUBS: TopicHub[] = [
       {
         "href": "/blog/nem-3-california-timeline",
         "label": "NEM 3.0 California Timeline: Confirmed Dates"
-      },
-      {
-        "href": "/blog/nem-3-california-still-worth-it",
-        "label": "Is Solar Still Worth It Under California Net Billing?"
       },
       {
         "href": "/blog/what-is-nem-3-california",

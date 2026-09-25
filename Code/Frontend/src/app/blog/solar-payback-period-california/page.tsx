@@ -368,14 +368,10 @@ export default function SolarPaybackPeriodCaliforniaPage() {
             If payback still works, the decision is sturdier. If it only works on the best case,
             treat that as a warning. Whether solar is worth it for you overall, beyond payback,
             is in{' '}
-            <Link className={link} href="/blog/are-solar-panels-worth-it-california">
-              are solar panels worth it in California
+            <Link className={link} href="/solar-panels-california#worth-it">
+              is solar worth it in California
             </Link>
-            , and how net billing changed the answer is in{' '}
-            <Link className={link} href="/blog/nem-3-california-still-worth-it">
-              whether solar is still worth it under net billing
-            </Link>
-            .
+            , which also covers how net billing changed the answer.
           </p>
         </section>
 

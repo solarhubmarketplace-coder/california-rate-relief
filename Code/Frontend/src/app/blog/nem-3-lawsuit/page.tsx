@@ -251,7 +251,7 @@ export default function Nem3LawsuitPage() {
               <RelatedGuides
                 heading="If the ruling changes your plans"
                 links={[
-                  { href: '/blog/nem-3-california-still-worth-it', label: 'Whether solar still pencils out under NEM 3.0' },
+                  { href: '/solar-panels-california#still-worth-it-nem-3', label: 'Whether solar still pencils out under NEM 3.0' },
                   { href: '/blog/nem-3-export-rates-california', label: 'The export values the court left in place' },
                   { href: '/battery/battery-payback-nem-3-california', label: 'How storage changes net billing math' },
                   { href: '/blog/california-public-utilities-commission', label: 'What the CPUC is and how it sets rates' },

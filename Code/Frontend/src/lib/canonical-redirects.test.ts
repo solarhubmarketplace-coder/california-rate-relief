@@ -220,9 +220,16 @@ test('Decision 14: the held merges (G05, G08, G10, G11) are not redirected', () 
     '/blog/nem-3-california-timeline', // G10
     '/blog/nem-3-california-still-worth-it', // G11
   ]) {
+    // GS-MERGES 2026-09-24 applied some held merges (plan 6.3); those are
+    // asserted in the GS-MERGES section instead.
+    if (GS_MERGES_APPLIED_HELD.has(held)) continue;
     assert.equal(canonicalRedirectFor(held), null, held);
   }
 });
+/** GS-MERGES 2026-09-24: held Decision 14 merges that plan 6.3 applied. */
+const GS_MERGES_APPLIED_HELD = new Set<string>([
+  '/blog/nem-3-california-still-worth-it', // G11, into the worth-it winner
+]);
 
 // 2026-09-23, topical-authority wave (cities agent): new /solar-companies
 // pages built as CREATE_DEDICATED for installer-intent clusters. Each city
@@ -398,6 +405,9 @@ test('Tier 3 city-cost wave: each new cost page without a companies twin renders
 const GS_MERGES: Readonly<Record<string, string>> = {
   '/blog/solar-tax-credit-2026': '/blog/california-solar-tax-credit-2026',
   '/blog/solar-tax-credit-expired-2026-options': '/blog/california-solar-tax-credit-2026',
+  '/blog/are-solar-panels-worth-it-california': '/solar-panels-california',
+  '/blog/nem-3-california-still-worth-it': '/solar-panels-california',
+  '/blog/is-solar-worth-it-california-2026': '/solar-panels-california',
 };
 ROW_DELTAS.push(Object.keys(GS_MERGES).length);
 

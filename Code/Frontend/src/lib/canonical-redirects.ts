@@ -232,6 +232,14 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
   // losers are 643- and 744-word pages the hub already covers.
   '/blog/solar-tax-credit-2026': '/blog/california-solar-tax-credit-2026',
   '/blog/solar-tax-credit-expired-2026-options': '/blog/california-solar-tax-credit-2026',
+  // "Is solar worth it" x4 -> the cost_value hub, which already carries a
+  // #worth-it section and has the cluster's impressions (3,036 in 90 days vs
+  // 32 and 1). The older /blog/is-solar-worth-it-california-2026 redirect
+  // (page-level 308 to the first loser) is re-pointed here so it stays one hop.
+  // Topic map G11 (still-worth-it -> are-worth-it) is superseded by this.
+  '/blog/are-solar-panels-worth-it-california': '/solar-panels-california',
+  '/blog/nem-3-california-still-worth-it': '/solar-panels-california',
+  '/blog/is-solar-worth-it-california-2026': '/solar-panels-california',
   // END GS-MERGES 2026-09-24 ------------------------------------------------
 };
 

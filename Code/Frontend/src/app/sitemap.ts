@@ -78,7 +78,6 @@ const CRR_TOPICAL_20260923 = new Set<string>([
   '/blog/ladwp-ev-charging-rates',
   '/blog/ladwp-rates',
   '/blog/ladwp-solar-rooftops-program',
-  '/blog/nem-3-california-still-worth-it',
   '/blog/nem-3-california-timeline',
   '/blog/nem-3-export-rates-california',
   '/blog/nem-3-lawsuit',
@@ -424,6 +423,7 @@ const CRR_TOPICAL_20260923 = new Set<string>([
 // (plan item 6.3). Checked first so their lastmod moves with the fold-in.
 const GS_MERGES_20260924 = new Set<string>([
   '/blog/california-solar-tax-credit-2026',
+  '/solar-panels-california',
 ]);
 // END GS-MERGES 2026-09-24
 
@@ -542,12 +542,12 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'pge-time-of-use-rates-2026',
     'sce-rate-increase-2026', 'pge-rate-increase-2026', 'sdge-rate-increase-2026',
     'california-24-dollar-fixed-charge-explained',
-    'nem-3-california-still-worth-it', 'pge-vs-sce-vs-sdge-rates-compared',
+    'pge-vs-sce-vs-sdge-rates-compared',
     'prepaid-ppa-california-2026', 'ppa-loan-vs-solar-lease-vs-cash-california',
     'net-billing-vs-net-metering-california', 'nem-3-california-timeline',
     'hoa-solar-rights-california', 'low-income-solar-california',
     'free-roof-replacement-with-solar-panels-california', 'nem-2-vs-nem-3-california',
-    'rent-solar-panels-for-your-home-california', 'are-solar-panels-worth-it-california',
+    'rent-solar-panels-for-your-home-california',
     'switch-to-solar-california', 'solar-system-quotes-california',
     'tesla-powerwall-installers-california', 'solar-panels-for-ev-charging-california',
     'what-is-nem-3-california', 'free-solar-for-seniors-california',

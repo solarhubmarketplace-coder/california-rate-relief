@@ -206,7 +206,7 @@ export default function SellingElectricityBackPage() {
                   net billing vs. net metering
                 </Link>
                 ,{' '}
-                <Link href="/blog/nem-3-california-still-worth-it" className={guideLink}>
+                <Link href="/solar-panels-california#still-worth-it-nem-3" className={guideLink}>
                   whether solar under NEM 3.0 is still worth it
                 </Link>{' '}
                 and{' '}

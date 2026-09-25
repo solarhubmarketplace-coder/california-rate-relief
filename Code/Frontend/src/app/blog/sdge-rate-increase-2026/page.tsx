@@ -269,7 +269,7 @@ export default function SdgeRateIncreasePage() {
                 than retail prices, and SDG&amp;E customers do not get the export bonus that PG&amp;E and SCE customers get,
                 because SDG&amp;E&apos;s higher rates already make solar save more. That makes the self-use share, and a
                 battery, the center of an SDG&amp;E proposal; see{' '}
-                <Link href="/blog/nem-3-california-still-worth-it" className={guideLink}>
+                <Link href="/solar-panels-california#still-worth-it-nem-3" className={guideLink}>
                   whether solar still pays under NEM 3.0
                 </Link>{' '}
                 and the{' '}

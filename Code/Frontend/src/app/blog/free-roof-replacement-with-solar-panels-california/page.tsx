@@ -266,7 +266,7 @@ export default function FreeRoofReplacementWithSolarCalifornia() {
             and <Link href="/solar-problems/solar-homeowners-insurance">how panels change the homeowner policy</Link>.
             If a contractor takes a deposit and stops, see <Link href="/solar-problems/solar-company-took-my-money-california">what to do next</Link>.
             Whether solar is worth doing at all is covered in{' '}
-            <Link href="/blog/are-solar-panels-worth-it-california">are solar panels worth it in California</Link>, and
+            <Link href="/solar-panels-california#worth-it">are solar panels worth it in California</Link>, and
             upkeep after installation in <Link href="/solar-panel-maintenance-california">our solar panel maintenance guide</Link>.
           </p>
         </section>
