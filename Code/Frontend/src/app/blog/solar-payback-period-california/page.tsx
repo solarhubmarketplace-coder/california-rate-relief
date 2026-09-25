@@ -15,6 +15,7 @@ import { CostFinGuideShell } from '@/components/growth/CostFinGuideShell';
 import type { Source } from '@/components/growth/DecisionPage';
 import { CRR_SOCIAL_CARD, crrTwitter } from '@/lib/crr-social';
 import { Q2_2026_URL } from '@/data/utility-rate-tracker';
+import { FACTS, usd } from '@/data/facts';
 
 const PATH = '/blog/solar-payback-period-california';
 const URL = `https://ratereliefca.com${PATH}`;
@@ -83,7 +84,7 @@ const faqs: FaqJsonLdItem[] = [
   {
     question: 'What is the payback period for solar plus a battery in California?',
     answer:
-      'It depends on the added price and how much export the battery turns into evening use. Berkeley Lab found paired solar-plus-storage systems had median prices $2.1 per watt higher than solar alone among cash purchases in 2025. A battery incentive, where one is open, shortens payback; most SGIP residential categories were closed on September 23, 2026, while SMUD paid $300 per kWh up to $6,000 from that date.',
+      `It depends on the added price and how much export the battery turns into evening use. Berkeley Lab found paired solar-plus-storage systems had median prices $${FACTS.lbnlPairedStoragePremium2025.value} per watt higher than solar alone among cash purchases in 2025. A battery incentive, where one is open, shortens payback; most SGIP residential categories were closed on September 23, 2026, while SMUD paid ${usd(FACTS.smudBatteryIncentive.value.perKwh)} per kWh up to ${usd(FACTS.smudBatteryIncentive.value.capPerHousehold)} from that date.`,
   },
   {
     question: 'Does the end of the federal tax credit change payback?',
