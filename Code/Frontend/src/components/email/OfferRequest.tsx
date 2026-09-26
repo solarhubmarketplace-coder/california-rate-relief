@@ -7,6 +7,7 @@ import { emailOfferAttribution } from '@/lib/email-offer-attribution';
 import { ensureEmailOfferVisit } from '@/lib/email-funnel';
 import { selectableServiceMarkets } from '@/lib/service-market';
 import { trackEvent } from '@/components/GoogleAnalyticsClient';
+import { streetAddressError } from '@/lib/street-address';
 
 const inputClass = 'mt-2 w-full rounded-xl border border-slate-300 bg-white px-3 py-3 text-slate-900 focus:outline-none focus:ring-2 focus:ring-emerald-600';
 type Attempt = { id: string; payload: IntakePayload };
@@ -37,11 +38,13 @@ export function OfferRequest({ offer }: { offer: 'bill-review' | 'quote-review' 
     const fields = new FormData(event.currentTarget);
     const value = (name: string) => String(fields.get(name) || '').trim();
     if (!attempt.current && fields.get('contact_permission') !== 'on') { setError('Please confirm permission to follow up on this request.'); return; }
+    const streetMessage = attempt.current ? null : streetAddressError(value('street'));
+    if (streetMessage) { setError(streetMessage); return; }
     locked.current = true; setBusy(true); setError('');
     try {
       attempt.current = getOrCreateSubmissionAttempt(attempt.current, id => ({
         submission_id: id, segment: 'residential',
-        contact: { name: value('name'), phone: value('phone'), email: value('email') },
+        contact: { name: value('name'), phone: value('phone'), email: value('email'), address: `${value('street')}, ${value('zip')}` },
         qualification_data: {
           homeowner: value('homeowner') === 'yes', service_market: value('market'), service_zip: value('zip'),
           utility_provider: value('utility'), bill_amount: value('bill') ? Number(value('bill')) : null,
@@ -81,6 +84,7 @@ export function OfferRequest({ offer }: { offer: 'bill-review' | 'quote-review' 
           <label className="text-sm font-medium">Name<input name="name" required autoComplete="name" maxLength={160} className={inputClass}/></label>
           <label className="text-sm font-medium">Phone<input name="phone" required type="tel" autoComplete="tel" maxLength={40} className={inputClass}/></label>
           <label className="text-sm font-medium sm:col-span-2">Email<input name="email" required type="email" autoComplete="email" maxLength={254} className={inputClass}/></label>
+          <label className="text-sm font-medium sm:col-span-2">Street address of the property<input name="street" required autoComplete="street-address" maxLength={200} placeholder="123 Main St" className={inputClass}/></label>
           <label className="text-sm font-medium">Project state<select name="market" defaultValue="CA" className={inputClass}>{selectableServiceMarkets.map(([code,label])=><option key={code} value={code}>{label}</option>)}</select></label>
           <label className="text-sm font-medium">Project ZIP<input name="zip" required inputMode="numeric" pattern="[0-9]{5}" maxLength={5} autoComplete="postal-code" className={inputClass}/></label>
           <label className="text-sm font-medium">Utility on your bill<input name="utility" required maxLength={120} placeholder="For example, SCE" className={inputClass}/></label>

@@ -101,6 +101,11 @@ function legacyBill(value) {
   return Number.isFinite(numeric) ? { amount: numeric, range: null } : { amount: null, range: raw };
 }
 
+function hasStreetAddress(value) {
+  const v = typeof value === 'string' ? value.trim() : '';
+  return v.length >= 5 && /\d/.test(v) && /[a-z]/i.test(v);
+}
+
 function validate(body) {
   const submissionId = typeof body?.submission_id === 'string' ? body.submission_id.trim() : null;
   const segment = text(body?.segment, 20);
@@ -112,6 +117,10 @@ function validate(body) {
   if (!['residential', 'commercial'].includes(segment)) return { error: 'segment must be residential or commercial' };
   if (!name || !phone) return { error: 'contact.name and a valid contact.phone are required' };
   if (email && !EMAIL.test(email)) return { error: 'contact.email is invalid' };
+  // A lead must be locatable: every form now collects a street address, and a
+  // submission without one is refused here so no form or script can skip it
+  // (2026-09-26). Same rule as Frontend/src/lib/street-address.ts.
+  if (!hasStreetAddress(contact.address)) return { error: 'contact.address must be a street address (house number and street)' };
 
   // Location and ZIP-derived territory keys. derived_utility is stored ALONGSIDE
   // utility_provider and never replaces it: the visitor's answer and the seed

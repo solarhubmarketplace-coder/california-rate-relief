@@ -38,6 +38,7 @@ import usePlacesAutocomplete, {
 } from 'use-places-autocomplete';
 import { HOME_WIZARD_COPY, INQUIRY_RECEIVED_COPY } from '@/lib/cta-intent';
 import { US_PHONE_HINT, formatUsPhoneInput, isValidUsPhone, toE164Us, usPhoneError } from '@/lib/phone';
+import { streetAddressError } from '@/lib/street-address';
 import {
   HOME_WIZARD_TARGET,
   QUICK_START_EVENT,
@@ -132,7 +133,7 @@ const billAmounts = [
 ];
 
 /** Contact-step fields that can carry an inline error. */
-type ContactField = 'phone' | 'city' | 'serviceMarket' | 'serviceZip';
+type ContactField = 'address' | 'phone' | 'city' | 'serviceMarket' | 'serviceZip';
 
 const initialFormData: FormData = {
   utilityProvider: '',
@@ -433,12 +434,14 @@ export function QualificationWizard({
     // Inline errors next to the field, in page order, instead of a toast that
     // disappears. The first invalid field takes focus.
     const errors: Partial<Record<ContactField, string>> = {};
+    const addressMessage = streetAddressError(formData.address);
+    if (addressMessage) errors.address = addressMessage;
     if (!formData.city.trim()) errors.city = 'Enter the city for the project address.';
     if (!isFiveDigitZip(formData.serviceZip)) errors.serviceZip = 'Enter the 5-digit ZIP code for the project.';
     if (!formData.serviceMarket) errors.serviceMarket = 'Select the state or district where the project is.';
     const phoneMessage = usPhoneError(formData.phone);
     if (phoneMessage) errors.phone = phoneMessage;
-    const order: ContactField[] = ['city', 'serviceZip', 'serviceMarket', 'phone'];
+    const order: ContactField[] = ['address', 'city', 'serviceZip', 'serviceMarket', 'phone'];
     const firstInvalid = order.find((field) => errors[field]);
     if (firstInvalid) {
       setFieldErrors(errors);
@@ -872,6 +875,9 @@ export function QualificationWizard({
                         <MapPin className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground z-10' aria-hidden='true' />
                         <Input
                           id='address'
+                          ref={(node) => {
+                            fieldRefs.current.address = node;
+                          }}
                           type='text'
                           maxLength={500}
                           value={formData.address}
@@ -880,12 +886,14 @@ export function QualificationWizard({
                             const value = e.target.value;
                             requestPlaces();
                             updateFormData('address', value);
+                            if (fieldErrors.address) setFieldErrors((prev) => ({ ...prev, address: undefined }));
                             if (placesActive && !hasUnconfirmedAttempt) setPlacesValue(value);
                           }}
                           required
                           autoComplete={placesActive ? 'off' : 'street-address'}
-                          aria-describedby='address-help'
-                          className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
+                          aria-invalid={Boolean(fieldErrors.address) || undefined}
+                          aria-describedby={fieldErrors.address ? fieldErrorId('address') : 'address-help'}
+                          className={`pl-12 h-12 text-base border-2 focus:border-primary transition-colors ${fieldErrors.address ? 'border-destructive' : 'border-border'}`}
                         />
                         {placesActive && status === 'OK' && data.length > 0 && (
                           <div className='absolute z-50 w-full mt-1 bg-card border-2 border-border rounded-lg shadow-lg max-h-60 overflow-y-auto'>
@@ -934,6 +942,11 @@ export function QualificationWizard({
                           </div>
                         )}
                       </div>
+                      {fieldErrors.address && (
+                        <p id={fieldErrorId('address')} className='text-sm font-medium text-destructive'>
+                          {fieldErrors.address}
+                        </p>
+                      )}
                       <p id='address-help' className='text-xs text-muted-foreground'>
                         {placesActive
                           ? 'Start typing, then pick a suggestion to fill in the city and ZIP.'

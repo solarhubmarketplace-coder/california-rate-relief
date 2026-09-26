@@ -16,6 +16,7 @@ import {
 import { isFiveDigitZip, serviceLocationFields, selectableServiceMarkets, type ServiceMarket } from "@/lib/service-market";
 import { CTA_COPY } from "@/lib/cta-intent";
 import { US_PHONE_HINT, formatUsPhoneInput, isValidUsPhone, toE164Us, usPhoneError } from "@/lib/phone";
+import { streetAddressError } from "@/lib/street-address";
 
 interface CommercialFormData {
   companyName: string;
@@ -198,6 +199,12 @@ export function CommercialAssessmentForm({
     }
     if (!form.serviceMarket || !isFiveDigitZip(form.serviceZip)) {
       setError("Select a project market and enter a 5-digit project ZIP code.");
+      return;
+    }
+    const streetMessage = streetAddressError(form.location);
+    if (streetMessage) {
+      setError(streetMessage);
+      document.getElementById(fid("commercial-location"))?.focus();
       return;
     }
     if (!form.city.trim()) {
@@ -398,7 +405,7 @@ export function CommercialAssessmentForm({
           </div>
 
           <div className="space-y-2 md:col-span-2">
-            <Label htmlFor={fid("commercial-location")}>Project address or city</Label>
+            <Label htmlFor={fid("commercial-location")}>Project street address</Label>
             <Input
               id={fid("commercial-location")}
               value={form.location}

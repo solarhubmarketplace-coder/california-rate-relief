@@ -27,6 +27,7 @@ import {
 } from '@/lib/cta-intent';
 import { isCommercialIntentPath } from '@/lib/intake-routing';
 import { US_PHONE_HINT, formatUsPhoneInput, isValidUsPhone, toE164Us, usPhoneError } from '@/lib/phone';
+import { streetAddressError } from '@/lib/street-address';
 import {
   QUICK_START_EVENT,
   formatBill,
@@ -58,7 +59,7 @@ type FormStep = 1 | 2;
 /** Where step-1 answers came from, reported as the prefill_source event param. */
 type PrefillSource = 'none' | 'calculator' | 'quick_check';
 
-type FieldKey = 'utility_provider' | 'bill_amount' | 'service_market' | 'zip' | 'homeowner' | 'phone';
+type FieldKey = 'utility_provider' | 'bill_amount' | 'service_market' | 'street' | 'zip' | 'homeowner' | 'phone';
 
 /** A utility prop may be a code ('sce') or a label ('PG&E'); the select needs a code. */
 function initialUtility(value: string): { utility: string; other: string } {
@@ -102,6 +103,7 @@ export function SolarInquiry({
     monthlyBill: '',
   });
   const [contact, setContact] = useState({ name: '', phone: '', email: '' });
+  const [street, setStreet] = useState('');
   const [homeowner, setHomeowner] = useState('');
   const [roofAge, setRoofAge] = useState('');
   const [serviceMarket, setServiceMarket] = useState<ServiceMarket | ''>(market);
@@ -373,6 +375,8 @@ export function SolarInquiry({
     if (!attempt.current) {
       const errors: Partial<Record<FieldKey, string>> = {};
       if (!serviceMarket) errors.service_market = 'Select the state or district where the project is.';
+      const streetMessage = streetAddressError(street);
+      if (streetMessage) errors.street = streetMessage;
       if (!isFiveDigitZip(inputs.zip)) errors.zip = 'Enter the 5-digit ZIP code for the project.';
       if (!homeowner) errors.homeowner = 'Answer whether you own this home.';
       if (!(Number(inputs.monthlyBill) > 0))
@@ -380,7 +384,7 @@ export function SolarInquiry({
       const phoneMessage = usPhoneError(contact.phone);
       if (phoneMessage) errors.phone = phoneMessage;
       // Same reason precedence as before; phone is new and comes last.
-      const order: FieldKey[] = ['service_market', 'zip', 'homeowner', 'bill_amount', 'phone'];
+      const order: FieldKey[] = ['service_market', 'street', 'zip', 'homeowner', 'bill_amount', 'phone'];
       const first = order.find((key) => errors[key]);
       if (first) {
         showFieldErrors(errors, first);
@@ -418,6 +422,8 @@ export function SolarInquiry({
             // normalizePhone), so sending E.164 stores exactly the same value.
             phone: toE164Us(contact.phone) ?? contact.phone,
             email: contact.email,
+            // Street + ZIP: the lead has to be locatable (2026-09-26).
+            address: `${street.trim()}, ${inputs.zip}`,
           },
           qualification_data: {
             homeowner: homeowner === 'yes',
@@ -692,6 +698,29 @@ export function SolarInquiry({
                     </select>
                   </label>
                   {fieldError('service_market')}
+                </div>
+                <div className="min-w-0 md:col-span-2">
+                  <label className="text-sm font-medium">
+                    Street address of the home
+                    <input
+                      required
+                      autoComplete="street-address"
+                      maxLength={200}
+                      placeholder="123 Main St"
+                      ref={(node) => {
+                        fieldRefs.current.street = node;
+                      }}
+                      className={`${field} ${fieldErrors.street ? invalidField : ''}`}
+                      value={street}
+                      aria-invalid={Boolean(fieldErrors.street) || undefined}
+                      aria-describedby={describedBy('street')}
+                      onChange={(e) => {
+                        setStreet(e.target.value);
+                        clearFieldError('street');
+                      }}
+                    />
+                  </label>
+                  {fieldError('street')}
                 </div>
                 <div className="min-w-0">
                   <label className="text-sm font-medium">

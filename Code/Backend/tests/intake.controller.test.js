@@ -8,7 +8,7 @@ function response() {
 
 const residential = {
   submission_id: '123e4567-e89b-42d3-a456-426614174000', segment: 'residential',
-  contact: { name: 'Test Person', phone: '(951) 555-0187', email: 'test@example.com' },
+  contact: { name: 'Test Person', phone: '(951) 555-0187', email: 'test@example.com', address: '123 Main St, 92591' },
   qualification_data: { homeowner: true, utility_provider: 'sce', credit_score: 'yes', bill_amount: 275 },
   attribution: { landing_page: '/blog/why-is-my-sce-bill-so-high', submitted_from: '/' }, test: true,
 };
@@ -46,7 +46,7 @@ describe('public intake controller', () => {
   });
   test('legacy intake preserves synthetic exclusion and every paid search identifier', async () => {
     service.createSubmission.mockResolvedValue({submission_id:residential.submission_id,lead_id:'lead',replayed:false});
-    await controller.createLegacyIntake({body:{name:'Test',phone:'9515550187',utility_provider:'SCE',test:true,gbraid:'paid-b',wbraid:'paid-w',msclkid:'paid-m'}},response(),jest.fn());
+    await controller.createLegacyIntake({body:{name:'Test',phone:'9515550187',address:'123 Main St',utility_provider:'SCE',test:true,gbraid:'paid-b',wbraid:'paid-w',msclkid:'paid-m'}},response(),jest.fn());
     expect(service.createSubmission).toHaveBeenCalledWith(expect.objectContaining({is_test:true,attribution:expect.objectContaining({gbraid:'paid-b',wbraid:'paid-w',msclkid:'paid-m'})}));
   });
   test('preserves entered bill cents and recomputes calculator outputs instead of trusting submitted savings', () => {
@@ -207,7 +207,7 @@ describe('public intake controller', () => {
     service.createSubmission.mockResolvedValue({ submission_id: residential.submission_id, lead_id: '223e4567-e89b-42d3-a456-426614174000', segment: 'residential', replayed: false });
     const res = response();
     await controller.createLegacyIntake({ body: {
-      name: 'Test Person', phone: '(951) 555-0187', email: 'test@example.com',
+      name: 'Test Person', phone: '(951) 555-0187', email: 'test@example.com', address: '123 Main St',
       utility_provider: 'pge', credit_score: 'no', bill_amount: 275, landing_page: '/blog/pge',
     } }, res, jest.fn());
     expect(service.createSubmission).toHaveBeenCalledWith(expect.objectContaining({
@@ -215,5 +215,19 @@ describe('public intake controller', () => {
       qualification_data: expect.objectContaining({ utility_provider: 'PG&E', credit_score: 'below_650' }),
     }));
     expect(res.apiResponse).toHaveBeenCalledWith(201, 'Submission received', expect.objectContaining({ id: expect.any(String) }));
+  });
+  test('refuses a lead without a street address (2026-09-26)', () => {
+    for (const address of [undefined, '', '   ', 'Temecula', '92591', 'n/a']) {
+      const result = controller.validate({ ...residential, contact: { ...residential.contact, address } });
+      expect(result.error).toBe('contact.address must be a street address (house number and street)');
+    }
+    expect(controller.validate(residential).error).toBeUndefined();
+  });
+  test('refuses a legacy flat submission without a street address', async () => {
+    service.createSubmission.mockClear();
+    const res = response();
+    await controller.createLegacyIntake({ body: { name: 'Test Person', phone: '(951) 555-0187', utility_provider: 'pge' } }, res, jest.fn());
+    expect(service.createSubmission).not.toHaveBeenCalled();
+    expect(res.apiResponse).toHaveBeenCalledWith(400, 'contact.address must be a street address (house number and street)');
   });
 });
