@@ -176,7 +176,7 @@ export const PAGE_MODIFIED_DATES: Readonly<Record<string, string>> = {
   '/solar-installers/elevation-solar-review': '2026-09-23',
   '/solar-installers/empire-solar-review': '2026-09-24',
   '/solar-installers/enphase-vs-solaredge': '2026-09-24',
-  '/solar-installers/freedom-forever-review': '2026-09-24',
+  '/solar-installers/freedom-forever-review': '2026-11-09',
   '/solar-installers/la-solar-group-review': '2026-09-18',
   '/solar-installers/licensed-solar-installer': '2026-09-23',
   '/solar-installers/momentum-solar-review': '2026-09-23',
