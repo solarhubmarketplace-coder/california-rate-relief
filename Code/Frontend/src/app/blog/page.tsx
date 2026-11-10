@@ -905,6 +905,14 @@ const blogPosts: BlogPost[] = [
   // date, read from the post. readTime is only set where the post itself
   // publishes one, which is why it is optional in BlogPost above.
   {
+    slug: 'ground-mount-solar-california-guide',
+    title: 'Ground-Mount Solar in California: Permits, HOA Rights and Rules',
+    excerpt:
+      'How a city or county decides a ground-mount permit, what Civil Code 714 says about HOAs, the dig-notice rule, and whether a ground mount counts for a new home.',
+    date: '2026-11-09',
+    category: 'Getting Quotes',
+  },
+  {
     slug: 'solar-carport-california-guide',
     title: 'Solar Carports in California: Cost, Permits and Design',
     excerpt:

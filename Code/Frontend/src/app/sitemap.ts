@@ -241,6 +241,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
     'electricity-peak-hours-california',
     'electricity-rates-by-zip-code',
     'flat-roof-solar-panels',
+    'ground-mount-solar-california-guide',
     'help-with-pge-bill',
     'how-much-does-it-cost-to-turn-on-electricity',
     'how-to-lower-pge-bill',
