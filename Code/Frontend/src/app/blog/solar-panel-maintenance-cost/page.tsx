@@ -11,7 +11,11 @@ import type { Source } from '@/components/growth/DecisionPage';
 import type { KeyFact } from '@/components/trust/KeyFacts';
 
 const PATH = '/blog/solar-panel-maintenance-cost';
-const UPDATED = '2026-09-23';
+// UPDATED is the page edit date. The NREL and UC San Diego sources were last read 2026-09-23 (neither host
+// could be reached on 2026-11-09), so their citations keep that date; only CSLB was re-read on 2026-11-09.
+const UPDATED = '2026-11-09';
+const SOURCES_CHECKED = '2026-09-23';
+const CSLB_CHECKED = '2026-11-09';
 const HUB = { label: 'Solar panel maintenance', href: '/solar-panel-maintenance-california' };
 const metaTitle = 'Solar Panel Maintenance Cost per Year in California (2026)';
 const metaDescription =
@@ -36,25 +40,25 @@ const keyFacts: KeyFact[] = [
     label: 'Upkeep benchmark (2023)',
     value: '$30 per kW a year',
     note: 'NREL’s residential estimate; $27 system costs plus $3 administration.',
-    source: { publisher: 'NREL ATB 2024', date: UPDATED, url: NREL_ATB },
+    source: { publisher: 'NREL ATB 2024', date: SOURCES_CHECKED, url: NREL_ATB },
   },
   {
     label: 'Range NREL gives',
     value: '$0 to $40 per kW',
     note: 'Per year, depending on which upkeep practices a system gets.',
-    source: { publisher: 'NREL ATB 2024', date: UPDATED, url: NREL_ATB },
+    source: { publisher: 'NREL ATB 2024', date: SOURCES_CHECKED, url: NREL_ATB },
   },
   {
     label: 'Value of a mid-summer wash',
     value: 'About $20',
     note: 'Typical 5 kW home system, California study of 186 sites.',
-    source: { publisher: 'UC San Diego', date: UPDATED, url: UCSD },
+    source: { publisher: 'UC San Diego', date: SOURCES_CHECKED, url: UCSD },
   },
   {
     label: 'Who pays if you own it',
     value: 'You',
     note: 'Unless you bought a maintenance plan or the system came with one.',
-    source: { publisher: 'CPUC', date: UPDATED, url: CPUC_GUIDE },
+    source: { publisher: 'CPUC', date: SOURCES_CHECKED, url: CPUC_GUIDE },
   },
 ];
 
@@ -114,7 +118,7 @@ export default function SolarPanelMaintenanceCost() {
         headline="Solar panel maintenance and cleaning costs in California"
         url="https://ratereliefca.com/blog/solar-panel-maintenance-cost"
         datePublished="2026-04-16"
-        dateModified="2026-09-23"
+        dateModified={UPDATED}
         description="What solar panel upkeep costs a year by NREL's benchmark, what cleaning, inspection and repair quotes depend on in California, and how to judge whether a cleaning pays."
       />
       <Header />
@@ -124,6 +128,7 @@ export default function SolarPanelMaintenanceCost() {
         crumbs={[HUB]}
         crumbLabel="Maintenance and cleaning costs"
         updated={UPDATED}
+        sourcesChecked={SOURCES_CHECKED}
         sources={sources}
         keyFacts={keyFacts}
         faqs={faqs}
@@ -153,7 +158,7 @@ export default function SolarPanelMaintenanceCost() {
             per year for 2023, down from $34 in 2022. NREL splits the 2023 figure into $27 of system costs and
             $3 of administration, and lists what it covers: “asset management (including compliance and
             reporting for incentive payments), insurance products, cleaning, vegetation removal, and component
-            failure.” <Cite publisher="NREL" href={NREL_ATB} date={UPDATED} />
+            failure.” <Cite publisher="NREL" href={NREL_ATB} date={SOURCES_CHECKED} />
           </p>
           <div className="overflow-x-auto rounded-xl border">
             <table className="w-full text-sm">
@@ -184,6 +189,35 @@ export default function SolarPanelMaintenanceCost() {
         </section>
 
         <section>
+          <h2>What each maintenance cost is sourced to</h2>
+          <p>
+            Only some upkeep costs have a published figure. This table keeps the ones that do apart from the
+            ones that don&rsquo;t, and says when each source was last read, so no number here is
+            stretched past what its source supports.
+          </p>
+          <div className="overflow-x-auto rounded-xl border">
+            <table className="w-full text-sm">
+              <caption className="sr-only">Solar panel maintenance costs and what source supports each</caption>
+              <thead className="bg-muted">
+                <tr>
+                  <th className={th}>Cost</th>
+                  <th className={th}>What a source supports</th>
+                  <th className={th}>Source and last read</th>
+                  <th className={th}>What no source publishes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-t"><th scope="row" className={th}>Yearly upkeep, average</th><td className={td}>$30 per kW of panels per year for 2023, within $0 to $40 per kW</td><td className={td}>NREL Annual Technology Baseline 2024; read September 23, 2026</td><td className={td}>A California price. This is a national research benchmark.</td></tr>
+                <tr className="border-t"><th scope="row" className={th}>Cleaning</th><td className={td}>A mid-summer wash was worth about $20 of electricity on a typical 5 kW system; more than 0.1 inch of rain restored clean output</td><td className={td}>UC San Diego, published July 31, 2013, using 2010 data from 186 sites; read September 23, 2026</td><td className={td}>What a cleaning visit costs in California. The study is 13 years old.</td></tr>
+                <tr className="border-t"><th scope="row" className={th}>Inspection</th><td className={td}>Nothing on price</td><td className={td}>None</td><td className={td}>Any California inspection price</td></tr>
+                <tr className="border-t"><th scope="row" className={th}>Repairs and inverter replacement</th><td className={td}>Inverter failure is described as one of the most frequent causes of performance loss; 10-year inverter warranties were common in December 2018</td><td className={td}>NREL O&amp;M best practices, 3rd ed. (December 2018); read September 23, 2026</td><td className={td}>A repair or replacement price</td></tr>
+                <tr className="border-t"><th scope="row" className={th}>Who may do the work</th><td className={td}>C-46 solar and C-10 electrical are among the license classes allowed; CSLB warns against using an unlicensed contractor for solar work</td><td className={td}>CSLB Solar Smart; read November 9, 2026</td><td className={td}>Nothing on price</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
           <h2>Solar panel cleaning prices: what sets the quote</h2>
           <p>
             Cleaning companies price per visit, per panel or with a minimum charge, and nobody publishes a
@@ -202,7 +236,7 @@ export default function SolarPanelMaintenanceCost() {
             Anyone doing more than washing, such as touching wiring or moving panels, should hold a license for
             solar work. The Contractors State License Board lists C-46 solar and C-10 electrical among the
             classes allowed, and warns: “Do not use a contractor who is not licensed to perform solar work.”{' '}
-            <Cite publisher="CSLB" href={CSLB_SOLAR} date={UPDATED} />
+            <Cite publisher="CSLB" href={CSLB_SOLAR} date={CSLB_CHECKED} />
           </p>
         </section>
 
@@ -213,7 +247,7 @@ export default function SolarPanelMaintenanceCost() {
             homes and businesses using 2010 data and found panels lost a little under 0.05 percent of
             efficiency per day without rain, reaching 7.4 percent after a 145-day summer drought. For a typical
             5 kW system, washing halfway through summer was worth about $20 of electricity before the rains
-            returned (UC San Diego, July 2013). <Cite publisher="UC San Diego" href={UCSD} date={UPDATED} />
+            returned (UC San Diego, July 2013). <Cite publisher="UC San Diego" href={UCSD} date={SOURCES_CHECKED} />
           </p>
           <p>To check your own roof:</p>
           <ol>
@@ -245,7 +279,7 @@ export default function SolarPanelMaintenanceCost() {
           <p>
             NREL’s operation and maintenance guide calls inverter failure “one of the most frequent causes of PV
             system performance loss,” and noted in December 2018 that 10-year inverter warranties were then
-            commonly available. <Cite publisher="NREL" href={NREL_OM} date={UPDATED} /> Whether a repair costs
+            commonly available. <Cite publisher="NREL" href={NREL_OM} date={SOURCES_CHECKED} /> Whether a repair costs
             you anything depends on the warranty, whether it covers labor as well as parts, and whether panels
             have to come off to reach the fault.{' '}
             <Link href="/blog/solar-panel-repair-cost">How much solar panel repair costs</Link> goes through
@@ -260,7 +294,7 @@ export default function SolarPanelMaintenanceCost() {
           <p>
             The CPUC’s consumer guide says: “Unless you purchase a maintenance plan or your system comes with
             one, you will be responsible for any maintenance and repairs.”{' '}
-            <Cite publisher="CPUC" href={CPUC_GUIDE} date={UPDATED} /> Before buying a plan, lay it next to the
+            <Cite publisher="CPUC" href={CPUC_GUIDE} date={SOURCES_CHECKED} /> Before buying a plan, lay it next to the
             warranties you already have.
           </p>
           <div className="overflow-x-auto rounded-xl border">

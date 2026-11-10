@@ -40,6 +40,8 @@ export interface ArticleSource {
   url: string;
   /** What claim on the page this source backs. */
   supports: string;
+  /** ISO date this source was last read, when that differs from the page reviewedAt. */
+  checkedAt?: string;
 }
 
 export type ArticleCluster =
@@ -62,6 +64,8 @@ export interface ArticlePage {
   keyStats: ArticleStat[];
   sections: ArticleSection[];
   dataTable: ArticleTable;
+  /** Optional further tables, rendered after dataTable (for example a docket tracker). */
+  extraTables?: ArticleTable[];
   /** Who this is a bad idea for. The brand's credibility depends on this being real. */
   whenThisIsWrong: string;
   faqs: ArticleFAQ[];

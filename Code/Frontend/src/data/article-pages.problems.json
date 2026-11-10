@@ -2903,10 +2903,10 @@
   {
     "slug": "true-up-bill-california-explained",
     "cluster": "problems",
-    "metaTitle": "California Solar True-Up Bill Explained",
-    "metaDescription": "Read a solar settlement bill by checking the provider, generation supplier, program, billing period, amount due, imports, exports and recorded production.",
+    "metaTitle": "True-Up Meaning: California Solar True-Up Bill Explained",
+    "metaDescription": "True-up meaning on a solar bill: the yearly settlement of imports, exports and credits. How PG&E, SCE and SDG&E label it, and how to read the bill.",
     "h1": "The True-Up Bill in California, Explained",
-    "intro": "Start with the bill, not the word true-up. Identify the utility, any generation supplier, and the program shown on the account. Then read the billing or settlement period, the amount currently due, imported and exported energy, and the system-production record. A monthly payment and an annual settlement can coexist, but the timing and treatment depend on the provider and account option.\n\nFor an unexplained charge, compare the current statement with a comparable prior period, note changes in household load or system operation, and use the utility or generation supplier's billing support for the line item in question. A total alone does not establish a billing error, a production problem, or a need for more panels.",
+    "intro": "True-up meaning, in one line: to true up a solar account is to settle it. The utility compares a full year of electricity you took from the grid with what you sent back, then brings the balance to zero or to a final bill.\n\nStart with the bill, not the word true-up. Identify the utility, any generation supplier, and the program shown on the account. Then read the billing or settlement period, the amount currently due, imported and exported energy, and the system-production record. A monthly payment and an annual settlement can coexist, but the timing and treatment depend on the provider and account option.\n\nFor an unexplained charge, compare the current statement with a comparable prior period, note changes in household load or system operation, and use the utility or generation supplier's billing support for the line item in question. A total alone does not establish a billing error, a production problem, or a need for more panels.",
     "keyStats": [
       {
         "label": "Provider shown on the bill",
@@ -3030,6 +3030,10 @@
     "whenThisIsWrong": "This page cannot assign a billing process from a city, interconnection date, account total or neighbor's bill. Publicly owned utilities and community-choice suppliers can have their own programs and settlement practices. Use the account's current utility and generation-supplier guidance for the actual program and line item.",
     "faqs": [
       {
+        "question": "What does true-up mean on a solar bill?",
+        "answer": "True-up means the once-a-year settlement of a solar account. Your utility adds up 12 months of energy you pulled from the grid and energy you sent back, bills any balance you owe, pays for any surplus, and starts the count again. PG&E calls it the Annual True-Up Statement, SCE an annual settlement bill and SDG&E an annual true-up bill."
+      },
+      {
         "question": "Is a true-up bill a mistake?",
         "answer": "Not necessarily. First identify the provider, program, settlement period, amount due, usage and production entries. If a line remains unexplained, ask the provider responsible for it to review the account."
       },
@@ -3087,60 +3091,108 @@
       {
         "name": "CPUC — Net Energy Metering and Net Billing",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/customer-generation/net-energy-metering-and-net-billing",
-        "supports": "NEM 1.0/2.0 annual billing with both charges and credits rolling over 12 months; net billing charges due monthly with credits rolling to the annual true-up; net surplus compensation about $0.02-$0.03/kWh, set in D.11-06-016 under AB 920 — verified 2026-09-24"
+        "supports": "NEM 1.0/2.0 annual billing with both charges and credits rolling over 12 months; net billing charges due monthly with credits rolling to the annual true-up; net surplus compensation about $0.02-$0.03/kWh, set in D.11-06-016 under AB 920 — verified 2026-09-24",
+        "checkedAt": "2026-09-24"
       },
       {
         "name": "SCE — Understanding Your NEM Bill",
         "url": "https://www.sce.com/customer-service-center/help-center/solar/net-energy-metering/understanding-nem-bill",
-        "supports": "SCE describes Annual Billing and Monthly Billing Options and identifies the Annual Settlement Statement; the account option determines how those bill elements are handled. Checked September 20, 2026."
+        "supports": "SCE describes Annual Billing and Monthly Billing Options and identifies the Annual Settlement Statement; the account option determines how those bill elements are handled. Checked September 20, 2026.",
+        "checkedAt": "2026-09-24"
       },
       {
         "name": "SCE — Community Choice Aggregation",
         "url": "https://www.sce.com/customer-service-center/community-choice-aggregation",
-        "supports": "A CCA may take over generation charges while SCE continues delivery, meter reading, billing, maintenance and outage response; the CCA generation line is separate. Checked September 20, 2026."
+        "supports": "A CCA may take over generation charges while SCE continues delivery, meter reading, billing, maintenance and outage response; the CCA generation line is separate. Checked September 20, 2026.",
+        "checkedAt": "2026-09-24"
       },
       {
         "name": "Desert Community Energy — Solar Customers",
         "url": "https://desertcommunityenergy.org/your-options/solar-customers/",
-        "supports": "DCE describes separate generation charges and credits, with SCE delivery and other service charges, and says its generation balances settle monthly with a May annual true-up. This is a bill-confirmed example, not a universal CCA schedule. Checked September 20, 2026."
+        "supports": "DCE describes separate generation charges and credits, with SCE delivery and other service charges, and says its generation balances settle monthly with a May annual true-up. This is a bill-confirmed example, not a universal CCA schedule. Checked September 20, 2026.",
+        "checkedAt": "2026-09-24"
       },
       {
         "name": "PG&E — Solar Billing Plan",
         "url": "https://www.pge.com/en/clean-energy/solar/getting-started-with-solar/solar-billing-plan.html",
-        "supports": "PG&E monthly charges/credits carry forward each cycle; True-Up Statement issued end of 12th month; True-Up cycle can be less than 12 months — verified 2026-09-22"
+        "supports": "PG&E monthly charges/credits carry forward each cycle; True-Up Statement issued end of 12th month; True-Up cycle can be less than 12 months — verified 2026-09-22",
+        "checkedAt": "2026-09-24"
       },
       {
         "name": "PG&E — Understand Your Bill: Solar Bill",
         "url": "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill/solar-bill.html",
-        "supports": "True-Up Statement at the end of the 12th month; Net Surplus Compensation set by the CPUC at approximately $0.02-$0.04/kWh, eligibility determined automatically; remaining credits reset to zero by law; Base Services Charge about $24 a month from March 2026, not eligible to be offset by generation credits — verified 2026-09-24"
+        "supports": "True-Up Statement at the end of the 12th month; Net Surplus Compensation set by the CPUC at approximately $0.02-$0.04/kWh, eligibility determined automatically; remaining credits reset to zero by law; Base Services Charge about $24 a month from March 2026, not eligible to be offset by generation credits — verified 2026-09-24",
+        "checkedAt": "2026-11-09"
       },
       {
         "name": "PG&E — Understand Your Bill (glossary)",
         "url": "https://www.pge.com/en/account/billing-and-assistance/understand-your-bill.html",
-        "supports": "PG&E's general bill-terms glossary has no entry defining \"NEM Charges,\" supporting the naming-difference point across utilities — verified 2026-09-22"
+        "supports": "PG&E's general bill-terms glossary has no entry defining \"NEM Charges,\" supporting the naming-difference point across utilities — verified 2026-09-22",
+        "checkedAt": "2026-09-24"
       },
       {
         "name": "SCE — Solar Billing Plan FAQs",
         "url": "https://www.sce.com/customer-service-center/help-center/solar/solar-billing-plan/solar-billing-plan-faqs",
-        "supports": "Settlement statement at the end of the 12-month Relevant Period; Direct Access and CCA customers ineligible for Net Surplus Compensation; fixed fees, non-bypassable charges and taxes not eligible for reduction by solar credits — verified 2026-09-24"
+        "supports": "Settlement statement at the end of the 12-month Relevant Period; Direct Access and CCA customers ineligible for Net Surplus Compensation; fixed fees, non-bypassable charges and taxes not eligible for reduction by solar credits — verified 2026-09-24",
+        "checkedAt": "2026-09-24"
       },
       {
         "name": "SDG&E — Understanding Your Solar Bill",
         "url": "https://www.sdge.com/solar/solar-billing-plan/UnderstandingYourSolarBill",
-        "supports": "Monthly export credits post at Avoided Cost Calculator value; Annual True-Up Adjustment backs out ACC-based credits and re-compensates at Net Surplus Compensation rates — verified 2026-09-22"
+        "supports": "Monthly export credits post at Avoided Cost Calculator value; Annual True-Up Adjustment backs out ACC-based credits and re-compensates at Net Surplus Compensation rates — verified 2026-09-22",
+        "checkedAt": "2026-11-09"
       },
       {
         "name": "SDG&E — Understanding Your NEM Bill",
         "url": "https://www.sdge.com/solar/net-energy-metering/UnderstandingYourNEMBill",
-        "supports": "SDG&E bill line items: NEM Charges, NEM Credits, Cumulative Balance, Current Account Balance; unused credits not carried to next 12-month period — verified 2026-09-22"
+        "supports": "SDG&E bill line items: NEM Charges, NEM Credits, Cumulative Balance, Current Account Balance; unused credits not carried to next 12-month period — verified 2026-09-22",
+        "checkedAt": "2026-09-24"
       },
       {
         "name": "CPUC — File a Complaint",
         "url": "https://www.cpuc.ca.gov/consumer-support/file-a-complaint",
-        "supports": "Contact the utility's customer service first; if unresolved, file an informal complaint with the CPUC — verified 2026-09-22"
+        "supports": "Contact the utility's customer service first; if unresolved, file an informal complaint with the CPUC — verified 2026-09-22",
+        "checkedAt": "2026-09-24"
+      },
+      {
+        "name": "SCE: How Solar Billing Plans work (annual settlement bill)",
+        "url": "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/solar-billing-plan",
+        "supports": "The annual settlement bill and the month it arrives, as used in the true-up meaning table. Read November 9, 2026.",
+        "checkedAt": "2026-11-09"
       }
     ],
-    "reviewedAt": "2026-09-24"
+    "reviewedAt": "2026-09-24",
+    "extraTables": [
+      {
+        "caption": "True-up meaning at PG&E, SCE and SDG&E: what the bill is called and when it arrives (utility pages read November 9, 2026)",
+        "columns": [
+          "Utility",
+          "What the bill is called",
+          "When it arrives",
+          "What it settles"
+        ],
+        "rows": [
+          [
+            "PG&E",
+            "Annual True-Up Statement",
+            "At the end of the 12th month of your billing cycle",
+            "Reconciles the year's energy charges and credits and any net surplus compensation. Remaining charges must be paid; excess surplus is typically reset to zero."
+          ],
+          [
+            "SCE",
+            "Annual settlement bill",
+            "The same month your system started service. A March start means a March bill every year",
+            "Reviews the full year of grid use and exports and adjusts any credits that need adjusting."
+          ],
+          [
+            "SDG&E",
+            "Annual true-up bill",
+            "At the end of each 12-month period",
+            "If you exported more than you imported, the bill carries an Annual True-Up Adjustment for export compensation already credited. If you imported more, no adjustment is needed."
+          ]
+        ]
+      }
+    ]
   },
   {
     "slug": "ucc-1-lien-solar-california",
@@ -3201,6 +3253,10 @@
       {
         "heading": "Getting It Released or Subordinated",
         "body": "Two different fixes for two different situations.\n\nA release comes through a UCC-3 termination statement, filed by the solar company once the lease, loan, or PPA is paid off, transferred, or canceled. This is the clean outcome, but it depends on the original secured party — or its successor — actually filing the paperwork. Follow up in writing and keep a copy.\n\nA subordination agreement is what you need instead if you're refinancing or selling while the lease, PPA, or loan continues. The solar provider agrees, in writing, that its interest ranks behind your new mortgage. One California credit union describes its own process as straightforward, charging a flat roughly $150 for the notarized document — a useful data point, though it's one lender's fee, not a state-set price. Give yourself real lead time; turnaround isn't instant.\n\nOne more thing worth knowing: a UCC-1's protection lapses on its own. Under Cal. Com. Code § 9515(a) and (d), a financing statement is effective for five years unless the secured party files a continuation statement in the six months before it expires. A 20- or 25-year lease will outlive several of these cycles — so it's possible to find a UCC-1 that technically lapsed years ago because nobody renewed it, even though the lease payments are still owed."
+      },
+      {
+        "heading": "A court case over a solar lender's claim: Freddie Mac v. Everbright",
+        "body": "Federal Home Loan Mortgage Corporation v. Everbright LLC, No. 4:25-cv-00632 in the U.S. District Court for the District of Arizona, was removed to federal court on November 13, 2025. The docket, read on CourtListener on November 9, 2026, lists the cause as a petition to quiet title, which is a request that a court settle competing claims to property.\n\nThe docket entries read do not describe the facts, so we do not know whether the property carries solar equipment or what the dispute is about. It is worth knowing about only because it shows a solar lender and a mortgage enterprise in court over a claim on real property. For you, the practical point is the one above: find out before escrow whether a solar filing sits against your house, and get it released or subordinated in time.\n\nOur guide to solar loan lawsuits lists this case alongside the other EverBright dockets and the Minnesota Attorney General's case against four solar lenders."
       },
       {
         "heading": "If Your Solar Company Already Went Bankrupt",
@@ -3386,6 +3442,12 @@
         "name": "SunPower Corp. — Form 8-K press release (SEC EDGAR)",
         "url": "https://www.sec.gov/Archives/edgar/data/867773/000086777324000093/ex991_2024812pressrelease.htm",
         "supports": "SunPower Chapter 11 filing date (8/5/2024) and subsequent asset acquisition by Complete Solaria"
+      },
+      {
+        "name": "CourtListener: Federal Home Loan Mortgage Corporation v. Everbright LLC, No. 4:25-cv-00632 (D. Ariz.)",
+        "url": "https://www.courtlistener.com/?q=%22Everbright%22&type=d",
+        "supports": "Case name, court, number, removal date and the quiet-title cause field. Read November 9, 2026.",
+        "checkedAt": "2026-11-09"
       }
     ],
     "reviewedAt": "2026-09-22"
@@ -3752,5 +3814,161 @@
       }
     ],
     "reviewedAt": "2026-09-08"
+  },
+  {
+    "slug": "solar-loan-lawsuits-california",
+    "cluster": "problems",
+    "metaTitle": "Solar Loan Lawsuits in California: What Dockets Show",
+    "metaDescription": "EverBright cases in California federal courts, a Freddie Mac quiet-title suit, the Minnesota AG case against four solar lenders, and Sunlight Financial's bankruptcy.",
+    "h1": "Solar Loan Lawsuits in California: What the Court Dockets and the Minnesota AG Case Show",
+    "intro": "If you financed solar with a loan, the lender, not the installer, is the company you owe. That is why court records about solar lenders matter even when your installer is long gone.\n\nThis page reads the public dockets and one state attorney general press release. It lists what was filed, in which court, and when. It does not say who is right, because no court decision is reported here, and it is not advice about your own loan. A lawsuit against a lender is a claim by the person who filed it, not a finding.\n\nEverything below was read from CourtListener dockets or the Minnesota Attorney General's own press release on November 9, 2026. Where a fact could not be confirmed from those records, the page says so.",
+    "keyStats": [
+      {
+        "label": "EverBright cases in California federal courts",
+        "value": "7",
+        "note": "E.D. Cal., N.D. Cal. and C.D. Cal. dockets read on CourtListener, Nov. 9, 2026. Each is styled as an individual plaintiff against EverBright."
+      },
+      {
+        "label": "Quiet-title suit involving Freddie Mac",
+        "value": "D. Ariz. 4:25-cv-00632",
+        "note": "Federal Home Loan Mortgage Corporation v. Everbright LLC, removed Nov. 13, 2025."
+      },
+      {
+        "label": "Minnesota AG suit against four solar lenders",
+        "value": "March 2024",
+        "note": "Filed in Hennepin County against GoodLeap, Sunlight Financial, Solar Mosaic and Dividend Solar Finance. Minnesota AG press release, Mar. 8, 2024."
+      },
+      {
+        "label": "Sunlight Financial plan effective",
+        "value": "Dec. 6, 2023",
+        "note": "Plan confirmed Dec. 5, 2023, Bankr. D. Del. No. 23-11794."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "EverBright: seven California federal cases and one in Texas",
+        "body": "A search of CourtListener for EverBright, LLC on November 9, 2026 turned up seven cases in California federal courts and one in the Eastern District of Texas that name the solar lender as a defendant. The table below lists them with the docket's own cause-of-action field. Four California cases list diversity jurisdiction with a fraud cause of action, and two list the Fair Credit Reporting Act.\n\nEvery case name on the list is an individual plaintiff against EverBright. None is styled as a class action, and this page does not report one. The dockets read here do not tell us what each complaint alleges beyond the cause field, whether EverBright has answered, or how any case ended.\n\nThe same search returns many unrelated companies that share the name Everbright, so a raw count of EverBright dockets overstates the solar lender's cases. The list below keeps only the solar finance entity."
+      },
+      {
+        "heading": "Freddie Mac v. Everbright LLC: a quiet-title petition",
+        "body": "Federal Home Loan Mortgage Corporation v. Everbright LLC, No. 4:25-cv-00632 in the District of Arizona, was removed to federal court on November 13, 2025. The docket lists the cause as a petition to quiet title.\n\nA quiet-title case asks a court to settle competing claims to a piece of property. The docket entries read here do not describe the facts, and we do not know whether the property carries solar equipment. We list the case because a solar lender's recorded claim against a home is the kind of problem a sale or refinance can surface. How that works for solar liens in California is covered in the UCC-1 lien guide."
+      },
+      {
+        "heading": "The Minnesota Attorney General's case against four solar lenders",
+        "body": "On March 8, 2024 the Minnesota Attorney General announced a lawsuit in Hennepin County against GoodLeap, Sunlight Financial, Solar Mosaic and Dividend Solar Finance. The press release says the Attorney General's investigation found the four companies charged $35 million in hidden fees on nearly 5,000 loans that financed residential solar sales. The suit asserts violations of consumer-fraud statutes and seeks accurate representation and disclosures, civil penalties and other relief.\n\nThat is a Minnesota action about Minnesota loans, and the release is from March 2024. This page does not report where the case stands now, and it does not say the same fees were charged in California. It is included because it names the lenders behind a large share of home solar loans and describes the kind of fee homeowners are told to look for in their own loan documents."
+      },
+      {
+        "heading": "Sunlight Financial: the bankruptcy and your loan",
+        "body": "Sunlight Financial Holdings Inc. and four affiliates filed Chapter 11 in the District of Delaware on October 30, 2023. The lead case is No. 23-11794. The court confirmed a prepackaged plan on December 5, 2023 and it took effect on December 6, 2023. This page does not state a closing date for the case, because the records we found disagree.\n\nA later adversary proceeding, Miller v. Sunlight Financial, No. 25-52423, was filed in the same court on November 7, 2025. The entries read here do not say what it claims.\n\nThe bankruptcy ended years ago, so for most people the practical question is who to pay today. The dockets do not answer that. Your most recent loan statement and loan agreement show who services your loan, and the lender's statement is the place to confirm a payoff figure in writing."
+      },
+      {
+        "heading": "If your lender is named on a list like this",
+        "body": "A lawsuit against your lender does not cancel your loan, and nothing on this page tells you to stop paying. Stopping payment on a loan you still owe can damage your credit and put you in default, so read your own loan agreement first and take any dispute to the lender and, if needed, an attorney.\n\nUseful records to gather: the signed loan agreement, every monthly statement, any fee disclosure you were shown at signing, and the Solar Energy System Disclosure Document that California requires on residential solar contracts. If you are selling the house, ask for a written payoff and ask the title company to search for any recorded solar lien early. The solar lease buyout calculator on this site can total the payments left on a lease or power purchase agreement, but it does not value a loan."
+      }
+    ],
+    "dataTable": {
+      "caption": "EverBright cases in California federal courts and one in Texas, read on CourtListener November 9, 2026",
+      "columns": [
+        "Case",
+        "Court and number",
+        "Filed",
+        "Cause field on the docket"
+      ],
+      "rows": [
+        [
+          "Anctil v. Everbright, LLC",
+          "E.D. Cal. 1:26-cv-07630",
+          "Sept. 18, 2026",
+          "28 U.S.C. 1332 diversity; fraud"
+        ],
+        [
+          "Levey v. EverBright, LLC",
+          "E.D. Tex. 9:26-cv-00657",
+          "Aug. 24, 2026",
+          "Not shown in the entry read"
+        ],
+        [
+          "Ventry v. EverBright, LLC",
+          "E.D. Cal. 2:26-cv-02619",
+          "July 28, 2026",
+          "15 U.S.C. 1681 (Fair Credit Reporting Act)"
+        ],
+        [
+          "Sher v. Everbright, LLC",
+          "E.D. Cal. 1:26-cv-04646",
+          "June 16, 2026",
+          "28 U.S.C. 1332 diversity; fraud"
+        ],
+        [
+          "Sher v. Everbright, LLC",
+          "N.D. Cal. 3:26-cv-05712",
+          "June 12, 2026",
+          "Not shown in the entry read"
+        ],
+        [
+          "Gill v. Everbright, LLC",
+          "N.D. Cal. 3:26-cv-04545",
+          "May 14, 2026",
+          "28 U.S.C. 1332 diversity; fraud"
+        ],
+        [
+          "Lopez v. Everbright, LLC",
+          "C.D. Cal. 2:25-cv-12169",
+          "Dec. 23, 2025",
+          "Removal; Fair Credit Reporting Act"
+        ],
+        [
+          "Garcia-Borjon v. Everbright, LLC",
+          "E.D. Cal. 1:24-cv-01537",
+          "Dec. 16, 2024",
+          "28 U.S.C. 1332 diversity; fraud"
+        ]
+      ]
+    },
+    "whenThisIsWrong": "Do not treat a lawsuit on a docket as proof that a lender did anything wrong, and do not stop loan payments because of a case you read about here. The cases listed are claims, mostly by single plaintiffs. If you think your own loan has a hidden fee or a wrong credit report entry, get your loan documents in front of a consumer-protection attorney before you change what you pay.",
+    "faqs": [
+      {
+        "question": "Is there an EverBright class action?",
+        "answer": "Not on the dockets read for this page. Every EverBright case listed is styled as an individual plaintiff against the company, and none is styled as a class action. Dockets change, so check CourtListener or PACER for a current search."
+      },
+      {
+        "question": "Is GoodLeap being sued?",
+        "answer": "The Minnesota Attorney General sued GoodLeap, Sunlight Financial, Solar Mosaic and Dividend Solar Finance in Hennepin County in March 2024, according to the Attorney General's press release of March 8, 2024. This page does not report where that case stands today."
+      },
+      {
+        "question": "Who do I pay if I have a Sunlight Financial solar loan?",
+        "answer": "Your latest loan statement shows who services your loan. The Sunlight Financial bankruptcy plan took effect on December 6, 2023, and the court records read here do not say who services each loan today, so confirm the payee and any payoff figure in writing before you pay."
+      },
+      {
+        "question": "What is a quiet-title case like Freddie Mac v. Everbright?",
+        "answer": "A quiet-title action asks a court to settle competing claims to property. The Freddie Mac case, No. 4:25-cv-00632 in the District of Arizona, was removed to federal court on November 13, 2025. The docket entries read do not describe its facts."
+      },
+      {
+        "question": "Should I stop paying my solar loan if my lender is being sued?",
+        "answer": "No lawsuit listed on this page cancels a solar loan, and stopping payment can put you in default and hurt your credit. Read your loan agreement and take any dispute to your lender or an attorney first."
+      }
+    ],
+    "bottomLine": "The court records read on November 9, 2026 show seven EverBright cases in California federal courts, a Freddie Mac quiet-title petition in Arizona, a March 2024 Minnesota Attorney General suit against four solar lenders, and a Sunlight Financial plan that took effect in December 2023. They are claims, not findings. Do not stop paying on the strength of a docket. While you gather your documents, confirm your payee in writing, and take any dispute about fees or credit reporting to the lender and an attorney.",
+    "sources": [
+      {
+        "name": "Minnesota Attorney General: Ellison sues solar lenders over $35M in deceptive hidden fees (Mar. 8, 2024)",
+        "url": "https://www.ag.state.mn.us/Office/Communications/2024/03/08_SolarLending.asp",
+        "supports": "The Hennepin County suit against GoodLeap, Sunlight Financial, Solar Mosaic and Dividend Solar Finance, the $35 million and nearly 5,000 loans figures, and the relief sought.",
+        "checkedAt": "2026-11-09"
+      },
+      {
+        "name": "CourtListener: dockets naming EverBright, LLC (E.D. Cal., N.D. Cal., C.D. Cal., E.D. Tex., D. Ariz.)",
+        "url": "https://www.courtlistener.com/?q=%22Everbright%22&type=d",
+        "supports": "Case names, courts, numbers, filing dates and cause fields in the table, and the Freddie Mac quiet-title docket.",
+        "checkedAt": "2026-11-09"
+      },
+      {
+        "name": "CourtListener: Sunlight Financial Holdings Inc., Bankr. D. Del. No. 23-11794 and Miller v. Sunlight Financial, No. 25-52423",
+        "url": "https://www.courtlistener.com/?q=%22Sunlight+Financial%22&type=d&court=deb",
+        "supports": "Filing date, lead case number, plan dates and the 2025 adversary proceeding.",
+        "checkedAt": "2026-11-09"
+      }
+    ],
+    "reviewedAt": "2026-11-09"
   }
 ]

@@ -122,6 +122,7 @@ export function ArticleRenderer({
     ...(page.dataTable.rows.length > 0
       ? [{ id: 'comparison-table', label: page.dataTable.caption }]
       : []),
+    ...(page.extraTables ?? []).map((tbl, i) => ({ id: `extra-table-${i + 1}`, label: tbl.caption })),
     ...(page.faqs.length > 0
       ? [{ id: 'frequently-asked-questions', label: 'Frequently asked questions' }]
       : []),
@@ -217,6 +218,37 @@ export function ArticleRenderer({
           </div>
         )}
 
+        {(page.extraTables ?? []).map((tbl, ti) => (
+          <div key={tbl.caption} id={`extra-table-${ti + 1}`} className="my-10 scroll-mt-24">
+            <h2 className="text-2xl font-bold text-foreground mb-4">{tbl.caption}</h2>
+            <div className="overflow-x-auto rounded-xl border border-border">
+              <table className="w-full text-sm">
+                <caption className="sr-only">{tbl.caption}</caption>
+                <thead>
+                  <tr className="bg-muted/50">
+                    {tbl.columns.map((c) => (
+                      <th key={c} className="text-left font-semibold text-foreground px-4 py-3">
+                        {c}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {tbl.rows.map((row, i) => (
+                    <tr key={i} className="border-t border-border align-top">
+                      {row.map((cell, j) => (
+                        <td key={j} className="px-4 py-3 text-foreground/80">
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        ))}
+
         <div className="my-10 rounded-xl border border-status-warning/30 bg-status-warning/10 p-6">
           <h2 className="flex items-center gap-2 text-xl font-bold text-foreground mb-3">
             <AlertTriangle className="h-5 w-5 text-status-warning" />
@@ -302,7 +334,7 @@ export function ArticleRenderer({
                 </a>{' '}
                 {/* publisher · date: the link's own host and the page's stated
                     verification date. */}
-                <SourceChip href={s.url} date={page.reviewedAt} dateVerb="verified" />
+                <SourceChip href={s.url} date={s.checkedAt ?? page.reviewedAt} dateVerb="verified" />
                 <span className="text-muted-foreground"> — {s.supports}</span>
               </li>
             ))}

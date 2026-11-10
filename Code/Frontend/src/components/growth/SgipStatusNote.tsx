@@ -32,7 +32,7 @@ export function SgipStatusNote() {
     .some((k) => status[k] === 'open' || status[k] === 'waitlist');
   return (
     <aside className="my-6 rounded-xl border border-status-warning/30 bg-status-warning/10 p-5 text-sm text-foreground">
-      <p className="font-semibold">SGIP correction · September 10, 2026</p>
+      <p className="font-semibold">SGIP correction · September 10, 2026 (status refreshed November 9, 2026)</p>
       <p className="mt-2">
         Earlier rebate amounts and general eligibility statements on this page
         should not be used as a current funding offer. As of{' '}

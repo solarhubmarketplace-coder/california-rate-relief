@@ -56,8 +56,8 @@ function fact<V>(f: Fact<V>): Fact<V> {
   return f;
 }
 
-/** The date this record was last re-verified end to end. */
-export const FACTS_CHECKED = '2026-09-24';
+/** Ceiling for every checkedAt below. 2026-11-09 pass re-read ONLY the four IOU rate entries; the rest were last re-verified 2026-09-24. */
+export const FACTS_CHECKED = '2026-11-09';
 
 // ---------------------------------------------------------------------------
 // Source URLs used by more than one fact
@@ -111,10 +111,10 @@ export const FACTS = {
     sourceTitle: PAO_Q2,
     sourceUrl: FACT_URLS.paoQ2_2026,
     locator: 'p. 8 and p. 20',
-    checkedAt: '2026-09-24',
+    checkedAt: '2026-11-09',
     recheckEveryDays: 30,
     statedAs: ['33\\.7\\s*(?:¢|&cent;|cents)', '\\$0\\.337\\b'],
-    note: 'No Q3 2026 report had been published on 2026-09-24. Recheck the reports index for it (expected late October to November 2026).',
+    note: '2026-11-09: re-read p. 8 of the Q2 2026 PDF ($0.337 PG&E, $0.344 SCE, $0.455 SDG&E) and the reports index. Q2 is still the newest report; no Q3 2026 report is posted. Rates after June 1, 2026 are not checked here. The PG&E tariff workbook still opens on the 260301-Present sheet, so PG&E rates have not changed since March 1, 2026. Recheck the index for the Q3 report (expected November to December 2026).',
   }),
   sceResidentialAverageRate: fact({
     id: 'sceResidentialAverageRate',
@@ -126,9 +126,10 @@ export const FACTS = {
     sourceTitle: PAO_Q2,
     sourceUrl: FACT_URLS.paoQ2_2026,
     locator: 'p. 8 and p. 22',
-    checkedAt: '2026-09-24',
+    checkedAt: '2026-11-09',
     recheckEveryDays: 30,
     statedAs: ['34\\.4\\s*(?:¢|&cent;|cents)', '\\$0\\.344\\b'],
+    note: '2026-11-09: re-read p. 8 of the Q2 2026 PDF ($0.337 PG&E, $0.344 SCE, $0.455 SDG&E) and the reports index. Q2 is still the newest report; no Q3 2026 report is posted. Rates after June 1, 2026 are not checked here.',
   }),
   sdgeResidentialAverageRate: fact({
     id: 'sdgeResidentialAverageRate',
@@ -140,9 +141,10 @@ export const FACTS = {
     sourceTitle: PAO_Q2,
     sourceUrl: FACT_URLS.paoQ2_2026,
     locator: 'p. 8 and p. 24',
-    checkedAt: '2026-09-24',
+    checkedAt: '2026-11-09',
     recheckEveryDays: 30,
     statedAs: ['45\\.5\\s*(?:¢|&cent;|cents)', '\\$0\\.455\\b'],
+    note: '2026-11-09: re-read p. 8 of the Q2 2026 PDF ($0.337 PG&E, $0.344 SCE, $0.455 SDG&E) and the reports index. Q2 is still the newest report; no Q3 2026 report is posted. Rates after June 1, 2026 are not checked here.',
   }),
 
   // --- Fixed charges ------------------------------------------------------
@@ -170,10 +172,10 @@ export const FACTS = {
     sourceTitle: 'Residential rates table, March 1, 2026 to present (res-inclu-tou-current.xlsx)',
     sourceUrl: FACT_URLS.pgeResRatesCurrent,
     locator: 'Sheet "Res Inclu TOU_260301-Present", Base Services Charge column; footnote 9',
-    checkedAt: '2026-09-24',
+    checkedAt: '2026-11-09',
     recheckEveryDays: 30,
     statedAs: ['0\\.79343', '0\\.39688', '0\\.19713'],
-    note: "PG&E's Base Services Charge page (pge.com/en/account/billing-and-assistance/base-services-charge.html, checked 2026-09-24) rounds these to around $24.00, $12.00 and $6.00 a month.",
+    note: "PG&E's Base Services Charge page (pge.com/en/account/billing-and-assistance/base-services-charge.html, checked 2026-09-24) rounds these to around $24.00, $12.00 and $6.00 a month. 2026-11-09: the workbook was re-read; the three per-day values (0.19713, 0.39688, 0.79343) are unchanged. The Base Services Charge page itself was not re-read.",
   }),
   sceBaseServicesCharge: fact({
     id: 'sceBaseServicesCharge',
@@ -320,14 +322,14 @@ export const FACTS = {
       generation: 'closed',
     },
     unit: 'status',
-    asOf: 'Tracker "as of 9/24/2026" (updated nightly)',
+    asOf: 'Tracker "as of 11/9/2026" (updated nightly)',
     publisher: 'Self-Generation Incentive Program administrators',
     sourceTitle: 'SGIP Program Metrics: Incentive Step Tracker',
     sourceUrl: FACT_URLS.sgipMetrics,
-    checkedAt: '2026-09-24',
+    checkedAt: '2026-11-09',
     recheckEveryDays: 7,
     statedAs: ['SGIP[^.]{0,120}\\b(?:closed|waitlist|open)\\b'],
-    note: 'Status is per administrator column; a category can be open for one administrator and waitlisted for another. The AB 209 categories showed only the statuses listed here.',
+    note: 'Status is per administrator column; a category can be open for one administrator and waitlisted for another. 2026-11-09 columns: AB 209 POU = SCE Open, PG&E Waitlist; AB 209 Non-POU = SCE Waitlist, PG&E Open; AB 209 = CSE, SCG and LADWP Waitlist. The coarse values above keep the most open status in each category. The PG&E SGIP page still said the equity rebate is closed on 2026-11-09.',
   }),
   sgipEquityBudget: fact({
     id: 'sgipEquityBudget',

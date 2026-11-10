@@ -111,7 +111,7 @@ export const PAGE_MODIFIED_DATES: Readonly<Record<string, string>> = {
   '/blog/solar-panel-bird-proofing': '2026-04-16',
   '/blog/solar-panel-cleaning-california': '2026-09-23',
   '/blog/solar-panel-inspection-california': '2026-04-16',
-  '/blog/solar-panel-maintenance-cost': '2026-09-23',
+  '/blog/solar-panel-maintenance-cost': '2026-11-09',
   '/blog/solar-panel-removal-reinstall-cost': '2026-09-23',
   '/blog/solar-panel-repair-cost': '2026-09-23',
   '/blog/solar-panels-for-ev-charging-california': '2026-09-20',

@@ -31,6 +31,7 @@ export function GuideShell({
   crumbs = [],
   crumbLabel,
   updated,
+  sourcesChecked,
   sources,
   keyFacts = [],
   faqs = [],
@@ -50,6 +51,8 @@ export function GuideShell({
   crumbLabel?: string;
   /** ISO date the page was last updated; the same value the Article schema carries. */
   updated: string;
+  /** ISO date the cited sources were last read, when that differs from `updated`. */
+  sourcesChecked?: string;
   sources: Source[];
   keyFacts?: KeyFact[];
   faqs?: FaqJsonLdItem[];
@@ -100,7 +103,7 @@ export function GuideShell({
             </div>
             <FaqBlock items={faqs} id="faq" heading={faqHeading} />
             <HubSpokeLinks hub={hub} currentPath={path} title={hubLinksTitle} />
-            <SourceList sources={sources} sourceCheckedDate={updated} />
+            <SourceList sources={sources} sourceCheckedDate={sourcesChecked ?? updated} />
           </div>
           <div data-toc-ignore="" className="max-w-3xl">
             {inquiry}

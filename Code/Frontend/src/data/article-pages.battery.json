@@ -1170,14 +1170,14 @@
   {
     "slug": "sgip-battery-rebate-california",
     "cluster": "battery",
-    "metaTitle": "SGIP California: Solar Battery Rebate Status (Sept 2026)",
-    "metaDescription": "What SGIP pays for a home battery, who qualifies for the equity budget, which budgets were open or waitlisted on Sept. 23, 2026, and SCE's own rules.",
+    "metaTitle": "SGIP California: Solar Battery Rebate Status (Nov 2026)",
+    "metaDescription": "What SGIP pays for a home battery, who qualifies for the equity budget, which budgets were open or waitlisted on Nov. 9, 2026, and SCE's own rules.",
     "h1": "SGIP in California: battery rebate status, who qualifies and what it pays",
-    "intro": "SGIP, the Self-Generation Incentive Program, is the CPUC's rebate for batteries and other equipment installed on the customer's side of the meter. As of September 23, 2026, the general-market home battery budget is closed everywhere. The only residential money left is the income-qualified Residential Solar and Storage Equity budget, which pays $1.10 per watt-hour of storage and $3.10 per watt of new solar.\n\nThat budget is open only for customers of publicly owned utilities assigned to PG&E or SCE. For PG&E, SCE, SDG&E, SoCalGas and LADWP customers it is waitlisted. The 2026 SGIP Handbook sets June 30, 2028 as the last day for new and waitlist applications. The official tracker updates nightly, so recheck it before you sign anything.",
+    "intro": "SGIP, the Self-Generation Incentive Program, is the CPUC's rebate for batteries and other equipment installed on the customer's side of the meter. As of November 9, 2026, the general-market home battery budget is closed everywhere. The only residential money left is the income-qualified Residential Solar and Storage Equity budget, which pays $1.10 per watt-hour of storage and $3.10 per watt of new solar.\n\nOn the official tracker that budget shows an open step in two categories, SCE's city-utility (POU) category and PG&E's non-POU category, and a waitlist everywhere else it is listed. PG&E's own SGIP page, read the same day, still calls its equity rebate closed with applications going on a waitlist through your contractor, so ask which budget a reservation would actually come from. The 2026 SGIP Handbook sets June 30, 2028 as the last day for new and waitlist applications. The official tracker updates nightly, so recheck it before you sign anything.",
     "keyStats": [
       {
         "label": "Status checked",
-        "value": "Sept. 23, 2026",
+        "value": "Nov. 9, 2026",
         "note": "Official SGIP tracker, updated nightly. A snapshot, not a funding commitment."
       },
       {
@@ -1219,7 +1219,7 @@
       },
       {
         "heading": "PG&E, SDG&E, SoCalGas and LADWP customers",
-        "body": "PG&E's SGIP page says the equity rebate can cover up to 100 percent of cost for customers who meet the income test or are enrolled in CARE, FERA or ESA. It also says the rebate is closed and that waitlist applications go through your contractor. On the tracker, PG&E's budget for its own customers is waitlisted while its city-utility sub-budget is open.\n\nIn SDG&E's territory the Center for Sustainable Energy administers SGIP. Its AB 209 budget shows a waitlist, as do the SoCalGas and LADWP budgets. None of the three had open equity money on September 23, 2026."
+        "body": "PG&E's SGIP page says the equity rebate can cover up to 100 percent of cost for customers who meet the income test or are enrolled in CARE, FERA or ESA. It also says the rebate is closed and that waitlist applications go through your contractor. On the tracker on November 9, 2026, PG&E's non-POU AB 209 category showed Open and its POU category showed Waitlist. That does not match PG&E's page, which still said the rebate is closed. Treat PG&E's page and your contractor's reservation status as controlling, and ask which budget a reservation would draw on.\n\nIn SDG&E's territory the Center for Sustainable Energy administers SGIP. Its AB 209 budget shows a waitlist, as do the SoCalGas and LADWP budgets. None of the three had open equity money on September 23, 2026."
       },
       {
         "heading": "What a waitlist means for your quote",
@@ -1235,7 +1235,7 @@
       }
     ],
     "dataTable": {
-      "caption": "SGIP residential budget status by administrator, September 23, 2026",
+      "caption": "SGIP residential budget status by administrator, official tracker, November 9, 2026",
       "columns": [
         "Budget",
         "Pays",
@@ -1253,7 +1253,7 @@
           "Closed",
           "Closed",
           "Closed",
-          "Not offered"
+          "Not listed"
         ],
         [
           "Solar and Storage Equity, ratepayer-funded",
@@ -1262,25 +1262,34 @@
           "Closed",
           "Closed",
           "Closed",
-          "Not offered"
+          "Not listed"
         ],
         [
-          "Solar and Storage Equity, AB 209 (own customers)",
+          "Solar and Storage Equity, AB 209",
           "$1.10/Wh storage, $3.10/W solar",
-          "Waitlist",
-          "Waitlist",
+          "Not listed",
+          "Not listed",
           "Waitlist",
           "Waitlist",
           "Waitlist"
         ],
         [
-          "Solar and Storage Equity, AB 209 city-utility (POU) share",
+          "Solar and Storage Equity, AB 209 non-POU (investor-owned utility customers)",
           "$1.10/Wh storage, $3.10/W solar",
           "Open",
+          "Waitlist",
+          "Not listed",
+          "Not listed",
+          "Not listed"
+        ],
+        [
+          "Solar and Storage Equity, AB 209 POU (city-utility customers)",
+          "$1.10/Wh storage, $3.10/W solar",
+          "Waitlist",
           "Open",
-          "Not offered",
-          "Not offered",
-          "Not offered"
+          "Not listed",
+          "Not listed",
+          "Not listed"
         ],
         [
           "Equity Resiliency",
@@ -1289,16 +1298,16 @@
           "Closed",
           "Closed",
           "Closed",
-          "Not offered"
+          "Not listed"
         ],
         [
           "San Joaquin Valley Residential",
           "$1.10/Wh",
           "Closed",
           "Closed",
-          "Not offered",
-          "Not offered",
-          "Not offered"
+          "Not listed",
+          "Not listed",
+          "Not listed"
         ]
       ]
     },
@@ -1314,7 +1323,7 @@
       },
       {
         "question": "Is SGIP still available in 2026?",
-        "answer": "Only in part. On September 23, 2026 the tracker showed equity money open for city-utility customers assigned to PG&E or SCE, and waitlists for everyone else. Ratepayer-funded budgets stopped taking applications on December 30, 2025."
+        "answer": "Only in part. On November 9, 2026 the tracker showed equity money open in two categories, SCE's city-utility (POU) category and PG&E's non-POU category, and waitlists elsewhere. PG&E's own page said that rebate is closed with a waitlist through your contractor. Ratepayer-funded budgets stopped taking applications on December 30, 2025."
       },
       {
         "question": "How much is the SGIP battery rebate?",
@@ -1334,55 +1343,64 @@
       {
         "name": "SGIP program metrics (selfgenca.com)",
         "url": "https://www.selfgenca.com/home/program_metrics/",
-        "supports": "Budget status, incentive steps and rates for each administrator, as of September 23, 2026."
+        "supports": "Budget status, incentive steps and rates for each administrator, as of November 9, 2026."
       },
       {
         "name": "SGIP: AB 209 program administrator assignments",
         "url": "https://www.selfgenca.com/home/resources/ab209_pa_assignments/",
-        "supports": "Which administrator handles customers of each publicly owned utility and co-op. Checked September 23, 2026."
+        "supports": "Which administrator handles customers of each publicly owned utility and co-op. Checked September 23, 2026.",
+        "checkedAt": "2026-09-23"
       },
       {
         "name": "SGIP 2026 Handbook, Version 3 (ZIP)",
         "url": "https://www.selfgenca.com/documents/handbook/2026",
-        "supports": "Ratepayer-budget close dates, AB 209 allocations and POU shares, June 30, 2028 deadline, equity eligibility, $30,020 example, cost verification and $3,500 panel-upgrade cap."
+        "supports": "Ratepayer-budget close dates, AB 209 allocations and POU shares, June 30, 2028 deadline, equity eligibility, $30,020 example, cost verification and $3,500 panel-upgrade cap.",
+        "checkedAt": "2026-09-23"
       },
       {
         "name": "CPUC: Self-Generation Incentive Program",
         "url": "https://www.cpuc.ca.gov/industries-and-topics/electrical-energy/demand-side-management/self-generation-incentive-program",
-        "supports": "Program description, administrators, $280 million equity budget and incentive rates. Checked September 23, 2026."
+        "supports": "Program description, administrators, $280 million equity budget and incentive rates. Checked September 23, 2026.",
+        "checkedAt": "2026-09-23"
       },
       {
         "name": "SCE: Self-Generation Incentive Program",
         "url": "https://www.sce.com/clean-energy-efficiency/solar-generating-your-own-power/billing-incentives/self-generation-incentive",
-        "supports": "SCE budget status, Solar Billing Plan PTO requirement, SGIP-approved rates, demand response rule and contact. Checked September 23, 2026."
+        "supports": "SCE budget status, Solar Billing Plan PTO requirement, SGIP-approved rates, demand response rule and contact. Checked September 23, 2026; the budget-status line was re-read November 9, 2026.",
+        "checkedAt": "2026-09-23"
       },
       {
         "name": "PG&E: Self-Generation Incentive Program",
         "url": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/self-generation-incentive-program.html",
-        "supports": "PG&E equity eligibility, up-to-100-percent coverage and closed status. Checked September 23, 2026."
+        "supports": "PG&E equity eligibility, up-to-100-percent coverage and closed status. Checked September 23, 2026; the budget-status line was re-read November 9, 2026.",
+        "checkedAt": "2026-09-23"
       },
       {
         "name": "PG&E: Permanent Battery Storage Rebate",
         "url": "https://www.pge.com/en/save-energy-and-money/rebates-and-incentives/permanent-battery-storage-rebate.html",
-        "supports": "$7,500 rebate, eligibility, 179 rebates remaining as of September 18, 2026, and deadline."
+        "supports": "$7,500 rebate, eligibility, 179 rebates remaining as of September 18, 2026, and deadline.",
+        "checkedAt": "2026-09-23"
       },
       {
         "name": "PG&E: Residential Storage Initiative",
         "url": "https://www.pge.com/en/outages-and-safety/outage-preparedness-and-support/general-outage-resources/residential-storage-initiative.html",
-        "supports": "No-charge battery eligibility and 2026 supply status. Checked September 23, 2026."
+        "supports": "No-charge battery eligibility and 2026 supply status. Checked September 23, 2026.",
+        "checkedAt": "2026-09-23"
       },
       {
         "name": "SCE: Critical Care Backup Battery Program",
         "url": "https://www.sce.com/outages-safety/outage-preparedness/critical-care-backup-battery-program",
-        "supports": "Portable battery eligibility. Checked September 23, 2026."
+        "supports": "Portable battery eligibility. Checked September 23, 2026.",
+        "checkedAt": "2026-09-23"
       },
       {
         "name": "IRS: FAQs on OBBB changes to residential energy credits",
         "url": "https://www.irs.gov/newsroom/faqs-for-modification-of-sections-25c-25d-25e-30c-30d-45l-45w-and-179d-under-public-law-119-21-139-stat-72-july-4-2025-commonly-known-as-the-one-big-beautiful-bill-obbb",
-        "supports": "Section 25D credit not allowed for expenditures made after December 31, 2025."
+        "supports": "Section 25D credit not allowed for expenditures made after December 31, 2025.",
+        "checkedAt": "2026-09-23"
       }
     ],
-    "reviewedAt": "2026-09-23"
+    "reviewedAt": "2026-11-09"
   },
   {
     "slug": "tesla-powerwall-3-cost-california",

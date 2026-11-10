@@ -543,6 +543,22 @@ export default function SolarLeaseBuyoutCalculatorPage() {
                 </Link>
                 .
               </p>
+              <p>
+                Solar lenders also end up in court over claims on real property.
+                One federal docket read on November 9, 2026, Federal Home Loan
+                Mortgage Corporation v. Everbright LLC, No. 4:25-cv-00632 in the
+                District of Arizona, is a petition to quiet title; its entries do
+                not say whether solar equipment is involved. That case and the
+                other lender dockets are listed in{' '}
+                <Link
+                  href="/solar-problems/solar-loan-lawsuits-california"
+                  className={guideLink}
+                >
+                  solar loan lawsuits in California
+                </Link>
+                . A lease or PPA buyout figure is not a loan payoff, so confirm
+                which one you have before you compare numbers.
+              </p>
 
               <h2>When the installer no longer exists</h2>
               <p>

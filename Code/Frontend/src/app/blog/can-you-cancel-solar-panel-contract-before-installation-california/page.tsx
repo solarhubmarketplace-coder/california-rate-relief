@@ -60,6 +60,10 @@ const sources: Source[] = [
     url: "https://leginfo.legislature.ca.gov/faces/codes_displaySection.xhtml?lawCode=BPC&sectionNum=7169",
   },
   {
+    label: "CourtListener: Blue Raven Solar, LLC, Bankr. D. Del. No. 24-11659, and SunPower Corporation, No. 24-11649 (read 2026-11-09)",
+    url: "https://www.courtlistener.com/?q=%22Blue+Raven+Solar%22&type=d&court=deb",
+  },
+  {
     label: "CSLB: Solar requirements and disclosure information",
     url: "https://www2.cslb.ca.gov/Consumers/Solar_Requirements.aspx",
   },
@@ -126,7 +130,7 @@ export const metadata: Metadata = {
       "The statutory cancellation window, when the clock starts, how to send the notice, and where a cancellation fee sits relative to the statutory right.",
     type: "article",
     url: "https://ratereliefca.com/blog/can-you-cancel-solar-panel-contract-before-installation-california",
-    modifiedTime: "2026-09-24T00:00:00Z",
+    modifiedTime: "2026-11-09T00:00:00Z",
     images: [CRR_SOCIAL_CARD],
   },
 };
@@ -398,7 +402,13 @@ export default function CancelSolarContractBeforeInstallationCalifornia() {
           >
             Solar Escalator Clauses, Explained
           </Link>{" "}
-          for how the ongoing payment itself is structured.
+          for how the ongoing payment itself is structured. To total the
+          payments left on a lease or PPA before you ask for a payoff figure,
+          use the{" "}
+          <Link className="underline" href="/blog/solar-lease-buyout-calculator">
+            solar lease buyout calculator
+          </Link>
+          .
         </p>
         <p className="mt-3">
           <strong>Loans and other financing agreements.</strong> The company
@@ -625,6 +635,31 @@ export default function CancelSolarContractBeforeInstallationCalifornia() {
           complaint-window, exit-company and records material is carried in
           the next four sections; CSLB, DFPI and State Bar pages re-read
           2026-09-24. */}
+      <section>
+        <h2>If the company holding your deposit files for bankruptcy</h2>
+        <p>
+          The cancellation right in section 7159 runs against the contractor
+          you signed with. If that company later files for bankruptcy, a refund
+          you were owed generally becomes a claim in the bankruptcy case rather
+          than a payment the company can simply make. The court and case number
+          tell you where to look.
+        </p>
+        <p className="mt-3">
+          Blue Raven Solar is one example on the public record. Blue Raven
+          Solar, LLC filed in the U.S. Bankruptcy Court for the District of
+          Delaware as No. 24-11659 on August 5, 2024, in the same group of
+          cases as its parent, SunPower Corporation (lead case No. 24-11649).
+          The Blue Raven case was terminated on February 19, 2025. (CourtListener
+          docket search, read 2026-11-09.) The docket does not say whether any
+          particular customer&rsquo;s deposit was refunded, and this page does
+          not advise anyone on filing a claim. Our{" "}
+          <Link className="underline" href="/solar-installers/solar-installer-bankruptcy-california">
+            solar installer bankruptcy guide
+          </Link>{" "}
+          lists the other docket numbers.
+        </p>
+      </section>
+
       <section id="after-installation">
         <h2>After installation: who owns the system decides</h2>
         <p>
