@@ -174,6 +174,7 @@ export default function TenKwSolarCostPage() {
             source: { publisher: 'Berkeley Lab', date: UPDATED, url: S.lbnl2026 },
           },
         ]}
+        quickCheckTopic="10 kW solar system quote check"
         inquiry={<SolarInquiry topic="10 kW solar system quote check" market="CA" />}
       >
         <section>

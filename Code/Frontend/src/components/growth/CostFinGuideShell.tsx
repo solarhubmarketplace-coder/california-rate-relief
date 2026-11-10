@@ -8,6 +8,7 @@ import { FaqBlock } from '@/components/trust/FaqBlock';
 import type { FaqJsonLdItem } from '@/components/shared/FaqJsonLd';
 import { SourceList, type Source } from './DecisionPage';
 import { HubSpokeLinks } from './HubSpokeLinks';
+import { HeroQuickCheck } from './HeroQuickCheck';
 import type { TopicHubId } from '@/data/topic-hubs';
 
 // =============================================================================
@@ -37,6 +38,7 @@ export function CostFinGuideShell({
   hub,
   path,
   inquiry,
+  quickCheckTopic,
   children,
 }: {
   eyebrow: string;
@@ -52,6 +54,8 @@ export function CostFinGuideShell({
   hub: TopicHubId;
   path: string;
   inquiry: ReactNode;
+  /** Topic for the bill-first quick check under the opening answer. Omit to leave it out. */
+  quickCheckTopic?: string;
   children: ReactNode;
 }) {
   return (
@@ -85,6 +89,7 @@ export function CostFinGuideShell({
               </h1>
               <Byline updated={updated} sourceCount={sources.length} sourcesHref="#sources" />
               <div className="mt-5 text-lg leading-relaxed text-foreground/80">{intro}</div>
+              {quickCheckTopic && <HeroQuickCheck topic={quickCheckTopic} className="mt-6" />}
             </header>
             <KeyFacts facts={keyFacts} sourcesHref="#sources" />
             <div

@@ -796,7 +796,11 @@ export default function SolarPanelsCalifornia() {
           battery of at least 7.5 kWh can reduce the required PV size by 25%. Additions and
           alterations are exempt (CEC, checked September 23, 2026). If you are buying a new
           home, the builder&rsquo;s system is already part of the price; ask whether it is
-          owned or leased.
+          owned or leased. Our guide to{' '}
+          <Link href="/solar-problems/is-solar-required-on-new-homes-california">
+            whether solar is required on new homes
+          </Link>{' '}
+          covers the exceptions and the battery option.
         </p>
       </section>
 
