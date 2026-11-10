@@ -11,7 +11,9 @@ import type { Source } from '@/components/growth/DecisionPage';
 import type { KeyFact } from '@/components/trust/KeyFacts';
 
 const PATH = '/blog/solar-panel-removal-reinstall-cost';
-const UPDATED = '2026-09-23';
+// UPDATED is the page edit date. Every source below was last read 2026-09-23.
+const UPDATED = '2026-11-09';
+const SOURCES_CHECKED = '2026-09-23';
 const HUB = { label: 'Solar panel maintenance', href: '/solar-panel-maintenance-california' };
 const metaTitle = 'Solar Panel Removal and Reinstall Cost in California';
 const metaDescription =
@@ -45,25 +47,25 @@ const keyFacts: KeyFact[] = [
     label: 'Ask before you buy',
     value: 'Removal + reinstall cost',
     note: 'The CPUC lists it, including inspection fees, among questions for any solar seller.',
-    source: { publisher: 'CPUC', date: UPDATED, url: CPUC_GUIDE },
+    source: { publisher: 'CPUC', date: SOURCES_CHECKED, url: CPUC_GUIDE },
   },
   {
     label: 'Licensed for solar work',
     value: 'C-46, C-10 and others',
     note: 'CSLB’s list of classes that may install and repair solar; roofing alone is not on it.',
-    source: { publisher: 'CSLB', date: UPDATED, url: CSLB_SOLAR },
+    source: { publisher: 'CSLB', date: SOURCES_CHECKED, url: CSLB_SOLAR },
   },
   {
     label: 'Panel vs roof life',
     value: '25–30 vs 20–50 years',
     note: 'Roof life depends on material; timing both together avoids a later reinstall.',
-    source: { publisher: 'energy.gov', date: UPDATED, url: DOE_ROOF },
+    source: { publisher: 'energy.gov', date: SOURCES_CHECKED, url: DOE_ROOF },
   },
   {
     label: 'Moving panels to a new home',
     value: 'New interconnection',
     note: 'IOU customers applying since April 15, 2023 take service on net billing.',
-    source: { publisher: 'CPUC', date: UPDATED, url: CPUC_NBT },
+    source: { publisher: 'CPUC', date: SOURCES_CHECKED, url: CPUC_NBT },
   },
 ];
 
@@ -108,6 +110,11 @@ const faqs = [
     answer:
       'Moving panels means paying for removal at the old house plus most of a new installation at the new one: design for the new roof, new mounts, electrical work, permits and a new interconnection application with the utility. For PG&E, SCE and SDG&E customers, applications since April 15, 2023 go onto the net billing tariff. Compare that with leaving the system and pricing a new one.',
   },
+  {
+    question: 'What if the company that installed my solar panels went out of business?',
+    answer:
+      'You still need a contractor licensed for solar work to remove and reinstall the panels, and you still need to know who owns the system, because a leased or PPA system may need its owner’s approval. Look up the installer’s case number on the public bankruptcy docket, get an itemized equipment inventory in the new contractor’s quote, and ask the new contractor for its own reinstall warranty. A loan on the system is owed to the lender, not the installer.',
+  },
 ];
 
 export const metadata: Metadata = {
@@ -136,7 +143,7 @@ export default function SolarPanelRemovalReinstallCost() {
         domain="crr"
         headline="Solar panel removal and reinstall cost in California: what to expect"
         url="https://ratereliefca.com/blog/solar-panel-removal-reinstall-cost"
-        dateModified="2026-09-23"
+        dateModified={UPDATED}
         description="What decides the price of removing and reinstalling solar panels for roof work in California, who is licensed to do it, how leases and PPAs handle it, and what the quote should list."
       />
       <Header />
@@ -146,6 +153,7 @@ export default function SolarPanelRemovalReinstallCost() {
         crumbs={[HUB]}
         crumbLabel="Removal and reinstall cost"
         updated={UPDATED}
+        sourcesChecked={SOURCES_CHECKED}
         sources={sources}
         keyFacts={keyFacts}
         faqs={faqs}
@@ -174,7 +182,7 @@ export default function SolarPanelRemovalReinstallCost() {
             including C-46 solar contractors, who “install, modify, maintain, and repair thermal and
             photovoltaic solar energy systems,” and C-10 electrical contractors. Its advice: “Do not use a
             contractor who is not licensed to perform solar work.”{' '}
-            <Cite publisher="CSLB" href={CSLB_SOLAR} date={UPDATED} /> Roofing is not on that list, which is why
+            <Cite publisher="CSLB" href={CSLB_SOLAR} date={SOURCES_CHECKED} /> Roofing is not on that list, which is why
             many roofers bring in a solar subcontractor.
           </p>
           <p>Before anyone quotes, sort out three things:</p>
@@ -199,7 +207,7 @@ export default function SolarPanelRemovalReinstallCost() {
             its workmanship warranty simple. If it has closed or won’t take the job, CSLB’s{' '}
             <a href={CSLB_ZIP} target="_blank" rel="noopener noreferrer">Find My Licensed Contractor</a> search
             lists licensed contractors “by classification within a specific geographic area using either a city or
-            zip code.” <Cite publisher="CSLB" href={CSLB_FIND} date={UPDATED} /> Search the C-46 solar class, and
+            zip code.” <Cite publisher="CSLB" href={CSLB_FIND} date={SOURCES_CHECKED} /> Search the C-46 solar class, and
             ask your roofer which solar contractor it works with so you can check that license too. Our page on{' '}
             <Link href="/solar-installers/licensed-solar-installer">finding licensed solar installers by county</Link>{' '}
             walks through the lookup.
@@ -273,7 +281,7 @@ export default function SolarPanelRemovalReinstallCost() {
             Utility programs set their own rules. LADWP’s Solar Rooftops guidelines, for example, say the
             utility-owned system “can be twice removed at no expense to the customer”: once for rooftop repairs
             and once at the end of the program term.{' '}
-            <Cite publisher="LADWP" href={LADWP_GUIDE} date={UPDATED} /> Details are in{' '}
+            <Cite publisher="LADWP" href={LADWP_GUIDE} date={SOURCES_CHECKED} /> Details are in{' '}
             <Link href="/blog/ladwp-solar-rooftops-program">our LADWP Solar Rooftops guide</Link>.
           </p>
         </section>
@@ -286,7 +294,7 @@ export default function SolarPanelRemovalReinstallCost() {
             the utility. For customers of PG&amp;E, SCE and SDG&amp;E, the CPUC says those applying for
             interconnection since April 15, 2023 have taken service on the net billing tariff, so a moved system
             would not keep an older net metering plan.{' '}
-            <Cite publisher="CPUC" href={CPUC_NBT} date={UPDATED} /> If the system is leased, transferring the
+            <Cite publisher="CPUC" href={CPUC_NBT} date={SOURCES_CHECKED} /> If the system is leased, transferring the
             lease to the buyer is usually the path; see{' '}
             <Link href="/blog/what-happens-to-solar-lease-when-i-sell-california">what happens to a solar lease when you sell</Link>.
           </p>
@@ -303,7 +311,7 @@ export default function SolarPanelRemovalReinstallCost() {
             <li><strong>Tell your utility.</strong> Your interconnection agreement and billing plan are tied to that system. Ask how to close it out, especially if a new system will follow.</li>
             <li><strong>Hire a licensed solar contractor</strong> to disconnect and remove the equipment, and ask whether your building department needs a permit for the work.</li>
             <li><strong>Seal the roof.</strong> Every mount leaves a penetration. Get the patching or re-roofing of those spots in the same contract, or book your roofer for the day the panels come off.</li>
-            <li><strong>Plan where the panels go.</strong> California lists photovoltaic modules as a universal waste, operative January 1, 2021, so they go to a permitted handler or recycler rather than the trash. <Cite publisher="22 CCR § 66261.9" href={CCR_UW} date={UPDATED} /> Riverside County, for example, does not accept them at its landfills or household hazardous waste program and points residents to the state’s lists of universal waste handlers. <Cite publisher="Riverside County" href={RIVCO} date={UPDATED} /></li>
+            <li><strong>Plan where the panels go.</strong> California lists photovoltaic modules as a universal waste, operative January 1, 2021, so they go to a permitted handler or recycler rather than the trash. <Cite publisher="22 CCR § 66261.9" href={CCR_UW} date={SOURCES_CHECKED} /> Riverside County, for example, does not accept them at its landfills or household hazardous waste program and points residents to the state’s lists of universal waste handlers. <Cite publisher="Riverside County" href={RIVCO} date={SOURCES_CHECKED} /></li>
           </ol>
           <p>
             A removal-only quote should list disconnection, removal, roof patching, hauling and the recycling or
@@ -314,18 +322,60 @@ export default function SolarPanelRemovalReinstallCost() {
           </p>
         </section>
 
+        <section id="installer-gone">
+          <h2>If the company that installed your panels has gone out of business</h2>
+          <p>
+            Removal for a roof job is harder when the original installer has closed or filed for bankruptcy, because
+            the person who knows the layout and holds the workmanship warranty may no longer exist. The work itself
+            does not change: it still needs a contractor licensed for solar, and CSLB’s lookup shows whether a
+            license is active. The order below keeps the roof job from stalling.
+          </p>
+          <ol>
+            <li>
+              <strong>Find out who owns the system now.</strong> If it is owned outright, you decide who removes it.
+              If it is leased or under a PPA, the owner or its servicer may have to approve or perform the removal,
+              and that company may not be the one you signed with. Your agreement names the owner. To total the
+              payments left on a lease or PPA first, use the{' '}
+              <Link href="/blog/solar-lease-buyout-calculator">solar lease buyout calculator</Link>.
+            </li>
+            <li>
+              <strong>Look up the installer’s court record.</strong> Federal bankruptcy dockets are public.{' '}
+              <Link href="/solar-installers/solar-installer-bankruptcy-california">Our solar installer bankruptcy guide</Link>{' '}
+              lists case numbers for SunPower and its Blue Raven Solar unit, Sunnova, Sunworks, Freedom Forever and
+              Sunlight Financial as read on November 9, 2026. If your installer was Blue Raven, see{' '}
+              <Link href="/solar-installers/blue-raven-solar-cancellation">Blue Raven Solar: case numbers and cancellation</Link>.
+            </li>
+            <li>
+              <strong>Get the removal quote from a licensed C-46 or C-10 contractor</strong> and ask it to list the
+              equipment inventory in writing. Without the original installer’s records, an itemized inventory is how
+              you and a new contractor agree on what came off the roof and what goes back.
+            </li>
+            <li>
+              <strong>Ask the new contractor what warranty it gives.</strong> Its reinstall warranty is its own.
+              Whether any warranty from the closed company still applies is a question about the company’s
+              paperwork and, in a bankruptcy, the court record. This page does not answer it.
+            </li>
+          </ol>
+          <p>
+            If the closed company’s system is financed with a loan, your loan is owed to the lender and does not end
+            when the installer does. See{' '}
+            <Link href="/solar-problems/solar-loan-lawsuits-california">what the court dockets show about solar lenders</Link>{' '}
+            before you change what you pay.
+          </p>
+        </section>
+
         <section>
           <h2>Plan the roof and the solar together</h2>
           <p>
             The best time to deal with removal cost is before the panels go up. The CPUC’s consumer guide
             suggests asking any seller: “Roughly how much will it cost to remove and re-install the panels if I
             need to replace my roof in the future, including inspection fees?” and “Does my roof need to be
-            replaced before installing solar panels?” <Cite publisher="CPUC" href={CPUC_GUIDE} date={UPDATED} />
+            replaced before installing solar panels?” <Cite publisher="CPUC" href={CPUC_GUIDE} date={SOURCES_CHECKED} />
           </p>
           <p>
             The U.S. Department of Energy notes that panels last about 25 to 30 years and a roof 20 to 50
             depending on material, and that doing both at once avoids having to reinstall the panels later.{' '}
-            <Cite publisher="energy.gov" href={DOE_ROOF} date={UPDATED} /> If your roof is near the end of its
+            <Cite publisher="energy.gov" href={DOE_ROOF} date={SOURCES_CHECKED} /> If your roof is near the end of its
             life, compare a roof-first plan using{' '}
             <Link href="/blog/is-my-roof-good-for-solar-california">our roof suitability guide</Link>, check any
             bundled offer against <Link href="/blog/free-roof-replacement-with-solar-panels-california">the roof-and-solar proposal checklist</Link>,
