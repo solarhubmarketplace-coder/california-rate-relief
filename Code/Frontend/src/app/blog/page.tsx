@@ -475,11 +475,19 @@ const blogPosts: BlogPost[] = [
     category: 'Utility Bills',
   },
   {
-    slug: 'average-kwh-per-day-california',
-    title: 'Average kWh per Day in California: 16.5 kWh (2024 Data)',
+    slug: 'energysage-reviews-california',
+    title: 'EnergySage Reviews: Comparing California Solar Quotes',
     excerpt:
-      'California homes averaged about 16.5 kWh a day in 2024, per EIA. See baseline allowances by utility and the cheapest hours to use power.',
-    date: '2026-09-23',
+      'How solar quote marketplaces work, what happens to your contact details, and the routes a California homeowner has for comparing quotes.',
+    date: '2026-11-09',
+    category: 'Buying Solar',
+  },
+  {
+    slug: 'average-kwh-per-day-california',
+    title: 'Average kWh Per Day and Per Month in California',
+    excerpt:
+      'What a California home uses per day and per month, per EIA, with baseline allowances by utility and what your own usage costs.',
+    date: '2026-11-09',
     category: 'Utility Rates',
   },
   {

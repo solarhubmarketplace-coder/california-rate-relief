@@ -145,6 +145,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   ];
 
   const blogSlugs = [
+    'energysage-reviews-california',
     'best-time-to-install-solar-panels-california',
     'adding-solar-panels-existing-system-california', 'solar-installation-timeline-california',
     'what-happens-if-stop-paying-solar-lease-california',
