@@ -20,11 +20,42 @@ export const JSON_ARTICLE_RELATED: Record<string, JsonArticleRelated> = {
       { href: '/solar-problems/solar-contract-red-flags-california', label: 'Red flags to look for in the contract itself' },
     ],
   },
+  // Overnight run 2026-11-09, Stage 3.
+  '/solar-problems/is-solar-required-on-new-homes-california': {
+    heading: 'If the new home comes with solar',
+    links: [
+      { href: '/blog/adu-solar-requirements-california', label: 'Solar requirements for a new detached ADU' },
+      { href: '/blog/solar-lease-buyout-calculator', label: 'Total the payments left on a solar lease or PPA' },
+      { href: '/blog/what-happens-to-solar-lease-when-i-sell-california', label: 'What happens to a solar lease when a home is sold' },
+      { href: '/solar-problems/ucc-1-lien-solar-california', label: 'Check for a UCC-1 solar filing before escrow' },
+      { href: '/solar-panels-california', label: 'What solar costs and how it works in California' },
+    ],
+  },
+  '/solar-installers/blue-raven-solar-cancellation': {
+    heading: 'Cancelling, buying out or checking the record',
+    links: [
+      { href: '/blog/can-you-cancel-solar-panel-contract-before-installation-california', label: 'Cancelling a solar contract before installation' },
+      { href: '/blog/solar-lease-buyout-calculator', label: 'Total the payments left on a solar lease or PPA' },
+      { href: '/solar-installers/solar-installer-bankruptcy-california', label: 'Case numbers for other solar company bankruptcies' },
+      { href: '/solar-problems/solar-loan-lawsuits-california', label: 'Solar loan lawsuits: what the dockets show' },
+      { href: '/solar-installers/how-to-verify-a-solar-contractor-california', label: 'How to verify a solar contractor’s license' },
+    ],
+  },
+  '/solar-problems/solar-loan-lawsuits-california': {
+    heading: 'Before you change what you pay',
+    links: [
+      { href: '/solar-installers/solar-installer-bankruptcy-california', label: 'Solar installer bankruptcy case numbers' },
+      { href: '/solar-problems/ucc-1-lien-solar-california', label: 'UCC-1 solar liens and your title' },
+      { href: '/solar-problems/attorney-to-sue-solar-company-california', label: 'When to bring in a lawyer for a solar dispute' },
+      { href: '/blog/solar-lease-buyout-calculator', label: 'Total the payments left on a lease or PPA' },
+    ],
+  },
   '/solar-installers/solar-installer-bankruptcy-california': {
     heading: 'If your installer is in trouble',
     links: [
       { href: '/solar-installers/worst-solar-companies-california', label: 'Which solar companies are in bankruptcy court' },
       { href: '/solar-installers/freedom-forever-bankruptcy-what-to-do', label: 'Freedom Forever customers: what to do now' },
+      { href: '/solar-installers/blue-raven-solar-cancellation', label: 'Blue Raven Solar: case numbers and cancellation' },
       { href: '/solar-problems/attorney-to-sue-solar-company-california', label: 'When to bring in a lawyer for a solar dispute' },
     ],
   },

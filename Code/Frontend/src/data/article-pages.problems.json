@@ -3970,5 +3970,214 @@
       }
     ],
     "reviewedAt": "2026-11-09"
+  },
+  {
+    "slug": "is-solar-required-on-new-homes-california",
+    "cluster": "problems",
+    "metaTitle": "Is Solar Required on New Homes in California? 2025 Code",
+    "metaDescription": "Yes, with five exceptions. New single-family homes permitted from Jan. 1, 2026 need solar sized by a formula. What is covered, how big, and what a buyer gets.",
+    "h1": "Is Solar Required on New Homes in California? What the 2025 Energy Code Says",
+    "intro": "Yes, with exceptions. California's Energy Code requires a solar photovoltaic (PV) system on newly constructed single-family homes and townhouses. The 2025 Energy Code applies to buildings whose permit applications were filed on or after January 1, 2026, according to the California Energy Commission (CEC). Five exceptions can remove the requirement or shrink the system.\n\nThe rule is in Section 150.1(c)14 of the Energy Code. It is a building-code requirement placed on the builder's plans. It does not tell a homeowner what to buy, and it does not apply to a house that already exists.\n\nThis page reads the CEC's own single-family PV guidance and its 2019 training slides, both checked on November 9, 2026. It is a plain-language summary, not code text, and it is not a substitute for the plan check your builder's designer and the local building department do.",
+    "keyStats": [
+      {
+        "label": "2025 Energy Code applies to permits filed on or after",
+        "value": "Jan. 1, 2026",
+        "note": "CEC, 2025 Building Energy Efficiency Standards page, read Nov. 9, 2026."
+      },
+      {
+        "label": "Roof-area cap on the required size",
+        "value": "18 W/sq ft steep, 14 W/sq ft low-slope",
+        "note": "Applied to the solar access roof area. The required size is the smaller of this and a climate-zone formula. CEC single-family PV guidance."
+      },
+      {
+        "label": "Below this size, no PV is required",
+        "value": "1.8 kWdc",
+        "note": "Exception 2. Also applies when the usable roof area is under 80 contiguous square feet."
+      },
+      {
+        "label": "Required PV size reduction with a qualifying battery",
+        "value": "25%",
+        "note": "The battery must meet the CEC's Reference Joint Appendix JA12 and have at least 7.5 kWh of cycling capacity."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "What the rule requires",
+        "body": "Section 150.1(c)14 of the 2025 Energy Code requires solar PV systems or modules for all newly constructed single-family residential buildings, with five exceptions. The CEC's guidance says the minimum system is meant to offset approximately the electricity the building would use if it were a mixed-fuel home, meaning one with a natural gas furnace, water heater, stove and clothes dryer.\n\nBecause the size is set against that mixed-fuel assumption, choosing a heat pump or electric appliances does not change the minimum PV size, according to the CEC. The things that do move it are the climate zone, the conditioned floor area, the number of dwelling units and the plug loads that raise cooling demand.\n\nThe rule dates back to the 2019 Energy Code. The CEC's 2019 training slides, effective January 1, 2020, state that all new low-rise residential buildings are to have a PV system sized to offset the annual kilowatt-hours of a mixed-fuel home. The 2025 cycle is the one that applies to permits filed from 2026."
+      },
+      {
+        "heading": "Which new buildings are covered",
+        "body": "The CEC lists the covered buildings as townhouses; residential buildings of occupancy group R-3 with two or fewer dwelling units; other R-3 buildings that are not multifamily buildings or hotels or motels; occupancy group R-3.1; and occupancy group U buildings on a residential site. In everyday terms that means a newly built single-family house, a duplex-size building and a townhouse.\n\nNot covered: additions and alterations to existing buildings, and unconditioned buildings. If you are remodeling a house you already own, the new-construction solar rule does not apply to the remodel. A conditioned, newly constructed detached building on a residential lot, such as a detached accessory dwelling unit, is a different case that the CEC addresses separately. Our guide to ADU solar requirements covers it.\n\nThis page does not cover newly built apartment buildings or commercial buildings. The CEC page read for this article is about single-family buildings only, so for those building types check the CEC's own guidance for the code that applies."
+      },
+      {
+        "heading": "How big the required system is",
+        "body": "The CEC says the required size is the smaller of two results. The first is the solar access roof area (SARA) multiplied by 18 watts per square foot for steep-sloped roofs, or 14 watts per square foot for low-sloped roofs. The second is Equation 150.1-C, which uses the climate zone, the conditioned floor area and the number of dwelling units.\n\nSolar access roof area is not simply the whole roof. It includes roof areas, covered parking, carports and newly constructed structures on the property that can support a PV system. It excludes roof area with less than 70 percent annual solar access after shading, roof area occupied as specified in California Building Code section 503.1.4, and roof area otherwise unavailable because of other state or local building-code requirements the CEC has confirmed.\n\nThis page does not publish a table of kilowatts by square footage. The equation's coefficients are in the Energy Code itself, and a table built from memory would be a guess. The builder's energy compliance documents state the required size for a specific plan."
+      },
+      {
+        "heading": "A battery can shrink the required system",
+        "body": "Adding a battery energy storage system can lower the required PV size. Under Exception 5, if the home is built with a battery that meets the CEC's Reference Joint Appendix JA12 and has a minimum cycling capacity of 7.5 kWh, the PV size from Equation 150.1-C may be reduced by 25 percent. When that exception is used, the project needs both PV and the battery.\n\nThe CEC also says a larger PV system cannot be traded for weaker efficiency measures unless a JA12-compliant battery is installed. And a builder cannot stack exceptions: the CEC's example is that Exception 2, the 1.8 kWdc threshold, cannot be combined with Exception 5, the battery reduction."
+      },
+      {
+        "heading": "The panels do not have to go on the roof",
+        "body": "The CEC answers directly that the PV system does not have to be on the building's roof. It can sit anywhere on the solar access roof area as the CEC defines it, including ground-mounted on the property or on top of a carport installed on the lot.\n\nThere is also a narrow alternative. When a builder uses the performance compliance approach, community solar can stand in for on-site solar if the CEC has approved a community solar program for that building type in the area. The CEC page does not say that any such program is in place for a given address, so a buyer should not assume one."
+      },
+      {
+        "heading": "If your new home is not required to have solar",
+        "body": "Some new single-family homes will not have a required PV system because an exception applies. The CEC also says that, for subdivisions of ten or more single-family residences where the tentative map is deemed complete or approved, newly built homes that do not need PV still have to meet solar-ready requirements under Section 110.10(b) through (e). Solar-ready means the roof and electrical design leave room for a later installation. The CEC states that this does not apply to newly constructed accessory dwelling units built on an existing lot.\n\nSolar-ready is a design requirement, not a system. A home that is only solar-ready has no panels until someone buys them."
+      },
+      {
+        "heading": "If you are buying a new home that has solar on it",
+        "body": "The Energy Code requires that a system be built. The CEC pages read for this article do not say who must own the system, so whether the panels belong to the homeowner or to a third party under a lease or power purchase agreement is a question for the sales contract and the solar paperwork, not the code.\n\nBefore closing, ask for the solar documents in writing: whether the system is owned or leased, the monthly payment if there is one, who services it, and what transfer requires. If it is a lease or PPA, our solar lease buyout calculator totals the remaining payments, and our guide to what happens to a solar lease when you sell explains the transfer step. If there is a UCC-1 filing against the system, find out before escrow; the UCC-1 guide covers it.\n\nSeparately, the electric bill math for a new home with solar follows the net billing rules in force at interconnection, not the Energy Code. See the pages on how net billing works for how export credits are set."
+      }
+    ],
+    "dataTable": {
+      "caption": "Does the 2025 Energy Code solar requirement apply? By project type, per CEC guidance read November 9, 2026",
+      "columns": [
+        "Project",
+        "PV required by Section 150.1(c)14?",
+        "What the CEC says"
+      ],
+      "rows": [
+        [
+          "New single-family house",
+          "Yes, unless an exception applies",
+          "Listed as a newly constructed single-family residential building."
+        ],
+        [
+          "New townhouse",
+          "Yes, unless an exception applies",
+          "Townhouses are named in the list of covered buildings."
+        ],
+        [
+          "New building with two or fewer dwelling units (R-3)",
+          "Yes, unless an exception applies",
+          "R-3 with two or fewer dwelling units is covered."
+        ],
+        [
+          "New detached garage or other occupancy U building on a residential lot",
+          "Yes, but the prescriptive size can be zero",
+          "Equation 150.1-C allows zero dwelling units as an input, so the required kWdc is zero by the prescriptive method."
+        ],
+        [
+          "New detached ADU",
+          "Generally yes",
+          "The CEC treats a conditioned new detached ADU as a newly constructed building; see the ADU guide."
+        ],
+        [
+          "Addition or alteration to an existing house",
+          "No",
+          "Additions and alterations are outside the requirement."
+        ],
+        [
+          "Existing house with no construction",
+          "No",
+          "The rule applies to newly constructed buildings only."
+        ],
+        [
+          "Unconditioned building",
+          "No",
+          "Unconditioned buildings are outside the requirement."
+        ],
+        [
+          "Permit application filed before Jan. 1, 2026",
+          "Decided by the earlier code in force at filing",
+          "The 2025 Energy Code covers applications filed on or after Jan. 1, 2026."
+        ]
+      ]
+    },
+    "extraTables": [
+      {
+        "caption": "The five exceptions to the single-family PV requirement, as summarized by the CEC (read November 9, 2026)",
+        "columns": [
+          "Exception",
+          "What it does",
+          "Plain-language effect"
+        ],
+        "rows": [
+          [
+            "1. Solar access roof area under 80 contiguous square feet",
+            "Removes the PV requirement",
+            "For steep-sloped roofs, roof facing between 300 and 90 degrees from true north is left out of the area count."
+          ],
+          [
+            "2. Required size under 1.8 kWdc",
+            "Removes the PV requirement",
+            "A very small calculated system does not have to be built. Cannot be combined with the battery exception."
+          ],
+          [
+            "3. Snow loads",
+            "Removes the PV requirement",
+            "If the enforcement authority determines the system cannot meet ASCE 7-16 Chapter 7 snow load requirements."
+          ],
+          [
+            "4. Plan approved before Jan. 1, 2020",
+            "Removes the PV requirement",
+            "Buildings approved by the local planning department before January 1, 2020 with mandatory conditions of approval."
+          ],
+          [
+            "5. Installed with a battery",
+            "Cuts the PV size by 25%",
+            "Needs a JA12-compliant battery with at least 7.5 kWh cycling capacity. The home then needs both PV and the battery."
+          ]
+        ]
+      }
+    ],
+    "whenThisIsWrong": "Do not use this page as a code compliance check. It summarizes CEC guidance; the Energy Code text, the building department's plan check and the builder's compliance documents decide what a particular home must have. Whether a specific lot is exempt because of shading, roof orientation, snow load or a plan approved before 2020 is a determination made on that project's drawings. If you are buying a new home, your purchase contract, not this page, says whether solar is included and who owns it.",
+    "faqs": [
+      {
+        "question": "Is solar required on all new homes in California?",
+        "answer": "Almost all new single-family homes and townhouses are covered, but five exceptions exist. They cover very small or shaded roofs, a calculated size under 1.8 kWdc, snow load limits, plans approved before 2020, and a battery option that cuts the size by 25 percent. The 2025 Energy Code applies to permit applications filed on or after January 1, 2026."
+      },
+      {
+        "question": "Does the solar requirement apply to existing homes or remodels?",
+        "answer": "No. The CEC says the single-family PV requirements do not apply to additions or alterations to existing buildings."
+      },
+      {
+        "question": "Does the solar have to be on the roof?",
+        "answer": "No. The CEC says the system can be ground-mounted on the property or mounted on a carport installed on the lot, as long as it is on the solar access roof area as the Energy Code defines it."
+      },
+      {
+        "question": "Does a heat pump or an all-electric home change the required solar size?",
+        "answer": "Not the minimum size. The CEC says the minimum PV size is set as if the home were a mixed-fuel building, so electric heat pump heating, water heating and electric appliances do not change it. Climate zone, floor area, dwelling units and plug loads affecting cooling do."
+      },
+      {
+        "question": "Can a battery reduce the solar I have to install?",
+        "answer": "Yes. Exception 5 cuts the Equation 150.1-C size by 25 percent when the home is built with a battery that meets the CEC's JA12 appendix and has at least 7.5 kWh of cycling capacity. The home then needs both the PV system and the battery."
+      },
+      {
+        "question": "What does solar-ready mean for a new home?",
+        "answer": "It is a set of design requirements, in Section 110.10, for new single-family homes in subdivisions of ten or more that do not need a PV system. It prepares the home for a later installation. It does not mean panels are installed."
+      },
+      {
+        "question": "When did California start requiring solar on new homes?",
+        "answer": "The 2019 Energy Code, effective January 1, 2020, was the first to require a PV system on new low-rise residential buildings, according to the CEC's own 2019 slides. The 2025 Energy Code applies to permits filed from January 1, 2026."
+      },
+      {
+        "question": "My new home came with a solar lease. Where do I start?",
+        "answer": "Find the lease or power purchase agreement and total what is left to pay, then read the transfer and end-of-term sections. The solar lease buyout calculator on this site does the totaling. It does not tell you whether to keep or buy out the system."
+      }
+    ],
+    "bottomLine": "For permits filed from January 1, 2026, California's 2025 Energy Code requires solar on newly built single-family homes and townhouses, with five exceptions, a size set by the smaller of a roof-area cap and a climate-zone formula, and a 25 percent reduction available with a qualifying battery. It does not reach remodels or existing homes. If you are buying a new home, get the solar paperwork in writing before closing and find out whether the system is owned or leased. California Rate Relief is a referral service, not a builder or contractor, and nothing here replaces the plan check on a specific project.",
+    "sources": [
+      {
+        "name": "California Energy Commission: 2025 Single-Family Solar PV (Section 150.1(c)14, exceptions, FAQ)",
+        "url": "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/energy-code-support-center-12",
+        "supports": "Covered building types, sizing methods, solar access roof area, the five exceptions, battery reduction, off-roof placement, solar-ready scope.",
+        "checkedAt": "2026-11-09"
+      },
+      {
+        "name": "California Energy Commission: 2025 Building Energy Efficiency Standards (effective date)",
+        "url": "https://www.energy.ca.gov/programs-and-topics/programs/building-energy-efficiency-standards/2025-building-energy-efficiency",
+        "supports": "Permit applications filed on or after January 1, 2026 must comply with the 2025 Energy Code.",
+        "checkedAt": "2026-11-09"
+      },
+      {
+        "name": "California Energy Commission: 2019 Energy Code, Residential Solar Photovoltaic Systems (training slides, September 2021)",
+        "url": "https://www.energy.ca.gov/sites/default/files/2021-09/2019%20PV%20Systems_ADA.pdf",
+        "supports": "2019 Energy Code effective January 1, 2020; Section 150.1(c)14 required a PV system on all new low-rise residential buildings, sized to offset a mixed-fuel home.",
+        "checkedAt": "2026-11-09"
+      }
+    ],
+    "reviewedAt": "2026-11-09"
   }
 ]
