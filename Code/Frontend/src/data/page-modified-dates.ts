@@ -36,6 +36,7 @@ export const PAGE_MODIFIED_DATES: Readonly<Record<string, string>> = {
   '/blog/electricity-rates-highest-in-us-california': '2026-09-23',
   '/blog/energysage-reviews-california': '2026-11-09',
   '/blog/flat-roof-solar-panels': '2026-09-23',
+  '/blog/ground-mount-solar-california-guide': '2026-11-09',
   '/blog/free-roof-replacement-with-solar-panels-california': '2026-09-23',
   '/blog/free-solar-for-seniors-california': '2026-09-23',
   '/blog/free-solar-panels-california': '2026-09-23',

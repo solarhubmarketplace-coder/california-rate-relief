@@ -2225,6 +2225,10 @@ export const TOPIC_HUBS: TopicHub[] = [
         "label": "Residential Solar Carports in California: Permits & Quotes"
       },
       {
+        "href": "/blog/ground-mount-solar-california-guide",
+        "label": "Ground-mount solar in California"
+      },
+      {
         "href": "/blog/rent-solar-panels-for-your-home-california",
         "label": "Rent Solar Panels for Your Home in California: Lease vs PPA"
       },
