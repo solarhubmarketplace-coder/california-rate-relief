@@ -105,6 +105,7 @@ export const PAGE_MODIFIED_DATES: Readonly<Record<string, string>> = {
   '/blog/solar-during-psps-california': '2026-04-24',
   '/blog/solar-for-renters': '2026-09-23',
   '/blog/solar-installation-timeline-california': '2026-09-20',
+  '/blog/solar-lease-buyout-calculator': '2026-11-09',
   '/blog/solar-leasing-company': '2026-09-23',
   '/blog/solar-license-california': '2026-09-23',
   '/blog/solar-panel-bird-proofing': '2026-04-16',

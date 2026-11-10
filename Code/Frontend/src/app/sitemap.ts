@@ -145,6 +145,7 @@ function crrSitemap(base: string): MetadataRoute.Sitemap {
   ];
 
   const blogSlugs = [
+    'solar-lease-buyout-calculator',
     'energysage-reviews-california',
     'best-time-to-install-solar-panels-california',
     'adding-solar-panels-existing-system-california', 'solar-installation-timeline-california',

@@ -475,6 +475,14 @@ const blogPosts: BlogPost[] = [
     category: 'Utility Bills',
   },
   {
+    slug: 'solar-lease-buyout-calculator',
+    title: 'Solar Lease Buyout Calculator: Buy Out or Stay to Term',
+    excerpt:
+      'Total the payments left on your lease or PPA with your own escalator, then set that against the payoff figure you were quoted.',
+    date: '2026-11-09',
+    category: 'Buying Solar',
+  },
+  {
     slug: 'energysage-reviews-california',
     title: 'EnergySage Reviews: Comparing California Solar Quotes',
     excerpt:
