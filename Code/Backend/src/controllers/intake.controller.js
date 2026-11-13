@@ -1,5 +1,4 @@
 const intakeService = require('../services/intake.service');
-const crypto = require('crypto');
 const { cleanJourney, cleanPublicPath } = require('../lib/lead-journey');
 const contract = require('../lib/lead-contract');
 
@@ -91,15 +90,6 @@ function sourceToolTag(value) {
 function normalizeCredit(value) {
   const key = String(value || '').trim().toLowerCase();
   return ({ yes: 'above_650', above_650: 'above_650', no: 'below_650', below_650: 'below_650', unsure: 'unsure' })[key] || null;
-}
-
-function legacyBill(value) {
-  const raw = text(value, 80);
-  if (!raw) return { amount: null, range: null };
-  const ranges = { '150-200': 175, '201-350': 275, '351-500': 425, '500+': 600 };
-  if (ranges[raw] !== undefined) return { amount: ranges[raw], range: raw };
-  const numeric = Number(String(raw).replace(/[$,]/g, ''));
-  return Number.isFinite(numeric) ? { amount: numeric, range: null } : { amount: null, range: raw };
 }
 
 function hasStreetAddress(value) {
@@ -447,45 +437,17 @@ async function createIntake(req, res, next) {
   }
 }
 
-function legacySubmissionId(body, now = new Date()) {
-  const day = now.toISOString().slice(0, 10);
-  const stable = JSON.stringify({
-    day, phone: normalizePhone(body?.phone), email: text(body?.email, 254),
-    utility_provider: text(body?.utility_provider, 120), bill_amount: Number(body?.bill_amount) || null,
-    landing_page: text(body?.landing_page, 500), submitted_from: text(body?.submitted_from, 500),
-  });
-  const bytes = crypto.createHash('sha256').update(stable).digest().subarray(0, 16);
-  bytes[6] = (bytes[6] & 0x0f) | 0x50;
-  bytes[8] = (bytes[8] & 0x3f) | 0x80;
-  return `${bytes.toString('hex', 0, 4)}-${bytes.toString('hex', 4, 6)}-${bytes.toString('hex', 6, 8)}-${bytes.toString('hex', 8, 10)}-${bytes.toString('hex', 10, 16)}`;
+/**
+ * POST /api/leads used to translate a flat legacy body into a residential
+ * intake with homeowner forced to true (retired 12 Nov 2026, residential lead
+ * contract). Anonymous callers now get 410. A request carrying a staff Bearer
+ * token falls through to requireStaff and the staff handler in
+ * lead.routes.js (router.post('/')), which this route used to shadow.
+ */
+function legacyLeadsGate(req, res, next) {
+  if (/^Bearer\s+\S+/i.test(req.headers?.authorization || '')) return next();
+  intakeService.recordRejection({ reason: 'legacy_route_retired', landing_page: 'unknown', form_kind: 'legacy_api_leads', layer: 'api' });
+  return res.apiResponse(410, contract.ERRORS.legacy_route_retired, null, { code: 'legacy_route_retired' });
 }
 
-async function createLegacyIntake(req, res, next) {
-  const body = req.body || {};
-  const bill = legacyBill(body.bill_amount ?? body.monthly_bill_range);
-  const translated = {
-    submission_id: legacySubmissionId(body), segment: 'residential',
-    contact: { name: body.name || [body.first_name, body.last_name].filter(Boolean).join(' '), phone: body.phone, email: body.email, address: body.address },
-    qualification_data: {
-      homeowner: true, utility_provider: body.utility_provider, bill_amount: bill.amount,
-      monthly_bill_range: body.monthly_bill_range || bill.range,
-      credit_score: body.credit_score,
-    },
-    attribution: Object.fromEntries([
-      'source','gclid','gbraid','wbraid','msclkid','fbclid','utm_source','utm_medium','utm_campaign','utm_content','utm_term',
-      'landing_page','landing_city_slug','landing_page_type','submitted_from','referrer','ga_client_id'
-    ].map(key => [key, body[key]]).filter(([, value]) => value != null)),
-    consent: { status: 'pending' },
-    test: body.test === true,
-  };
-  const validated = validate(translated);
-  if (validated.error) return res.apiResponse(400, validated.error);
-  try {
-    const result = await intakeService.createSubmission(validated.value);
-    return res.apiResponse(result.replayed ? 200 : 201, result.replayed ? 'Submission already received' : 'Submission received', {
-      id: result.lead_id, submission_id: result.submission_id, status: 'received', duplicate: result.replayed,
-    });
-  } catch (error) { return next(error); }
-}
-
-module.exports = { createIntake, createLegacyIntake, recordEmailVisit, legacySubmissionId, legacyBill, validate, normalizePhone, normalizeUtility, normalizeCredit, normalizeRoofAge, sourceToolTag, campaignTag };
+module.exports = { createIntake, legacyLeadsGate, recordEmailVisit, validate, normalizePhone, normalizeUtility, normalizeCredit, normalizeRoofAge, sourceToolTag, campaignTag };

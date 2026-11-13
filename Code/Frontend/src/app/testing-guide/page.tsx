@@ -86,9 +86,9 @@ function TestingGuideContent() {
           endpoint: "/api/leads",
           icon: <Users className="h-4 w-4" />,
           steps: [
-            "Send POST request to /api/leads",
+            "Send POST request to /api/leads with a staff session (Authorization: Bearer <staff token>). Without a token the endpoint answers 410: public forms submit to /api/intake",
             "Body: {name: 'John Doe', phone: '+12025551234', email: 'john@example.com', source: 'google_ads', type: 'hot'}",
-            "Or use curl: curl -X POST http://localhost:3000/api/leads -H 'Content-Type: application/json' -d '{\"name\":\"Test Hot\",\"phone\":\"+12025551234\",\"email\":\"hot@test.com\",\"type\":\"hot\"}'",
+            "Or use curl: curl -X POST http://localhost:3000/api/leads -H 'Authorization: Bearer <staff token>' -H 'Content-Type: application/json' -d '{\"name\":\"Test Hot\",\"phone\":\"+12025551234\",\"email\":\"hot@test.com\",\"type\":\"hot\"}'",
             "Check response and database",
           ],
           expectedResults: [
@@ -112,7 +112,7 @@ function TestingGuideContent() {
           steps: [
             "Create a test CSV: name,phone,email,source",
             "POST to /api/leads/bulk OR use frontend upload",
-            "Or send POST request to /api/leads",
+            "Or send POST request to /api/leads with a staff session (Authorization: Bearer <staff token>)",
             "Body: {name: 'Jane Smith', phone: '+12025551235', email: 'jane@example.com', source: 'csv', type: 'cold'}",
             "Check response and database",
           ],

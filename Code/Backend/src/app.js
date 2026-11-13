@@ -85,9 +85,10 @@ const webhookController = require('./controllers/webhook.controller');
 const googleAuthController = require('./controllers/google-auth.controller');
 const leadController = require('./controllers/lead.controller');
 const intakeController = require('./controllers/intake.controller');
-// Temporary compatibility for the previously deployed flat form. Its daily,
-// deterministic ID makes network retries safe while allowing a later resubmission.
-app.post('/api/leads', intakeController.createLegacyIntake);
+// The anonymous legacy flat-form route is retired (410; residential lead
+// contract, 12 Nov 2026). A staff Bearer token falls through to requireStaff and
+// the staff create-lead handler in lead.routes.js.
+app.post('/api/leads', intakeController.legacyLeadsGate);
 app.get('/api/track/:token', trackingController.handleTrackingClick);
 // Historical email links are now read-only redirects, safe before staff auth.
 app.get('/api/leads/convert/:leadId', leadController.handleLeadConversionClick);
