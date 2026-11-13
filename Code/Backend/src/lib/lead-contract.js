@@ -26,6 +26,8 @@ const REJECT_WORDS = Object.freeze([
 const FORM_KINDS = Object.freeze(['solar_inquiry', 'qualification_wizard', 'offer_request']);
 const TRAFFIC_CHANNELS = Object.freeze(['organic_google', 'organic_bing_yahoo_ddg', 'ai_referral', 'paid', 'email', 'direct', 'referral']);
 const AI_HOSTS = Object.freeze(['chatgpt.com', 'chat.openai.com', 'perplexity.ai', 'gemini.google.com', 'copilot.microsoft.com', 'claude.ai']);
+const AI_APP_IDS = Object.freeze(['com.openai.chatgpt', 'ai.perplexity.app.android', 'com.anthropic.claude', 'com.microsoft.copilot', 'com.google.android.apps.bard']);
+const BING_YAHOO_DDG_APP_IDS = Object.freeze(['com.duckduckgo.mobile.android', 'com.microsoft.bing', 'com.yahoo.mobile.client.android.search']);
 
 const UNDER_250_MESSAGE =
   "Thanks for checking. California Rate Relief sends requests to solar providers only for homes with an average electric bill of $250 a month or more, so we can't send this one. Our guides explain how California electric rates and bills work.";
@@ -94,6 +96,13 @@ function composeAddress(street, city, zip) {
   return `${normalizeStreet(street)}, ${String(city ?? '').trim()}, CA ${String(zip ?? '').trim()}`;
 }
 
+/**
+ * Looks like personal data (an email address or a phone-length digit run).
+ * utm_* values that match are dropped, and a referrer whose path matches keeps
+ * only its scheme and host. Click ids are not screened (gclid has long digit runs).
+ */
+const PII_LIKE_RE = /@|%40|\d{7,}/i;
+const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
 const OWN_HOST_RE = /(^|\.)ratereliefca\.com$/i;
 const BLOCKED_SCHEMES = new Set(['javascript:', 'data:', 'file:', 'blob:', 'about:']);
 
@@ -110,7 +119,8 @@ function sanitizeReferrer(raw) {
   if (protocol === 'http:' || protocol === 'https:') {
     const hostname = url.hostname.toLowerCase();
     if (!hostname || OWN_HOST_RE.test(hostname)) return null;
-    return `${protocol}//${url.host.toLowerCase()}${url.pathname}`.slice(0, 300);
+    const path = PII_LIKE_RE.test(url.pathname) ? '/' : url.pathname;
+    return `${protocol}//${url.host.toLowerCase()}${path}`.slice(0, 300);
   }
   if (BLOCKED_SCHEMES.has(protocol) || !/^[a-z][a-z0-9+.-]*:$/.test(protocol) || !url.host) return null;
   return `${protocol}//${url.host.toLowerCase()}`.slice(0, 300);
@@ -159,7 +169,8 @@ function deriveTrafficChannel(t) {
   if (ref) {
     if (ref.scheme === 'android-app:') {
       if (ref.host === 'com.google.android.googlequicksearchbox') return 'organic_google';
-      if (ref.host === 'com.duckduckgo.mobile.android') return 'organic_bing_yahoo_ddg';
+      if (AI_APP_IDS.includes(ref.host)) return 'ai_referral';
+      if (BING_YAHOO_DDG_APP_IDS.includes(ref.host)) return 'organic_bing_yahoo_ddg';
       return 'referral';
     }
     if (ref.scheme !== 'http:' && ref.scheme !== 'https:') return 'referral';
@@ -179,6 +190,7 @@ function deriveTrafficChannel(t) {
 module.exports = {
   LEAD_CONTRACT_VERSION, CONSENT_WORDING_VERSION, MIN_QUALIFYING_BILL,
   BILL_BANDS, BILL_BAND_LABELS, UNDER_250_ID, REJECT_WORDS, FORM_KINDS, TRAFFIC_CHANNELS, AI_HOSTS,
+  AI_APP_IDS, BING_YAHOO_DDG_APP_IDS, PII_LIKE_RE, UTM_KEYS,
   UNDER_250_MESSAGE, RENTER_MESSAGE, UNIT_QUESTION, UNIT_DECLINED_MESSAGE, CONSENT_TEXT, ERRORS,
   PO_BOX_RE, REJECT_WORD_RE, UNIT_RE, STREET_RE, CITY_RE, ZIP_RE, EMAIL_RE,
   normalizeStreet, classifyStreet, isCaZip, composeAddress, sanitizeReferrer, deriveTrafficChannel,

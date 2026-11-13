@@ -23,6 +23,9 @@ test('lists and copy match', () => {
   assert.deepEqual([...back.FORM_KINDS], [...front.FORM_KINDS]);
   assert.deepEqual([...back.TRAFFIC_CHANNELS], [...front.TRAFFIC_CHANNELS]);
   assert.deepEqual([...back.AI_HOSTS], [...front.AI_HOSTS]);
+  assert.deepEqual([...back.AI_APP_IDS], [...front.AI_APP_IDS]);
+  assert.deepEqual([...back.BING_YAHOO_DDG_APP_IDS], [...front.BING_YAHOO_DDG_APP_IDS]);
+  assert.deepEqual([...back.UTM_KEYS], [...front.UTM_KEYS]);
   for (const key of ['UNDER_250_MESSAGE', 'RENTER_MESSAGE', 'UNIT_QUESTION', 'UNIT_DECLINED_MESSAGE', 'CONSENT_TEXT'] as const) {
     assert.equal(back[key], front[key], key);
   }
@@ -36,7 +39,7 @@ test('error codes and messages match (front-only codes excepted)', () => {
 });
 
 test('regexes are identical', () => {
-  for (const key of ['PO_BOX_RE', 'REJECT_WORD_RE', 'UNIT_RE', 'STREET_RE', 'CITY_RE', 'ZIP_RE', 'EMAIL_RE'] as const) {
+  for (const key of ['PO_BOX_RE', 'REJECT_WORD_RE', 'UNIT_RE', 'STREET_RE', 'CITY_RE', 'ZIP_RE', 'EMAIL_RE', 'PII_LIKE_RE'] as const) {
     assert.equal(back[key].source, front[key].source, `${key}.source`);
     assert.equal(back[key].flags, front[key].flags, `${key}.flags`);
   }

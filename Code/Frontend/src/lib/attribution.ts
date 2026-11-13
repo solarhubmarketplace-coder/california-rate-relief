@@ -10,7 +10,7 @@
  * `traffic_channel`. A tab still holding a v1 record is upgraded once.
  */
 import {
-  FIRST_TOUCH_KEY, FIRST_TOUCH_TTL_DAYS, deriveTrafficChannel, isTrafficChannel, sanitizeReferrer,
+  FIRST_TOUCH_KEY, FIRST_TOUCH_TTL_DAYS, PII_LIKE_RE, UTM_KEYS, deriveTrafficChannel, isTrafficChannel, sanitizeReferrer,
   type TrafficChannel,
 } from './lead-contract.ts';
 
@@ -60,8 +60,12 @@ export function citySlugFromPath(path: string): string | null {
   return match && !REGIONAL_HUBS.has(match[1]) ? match[1] : null;
 }
 
-function trackingValue(value: unknown): string | null {
-  return typeof value === 'string' ? value.trim().slice(0, 200) || null : null;
+function trackingValue(value: unknown, key?: string): string | null {
+  const v = typeof value === 'string' ? value.trim().slice(0, 200) || null : null;
+  // No personal data in attribution: a utm_* value that looks like an email
+  // address or a phone number is dropped. Click ids are kept as sent.
+  if (v && key && (UTM_KEYS as readonly string[]).includes(key) && PII_LIKE_RE.test(v)) return null;
+  return v;
 }
 
 function externalHost(referrer: string): string | null {
@@ -90,7 +94,7 @@ function storedTouch(raw: string, version: 1 | 2): FirstTouch | null {
     if (version === 2 && value.v !== 2) return null;
     const path = value.landing_page.split(/[?#]/)[0];
     if (!isAttributablePage(window.location.hostname, path)) return null;
-    const tracking = Object.fromEntries(TRACKING_KEYS.map(key => [key, trackingValue(value[key])])) as TrackingParams;
+    const tracking = Object.fromEntries(TRACKING_KEYS.map(key => [key, trackingValue(value[key], key)])) as TrackingParams;
     const referrer = typeof value.referrer === 'string' ? externalHost('https://' + value.referrer) : null;
     const initialReferrer = version === 2 ? sanitizeReferrer(value.initial_referrer) : null;
     const derived = deriveTrafficChannel({ ...tracking, initial_referrer: initialReferrer, referrer });
@@ -163,7 +167,7 @@ export function captureFirstTouch(): FirstTouch | null {
 
   const path = window.location.pathname || '/';
   const params = new URLSearchParams(window.location.search);
-  const tracking = Object.fromEntries(TRACKING_KEYS.map(key => [key, trackingValue(params.get(key))])) as TrackingParams;
+  const tracking = Object.fromEntries(TRACKING_KEYS.map(key => [key, trackingValue(params.get(key), key)])) as TrackingParams;
   const rawReferrer = typeof document !== 'undefined' ? document.referrer : '';
   const initialReferrer = sanitizeReferrer(rawReferrer);
   const referrer = externalHost(rawReferrer);

@@ -149,3 +149,12 @@ test('paid click ids win, and a direct visit is direct', () => {
   browser({ path: '/' });
   assert.equal(captureFirstTouch()?.traffic_channel, 'direct');
 });
+
+test('utm values that look like an email address or phone number are not stored (review ATTR-4)', () => {
+  browser({ path: '/blog/x', search: '?utm_content=jane%40example.com&utm_term=5551234567&utm_source=newsletter&gclid=12345678901' });
+  const touch = captureFirstTouch();
+  assert.equal(touch?.utm_content, null);
+  assert.equal(touch?.utm_term, null);
+  assert.equal(touch?.utm_source, 'newsletter');
+  assert.equal(touch?.gclid, '12345678901');
+});

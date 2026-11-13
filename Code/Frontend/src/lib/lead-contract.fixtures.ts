@@ -102,6 +102,14 @@ export const CHANNEL_VECTORS: readonly [string, ChannelInput, TrafficChannel][] 
   ['notbing.com', { initial_referrer: 'https://notbing.com/' }, 'referral'],
   ['slack app', { initial_referrer: 'android-app://com.slack/' }, 'referral'],
   ['ddg app', { initial_referrer: 'android-app://com.duckduckgo.mobile.android/' }, 'organic_bing_yahoo_ddg'],
+  // Review ATTR-5: AI and search apps on Android send app referrers.
+  ['chatgpt app', { initial_referrer: 'android-app://com.openai.chatgpt' }, 'ai_referral'],
+  ['perplexity app', { initial_referrer: 'android-app://ai.perplexity.app.android' }, 'ai_referral'],
+  ['claude app', { initial_referrer: 'android-app://com.anthropic.claude' }, 'ai_referral'],
+  ['copilot app', { initial_referrer: 'android-app://com.microsoft.copilot' }, 'ai_referral'],
+  ['gemini app', { initial_referrer: 'android-app://com.google.android.apps.bard' }, 'ai_referral'],
+  ['bing app', { initial_referrer: 'android-app://com.microsoft.bing' }, 'organic_bing_yahoo_ddg'],
+  ['yahoo app', { initial_referrer: 'android-app://com.yahoo.mobile.client.android.search' }, 'organic_bing_yahoo_ddg'],
 ];
 
 export const REFERRER_VECTORS: readonly [string | null | undefined, string | null][] = [
@@ -116,4 +124,9 @@ export const REFERRER_VECTORS: readonly [string | null | undefined, string | nul
   ['', null],
   [null, null],
   [undefined, null],
+  // Review ATTR-4: a path that carries an email address or phone number keeps only the host.
+  ['https://webmail.example.net/u/jane.doe@example.com/inbox', 'https://webmail.example.net/'],
+  ['https://webmail.example.net/u/jane.doe%40example.com/inbox', 'https://webmail.example.net/'],
+  ['https://example.net/call/5551234567', 'https://example.net/'],
+  ['https://www.reddit.com/r/solar/comments/abc123/', 'https://www.reddit.com/r/solar/comments/abc123/'],
 ];

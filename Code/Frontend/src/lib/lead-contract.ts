@@ -54,6 +54,9 @@ export type FormKind = (typeof FORM_KINDS)[number];
 export const TRAFFIC_CHANNELS = ['organic_google', 'organic_bing_yahoo_ddg', 'ai_referral', 'paid', 'email', 'direct', 'referral'] as const;
 export type TrafficChannel = (typeof TRAFFIC_CHANNELS)[number];
 export const AI_HOSTS = ['chatgpt.com', 'chat.openai.com', 'perplexity.ai', 'gemini.google.com', 'copilot.microsoft.com', 'claude.ai'] as const;
+/** Android app referrers (android-app://<id>) of the same AI assistants and search engines. */
+export const AI_APP_IDS = ['com.openai.chatgpt', 'ai.perplexity.app.android', 'com.anthropic.claude', 'com.microsoft.copilot', 'com.google.android.apps.bard'] as const;
+export const BING_YAHOO_DDG_APP_IDS = ['com.duckduckgo.mobile.android', 'com.microsoft.bing', 'com.yahoo.mobile.client.android.search'] as const;
 export const FIRST_TOUCH_KEY = 'crr_first_touch_v2';
 export const FIRST_TOUCH_TTL_DAYS = 90;
 
@@ -312,6 +315,13 @@ export const ADDRESS_REJECT_CODES: readonly LeadErrorCode[] = [
 // ---------------------------------------------------------------------------
 // First-touch referrer and traffic channel
 // ---------------------------------------------------------------------------
+/**
+ * Looks like personal data (an email address or a phone-length digit run).
+ * utm_* values that match are dropped, and a referrer whose path matches keeps
+ * only its scheme and host. Click ids are not screened (gclid has long digit runs).
+ */
+export const PII_LIKE_RE = /@|%40|\d{7,}/i;
+export const UTM_KEYS = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'] as const;
 const OWN_HOST_RE = /(^|\.)ratereliefca\.com$/i;
 const BLOCKED_SCHEMES = new Set(['javascript:', 'data:', 'file:', 'blob:', 'about:']);
 
@@ -335,7 +345,8 @@ export function sanitizeReferrer(raw: string | null | undefined): string | null 
   if (protocol === 'http:' || protocol === 'https:') {
     const hostname = url.hostname.toLowerCase();
     if (!hostname || OWN_HOST_RE.test(hostname)) return null;
-    return `${protocol}//${url.host.toLowerCase()}${url.pathname}`.slice(0, 300);
+    const path = PII_LIKE_RE.test(url.pathname) ? '/' : url.pathname;
+    return `${protocol}//${url.host.toLowerCase()}${path}`.slice(0, 300);
   }
   if (BLOCKED_SCHEMES.has(protocol) || !/^[a-z][a-z0-9+.-]*:$/.test(protocol) || !url.host) return null;
   return `${protocol}//${url.host.toLowerCase()}`.slice(0, 300);
@@ -398,7 +409,8 @@ export function deriveTrafficChannel(t: ChannelInput | null | undefined): Traffi
   if (ref) {
     if (ref.scheme === 'android-app:') {
       if (ref.host === 'com.google.android.googlequicksearchbox') return 'organic_google';
-      if (ref.host === 'com.duckduckgo.mobile.android') return 'organic_bing_yahoo_ddg';
+      if ((AI_APP_IDS as readonly string[]).includes(ref.host)) return 'ai_referral';
+      if ((BING_YAHOO_DDG_APP_IDS as readonly string[]).includes(ref.host)) return 'organic_bing_yahoo_ddg';
       return 'referral';
     }
     if (ref.scheme !== 'http:' && ref.scheme !== 'https:') return 'referral';
