@@ -64,6 +64,32 @@ test('a description not starting with the number falls back to the components', 
   assert.equal(result.unitFlag, true);
 });
 
+// Review F3: text before the house number is checked, not thrown away.
+test('a "Suite 200, 123 Main St" pick is refused as a unit word, not turned into "#200"', () => {
+  assert.deepEqual(
+    placeToAddress('Suite 200, 123 Main St, Temecula, CA, USA', components({ subpremise: ['200'] })),
+    { error: 'unit_word' },
+  );
+});
+
+test('an apartment-complex premise is refused', () => {
+  assert.deepEqual(
+    placeToAddress('Oakwood Apartments, 123 Main St, Temecula, CA, USA', components({ premise: ['Oakwood Apartments'] })),
+    { error: 'unit_word' },
+  );
+});
+
+test('a mobile-home-park premise asks the detached-home question', () => {
+  const result = placeToAddress('Sunrise Mobile Home Park, 123 Main St, Temecula, CA, USA', components({ premise: ['Sunrise Mobile Home Park'] }));
+  assert.ok(!('error' in result));
+  assert.equal(result.street, '123 Main St');
+  assert.equal(result.unitFlag, true);
+});
+
+test('a PO box before the house number is refused', () => {
+  assert.deepEqual(placeToAddress('PMB 12, 123 Main St, Temecula, CA, USA', components()), { error: 'po_box' });
+});
+
 test('city falls back from locality to postal town and sublocality', () => {
   assert.equal(cityFromComponents([{ types: ['sublocality_level_1'], long_name: 'Van Nuys' }]), 'Van Nuys');
   assert.equal(cityFromComponents(undefined), '');

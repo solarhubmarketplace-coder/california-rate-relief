@@ -7,6 +7,8 @@
 // API uses. No imports from '@/...' so the node test runner can load this file.
 // =============================================================================
 
+import { classifyStreet, normalizeStreet } from './lead-contract.ts';
+
 /** Minimal shape of the Places components we read; @types/google.maps is not installed. */
 export interface AddressComponent {
   long_name?: string;
@@ -19,11 +21,15 @@ export interface PlaceAddress {
   city: string;
   zip: string;
   state: 'CA';
-  /** Google returned a subpremise (unit) for this place. */
+  /**
+   * The place may not be a detached single-family home: Google returned a
+   * subpremise or a premise (a named building, complex or park), or the
+   * suggestion started with text before the house number.
+   */
   unitFlag: boolean;
 }
 
-export type PlaceAddressError = 'street_format' | 'state_not_ca' | 'zip_not_ca';
+export type PlaceAddressError = 'street_format' | 'state_not_ca' | 'zip_not_ca' | 'po_box' | 'unit_word';
 
 function component(components: AddressComponent[] | undefined, type: string): AddressComponent | undefined {
   if (!Array.isArray(components)) return undefined;
@@ -43,7 +49,10 @@ export function cityFromComponents(components: AddressComponent[] | undefined): 
  * Street, city and ZIP from a picked suggestion. The street line is the first
  * comma segment of the suggestion as Google shows it, so "Apt 4", "Unit 4" or
  * "#4" stay in it and the reject check sees them. When that segment does not
- * start with the house number, the line is rebuilt from the components.
+ * start with the house number, the line is rebuilt from the components, and
+ * the text before the house number ("Suite 200", "Oakwood Apartments", "Sunrise
+ * Mobile Home Park") is checked on its own: a reject word or PO box refuses the
+ * pick, anything else asks the detached-home question (unitFlag).
  */
 export function placeToAddress(
   description: string,
@@ -57,11 +66,28 @@ export function placeToAddress(
   const zip = component(components, 'postal_code')?.long_name?.trim() ?? '';
   if (!/^\d{5}$/.test(zip)) return { error: 'zip_not_ca' };
   const subpremise = component(components, 'subpremise')?.long_name?.trim() ?? '';
-  const firstSegment = String(description ?? '').split(',')[0].trim();
-  const street = firstSegment.toLowerCase().startsWith(number.toLowerCase())
-    ? firstSegment
-    : `${number} ${routeName}${subpremise ? ` #${subpremise}` : ''}`;
-  return { street, city: cityFromComponents(components), zip, state: 'CA', unitFlag: Boolean(subpremise) };
+  const segments = String(description ?? '').split(',').map((segment) => segment.trim());
+  const firstSegment = segments[0] ?? '';
+  const startsWithNumber = firstSegment.toLowerCase().startsWith(number.toLowerCase());
+  let dropped = '';
+  if (!startsWithNumber) {
+    const streetAt = segments.findIndex((segment) => /^\d/.test(segment));
+    dropped = normalizeStreet((streetAt > 0 ? segments.slice(0, streetAt) : [firstSegment]).join(' '));
+    if (dropped) {
+      // "1 " makes the dropped text a street line, so only the reject checks can fire.
+      const verdict = classifyStreet(`1 ${dropped}`);
+      if (verdict === 'po_box' || verdict === 'unit_word') return { error: verdict };
+    }
+  }
+  const street = startsWithNumber ? firstSegment : `${number} ${routeName}${subpremise ? ` #${subpremise}` : ''}`;
+  const hasPremise = Boolean(component(components, 'premise'));
+  return {
+    street,
+    city: cityFromComponents(components),
+    zip,
+    state: 'CA',
+    unitFlag: Boolean(subpremise) || Boolean(dropped) || hasPremise,
+  };
 }
 
 export interface CaZipStatus {
