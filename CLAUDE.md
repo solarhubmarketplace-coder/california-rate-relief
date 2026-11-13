@@ -1,12 +1,14 @@
 # CLAUDE.md: California Rate Relief codebase
 
 **Read first.** The one working folder is on Chad's machine: `D:\5_Solar_Business\Web_Projects\`.
-Before changing anything, read, in order:
-1. `00_START_HERE.md`
-2. `01_STATE\SITE_BLUEPRINT.md`
-3. `01_STATE\CURRENT_STATE.md` (owns live status and "next work")
-4. `01_STATE\RULES.md`
-5. `01_STATE\CODE_MAP.md`
+Before changing anything, read, in order (Master Hub layout, 12 Nov 2026):
+1. `CLAUDE.md` (the hub's one instruction file, including its Rules section)
+2. `California_Rate_Relief\STATE.md` (owns live status and "next actions")
+3. `California_Rate_Relief\PLAN.md` (the one plan of record)
+4. `California_Rate_Relief\CODE.md` (git layout, deploy path, unreleased work, "Content inventory")
+5. `California_Rate_Relief\FORMS_AND_LEADS.md` (every form, its rules, and the approved lead contract)
+
+The old `00_START_HERE.md` and `01_STATE\` files are retired stubs: never read them for facts.
 
 Business, SEO, content and writing rules live there. Where they differ from this file, they win.
 This file covers only the code. Checked against branch `claude/ta-release-20260923` on 2026-09-24.
@@ -71,7 +73,7 @@ Other redirects: `next.config.js` `redirects()` holds 2 rules (308, not host-sco
 - **Hand-written:** `app/<section>/<slug>/page.tsx`. Many blog posts wrap `components/growth/DecisionPage`; others use guide shells (`GuideShell`, `CostFinGuideShell`, `RateGuideParts`).
 - **JSON articles:** an entry in `data/article-pages.*.json`, rendered by the section's `[slug]` route through `ArticleRoute`, and gated by `scripts/qc-gate.mjs`.
 - **City pages:** dynamic `[city]` routes under `/solar-companies`, `/solar-cost` and `/solar-savings`, fed by the three city data files. `/solar-cost` sets `dynamicParams = false`.
-- A new page also needs its sitemap entry, blog index entry, hub spoke and links. Steps: `SITE_BLUEPRINT.md` section 4.5.
+- A new page also needs its sitemap entry, blog index entry, hub spoke and links. Steps: the "Content inventory" section of `California_Rate_Relief\CODE.md` in the hub.
 
 ## Hard rules
 
@@ -105,7 +107,7 @@ npm run -s assert:linkspine
 npx next build                     # before delivery; about 10 minutes
 ```
 
-- Offline builds need `NEXT_FONT_GOOGLE_MOCKED_RESPONSES` and placeholder `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` (see `CODE_MAP.md`).
+- Offline builds need `NEXT_FONT_GOOGLE_MOCKED_RESPONSES` and placeholder `NEXT_PUBLIC_SUPABASE_URL` / `NEXT_PUBLIC_SUPABASE_ANON_KEY` (see `California_Rate_Relief\CODE.md` in the hub).
 - Backend tests: `cd Code/Backend && npm test` (jest).
 
 ## Backend (`Code/Backend`)
@@ -118,4 +120,4 @@ npx next build                     # before delivery; about 10 minutes
 - Voice-agent tools: `src/tools/definitions.js` (`checkAvailability`, `bookAppointment`, `search_knowledge_base`, `transferCall`).
 - Other services: `lead`, `intake`, `email`, `email-sequence`, `sms`, `appointment`, `calendar`, `queue`, `context`, `knowledge-base`, `phone-matcher` (numbers in `config/twilio-numbers.json`).
 - Schema: `migrations/` and `supabase/migrations/`. Business timezone defaults to America/Los_Angeles.
-- Operating status of calls, SMS, email and the CRM: `01_STATE\CURRENT_STATE.md` and `OPERATIONS_STATE.md` in the working folder.
+- Operating status of calls, SMS, email and the CRM: `California_Rate_Relief\STATE.md` and `_SHARED\SYSTEMS.md` in the hub.
