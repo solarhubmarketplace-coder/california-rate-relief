@@ -29,6 +29,9 @@ describe('durable owner notification worker', () => {
     mockSendEmail.mockResolvedValue({id:'local-provider-id'});await worker.processOne();
     const html=mockRpc.mock.calls[1][1].p_provider_html;
     expect(html).toContain('/blog/entry');expect(html).toContain('San Diego comparison');expect(html).toContain('quote-input-v2');expect(html).toMatch(/input arithmetic/i);expect(html).toMatch(/Battery[\s\S]*>0</);
+    // Review R3: the calculator figure is labelled informational and sits under the band.
+    expect(html).not.toMatch(/before CRM rounding/);
+    expect(html).toContain('Calculator monthly bill (informational; the qualifying answer is the bill band above) ($)');
   });
   test('includes the submitted path and page sequence in the owner notification', async () => {
     const journeyRow = { ...row, payload: { ...row.payload, attribution: { ...row.payload.attribution,

@@ -101,7 +101,8 @@ function hasStreetAddress(value) {
 const ATTRIBUTION_KEYS = [
   'source', 'gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
   'landing_page', 'landing_city_slug', 'landing_page_type', 'submitted_from', 'referrer', 'ga_client_id', 'captured_at',
-  'acquisition_source', 'acquisition_medium', 'organic_landing_page', 'original_acquisition_source', 'original_acquisition_medium', 'email_visit_id'
+  'acquisition_source', 'acquisition_medium', 'organic_landing_page', 'original_acquisition_source', 'original_acquisition_medium', 'email_visit_id',
+  'email_utm_source', 'email_utm_campaign', 'email_utm_content'
 ];
 
 /** Shared attribution cleaning (paths, referrer host, journey). Never rejects. */
@@ -123,6 +124,27 @@ function cleanAttribution(input, extraKeys = []) {
     } catch { delete attribution.referrer; }
   }
   if (!Number.isFinite(Date.parse(attribution.captured_at))) delete attribution.captured_at;
+  // No personal data in attribution: drop campaign tags that look like an
+  // email address or a phone number (click ids are kept as sent).
+  for (const key of [...contract.UTM_KEYS, 'email_utm_source', 'email_utm_campaign', 'email_utm_content']) {
+    if (attribution[key] != null && contract.PII_LIKE_RE.test(String(attribution[key]))) delete attribution[key];
+  }
+  return attribution;
+}
+
+/**
+ * Attribution plus the first-touch facts (lead contract item 6), for every
+ * submit, residential and commercial: initial_referrer (sanitized),
+ * traffic_channel (recomputed when missing or unknown) and first_touch_version.
+ */
+function cleanFirstTouchAttribution(input) {
+  const attribution = cleanAttribution(input, ['initial_referrer', 'traffic_channel', 'first_touch_version']);
+  const initialReferrer = contract.sanitizeReferrer(input?.initial_referrer);
+  if (initialReferrer) attribution.initial_referrer = initialReferrer; else delete attribution.initial_referrer;
+  if (!contract.TRAFFIC_CHANNELS.includes(attribution.traffic_channel)) {
+    attribution.traffic_channel = contract.deriveTrafficChannel(attribution);
+  }
+  if (![1, 2].includes(attribution.first_touch_version)) delete attribution.first_touch_version;
   return attribution;
 }
 
@@ -221,7 +243,7 @@ function validateCommercial(body) {
     qualification.calculator_simple_payback=cash != null && difference != null && difference>0 ? cash/difference : null;
   }
 
-  const attribution = cleanAttribution(body.attribution);
+  const attribution = cleanFirstTouchAttribution(body.attribution);
   const consentStatus = text(body.consent?.status, 20) || 'pending';
   if (!['pending', 'opted_in', 'opted_out'].includes(consentStatus)) return { error: 'consent.status is invalid' };
   const consentTimestamp = body.consent?.timestamp && Number.isFinite(Date.parse(body.consent.timestamp))
@@ -373,13 +395,7 @@ function validateResidential(body, submissionId) {
   }
 
   // Step 17: attribution never rejects.
-  const attribution = cleanAttribution(body.attribution, ['initial_referrer', 'traffic_channel', 'first_touch_version']);
-  const initialReferrer = contract.sanitizeReferrer(body.attribution?.initial_referrer);
-  if (initialReferrer) attribution.initial_referrer = initialReferrer; else delete attribution.initial_referrer;
-  if (!contract.TRAFFIC_CHANNELS.includes(attribution.traffic_channel)) {
-    attribution.traffic_channel = contract.deriveTrafficChannel(attribution);
-  }
-  if (![1, 2].includes(attribution.first_touch_version)) delete attribution.first_touch_version;
+  const attribution = cleanFirstTouchAttribution(body.attribution);
 
   const consentTimestamp = body.consent?.timestamp && Number.isFinite(Date.parse(body.consent.timestamp))
     ? new Date(body.consent.timestamp).toISOString() : null;

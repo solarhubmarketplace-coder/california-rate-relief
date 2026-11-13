@@ -43,6 +43,10 @@ export interface IntakePayload {
     original_acquisition_source?: string;
     original_acquisition_medium?: string;
     email_visit_id?: string;
+    /** The email visit's own tags (last touch); the utm_* fields stay first touch. */
+    email_utm_source?: string;
+    email_utm_campaign?: string;
+    email_utm_content?: string;
     organic_landing_page?: string;
     gclid?: string;
     gbraid?: string;

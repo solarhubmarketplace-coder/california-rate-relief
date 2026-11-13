@@ -47,6 +47,8 @@ function render(outbox) {
     ['Address entry', [qualification.address_source, qualification.places_status].filter(Boolean).join(' / ')],
     ['Utility', qualification.utility_provider],
     ['Monthly bill', BILL_BAND_LABELS[qualification.monthly_bill_band] ?? qualification.bill_amount ?? qualification.monthly_bill_range],
+    // Right under the band so a mismatch is visible. The band is the qualifying answer.
+    ['Calculator monthly bill (informational; the qualifying answer is the bill band above) ($)', qualification.calculator_monthly_bill],
     ['Homeowner', typeof qualification.homeowner === 'boolean' ? (qualification.homeowner ? 'Yes' : 'No') : null],
     ['Credit', qualification.credit_score],
     ['ZIP / county', qualification.service_zip || qualification.county],
@@ -60,7 +62,6 @@ function render(outbox) {
     ['Original organic landing page', attribution.organic_landing_page],
     ['Inquiry topic', qualification.inquiry_topic],
     ['Calculator method', qualification.calculator_version],
-    ['Entered monthly bill, before CRM rounding ($)', qualification.calculator_monthly_bill],
     ['Entered annual usage (kWh)', qualification.calculator_annual_kwh],
     ['Quoted solar size (kW DC)', qualification.calculator_system_kw],
     ['Solar-only cash price ($)', qualification.calculator_solar_only_price],
@@ -74,6 +75,9 @@ function render(outbox) {
     ['UTM campaign', attribution.utm_campaign],
     ['UTM content', attribution.utm_content],
     ['UTM term', attribution.utm_term],
+    ['Email visit source', attribution.email_utm_source],
+    ['Email visit campaign', attribution.email_utm_campaign],
+    ['Email visit content', attribution.email_utm_content],
   ].filter(([, value]) => value !== null && value !== undefined && value !== '');
   return `<div style="font-family:Arial,Helvetica,sans-serif;max-width:620px"><h2>New California Rate Relief ${escapeHtml(payload.segment)} inquiry</h2><table style="border-collapse:collapse">${rows.map(([label, value]) => `<tr><td style="padding:4px 10px;color:#555"><b>${escapeHtml(label)}</b></td><td style="padding:4px 10px">${escapeHtml(value)}</td></tr>`).join('')}</table><p>Review this inquiry and forward it manually if it qualifies.</p></div>`;
 }

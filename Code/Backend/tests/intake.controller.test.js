@@ -377,8 +377,40 @@ describe('commercial intake (unchanged by the residential contract)', () => {
     expect(service.recordRejection).not.toHaveBeenCalled();
   });
 
-  test('commercial attribution whitelist is unchanged (no traffic_channel added)', () => {
-    const result = controller.validate({ ...commercial, attribution: { landing_page: '/commercial-solar', traffic_channel: 'paid', initial_referrer: 'https://www.google.com/' } });
-    expect(result.value.attribution).toEqual({ landing_page: '/commercial-solar' });
+  test('commercial attribution carries the first-touch facts too (review ATTR-3)', () => {
+    const result = controller.validate({ ...commercial, attribution: {
+      landing_page: '/commercial-solar', traffic_channel: 'organic_google', initial_referrer: 'https://www.google.com/search?q=x', first_touch_version: 2,
+    } });
+    expect(result.value.attribution).toEqual({
+      landing_page: '/commercial-solar', traffic_channel: 'organic_google', initial_referrer: 'https://www.google.com/search', first_touch_version: 2,
+    });
+    const derived = controller.validate({ ...commercial, attribution: { landing_page: '/commercial-solar', traffic_channel: 'bogus', initial_referrer: 'https://chatgpt.com/' } });
+    expect(derived.value.attribution.traffic_channel).toBe('ai_referral');
+  });
+});
+
+describe('attribution carries no personal data (review ATTR-4)', () => {
+  test('utm values shaped like an email or phone are dropped; click ids are kept', () => {
+    const result = controller.validate({ ...commercial, attribution: {
+      landing_page: '/commercial-solar', utm_content: 'jane@example.com', utm_term: '5551234567', utm_campaign: 'jane%40example.com',
+      utm_source: 'newsletter', gclid: '12345678901', email_utm_campaign: 'x@y.z',
+    } });
+    const a = result.value.attribution;
+    expect(a.utm_content).toBeUndefined();
+    expect(a.utm_term).toBeUndefined();
+    expect(a.utm_campaign).toBeUndefined();
+    expect(a.email_utm_campaign).toBeUndefined();
+    expect(a.utm_source).toBe('newsletter');
+    expect(a.gclid).toBe('12345678901');
+  });
+
+  test('an initial referrer whose path carries an email address keeps only the host', () => {
+    const result = controller.validate({ ...commercial, attribution: { landing_page: '/commercial-solar', initial_referrer: 'https://webmail.example.net/u/jane.doe@example.com/inbox' } });
+    expect(result.value.attribution.initial_referrer).toBe('https://webmail.example.net/');
+  });
+
+  test('the email visit keys are kept (review ATTR-1)', () => {
+    const result = controller.validate({ ...commercial, attribution: { landing_page: '/commercial-solar', email_utm_source: 'crr', email_utm_campaign: 'nov', email_utm_content: 'plain_v1' } });
+    expect(result.value.attribution).toMatchObject({ email_utm_source: 'crr', email_utm_campaign: 'nov', email_utm_content: 'plain_v1' });
   });
 });
