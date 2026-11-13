@@ -1,4 +1,6 @@
 jest.mock('../src/services/intake.service', () => ({ createSubmission: jest.fn(), recordEmailVisit: jest.fn(), recordRejection: jest.fn() }));
+jest.mock('../src/services/address-validation.service', () => ({ enabled: jest.fn(() => false), check: jest.fn() }));
+const addressValidation = require('../src/services/address-validation.service');
 const service = require('../src/services/intake.service');
 const controller = require('../src/controllers/intake.controller');
 const contract = require('../src/lib/lead-contract');
@@ -290,6 +292,45 @@ describe('residential lead contract (DESIGN section 3)', () => {
     const next = jest.fn();
     await controller.createIntake({ body: residential }, response(), next);
     expect(next).toHaveBeenCalledWith(error);
+  });
+});
+
+describe('optional address backstop in createIntake', () => {
+  beforeEach(() => jest.clearAllMocks());
+  afterEach(() => addressValidation.enabled.mockReturnValue(false));
+
+  test('off by default: no check, the lead is stored', async () => {
+    service.createSubmission.mockResolvedValue({ submission_id: residential.submission_id, lead_id: 'l', segment: 'residential', replayed: false });
+    await controller.createIntake({ body: residential }, response(), jest.fn());
+    expect(addressValidation.check).not.toHaveBeenCalled();
+    expect(service.createSubmission).toHaveBeenCalled();
+  });
+
+  test('a rejected address is a 400 with its code and is counted', async () => {
+    addressValidation.enabled.mockReturnValue(true);
+    addressValidation.check.mockResolvedValue({ outcome: 'rejected', code: 'address_unverified' });
+    const res = response();
+    await controller.createIntake({ body: residential }, res, jest.fn());
+    expect(addressValidation.check).toHaveBeenCalledWith({ street: '123 Main St', city: 'Temecula', zip: '92591' }, { unitConfirmed: false });
+    expect(res.apiResponse).toHaveBeenCalledWith(400, contract.ERRORS.address_unverified, null, { code: 'address_unverified' });
+    expect(service.createSubmission).not.toHaveBeenCalled();
+    expect(service.recordRejection).toHaveBeenCalledWith(expect.objectContaining({ reason: 'address_unverified', layer: 'api' }));
+  });
+
+  test('Google unavailable: the lead is accepted and nothing about the check is stored', async () => {
+    addressValidation.enabled.mockReturnValue(true);
+    addressValidation.check.mockResolvedValue({ outcome: 'unavailable' });
+    service.createSubmission.mockResolvedValue({ submission_id: residential.submission_id, lead_id: 'l', segment: 'residential', replayed: false });
+    await controller.createIntake({ body: residential }, response(), jest.fn());
+    const stored = service.createSubmission.mock.calls[0][0];
+    expect(stored).toEqual(controller.validate(residential).value);
+  });
+
+  test('commercial submissions are never checked', async () => {
+    addressValidation.enabled.mockReturnValue(true);
+    service.createSubmission.mockResolvedValue({ submission_id: residential.submission_id, lead_id: 'l', segment: 'commercial', replayed: false });
+    await controller.createIntake({ body: commercial }, response(), jest.fn());
+    expect(addressValidation.check).not.toHaveBeenCalled();
   });
 });
 

@@ -1,6 +1,7 @@
 const intakeService = require('../services/intake.service');
 const { cleanJourney, cleanPublicPath } = require('../lib/lead-journey');
 const contract = require('../lib/lead-contract');
+const addressValidation = require('../services/address-validation.service');
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -383,7 +384,7 @@ function validateResidential(body, submissionId) {
   const consentTimestamp = body.consent?.timestamp && Number.isFinite(Date.parse(body.consent.timestamp))
     ? new Date(body.consent.timestamp).toISOString() : null;
 
-  return { meta, value: {
+  return { meta, addressParts: { street, city, zip }, value: {
     submission_id: submissionId, segment: 'residential', name, phone, email,
     address: contract.composeAddress(street, city, zip), qualification_data: qualification,
     attribution, consent_status: 'opted_in', consent_timestamp: consentTimestamp,
@@ -414,6 +415,17 @@ async function createIntake(req, res, next) {
     return validated.code
       ? res.apiResponse(400, validated.error, null, { code: validated.code })
       : res.apiResponse(400, validated.error);
+  }
+  // Optional Google Address Validation backstop (OFF without its key). A
+  // Google outage accepts the lead; the result is never stored.
+  if (validated.addressParts && addressValidation.enabled()) {
+    const checked = await addressValidation.check(validated.addressParts, {
+      unitConfirmed: validated.value.qualification_data.unit_confirmed_detached === true,
+    });
+    if (checked.outcome === 'rejected') {
+      countRejection(checked.code, validated.meta, 'api');
+      return res.apiResponse(400, contract.ERRORS[checked.code], null, { code: checked.code });
+    }
   }
   try {
     const result = await intakeService.createSubmission(validated.value);
