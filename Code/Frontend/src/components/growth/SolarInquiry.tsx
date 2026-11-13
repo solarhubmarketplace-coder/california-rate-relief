@@ -51,6 +51,7 @@ import {
   isBillBandId,
   needsUnitQuestion,
   residentialLeadErrors,
+  composeAddress,
   type LeadErrorCode,
   type LeadField,
 } from '@/lib/lead-contract';
@@ -233,10 +234,18 @@ export function SolarInquiry({
 
   useEffect(() => {
     captureFirstTouch();
+    // The calculator's California ZIP pre-fills the home's ZIP when that field
+    // is still empty (review R2); ProjectAddressFields then checks it and fills City.
+    const prefillZip = (context: CalculatorContext) => {
+      if (/^\d{5}$/.test(context.zip || '')) {
+        setAddress((current) => (current.zip ? current : { ...current, zip: context.zip, zipKnown: null }));
+      }
+    };
     const context = readCalculatorContext();
     if (context) {
       prefillRef.current = 'calculator';
       setInputs(context);
+      prefillZip(context);
       const band = bandFromCalculatorRef.current(context);
       if (band) setBillChoice(band);
     }
@@ -245,6 +254,7 @@ export function SolarInquiry({
         const detail = (event as CustomEvent<CalculatorContext>).detail;
         prefillRef.current = 'calculator';
         setInputs(detail);
+        prefillZip(detail);
         const band = bandFromCalculatorRef.current(detail);
         if (band) setBillChoice(band);
       }
@@ -493,6 +503,9 @@ export function SolarInquiry({
             email: contact.email.trim(),
             // The API composes "street, City, CA ZIP" from the parts.
             street: address.street.trim(),
+            // Ignored by the contract API; lets the previous API accept the lead
+            // if the forms go live before it during the deploy (review R1).
+            address: composeAddress(address.street, address.city, address.zip),
           },
           qualification_data: {
             lead_contract_version: LEAD_CONTRACT_VERSION,
@@ -685,7 +698,7 @@ export function SolarInquiry({
                 onChange={chooseBill}
               />
               {underGate ? (
-                <LeadGateNotice kind="under_250" className="md:col-span-2" onChangeAnswer={() => setBillChoice('')} />
+                <LeadGateNotice kind="under_250" className="md:col-span-2" onChangeAnswer={() => setBillChoice('')} returnFocusTo={() => fieldRefs.current.bill} />
               ) : (
                 <p className="text-xs text-muted-foreground md:col-span-2">
                   No contact details on this step. Nothing is sent until you
@@ -744,7 +757,7 @@ export function SolarInquiry({
                   onChange={(id) => chooseHomeowner(id as 'yes' | 'no')}
                 />
                 {renter ? (
-                  <LeadGateNotice kind="renter" className="md:col-span-2" onChangeAnswer={() => setHomeowner('')} />
+                  <LeadGateNotice kind="renter" className="md:col-span-2" onChangeAnswer={() => setHomeowner('')} returnFocusTo={() => fieldRefs.current.homeowner} />
                 ) : (
                   <>
                     <ProjectAddressFields

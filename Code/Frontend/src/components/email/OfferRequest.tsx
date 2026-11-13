@@ -14,6 +14,8 @@ import {
   CONSENT_TEXT,
   LEAD_CONTRACT_VERSION,
   UNDER_250_ID,
+  UNIT_DECLINED_MESSAGE,
+  composeAddress,
   fieldForErrorCode,
   firstLeadError,
   needsUnitQuestion,
@@ -36,8 +38,9 @@ type FieldKey = LeadField | 'utility';
  * The /email/bill-review and /email/quote-review request form, on the
  * residential lead contract (12 Nov 2026): homeowner Yes/No (no default), the
  * four bill buttons (required), the shared project address, utility, contact
- * details, an optional question and the consent checkbox. Under $250, a renter
- * or a declined unit shows the notice and disables Send.
+ * details, an optional question and the consent checkbox. Under $250 or a
+ * renter shows the notice and hides the rest of the form (nothing is collected);
+ * a declined unit keeps the fields and disables Send with the reason next to it.
  */
 export function OfferRequest({ offer }: { offer: 'bill-review' | 'quote-review' }) {
   // v2: a frozen attempt saved by the old form has the old payload shape.
@@ -119,6 +122,9 @@ export function OfferRequest({ offer }: { offer: 'bill-review' | 'quote-review' 
           name: contact.name.trim(), phone: toE164Us(contact.phone) ?? contact.phone, email: contact.email.trim(),
           // The API composes "street, City, CA ZIP" from the parts.
           street: address.street.trim(),
+          // Ignored by the contract API; lets the previous API accept the lead
+          // if the forms go live before it during the deploy (review R1).
+          address: composeAddress(address.street, address.city, address.zip),
         },
         qualification_data: {
           lead_contract_version: LEAD_CONTRACT_VERSION,
@@ -182,6 +188,7 @@ export function OfferRequest({ offer }: { offer: 'bill-review' | 'quote-review' 
   const renter = homeowner === 'no';
   const under = billChoice === UNDER_250_ID;
   const unitDeclined = address.unitAnswer === 'no' && needsUnitQuestion(address.street, address.placesUnitFlag);
+  const screenedOut = !pending && (renter || under);
   const blocked = !pending && (renter || under || unitDeclined);
 
   return <section id="request" className="scroll-mt-8 rounded-3xl border border-emerald-200 bg-white p-6 shadow-sm md:p-9">
@@ -206,7 +213,7 @@ export function OfferRequest({ offer }: { offer: 'bill-review' | 'quote-review' 
               if (id === 'no') trackGate('gate_renter');
             }}
           />
-          {renter && <LeadGateNotice kind="renter" className="sm:col-span-2" onChangeAnswer={() => setHomeowner('')} />}
+          {renter && <LeadGateNotice kind="renter" className="sm:col-span-2" onChangeAnswer={() => setHomeowner('')} returnFocusTo={() => fieldRefs.current.homeowner} />}
           <LeadChoiceButtons
             className="sm:col-span-2"
             legend="Average monthly electric bill"
@@ -222,7 +229,9 @@ export function OfferRequest({ offer }: { offer: 'bill-review' | 'quote-review' 
               if (id === UNDER_250_ID) trackGate('gate_under_250');
             }}
           />
-          {under && <LeadGateNotice kind="under_250" className="sm:col-span-2" onChangeAnswer={() => setBillChoice('')} />}
+          {under && <LeadGateNotice kind="under_250" className="sm:col-span-2" onChangeAnswer={() => setBillChoice('')} returnFocusTo={() => fieldRefs.current.bill} />}
+          {/* Screened out (renter or under $250): no address or contact fields, nothing collected (review UX-1). */}
+          {!screenedOut && <>
           <div className="grid gap-4 sm:col-span-2 sm:grid-cols-2">
             <ProjectAddressFields
               value={address}
@@ -271,10 +280,14 @@ export function OfferRequest({ offer }: { offer: 'bill-review' | 'quote-review' 
               onChange={(e) => { setConsent(e.target.checked); clearFieldError('consent'); }}/><span>{CONSENT_TEXT} <a href="/privacy" className="underline">Privacy policy</a>.</span></label>
             {errorText('consent')}
           </div>
+          </>}
         </fieldset>
         {error && <p role="alert" className="mt-4 text-sm text-red-800">{error}</p>}
-        <button disabled={busy || blocked} className="mt-6 w-full rounded-xl bg-emerald-800 px-5 py-4 font-semibold text-white hover:bg-emerald-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 disabled:opacity-60">{busy ? 'Saving…' : pending ? 'Retry saved request' : 'Send my question'}</button>
+        {!screenedOut && <>
+        {unitDeclined && !pending && <p id="offer-blocked" className="mt-4 text-sm font-medium text-red-800">{UNIT_DECLINED_MESSAGE}</p>}
+        <button disabled={busy || blocked} aria-describedby={unitDeclined && !pending ? 'offer-blocked' : undefined} className="mt-6 w-full rounded-xl bg-emerald-800 px-5 py-4 font-semibold text-white hover:bg-emerald-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-emerald-700 disabled:opacity-60">{busy ? 'Saving…' : pending ? 'Retry saved request' : 'Send my question'}</button>
         <p className="mt-3 text-xs leading-5 text-slate-600">No purchase required. This request does not guarantee a quote, savings or program eligibility. Please leave utility account numbers and financial documents out of this form.</p>
+        </>}
       </form>}
   </section>;
 }

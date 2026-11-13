@@ -46,6 +46,7 @@ import {
   BILL_CHOICES,
   CONSENT_TEXT,
   LEAD_CONTRACT_VERSION,
+  RENTER_COMMERCIAL_HINT,
   RENTER_COMMERCIAL_LINK,
   RENTER_MESSAGE,
   UNDER_250_ID,
@@ -57,6 +58,7 @@ import {
   isBillBandId,
   needsUnitQuestion,
   residentialLeadErrors,
+  composeAddress,
   type LeadErrorCode,
   type LeadField,
 } from '@/lib/lead-contract';
@@ -166,6 +168,8 @@ export function QualificationWizard({
   const prefillRef = useRef<'none' | 'quick_check'>('none');
   const stepHeadingRef = useRef<HTMLHeadingElement | null>(null);
   const focusHeadingRef = useRef(false);
+  // The gate screens replace the whole card, so focus moves to their heading.
+  const gateHeadingRef = useRef<HTMLHeadingElement | null>(null);
   const [address, setAddress] = useState<ProjectAddressState>(EMPTY_PROJECT_ADDRESS);
   const trackGate = useLeadGates('qualification_wizard');
 
@@ -308,11 +312,18 @@ export function QualificationWizard({
   }, [quickStartTargetId]);
 
   // After a handoff, move keyboard/screen-reader focus to the current question.
+  // A gate screen takes focus on its heading (the clicked button unmounts), and
+  // leaving it ("Change my answer", "Start Over") returns focus to the question,
+  // even when the step number itself does not change (2 -> 2).
   useEffect(() => {
+    if (isUnderMinimum || isDisqualified) {
+      gateHeadingRef.current?.focus({ preventScroll: true });
+      return;
+    }
     if (!focusHeadingRef.current) return;
     focusHeadingRef.current = false;
     stepHeadingRef.current?.focus({ preventScroll: true });
-  }, [currentStep]);
+  }, [currentStep, isUnderMinimum, isDisqualified]);
 
   const clearFieldError = (field: ContactField) =>
     setFieldErrors((current) => {
@@ -420,6 +431,9 @@ export function QualificationWizard({
           email: formData.email.trim(),
           // The API composes "street, City, CA ZIP" from the parts.
           street: address.street.trim(),
+          // Ignored by the contract API; lets the previous API accept the lead
+          // if the forms go live before it during the deploy (review R1).
+          address: composeAddress(address.street, address.city, address.zip),
         },
         qualification_data: {
           lead_contract_version: LEAD_CONTRACT_VERSION,
@@ -522,12 +536,11 @@ export function QualificationWizard({
               <div className='w-16 h-16 bg-status-warning/10 rounded-full flex items-center justify-center mx-auto mb-6'>
                 <XCircle className='h-8 w-8 text-status-warning' />
               </div>
-              <h2 className='text-3xl md:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
+              <h2 ref={gateHeadingRef} tabIndex={-1} className='text-3xl md:text-4xl font-extrabold text-foreground mb-4 tracking-tight outline-none'>
                 Residential assessment requires property ownership
               </h2>
               <p className='text-muted-foreground mb-6'>
-                {RENTER_MESSAGE} If you control a business or commercial
-                property, use the commercial assessment instead.
+                {RENTER_MESSAGE} {RENTER_COMMERCIAL_HINT}
               </p>
               <div className='bg-primary/5 rounded-lg p-4 mb-6 border border-primary/20'>
                 <p className='text-sm text-primary'>
@@ -538,6 +551,7 @@ export function QualificationWizard({
               </div>
               <Button
                 onClick={() => {
+                  focusHeadingRef.current = true;
                   setIsDisqualified(false);
                   setCurrentStep(1);
                   setFormData(initialFormData);
@@ -565,7 +579,7 @@ export function QualificationWizard({
               <div className='w-16 h-16 bg-status-warning/10 rounded-full flex items-center justify-center mx-auto mb-6'>
                 <XCircle className='h-8 w-8 text-status-warning' />
               </div>
-              <h2 className='text-3xl md:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
+              <h2 ref={gateHeadingRef} tabIndex={-1} className='text-3xl md:text-4xl font-extrabold text-foreground mb-4 tracking-tight outline-none'>
                 Referrals start at a $250 monthly bill
               </h2>
               <p className='text-muted-foreground mb-6'>{UNDER_250_MESSAGE}</p>
@@ -578,6 +592,7 @@ export function QualificationWizard({
               </div>
               <Button
                 onClick={() => {
+                  focusHeadingRef.current = true;
                   setIsUnderMinimum(false);
                   setFormData((prev) => ({ ...prev, billChoice: '' }));
                   setCurrentStep(2);
