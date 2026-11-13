@@ -78,7 +78,11 @@ axiosClient.interceptors.response.use(
             // Server responded with error status
             const message = error.response.data?.message || 'An error occurred';
             console.error('API Error:', message);
-            return Promise.reject(Object.assign(new Error(message), { statusCode: error.response.status }));
+            // The intake API names the failing rule in error.code (for example
+            // 'zip_not_ca'), so a form can show the message on the right field.
+            const detail = error.response.data?.error;
+            const code = detail && typeof detail === 'object' && typeof detail.code === 'string' ? detail.code : undefined;
+            return Promise.reject(Object.assign(new Error(message), { statusCode: error.response.status, code }));
         } else if (error.request) {
             // Request was made but no response received
             console.error('Network Error: No response received');
