@@ -19,9 +19,23 @@ export type PlacesStatus =
 
 /** Minimal window shape for the Maps script this hook injects. */
 type MapsWindow = Window & {
-  google?: { maps?: { places?: unknown } };
+  google?: { maps?: { places?: { AutocompleteSessionToken?: new () => unknown } } };
   gm_authFailure?: () => void;
 };
+
+/**
+ * A Places session token (review R6): the keystrokes of one search and the
+ * Place Details call that ends it are billed as one session instead of one
+ * Autocomplete request per keystroke plus a Details request.
+ */
+function newSessionToken(): unknown {
+  try {
+    const Token = (window as MapsWindow).google?.maps?.places?.AutocompleteSessionToken;
+    return Token ? new Token() : undefined;
+  } catch {
+    return undefined;
+  }
+}
 
 const PLACES_SCRIPT_ID = 'google-maps-places';
 const PLACES_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY;
@@ -79,6 +93,7 @@ export type PlaceSelection = PlaceAddress | { error: PlaceAddressError | 'detail
 export function usePlacesAddress(formKind: string) {
   const [status, setStatus] = useState<PlacesStatus>('idle');
   const statusRef = useRef<PlacesStatus>('idle');
+  const tokenRef = useRef<unknown>(undefined);
   const update = useCallback((next: PlacesStatus) => {
     statusRef.current = next;
     setStatus(next);
@@ -91,7 +106,15 @@ export function usePlacesAddress(formKind: string) {
     clearSuggestions,
     init,
   } = usePlacesAutocomplete({
-    requestOptions: { componentRestrictions: { country: 'us' }, types: ['address'] },
+    // The getter is read on every prediction request (the library spreads these
+    // options), so the current session token always goes with it.
+    requestOptions: {
+      componentRestrictions: { country: 'us' },
+      types: ['address'],
+      get sessionToken() {
+        return tokenRef.current as never;
+      },
+    },
     debounce: 300,
     initOnMount: false,
   });
@@ -138,7 +161,10 @@ export function usePlacesAddress(formKind: string) {
   }, [status, init, clearSuggestions, update]);
 
   useEffect(() => {
-    if (ready && statusRef.current === 'loading') update('active');
+    if (ready && statusRef.current === 'loading') {
+      tokenRef.current = newSessionToken();
+      update('active');
+    }
   }, [ready, update]);
 
   // A key without the Places API enabled answers every request with
@@ -166,7 +192,14 @@ export function usePlacesAddress(formKind: string) {
       setValue(suggestion.description, false);
       clearSuggestions();
       try {
-        const details = await getDetails({ placeId: suggestion.place_id, fields: ['address_components'] });
+        const sessionToken = tokenRef.current;
+        // The Details call closes the session; the next search starts a new one.
+        tokenRef.current = newSessionToken();
+        const details = await getDetails({
+          placeId: suggestion.place_id,
+          fields: ['address_components'],
+          ...(sessionToken ? { sessionToken: sessionToken as never } : {}),
+        });
         const components = typeof details === 'string'
           ? undefined
           : (details as unknown as { address_components?: AddressComponent[] }).address_components;

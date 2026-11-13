@@ -51,6 +51,12 @@ export function ProjectAddressFields({
   onChangeRef.current = onChange;
   const [selectionError, setSelectionError] = useState('');
   const [listOpen, setListOpen] = useState(false);
+  // Highlighted option in the suggestion list (-1 = none). The last option is
+  // always "My address isn't listed", so the list is never a dead end.
+  const [activeIndex, setActiveIndex] = useState(-1);
+  const blurTimer = useRef<number | undefined>(undefined);
+  const lastCheckedZip = useRef('');
+  useEffect(() => () => window.clearTimeout(blurTimer.current), []);
 
   // valueRef is updated before onChange so two quick patches (a keystroke, then
   // the ZIP lookup) never merge onto a stale copy.
@@ -74,6 +80,7 @@ export function ProjectAddressFields({
   }, [places.status]);
 
   const checkZip = async (zip: string) => {
+    lastCheckedZip.current = zip;
     if (!/^\d{5}$/.test(zip)) {
       set({ zipKnown: null });
       return;
@@ -85,8 +92,27 @@ export function ProjectAddressFields({
     set(patch);
   };
 
+  // A ZIP filled from outside (the calculator's ZIP, review R2) is checked the
+  // same way as a typed one, so City fills and zipKnown is set.
+  const checkZipRef = useRef(checkZip);
+  checkZipRef.current = checkZip;
+  useEffect(() => {
+    if (/^\d{5}$/.test(value.zip) && value.zipKnown === null && lastCheckedZip.current !== value.zip) {
+      void checkZipRef.current(value.zip);
+    }
+  }, [value.zip, value.zipKnown]);
+
+  const chooseManual = () => {
+    places.chooseManual();
+    setListOpen(false);
+    setActiveIndex(-1);
+    setSelectionError('');
+    onClearError?.('street');
+  };
+
   const pick = async (suggestion: PlacesSuggestion) => {
     setListOpen(false);
+    setActiveIndex(-1);
     const result = await places.select(suggestion);
     if ('error' in result) {
       setSelectionError(
@@ -116,6 +142,9 @@ export function ProjectAddressFields({
   };
 
   const selectionRequired = placesSelectionRequired(places.status, HAS_PLACES_KEY);
+  const listShown = places.status === 'active' && listOpen && places.suggestions.length > 0;
+  const optionCount = places.suggestions.length + 1;
+  const optionId = (index: number) => `${uid}-option-${index}`;
   const showUnit = needsUnitQuestion(value.street, value.placesUnitFlag);
   const streetError = errors.street || selectionError;
   const errorId = (field: AddressField) => `${uid}-${field}-error`;
@@ -148,9 +177,10 @@ export function ProjectAddressFields({
           placeholder="123 Main St"
           autoComplete={places.status === 'active' ? 'off' : 'address-line1'}
           role={places.status === 'active' ? 'combobox' : undefined}
-          aria-expanded={places.status === 'active' ? listOpen && places.suggestions.length > 0 : undefined}
+          aria-expanded={places.status === 'active' ? listShown : undefined}
           aria-controls={places.status === 'active' ? `${uid}-suggestions` : undefined}
           aria-autocomplete={places.status === 'active' ? 'list' : undefined}
+          aria-activedescendant={listShown && activeIndex >= 0 ? optionId(activeIndex) : undefined}
           className={inputClass('street')}
           value={value.street}
           aria-invalid={invalid('street') || undefined}
@@ -172,28 +202,75 @@ export function ProjectAddressFields({
             if (!stillUnit) onClearError?.('unit');
             places.type(street);
             setListOpen(true);
+            setActiveIndex(-1);
+          }}
+          onBlur={() => {
+            // Close after a tap elsewhere (phones have no Escape key). The delay
+            // lets a tap on an option land first; options also keep focus here.
+            window.clearTimeout(blurTimer.current);
+            blurTimer.current = window.setTimeout(() => setListOpen(false), 150);
           }}
           onKeyDown={(e) => {
-            if (e.key === 'Escape') setListOpen(false);
+            if (e.key === 'Escape') {
+              setListOpen(false);
+              setActiveIndex(-1);
+              return;
+            }
+            if (!listShown) {
+              if (e.key === 'ArrowDown' && places.status === 'active' && places.suggestions.length > 0) {
+                e.preventDefault();
+                setListOpen(true);
+                setActiveIndex(0);
+              }
+              return;
+            }
+            if (e.key === 'ArrowDown') {
+              e.preventDefault();
+              setActiveIndex((i) => (i + 1) % optionCount);
+            } else if (e.key === 'ArrowUp') {
+              e.preventDefault();
+              setActiveIndex((i) => (i <= 0 ? optionCount - 1 : i - 1));
+            } else if (e.key === 'Enter' && activeIndex >= 0) {
+              e.preventDefault();
+              if (activeIndex < places.suggestions.length) void pick(places.suggestions[activeIndex]);
+              else chooseManual();
+            }
           }}
         />
-        {listOpen && places.suggestions.length > 0 && (
+        {listShown && (
           <ul
             id={`${uid}-suggestions`}
             role="listbox"
+            aria-label="Address suggestions"
             className="absolute z-50 mt-1 max-h-60 w-full overflow-y-auto rounded-lg border border-border bg-white shadow-lg"
           >
-            {places.suggestions.map((suggestion) => (
-              <li key={suggestion.place_id} role="option" aria-selected={false}>
-                <button
-                  type="button"
-                  onClick={() => void pick(suggestion)}
-                  className="min-h-[44px] w-full border-b border-border px-4 py-3 text-left text-sm text-foreground last:border-b-0 hover:bg-muted"
-                >
-                  {suggestion.description}
-                </button>
+            {places.suggestions.map((suggestion, index) => (
+              <li
+                key={suggestion.place_id}
+                id={optionId(index)}
+                role="option"
+                aria-selected={index === activeIndex}
+                onMouseDown={(e) => e.preventDefault()}
+                onClick={() => void pick(suggestion)}
+                className={`flex min-h-[44px] cursor-pointer items-center border-b border-border px-4 py-3 text-left text-sm text-foreground hover:bg-muted ${
+                  index === activeIndex ? 'bg-muted' : ''
+                }`}
+              >
+                {suggestion.description}
               </li>
             ))}
+            <li
+              id={optionId(places.suggestions.length)}
+              role="option"
+              aria-selected={activeIndex === places.suggestions.length}
+              onMouseDown={(e) => e.preventDefault()}
+              onClick={chooseManual}
+              className={`flex min-h-[44px] cursor-pointer items-center px-4 py-3 text-left text-sm font-semibold text-primary underline hover:bg-muted ${
+                activeIndex === places.suggestions.length ? 'bg-muted' : ''
+              }`}
+            >
+              My address isn&apos;t listed. Enter it by hand
+            </li>
           </ul>
         )}
         {message('street', streetError)}
@@ -207,11 +284,7 @@ export function ProjectAddressFields({
         {selectionRequired && !value.placeSelected && (
           <button
             type="button"
-            onClick={() => {
-              places.chooseManual();
-              setSelectionError('');
-              onClearError?.('street');
-            }}
+            onClick={chooseManual}
             className="mt-1 inline-flex min-h-[44px] items-center text-sm font-semibold text-primary underline"
           >
             Enter my address by hand
