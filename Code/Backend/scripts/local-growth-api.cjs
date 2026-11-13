@@ -17,10 +17,12 @@ const express = require('express');
     res.set('Access-Control-Allow-Origin', 'http://localhost:3100');
     res.set('Access-Control-Allow-Headers', 'Content-Type');
     if (req.method === 'OPTIONS') return res.sendStatus(204);
-    res.apiResponse = (status, message, data) =>
+    // Same shape as src/app.js, including `error` (it carries the contract's
+    // error.code, which the forms use to show a 400 next to the right field).
+    res.apiResponse = (status, message, data = null, error = null) =>
       res
         .status(status)
-        .json({ message, data, timestamp: new Date().toISOString() });
+        .json({ message, data, error, timestamp: new Date().toISOString() });
     next();
   });
   app.post('/api/intake', (req, res, next) => {
