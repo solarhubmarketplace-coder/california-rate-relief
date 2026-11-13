@@ -17,7 +17,6 @@ import {
   utilityLabelFor,
   validateQuickCheck,
   withoutQuickStartParams,
-  wizardBillBracket,
   wizardUtilityFor,
   type QuickStart,
 } from './quick-start.ts';
@@ -28,7 +27,7 @@ const sample = (over: Partial<QuickStart> = {}): QuickStart => ({
   targetId: 'solar-inquiry',
   utility: 'pge',
   utilityOther: '',
-  monthlyBill: '250',
+  billChoice: '250_349',
   topic: 'PG&E bill review',
   fromPath: '/blog/why-is-my-pge-bill-so-high',
   issuedAt: NOW,
@@ -68,29 +67,30 @@ test('pages may pass a utility code, a label or a full name', () => {
   assert.equal(utilityLabelFor('other'), 'Other / not sure');
 });
 
-test('the quick check needs a utility and a bill; the other-name is optional', () => {
-  assert.deepEqual(validateQuickCheck({ utility: '', bill: '' }), {
+test('the quick check needs a utility and a bill band; the other-name is optional', () => {
+  assert.deepEqual(validateQuickCheck({ utility: '', billChoice: null }), {
     ok: false,
     invalid: ['utility', 'bill'],
   });
-  assert.deepEqual(validateQuickCheck({ utility: 'pge', bill: '0' }), { ok: false, invalid: ['bill'] });
-  assert.deepEqual(validateQuickCheck({ utility: 'other', utilityOther: '', bill: '$220' }), {
+  assert.deepEqual(validateQuickCheck({ utility: 'pge', billChoice: 'under_250' }), { ok: false, invalid: ['bill'] });
+  assert.deepEqual(validateQuickCheck({ utility: 'pge', billChoice: '300' }), { ok: false, invalid: ['bill'] });
+  assert.deepEqual(validateQuickCheck({ utility: 'other', utilityOther: '', billChoice: '350_499' }), {
     ok: true,
     utility: 'other',
     utilityOther: '',
-    monthlyBill: '220',
+    billChoice: '350_499',
   });
   // A name typed before switching away from "other" is not carried.
-  assert.deepEqual(validateQuickCheck({ utility: 'sce', utilityOther: 'stale', bill: '300' }), {
+  assert.deepEqual(validateQuickCheck({ utility: 'sce', utilityOther: 'stale', billChoice: '500_plus' }), {
     ok: true,
     utility: 'sce',
     utilityOther: '',
-    monthlyBill: '300',
+    billChoice: '500_plus',
   });
 });
 
 test('the stored calculator context is complete, so no calculator input goes uncontrolled', () => {
-  const merged = calculatorContextWithQuickCheck(null, { utility: 'sce', monthlyBill: '300' });
+  const merged = calculatorContextWithQuickCheck(null, { utility: 'sce' });
   assert.deepEqual(merged, {
     zip: '',
     annualKwh: '',
@@ -99,27 +99,23 @@ test('the stored calculator context is complete, so no calculator input goes unc
     batteryPrice: '',
     annualBillAfter: '',
     utility: 'sce',
-    monthlyBill: '300',
+    monthlyBill: '',
   });
   const kept = calculatorContextWithQuickCheck(
     { utility: 'pge', zip: '93701', monthlyBill: '100', solarPrice: '25000' },
-    { utility: 'sce', monthlyBill: '300' },
+    { utility: 'sce' },
   );
   assert.equal(kept.zip, '93701');
   assert.equal(kept.solarPrice, '25000');
   assert.equal(kept.utility, 'sce');
-  assert.equal(kept.monthlyBill, '300');
+  // The quick check never writes a bill figure; a calculator's own entry stays.
+  assert.equal(kept.monthlyBill, '100');
 });
 
-test('wizard brackets match the wizard tiles and leave sub-$150 bills unanswered', () => {
-  assert.equal(wizardBillBracket(90), null);
-  assert.equal(wizardBillBracket(150), '150-200');
-  assert.equal(wizardBillBracket(200), '150-200');
-  assert.equal(wizardBillBracket(250), '201-350');
-  assert.equal(wizardBillBracket(350), '201-350');
-  assert.equal(wizardBillBracket(500), '351-500');
-  assert.equal(wizardBillBracket(501), '500+');
-  assert.equal(billBracketParam(90), 'under-150');
+test('the analytics bill label is the band id or under_250', () => {
+  assert.equal(billBracketParam('350_499'), '350_499');
+  assert.equal(billBracketParam('under_250'), 'under_250');
+  assert.equal(billBracketParam(null), 'none');
 });
 
 test('wizard utility answers match what a visitor would click and type', () => {
@@ -184,7 +180,7 @@ test('a stored handoff is used once and only while fresh', () => {
   assert.equal(parseQuickStart(sample(), NOW + QUICK_START_TTL_MS + 1), null);
   assert.equal(parseQuickStart({ ...sample(), source: 'other' }, NOW), null);
   assert.equal(parseQuickStart({ ...sample(), utility: 'nope' }, NOW), null);
-  assert.equal(parseQuickStart({ ...sample(), monthlyBill: '0' }, NOW), null);
+  assert.equal(parseQuickStart({ ...sample(), billChoice: 'bogus' }, NOW), null);
   assert.equal(parseQuickStart(null, NOW), null);
   // utilityOther only survives with utility 'other'.
   assert.equal(parseQuickStart(sample({ utilityOther: 'x' }), NOW)?.utilityOther, '');
@@ -193,13 +189,31 @@ test('a stored handoff is used once and only while fresh', () => {
 test('the URL fallback round-trips and cleans up after itself', () => {
   const value = sample({ targetId: 'qualify', utility: 'other', utilityOther: 'Anaheim Public Utilities' });
   const href = quickStartHref('/#qualify', value);
-  assert.match(href, /^\/\?qc_target=qualify&qc_utility=other&qc_bill=250&qc_other=Anaheim\+Public\+Utilities#qualify$/);
+  assert.match(href, /^\/\?qc_target=qualify&qc_utility=other&qc_band=250_349&qc_other=Anaheim\+Public\+Utilities#qualify$/);
   const search = href.slice(href.indexOf('?'), href.indexOf('#'));
   const parsed = quickStartFromSearch(search, 'qualify', NOW);
   assert.equal(parsed?.utility, 'other');
   assert.equal(parsed?.utilityOther, 'Anaheim Public Utilities');
-  assert.equal(parsed?.monthlyBill, '250');
+  assert.equal(parsed?.billChoice, '250_349');
   assert.equal(quickStartFromSearch(search, 'solar-inquiry', NOW), null);
   assert.equal(withoutQuickStartParams(search), '');
   assert.equal(withoutQuickStartParams(`${search}&utm_source=x`), '?utm_source=x');
+});
+
+test('a handoff made before the bill buttons maps its typed bill onto a band', () => {
+  const legacy = { ...sample(), billChoice: undefined, monthlyBill: '300' };
+  assert.equal(parseQuickStart(legacy, NOW)?.billChoice, '250_349');
+  assert.equal(parseQuickStart({ ...legacy, monthlyBill: '600' }, NOW)?.billChoice, '500_plus');
+  // Under $250 (or unusable): still a valid handoff, but the form asks the bill again.
+  const under = parseQuickStart({ ...legacy, monthlyBill: '150' }, NOW);
+  assert.ok(under);
+  assert.equal(under?.billChoice, null);
+  assert.equal(parseQuickStart({ ...legacy, monthlyBill: 'abc' }, NOW)?.billChoice, null);
+});
+
+test('an old qc_bill link still opens the form with a band', () => {
+  assert.equal(quickStartFromSearch('?qc_target=qualify&qc_utility=pge&qc_bill=420', 'qualify', NOW)?.billChoice, '350_499');
+  assert.equal(quickStartFromSearch('?qc_target=qualify&qc_utility=pge&qc_bill=120', 'qualify', NOW)?.billChoice, null);
+  assert.equal(quickStartFromSearch('?qc_target=qualify&qc_utility=pge&qc_band=500_plus', 'qualify', NOW)?.billChoice, '500_plus');
+  assert.equal(withoutQuickStartParams('?qc_band=500_plus&qc_bill=1&x=1'), '?x=1');
 });

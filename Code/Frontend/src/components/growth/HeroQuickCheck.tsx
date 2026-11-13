@@ -13,7 +13,6 @@ import { QUICK_CHECK_COPY as COPY, ctaVariantForPath } from '@/lib/cta-intent';
 import { isCommercialIntentPath } from '@/lib/intake-routing';
 import {
   DEFAULT_QUICK_CHECK_TARGET,
-  QUICK_CHECK_BILL_CHIPS,
   QUICK_START_SOURCE,
   announceQuickStart,
   billBracketParam,
@@ -22,13 +21,16 @@ import {
   quickCheckTargetForm,
   quickStartHref,
   resolveQuickCheckHandoff,
-  sanitizeBillInput,
   storeQuickStart,
   utilityCodeFor,
   validateQuickCheck,
   type QuickCheckField,
   type QuickStart,
 } from '@/lib/quick-start';
+import { BILL_CHOICES, UNDER_250_ID, billChoiceForAmount, isBillBandId } from '@/lib/lead-contract';
+import { useLeadGates } from '@/lib/lead-gates';
+import { LeadChoiceButtons } from './LeadChoiceButtons';
+import { LeadGateNotice } from './LeadGateNotice';
 import { ReferralDisclosure } from '@/components/shared/ReferralDisclosure';
 
 export interface HeroQuickCheckProps {
@@ -47,7 +49,9 @@ export interface HeroQuickCheckProps {
 
 /**
  * Bill-first first step for a page hero. Two answers (utility, average monthly
- * bill), no contact details, nothing sent to the backend. On Continue it hands
+ * bill as a band button), no contact details, nothing sent to the backend.
+ * "Under $250" screens the visitor out here (residential lead contract,
+ * 12 Nov 2026): a notice replaces Continue and nothing is handed on. On Continue it hands
  * the answers to the page's full form (see src/lib/quick-start.ts) and brings
  * the visitor to it: a scroll when the form is on this page, otherwise a
  * navigation to intakeHrefForPath(pathname) carrying the answers.
@@ -70,21 +74,18 @@ export function HeroQuickCheck({
     utility: `${uid}-utility`,
     utilityError: `${uid}-utility-error`,
     other: `${uid}-utility-other`,
-    bill: `${uid}-bill`,
-    billError: `${uid}-bill-error`,
-    chips: `${uid}-chips`,
   };
   const pathname = usePathname() || '/';
   const router = useRouter();
   const [utilityValue, setUtilityValue] = useState<string>(() => utilityCodeFor(utility));
   const [utilityOther, setUtilityOther] = useState('');
-  const [bill, setBill] = useState('');
+  const [billChoice, setBillChoice] = useState('');
   const [invalid, setInvalid] = useState<QuickCheckField[]>([]);
-  const chipUsed = useRef(false);
   const navigating = useRef(false);
   const formRef = useRef<HTMLFormElement | null>(null);
   const utilityRef = useRef<HTMLSelectElement | null>(null);
-  const billRef = useRef<HTMLInputElement | null>(null);
+  const billRef = useRef<HTMLElement | null>(null);
+  const trackGate = useLeadGates('quick_check');
 
   const variant = isCommercialIntentPath(pathname) ? 'commercial' : ctaVariantForPath(pathname);
   const baseParams = () => ({
@@ -101,7 +102,10 @@ export function HeroQuickCheck({
     const saved = readCalculatorContext();
     if (!saved) return;
     if (!utilityCodeFor(utility) && saved.utility) setUtilityValue(saved.utility);
-    if (parseBill(saved.monthlyBill) !== null) setBill(sanitizeBillInput(saved.monthlyBill));
+    // A calculator bill preselects its band; never "Under $250".
+    const amount = parseBill(saved.monthlyBill);
+    const band = amount === null ? null : billChoiceForAmount(amount);
+    if (isBillBandId(band)) setBillChoice(band);
   }, [utility]);
 
   // quick_check_view: the denominator for quick_check_submit.
@@ -126,7 +130,8 @@ export function HeroQuickCheck({
   const onSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     if (navigating.current) return;
-    const result = validateQuickCheck({ utility: utilityValue, utilityOther, bill });
+    if (billChoice === UNDER_250_ID) return; // screened out; the notice is showing
+    const result = validateQuickCheck({ utility: utilityValue, utilityOther, billChoice });
     // Compared with === (not !result.ok): the repo compiles without
     // strictNullChecks, which truthiness narrowing on a union needs.
     if (result.ok === false) {
@@ -145,7 +150,7 @@ export function HeroQuickCheck({
       targetId: handoff.targetId,
       utility: result.utility,
       utilityOther: result.utilityOther,
-      monthlyBill: result.monthlyBill,
+      billChoice: result.billChoice,
       topic: topic || '',
       fromPath: pathname,
       issuedAt: Date.now(),
@@ -161,8 +166,7 @@ export function HeroQuickCheck({
       target_form: quickCheckTargetForm(handoff),
       handoff: handoff.mode,
       utility_provider: result.utility,
-      bill_bracket: billBracketParam(Number(result.monthlyBill)),
-      used_chip: chipUsed.current ? 'yes' : 'no',
+      bill_bracket: billBracketParam(result.billChoice),
     });
 
     // 2. The quick-start signal, addressed to one form.
@@ -258,81 +262,37 @@ export function HeroQuickCheck({
             />
           </div>
         )}
-        <div className="min-w-0">
-          <label htmlFor={ids.bill} className="block text-sm font-medium text-foreground">
-            {COPY.billLabel}
-          </label>
-          <div className="relative">
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute inset-y-0 left-3 mt-1 flex items-center text-base text-muted-foreground"
-            >
-              $
-            </span>
-            <input
-              id={ids.bill}
-              ref={billRef}
-              type="text"
-              inputMode="decimal"
-              autoComplete="off"
-              enterKeyHint="go"
-              value={bill}
-              onChange={(e) => {
-                chipUsed.current = false;
-                setBill(sanitizeBillInput(e.target.value));
-                clear('bill');
-              }}
-              aria-invalid={billInvalid || undefined}
-              aria-describedby={billInvalid ? ids.billError : undefined}
-              className={`${fieldClass(billInvalid)} pl-7`}
-            />
-          </div>
-          {billInvalid && (
-            <p id={ids.billError} className="mt-1 text-sm font-medium text-destructive">
-              {COPY.billError}
-            </p>
-          )}
-        </div>
-
       </div>
 
-      <div role="group" aria-labelledby={ids.chips} className="mt-3">
-        <p id={ids.chips} className="text-xs font-medium text-muted-foreground">
-          {COPY.chipsLabel}
-        </p>
-        <div className="mt-2 flex flex-wrap gap-2">
-          {QUICK_CHECK_BILL_CHIPS.map((amount) => {
-            const selected = bill === String(amount);
-            return (
-              <button
-                key={amount}
-                type="button"
-                aria-pressed={selected}
-                onClick={() => {
-                  setBill(String(amount));
-                  chipUsed.current = true;
-                  clear('bill');
-                }}
-                className={`min-h-[44px] min-w-[64px] rounded-full border px-4 text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring ${
-                  selected
-                    ? 'border-primary bg-primary/10 text-primary'
-                    : 'border-border bg-card text-foreground hover:border-primary/60'
-                }`}
-              >
-                ${amount}
-              </button>
-            );
-          })}
-        </div>
-      </div>
+      <LeadChoiceButtons
+        className="mt-4"
+        legend={COPY.billLabel}
+        name="monthly_bill_band"
+        options={BILL_CHOICES}
+        value={billChoice}
+        columns="grid-cols-2 sm:grid-cols-4"
+        error={billInvalid ? COPY.billError : undefined}
+        firstRef={(node) => {
+          billRef.current = node;
+        }}
+        onChange={(id) => {
+          setBillChoice(id);
+          clear('bill');
+          if (id === UNDER_250_ID) trackGate('gate_under_250');
+        }}
+      />
 
-      <button
-        type="submit"
-        className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:w-auto"
-      >
-        {COPY.action}
-        <ArrowRight className="h-5 w-5" aria-hidden="true" />
-      </button>
+      {billChoice === UNDER_250_ID ? (
+        <LeadGateNotice kind="under_250" className="mt-4" onChangeAnswer={() => setBillChoice('')} />
+      ) : (
+        <button
+          type="submit"
+          className="mt-4 inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-primary px-6 text-base font-semibold text-primary-foreground transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 sm:w-auto"
+        >
+          {COPY.action}
+          <ArrowRight className="h-5 w-5" aria-hidden="true" />
+        </button>
+      )}
       <ReferralDisclosure className="mt-3" />
     </form>
   );

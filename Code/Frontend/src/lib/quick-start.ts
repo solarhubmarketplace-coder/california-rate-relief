@@ -1,15 +1,17 @@
 // =============================================================================
 // quick-start — the handoff from HeroQuickCheck to a page's full intake form.
 //
-// HeroQuickCheck asks two things (utility, average monthly bill) and sends
-// nothing to the backend. It hands the answers on in two ways:
+// HeroQuickCheck asks two things (utility, average monthly bill as a band
+// button, residential lead contract 12 Nov 2026) and sends nothing to the
+// backend. "Under $250" screens the visitor out there and hands nothing on.
+// A band is handed on in two ways:
 //
 //   1. The existing calculator context (./calculator-context.ts):
-//      saveCalculatorContext() stores { utility, monthlyBill, ... } in
-//      sessionStorage and fires 'crr-calculator-context'. Every form and
-//      calculator that already reads that context picks the answers up.
+//      saveCalculatorContext() stores { utility, ... } in sessionStorage and
+//      fires 'crr-calculator-context' (the band is not a typed bill, so the
+//      context's monthlyBill is left as it was).
 //   2. A quick-start signal (this module): { source: 'quick_check', targetId,
-//      utility, utilityOther, monthlyBill, ... }. It tells ONE form — the one
+//      utility, utilityOther, billChoice, ... }. It tells ONE form — the one
 //      whose id is targetId — "the visitor already answered step 1, open at the
 //      next step". On the same page it travels as the window event
 //      QUICK_START_EVENT; across a navigation it is kept in sessionStorage
@@ -22,6 +24,7 @@
 // =============================================================================
 
 import { utilityOptions, type CalculatorContext } from './calculator-context.ts';
+import { UNDER_250_ID, billChoiceForAmount, isBillBandId, type BillBandId, type BillChoiceId } from './lead-contract.ts';
 import {
   COMMERCIAL_ASSESSMENT_PATH,
   COMMERCIAL_FORM_ID,
@@ -37,7 +40,6 @@ export const QUICK_START_SOURCE = 'quick_check';
 export const QUICK_START_TTL_MS = 30 * 60 * 1000;
 /** Same ceiling as the SolarInquiry bill field. */
 export const MAX_MONTHLY_BILL = 100000;
-export const QUICK_CHECK_BILL_CHIPS = [150, 250, 350, 500] as const;
 /** SolarInquiry's default section id. */
 export const DEFAULT_QUICK_CHECK_TARGET = 'solar-inquiry';
 /** The home page wrapper around QualificationWizard. */
@@ -50,8 +52,12 @@ export interface QuickStart {
   utility: UtilityCode;
   /** Free-text utility name; only meaningful when utility === 'other'. */
   utilityOther: string;
-  /** Sanitized decimal string, e.g. '250' or '182.5'. */
-  monthlyBill: string;
+  /**
+   * The bill band the visitor chose (residential lead contract, 12 Nov 2026).
+   * null for an older handoff whose typed bill was under $250 or unusable:
+   * the receiving form then opens at the bill question.
+   */
+  billChoice: BillBandId | null;
   topic: string;
   fromPath: string;
   issuedAt: number;
@@ -130,37 +136,42 @@ export function formatBill(value: number | string): string {
 
 export type QuickCheckField = 'utility' | 'bill';
 export type QuickCheckResult =
-  | { ok: true; utility: UtilityCode; utilityOther: string; monthlyBill: string }
+  | { ok: true; utility: UtilityCode; utilityOther: string; billChoice: BillBandId }
   | { ok: false; invalid: QuickCheckField[] };
 
 /**
- * The quick check needs a utility and a bill. "Other / not sure" is a complete
- * answer on its own: the name box is optional, because a visitor who is not
- * sure cannot fill it and the backend already records the ZIP-derived utility
- * next to the visitor's answer.
+ * The quick check needs a utility and a bill band. "Other / not sure" is a
+ * complete answer on its own: the name box is optional, because a visitor who
+ * is not sure cannot fill it and the backend already records the ZIP-derived
+ * utility next to the visitor's answer. "Under $250" is not a band: the quick
+ * check screens it out before it gets here.
  */
 export function validateQuickCheck(input: {
   utility: string;
   utilityOther?: string;
-  bill: string;
+  billChoice: string | null;
 }): QuickCheckResult {
   const invalid: QuickCheckField[] = [];
   if (!isUtilityCode(input.utility)) invalid.push('utility');
-  if (parseBill(input.bill) === null) invalid.push('bill');
+  if (!isBillBandId(input.billChoice)) invalid.push('bill');
   if (invalid.length) return { ok: false, invalid };
   return {
     ok: true,
     utility: input.utility as UtilityCode,
     utilityOther:
       input.utility === 'other' ? String(input.utilityOther ?? '').trim().slice(0, 120) : '',
-    monthlyBill: sanitizeBillInput(input.bill),
+    billChoice: input.billChoice as BillBandId,
   };
 }
 
-/** The calculator context to store: the new answers over whatever was there. */
+/**
+ * The calculator context to store: the utility over whatever was there. The
+ * quick check knows only a bill band, so it no longer writes a bill figure
+ * into the calculator context (a band midpoint is not a bill anyone typed).
+ */
 export function calculatorContextWithQuickCheck(
   existing: CalculatorContext | null,
-  answers: { utility: UtilityCode; monthlyBill: string },
+  answers: { utility: UtilityCode },
 ): CalculatorContext {
   // Every optional key is present as a string so a calculator that reads this
   // context never renders an uncontrolled input.
@@ -172,30 +183,15 @@ export function calculatorContextWithQuickCheck(
     batteryPrice: existing?.batteryPrice ?? '',
     annualBillAfter: existing?.annualBillAfter ?? '',
     utility: answers.utility,
-    monthlyBill: answers.monthlyBill,
+    monthlyBill: existing?.monthlyBill ?? '',
   };
 }
 
 // --- Home wizard mapping ------------------------------------------------------
 
-export type WizardBillBracket = '150-200' | '201-350' | '351-500' | '500+';
-
-/**
- * The QualificationWizard bracket a bill falls in. Below $150 there is no
- * bracket (the wizard offers none), so the wizard asks the visitor to choose
- * rather than recording a range they did not give.
- */
-export function wizardBillBracket(amount: number): WizardBillBracket | null {
-  if (!Number.isFinite(amount) || amount < 150) return null;
-  if (amount <= 200) return '150-200';
-  if (amount <= 350) return '201-350';
-  if (amount <= 500) return '351-500';
-  return '500+';
-}
-
-/** Coarse bill label for analytics; never the exact figure. */
-export function billBracketParam(amount: number): string {
-  return wizardBillBracket(amount) ?? 'under-150';
+/** Bill label for analytics: the band id or 'under_250'; never an exact figure. */
+export function billBracketParam(choice: BillChoiceId | null): string {
+  return choice ?? 'none';
 }
 
 const WIZARD_UTILITY_TILES = ['sce', 'pge', 'sdge', 'mvu', 'ladwp'] as const;
@@ -266,7 +262,15 @@ export function parseQuickStart(value: unknown, now: number): QuickStart | null 
   if (v.source !== QUICK_START_SOURCE) return null;
   if (typeof v.targetId !== 'string' || !v.targetId) return null;
   if (!isUtilityCode(v.utility)) return null;
-  if (typeof v.monthlyBill !== 'string' || parseBill(v.monthlyBill) === null) return null;
+  // A band, or (handoffs and links made before 12 Nov 2026) a typed bill that
+  // maps onto one; under $250 or unusable -> null, so the form asks again.
+  let billChoice: BillBandId | null = null;
+  if (isBillBandId(v.billChoice)) billChoice = v.billChoice;
+  else if (typeof v.monthlyBill === 'string') {
+    const amount = parseBill(v.monthlyBill);
+    const mapped = amount === null ? null : billChoiceForAmount(amount);
+    billChoice = mapped && mapped !== UNDER_250_ID ? mapped : null;
+  } else if (v.billChoice !== null && v.billChoice !== undefined && v.billChoice !== UNDER_250_ID) return null;
   const issuedAt = Number(v.issuedAt);
   if (!Number.isFinite(issuedAt) || now - issuedAt > QUICK_START_TTL_MS || issuedAt - now > 60_000)
     return null;
@@ -276,7 +280,7 @@ export function parseQuickStart(value: unknown, now: number): QuickStart | null 
     utility: v.utility,
     utilityOther:
       v.utility === 'other' && typeof v.utilityOther === 'string' ? v.utilityOther.trim().slice(0, 120) : '',
-    monthlyBill: sanitizeBillInput(v.monthlyBill),
+    billChoice,
     topic: typeof v.topic === 'string' ? v.topic.slice(0, 160) : '',
     fromPath: typeof v.fromPath === 'string' ? v.fromPath.slice(0, 300) : '',
     issuedAt,
@@ -287,6 +291,8 @@ const PARAMS = {
   target: 'qc_target',
   utility: 'qc_utility',
   other: 'qc_other',
+  band: 'qc_band',
+  /** Before 12 Nov 2026 links carried the typed bill; still read. */
   bill: 'qc_bill',
 } as const;
 
@@ -298,7 +304,7 @@ export function quickStartHref(href: string, value: QuickStart): string {
   const params = new URLSearchParams();
   params.set(PARAMS.target, value.targetId);
   params.set(PARAMS.utility, value.utility);
-  params.set(PARAMS.bill, value.monthlyBill);
+  if (value.billChoice) params.set(PARAMS.band, value.billChoice);
   if (value.utilityOther) params.set(PARAMS.other, value.utilityOther);
   return `${base}${base.includes('?') ? '&' : '?'}${params.toString()}${hash}`;
 }
@@ -313,7 +319,8 @@ export function quickStartFromSearch(search: string, targetId: string, now: numb
       targetId,
       utility: params.get(PARAMS.utility),
       utilityOther: params.get(PARAMS.other) ?? '',
-      monthlyBill: params.get(PARAMS.bill) ?? '',
+      billChoice: params.get(PARAMS.band),
+      monthlyBill: params.get(PARAMS.band) ? undefined : params.get(PARAMS.bill) ?? undefined,
       topic: '',
       fromPath: '',
       issuedAt: now,

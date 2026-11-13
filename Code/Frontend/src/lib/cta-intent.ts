@@ -179,11 +179,10 @@ export const QUICK_CHECK_COPY = {
   utilityPlaceholder: 'Choose utility',
   utilityOtherLabel: 'Utility company (optional)',
   billLabel: 'Average monthly bill',
-  chipsLabel: 'Or tap a typical amount',
   action: 'Continue',
   utilityError:
     'Choose the utility on your bill. Pick "Other / not sure" if yours is not listed.',
-  billError: 'Enter your average monthly bill in dollars, for example 180.',
+  billError: 'Choose your average monthly bill.',
 } as const;
 
 /** Home page QualificationWizard: button copy on the contact step. */
