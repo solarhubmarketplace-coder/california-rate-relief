@@ -3,6 +3,7 @@ const { supabaseAdmin } = require('../lib/supabase');
 const emailService = require('./email.service');
 const config = require('../config');
 const { cleanJourney } = require('../lib/lead-journey');
+const { BILL_BAND_LABELS } = require('../lib/lead-contract');
 
 function escapeHtml(value) {
   return String(value ?? '—').replace(/[<>&"']/g, (char) => ({
@@ -17,6 +18,9 @@ function render(outbox) {
   const journey = cleanJourney(attribution.journey);
   const rows = [
     ['TEST SUBMISSION', payload.is_test ? 'YES — DO NOT FORWARD' : null],
+    // Residential contract (12 Nov 2026): the address had "Unit"/"#" or a Google
+    // subpremise and the visitor answered Yes to the detached-home question.
+    ['UNIT FLAGGED', qualification.unit_flagged === true ? 'YES - visitor confirmed a detached single-family home with sole rights to the roof' : null],
     ['Lead ID', outbox.lead_id],
     ['Submission ID', outbox.submission_id],
     ['Project type', payload.segment],
@@ -26,12 +30,23 @@ function render(outbox) {
     ['Page history coverage', journey ? (journey.truncated ? 'Entry and most recent pages; middle visits omitted after 30 pages' : 'Observed public pages in this browser tab') : 'Not recorded for this submission'],
     ['Entry recorded at', attribution.captured_at],
     ['Referring website', attribution.referrer],
+    ['Initial referrer', attribution.initial_referrer],
+    ['Traffic channel', attribution.traffic_channel],
+    ['Landing page type', attribution.landing_page_type],
+    ['Google click ID', attribution.gclid],
+    ['GA client ID', attribution.ga_client_id],
+    ['Form', qualification.form_kind],
     ['Name', payload.name],
     ['Phone', payload.phone],
     ['Email', payload.email],
     ['Address', payload.address],
+    // City and state: the visitor's answer, else the ZIP lookup the intake RPC
+    // adds (migration 013).
+    ['City', qualification.city || qualification.derived_city],
+    ['State', qualification.derived_state || qualification.service_market],
+    ['Address entry', [qualification.address_source, qualification.places_status].filter(Boolean).join(' / ')],
     ['Utility', qualification.utility_provider],
-    ['Monthly bill', qualification.bill_amount ?? qualification.monthly_bill_range],
+    ['Monthly bill', BILL_BAND_LABELS[qualification.monthly_bill_band] ?? qualification.bill_amount ?? qualification.monthly_bill_range],
     ['Homeowner', typeof qualification.homeowner === 'boolean' ? (qualification.homeowner ? 'Yes' : 'No') : null],
     ['Credit', qualification.credit_score],
     ['ZIP / county', qualification.service_zip || qualification.county],

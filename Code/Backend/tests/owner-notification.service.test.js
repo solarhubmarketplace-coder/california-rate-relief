@@ -47,6 +47,49 @@ describe('durable owner notification worker', () => {
     expect(html).toContain('/blog/sce (2026-09-09T22:00:00.000Z) → / (2026-09-09T22:01:00.000Z)');
     expect(html).toContain('Submitted from');
   });
+  async function renderRow(payloadOverrides) {
+    const r = { ...row, payload: { ...row.payload, ...payloadOverrides } };
+    mockRpc.mockResolvedValueOnce({ data: [r] })
+      .mockResolvedValueOnce({ data: [{ ...r, destination: 'owner@example.com', provider_subject: 'subject', provider_html: 'frozen' }] })
+      .mockResolvedValueOnce({ data: null });
+    mockSendEmail.mockResolvedValue({ id: 'provider-render' });
+    await worker.processOne();
+    return mockRpc.mock.calls[mockRpc.mock.calls.length - 2][1].p_provider_html;
+  }
+  test('shows the city and state the intake filled from the ZIP', async () => {
+    const html = await renderRow({ address: '123 Main St, Patterson, CA 95363',
+      qualification_data: { ...row.payload.qualification_data, service_zip: '95363', service_market: 'CA', derived_city: 'Patterson', derived_state: 'CA' } });
+    expect(html).toMatch(/Address[\s\S]*123 Main St, Patterson, CA 95363[\s\S]*City[\s\S]*Patterson[\s\S]*State[\s\S]*>CA</);
+  });
+  test('a city the visitor typed wins over the ZIP lookup', async () => {
+    const html = await renderRow({ qualification_data: { ...row.payload.qualification_data, city: 'Wildomar', derived_city: 'Lake Elsinore', derived_state: 'CA' } });
+    expect(html).toMatch(/City<\/b><\/td><td[^>]*>Wildomar</);
+    expect(html).not.toContain('Lake Elsinore');
+  });
+  test('UNIT FLAGGED appears only when the visitor confirmed a unit address', async () => {
+    const flagged = await renderRow({ qualification_data: { ...row.payload.qualification_data, unit_flagged: true, unit_confirmed_detached: true } });
+    expect(flagged).toMatch(/UNIT FLAGGED[\s\S]*YES - visitor confirmed a detached single-family home with sole rights to the roof/);
+    const plain = await renderRow({ qualification_data: { ...row.payload.qualification_data, unit_flagged: false } });
+    expect(plain).not.toContain('UNIT FLAGGED');
+  });
+  test('shows the bill band label, channel, click id, form and address entry', async () => {
+    const html = await renderRow({
+      qualification_data: { ...row.payload.qualification_data, monthly_bill_band: '350_499', bill_amount: 425, form_kind: 'solar_inquiry', address_source: 'places', places_status: 'active' },
+      attribution: { ...row.payload.attribution, traffic_channel: 'organic_google', initial_referrer: 'https://www.google.com/', gclid: 'gclid-1', ga_client_id: '123.456', landing_page_type: 'blog' },
+    });
+    expect(html).toMatch(/Monthly bill<\/b><\/td><td[^>]*>\$350–\$499</);
+    expect(html).toMatch(/Traffic channel[\s\S]*organic_google/);
+    expect(html).toMatch(/Initial referrer[\s\S]*https:\/\/www\.google\.com\//);
+    expect(html).toMatch(/Google click ID[\s\S]*gclid-1/);
+    expect(html).toMatch(/GA client ID[\s\S]*123\.456/);
+    expect(html).toMatch(/Landing page type[\s\S]*blog/);
+    expect(html).toMatch(/Form<\/b><\/td><td[^>]*>solar_inquiry</);
+    expect(html).toMatch(/Address entry[\s\S]*places \/ active/);
+  });
+  test('an older lead without a band still shows its amount', async () => {
+    const html = await renderRow({ qualification_data: { ...row.payload.qualification_data, bill_amount: 275 } });
+    expect(html).toMatch(/Monthly bill<\/b><\/td><td[^>]*>275</);
+  });
   beforeEach(() => jest.clearAllMocks());
   test('claims, sends with the stable provider key, and records sent state', async () => {
     mockRpc.mockResolvedValueOnce({ data: [row], error: null })
