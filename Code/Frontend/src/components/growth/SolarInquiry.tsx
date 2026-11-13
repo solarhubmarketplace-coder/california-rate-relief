@@ -15,7 +15,8 @@ import {
   type CalculatorContext,
 } from '@/lib/calculator-context';
 import { calculateSolarScenario } from '@/lib/solar-savings-engine';
-import { isFiveDigitZip, isServiceMarket, selectableServiceMarkets, type ServiceMarket } from '@/lib/service-market';
+import type { ServiceMarket } from '@/lib/service-market';
+import { derivedLocationFields } from '@/lib/ca-utility-by-zip';
 import { trackEvent } from '@/components/GoogleAnalyticsClient';
 import {
   INQUIRY_RECEIVED_COPY,
@@ -27,39 +28,63 @@ import {
 } from '@/lib/cta-intent';
 import { isCommercialIntentPath } from '@/lib/intake-routing';
 import { US_PHONE_HINT, formatUsPhoneInput, isValidUsPhone, toE164Us, usPhoneError } from '@/lib/phone';
-import { streetAddressError } from '@/lib/street-address';
 import {
   QUICK_START_EVENT,
-  formatBill,
   parseBill,
   quickStartFromEvent,
-  sanitizeBillInput,
   takeQuickStart,
   utilityCodeFor,
   utilityLabelFor,
   type QuickStart,
 } from '@/lib/quick-start';
+import {
+  ADDRESS_REJECT_CODES,
+  BILL_CHOICES,
+  CONSENT_TEXT,
+  ERRORS,
+  LEAD_CONTRACT_VERSION,
+  UNDER_250_ID,
+  billBandLabel,
+  billChoiceForAmount,
+  fieldForErrorCode,
+  firstLeadError,
+  isBillBandId,
+  needsUnitQuestion,
+  residentialLeadErrors,
+  type LeadErrorCode,
+  type LeadField,
+} from '@/lib/lead-contract';
+import {
+  EMPTY_PROJECT_ADDRESS,
+  addressLeadInput,
+  type ProjectAddressState,
+} from '@/lib/project-address';
+import { HAS_PLACES_KEY } from '@/lib/use-places-address';
+import { useLeadGates } from '@/lib/lead-gates';
 import { InquiryReceived } from './InquiryReceived';
 import { TrustBlock } from './TrustBlock';
+import { LeadChoiceButtons } from './LeadChoiceButtons';
+import { LeadGateNotice } from './LeadGateNotice';
+import { ProjectAddressFields, type AddressField } from './ProjectAddressFields';
 import { ReferralDisclosure } from '@/components/shared/ReferralDisclosure';
 
 const fieldBase =
   'w-full rounded-lg border border-input bg-white px-3 py-3 text-foreground focus:outline-none focus:ring-2 focus:ring-ring';
 const field = `mt-1 ${fieldBase}`;
 const invalidField = 'border-destructive';
-const ATTEMPT_KEY = 'crr_review_submission_v1';
+// v2 (residential lead contract, 12 Nov 2026): a frozen attempt saved by the
+// old form has the old payload shape and is never replayed.
+const ATTEMPT_KEY = 'crr_review_submission_v2';
 
 // Two steps, not one long form. Step 1 asks the utility and the monthly bill
-// and no PII at all; step 2 asks where the project is, the two qualification
-// questions and the contact details. The bill figure is both the smallest
-// possible first ask and the qualification signal every one of the recorded
-// leads carried, so it is the right thing to ask for first.
+// band and no PII at all; step 2 asks whether the visitor owns the home (so a
+// renter is stopped before giving PII), where it is, and the contact details.
 type FormStep = 1 | 2;
 
 /** Where step-1 answers came from, reported as the prefill_source event param. */
 type PrefillSource = 'none' | 'calculator' | 'quick_check';
 
-type FieldKey = 'utility_provider' | 'bill_amount' | 'service_market' | 'street' | 'zip' | 'homeowner' | 'phone';
+type FieldKey = 'utility_provider' | LeadField;
 
 /** A utility prop may be a code ('sce') or a label ('PG&E'); the select needs a code. */
 function initialUtility(value: string): { utility: string; other: string } {
@@ -73,7 +98,6 @@ function initialUtility(value: string): { utility: string; other: string } {
 export function SolarInquiry({
   utility = '',
   topic = 'Solar comparison',
-  market = 'CA',
   variant,
   sourceTool,
   sectionId = 'solar-inquiry',
@@ -82,6 +106,10 @@ export function SolarInquiry({
 }: {
   utility?: string;
   topic?: string;
+  /**
+   * Ignored since 12 Nov 2026: the residential form is California only (the
+   * out-of-state pages 301 per Decision 41). Kept so existing pages compile.
+   */
   market?: ServiceMarket;
   /** Override the intent-matched copy. Omitted, it follows the pathname. */
   variant?: CtaVariant;
@@ -102,11 +130,11 @@ export function SolarInquiry({
     zip: '',
     monthlyBill: '',
   });
+  const [billChoice, setBillChoice] = useState('');
   const [contact, setContact] = useState({ name: '', phone: '', email: '' });
-  const [street, setStreet] = useState('');
-  const [homeowner, setHomeowner] = useState('');
+  const [address, setAddress] = useState<ProjectAddressState>(EMPTY_PROJECT_ADDRESS);
+  const [homeowner, setHomeowner] = useState<'' | 'yes' | 'no'>('');
   const [roofAge, setRoofAge] = useState('');
-  const [serviceMarket, setServiceMarket] = useState<ServiceMarket | ''>(market);
   const [utilityOther, setUtilityOther] = useState(initial.other);
   const [consent, setConsent] = useState(false);
   const [step, setStep] = useState<FormStep>(1);
@@ -120,7 +148,11 @@ export function SolarInquiry({
   const stepStatusRef = useRef<HTMLParagraphElement | null>(null);
   const focusStepRef = useRef(false);
   const fieldRefs = useRef<Partial<Record<FieldKey, HTMLElement | null>>>({});
+  // True while the calculator context supplied a usable bill: its figures ride
+  // along as informational calculator_* fields (never the stored bill).
+  const calculatorSuppliedRef = useRef(false);
   const errorId = (key: FieldKey) => `${uid}-${key}-error`;
+  const trackGate = useLeadGates('solar_inquiry');
 
   const pathname = usePathname() || '';
   const resolvedVariant: CtaVariant = variant
@@ -130,17 +162,12 @@ export function SolarInquiry({
       : ctaVariantForPath(pathname);
   const copy = ctaCopyFor(resolvedVariant);
 
-  // Funnel instrumentation. This component previously emitted generate_lead and
-  // nothing else, so the 73% of organic clicks that land on a page carrying this
-  // form had no measurable drop-off: a page could earn clicks and produce no
-  // signal at all between "arrived" and "submitted". form_view is the denominator,
-  // form_start the first interaction, and the two failure events separate
-  // "wrong input" from "the request failed". Every event now also carries
-  // cta_variant (which ask was made) and form_step (where the visitor was), and
-  // form_step_complete marks clearing step 1 — the split the two-step form
-  // exists to measure. No existing event was renamed or removed.
-  // prefill_source (added 2026-09-22) says whether step 1 arrived pre-answered
-  // from the calculator context or from a HeroQuickCheck handoff.
+  // Funnel instrumentation. form_view is the denominator, form_start the first
+  // interaction, and the two failure events separate "wrong input" from "the
+  // request failed". Every event carries cta_variant (which ask was made) and
+  // form_step (where the visitor was), and form_step_complete marks clearing
+  // step 1. prefill_source says whether step 1 arrived pre-answered from the
+  // calculator context or from a HeroQuickCheck handoff.
   const sectionRef = useRef<HTMLElement | null>(null);
   const viewedRef = useRef(false);
   const startedRef = useRef(false);
@@ -149,10 +176,10 @@ export function SolarInquiry({
   contextRef.current = {
     form_kind: 'solar_inquiry',
     inquiry_topic: topic,
-    service_market: serviceMarket || 'unset',
+    service_market: 'CA',
     cta_variant: resolvedVariant,
     form_step: String(step),
-    form_layout: 'two_step_v1',
+    form_layout: 'two_step_v2',
     prefill_source: prefillRef.current,
     ...(sourceTool ? { source_tool: sourceTool } : {}),
   };
@@ -167,29 +194,42 @@ export function SolarInquiry({
     startedRef.current = true;
     // Interacting implies having seen it. Emitting the view first keeps
     // view >= start in the reported funnel even where IntersectionObserver
-    // never fires (it needs a painted frame, so headless and background tabs
-    // report nothing at all).
+    // never fires.
     markViewed();
     trackEvent('form_start', funnelContext());
   };
 
+  /** A calculator bill preselects its band (still needs Continue); never "Under $250". */
+  const bandFromCalculator = (context: CalculatorContext) => {
+    const amount = parseBill(context.monthlyBill || '');
+    calculatorSuppliedRef.current = amount !== null;
+    const band = amount === null ? null : billChoiceForAmount(amount);
+    return isBillBandId(band) ? band : '';
+  };
+
   // HeroQuickCheck handoff: step 1 is already answered, so open at step 2.
-  // The form's own form_start/form_step_complete fire here (once, guarded),
-  // tagged prefill_source=quick_check, which keeps the funnel monotonic.
+  // An older handoff without a usable band opens at the bill question instead.
   const applyQuickStart = (value: QuickStart) => {
     if (attempt.current) return; // A frozen attempt must not change.
     prefillRef.current = 'quick_check';
-    setInputs((current) => ({ ...current, utility: value.utility, monthlyBill: value.monthlyBill }));
+    setInputs((current) => ({ ...current, utility: value.utility }));
     setUtilityOther(value.utility === 'other' ? value.utilityOther : '');
+    setBillChoice(value.billChoice ?? '');
     setError('');
     setFieldErrors({});
     markStarted();
+    if (!value.billChoice) {
+      setStep(1);
+      return;
+    }
     if (step === 1) trackEvent('form_step_complete', { ...funnelContext(), form_step: '1' });
     focusStepRef.current = true;
     setStep(2);
   };
   const applyQuickStartRef = useRef(applyQuickStart);
   applyQuickStartRef.current = applyQuickStart;
+  const bandFromCalculatorRef = useRef(bandFromCalculator);
+  bandFromCalculatorRef.current = bandFromCalculator;
 
   useEffect(() => {
     captureFirstTouch();
@@ -197,11 +237,16 @@ export function SolarInquiry({
     if (context) {
       prefillRef.current = 'calculator';
       setInputs(context);
+      const band = bandFromCalculatorRef.current(context);
+      if (band) setBillChoice(band);
     }
     const update = (event: Event) => {
       if (!attempt.current) {
+        const detail = (event as CustomEvent<CalculatorContext>).detail;
         prefillRef.current = 'calculator';
-        setInputs((event as CustomEvent<CalculatorContext>).detail);
+        setInputs(detail);
+        const band = bandFromCalculatorRef.current(detail);
+        if (band) setBillChoice(band);
       }
     };
     window.addEventListener('crr-calculator-context', update);
@@ -232,30 +277,23 @@ export function SolarInquiry({
           )?.[0] || 'other';
         if (code === 'other' && typeof q.utility_provider === 'string' && q.utility_provider !== 'other')
           setUtilityOther(q.utility_provider);
-        setInputs({
+        setInputs((current) => ({
+          ...current,
           utility: code,
-          zip: q.service_zip || '',
-          monthlyBill: String(q.calculator_monthly_bill ?? q.bill_amount ?? ''),
-          annualKwh:
-            q.calculator_annual_kwh == null
-              ? ''
-              : String(q.calculator_annual_kwh),
-          systemKw:
-            q.calculator_system_kw == null
-              ? ''
-              : String(q.calculator_system_kw),
-          solarPrice:
-            q.calculator_solar_only_price == null
-              ? ''
-              : String(q.calculator_solar_only_price),
-          batteryPrice:
-            q.calculator_battery_price == null
-              ? ''
-              : String(q.calculator_battery_price),
-          annualBillAfter:
-            q.calculator_annual_bill_after == null
-              ? ''
-              : String(q.calculator_annual_bill_after),
+          monthlyBill: q.calculator_monthly_bill == null ? '' : String(q.calculator_monthly_bill),
+        }));
+        if (isBillBandId(q.monthly_bill_band)) setBillChoice(q.monthly_bill_band);
+        const street = String(stored.payload.contact.street || '');
+        setAddress({
+          ...EMPTY_PROJECT_ADDRESS,
+          street,
+          city: typeof q.city === 'string' ? q.city : '',
+          zip: typeof q.service_zip === 'string' ? q.service_zip : '',
+          zipKnown: true,
+          source: q.address_source === 'places' ? 'places' : 'manual',
+          placeSelected: q.address_source === 'places',
+          placesUnitFlag: q.unit_flagged === true && !needsUnitQuestion(street, false),
+          unitAnswer: q.unit_flagged === true ? 'yes' : '',
         });
         setContact({
           name: stored.payload.contact.name || '',
@@ -265,7 +303,6 @@ export function SolarInquiry({
         setHomeowner(q.homeowner ? 'yes' : 'no');
         if (typeof q.roof_age === 'string' && isRoofAgeBand(q.roof_age))
           setRoofAge(q.roof_age);
-        if (isServiceMarket(q.service_market)) setServiceMarket(q.service_market);
         setConsent(stored.payload.consent?.status === 'opted_in');
       }
     } catch {
@@ -282,15 +319,13 @@ export function SolarInquiry({
   }, [sectionId]);
 
   // After a handoff, put keyboard and screen-reader focus on the step line.
-  // HeroQuickCheck (or the URL hash) handles the scroll.
   useEffect(() => {
     if (!focusStepRef.current || step !== 2) return;
     focusStepRef.current = false;
     stepStatusRef.current?.focus({ preventScroll: true });
   }, [step]);
 
-  // form_view — fires once the form actually enters the viewport, so "never
-  // scrolled this far" stays distinguishable from "saw it and left".
+  // form_view: fires once the form actually enters the viewport.
   useEffect(() => {
     const node = sectionRef.current;
     if (!node || typeof IntersectionObserver === 'undefined') return;
@@ -298,27 +333,18 @@ export function SolarInquiry({
       (entries) => {
         for (const entry of entries) {
           if (!entry.isIntersecting || viewedRef.current) continue;
-          // Refs and a module import only, so this effect stays dependency-free
-          // and the observer is never torn down and rebuilt on a re-render.
           viewedRef.current = true;
           trackEvent('form_view', { ...contextRef.current, prefill_source: prefillRef.current });
           observer.disconnect();
         }
       },
-      // threshold 0, not a fraction: this section runs ~2,700px tall, so on a
-      // phone viewport no meaningful fraction of it is ever on screen at once
-      // and a fractional threshold would never fire. Any pixel visible counts
-      // as "the visitor reached the form".
+      // threshold 0: any pixel visible counts as "the visitor reached the form".
       { threshold: 0 },
     );
     observer.observe(node);
     return () => observer.disconnect();
   }, []);
 
-  const showFieldErrors = (errors: Partial<Record<FieldKey, string>>, first: FieldKey) => {
-    setFieldErrors(errors);
-    fieldRefs.current[first]?.focus();
-  };
   const clearFieldError = (key: FieldKey) =>
     setFieldErrors((current) => {
       if (!current[key]) return current;
@@ -333,27 +359,35 @@ export function SolarInquiry({
         {fieldErrors[key]}
       </p>
     ) : null;
+  const focusField = (key: FieldKey) => {
+    // Next frame: the field may only render after the state update.
+    requestAnimationFrame(() => fieldRefs.current[key]?.focus());
+  };
+
+  const chooseBill = (id: string) => {
+    setBillChoice(id);
+    clearFieldError('bill');
+    if (id === UNDER_250_ID) trackGate('gate_under_250');
+  };
 
   const advance = () => {
     markStarted();
+    if (billChoice === UNDER_250_ID) return; // screened out; the notice is showing
     // "Other / not sure" is a complete answer; the name box is optional.
     const utilityAnswer = inputs.utility;
-    if (!utilityAnswer || parseBill(inputs.monthlyBill) === null) {
-      const reason: FieldKey = !utilityAnswer ? 'utility_provider' : 'bill_amount';
-      showFieldErrors(
-        {
-          ...(!utilityAnswer
-            ? { utility_provider: 'Choose the utility on your bill. Pick "Other / not sure" if yours is not listed.' }
-            : {}),
-          ...(parseBill(inputs.monthlyBill) === null
-            ? { bill_amount: 'Enter your average monthly electricity bill in dollars, above zero.' }
-            : {}),
-        },
-        reason,
-      );
+    const billOk = isBillBandId(billChoice);
+    if (!utilityAnswer || !billOk) {
+      const reason: FieldKey = !utilityAnswer ? 'utility_provider' : 'bill';
+      setFieldErrors({
+        ...(!utilityAnswer
+          ? { utility_provider: 'Choose the utility on your bill. Pick "Other / not sure" if yours is not listed.' }
+          : {}),
+        ...(!billOk ? { bill: ERRORS.bill_band_required } : {}),
+      });
+      focusField(reason);
       trackEvent('form_validation_error', {
         ...funnelContext(),
-        reason,
+        reason: reason === 'bill' ? 'bill_band_required' : reason,
       });
       return;
     }
@@ -361,6 +395,20 @@ export function SolarInquiry({
     setFieldErrors({});
     trackEvent('form_step_complete', funnelContext());
     setStep(2);
+  };
+
+  const chooseHomeowner = (value: 'yes' | 'no') => {
+    setHomeowner(value);
+    clearFieldError('homeowner');
+    if (value === 'no') trackGate('gate_renter');
+  };
+
+  /** Show a contract error inline (from the browser check or an API 400). */
+  const showContractError = (key: FieldKey, code: string, message: string) => {
+    if (key === 'bill') setStep(1);
+    setFieldErrors({ [key]: message });
+    focusField(key);
+    if ((ADDRESS_REJECT_CODES as readonly string[]).includes(code)) trackGate('gate_address_rejected', code);
   };
 
   const submit = async (event: React.FormEvent) => {
@@ -372,26 +420,28 @@ export function SolarInquiry({
       return;
     }
     markStarted();
+    const needsUnit = needsUnitQuestion(address.street, address.placesUnitFlag);
     if (!attempt.current) {
-      const errors: Partial<Record<FieldKey, string>> = {};
-      if (!serviceMarket) errors.service_market = 'Select the state or district where the project is.';
-      const streetMessage = streetAddressError(street);
-      if (streetMessage) errors.street = streetMessage;
-      if (!isFiveDigitZip(inputs.zip)) errors.zip = 'Enter the 5-digit ZIP code for the project.';
-      if (!homeowner) errors.homeowner = 'Answer whether you own this home.';
-      if (!(Number(inputs.monthlyBill) > 0))
-        errors.bill_amount = 'Enter a monthly electricity bill above zero. Use Edit to change it.';
-      const phoneMessage = usPhoneError(contact.phone);
-      if (phoneMessage) errors.phone = phoneMessage;
-      // Same reason precedence as before; phone is new and comes last.
-      const order: FieldKey[] = ['service_market', 'street', 'zip', 'homeowner', 'bill_amount', 'phone'];
-      const first = order.find((key) => errors[key]);
+      const errors = residentialLeadErrors({
+        billChoice: billChoice || null,
+        homeowner: homeowner === 'yes' ? true : homeowner === 'no' ? false : null,
+        ...addressLeadInput(address, HAS_PLACES_KEY),
+        name: contact.name,
+        phone: contact.phone,
+        email: contact.email,
+        consent,
+      });
+      const first = firstLeadError(errors);
       if (first) {
-        showFieldErrors(errors, first);
-        trackEvent('form_validation_error', {
-          ...funnelContext(),
-          reason: first,
-        });
+        if (first.field === 'bill') setStep(1);
+        const shown: Partial<Record<FieldKey, string>> = {};
+        for (const [key, value] of Object.entries(errors)) shown[key as FieldKey] = value.message;
+        setFieldErrors(shown);
+        focusField(first.field);
+        trackEvent('form_validation_error', { ...funnelContext(), reason: first.error.code });
+        if ((ADDRESS_REJECT_CODES as readonly LeadErrorCode[]).includes(first.error.code)) {
+          trackGate('gate_address_rejected', first.error.code);
+        }
         return;
       }
     }
@@ -405,62 +455,71 @@ export function SolarInquiry({
         value?.trim() ? Number(value) : undefined;
       attempt.current = getOrCreateSubmissionAttempt(attempt.current, (id) => {
         const baseAttribution = intakeAttribution(captureFirstTouch());
-        const calc = calculateSolarScenario({
-          monthlyBill: Number(inputs.monthlyBill),
-          annualKwh: optional(inputs.annualKwh),
-          systemKw: optional(inputs.systemKw),
-          solarPrice: optional(inputs.solarPrice),
-          batteryPrice: optional(inputs.batteryPrice),
-          annualBillAfter: optional(inputs.annualBillAfter),
-        });
+        const utilityProvider = inputs.utility === 'other' ? utilityOther.trim() || 'other' : inputs.utility;
+        const calculatorBill = parseBill(inputs.monthlyBill || '');
+        const calculatorFields =
+          calculatorSuppliedRef.current && calculatorBill !== null
+            ? (() => {
+                const calc = calculateSolarScenario({
+                  monthlyBill: calculatorBill,
+                  annualKwh: optional(inputs.annualKwh),
+                  systemKw: optional(inputs.systemKw),
+                  solarPrice: optional(inputs.solarPrice),
+                  batteryPrice: optional(inputs.batteryPrice),
+                  annualBillAfter: optional(inputs.annualBillAfter),
+                });
+                return {
+                  calculator_version: 'quote-input-v2',
+                  calculator_monthly_bill: calculatorBill,
+                  calculator_annual_kwh: optional(inputs.annualKwh) ?? null,
+                  calculator_system_kw: optional(inputs.systemKw) ?? null,
+                  calculator_solar_only_price: optional(inputs.solarPrice) ?? null,
+                  calculator_battery_price: optional(inputs.batteryPrice) ?? null,
+                  calculator_cash_price: calc.cashPrice,
+                  calculator_annual_bill_after: optional(inputs.annualBillAfter) ?? null,
+                  calculator_annual_difference: calc.annualDifference,
+                  calculator_simple_payback: calc.simplePayback,
+                };
+              })()
+            : {};
         return {
           submission_id: id,
           segment: 'residential',
           contact: {
-            name: contact.name,
-            // The backend normalizes every phone to E.164 (intake.controller
-            // normalizePhone), so sending E.164 stores exactly the same value.
+            name: contact.name.trim(),
+            // The backend normalizes every phone to E.164, so sending E.164
+            // stores exactly the same value.
             phone: toE164Us(contact.phone) ?? contact.phone,
-            email: contact.email,
-            // Street + ZIP: the lead has to be locatable (2026-09-26).
-            address: `${street.trim()}, ${inputs.zip}`,
+            email: contact.email.trim(),
+            // The API composes "street, City, CA ZIP" from the parts.
+            street: address.street.trim(),
           },
           qualification_data: {
-            homeowner: homeowner === 'yes',
-            // Both new qualification answers are nullable by design: the column
-            // may not exist yet in every environment, and an unanswered band is
-            // more useful than a manufactured one.
+            lead_contract_version: LEAD_CONTRACT_VERSION,
+            form_kind: 'solar_inquiry',
+            homeowner: true,
+            monthly_bill_band: billChoice,
             roof_age: roofAge || null,
             // "Other / not sure" with no name typed sends 'other', which the
             // backend stores as its canonical 'Other'.
-            utility_provider:
-              inputs.utility === 'other' ? utilityOther.trim() || 'other' : inputs.utility,
-            service_zip: inputs.zip,
-            service_market: serviceMarket,
-            territory_resolution: 'visitor_selected_zip_validated',
-            bill_amount: Number(inputs.monthlyBill),
+            utility_provider: utilityProvider,
             credit_score: 'unsure',
             inquiry_topic: topic,
             source_tool: sourceTool || null,
-            calculator_version: 'quote-input-v2',
-            calculator_monthly_bill: Number(inputs.monthlyBill),
-            calculator_annual_kwh: optional(inputs.annualKwh) ?? null,
-            calculator_system_kw: optional(inputs.systemKw) ?? null,
-            calculator_solar_only_price: optional(inputs.solarPrice) ?? null,
-            calculator_battery_price: optional(inputs.batteryPrice) ?? null,
-            calculator_cash_price: calc.cashPrice,
-            calculator_annual_bill_after:
-              optional(inputs.annualBillAfter) ?? null,
-            calculator_annual_difference: calc.annualDifference,
-            calculator_simple_payback: calc.simplePayback,
+            ...derivedLocationFields(address.zip, address.city, utilityProvider),
+            city: address.city.trim(),
+            service_zip: address.zip,
+            service_market: 'CA',
+            unit_flagged: needsUnit,
+            unit_confirmed_detached: needsUnit ? true : null,
+            address_source: address.source,
+            places_status: address.placesStatus,
+            ...calculatorFields,
           },
           attribution: {
             ...baseAttribution,
-            // utm_content is already carried through the whole intake contract,
-            // so a tool-sourced submission is attributable end to end without a
-            // schema change or a second ingest path. A real campaign value is
-            // never overwritten: an inbound utm_content wins, and the marker in
-            // qualification_data.source_tool is the one that always survives.
+            // A tool-sourced submission is attributable end to end through
+            // utm_content. A real campaign value is never overwritten.
             ...(sourceTool && !baseAttribution.utm_content
               ? { utm_content: `tool_${sourceTool}` }
               : {}),
@@ -480,13 +539,19 @@ export function SolarInquiry({
       )
         throw new Error('Storage was not confirmed. Retry this submission.');
       setSaved(result.data.submission_id);
-      if (!result.data.duplicate)
+      if (!result.data.duplicate) {
+        const q = attempt.current.payload.qualification_data;
         trackEvent('generate_lead', {
           ...funnelContext(),
           segment: 'residential',
           landing_page:
             attempt.current.payload.attribution.landing_page || 'unknown',
+          bill_band: String(q.monthly_bill_band ?? 'unknown'),
+          traffic_channel: attempt.current.payload.attribution.traffic_channel || 'unknown',
+          unit_flagged: q.unit_flagged === true ? 'yes' : 'no',
+          address_source: String(q.address_source ?? 'unknown'),
         });
+      }
       try {
         sessionStorage.removeItem(ATTEMPT_KEY);
       } catch {
@@ -495,9 +560,11 @@ export function SolarInquiry({
       attempt.current = null;
       setPending(false);
     } catch (cause) {
+      const status = (cause as { statusCode?: number })?.statusCode;
+      const code = (cause as { code?: string })?.code;
       // HTTP 400 is validation before storage. Allow correction; retain the frozen
       // attempt on timeout/5xx/409 because persistence may already have happened.
-      if ((cause as { statusCode?: number })?.statusCode === 400) {
+      if (status === 400) {
         attempt.current = null;
         try {
           sessionStorage.removeItem(ATTEMPT_KEY);
@@ -508,21 +575,24 @@ export function SolarInquiry({
       setPending(Boolean(attempt.current));
       trackEvent('form_submit_error', {
         ...funnelContext(),
-        status_code: String(
-          (cause as { statusCode?: number })?.statusCode ?? 0,
-        ),
+        status_code: String(status ?? 0),
         retained_attempt: attempt.current ? 'yes' : 'no',
+        ...(code ? { reason: code } : {}),
       });
-      setError(
-        cause instanceof Error
-          ? cause.message
-          : 'Submission was not confirmed. Retry the same information.',
-      );
+      const target = status === 400 ? fieldForErrorCode(code) : null;
+      const message = cause instanceof Error ? cause.message : 'Submission was not confirmed. Retry the same information.';
+      if (target) showContractError(target, code || '', message);
+      else setError(message);
     } finally {
       inFlight.current = false;
       setBusy(false);
     }
   };
+
+  const renter = homeowner === 'no';
+  const underGate = billChoice === UNDER_250_ID;
+  const unitDeclined = address.unitAnswer === 'no' && needsUnitQuestion(address.street, address.placesUnitFlag);
+
   return (
     <section
       ref={sectionRef}
@@ -544,6 +614,7 @@ export function SolarInquiry({
         <form
           onSubmit={submit}
           onFocusCapture={markStarted}
+          noValidate
           className="mt-6 space-y-4"
         >
           <p
@@ -600,56 +671,38 @@ export function SolarInquiry({
                   <input maxLength={120} autoComplete="off" className={field} value={utilityOther} onChange={(e) => setUtilityOther(e.target.value)} />
                 </label>
               )}
-              <div className="min-w-0">
-                {/* Label kept outside the $ adornment so its accessible name
-                    stays exactly "Average monthly electricity bill ($)". */}
-                <label htmlFor={`${uid}-bill`} className="text-sm font-medium">
-                  Average monthly electricity bill ($)
-                </label>
-                <div className="relative mt-1">
-                  <span
-                    aria-hidden="true"
-                    className="pointer-events-none absolute inset-y-0 left-3 flex items-center text-muted-foreground"
-                  >
-                    $
-                  </span>
-                  <input
-                    id={`${uid}-bill`}
-                    aria-required="true"
-                    type="text"
-                    inputMode="decimal"
-                    autoComplete="off"
-                    enterKeyHint="next"
-                    ref={(node) => {
-                      fieldRefs.current.bill_amount = node;
-                    }}
-                    className={`${fieldBase} pl-7 ${fieldErrors.bill_amount ? invalidField : ''}`}
-                    value={inputs.monthlyBill}
-                    aria-invalid={Boolean(fieldErrors.bill_amount) || undefined}
-                    aria-describedby={describedBy('bill_amount')}
-                    onChange={(e) => {
-                      setInputs({ ...inputs, monthlyBill: sanitizeBillInput(e.target.value) });
-                      clearFieldError('bill_amount');
-                    }}
-                  />
-                </div>
-                {fieldError('bill_amount')}
-              </div>
-              <p className="text-xs text-muted-foreground md:col-span-2">
-                No contact details on this step. Nothing is sent until you
-                submit the second step.
-              </p>
+              <LeadChoiceButtons
+                className="md:col-span-2"
+                legend="Average monthly electricity bill"
+                name="monthly_bill_band"
+                options={BILL_CHOICES}
+                value={billChoice}
+                columns="grid-cols-2 sm:grid-cols-4"
+                error={fieldErrors.bill}
+                firstRef={(node) => {
+                  fieldRefs.current.bill = node;
+                }}
+                onChange={chooseBill}
+              />
+              {underGate ? (
+                <LeadGateNotice kind="under_250" className="md:col-span-2" onChangeAnswer={() => setBillChoice('')} />
+              ) : (
+                <p className="text-xs text-muted-foreground md:col-span-2">
+                  No contact details on this step. Nothing is sent until you
+                  submit the second step.
+                </p>
+              )}
             </fieldset>
           ) : (
             <>
-              {inputs.utility && Number(inputs.monthlyBill) > 0 && (
+              {inputs.utility && isBillBandId(billChoice) && (
                 <p className="flex flex-wrap items-center gap-x-2 rounded-lg bg-white px-3 py-1 text-sm text-foreground">
                   <span>
                     Utility: <strong>{utilityLabelFor(inputs.utility, utilityOther)}</strong>
                   </span>
                   <span aria-hidden="true">·</span>
                   <span>
-                    Bill: <strong>{formatBill(inputs.monthlyBill)}</strong>
+                    Bill: <strong>{billBandLabel(billChoice)}</strong>
                   </span>
                   {!pending && (
                     <>
@@ -671,225 +724,177 @@ export function SolarInquiry({
                   )}
                 </p>
               )}
-              {fieldError('bill_amount')}
               <fieldset
                 disabled={busy || pending}
                 className="grid min-w-0 gap-4 md:grid-cols-2"
               >
-                <div className="min-w-0">
-                  <label className="text-sm font-medium">
-                    Project state or district
-                    <select
-                      required
-                      ref={(node) => {
-                        fieldRefs.current.service_market = node;
+                <LeadChoiceButtons
+                  className="md:col-span-2"
+                  legend="Do you own this home?"
+                  name="homeowner"
+                  options={[
+                    { id: 'yes', label: 'Yes' },
+                    { id: 'no', label: 'No' },
+                  ]}
+                  value={homeowner}
+                  error={fieldErrors.homeowner}
+                  firstRef={(node) => {
+                    fieldRefs.current.homeowner = node;
+                  }}
+                  onChange={(id) => chooseHomeowner(id as 'yes' | 'no')}
+                />
+                {renter ? (
+                  <LeadGateNotice kind="renter" className="md:col-span-2" onChangeAnswer={() => setHomeowner('')} />
+                ) : (
+                  <>
+                    <ProjectAddressFields
+                      value={address}
+                      onChange={setAddress}
+                      formKind="solar_inquiry"
+                      eager
+                      disabled={busy || pending}
+                      errors={{
+                        street: fieldErrors.street,
+                        unit: fieldErrors.unit,
+                        city: fieldErrors.city,
+                        zip: fieldErrors.zip,
                       }}
-                      className={`${field} ${fieldErrors.service_market ? invalidField : ''}`}
-                      value={serviceMarket}
-                      aria-invalid={Boolean(fieldErrors.service_market) || undefined}
-                      aria-describedby={describedBy('service_market')}
-                      onChange={(e) => {
-                        setServiceMarket(e.target.value as ServiceMarket);
-                        clearFieldError('service_market');
-                      }}
-                    >
-                      <option value="">Select project market</option>
-                      {selectableServiceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
-                    </select>
-                  </label>
-                  {fieldError('service_market')}
-                </div>
-                <div className="min-w-0 md:col-span-2">
-                  <label className="text-sm font-medium">
-                    Street address of the home
-                    <input
-                      required
-                      autoComplete="street-address"
-                      maxLength={200}
-                      placeholder="123 Main St"
-                      ref={(node) => {
-                        fieldRefs.current.street = node;
-                      }}
-                      className={`${field} ${fieldErrors.street ? invalidField : ''}`}
-                      value={street}
-                      aria-invalid={Boolean(fieldErrors.street) || undefined}
-                      aria-describedby={describedBy('street')}
-                      onChange={(e) => {
-                        setStreet(e.target.value);
-                        clearFieldError('street');
+                      onClearError={(key: AddressField) => clearFieldError(key)}
+                      registerField={(key, node) => {
+                        fieldRefs.current[key] = node;
                       }}
                     />
-                  </label>
-                  {fieldError('street')}
-                </div>
-                <div className="min-w-0">
-                  <label className="text-sm font-medium">
-                    Project ZIP
-                    <input
-                      required
-                      inputMode="numeric"
-                      pattern="[0-9]{5}"
-                      autoComplete="postal-code"
-                      ref={(node) => {
-                        fieldRefs.current.zip = node;
-                      }}
-                      className={`${field} ${fieldErrors.zip ? invalidField : ''}`}
-                      value={inputs.zip}
-                      aria-invalid={Boolean(fieldErrors.zip) || undefined}
-                      aria-describedby={describedBy('zip')}
-                      onChange={(e) => {
-                        setInputs({ ...inputs, zip: e.target.value.replace(/\D/g, '').slice(0, 5) });
-                        clearFieldError('zip');
-                      }}
-                    />
-                  </label>
-                  {fieldError('zip')}
-                </div>
-                <fieldset className="min-w-0">
-                  <legend className="text-sm font-medium">Do you own this home?</legend>
-                  <div className="mt-1 grid grid-cols-2 gap-2">
-                    {(
-                      [
-                        ['yes', 'Yes'],
-                        ['no', 'No'],
-                      ] as const
-                    ).map(([value, label], index) => (
-                      <label
-                        key={value}
-                        className={`flex min-h-[48px] cursor-pointer items-center justify-center gap-2 rounded-lg border px-3 text-base font-medium focus-within:ring-2 focus-within:ring-ring ${
-                          homeowner === value
-                            ? 'border-primary bg-primary/10 text-primary'
-                            : `${fieldErrors.homeowner ? invalidField : 'border-input'} bg-white text-foreground`
-                        }`}
+                    <label className="text-sm font-medium">
+                      Roughly how old is your roof?
+                      <select
+                        className={field}
+                        value={roofAge}
+                        onChange={(e) => setRoofAge(e.target.value)}
                       >
+                        <option value="">Prefer not to say</option>
+                        {ROOF_AGE_BANDS.map(([id, label]) => (
+                          <option key={id} value={id}>
+                            {label}
+                          </option>
+                        ))}
+                      </select>
+                    </label>
+                    <div className="min-w-0">
+                      <label className="text-sm font-medium">
+                        Name
                         <input
                           required
-                          type="radio"
-                          name={`${uid}-homeowner`}
-                          value={value}
-                          checked={homeowner === value}
-                          aria-describedby={describedBy('homeowner')}
-                          ref={
-                            index === 0
-                              ? (node) => {
-                                  fieldRefs.current.homeowner = node;
-                                }
-                              : undefined
-                          }
-                          onChange={() => {
-                            setHomeowner(value);
-                            clearFieldError('homeowner');
+                          maxLength={160}
+                          autoComplete="name"
+                          autoCapitalize="words"
+                          ref={(node) => {
+                            fieldRefs.current.name = node;
                           }}
-                          className="h-4 w-4 accent-primary"
+                          className={`${field} ${fieldErrors.name ? invalidField : ''}`}
+                          value={contact.name}
+                          aria-invalid={Boolean(fieldErrors.name) || undefined}
+                          aria-describedby={describedBy('name')}
+                          onChange={(e) => {
+                            setContact({ ...contact, name: e.target.value });
+                            clearFieldError('name');
+                          }}
                         />
-                        {label}
                       </label>
-                    ))}
-                  </div>
-                  {fieldError('homeowner')}
-                </fieldset>
-                <label className="text-sm font-medium">
-                  Roughly how old is your roof?
-                  <select
-                    className={field}
-                    value={roofAge}
-                    onChange={(e) => setRoofAge(e.target.value)}
-                  >
-                    <option value="">Prefer not to say</option>
-                    {ROOF_AGE_BANDS.map(([id, label]) => (
-                      <option key={id} value={id}>
-                        {label}
-                      </option>
-                    ))}
-                  </select>
-                </label>
-                <label className="text-sm font-medium">
-                  Name
-                  <input
-                    required
-                    maxLength={160}
-                    autoComplete="name"
-                    autoCapitalize="words"
-                    className={field}
-                    value={contact.name}
-                    onChange={(e) =>
-                      setContact({ ...contact, name: e.target.value })
-                    }
-                  />
-                </label>
-                <div className="min-w-0">
-                  <label className="text-sm font-medium">
-                    Phone
-                    <input
-                      required
-                      type="tel"
-                      inputMode="tel"
-                      autoComplete="tel"
-                      maxLength={20}
-                      ref={(node) => {
-                        fieldRefs.current.phone = node;
-                      }}
-                      className={`${field} ${fieldErrors.phone ? invalidField : ''}`}
-                      value={contact.phone}
-                      aria-invalid={Boolean(fieldErrors.phone) || undefined}
-                      aria-describedby={errorId('phone')}
-                      onChange={(e) => {
-                        const phone = formatUsPhoneInput(e.target.value);
-                        setContact({ ...contact, phone });
-                        if (fieldErrors.phone && isValidUsPhone(phone)) clearFieldError('phone');
-                      }}
-                      onBlur={() => {
-                        if (!contact.phone) return;
-                        const message = usPhoneError(contact.phone);
-                        setFieldErrors((current) =>
-                          message ? { ...current, phone: message } : current,
-                        );
-                      }}
-                    />
-                  </label>
-                  {/* One line, hint or error, so a blur-time error never
-                      moves the consent checkbox out from under a tap. */}
-                  <p
-                    id={errorId('phone')}
-                    className={`mt-1 text-xs ${fieldErrors.phone ? 'font-medium text-destructive' : 'text-muted-foreground'}`}
-                  >
-                    {fieldErrors.phone || US_PHONE_HINT}
-                  </p>
-                </div>
-                <label className="text-sm font-medium md:col-span-2">
-                  Email {sourceTool ? '(for the comparison)' : '(optional)'}
-                  <input
-                    required={Boolean(sourceTool)}
-                    type="email"
-                    maxLength={254}
-                    autoComplete="email"
-                    autoCapitalize="none"
-                    spellCheck={false}
-                    className={field}
-                    value={contact.email}
-                    onChange={(e) =>
-                      setContact({ ...contact, email: e.target.value })
-                    }
-                  />
-                </label>
-                <label className="flex items-start gap-3 text-sm md:col-span-2">
-                  <input
-                    required
-                    type="checkbox"
-                    className="mt-1 h-5 w-5 shrink-0"
-                    checked={consent}
-                    onChange={(e) => setConsent(e.target.checked)}
-                  />
-                  <span>
-                    I agree that California Rate Relief may contact me about this
-                    inquiry and share my project details with a solar provider for
-                    follow-up. Read the{' '}
-                    <a href="/privacy" className="underline">
-                      privacy policy
-                    </a>
-                    .
-                  </span>
-                </label>
+                      {fieldError('name')}
+                    </div>
+                    <div className="min-w-0">
+                      <label className="text-sm font-medium">
+                        Phone
+                        <input
+                          required
+                          type="tel"
+                          inputMode="tel"
+                          autoComplete="tel"
+                          maxLength={20}
+                          ref={(node) => {
+                            fieldRefs.current.phone = node;
+                          }}
+                          className={`${field} ${fieldErrors.phone ? invalidField : ''}`}
+                          value={contact.phone}
+                          aria-invalid={Boolean(fieldErrors.phone) || undefined}
+                          aria-describedby={errorId('phone')}
+                          onChange={(e) => {
+                            const phone = formatUsPhoneInput(e.target.value);
+                            setContact({ ...contact, phone });
+                            if (fieldErrors.phone && isValidUsPhone(phone)) clearFieldError('phone');
+                          }}
+                          onBlur={() => {
+                            if (!contact.phone) return;
+                            const message = usPhoneError(contact.phone);
+                            setFieldErrors((current) =>
+                              message ? { ...current, phone: message } : current,
+                            );
+                          }}
+                        />
+                      </label>
+                      {/* One line, hint or error, so an error never moves the
+                          consent checkbox out from under a tap. */}
+                      <p
+                        id={errorId('phone')}
+                        className={`mt-1 text-xs ${fieldErrors.phone ? 'font-medium text-destructive' : 'text-muted-foreground'}`}
+                      >
+                        {fieldErrors.phone || US_PHONE_HINT}
+                      </p>
+                    </div>
+                    <div className="min-w-0 md:col-span-2">
+                      <label className="text-sm font-medium">
+                        Email
+                        <input
+                          required
+                          type="email"
+                          maxLength={254}
+                          autoComplete="email"
+                          autoCapitalize="none"
+                          spellCheck={false}
+                          ref={(node) => {
+                            fieldRefs.current.email = node;
+                          }}
+                          className={`${field} ${fieldErrors.email ? invalidField : ''}`}
+                          value={contact.email}
+                          aria-invalid={Boolean(fieldErrors.email) || undefined}
+                          aria-describedby={describedBy('email')}
+                          onChange={(e) => {
+                            setContact({ ...contact, email: e.target.value });
+                            clearFieldError('email');
+                          }}
+                        />
+                      </label>
+                      {fieldError('email')}
+                    </div>
+                    <div className="min-w-0 md:col-span-2">
+                      <label className="flex items-start gap-3 text-sm">
+                        <input
+                          required
+                          type="checkbox"
+                          ref={(node) => {
+                            fieldRefs.current.consent = node;
+                          }}
+                          className="mt-1 h-5 w-5 shrink-0"
+                          checked={consent}
+                          aria-invalid={Boolean(fieldErrors.consent) || undefined}
+                          aria-describedby={describedBy('consent')}
+                          onChange={(e) => {
+                            setConsent(e.target.checked);
+                            clearFieldError('consent');
+                          }}
+                        />
+                        <span>
+                          {CONSENT_TEXT} Read the{' '}
+                          <a href="/privacy" className="underline">
+                            privacy policy
+                          </a>
+                          .
+                        </span>
+                      </label>
+                      {fieldError('consent')}
+                    </div>
+                  </>
+                )}
               </fieldset>
             </>
           )}
@@ -899,25 +904,29 @@ export function SolarInquiry({
             </p>
           )}
           {step === 1 ? (
-            <button
-              type="button"
-              disabled={busy || pending}
-              onClick={advance}
-              className="w-full rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground hover:bg-primary/90 disabled:opacity-50 sm:w-auto"
-            >
-              Continue
-            </button>
+            !underGate && (
+              <button
+                type="button"
+                disabled={busy || pending}
+                onClick={advance}
+                className="w-full rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground hover:bg-primary/90 disabled:opacity-50 sm:w-auto"
+              >
+                Continue
+              </button>
+            )
           ) : (
-            <button
-              disabled={busy}
-              className="w-full rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground hover:bg-primary/90 disabled:opacity-50 sm:w-auto"
-            >
-              {busy
-                ? 'Saving…'
-                : pending
-                  ? 'Retry saved submission'
-                  : copy.submitLabel}
-            </button>
+            !renter && (
+              <button
+                disabled={busy || (unitDeclined && !pending)}
+                className="w-full rounded-lg bg-primary px-6 py-3 font-semibold text-primary-foreground hover:bg-primary/90 disabled:opacity-50 sm:w-auto"
+              >
+                {busy
+                  ? 'Saving…'
+                  : pending
+                    ? 'Retry saved submission'
+                    : copy.submitLabel}
+              </button>
+            )
           )}
           <p className="text-xs text-muted-foreground">
             Submitting does not guarantee a quote, savings, program funding or
