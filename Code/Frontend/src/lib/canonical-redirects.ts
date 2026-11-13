@@ -364,6 +364,18 @@ export const CRR_CANONICAL_REDIRECTS: Readonly<Record<string, string>> = {
  * slash so `/solar-savings/fresno/` resolves the same way as
  * `/solar-savings/fresno`.
  */
+/**
+ * The absolute URL a canonical 301 sends the visitor to: the target path on
+ * the request's origin, with the incoming query string kept, so UTMs and click
+ * ids on a retired URL (for example ?utm_source=chatgpt.com) survive the hop
+ * and first-touch attribution still sees them.
+ */
+export function canonicalRedirectUrl(target: string, requestUrl: string): URL {
+  const url = new URL(target, requestUrl);
+  url.search = new URL(requestUrl).search;
+  return url;
+}
+
 export function canonicalRedirectFor(pathname: string): string | null {
   const exact = CRR_CANONICAL_REDIRECTS[pathname];
   if (exact) return exact;

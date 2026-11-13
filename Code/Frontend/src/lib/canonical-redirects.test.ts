@@ -3,6 +3,7 @@ import test from 'node:test';
 import {
   CRR_CANONICAL_REDIRECTS,
   canonicalRedirectFor,
+  canonicalRedirectUrl,
   companiesCityHref,
   hasCompaniesCityPage,
   isRedirectedPath,
@@ -654,4 +655,10 @@ test('the table holds the expected number of rows', () => {
   // their own row delta in ROW_DELTAS.
   const expected = 48 + ROW_DELTAS.reduce((sum, n) => sum + n, 0);
   assert.equal(sources.length, expected);
+});
+
+test('a canonical 301 keeps the query string (UTMs and click ids survive the hop)', () => {
+  const url = canonicalRedirectUrl('/solar-savings/fresno', 'https://ratereliefca.com/old-path?utm_source=chatgpt.com&gclid=x');
+  assert.equal(url.href, 'https://ratereliefca.com/solar-savings/fresno?utm_source=chatgpt.com&gclid=x');
+  assert.equal(canonicalRedirectUrl('/solar-savings/fresno', 'https://ratereliefca.com/old-path').href, 'https://ratereliefca.com/solar-savings/fresno');
 });

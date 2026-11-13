@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server';
 import { createServerClient } from '@supabase/ssr';
 import { getGlp1RouteDisposition } from '@/lib/glp1-seo-routes';
 import { PUBLIC_CRR_NO_SESSION_ROUTES } from '@/lib/growth-routes';
-import { canonicalRedirectFor } from '@/lib/canonical-redirects';
+import { canonicalRedirectFor, canonicalRedirectUrl } from '@/lib/canonical-redirects';
 import { isHeldPath } from '@/data/held-pages';
 
 const GLP1_PUBLIC_CACHE_CONTROL =
@@ -328,7 +328,8 @@ export async function middleware(request: NextRequest) {
   if (isCRR) {
     const canonicalTarget = canonicalRedirectFor(pathname);
     if (canonicalTarget) {
-      return NextResponse.redirect(new URL(canonicalTarget, request.url), 301);
+      // Keep the query: UTMs and click ids must reach first-touch capture.
+      return NextResponse.redirect(canonicalRedirectUrl(canonicalTarget, request.url), 301);
     }
   }
 
