@@ -1,4 +1,7 @@
 -- Run after migration 006 inside a transaction and ROLLBACK afterward.
+-- Since migration 014 the residential payloads follow the lead contract
+-- (lead_contract_version, bill band, street address, CA ZIP); test traffic gets
+-- no exemption from it.
 -- No provider call occurs; all synthetic rows remain invisible to workers.
 DO $test$
 DECLARE
@@ -15,7 +18,8 @@ DECLARE
   mixed_null_id UUID := 'bd1d9a16-a217-4a60-8b6d-cccc00000008';
   allfalse_one_id UUID := 'bd1d9a16-a217-4a60-8b6d-cccc00000009';
   allfalse_two_id UUID := 'bd1d9a16-a217-4a60-8b6d-cccc00000010';
-  fields JSONB := '{"homeowner":true,"utility_provider":"PG&E","bill_amount":275,"service_zip":"95014"}';
+  -- Residential lead contract (migration 014): the shape the Phase 2 API sends.
+  fields JSONB := '{"lead_contract_version":"crr-lead-2026-11-12","form_kind":"solar_inquiry","homeowner":true,"monthly_bill_band":"250_349","bill_amount":300,"utility_provider":"PG&E","credit_score":"unsure","city":"Cupertino","service_zip":"95014","service_market":"CA","territory_resolution":"visitor_selected_zip_validated","unit_flagged":false,"consent_wording_version":"crr-consent-2026-11-12"}';
   attrib JSONB := '{"landing_page":"/__crr_transaction_test__","submitted_from":"/","utm_source":"qa","utm_campaign":"rollback-only"}';
   mismatch_rejected BOOLEAN := FALSE;
   cross_lead_rejected BOOLEAN := FALSE;
@@ -35,20 +39,20 @@ BEGIN
     RAISE EXCEPTION 'Synthetic phone already present; stop without editing it';
   END IF;
   first_result := public.ingest_crr_submission(first_id,'residential','TEST TRANSACTION ONLY','+19515550199',
-    'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+    'solarhubmarketplace+rollback@gmail.com','123 Main St, Cupertino, CA 95014',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
   retry_result := public.ingest_crr_submission(first_id,'residential','TEST TRANSACTION ONLY','+19515550199',
-    'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+    'solarhubmarketplace+rollback@gmail.com','123 Main St, Cupertino, CA 95014',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
   IF first_result->>'lead_id' <> retry_result->>'lead_id' OR NOT (retry_result->>'replayed')::BOOLEAN THEN
     RAISE EXCEPTION 'Identical retry was not idempotent';
   END IF;
   BEGIN
     PERFORM public.ingest_crr_submission(first_id,'residential','DIFFERENT PAYLOAD','+19515550199',
-      'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+      'solarhubmarketplace+rollback@gmail.com','123 Main St, Cupertino, CA 95014',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
   EXCEPTION WHEN unique_violation THEN mismatch_rejected := TRUE;
   END;
   IF NOT mismatch_rejected THEN RAISE EXCEPTION 'Mismatched retry must be rejected'; END IF;
   second_result := public.ingest_crr_submission(second_id,'residential','TEST TRANSACTION ONLY','+19515550199',
-    'solarhubmarketplace+rollback@gmail.com','Test only',fields,
+    'solarhubmarketplace+rollback@gmail.com','123 Main St, Cupertino, CA 95014',fields,
     attrib || '{"landing_page":"/changed-test-page"}'::JSONB,'opted_in','2026-09-09T00:00:00Z',FALSE);
   IF first_result->>'lead_id' <> second_result->>'lead_id' THEN RAISE EXCEPTION 'Repeat person created another lead'; END IF;
   IF (SELECT landing_page FROM public.leads WHERE id=(first_result->>'lead_id')::UUID) <> '/__crr_transaction_test__' THEN
@@ -94,27 +98,27 @@ BEGIN
   SELECT SUM(partner_qualified) INTO total_count FROM public.get_crr_scorecard(NOW()-INTERVAL '1 minute',NOW()+INTERVAL '1 minute');
   IF total_count <> 1 THEN RAISE EXCEPTION 'Cross-partner qualification count incorrect'; END IF;
   first_result := public.ingest_crr_submission(old_id,'residential','TEST PERIOD OUTCOME','+19515550197',
-    'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+    'solarhubmarketplace+rollback@gmail.com','123 Main St, Cupertino, CA 95014',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
   UPDATE public.lead_submissions SET received_at=NOW()-INTERVAL '1 year' WHERE submission_id=old_id;
   INSERT INTO public.lead_referral_outcomes(lead_id,submission_id,partner_name,forwarded_at,partner_qualified,recorded_by)
   VALUES ((first_result->>'lead_id')::UUID,old_id,'TEST OLD PARTNER',NOW()-INTERVAL '1 year',TRUE,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d');
   retry_result := public.ingest_crr_submission(current_id,'residential','TEST PERIOD OUTCOME','+19515550197',
-    'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+    'solarhubmarketplace+rollback@gmail.com','123 Main St, Cupertino, CA 95014',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
   INSERT INTO public.lead_referral_outcomes(lead_id,submission_id,partner_name,forwarded_at,partner_qualified,recorded_by)
   VALUES ((retry_result->>'lead_id')::UUID,current_id,'TEST CURRENT PARTNER',NOW(),NULL,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d');
   SELECT SUM(partner_qualified) INTO total_count FROM public.get_crr_scorecard(NOW()-INTERVAL '1 minute',NOW()+INTERVAL '1 minute');
   IF total_count <> 1 THEN RAISE EXCEPTION 'Old-period outcome leaked into current scorecard: %', total_count; END IF;
   first_result := public.ingest_crr_submission(mixed_false_id,'residential','TEST MIXED FEEDBACK','+19515550196',
-    'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+    'solarhubmarketplace+rollback@gmail.com','123 Main St, Cupertino, CA 95014',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
   retry_result := public.ingest_crr_submission(mixed_null_id,'residential','TEST MIXED FEEDBACK','+19515550196',
-    'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+    'solarhubmarketplace+rollback@gmail.com','123 Main St, Cupertino, CA 95014',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
   INSERT INTO public.lead_referral_outcomes(lead_id,submission_id,partner_name,forwarded_at,partner_qualified,recorded_by)
   VALUES ((first_result->>'lead_id')::UUID,mixed_false_id,'TEST REJECTED PARTNER',NOW(),FALSE,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d'),
          ((retry_result->>'lead_id')::UUID,mixed_null_id,'TEST UNKNOWN PARTNER',NOW(),NULL,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d');
   first_result := public.ingest_crr_submission(allfalse_one_id,'residential','TEST ALL REJECTED','+19515550195',
-    'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+    'solarhubmarketplace+rollback@gmail.com','123 Main St, Cupertino, CA 95014',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
   retry_result := public.ingest_crr_submission(allfalse_two_id,'residential','TEST ALL REJECTED','+19515550195',
-    'solarhubmarketplace+rollback@gmail.com','Test only',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
+    'solarhubmarketplace+rollback@gmail.com','123 Main St, Cupertino, CA 95014',fields,attrib,'opted_in','2026-09-09T00:00:00Z',FALSE);
   INSERT INTO public.lead_referral_outcomes(lead_id,submission_id,partner_name,forwarded_at,partner_qualified,recorded_by)
   VALUES ((first_result->>'lead_id')::UUID,allfalse_one_id,'TEST FALSE PARTNER A',NOW(),FALSE,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d'),
          ((retry_result->>'lead_id')::UUID,allfalse_two_id,'TEST FALSE PARTNER B',NOW(),FALSE,'dac3b467-55d5-4f83-b7b4-9bb0fb5f773d');
