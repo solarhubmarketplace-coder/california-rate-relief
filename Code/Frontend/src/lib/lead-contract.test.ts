@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   BILL_BANDS, BILL_CHOICES, CITY_RE, ERRORS, UNDER_250_ID, billBandAmount, billChoiceForAmount, classifyStreet,
   composeAddress, deriveTrafficChannel, fieldForErrorCode, firstLeadError, needsUnitQuestion, residentialLeadErrors,
-  sanitizeReferrer, type ResidentialLeadInput,
+  sanitizeReferrer, ZIP_OUTSIDE_CA_MESSAGE, type ResidentialLeadInput,
 } from './lead-contract.ts';
 import { CHANNEL_VECTORS, REFERRER_VECTORS, STREET_VECTORS } from './lead-contract.fixtures.ts';
 
@@ -83,6 +83,9 @@ test('ZIP: unknown blocks, lookup unavailable does not', () => {
   assert.equal(residentialLeadErrors({ ...valid, zipKnown: false }).zip?.code, 'zip_not_ca');
   assert.equal(residentialLeadErrors({ ...valid, zipKnown: null }).zip, undefined);
   assert.equal(residentialLeadErrors({ ...valid, zip: '9259' }).zip?.code, 'zip_not_ca');
+  // Review UX-5: a well-formed ZIP outside California says so; a malformed one asks for 5 digits.
+  assert.equal(residentialLeadErrors({ ...valid, zip: '89501', zipKnown: false }).zip?.message, ZIP_OUTSIDE_CA_MESSAGE);
+  assert.equal(residentialLeadErrors({ ...valid, zip: '9259' }).zip?.message, ERRORS.zip_not_ca);
   assert.equal(residentialLeadErrors({ ...valid, state: 'NV' }).zip?.code, 'state_not_ca');
   assert.equal(residentialLeadErrors({ ...valid, city: '' }).city?.code, 'city_invalid');
 });

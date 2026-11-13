@@ -69,6 +69,8 @@ export const UNDER_250_MESSAGE =
 export const UNDER_250_LINK = { href: '/blog', label: 'Read the guides' } as const;
 export const RENTER_MESSAGE =
   "Solar referrals here are for homeowners. If you don't own the home, we can't send this request to a provider.";
+/** Shown before the commercial link so a residential renter does not read it as "use this form instead". */
+export const RENTER_COMMERCIAL_HINT = 'If you control a business or commercial property, use the commercial assessment instead.';
 export const RENTER_COMMERCIAL_LINK = { href: '/commercial-assessment', label: 'Open the commercial solar assessment' } as const;
 /** Chad's exact words. */
 export const UNIT_QUESTION = 'Is this a detached single-family property where you own sole rights to the roof?';
@@ -77,6 +79,9 @@ export const UNIT_DECLINED_MESSAGE =
 /** The live SolarInquiry / OfferRequest wording, unchanged. */
 export const CONSENT_TEXT =
   'I agree that California Rate Relief may contact me about this inquiry and share my project details with a solar provider for follow-up.';
+
+/** Browser-only wording for a well-formed ZIP that is not in California (code stays zip_not_ca). */
+export const ZIP_OUTSIDE_CA_MESSAGE = "That ZIP code isn't in California. This form is for homes in California.";
 
 /** Error code -> message. The API returns the same code in `error.code`. */
 export const ERRORS = {
@@ -243,7 +248,9 @@ export function residentialLeadErrors(i: ResidentialLeadInput): Partial<Record<L
 
   const zip = String(i.zip ?? '').trim();
   if (String(i.state ?? 'CA').toUpperCase() !== 'CA') out.zip = err('state_not_ca');
-  else if (!ZIP_RE.test(zip) || i.zipKnown === false) out.zip = err('zip_not_ca');
+  else if (!ZIP_RE.test(zip)) out.zip = err('zip_not_ca');
+  // Five digits, but not a California ZIP: say the real reason (same code as the API).
+  else if (i.zipKnown === false) out.zip = err('zip_not_ca', ZIP_OUTSIDE_CA_MESSAGE);
 
   if (!String(i.name ?? '').trim()) out.name = err('name_required');
 

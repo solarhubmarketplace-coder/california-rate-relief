@@ -283,7 +283,7 @@ export function HeroQuickCheck({
       />
 
       {billChoice === UNDER_250_ID ? (
-        <LeadGateNotice kind="under_250" className="mt-4" onChangeAnswer={() => setBillChoice('')} />
+        <LeadGateNotice kind="under_250" className="mt-4" onChangeAnswer={() => setBillChoice('')} returnFocusTo={() => billRef.current} />
       ) : (
         <button
           type="submit"
