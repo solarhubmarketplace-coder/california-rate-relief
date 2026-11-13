@@ -1,6 +1,7 @@
 const intakeService = require('../services/intake.service');
 const crypto = require('crypto');
 const { cleanJourney, cleanPublicPath } = require('../lib/lead-journey');
+const contract = require('../lib/lead-contract');
 
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 const EMAIL = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -106,7 +107,35 @@ function hasStreetAddress(value) {
   return v.length >= 5 && /\d/.test(v) && /[a-z]/i.test(v);
 }
 
-function validate(body) {
+const ATTRIBUTION_KEYS = [
+  'source', 'gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
+  'landing_page', 'landing_city_slug', 'landing_page_type', 'submitted_from', 'referrer', 'ga_client_id', 'captured_at',
+  'acquisition_source', 'acquisition_medium', 'organic_landing_page', 'original_acquisition_source', 'original_acquisition_medium', 'email_visit_id'
+];
+
+/** Shared attribution cleaning (paths, referrer host, journey). Never rejects. */
+function cleanAttribution(input, extraKeys = []) {
+  const attribution = cleanObject(input, [...ATTRIBUTION_KEYS, ...extraKeys], 500);
+  const journey = cleanJourney(input?.journey);
+  if (journey) attribution.journey = journey;
+  for (const key of ['landing_page', 'submitted_from', 'organic_landing_page']) {
+    const path = cleanPublicPath(attribution[key]);
+    if (!path) delete attribution[key];
+    else attribution[key] = path;
+  }
+  if (attribution.referrer) {
+    try {
+      const raw = String(attribution.referrer);
+      const url = new URL(/^https?:\/\//i.test(raw) ? raw : `https://${raw}`);
+      if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password || !url.hostname.includes('.')) throw new Error('Invalid referrer');
+      attribution.referrer = url.hostname.toLowerCase();
+    } catch { delete attribution.referrer; }
+  }
+  if (!Number.isFinite(Date.parse(attribution.captured_at))) delete attribution.captured_at;
+  return attribution;
+}
+
+function validateCommercial(body) {
   const submissionId = typeof body?.submission_id === 'string' ? body.submission_id.trim() : null;
   const segment = text(body?.segment, 20);
   const contact = body?.contact || {};
@@ -201,27 +230,7 @@ function validate(body) {
     qualification.calculator_simple_payback=cash != null && difference != null && difference>0 ? cash/difference : null;
   }
 
-  const attribution = cleanObject(body.attribution, [
-    'source', 'gclid', 'gbraid', 'wbraid', 'msclkid', 'fbclid', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term',
-    'landing_page', 'landing_city_slug', 'landing_page_type', 'submitted_from', 'referrer', 'ga_client_id', 'captured_at',
-    'acquisition_source', 'acquisition_medium', 'organic_landing_page', 'original_acquisition_source', 'original_acquisition_medium', 'email_visit_id'
-  ], 500);
-  const journey = cleanJourney(body.attribution?.journey);
-  if (journey) attribution.journey = journey;
-  for (const key of ['landing_page', 'submitted_from', 'organic_landing_page']) {
-    const path = cleanPublicPath(attribution[key]);
-    if (!path) delete attribution[key];
-    else attribution[key] = path;
-  }
-  if (attribution.referrer) {
-    try {
-      const raw = String(attribution.referrer);
-      const url = new URL(/^https?:\/\//i.test(raw) ? raw : `https://${raw}`);
-      if (!['https:', 'http:'].includes(url.protocol) || url.username || url.password || !url.hostname.includes('.')) throw new Error('Invalid referrer');
-      attribution.referrer = url.hostname.toLowerCase();
-    } catch { delete attribution.referrer; }
-  }
-  if (!Number.isFinite(Date.parse(attribution.captured_at))) delete attribution.captured_at;
+  const attribution = cleanAttribution(body.attribution);
   const consentStatus = text(body.consent?.status, 20) || 'pending';
   if (!['pending', 'opted_in', 'opted_out'].includes(consentStatus)) return { error: 'consent.status is invalid' };
   const consentTimestamp = body.consent?.timestamp && Number.isFinite(Date.parse(body.consent.timestamp))
@@ -235,9 +244,187 @@ function validate(body) {
   } };
 }
 
+// ---------------------------------------------------------------------------
+// Residential lead contract (Chad, 12 Nov 2026). Rules and messages come from
+// ../lib/lead-contract.js, the mirror of Frontend/src/lib/lead-contract.ts.
+// Checks run in the order the visitor meets them on screen, gates first, so a
+// deflection is counted as a deflection whatever else is wrong (DESIGN 3).
+// Every server-set field is a pure function of the request body: a retry with
+// the same submission_id must produce the same RPC fingerprint.
+// ---------------------------------------------------------------------------
+const PLACES_STATUSES = new Set(['idle', 'loading', 'active', 'no_key', 'load_failed', 'auth_failed', 'timeout', 'manual_override']);
+const RESIDENTIAL_KEYS = ['utility_provider', 'utility_provider_other', 'credit_score', 'homeowner', 'roof_age', 'source_tool',
+  'calculator_version', 'calculator_monthly_bill', 'calculator_annual_kwh', 'calculator_system_kw', 'calculator_cash_price',
+  'calculator_annual_bill_after', 'calculator_annual_difference', 'calculator_simple_payback',
+  'calculator_solar_only_price', 'calculator_battery_price', 'inquiry_topic', 'inquiry_question',
+  'lead_contract_version', 'form_kind', 'monthly_bill_band', 'unit_flagged', 'unit_confirmed_detached', 'address_source', 'places_status',
+  'city', 'zip', 'service_zip', 'county', 'service_market', 'derived_utility', 'derived_cca', 'derived_county', 'derived_from',
+  'derived_utility_matches_selection'];
+const CALCULATOR_NUMBERS = ['calculator_monthly_bill', 'calculator_annual_kwh', 'calculator_system_kw', 'calculator_solar_only_price', 'calculator_battery_price', 'calculator_annual_bill_after'];
+const US_E164 = /^\+1[2-9]\d{2}[2-9]\d{6}$/;
+
+function flag(value) {
+  if (value === true || value === 'true') return true;
+  if (value === false || value === 'false') return false;
+  return null;
+}
+
+/** Bill check (step 4): the band is the only accepted answer. */
+function billError(q) {
+  const raw = typeof q.monthly_bill_band === 'string' || typeof q.monthly_bill_band === 'number' ? String(q.monthly_bill_band).trim() : '';
+  if (raw && Object.prototype.hasOwnProperty.call(contract.BILL_BANDS, raw)) return null;
+  if (raw) {
+    if (/^(under|below|less)/i.test(raw)) return 'bill_under_250';
+    const numeric = /^\$?\d[\d,]*(\.\d+)?$/.test(raw) ? Number(raw.replace(/[$,]/g, '')) : NaN;
+    if (Number.isFinite(numeric) && numeric < contract.MIN_QUALIFYING_BILL) return 'bill_under_250';
+    return 'bill_band_required';
+  }
+  if (q.bill_amount != null && q.bill_amount !== '') {
+    const amount = Number(String(q.bill_amount).replace(/[$,]/g, ''));
+    if (Number.isFinite(amount) && amount < contract.MIN_QUALIFYING_BILL) return 'bill_under_250';
+  }
+  return 'bill_band_required';
+}
+
+function validateResidential(body, submissionId) {
+  const raw = body.qualification_data && typeof body.qualification_data === 'object' && !Array.isArray(body.qualification_data)
+    ? body.qualification_data : {};
+  const contact = body.contact && typeof body.contact === 'object' ? body.contact : {};
+  const meta = {
+    form_kind: contract.FORM_KINDS.includes(raw.form_kind) ? raw.form_kind : 'unknown',
+    landing_page: cleanPublicPath(body.attribution?.landing_page) || 'unknown',
+  };
+  const fail = (code) => ({ error: contract.ERRORS[code], code, meta });
+
+  if (raw.lead_contract_version !== contract.LEAD_CONTRACT_VERSION) return fail('form_outdated');
+  const bill = billError(raw);
+  if (bill) return fail(bill);
+  const band = String(raw.monthly_bill_band).trim();
+  const homeowner = flag(raw.homeowner);
+  if (homeowner === null) return fail('homeowner_required');
+  if (homeowner !== true) return fail('renter');
+
+  const name = text(contact.name, 160);
+  if (!name) return fail('name_required');
+  const phone = normalizePhone(contact.phone);
+  if (!phone || !US_E164.test(phone)) return fail('phone_invalid');
+  const email = text(contact.email, 254);
+  if (!email) return fail('email_required');
+  if (!contract.EMAIL_RE.test(email)) return fail('email_invalid');
+
+  const street = contract.normalizeStreet(contact.street);
+  const verdict = contract.classifyStreet(street);
+  if (verdict !== 'ok' && verdict !== 'unit_question') return fail(verdict);
+  const unitFlagged = verdict === 'unit_question' || flag(raw.unit_flagged) === true;
+  if (unitFlagged) {
+    const confirmed = flag(raw.unit_confirmed_detached);
+    if (confirmed === false) return fail('unit_declined');
+    if (confirmed !== true) return fail('unit_unconfirmed');
+  }
+  const city = text(raw.city, 80);
+  if (!city || !contract.CITY_RE.test(city)) return fail('city_invalid');
+  if (String(raw.service_market ?? '').trim().toUpperCase() !== 'CA') return fail('state_not_ca');
+  const zip = text(raw.service_zip ?? raw.zip, 10);
+  if (!contract.isCaZip(zip)) return fail('zip_not_ca');
+  const utility = normalizeUtility(raw.utility_provider, true);
+  if (!utility) return fail('utility_invalid');
+  if (text(body.consent?.status, 20) !== 'opted_in') return fail('consent_required');
+
+  // Passed. Build the stored qualification from the whitelist, then the
+  // server-set fields. bill_amount and monthly_bill_range from the client are
+  // never read: the band decides the stored amount.
+  const qualification = cleanObject(raw, RESIDENTIAL_KEYS, 200);
+  delete qualification.zip;
+  qualification.lead_contract_version = contract.LEAD_CONTRACT_VERSION;
+  if (meta.form_kind !== 'unknown') qualification.form_kind = meta.form_kind; else delete qualification.form_kind;
+  qualification.homeowner = true;
+  qualification.monthly_bill_band = band;
+  qualification.bill_amount = contract.BILL_BANDS[band];
+  qualification.unit_flagged = unitFlagged;
+  if (unitFlagged) qualification.unit_confirmed_detached = true; else delete qualification.unit_confirmed_detached;
+  qualification.city = city;
+  qualification.service_zip = zip;
+  qualification.service_market = 'CA';
+  qualification.territory_resolution = 'visitor_selected_zip_validated';
+  qualification.utility_provider = utility.canonical;
+  if (utility.other) qualification.utility_provider_other = utility.other;
+  else if (utility.canonical !== 'Other') delete qualification.utility_provider_other;
+  qualification.consent_wording_version = contract.CONSENT_WORDING_VERSION;
+  if (!['places', 'manual'].includes(qualification.address_source)) delete qualification.address_source;
+  if (!PLACES_STATUSES.has(qualification.places_status)) delete qualification.places_status;
+  const credit = qualification.credit_score == null ? 'unsure' : normalizeCredit(qualification.credit_score);
+  qualification.credit_score = credit || 'unsure';
+  if (qualification.roof_age !== undefined) {
+    const roof = normalizeRoofAge(qualification.roof_age);
+    if (roof) qualification.roof_age = roof; else delete qualification.roof_age;
+  }
+  if (qualification.source_tool !== undefined) {
+    const tool = sourceToolTag(qualification.source_tool);
+    if (tool) qualification.source_tool = tool; else delete qualification.source_tool;
+  }
+  // Calculator figures are informational (never the stored bill). A bad value
+  // is dropped, not refused: it must never cost a qualified lead.
+  if (qualification.calculator_version === 'quote-input-v2') {
+    for (const key of CALCULATOR_NUMBERS) {
+      if (qualification[key] == null) continue;
+      const value = Number(qualification[key]);
+      const zeroBad = ['calculator_monthly_bill', 'calculator_annual_kwh', 'calculator_system_kw'].includes(key) && value === 0;
+      if (!Number.isFinite(value) || value < 0 || value > 10000000 || zeroBad) delete qualification[key];
+      else qualification[key] = value;
+    }
+    const cash = qualification.calculator_solar_only_price == null ? null : qualification.calculator_solar_only_price + (qualification.calculator_battery_price || 0);
+    const difference = qualification.calculator_monthly_bill == null || qualification.calculator_annual_bill_after == null ? null : qualification.calculator_monthly_bill * 12 - qualification.calculator_annual_bill_after;
+    qualification.calculator_cash_price = cash;
+    qualification.calculator_annual_difference = difference;
+    qualification.calculator_simple_payback = cash != null && difference != null && difference > 0 ? cash / difference : null;
+  } else {
+    for (const key of ['calculator_cash_price', 'calculator_annual_difference', 'calculator_simple_payback']) delete qualification[key];
+  }
+
+  // Step 17: attribution never rejects.
+  const attribution = cleanAttribution(body.attribution, ['initial_referrer', 'traffic_channel', 'first_touch_version']);
+  const initialReferrer = contract.sanitizeReferrer(body.attribution?.initial_referrer);
+  if (initialReferrer) attribution.initial_referrer = initialReferrer; else delete attribution.initial_referrer;
+  if (!contract.TRAFFIC_CHANNELS.includes(attribution.traffic_channel)) {
+    attribution.traffic_channel = contract.deriveTrafficChannel(attribution);
+  }
+  if (![1, 2].includes(attribution.first_touch_version)) delete attribution.first_touch_version;
+
+  const consentTimestamp = body.consent?.timestamp && Number.isFinite(Date.parse(body.consent.timestamp))
+    ? new Date(body.consent.timestamp).toISOString() : null;
+
+  return { meta, value: {
+    submission_id: submissionId, segment: 'residential', name, phone, email,
+    address: contract.composeAddress(street, city, zip), qualification_data: qualification,
+    attribution, consent_status: 'opted_in', consent_timestamp: consentTimestamp,
+    is_test: body.test === true,
+  } };
+}
+
+function validate(body) {
+  const submissionId = typeof body?.submission_id === 'string' ? body.submission_id.trim() : null;
+  const segment = text(body?.segment, 20);
+  if (!UUID.test(submissionId || '')) return { error: 'submission_id must be a UUID', code: 'invalid_submission_id' };
+  if (!['residential', 'commercial'].includes(segment)) return { error: 'segment must be residential or commercial', code: 'invalid_segment' };
+  if (segment === 'residential') return validateResidential(body, submissionId);
+  return validateCommercial(body);
+}
+
+function countRejection(code, meta, layer) {
+  // Reason, landing page path, form and layer only: never name, phone, email or street.
+  intakeService.recordRejection({
+    reason: code, landing_page: meta?.landing_page || 'unknown', form_kind: meta?.form_kind || 'unknown', layer,
+  });
+}
+
 async function createIntake(req, res, next) {
   const validated = validate(req.body);
-  if (validated.error) return res.apiResponse(400, validated.error);
+  if (validated.error) {
+    if (validated.code && validated.meta) countRejection(validated.code, validated.meta, 'api');
+    return validated.code
+      ? res.apiResponse(400, validated.error, null, { code: validated.code })
+      : res.apiResponse(400, validated.error);
+  }
   try {
     const result = await intakeService.createSubmission(validated.value);
     return res.apiResponse(result.replayed ? 200 : 201, result.replayed ? 'Submission already received' : 'Submission received', {
@@ -250,7 +437,14 @@ async function createIntake(req, res, next) {
       receipt_status: 'unknown',
       duplicate: result.replayed,
     });
-  } catch (error) { return next(error); }
+  } catch (error) {
+    // The ingest RPC (migration 014) refused the contract: same code, counted as layer 'rpc'.
+    if (error?.statusCode === 400 && error.code && contract.ERRORS[error.code]) {
+      countRejection(error.code, validated.meta, 'rpc');
+      return res.apiResponse(400, contract.ERRORS[error.code], null, { code: error.code });
+    }
+    return next(error);
+  }
 }
 
 function legacySubmissionId(body, now = new Date()) {
