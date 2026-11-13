@@ -17,7 +17,6 @@ import {
   User,
   Phone,
   Mail,
-  MapPin,
   Loader2,
   XCircle,
 } from 'lucide-react';
@@ -29,61 +28,57 @@ import {
   submitIntake,
   type IntakePayload,
 } from '@/lib/intake';
-import { isFiveDigitZip, serviceLocationFields, selectableServiceMarkets, type ServiceMarket } from '@/lib/service-market';
+import { derivedLocationFields } from '@/lib/ca-utility-by-zip';
 import { isNewConfirmedSubmission } from '@/lib/submission-identity';
 import { useToast } from '@/hooks/use-toast';
-import usePlacesAutocomplete, {
-  getGeocode,
-  getZipCode,
-} from 'use-places-autocomplete';
 import { HOME_WIZARD_COPY, INQUIRY_RECEIVED_COPY } from '@/lib/cta-intent';
 import { US_PHONE_HINT, formatUsPhoneInput, isValidUsPhone, toE164Us, usPhoneError } from '@/lib/phone';
-import { streetAddressError } from '@/lib/street-address';
 import {
   HOME_WIZARD_TARGET,
   QUICK_START_EVENT,
-  formatBill,
   quickStartFromEvent,
   takeQuickStart,
-  wizardBillBracket,
   wizardUtilityFor,
   type QuickStart,
 } from '@/lib/quick-start';
+import {
+  ADDRESS_REJECT_CODES,
+  BILL_CHOICES,
+  CONSENT_TEXT,
+  LEAD_CONTRACT_VERSION,
+  RENTER_COMMERCIAL_LINK,
+  RENTER_MESSAGE,
+  UNDER_250_ID,
+  UNDER_250_LINK,
+  UNDER_250_MESSAGE,
+  billBandLabel,
+  fieldForErrorCode,
+  firstLeadError,
+  isBillBandId,
+  needsUnitQuestion,
+  residentialLeadErrors,
+  type LeadErrorCode,
+  type LeadField,
+} from '@/lib/lead-contract';
+import { EMPTY_PROJECT_ADDRESS, addressLeadInput, type ProjectAddressState } from '@/lib/project-address';
+import { HAS_PLACES_KEY } from '@/lib/use-places-address';
+import { useLeadGates } from '@/lib/lead-gates';
 import { InquiryReceived } from '@/components/growth/InquiryReceived';
+import { ProjectAddressFields, type AddressField } from '@/components/growth/ProjectAddressFields';
 
 type WizardStep = 1 | 2 | 3 | 4 | 5;
 
 interface FormData {
   utilityProvider: string;
   utilityProviderOther: string;
-  billAmount: string;
+  /** A bill band id, or 'under_250' (screens out). */
+  billChoice: string;
   isHomeowner: boolean | null;
   creditScore: string;
   name: string;
   phone: string;
   email: string;
-  address: string;
-  city: string;
-  serviceZip: string;
-  serviceMarket: ServiceMarket | '';
-}
-
-/** Minimal shape of the geocoder components we read; @types/google.maps is not installed. */
-interface AddressComponent {
-  long_name?: string;
-  short_name?: string;
-  types?: string[];
-}
-
-/** City from a Places result: locality first, then the postal-town fallbacks. */
-function cityFromComponents(components: AddressComponent[] | undefined): string {
-  if (!Array.isArray(components)) return '';
-  const priority = ['locality', 'postal_town', 'sublocality_level_1', 'administrative_area_level_3'];
-  for (const type of priority) {
-    const match = components.find(part => Array.isArray(part?.types) && part.types.includes(type));
-    if (match?.long_name) return match.long_name;
-  }
-  return '';
+  consent: boolean;
 }
 
 const utilityProviders = [
@@ -125,66 +120,20 @@ const utilityProviders = [
   },
 ];
 
-const billAmounts = [
-  { id: '150-200', label: '$150 – $200', value: 175 },
-  { id: '201-350', label: '$201 – $350', value: 275 },
-  { id: '351-500', label: '$351 – $500', value: 425 },
-  { id: '500+', label: '$500+', value: 600 },
-];
-
-/** Contact-step fields that can carry an inline error. */
-type ContactField = 'address' | 'phone' | 'city' | 'serviceMarket' | 'serviceZip';
+/** Contact-step fields that can carry an inline error (residential lead contract). */
+type ContactField = Exclude<LeadField, 'bill' | 'homeowner'>;
 
 const initialFormData: FormData = {
   utilityProvider: '',
   utilityProviderOther: '',
-  billAmount: '',
+  billChoice: '',
   isHomeowner: null,
   creditScore: '',
   name: '',
   phone: '',
   email: '',
-  address: '',
-  city: '',
-  serviceZip: '',
-  // This wizard sits on the California home page; the visitor can still change
-  // it. Pre-selecting removes one required tap without changing what is sent.
-  serviceMarket: 'CA',
+  consent: false,
 };
-
-/** Minimal window shape for the Maps script this wizard injects. */
-type MapsWindow = Window & {
-  google?: { maps?: { places?: unknown } };
-  gm_authFailure?: () => void;
-};
-
-// Google Maps JavaScript API with the Places library, for the address field's
-// suggestions. Loaded on demand (plan item 4.2, 2026-09-24): the first focus or
-// keystroke in the address field injects it. It used to load with the home
-// page (386 KB, about 1.9 s of mobile LCP) for a field on the wizard's last
-// step. The URL and key are the ones the home page used.
-const PLACES_SCRIPT_ID = 'google-maps-places';
-const PLACES_API_KEY = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY;
-const PLACES_SCRIPT_SRC = PLACES_API_KEY
-  ? `https://maps.googleapis.com/maps/api/js?key=${PLACES_API_KEY}&libraries=places`
-  : '';
-
-/**
- * Add the Maps script to the page once. Returns false when there is no key,
- * so the address field stays the plain input it is without Maps.
- */
-function injectPlacesScript(onError: () => void): boolean {
-  if (!PLACES_SCRIPT_SRC) return false;
-  if (document.getElementById(PLACES_SCRIPT_ID)) return true;
-  const script = document.createElement('script');
-  script.id = PLACES_SCRIPT_ID;
-  script.src = PLACES_SCRIPT_SRC;
-  script.async = true;
-  script.addEventListener('error', onError);
-  // Body, like next/script, so it sits outside the <head> React renders.
-  document.body.appendChild(script);
-  return true;
-}
 
 const creditOptions = [
   { id: 'yes', label: 'Yes', sublabel: 'Above 650' },
@@ -201,6 +150,8 @@ export function QualificationWizard({
   const [currentStep, setCurrentStep] = useState<WizardStep>(1);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isDisqualified, setIsDisqualified] = useState(false);
+  // "Under $250" (residential lead contract, 12 Nov 2026): screened out, nothing sent.
+  const [isUnderMinimum, setIsUnderMinimum] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [hasUnconfirmedAttempt, setHasUnconfirmedAttempt] = useState(false);
   const { toast } = useToast();
@@ -213,9 +164,45 @@ export function QualificationWizard({
   // HeroQuickCheck handoff (see src/lib/quick-start.ts). prefill_source is a
   // new param on the wizard's existing events; the event names are unchanged.
   const prefillRef = useRef<'none' | 'quick_check'>('none');
-  const [quickBill, setQuickBill] = useState('');
   const stepHeadingRef = useRef<HTMLHeadingElement | null>(null);
   const focusHeadingRef = useRef(false);
+  const [address, setAddress] = useState<ProjectAddressState>(EMPTY_PROJECT_ADDRESS);
+  const trackGate = useLeadGates('qualification_wizard');
+
+  // Common form funnel (ported from 170a99c6, measurement only): form_view,
+  // form_step_complete once per step, form_validation_error and
+  // form_submit_attempt, beside the legacy wizard_* events.
+  const wizardSectionRef = useRef<HTMLElement | null>(null);
+  const viewedRef = useRef(false);
+  const completedStepsRef = useRef(new Set<number>());
+  const funnelContextRef = useRef<Record<string, string>>({});
+  funnelContextRef.current = {
+    form_kind: 'qualification_wizard',
+    segment: 'residential',
+    form_layout: 'home_wizard_v1',
+    form_step: String(currentStep),
+    prefill_source: prefillRef.current,
+  };
+  const funnelContext = () => ({ ...funnelContextRef.current, prefill_source: prefillRef.current });
+  const markViewed = () => {
+    if (viewedRef.current) return;
+    viewedRef.current = true;
+    trackEvent('form_view', funnelContext());
+  };
+  useEffect(() => {
+    const node = wizardSectionRef.current;
+    if (!node || isSuccess || isDisqualified || isUnderMinimum || typeof IntersectionObserver === 'undefined') return;
+    const observer = new IntersectionObserver(entries => {
+      if (!entries.some(entry => entry.isIntersecting)) return;
+      if (!viewedRef.current) {
+        viewedRef.current = true;
+        trackEvent('form_view', { ...funnelContextRef.current });
+      }
+      observer.disconnect();
+    }, { threshold: 0.1 });
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [isSuccess, isDisqualified, isUnderMinimum]);
 
   // Record the first page of the session so a lead can be credited to the page
   // that earned it rather than to whichever page hosts the wizard.
@@ -229,8 +216,10 @@ export function QualificationWizard({
   const markStarted = () => {
     if (startedRef.current) return;
     startedRef.current = true;
+    markViewed();
     const ft = getFirstTouch();
     trackEvent('wizard_start', {
+      ...funnelContext(),
       segment: 'residential',
       landing_page: ft?.landing_page ?? 'unknown',
       landing_page_type: ft?.landing_page_type ?? 'unknown',
@@ -239,13 +228,20 @@ export function QualificationWizard({
     });
   };
 
-  const [formData, setFormData] = useState<FormData>(initialFormData);
+  const recordStepCompletion = (step: number, source = prefillRef.current) => {
+    // Preserve the legacy series, and count each answered step only once in
+    // the common form funnel when a visitor goes Back and corrects an answer.
+    trackEvent('wizard_step_completed', {
+      step,
+      landing_page_type: getFirstTouch()?.landing_page_type ?? 'unknown',
+      prefill_source: source,
+    });
+    if (completedStepsRef.current.has(step)) return;
+    completedStepsRef.current.add(step);
+    trackEvent('form_step_complete', { ...funnelContext(), form_step: String(step), prefill_source: source });
+  };
 
-  // A ZIP-to-utility inference is deliberately California-only.
-  const zipWarning =
-    formData.serviceZip.length === 5 && !isFiveDigitZip(formData.serviceZip)
-      ? 'Enter a 5-digit project ZIP code.'
-      : '';
+  const [formData, setFormData] = useState<FormData>(initialFormData);
 
   const updateFormData = (
     field: keyof FormData,
@@ -262,91 +258,10 @@ export function QualificationWizard({
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  // Google Places suggestions for the address field. The hook is created with
-  // initOnMount: false and init() runs only once window.google.maps.places
-  // exists; initialising without it is what logged "use-places-autocomplete:
-  // Google Maps Places API library must be loaded". The address input is one
-  // plain input either way, so typing works with or without Maps.
-  const {
-    ready: placesReady,
-    setValue: setPlacesValue,
-    suggestions: { status, data },
-    clearSuggestions,
-    init: initPlaces,
-  } = usePlacesAutocomplete({
-    requestOptions: {
-      componentRestrictions: { country: 'us' }, // US addresses only
-    },
-    debounce: 300,
-    initOnMount: false,
-  });
-  const [placesFailed, setPlacesFailed] = useState(false);
-  const placesActive = placesReady && !placesFailed;
-  // Set on the first focus or keystroke in the address field (see
-  // injectPlacesScript). Nothing Maps-related loads before that.
-  const [placesRequested, setPlacesRequested] = useState(false);
-  const requestPlaces = () => {
-    if (!placesRequested) setPlacesRequested(true);
-  };
-
-  useEffect(() => {
-    if (!placesRequested) return;
-    const mapsWindow = window as MapsWindow;
-    // Google calls this global when the key is rejected (for example
-    // ApiNotActivatedMapError); fall back to the plain input quietly.
-    const previousAuthFailure = mapsWindow.gm_authFailure;
-    const onAuthFailure = () => {
-      setPlacesFailed(true);
-      clearSuggestions();
-      previousAuthFailure?.();
-    };
-    mapsWindow.gm_authFailure = onAuthFailure;
-    let tries = 0;
-    let timer: number | undefined;
-    const tryInit = () => {
-      if (mapsWindow.google?.maps?.places) {
-        initPlaces();
-        return;
-      }
-      // The script loads async; look for the Places namespace until it
-      // appears, and stop after ~30 s so a failed load does no further work.
-      if (++tries < 60) timer = window.setTimeout(tryInit, 500);
-    };
-    if (mapsWindow.google?.maps?.places || injectPlacesScript(() => setPlacesFailed(true))) {
-      tryInit();
-    }
-    return () => {
-      if (timer) window.clearTimeout(timer);
-      if (mapsWindow.gm_authFailure === onAuthFailure) mapsWindow.gm_authFailure = previousAuthFailure;
-    };
-    // initPlaces and clearSuggestions are stable useCallbacks in the hook.
-  }, [placesRequested, clearSuggestions, initPlaces]);
-
-  // Maps can arrive while the visitor is already typing. Offer suggestions for
-  // what is in the field then, once, instead of waiting for the next keystroke.
-  const placesWereActiveRef = useRef(false);
-  useEffect(() => {
-    if (!placesActive || placesWereActiveRef.current) return;
-    placesWereActiveRef.current = true;
-    const input = document.getElementById('address');
-    if (
-      input instanceof HTMLInputElement &&
-      document.activeElement === input &&
-      input.value &&
-      !hasUnconfirmedAttempt
-    ) {
-      setPlacesValue(input.value);
-    }
-  }, [placesActive, hasUnconfirmedAttempt, setPlacesValue]);
-
   const nextStep = () => {
     markStarted();
     if (currentStep < 5) {
-      trackEvent('wizard_step_completed', {
-        step: currentStep,
-        landing_page_type: getFirstTouch()?.landing_page_type ?? 'unknown',
-        prefill_source: prefillRef.current,
-      });
+      recordStepCompletion(currentStep);
       setCurrentStep((prev) => (prev + 1) as WizardStep);
     }
   };
@@ -357,27 +272,22 @@ export function QualificationWizard({
   // wizard_start fires through the usual once-only guard, so nothing is
   // double-counted and the step funnel stays monotonic.
   const applyQuickStart = (value: QuickStart) => {
-    if (isSuccess || isDisqualified || hasUnconfirmedAttempt || attemptRef.current) return;
+    if (isSuccess || isDisqualified || isUnderMinimum || hasUnconfirmedAttempt || attemptRef.current) return;
     const utility = wizardUtilityFor(value);
-    const bracket = wizardBillBracket(Number(value.monthlyBill));
+    // A band skips the bill question; an older handoff without a usable band
+    // (typed under $250, or unusable) opens step 2 with nothing selected.
+    const band = isBillBandId(value.billChoice) ? value.billChoice : '';
     prefillRef.current = 'quick_check';
-    setQuickBill(value.monthlyBill);
     setFormData((prev) => ({
       ...prev,
       utilityProvider: utility.utilityProvider,
       utilityProviderOther: utility.utilityProviderOther,
-      // Below $150 there is no matching range; the visitor picks one on step 2
-      // rather than the form recording a range they did not give.
-      billAmount: bracket ?? '',
+      billChoice: band,
     }));
     markStarted();
-    const target: WizardStep = bracket ? (Math.max(currentStep, 3) as WizardStep) : 2;
+    const target: WizardStep = band ? (Math.max(currentStep, 3) as WizardStep) : 2;
     for (let step = currentStep; step < target; step++) {
-      trackEvent('wizard_step_completed', {
-        step,
-        landing_page_type: getFirstTouch()?.landing_page_type ?? 'unknown',
-        prefill_source: 'quick_check',
-      });
+      recordStepCompletion(step, 'quick_check');
     }
     focusHeadingRef.current = true;
     setCurrentStep(target);
@@ -422,10 +332,22 @@ export function QualificationWizard({
   const handleHomeownerSelect = (isOwner: boolean) => {
     updateFormData('isHomeowner', isOwner);
     if (!isOwner) {
+      trackGate('gate_renter');
       setIsDisqualified(true);
     } else {
       nextStep();
     }
+  };
+
+  const handleBillSelect = (choice: string) => {
+    updateFormData('billChoice', choice);
+    if (choice === UNDER_250_ID) {
+      markStarted();
+      trackGate('gate_under_250');
+      setIsUnderMinimum(true);
+      return;
+    }
+    nextStep();
   };
 
   const handleSubmit = async () => {
@@ -433,61 +355,87 @@ export function QualificationWizard({
 
     // Inline errors next to the field, in page order, instead of a toast that
     // disappears. The first invalid field takes focus.
-    const errors: Partial<Record<ContactField, string>> = {};
-    const addressMessage = streetAddressError(formData.address);
-    if (addressMessage) errors.address = addressMessage;
-    if (!formData.city.trim()) errors.city = 'Enter the city for the project address.';
-    if (!isFiveDigitZip(formData.serviceZip)) errors.serviceZip = 'Enter the 5-digit ZIP code for the project.';
-    if (!formData.serviceMarket) errors.serviceMarket = 'Select the state or district where the project is.';
-    const phoneMessage = usPhoneError(formData.phone);
-    if (phoneMessage) errors.phone = phoneMessage;
-    const order: ContactField[] = ['address', 'city', 'serviceZip', 'serviceMarket', 'phone'];
-    const firstInvalid = order.find((field) => errors[field]);
-    if (firstInvalid) {
-      setFieldErrors(errors);
-      fieldRefs.current[firstInvalid]?.focus();
-      trackEvent('wizard_validation_error', {
-        reason: firstInvalid,
-        prefill_source: prefillRef.current,
+    if (!attemptRef.current) {
+      const errors = residentialLeadErrors({
+        billChoice: formData.billChoice || null,
+        homeowner: formData.isHomeowner,
+        ...addressLeadInput(address, HAS_PLACES_KEY),
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        consent: formData.consent,
       });
-      return;
+      const first = firstLeadError(errors);
+      if (first) {
+        // Bill and homeowner live on earlier steps.
+        if (first.field === 'bill' || first.field === 'homeowner') {
+          focusHeadingRef.current = true;
+          setCurrentStep(first.field === 'bill' ? 2 : 3);
+        } else {
+          const shown: Partial<Record<ContactField, string>> = {};
+          for (const [key, value] of Object.entries(errors)) {
+            if (key !== 'bill' && key !== 'homeowner') shown[key as ContactField] = value.message;
+          }
+          setFieldErrors(shown);
+          const field = first.field as ContactField;
+          requestAnimationFrame(() => fieldRefs.current[field]?.focus());
+        }
+        trackEvent('wizard_validation_error', {
+          reason: first.error.code,
+          prefill_source: prefillRef.current,
+        });
+        trackEvent('form_validation_error', { ...funnelContext(), reason: first.error.code });
+        if ((ADDRESS_REJECT_CODES as readonly LeadErrorCode[]).includes(first.error.code)) {
+          trackGate('gate_address_rejected', first.error.code);
+        }
+        return;
+      }
     }
     setFieldErrors({});
 
     submitInFlightRef.current = true;
     setIsSubmitting(true);
+    markStarted();
+    trackEvent('form_submit_attempt', funnelContext());
     const firstTouch = getFirstTouch();
+    const needsUnit = needsUnitQuestion(address.street, address.placesUnitFlag);
 
     try {
-      const billOption = billAmounts.find((b) => b.id === formData.billAmount);
-      const billValue = billOption?.value || 0;
-
       // E.164, exactly what the old normalizer produced for a US number and
       // what the backend's normalizePhone stores.
       const normalizedPhone = toE164Us(formData.phone) ?? formData.phone;
+      // "Other" with no name typed sends 'other' (the backend's canonical 'Other').
+      const utilityProvider =
+        formData.utilityProvider === 'other' ? formData.utilityProviderOther.trim() || 'other' : formData.utilityProvider;
 
       // The ZIP-derived territory is recorded ALONGSIDE the visitor's own
-      // utility answer, never on top of it. utility_provider stays exactly what
-      // the visitor picked, derived_utility is what the seed table says, and a
-      // disagreement between the two is a review signal rather than a silent
-      // overwrite. The seed table is the less reliable of the two sources.
-      // serviceMarket was checked non-empty above.
-      const location = serviceLocationFields(formData.serviceMarket as ServiceMarket, formData.serviceZip, formData.city, formData.utilityProvider);
+      // utility answer, never on top of it: a disagreement is a review signal.
+      const location = derivedLocationFields(address.zip, address.city, formData.utilityProvider);
 
       const attempt = getOrCreateSubmissionAttempt<IntakePayload>(attemptRef.current, submissionId => ({
         submission_id: submissionId,
         segment: 'residential',
         contact: {
           name: formData.name.trim(), phone: normalizedPhone,
-          email: formData.email.trim(), address: formData.address.trim(),
+          email: formData.email.trim(),
+          // The API composes "street, City, CA ZIP" from the parts.
+          street: address.street.trim(),
         },
         qualification_data: {
-          // "Other" with no name typed sends 'other' (the backend's canonical
-          // 'Other') instead of an empty string the backend would reject.
-          utility_provider: formData.utilityProvider === 'other' ? formData.utilityProviderOther.trim() || 'other' : formData.utilityProvider, bill_amount: billValue,
-          monthly_bill_range: formData.billAmount, credit_score: formData.creditScore,
-          homeowner: formData.isHomeowner === true,
+          lead_contract_version: LEAD_CONTRACT_VERSION,
+          form_kind: 'qualification_wizard',
+          homeowner: true,
+          monthly_bill_band: formData.billChoice,
+          utility_provider: utilityProvider,
+          credit_score: formData.creditScore,
           ...location,
+          city: address.city.trim(),
+          service_zip: address.zip,
+          service_market: 'CA',
+          unit_flagged: needsUnit,
+          unit_confirmed_detached: needsUnit ? true : null,
+          address_source: address.source,
+          places_status: address.placesStatus,
         },
         attribution: intakeAttribution(firstTouch),
         consent: { status: 'opted_in', timestamp: new Date().toISOString() },
@@ -500,13 +448,18 @@ export function QualificationWizard({
       // never attach contact details or other personally identifying fields.
       if (isNewSubmission && !trackedSuccessIdsRef.current.has(attempt.id)) {
         trackEvent('generate_lead', {
+          ...funnelContext(),
           segment: 'residential',
           landing_page: firstTouch?.landing_page ?? 'unknown',
           landing_page_type: firstTouch?.landing_page_type ?? 'unknown',
           landing_city_slug: firstTouch?.landing_city_slug ?? 'none',
           utility_provider: formData.utilityProvider || 'unknown',
           derived_utility: location.derived_utility ?? 'unknown',
-          bill_bracket: formData.billAmount || 'unknown',
+          bill_bracket: formData.billChoice || 'unknown',
+          bill_band: formData.billChoice || 'unknown',
+          traffic_channel: firstTouch?.traffic_channel ?? 'unknown',
+          unit_flagged: needsUnit ? 'yes' : 'no',
+          address_source: address.source,
           prefill_source: prefillRef.current,
         });
         trackedSuccessIdsRef.current.add(attempt.id);
@@ -518,18 +471,41 @@ export function QualificationWizard({
       setHasUnconfirmedAttempt(false);
       attemptRef.current = null;
     } catch (error) {
-      setHasUnconfirmedAttempt(true);
+      const status = (error as { statusCode?: number })?.statusCode;
+      const code = (error as { code?: string })?.code;
       // Without this, a backend outage looks identical to "no traffic" in GA4.
       trackEvent('form_submit_error', {
+        ...funnelContext(),
+        status_code: String(status ?? 0),
+        ...(code ? { reason: code } : {}),
         segment: 'residential',
         landing_page_type: firstTouch?.landing_page_type ?? 'unknown',
         landing_city_slug: firstTouch?.landing_city_slug ?? 'none',
       });
-      toast({
-        title: 'Submission Failed',
-        description: 'Your information was not confirmed as received. Please try again.',
-        variant: 'destructive',
-      });
+      // HTTP 400 is validation before storage: nothing was saved, so the
+      // visitor corrects the field the API named instead of retrying.
+      const field = status === 400 ? fieldForErrorCode(code) : null;
+      if (status === 400) {
+        attemptRef.current = null;
+        setHasUnconfirmedAttempt(false);
+        const message = error instanceof Error ? error.message : 'Check your answers and send again.';
+        if (field === 'bill' || field === 'homeowner') {
+          focusHeadingRef.current = true;
+          setCurrentStep(field === 'bill' ? 2 : 3);
+        } else if (field) {
+          setFieldErrors({ [field]: message });
+          requestAnimationFrame(() => fieldRefs.current[field as ContactField]?.focus());
+          if ((ADDRESS_REJECT_CODES as readonly string[]).includes(code || '')) trackGate('gate_address_rejected', code);
+        }
+        toast({ title: 'Check your answers', description: message, variant: 'destructive' });
+      } else {
+        setHasUnconfirmedAttempt(true);
+        toast({
+          title: 'Submission Failed',
+          description: 'Your information was not confirmed as received. Please try again.',
+          variant: 'destructive',
+        });
+      }
     } finally {
       submitInFlightRef.current = false;
       setIsSubmitting(false);
@@ -550,13 +526,13 @@ export function QualificationWizard({
                 Residential assessment requires property ownership
               </h2>
               <p className='text-muted-foreground mb-6'>
-                This form is for California homeowners. If you control a business
-                or commercial property, use the commercial assessment instead.
+                {RENTER_MESSAGE} If you control a business or commercial
+                property, use the commercial assessment instead.
               </p>
               <div className='bg-primary/5 rounded-lg p-4 mb-6 border border-primary/20'>
                 <p className='text-sm text-primary'>
-                  <a href='/commercial-assessment' className='font-semibold underline'>
-                    Open the commercial solar assessment
+                  <a href={RENTER_COMMERCIAL_LINK.href} className='font-semibold underline'>
+                    {RENTER_COMMERCIAL_LINK.label}
                   </a>
                 </p>
               </div>
@@ -571,6 +547,45 @@ export function QualificationWizard({
                 className='w-full'
               >
                 Start Over
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  // Screen-out: average bill under $250 (residential lead contract). Nothing is sent.
+  if (isUnderMinimum) {
+    return (
+      <section className='py-16 bg-muted'>
+        <div className='container mx-auto px-4'>
+          <div className='max-w-5xl mx-auto bg-card rounded-xl border border-border p-8 min-h-[650px] flex flex-col items-center justify-center'>
+            <div className='text-center max-w-md'>
+              <div className='w-16 h-16 bg-status-warning/10 rounded-full flex items-center justify-center mx-auto mb-6'>
+                <XCircle className='h-8 w-8 text-status-warning' />
+              </div>
+              <h2 className='text-3xl md:text-4xl font-extrabold text-foreground mb-4 tracking-tight'>
+                Referrals start at a $250 monthly bill
+              </h2>
+              <p className='text-muted-foreground mb-6'>{UNDER_250_MESSAGE}</p>
+              <div className='bg-primary/5 rounded-lg p-4 mb-6 border border-primary/20'>
+                <p className='text-sm text-primary'>
+                  <a href={UNDER_250_LINK.href} className='font-semibold underline'>
+                    {UNDER_250_LINK.label}
+                  </a>
+                </p>
+              </div>
+              <Button
+                onClick={() => {
+                  setIsUnderMinimum(false);
+                  setFormData((prev) => ({ ...prev, billChoice: '' }));
+                  setCurrentStep(2);
+                }}
+                variant='outline'
+                className='w-full'
+              >
+                Change my answer
               </Button>
             </div>
           </div>
@@ -602,19 +617,12 @@ export function QualificationWizard({
     formData.utilityProvider === 'other'
       ? formData.utilityProviderOther.trim() || 'Other'
       : utilityProviders.find((provider) => provider.id === formData.utilityProvider)?.label ?? '';
-  const billOptionLabel = billAmounts.find((amount) => amount.id === formData.billAmount)?.label ?? '';
-  // Show the figure the visitor typed in the quick check while it still
-  // matches the selected range; otherwise the range itself.
-  const billLabel =
-    quickBill && formData.billAmount && wizardBillBracket(Number(quickBill)) === formData.billAmount
-      ? formatBill(quickBill)
-      : billOptionLabel;
+  const billLabel = billBandLabel(formData.billChoice) ?? '';
   const showSummary = prefillRef.current === 'quick_check' && currentStep > 1 && Boolean(utilityLabel);
-  const quickBillBelowRanges =
-    prefillRef.current === 'quick_check' && quickBill !== '' && wizardBillBracket(Number(quickBill)) === null;
+  const unitDeclined = address.unitAnswer === 'no' && needsUnitQuestion(address.street, address.placesUnitFlag);
 
   return (
-    <section className='py-16 bg-muted'>
+    <section ref={wizardSectionRef} onFocusCapture={markStarted} className='py-16 bg-muted'>
       <div className='container mx-auto px-4'>
         <div className='mx-auto max-w-5xl'>
           {/* Card Container */}
@@ -724,27 +732,19 @@ export function QualificationWizard({
                     What is your average monthly bill?
                   </h2>
                   <p className='text-base text-muted-foreground font-medium'>
-                    This helps us estimate your potential savings
+                    Choose the range closest to your typical bill
                   </p>
-                  {quickBillBelowRanges && (
-                    <p className='mt-3 text-sm text-foreground'>
-                      You entered {formatBill(quickBill)} a month. Choose the range closest to your typical bill.
-                    </p>
-                  )}
                 </div>
 
                 <div className='grid grid-cols-2 gap-6 max-w-2xl mx-auto'>
-                  {billAmounts.map((amount) => (
+                  {BILL_CHOICES.map((amount) => (
                     <button
                       key={amount.id}
                       type='button'
-                      aria-pressed={formData.billAmount === amount.id}
-                      onClick={() => {
-                        updateFormData('billAmount', amount.id);
-                        nextStep();
-                      }}
+                      aria-pressed={formData.billChoice === amount.id}
+                      onClick={() => handleBillSelect(amount.id)}
                       className={`p-8 rounded-xl border-2 text-center font-bold text-xl md:text-2xl transition-all duration-200 min-h-[120px] flex items-center justify-center ${
-                        formData.billAmount === amount.id
+                        formData.billChoice === amount.id
                           ? 'border-primary bg-primary/10 text-primary shadow-lg scale-105'
                           : 'border-border bg-card text-foreground hover:border-primary/50 hover:bg-muted/50 hover:shadow-md'
                       }`}
@@ -855,6 +855,7 @@ export function QualificationWizard({
                 </div>
 
                 <form
+                  noValidate
                   onSubmit={(e) => {
                     e.preventDefault();
                     handleSubmit();
@@ -864,196 +865,21 @@ export function QualificationWizard({
                   {/* Location first (a picked suggestion fills city and ZIP),
                       contact details last, next to the consent line. */}
                   <div className='grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-5'>
-                    <div className='space-y-3 md:col-span-2'>
-                      <Label
-                        htmlFor='address'
-                        className='text-base font-bold text-foreground'
-                      >
-                        Home Address
-                      </Label>
-                      <div className='relative'>
-                        <MapPin className='absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground z-10' aria-hidden='true' />
-                        <Input
-                          id='address'
-                          ref={(node) => {
-                            fieldRefs.current.address = node;
-                          }}
-                          type='text'
-                          maxLength={500}
-                          value={formData.address}
-                          onFocus={requestPlaces}
-                          onChange={(e) => {
-                            const value = e.target.value;
-                            requestPlaces();
-                            updateFormData('address', value);
-                            if (fieldErrors.address) setFieldErrors((prev) => ({ ...prev, address: undefined }));
-                            if (placesActive && !hasUnconfirmedAttempt) setPlacesValue(value);
-                          }}
-                          required
-                          autoComplete={placesActive ? 'off' : 'street-address'}
-                          aria-invalid={Boolean(fieldErrors.address) || undefined}
-                          aria-describedby={fieldErrors.address ? fieldErrorId('address') : 'address-help'}
-                          className={`pl-12 h-12 text-base border-2 focus:border-primary transition-colors ${fieldErrors.address ? 'border-destructive' : 'border-border'}`}
-                        />
-                        {placesActive && status === 'OK' && data.length > 0 && (
-                          <div className='absolute z-50 w-full mt-1 bg-card border-2 border-border rounded-lg shadow-lg max-h-60 overflow-y-auto'>
-                            {data.map(({ place_id, description }) => (
-                              <button
-                                key={place_id}
-                                type='button'
-                                onClick={async () => {
-                                  if (hasUnconfirmedAttempt) {
-                                    updateFormData('address', description);
-                                    return;
-                                  }
-                                  setPlacesValue(description, false);
-                                  updateFormData('address', description);
-                                  clearSuggestions();
-
-                                  // Auto-fill city and ZIP from the selected
-                                  // place. Both stay editable, and a geocode
-                                  // failure must not block the submission.
-                                  try {
-                                    const results = await getGeocode({ address: description });
-                                    const first = results?.[0];
-                                    if (first) {
-                                      const city = cityFromComponents(
-                                        (first as unknown as { address_components?: AddressComponent[] }).address_components,
-                                      );
-                                      if (city) {
-                                        updateFormData('city', city);
-                                        clearFieldError('city');
-                                      }
-                                      const zip = getZipCode(first, false);
-                                      if (zip && /^\d{5}$/.test(zip)) {
-                                        updateFormData('serviceZip', zip);
-                                        clearFieldError('serviceZip');
-                                      }
-                                    }
-                                  } catch (error) {
-                                    console.error('Error getting address details:', error);
-                                  }
-                                }}
-                                className='w-full min-h-[44px] text-left px-4 py-3 hover:bg-muted transition-colors border-b border-border last:border-b-0'
-                              >
-                                <p className='text-sm text-foreground'>{description}</p>
-                              </button>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                      {fieldErrors.address && (
-                        <p id={fieldErrorId('address')} className='text-sm font-medium text-destructive'>
-                          {fieldErrors.address}
-                        </p>
-                      )}
-                      <p id='address-help' className='text-xs text-muted-foreground'>
-                        {placesActive
-                          ? 'Start typing, then pick a suggestion to fill in the city and ZIP.'
-                          : 'Street address, for example 123 Main St.'}
-                      </p>
-                    </div>
-
-                    <div className='space-y-3'>
-                      <Label
-                        htmlFor='service-city'
-                        className='text-base font-bold text-foreground'
-                      >
-                        City
-                      </Label>
-                      <Input
-                        id='service-city'
-                        type='text'
-                        autoComplete='address-level2'
-                        maxLength={80}
-                        ref={(node) => {
-                          fieldRefs.current.city = node;
-                        }}
-                        value={formData.city}
-                        onChange={(e) => {
-                          updateFormData('city', e.target.value);
-                          clearFieldError('city');
-                        }}
-                        required
-                        aria-invalid={Boolean(fieldErrors.city) || undefined}
-                        aria-describedby={fieldErrors.city ? fieldErrorId('city') : 'service-city-help'}
-                        className={`h-12 text-base border-2 focus:border-primary transition-colors ${fieldErrors.city ? 'border-destructive' : 'border-border'}`}
-                      />
-                      {fieldErrors.city ? (
-                        <p id={fieldErrorId('city')} className='text-sm font-medium text-destructive'>
-                          {fieldErrors.city}
-                        </p>
-                      ) : (
-                        placesActive && (
-                          <p id='service-city-help' className='text-xs text-muted-foreground'>
-                            Filled in automatically when you pick a suggested address
-                          </p>
-                        )
-                      )}
-                    </div>
-
-                    <div className='space-y-3'>
-                      <Label
-                        htmlFor='service-zip'
-                        className='text-base font-bold text-foreground'
-                      >
-                        Project ZIP Code
-                      </Label>
-                      <Input
-                        id='service-zip'
-                        type='text'
-                        inputMode='numeric'
-                        autoComplete='postal-code'
-                        pattern='[0-9]{5}'
-                        ref={(node) => {
-                          fieldRefs.current.serviceZip = node;
-                        }}
-                        value={formData.serviceZip}
-                        onChange={(e) => {
-                          updateFormData('serviceZip', e.target.value.replace(/\D/g, '').slice(0, 5));
-                          clearFieldError('serviceZip');
-                        }}
-                        required
-                        aria-invalid={Boolean(fieldErrors.serviceZip || zipWarning) || undefined}
-                        aria-describedby='service-zip-help'
-                        className={`h-12 text-base border-2 focus:border-primary transition-colors ${fieldErrors.serviceZip ? 'border-destructive' : 'border-border'}`}
-                      />
-                      <p
-                        id='service-zip-help'
-                        className={`text-xs ${fieldErrors.serviceZip || zipWarning ? 'text-sm font-medium text-destructive' : 'text-muted-foreground'}`}
-                      >
-                        {fieldErrors.serviceZip || zipWarning || 'Enter the 5-digit ZIP code for the selected project market'}
-                      </p>
-                    </div>
-
-                    <div className='space-y-3'>
-                      <Label htmlFor='service-market' className='text-base font-bold text-foreground'>
-                        Project state or district
-                      </Label>
-                      <select
-                        id='service-market'
-                        ref={(node) => {
-                          fieldRefs.current.serviceMarket = node;
-                        }}
-                        value={formData.serviceMarket}
-                        onChange={(e) => {
-                          updateFormData('serviceMarket', e.target.value as ServiceMarket);
-                          clearFieldError('serviceMarket');
-                        }}
-                        required
-                        aria-invalid={Boolean(fieldErrors.serviceMarket) || undefined}
-                        aria-describedby={fieldErrors.serviceMarket ? fieldErrorId('serviceMarket') : undefined}
-                        className={`h-12 w-full rounded-md border-2 bg-background px-3 text-base focus:border-primary focus:outline-none ${fieldErrors.serviceMarket ? 'border-destructive' : 'border-border'}`}
-                      >
-                        <option value=''>Select project market</option>
-                        {selectableServiceMarkets.map(([code, label]) => <option key={code} value={code}>{label}</option>)}
-                      </select>
-                      {fieldErrors.serviceMarket && (
-                        <p id={fieldErrorId('serviceMarket')} className='text-sm font-medium text-destructive'>
-                          {fieldErrors.serviceMarket}
-                        </p>
-                      )}
-                    </div>
+                    <ProjectAddressFields
+                      value={address}
+                      // A frozen attempt keeps its address; only the Places status may move.
+                      onChange={(next) => setAddress(hasUnconfirmedAttempt ? { ...address, placesStatus: next.placesStatus } : next)}
+                      formKind='qualification_wizard'
+                      eager
+                      disabled={isSubmitting || hasUnconfirmedAttempt}
+                      errors={{ street: fieldErrors.street, unit: fieldErrors.unit, city: fieldErrors.city, zip: fieldErrors.zip }}
+                      onClearError={(field: AddressField) => clearFieldError(field)}
+                      registerField={(field, node) => {
+                        fieldRefs.current[field] = node;
+                      }}
+                      labelClassName='text-base font-bold text-foreground'
+                      inputClassName='mt-2 h-12 w-full rounded-md border-2 border-border bg-background px-3 text-base focus:border-primary focus:outline-none'
+                    />
 
                     {formData.utilityProvider === 'other' && (
                       <div className='space-y-3'>
@@ -1077,14 +903,25 @@ export function QualificationWizard({
                           autoComplete='name'
                           autoCapitalize='words'
                           maxLength={160}
+                          ref={(node) => {
+                            fieldRefs.current.name = node;
+                          }}
                           value={formData.name}
-                          onChange={(e) =>
-                            updateFormData('name', e.target.value)
-                          }
+                          onChange={(e) => {
+                            updateFormData('name', e.target.value);
+                            clearFieldError('name');
+                          }}
                           required
-                          className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
+                          aria-invalid={Boolean(fieldErrors.name) || undefined}
+                          aria-describedby={fieldErrors.name ? fieldErrorId('name') : undefined}
+                          className={`pl-12 h-12 text-base border-2 focus:border-primary transition-colors ${fieldErrors.name ? 'border-destructive' : 'border-border'}`}
                         />
                       </div>
+                      {fieldErrors.name && (
+                        <p id={fieldErrorId('name')} className='text-sm font-medium text-destructive'>
+                          {fieldErrors.name}
+                        </p>
+                      )}
                     </div>
 
                     <div className='space-y-3'>
@@ -1146,14 +983,57 @@ export function QualificationWizard({
                           autoCapitalize='none'
                           spellCheck={false}
                           maxLength={254}
+                          ref={(node) => {
+                            fieldRefs.current.email = node;
+                          }}
                           value={formData.email}
-                          onChange={(e) =>
-                            updateFormData('email', e.target.value)
-                          }
+                          onChange={(e) => {
+                            updateFormData('email', e.target.value);
+                            clearFieldError('email');
+                          }}
                           required
-                          className='pl-12 h-12 text-base border-2 border-border focus:border-primary transition-colors'
+                          aria-invalid={Boolean(fieldErrors.email) || undefined}
+                          aria-describedby={fieldErrors.email ? fieldErrorId('email') : undefined}
+                          className={`pl-12 h-12 text-base border-2 focus:border-primary transition-colors ${fieldErrors.email ? 'border-destructive' : 'border-border'}`}
                         />
                       </div>
+                      {fieldErrors.email && (
+                        <p id={fieldErrorId('email')} className='text-sm font-medium text-destructive'>
+                          {fieldErrors.email}
+                        </p>
+                      )}
+                    </div>
+
+                    <div className='space-y-2 md:col-span-2'>
+                      <label className='flex items-start gap-3 text-sm text-foreground'>
+                        <input
+                          type='checkbox'
+                          required
+                          ref={(node) => {
+                            fieldRefs.current.consent = node;
+                          }}
+                          checked={formData.consent}
+                          onChange={(e) => {
+                            updateFormData('consent', e.target.checked);
+                            clearFieldError('consent');
+                          }}
+                          aria-invalid={Boolean(fieldErrors.consent) || undefined}
+                          aria-describedby={fieldErrors.consent ? fieldErrorId('consent') : undefined}
+                          className='mt-1 h-5 w-5 shrink-0'
+                        />
+                        <span>
+                          {CONSENT_TEXT} Read the{' '}
+                          <a href='/privacy' className='underline'>
+                            privacy policy
+                          </a>
+                          .
+                        </span>
+                      </label>
+                      {fieldErrors.consent && (
+                        <p id={fieldErrorId('consent')} className='text-sm font-medium text-destructive'>
+                          {fieldErrors.consent}
+                        </p>
+                      )}
                     </div>
                   </div>
 
@@ -1171,7 +1051,7 @@ export function QualificationWizard({
                     )}
                     <Button
                       type='submit'
-                      disabled={isSubmitting}
+                      disabled={isSubmitting || unitDeclined}
                       size='default'
                       className='w-full bg-primary hover:bg-primary/90 text-primary-foreground text-base font-semibold shadow-md hover:shadow-lg transition-all duration-200 h-12'
                     >
@@ -1189,11 +1069,6 @@ export function QualificationWizard({
                     </Button>
                   </div>
 
-                  <p className='text-sm text-center text-foreground/70 leading-relaxed font-medium pt-2'>
-                    By submitting, you agree to be contacted about the Rate
-                    Relief Program by California Rate Relief and a matched solar
-                    provider using the contact information above.
-                  </p>
                 </form>
               </div>
             )}
