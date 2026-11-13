@@ -44,7 +44,10 @@ export const BILL_CHOICES: readonly { id: BillChoiceId; label: string }[] = [
   ...BILL_BANDS.map((band) => ({ id: band.id, label: band.label })),
 ];
 
-export const REJECT_WORDS = ['apt', 'apartment', 'bldg', 'rm', 'floor', 'suite', 'ste', 'lot', 'space', 'trailer'] as const;
+export const REJECT_WORDS = [
+  'apt', 'apts', 'apartment', 'apartments', 'apto', 'depto', 'departamento', 'bldg', 'building', 'rm', 'room',
+  'fl', 'flr', 'floor', 'suite', 'ste', 'lot', 'space', 'spc', 'sp', 'espacio', 'trailer', 'trlr',
+] as const;
 
 export const FORM_KINDS = ['solar_inquiry', 'qualification_wizard', 'offer_request'] as const;
 export type FormKind = (typeof FORM_KINDS)[number];
@@ -84,7 +87,7 @@ export const ERRORS = {
   email_required: 'Enter your email address.',
   email_invalid: 'Enter a valid email address.',
   street_required: 'Enter the street address of the home.',
-  po_box: "A PO box can't be used. Enter the street address of the home.",
+  po_box: "A PO box or private mailbox can't be used. Enter the street address of the home.",
   unit_word:
     "We can only send requests for detached single-family homes. Addresses with an apartment, suite, building, room, floor, lot, space or trailer number can't be used.",
   street_format: 'Enter the house number and street name, for example 123 Main St.',
@@ -111,8 +114,8 @@ export const FRONT_ONLY_ERRORS: readonly LeadErrorCode[] = ['places_not_selected
 // it is not a letter (or end). Digits count as a boundary on purpose: "Apt4"
 // and "Unit4" are caught, "Stewart", "Floorwood", "Lotus", "Unity" are not.
 // ---------------------------------------------------------------------------
-export const PO_BOX_RE = /(?:^|[^a-z])(?:p\s*\.?\s*o\s*\.?\s*box|post\s+office\s+box)(?![a-z])/i;
-export const REJECT_WORD_RE = /(?:^|[^a-z])(?:apt|apartment|bldg|rm|floor|suite|ste|lot|space|trailer)(?![a-z])/i;
+export const PO_BOX_RE = /(?:^|[^a-z])(?:p\s*\.?\s*o\s*\.?\s*b(?:ox)?\.?|post\s+office\s+box|pmb|private\s+mail\s*box)(?![a-z])/i;
+export const REJECT_WORD_RE = /(?:^|[^a-z])(?:apt|apts|apartment|apartments|apto|depto|departamento|bldg|building|rm|room|fl|flr|floor|suite|ste|lot|space|spc|sp|espacio|trailer|trlr)(?![a-z])/i;
 export const UNIT_RE = /(?:^|[^a-z])unit(?![a-z])|#/i;
 // House number (12, 12B, 12-B, 1234-1236), then a street name with at least two
 // letters. Letters include accented ones (Peñasquitos, Cañada) so a real

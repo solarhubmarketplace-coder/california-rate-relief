@@ -93,6 +93,17 @@ describe('migration 014: the lead contract in the ingest RPC', () => {
     ['state_not_ca', (a) => withQ(a, { service_market: 'NJ' })],
     ['zip_not_ca', (a) => withQ(a, { service_zip: '10001' })],
     ['consent_required', (a) => ({ ...a, p_submission_id: nextId(), p_consent_status: 'pending' })],
+    // Review F2: a direct RPC caller cannot hide a unit or PO box after the first
+    // comma, or store an out-of-state address under a California service_zip.
+    ['unit_word', (a) => ({ ...a, p_submission_id: nextId(), p_address: '123 Main St, Apt 4, Temecula, CA 92591' })],
+    ['po_box', (a) => ({ ...a, p_submission_id: nextId(), p_address: '123 Main St, PO Box 5, Temecula, CA 92591' })],
+    ['unit_unconfirmed', (a) => ({ ...a, p_submission_id: nextId(), p_address: '123 Main St, Unit 4, Temecula, CA 92591' })],
+    ['zip_not_ca', (a) => ({ ...a, p_submission_id: nextId(), p_address: '123 Main St, Reno, NV 89501' })],
+    // Review F1: abbreviations and full words for the listed designators.
+    ['unit_word', (a) => ({ ...a, p_submission_id: nextId(), p_address: '123 Oak Dr Spc 45, Temecula, CA 92591' })],
+    ['unit_word', (a) => ({ ...a, p_submission_id: nextId(), p_address: '123 Main St Oakwood Apartments, Temecula, CA 92591' })],
+    ['po_box', (a) => ({ ...a, p_submission_id: nextId(), p_address: '1234 Main St PMB 56, Temecula, CA 92591' })],
+    ['po_box', (a) => ({ ...a, p_submission_id: nextId(), p_address: '123 Main St POB 5, Temecula, CA 92591' })],
   ];
   for (const [code, mutate] of refusals) {
     test(`refuses ${code} with SQLSTATE 22023`, async () => {
@@ -107,6 +118,23 @@ describe('migration 014: the lead contract in the ingest RPC', () => {
   test('a confirmed unit is accepted', async () => {
     const res = await rpc(db, 'ingest_crr_submission', apiArgs({ street: '12 Main St #4', q: { unit_confirmed_detached: true } }));
     assert.equal(res.error, null, JSON.stringify(res.error));
+  });
+
+  test('an API-composed address with an accented city and a confirmed unit is accepted', async () => {
+    const res = await rpc(db, 'ingest_crr_submission', apiArgs({
+      street: '12 Main St #4', phone: '(951) 555-0133',
+      q: { city: 'La Cañada Flintridge', service_zip: '91011', unit_confirmed_detached: true },
+    }));
+    assert.equal(res.error, null, JSON.stringify(res.error));
+  });
+
+  test('real streets that contain a designator as part of a word are accepted', async () => {
+    let n = 140;
+    for (const street of ['18 Roomsdale Ct', '600 Aptos Beach Dr', '21 Pobre Ln', '19 Buildwell Way', '77 Flint Rd', '5 Spanish Bay Rd']) {
+      n += 1;
+      const res = await rpc(db, 'ingest_crr_submission', apiArgs({ street, phone: `(951) 555-0${n}` }));
+      assert.equal(res.error, null, `${street}: ${JSON.stringify(res.error)}`);
+    }
   });
 
   test('a replay of an existing submission_id bypasses the check', async () => {
@@ -143,25 +171,33 @@ describe('migration 014: the lead contract in the ingest RPC', () => {
   });
 
   test('the SQL street regexes give the same verdicts as classifyStreet', async () => {
+    // The migration's own regexes, copied verbatim (guarded against drift below).
+    const PO_SQL = String.raw`(^|[^a-z])(p\s*\.?\s*o\s*\.?\s*b(ox)?\.?|post\s+office\s+box|pmb|private\s+mail\s*box)([^a-z]|$)`;
+    const REJECT_SQL = String.raw`(^|[^a-z])(apt|apts|apartment|apartments|apto|depto|departamento|bldg|building|rm|room|fl|flr|floor|suite|ste|lot|space|spc|sp|espacio|trailer|trlr)([^a-z]|$)`;
+    const sql = read('014_residential_lead_contract.sql');
+    assert.ok(sql.includes(`'${PO_SQL}'`), 'PO box regex drifted from 014');
+    assert.ok(sql.includes(`'${REJECT_SQL}'`), 'reject-word regex drifted from 014');
     const vectors = ['123 Main St', '123 Stewart Ave', '88 Floorwood Dr', '123 Lot St', '45 Space Center Blvd', 'PO Box 12',
       'P.O. Box 12', 'P. O. Box 12', 'Post Office Box 77', '12 Main St Unit 4', '12 Main St #4', '12 Main St Apt 4',
       '12 Main St APT. 4', '12 Main St Ste 5', '12 Main St Apt4', '12 Main St Unit4', '300 Unity Dr', '4500 Lotus Ave',
       '120 Spaceport Way', '2 Suites Ln', '500 W Unit Rd', '1600 Amphitheatre Pkwy #B', '10 Main St Floor 3',
       '1 Trailer Park Rd', '18 Ste-Marie Ave', '3 Box Canyon Rd', 'Main St', '123', '12-B Oak St', '1234-1236 Elm St',
-      '10 Calle Peñasquitos', ''];
+      '10 Calle Peñasquitos', '',
+      // Review F1
+      '123 Oak Dr Spc 45', '123 Oak Dr Sp 45', '123 Oak Dr Trlr 5', '123 Main St Building 4', '123 Main St Room 5',
+      '123 Main St Fl 2', '123 Main St Flr 2', '123 Main St Oakwood Apartments', '123 Main St Apts 4', '123 Calle Luna Apto 4',
+      '123 Calle Luna Depto 4', '123 Calle Luna Espacio 12', '1234 Main St PMB 56', '123 Main St POB 5', 'P.O.B. 5',
+      '55 Spring St', '9 Spruce Ave', '40 Flower St', '7 Florence Ave', '18 Roomsdale Ct', '600 Aptos Beach Dr', '21 Pobre Ln',
+      '5 Spanish Bay Rd', '77 Flint Rd', '19 Buildwell Way', '31 Pomona Ave', '11 Poe St'];
     for (const street of vectors) {
       const { rows } = await db.query(`select case
         when $1 = '' then 'street_required'
-        when $1 ~* '(^|[^a-z])(p\\s*\\.?\\s*o\\s*\\.?\\s*box|post\\s+office\\s+box)([^a-z]|$)' then 'po_box'
-        when $1 ~* '(^|[^a-z])(apt|apartment|bldg|rm|floor|suite|ste|lot|space|trailer)([^a-z]|$)' then 'unit_word'
+        when $1 ~* '${PO_SQL}' then 'po_box'
+        when $1 ~* '${REJECT_SQL}' then 'unit_word'
         when $1 !~* '^[0-9]{1,6}([a-z]|-[a-z0-9]{1,6})?\\s+.*[a-z]{2}' then 'street_format'
         when $1 ~* '(^|[^a-z])unit([^a-z]|$)|#' then 'unit_question'
         else 'ok' end as verdict`, [contract.normalizeStreet(street)]);
       assert.equal(rows[0].verdict, contract.classifyStreet(street), street);
     }
-    // The migration's own regexes are these (guard against drift).
-    const sql = read('014_residential_lead_contract.sql');
-    assert.ok(sql.includes("(^|[^a-z])(apt|apartment|bldg|rm|floor|suite|ste|lot|space|trailer)([^a-z]|$)"));
-    assert.ok(sql.includes("(^|[^a-z])(p\\s*\\.?\\s*o\\s*\\.?\\s*box|post\\s+office\\s+box)([^a-z]|$)"));
   });
 });

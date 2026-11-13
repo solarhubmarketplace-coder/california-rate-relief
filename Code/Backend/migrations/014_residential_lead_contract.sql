@@ -63,7 +63,9 @@ CREATE OR REPLACE FUNCTION public.crr_residential_contract_error(
   p_email TEXT, p_address TEXT, p_q JSONB, p_consent_status TEXT
 ) RETURNS TEXT LANGUAGE plpgsql STABLE SET search_path = public AS $$
 DECLARE
-  v_street TEXT := btrim(split_part(COALESCE(p_address, ''), ',', 1));
+  -- Everything before the trailing ', City, CA ZIP' (commas inside it become
+  -- spaces), so a unit or PO box after the first comma is still checked.
+  v_street TEXT := btrim(regexp_replace(regexp_replace(btrim(COALESCE(p_address, '')), ',[^,]*,[^,]*$', ''), ',', ' ', 'g'));
   v_band   TEXT := p_q->>'monthly_bill_band';
   v_zip    TEXT := p_q->>'service_zip';
   v_amount INTEGER;
@@ -79,14 +81,16 @@ BEGIN
   IF (p_q->>'homeowner')::BOOLEAN IS NOT TRUE THEN RETURN 'renter'; END IF;
   IF p_email IS NULL OR p_email !~ '^[^[:space:]@]+@[^[:space:]@]+\.[^[:space:]@]+$' THEN RETURN 'email_required'; END IF;
   IF v_street = '' THEN RETURN 'street_required'; END IF;
-  IF v_street ~* '(^|[^a-z])(p\s*\.?\s*o\s*\.?\s*box|post\s+office\s+box)([^a-z]|$)' THEN RETURN 'po_box'; END IF;
-  IF v_street ~* '(^|[^a-z])(apt|apartment|bldg|rm|floor|suite|ste|lot|space|trailer)([^a-z]|$)' THEN RETURN 'unit_word'; END IF;
+  IF v_street ~* '(^|[^a-z])(p\s*\.?\s*o\s*\.?\s*b(ox)?\.?|post\s+office\s+box|pmb|private\s+mail\s*box)([^a-z]|$)' THEN RETURN 'po_box'; END IF;
+  IF v_street ~* '(^|[^a-z])(apt|apts|apartment|apartments|apto|depto|departamento|bldg|building|rm|room|fl|flr|floor|suite|ste|lot|space|spc|sp|espacio|trailer|trlr)([^a-z]|$)' THEN RETURN 'unit_word'; END IF;
   IF v_street !~* '^[0-9]{1,6}([a-z]|-[a-z0-9]{1,6})?\s+.*[a-z]{2}' THEN RETURN 'street_format'; END IF;
   IF (v_street ~* '(^|[^a-z])unit([^a-z]|$)|#' OR p_q->'unit_flagged' = 'true'::jsonb)
      AND p_q->'unit_confirmed_detached' IS DISTINCT FROM 'true'::jsonb THEN RETURN 'unit_unconfirmed'; END IF;
   IF NULLIF(btrim(COALESCE(p_q->>'city', '')), '') IS NULL THEN RETURN 'city_invalid'; END IF;
   IF p_q->>'service_market' IS DISTINCT FROM 'CA' THEN RETURN 'state_not_ca'; END IF;
   IF v_zip IS NULL OR NOT EXISTS (SELECT 1 FROM public.ca_zip_places z WHERE z.zip = v_zip) THEN RETURN 'zip_not_ca'; END IF;
+  -- The stored address must end in ', CA <service_zip>' (the API composes it that way).
+  IF btrim(COALESCE(p_address, '')) !~ (',\s*CA\s+' || v_zip || '$') THEN RETURN 'zip_not_ca'; END IF;
   IF p_consent_status IS DISTINCT FROM 'opted_in' THEN RETURN 'consent_required'; END IF;
   RETURN NULL;
 END $$;

@@ -19,7 +19,10 @@ const BILL_BANDS = Object.freeze({ '250_349': 300, '350_499': 425, '500_plus': 6
 const BILL_BAND_LABELS = Object.freeze({ '250_349': '$250–$349', '350_499': '$350–$499', '500_plus': '$500+' });
 const UNDER_250_ID = 'under_250';
 
-const REJECT_WORDS = Object.freeze(['apt', 'apartment', 'bldg', 'rm', 'floor', 'suite', 'ste', 'lot', 'space', 'trailer']);
+const REJECT_WORDS = Object.freeze([
+  'apt', 'apts', 'apartment', 'apartments', 'apto', 'depto', 'departamento', 'bldg', 'building', 'rm', 'room',
+  'fl', 'flr', 'floor', 'suite', 'ste', 'lot', 'space', 'spc', 'sp', 'espacio', 'trailer', 'trlr',
+]);
 const FORM_KINDS = Object.freeze(['solar_inquiry', 'qualification_wizard', 'offer_request']);
 const TRAFFIC_CHANNELS = Object.freeze(['organic_google', 'organic_bing_yahoo_ddg', 'ai_referral', 'paid', 'email', 'direct', 'referral']);
 const AI_HOSTS = Object.freeze(['chatgpt.com', 'chat.openai.com', 'perplexity.ai', 'gemini.google.com', 'copilot.microsoft.com', 'claude.ai']);
@@ -45,7 +48,7 @@ const ERRORS = Object.freeze({
   email_required: 'Enter your email address.',
   email_invalid: 'Enter a valid email address.',
   street_required: 'Enter the street address of the home.',
-  po_box: "A PO box can't be used. Enter the street address of the home.",
+  po_box: "A PO box or private mailbox can't be used. Enter the street address of the home.",
   unit_word:
     "We can only send requests for detached single-family homes. Addresses with an apartment, suite, building, room, floor, lot, space or trailer number can't be used.",
   street_format: 'Enter the house number and street name, for example 123 Main St.',
@@ -60,8 +63,8 @@ const ERRORS = Object.freeze({
   legacy_route_retired: 'This endpoint has been retired. Submit leads to /api/intake.',
 });
 
-const PO_BOX_RE = /(?:^|[^a-z])(?:p\s*\.?\s*o\s*\.?\s*box|post\s+office\s+box)(?![a-z])/i;
-const REJECT_WORD_RE = /(?:^|[^a-z])(?:apt|apartment|bldg|rm|floor|suite|ste|lot|space|trailer)(?![a-z])/i;
+const PO_BOX_RE = /(?:^|[^a-z])(?:p\s*\.?\s*o\s*\.?\s*b(?:ox)?\.?|post\s+office\s+box|pmb|private\s+mail\s*box)(?![a-z])/i;
+const REJECT_WORD_RE = /(?:^|[^a-z])(?:apt|apts|apartment|apartments|apto|depto|departamento|bldg|building|rm|room|fl|flr|floor|suite|ste|lot|space|spc|sp|espacio|trailer|trlr)(?![a-z])/i;
 const UNIT_RE = /(?:^|[^a-z])unit(?![a-z])|#/i;
 const STREET_RE = /^\d{1,6}(?:[a-z]|-[a-z0-9]{1,6})?\s+(?=.*\p{L}{2})[\p{L}\p{M}0-9 .'’#&\/-]{2,114}$/iu;
 const CITY_RE = /^\p{L}[\p{L} .'’-]{1,79}$/u;
