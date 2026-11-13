@@ -32,6 +32,8 @@ export interface IntakePayload {
     phone: string;
     email?: string;
     address?: string;
+    /** Residential contract: the street line only; the API composes the full address. */
+    street?: string;
   };
   qualification_data: Record<string, string | number | boolean | null> & IntakeLocationFields;
   attribution: {
@@ -57,6 +59,9 @@ export interface IntakePayload {
     landing_page_type?: string;
     submitted_from?: string;
     referrer?: string;
+    initial_referrer?: string;
+    traffic_channel?: string;
+    first_touch_version?: number;
     ga_client_id?: string;
     captured_at?: string;
     journey?: LeadJourney;
@@ -100,6 +105,9 @@ export function intakeAttribution(firstTouch: FirstTouch | null): IntakePayload[
     landing_page_type: firstTouch?.landing_page_type ?? undefined,
     submitted_from: currentPath() ?? undefined,
     referrer: firstTouch?.referrer ?? undefined,
+    initial_referrer: firstTouch?.initial_referrer ?? undefined,
+    traffic_channel: firstTouch?.traffic_channel ?? undefined,
+    first_touch_version: firstTouch?.first_touch_version ?? undefined,
     ga_client_id: gaClientId() ?? undefined,
     captured_at: firstTouch?.captured_at ?? undefined,
     journey: recordJourneyPage() ?? undefined,
